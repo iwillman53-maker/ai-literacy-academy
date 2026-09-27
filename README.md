@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI 리터러시 교육원 - 행정에 AI를 입히다. 나병인 원장의 AI 교육 및 선거 전략 컨설팅">
+    <meta name="description" content="한국AI연구소 - 행정에 AI를 입히다. 나병인 소장의 AI 교육 및 선거 전략 컨설팅">
     <meta name="keywords" content="AI 리터러시, AI 교육, 선거 전략, AI 컨설팅, 나병인 교수">
     <meta name="naver-site-verification" content="2c7a109dc5c00bb798beda3b51f7694a04a7e7db" />
-    <title>AI 리터러시 교육원 | 행정에 AI를 입히다</title>
+    <title>한국AI연구소 | 행정에 AI를 입히다</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" data-emoji="🧠" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
@@ -19,12 +19,12 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="images/logo.png" alt="AI 리터러시 교육원 로고" class="logo-image">
-                <span>AI 리터러시 교육원</span>
+                <img src="images/logo.png" alt="한국AI연구소 로고" class="logo-image">
+                <span>한국AI연구소</span>
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">홈</a></li>
-                <li><a href="#about" class="nav-link">원장소개</a></li>
+                <li><a href="#about" class="nav-link">소장소개</a></li>
                 <li><a href="#education" class="nav-link">교육프로그램</a></li>
                 <li><a href="#consulting" class="nav-link">선거전략</a></li>
                 <li><a href="#achievements" class="nav-link">주요활동</a></li>
@@ -47,7 +47,7 @@
                     <div class="hero-text">
                         <h1 class="hero-title">
                             <span class="title-main">행정에 AI를 입히다</span>
-                            <span class="title-sub">AI 리터러시 교육원</span>
+                            <span class="title-sub">한국AI연구소</span>
                         </h1>
                         <p class="hero-description">
                             미래를 선도하는 AI 교육과 혁신적인 선거 전략 컨설팅<br>
@@ -85,7 +85,7 @@
     <section id="about" class="section about-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">원장 소개</h2>
+                <h2 class="section-title">소장 소개</h2>
                 <p class="section-subtitle">AI 시대를 이끄는 교육자이자 전략가</p>
             </div>
             
@@ -95,8 +95,8 @@
                         <div class="card-icon">
                             <i class="fas fa-user-tie"></i>
                         </div>
-                        <h3>나병인 원장</h3>
-                        <p class="position">AI 리터러시 교육원 원장</p>
+                        <h3>나병인 소장</h3>
+                        <p class="position">한국AI연구소 소장</p>
                         <p class="description">
                             행정학 박사이자 AI 리터러시 교육의 선구자로서, 가천대학교 겸임교수, 중앙경찰학교 외래강사로 활동하고 있습니다. 
                             젠스파크 AI연구회 부회장과 한국 AI 리터러시 강사 협회 이사를 역임하며, AI 기술을 행정과 정치 분야에 접목시키는 혁신적인 교육을 선도하고 있습니다.
@@ -250,7 +250,7 @@
                     <p>
                         현대 선거는 데이터와 기술의 싸움입니다. AI를 활용한 유권자 분석, 여론 예측, 맞춤형 메시지 전달로 
                         경쟁자보다 한 발 앞서 나갈 수 있습니다. AI 선거전략연구소 위원이자 'AI활용 선거대책' 공저자인 
-                        나병인 원장이 여러분의 승리를 위한 전략을 제시합니다.
+                        나병인 소장이 여러분의 승리를 위한 전략을 제시합니다.
                     </p>
                 </div>
             </div>
@@ -405,7 +405,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">문의하기</h2>
-                <p class="section-subtitle">AI 리터러시 교육원과 함께 미래를 준비하세요</p>
+                <p class="section-subtitle">한국AI연구소와 함께 미래를 준비하세요</p>
             </div>
 
             <div class="contact-content">
@@ -414,8 +414,8 @@
                         <div class="info-icon">
                             <i class="fas fa-building"></i>
                         </div>
-                        <h4>AI 리터러시 교육원</h4>
-                        <p>원장: 나병인 박사</p>
+                        <h4>한국AI연구소</h4>
+                        <p>소장: 나병인 박사</p>
                     </div>
 
                     <div class="info-item">
@@ -499,8 +499,8 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="images/logo.png" alt="AI 리터러시 교육원 로고" class="footer-logo-image">
-                        <h3>AI 리터러시 교육원</h3>
+                        <img src="images/logo.png" alt="한국AI연구소 로고" class="footer-logo-image">
+                        <h3>한국AI연구소</h3>
                     </div>
                     <p>행정에 AI를 입히다</p>
                     <p class="footer-slogan">"AI 시대, 당신의 성공 파트너"</p>
@@ -509,7 +509,7 @@
                 <div class="footer-links">
                     <h4>빠른 링크</h4>
                     <ul>
-                        <li><a href="#about">원장소개</a></li>
+                        <li><a href="#about">소장소개</a></li>
                         <li><a href="#education">교육프로그램</a></li>
                         <li><a href="#consulting">선거전략</a></li>
                         <li><a href="#contact">문의하기</a></li>
@@ -524,8 +524,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 AI 리터러시 교육원. All rights reserved.</p>
-                <p>원장: 나병인 박사 (행정학 박사, AI 선거전략연구소 위원)</p>
+                <p>&copy; 2026 한국AI연구소. All rights reserved.</p>
+                <p>소장: 나병인 박사 (행정학 박사, AI 선거전략연구소 위원)</p>
             </div>
         </div>
     </footer>
