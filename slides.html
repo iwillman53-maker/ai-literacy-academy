@@ -12,8 +12,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[강의 제목] 슬라이드</title>
-<meta name="description" content="[강의 제목] 수업 슬라이드 · [날짜] · 강사 [이름]">
+<title>생활 속의 AI · 강의 슬라이드</title>
+<meta name="description" content="50대 후반 일반인 대상 · 2026년 9월 30일 · 나병인 교수">
 <meta name="theme-color" content="#111111">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -191,7 +191,7 @@ table.tbl td:first-child{color:var(--sub)}
 <!-- ===== 2. 오늘의 순서 ===== -->
 <section class="slide" aria-label="2. 오늘의 순서">
   <div class="slide-content">
-    <div class="kicker">120분 진행</div><h2>오늘의 순서</h2><ul class="bullets"><li>도입·크롬 30분: 돌봄 공고 읽기와 탭 비교</li><li>카드 영수증 15분: 지출표 만들기</li><li>건강검진·보험약관 25분: 근거 찾기</li><li>휴식 10분 · 이미지 20분: 여행 이미지 제작</li><li>동영상·정리 20분: 짧은 영상 생성과 결과 확인</li></ul>
+    <div class="kicker">120분 진행</div><h2>오늘의 순서</h2><ul class="bullets"><li>도입·제미나이 인 크롬 30분: 현재 탭 요약과 비교</li><li>생활 자료 25분: 영수증·건강검진·보험약관</li><li>NotebookLM 25분: 소스 추가와 근거 확인</li><li>휴식 10분: 실습 결과 정리</li><li>이미지·동영상·도구 연계 30분: 콘텐츠 제작</li></ul>
   </div>
 </section>
 
@@ -253,8 +253,50 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 11. 영수증 가리기 ===== -->
-<section class="slide" aria-label="11. 영수증 가리기">
+<!-- ===== 11. 제미나이 인 크롬 ===== -->
+<section class="slide" aria-label="11. 제미나이 인 크롬">
+  <div class="slide-content">
+    <div class="kicker">크롬 안의 AI 도우미</div><h2>제미나이 인 크롬</h2><div class="card-grid c3"><div class="card"><div class="n">1</div><div class="t">현재 탭</div><div class="d">보고 있는 페이지의 핵심 요약</div></div><div class="card"><div class="n">2</div><div class="t">여러 탭</div><div class="d">선택한 자료의 조건과 차이 비교</div></div><div class="card"><div class="n">3</div><div class="t">원문 확인</div><div class="d">날짜·금액·대상 직접 대조</div></div></div>
+  </div>
+</section>
+
+<!-- ===== 12. 현재 탭 요약 ===== -->
+<section class="slide" aria-label="12. 현재 탭 요약">
+  <div class="slide-content">
+    <div class="kicker">제미나이 인 크롬 · 기본 실습</div><h2>현재 탭 요약</h2><ul class="bullets"><li>요약할 페이지를 맨 앞 탭으로 열기</li><li>상단 제미나이에게 물어보기 선택</li><li>현재 탭 공유 표시 확인</li><li>답변의 날짜·대상·신청 장소 원문 대조</li></ul><div class="prompt-card"><div class="label">현재 탭 · 쉬운 요약</div><blockquote id="pt-chrome-5">현재 탭의 핵심 내용을 쉬운 말 다섯 줄로 요약해줘. 날짜·대상·준비물은 원문 표현과 함께 적어줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-chrome-5" aria-label="현재 탭 요약 질문 복사">복사</button></div>
+  </div>
+</section>
+
+<!-- ===== 13. 탭 추가 ===== -->
+<section class="slide" aria-label="13. 탭 추가">
+  <div class="slide-content">
+    <div class="kicker">여러 자료 선택</div><h2>탭 추가</h2><ul class="bullets"><li>비교할 페이지를 각각 새 탭으로 열기</li><li>질문창의 탭 추가 선택</li><li>필요한 탭만 체크</li><li>공유 목록의 제목과 체크 표시 확인</li><li>개인 메일·금융·건강 탭 공유 제외</li></ul>
+  </div>
+</section>
+
+<!-- ===== 14. 여러 탭 비교 ===== -->
+<section class="slide" aria-label="14. 여러 탭 비교">
+  <div class="slide-content">
+    <div class="kicker">제미나이 인 크롬 · 비교 실습</div><h2>여러 탭 비교</h2><div class="prompt-card"><div class="label">선택한 두세 개 탭</div><blockquote id="pt-chrome-6">공유한 탭을 대상·기간·비용·준비물 기준으로 비교표로 정리해줘. 각 내용이 나온 탭 제목을 함께 적고 없는 정보는 없음으로 표시해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-chrome-6" aria-label="여러 탭 비교 질문 복사">복사</button></div><ul class="bullets"><li>비교 기준을 먼저 지정</li><li>출처 탭 제목까지 요청</li><li>빈칸과 추측을 구분</li></ul>
+  </div>
+</section>
+
+<!-- ===== 15. PDF 질문 ===== -->
+<section class="slide" aria-label="15. PDF 질문">
+  <div class="slide-content">
+    <div class="kicker">문서 읽기</div><h2>PDF 질문</h2><ul class="bullets"><li>PDF를 크롬 탭에서 열기</li><li>목차·표·마감일 중심으로 질문</li><li>내용 인식 실패 시 파일 내려받기</li><li>제미나이 웹앱 또는 NotebookLM에 파일 추가</li></ul><div class="prompt-card"><div class="label">PDF 핵심 찾기</div><blockquote id="pt-chrome-7">현재 PDF에서 신청 마감일·대상·필수 서류를 찾아 표로 정리해줘. 찾지 못한 항목은 추측하지 말고 확인 불가로 표시해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-chrome-7" aria-label="PDF 질문 복사">복사</button></div>
+  </div>
+</section>
+
+<!-- ===== 16. 오류 확인 ===== -->
+<section class="slide" aria-label="16. 오류 확인">
+  <div class="slide-content">
+    <div class="kicker">답변 점검</div><h2>오류 확인</h2><div class="card-grid c2"><div class="card"><div class="t">원문 대조</div><div class="d">날짜·숫자·대상·예외 조건 직접 확인</div></div><div class="card"><div class="t">공유 범위</div><div class="d">원치 않는 탭 포함 여부 확인</div></div><div class="card"><div class="t">출처 구분</div><div class="d">어느 탭의 내용인지 표시 확인</div></div><div class="card"><div class="t">개인정보</div><div class="d">로그인·금융·건강 정보 공유 제외</div></div></div>
+  </div>
+</section>
+
+<!-- ===== 17. 영수증 가리기 ===== -->
+<section class="slide" aria-label="17. 영수증 가리기">
   <div class="slide-content">
     <div class="kicker">자료 준비</div>
     <h2>영수증 가리기</h2>
@@ -262,8 +304,8 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 12. 카드 영수증 ===== -->
-<section class="slide" aria-label="12. 카드 영수증">
+<!-- ===== 18. 카드 영수증 ===== -->
+<section class="slide" aria-label="18. 카드 영수증">
   <div class="slide-content">
     <div class="kicker">생활 자료 실습</div>
     <h2>카드 영수증</h2>
@@ -271,8 +313,8 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 13. 영수증 첨부 ===== -->
-<section class="slide" aria-label="13. 영수증 첨부">
+<!-- ===== 19. 영수증 첨부 ===== -->
+<section class="slide" aria-label="19. 영수증 첨부">
   <div class="slide-content">
     <div class="kicker">따라 하기</div>
     <h2>영수증 첨부</h2>
@@ -280,8 +322,8 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 14. 영수증 질문 ===== -->
-<section class="slide" aria-label="14. 영수증 질문">
+<!-- ===== 20. 영수증 질문 ===== -->
+<section class="slide" aria-label="20. 영수증 질문">
   <div class="slide-content">
     <div class="kicker">복사해서 사용</div>
     <h2>영수증 질문</h2>
@@ -289,8 +331,8 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 15. 지출표 확인 ===== -->
-<section class="slide" aria-label="15. 지출표 확인">
+<!-- ===== 21. 지출표 확인 ===== -->
+<section class="slide" aria-label="21. 지출표 확인">
   <div class="slide-content">
     <div class="kicker">결과 점검</div>
     <h2>지출표 확인</h2>
@@ -298,15 +340,15 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 16. 건강검진 자료 ===== -->
-<section class="slide" aria-label="16. 건강검진 자료">
+<!-- ===== 22. 건강검진 자료 ===== -->
+<section class="slide" aria-label="22. 건강검진 자료">
   <div class="slide-content">
     <div class="kicker">자료 ② · 가상 결과지</div><h2>건강검진 자료</h2><ul class="bullets"><li>교육용 일반건강검진 결과 통보서 2쪽</li><li>기준을 벗어난 항목과 정상 항목 함께 포함</li><li>NotebookLM에 PDF를 소스로 추가</li><li>원문 인용 번호를 눌러 수치와 문구 확인</li></ul>
   </div>
 </section>
 
-<!-- ===== 17. 검진표 가리기 ===== -->
-<section class="slide" aria-label="17. 검진표 가리기">
+<!-- ===== 23. 검진표 가리기 ===== -->
+<section class="slide" aria-label="23. 검진표 가리기">
   <div class="slide-content">
     <div class="kicker">자료 준비</div>
     <h2>검진표 가리기</h2>
@@ -314,43 +356,85 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 18. 검진표 첨부 ===== -->
-<section class="slide" aria-label="18. 검진표 첨부">
+<!-- ===== 24. 검진표 첨부 ===== -->
+<section class="slide" aria-label="24. 검진표 첨부">
   <div class="slide-content">
     <div class="kicker">따라 하기</div><h2>검진표 첨부</h2><ul class="bullets"><li>NotebookLM에서 새 노트북 만들기</li><li>자료 ② 건강검진표 PDF를 소스로 추가</li><li>질문 후 인용 번호에서 원문 위치 확인</li><li>스튜디오 생성은 시간 여유가 있을 때 시연</li></ul>
   </div>
 </section>
 
-<!-- ===== 19. 검진 질문 ===== -->
-<section class="slide" aria-label="19. 검진 질문">
+<!-- ===== 25. 검진 질문 ===== -->
+<section class="slide" aria-label="25. 검진 질문">
   <div class="slide-content">
     <div class="kicker">복사해서 사용</div><h2>검진 질문</h2><div class="prompt-card"><div class="label">자료 ② · 건강검진표</div><blockquote id="pt-2">이 결과지에서 기준을 벗어난 항목만 쉬운 말로 정리해줘. 2차 검진 시기와 준비물도 원문 근거를 붙여 알려줘. 수치만으로 진단하지 말고 의료진에게 물을 질문 세 개를 제안해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-2" aria-label="검진 질문 복사">복사</button></div>
   </div>
 </section>
 
-<!-- ===== 20. 자료 점검 ===== -->
-<section class="slide" aria-label="20. 자료 점검">
+<!-- ===== 26. 검진 결과 점검 ===== -->
+<section class="slide" aria-label="26. 검진 결과 점검">
   <div class="slide-content">
     <div class="kicker">원문 대조</div><h2>검진 결과 점검</h2><ul class="bullets"><li>정상 항목을 이상 항목으로 잘못 분류했는지 확인</li><li>2차 검진 안내의 기간과 준비물 원문 대조</li><li>인용 번호 클릭 → 자료 ② 해당 위치 확인</li><li>실제 검진 결과의 해석은 의료진 상담</li></ul>
   </div>
 </section>
 
-<!-- ===== 21. 보험약관 읽기 ===== -->
-<section class="slide" aria-label="21. 보험약관 읽기">
+<!-- ===== 27. 보험약관 읽기 ===== -->
+<section class="slide" aria-label="27. 보험약관 읽기">
   <div class="slide-content">
     <div class="kicker">자료 ③ · 가상 약관</div><h2>보험약관 읽기</h2><ul class="bullets"><li>NotebookLM에 자료 ③ 보험약관 PDF 추가</li><li>보장 한도·자기부담금·면책사유 찾기</li><li>갱신 시 보험료 변경 조건 확인</li><li>실제 보험 적용은 가입 약관 원문과 보험사 확인</li></ul>
   </div>
 </section>
 
-<!-- ===== 22. 보험약관 질문 ===== -->
-<section class="slide" aria-label="22. 보험약관 질문">
+<!-- ===== 28. 보험약관 질문 ===== -->
+<section class="slide" aria-label="28. 보험약관 질문">
   <div class="slide-content">
     <div class="kicker">복사해서 사용</div><h2>보험약관 질문</h2><div class="prompt-card"><div class="label">자료 ③ · 보험약관</div><blockquote id="pt-insurance">이 약관에서 꼭 알아야 할 내용 다섯 가지와 불리할 수 있는 조건을 정리해줘. 임플란트 보장 여부와 보험금 청구 기한·서류를 해당 조항을 인용해 알려줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-insurance" aria-label="보험약관 질문 복사">복사</button></div>
   </div>
 </section>
 
-<!-- ===== 23. 휴식 ===== -->
-<section class="slide dark" aria-label="23. 휴식">
+<!-- ===== 29. NotebookLM의 역할 ===== -->
+<section class="slide" aria-label="29. NotebookLM의 역할">
+  <div class="slide-content">
+    <div class="kicker">내 자료 중심 AI</div><h2>NotebookLM의 역할</h2><div class="card-grid c3"><div class="card"><div class="n">1</div><div class="t">소스</div><div class="d">PDF·웹페이지·문서 모으기</div></div><div class="card"><div class="n">2</div><div class="t">질문</div><div class="d">추가한 자료 안에서 답 찾기</div></div><div class="card"><div class="n">3</div><div class="t">인용</div><div class="d">답변 근거의 원문 위치 확인</div></div></div>
+  </div>
+</section>
+
+<!-- ===== 30. 새 노트북 ===== -->
+<section class="slide" aria-label="30. 새 노트북">
+  <div class="slide-content">
+    <div class="kicker">NotebookLM · 시작</div><h2>새 노트북</h2><ul class="bullets"><li>NotebookLM 접속과 구글 계정 확인</li><li>새 노트북 선택</li><li>제목 입력: 생활 속의 AI 실습</li><li>주제별 노트북 분리: 건강·보험·여행</li><li>실제 개인정보 대신 교육용 가상 자료 사용</li></ul>
+  </div>
+</section>
+
+<!-- ===== 31. 소스 추가 ===== -->
+<section class="slide" aria-label="31. 소스 추가">
+  <div class="slide-content">
+    <div class="kicker">NotebookLM · 자료 넣기</div><h2>소스 추가</h2><table class="tbl"><thead><tr><th scope="col">소스</th><th scope="col">실습 자료</th><th scope="col">확인</th></tr></thead><tbody><tr><td>PDF</td><td>건강검진 결과지</td><td>파일명·쪽수</td></tr><tr><td>PDF</td><td>보험약관 발췌본</td><td>조항·표</td></tr><tr><td>웹주소</td><td>공공기관 안내</td><td>기관·게시일</td></tr><tr><td>텍스트</td><td>산동유람 일정</td><td>이름 삭제</td></tr></tbody></table>
+  </div>
+</section>
+
+<!-- ===== 32. 근거 있는 질문 ===== -->
+<section class="slide" aria-label="32. 근거 있는 질문">
+  <div class="slide-content">
+    <div class="kicker">NotebookLM · 질문 실습</div><h2>근거 있는 질문</h2><div class="prompt-card"><div class="label">선택한 소스만 사용</div><blockquote id="pt-nlm-1">선택한 소스만 근거로 핵심 내용을 다섯 가지로 정리해줘. 각 항목에 인용 번호를 붙이고 자료에 없는 내용은 없다고 표시해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-nlm-1" aria-label="근거 있는 질문 복사">복사</button></div><ul class="bullets"><li>한 질문에 한 목적</li><li>조건·기간·예외를 구분</li><li>인용 번호 클릭으로 원문 확인</li></ul>
+  </div>
+</section>
+
+<!-- ===== 33. 스튜디오 생성 ===== -->
+<section class="slide" aria-label="33. 스튜디오 생성">
+  <div class="slide-content">
+    <div class="kicker">NotebookLM · 결과물 만들기</div><h2>스튜디오 생성</h2><div class="card-grid c3"><div class="card"><div class="t">음성 요약</div><div class="d">자료 핵심을 대화 형식으로 듣기</div></div><div class="card"><div class="t">동영상 개요</div><div class="d">화면과 설명이 있는 요약 시도</div></div><div class="card"><div class="t">학습 자료</div><div class="d">요약·자주 묻는 질문·퀴즈 만들기</div></div></div><p class="lede">계정·지역에 따라 보이는 기능과 생성 한도 차이</p>
+  </div>
+</section>
+
+<!-- ===== 34. 출처 확인 ===== -->
+<section class="slide" aria-label="34. 출처 확인">
+  <div class="slide-content">
+    <div class="kicker">답변보다 근거 먼저</div><h2>출처 확인</h2><ul class="bullets"><li>답변 옆 인용 번호 선택</li><li>원문 강조 부분과 답변 비교</li><li>날짜·수치·예외 조건 다시 읽기</li><li>건강 판단은 의료진, 보험 적용은 보험사 확인</li><li>틀린 답변은 근거와 함께 다시 질문</li></ul>
+  </div>
+</section>
+
+<!-- ===== 35. 휴식 ===== -->
+<section class="slide dark" aria-label="35. 휴식">
   <div class="slide-content">
     <div class="kicker">잠깐 쉬기</div>
     <button type="button" class="break-big" data-minutes="10" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋" aria-label="휴식 타이머 10분"><span class="time">10:00</span></button>
@@ -358,64 +442,78 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 24. 이미지 실습 준비 ===== -->
-<section class="slide" aria-label="24. 이미지 실습 준비">
+<!-- ===== 36. 이미지 실습 준비 ===== -->
+<section class="slide" aria-label="36. 이미지 실습 준비">
   <div class="slide-content">
     <div class="kicker">이미지 실습 · 20분</div><h2>이미지 실습 준비</h2><ul class="bullets"><li>자료 ① 산동유람 일정표의 1~3일차 확인</li><li>핵심 장소: 곡부 공자 유적·청도 바닷가</li><li>여행 분위기: 여유·우정·늦가을</li><li>참가자 이름과 연락처 제거 후 일정만 입력</li></ul>
   </div>
 </section>
 
-<!-- ===== 25. 여행 이미지 질문 ===== -->
-<section class="slide" aria-label="25. 여행 이미지 질문">
+<!-- ===== 37. 여행 이미지 질문 ===== -->
+<section class="slide" aria-label="37. 여행 이미지 질문">
   <div class="slide-content">
     <div class="kicker">복사해서 사용</div><h2>여행 이미지 질문</h2><div class="prompt-card"><div class="label">자료 ① · 산동유람 일정</div><blockquote id="pt-3">첨부한 산동유람 일정에서 2~3일차의 장소와 분위기를 참고해 가로형 여행 이미지를 만들어줘. 곡부 공자 유적과 청도 바다의 늦가을 풍경, 친구들의 여유로운 여행. 참가자 이름·연락처·글자 없음.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-3" aria-label="여행 이미지 질문 복사">복사</button></div>
   </div>
 </section>
 
-<!-- ===== 26. 이미지 결과 확인 ===== -->
-<section class="slide" aria-label="26. 이미지 결과 확인">
+<!-- ===== 38. 이미지 결과 확인 ===== -->
+<section class="slide" aria-label="38. 이미지 결과 확인">
   <div class="slide-content">
     <div class="kicker">직접 만들기</div><h2>이미지 결과 확인</h2><ul class="bullets"><li>이미지 생성 도구에 일정과 질문 입력</li><li>곡부·청도 장소 표현과 화면 비율 확인</li><li>잘못된 글자·원치 않는 인물은 수정 요청</li><li>완성 이미지 한 장 저장 → 영상 실습에 사용</li></ul>
   </div>
 </section>
 
-<!-- ===== 27. 동영상 실습 준비 ===== -->
-<section class="slide" aria-label="27. 동영상 실습 준비">
+<!-- ===== 39. 동영상 실습 준비 ===== -->
+<section class="slide" aria-label="39. 동영상 실습 준비">
   <div class="slide-content">
     <div class="kicker">동영상 실습 · 15분</div><h2>동영상 실습 준비</h2><ul class="bullets"><li>방금 만든 여행 이미지 한 장 선택</li><li>영상 생성 도구의 이미지→동영상 기능 열기</li><li>짧은 장면 한 개: 풍경·움직임·분위기 지정</li><li>계정의 영상 생성 가능 여부와 길이 확인</li></ul>
   </div>
 </section>
 
-<!-- ===== 28. 영상 장면표 ===== -->
-<section class="slide" aria-label="28. 영상 장면표">
+<!-- ===== 40. 영상 장면표 ===== -->
+<section class="slide" aria-label="40. 영상 장면표">
   <div class="slide-content">
     <div class="kicker">자료 ① · 일정 활용</div><h2>영상 장면표</h2><table class="tbl"><thead><tr><th scope="col">구간</th><th scope="col">화면·움직임</th></tr></thead><tbody><tr><td>시작</td><td>곡부 공자 유적지 · 천천히 앞으로</td></tr><tr><td>전환</td><td>청도 바다 · 부드러운 좌우 이동</td></tr><tr><td>끝</td><td>친구들의 뒷모습 · 따뜻한 마무리</td></tr></tbody></table>
   </div>
 </section>
 
-<!-- ===== 29. 동영상 생성 질문 ===== -->
-<section class="slide" aria-label="29. 동영상 생성 질문">
+<!-- ===== 41. 동영상 생성 질문 ===== -->
+<section class="slide" aria-label="41. 동영상 생성 질문">
   <div class="slide-content">
     <div class="kicker">복사해서 사용</div><h2>동영상 생성 질문</h2><div class="prompt-card"><div class="label">저장한 여행 이미지 → 짧은 영상</div><blockquote id="pt-4">이 이미지의 장소와 구도를 유지하며 짧은 여행 영상으로 만들어줘. 카메라가 천천히 앞으로 움직이고 나뭇잎과 바람만 자연스럽게 움직이게 해줘. 늦가을의 따뜻한 빛, 얼굴 변경·새 인물·글자 추가 없음.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-4" aria-label="동영상 생성 질문 복사">복사</button></div>
   </div>
 </section>
 
-<!-- ===== 30. 동영상 결과 확인 ===== -->
-<section class="slide" aria-label="30. 동영상 결과 확인">
+<!-- ===== 42. 동영상 결과 확인 ===== -->
+<section class="slide" aria-label="42. 동영상 결과 확인">
   <div class="slide-content">
     <div class="kicker">재생·수정</div><h2>동영상 결과 확인</h2><ul class="bullets"><li>이미지 업로드 → 질문 입력 → 생성 → 재생</li><li>장소·움직임·얼굴 왜곡과 글자 오류 확인</li><li>한 부분만 바꿔 재생성 또는 저장</li><li>영상 생성 불가 계정: 장면표와 질문 완성</li></ul>
   </div>
 </section>
 
-<!-- ===== 31. 실습 결과 ===== -->
-<section class="slide" aria-label="31. 실습 결과">
+<!-- ===== 43. 자료 탐색 ===== -->
+<section class="slide" aria-label="43. 자료 탐색">
+  <div class="slide-content">
+    <div class="kicker">두 도구 연계 · 1단계</div><h2>자료 탐색</h2><div class="card-grid c2"><div class="card"><div class="n">1</div><div class="t">제미나이 인 크롬</div><div class="d">웹페이지 요약·탭 비교·후보 자료 찾기</div></div><div class="card"><div class="n">2</div><div class="t">사람의 확인</div><div class="d">기관·게시일·원문 주소·개인정보 점검</div></div></div><ul class="bullets"><li>쓸 자료만 내려받기 또는 주소 복사</li><li>출처 이름과 확인 날짜 함께 기록</li></ul>
+  </div>
+</section>
+
+<!-- ===== 44. 자료 재구성 ===== -->
+<section class="slide" aria-label="44. 자료 재구성">
+  <div class="slide-content">
+    <div class="kicker">두 도구 연계 · 2단계</div><h2>자료 재구성</h2><div class="prompt-card"><div class="label">확인한 자료 → NotebookLM</div><blockquote id="pt-connect">추가한 자료만 근거로 가족에게 설명할 한 쪽 안내문을 만들어줘. 대상·기간·준비물·주의사항을 나누고 각 항목에 인용 번호를 붙여줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-connect" aria-label="자료 재구성 질문 복사">복사</button></div><ul class="bullets"><li>크롬: 최신 자료 탐색과 비교</li><li>NotebookLM: 모은 자료의 근거 중심 재구성</li><li>사람: 원문 확인과 최종 판단</li></ul>
+  </div>
+</section>
+
+<!-- ===== 45. 실습 결과 ===== -->
+<section class="slide" aria-label="45. 실습 결과">
   <div class="slide-content">
     <div class="kicker">결과 공유</div><h2>실습 결과</h2><div class="card-grid c3"><div class="card"><div class="n">1</div><div class="t">문서</div><div class="d">공고·검진·약관의 근거 한 가지</div></div><div class="card"><div class="n">2</div><div class="t">이미지</div><div class="d">일정에서 만든 여행 이미지 한 장</div></div><div class="card"><div class="n">3</div><div class="t">영상</div><div class="d">짧은 결과물 또는 완성 장면표</div></div></div>
   </div>
 </section>
 
-<!-- ===== 32. 안전한 사용 ===== -->
-<section class="slide" aria-label="32. 안전한 사용">
+<!-- ===== 46. 안전한 사용 ===== -->
+<section class="slide" aria-label="46. 안전한 사용">
   <div class="slide-content">
     <div class="kicker">생활 속 기준</div>
     <h2>안전한 사용</h2>
@@ -423,8 +521,8 @@ table.tbl td:first-child{color:var(--sub)}
   </div>
 </section>
 
-<!-- ===== 33. 마침 ===== -->
-<section class="slide title-slide" aria-label="33. 마침">
+<!-- ===== 47. 마침 ===== -->
+<section class="slide title-slide" aria-label="47. 마침">
   <div class="slide-content">
     <div class="kicker">생활 속의 AI</div>
     <h1>한 가지부터 시작</h1>
@@ -439,7 +537,7 @@ table.tbl td:first-child{color:var(--sub)}
 <nav id="nav" aria-label="슬라이드 이동">
   <a href="index.html" target="_blank" rel="noopener" class="hide-sm" aria-label="강의 홈 새 창으로 열기">⌂ 홈</a>
   <button type="button" id="navPrev" aria-label="이전 슬라이드">◀</button>
-  <span id="counter" aria-live="polite">1 / 33</span>
+  <span id="counter" aria-live="polite">1 / 47</span>
   <button type="button" id="navNext" aria-label="다음 슬라이드">▶</button>
   <span class="grow"></span>
   <span class="hint hide-sm">← → 이동 · G 전체보기 · P PDF</span>

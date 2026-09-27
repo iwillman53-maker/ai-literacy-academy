@@ -14,7 +14,7 @@
 <!-- 공유 미리보기 · 배포 시 og:url과 og:image를 공개 주소로 설정 -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="생활 속의 AI · 2시간 실습 강의">
-<meta property="og:description" content="50대 후반 일반인 대상 · 2026년 9월 30일 · 크롬 AI, 생활 문서, 여행 이미지와 영상 실습 · 나병인 교수">
+<meta property="og:description" content="50대 후반 일반인 대상 · 2026년 9월 30일 · 제미나이 인 크롬, NotebookLM, 생활 문서, 이미지와 영상 실습 · 나병인 교수">
 <meta property="og:url" content="">
 <meta property="og:image" content="og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
@@ -155,12 +155,12 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .3
   <section id="curriculum" aria-labelledby="curTitle"><div class="wrap">
     <div class="sec-kicker">커리큘럼 · 총 120분</div><h2 id="curTitle">6단계 실습</h2>
     <div class="cards">
-      <article class="card"><div class="n">1부 · 30분</div><h3 class="t">제미나이 인 크롬</h3><ul><li>공고 요약 · 자격 확인 · 신청 준비</li><li>두 탭의 서류 비교</li></ul></article>
-      <article class="card"><div class="n">2부 · 15분</div><h3 class="t">카드 영수증</h3><ul><li>결제 내역 추출과 지출 분류</li><li>날짜·금액 원본 대조</li></ul></article>
-      <article class="card"><div class="n">3부 · 25분</div><h3 class="t">건강검진·보험약관</h3><ul><li>가상 PDF로 낯선 항목 읽기</li><li>원문 근거와 질문 목록 확인</li></ul></article>
+      <article class="card"><div class="n">1부 · 30분</div><h3 class="t">제미나이 인 크롬</h3><ul><li>현재 탭 요약 · PDF 질문</li><li>여러 탭 비교와 공유 범위 확인</li></ul></article>
+      <article class="card"><div class="n">2부 · 25분</div><h3 class="t">생활 자료</h3><ul><li>카드 영수증 지출표</li><li>건강검진·보험약관 핵심 찾기</li></ul></article>
+      <article class="card"><div class="n">3부 · 25분</div><h3 class="t">NotebookLM</h3><ul><li>소스 추가와 근거 있는 질문</li><li>인용 확인과 스튜디오 결과물</li></ul></article>
       <article class="card"><div class="n">휴식 · 10분</div><h3 class="t">짧은 쉼</h3><ul><li>앞 실습 결과 정리</li><li>여행 일정 요약 준비</li></ul></article>
-      <article class="card"><div class="n">4부 · 20분</div><h3 class="t">여행 이미지</h3><ul><li>산동유람 일정에서 장면 선정</li><li>이미지 생성·오류 확인·저장</li></ul></article>
-      <article class="card"><div class="n">5부 · 20분</div><h3 class="t">짧은 동영상</h3><ul><li>생성한 이미지로 영상 시도</li><li>재생·수정 또는 장면표 완성</li></ul></article>
+      <article class="card"><div class="n">4부 · 15분</div><h3 class="t">여행 이미지</h3><ul><li>산동유람 일정에서 장면 선정</li><li>이미지 생성·오류 확인·저장</li></ul></article>
+      <article class="card"><div class="n">5부 · 15분</div><h3 class="t">동영상·도구 연계</h3><ul><li>이미지로 짧은 영상 시도</li><li>크롬 탐색과 NotebookLM 재구성</li></ul></article>
     </div>
   </div></section>
 
@@ -217,7 +217,7 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .3
 
   <section id="enter" aria-labelledby="enterTitle"><div class="wrap">
     <div class="sec-kicker">웹슬라이드</div><h2 id="enterTitle">강의 입장</h2>
-    <div class="entry-grid"><a class="entry" href="slides.html" target="_blank" rel="noopener"><span class="part">33장 · 2시간 실습</span><span class="title">슬라이드 입장 →</span><span class="desc">← → 이동 · G 전체보기 · P PDF 저장</span></a><a class="entry" href="#materials"><span class="part">수업 전 준비</span><span class="title">실습 자료 →</span><span class="desc">가상 문서와 익명 일정 요약 내려받기</span></a></div>
+    <div class="entry-grid"><a class="entry" href="slides.html" target="_blank" rel="noopener"><span class="part">47장 · 2시간 실습</span><span class="title">슬라이드 입장 →</span><span class="desc">← → 이동 · G 전체보기 · P PDF 저장</span></a><a class="entry" href="#materials"><span class="part">수업 전 준비</span><span class="title">실습 자료 →</span><span class="desc">가상 문서와 익명 일정 요약 내려받기</span></a></div>
   </div></section>
 </main>
 
@@ -244,6 +244,18 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .3
         "text": "공유한 두 문서에서 돌봄사업 신청 서류와 보험금 청구 서류를 각각 찾아 표로 비교해줘. 서로 다른 목적의 서류임을 표시하고 원문 근거를 적어줘."
     },
     {
+        "title": "현재 탭 요약",
+        "text": "현재 탭의 핵심 내용을 쉬운 말 다섯 줄로 요약해줘. 날짜·대상·준비물은 원문 표현과 함께 적어줘."
+    },
+    {
+        "title": "여러 탭 비교",
+        "text": "공유한 탭을 대상·기간·비용·준비물 기준으로 비교표로 정리해줘. 각 내용이 나온 탭 제목을 함께 적고 없는 정보는 없음으로 표시해줘."
+    },
+    {
+        "title": "PDF 질문",
+        "text": "현재 PDF에서 신청 마감일·대상·필수 서류를 찾아 표로 정리해줘. 찾지 못한 항목은 추측하지 말고 확인 불가로 표시해줘."
+    },
+    {
         "title": "영수증 질문",
         "text": "첨부한 연습용 영수증에서 날짜·가맹점·금액을 표로 정리해줘. 지출 항목을 분류하고 합계를 계산해줘. 읽기 어려운 부분은 추측하지 말고 표시해줘."
     },
@@ -256,12 +268,20 @@ footer nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .3
         "text": "이 약관에서 꼭 알아야 할 내용 다섯 가지와 불리할 수 있는 조건을 정리해줘. 임플란트 보장 여부와 보험금 청구 기한·서류를 해당 조항을 인용해 알려줘."
     },
     {
+        "title": "근거 있는 질문",
+        "text": "선택한 소스만 근거로 핵심 내용을 다섯 가지로 정리해줘. 각 항목에 인용 번호를 붙이고 자료에 없는 내용은 없다고 표시해줘."
+    },
+    {
         "title": "여행 이미지 질문",
         "text": "첨부한 산동유람 일정에서 2~3일차의 장소와 분위기를 참고해 가로형 여행 이미지를 만들어줘. 곡부 공자 유적과 청도 바다의 늦가을 풍경, 친구들의 여유로운 여행. 참가자 이름·연락처·글자 없음."
     },
     {
         "title": "동영상 생성 질문",
         "text": "이 이미지의 장소와 구도를 유지하며 짧은 여행 영상으로 만들어줘. 카메라가 천천히 앞으로 움직이고 나뭇잎과 바람만 자연스럽게 움직이게 해줘. 늦가을의 따뜻한 빛, 얼굴 변경·새 인물·글자 추가 없음."
+    },
+    {
+        "title": "자료 재구성",
+        "text": "추가한 자료만 근거로 가족에게 설명할 한 쪽 안내문을 만들어줘. 대상·기간·준비물·주의사항을 나누고 각 항목에 인용 번호를 붙여줘."
     }
 ];
 
