@@ -1,550 +1,326 @@
 <!DOCTYPE html>
+<!--
+  랜딩 스타터 · 두온교육 「강의 사이트 제작 노하우」 참가자 키트
+  먼저 바꿀 것: [ ] 자리 전부 · OG 메타 4줄 · 아래 PROMPTS 배열
+  외부 파일 없음 · 정적 호스팅(Vercel · GitHub Pages)에서 그대로 동작
+-->
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="한국AI연구소 - 행정에 AI를 입히다. 나병인 소장의 AI 교육 및 선거 전략 컨설팅">
-    <meta name="keywords" content="AI 리터러시, AI 교육, 선거 전략, AI 컨설팅, 나병인 교수">
-    <meta name="naver-site-verification" content="2c7a109dc5c00bb798beda3b51f7694a04a7e7db" />
-    <title>한국AI연구소 | 행정에 AI를 입히다</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
-            line-height: 1.8;
-            color: #1F2937;
-            background: #FFFFFF;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem 2rem;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #4F46E5;
-        }
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-link {
-            text-decoration: none;
-            color: #1F2937;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-link:hover {
-            color: #4F46E5;
-        }
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 6rem 2rem 2rem;
-            color: white;
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            margin: 0.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #4F46E5;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: #6B7280;
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        }
-        .card h3 {
-            color: #4F46E5;
-            font-size: 1.5rem;
-            margin: 1.5rem 0 1rem;
-        }
-        .card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .card li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #E5E7EB;
-        }
-        .card li:last-child {
-            border-bottom: none;
-        }
-        .feature {
-            text-align: center;
-            padding: 2.5rem;
-            background: #F9FAFB;
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        .feature:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            transform: scale(1.05);
-        }
-        .feature h3 {
-            margin: 1rem 0;
-            font-size: 1.3rem;
-        }
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .stats {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 4rem 2rem;
-            border-radius: 30px;
-            color: white;
-            margin-top: 3rem;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-        }
-        .stat-label {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #1F2937;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #E5E7EB;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4F46E5;
-        }
-        .btn-submit {
-            width: 100%;
-            padding: 1.2rem;
-            background: #4F46E5;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .btn-submit:hover {
-            background: #4338CA;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
-        }
-        footer {
-            background: #1F2937;
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-        footer h3 {
-            margin-bottom: 1rem;
-        }
-        footer p {
-            opacity: 0.8;
-            margin: 0.5rem 0;
-        }
-        .consulting-section {
-            background: #F9FAFB;
-        }
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #4F46E5;
-        }
-        .service-card h4 {
-            color: #4F46E5;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>생활 속의 AI · 50대 후반 일반인 실습 강의</title>
+<meta name="description" content="50대 후반 일반인을 위한 생활 속의 AI · 2026년 9월 30일 · 나병인 교수">
+<meta name="theme-color" content="#111111">
+<!-- 공유 미리보기 · 배포 시 og:url과 og:image를 공개 주소로 설정 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="생활 속의 AI · 2시간 실습 강의">
+<meta property="og:description" content="50대 후반 일반인 대상 · 2026년 9월 30일 · 크롬 AI, 생활 문서, 여행 이미지와 영상 실습 · 나병인 교수">
+<meta property="og:url" content="">
+<meta property="og:image" content="og.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#F4F4F3; --paper:#FFFFFF; --ink:#111111; --sub:#555555; --soft:#F7F7F6;
+  --line:rgba(0,0,0,.14); --accent:#F6C744; --accent-ink:#111111;
+  --shadow:0 8px 24px rgba(0,0,0,.10), 0 2px 5px rgba(0,0,0,.06);
+  --shadow-hover:0 14px 32px rgba(0,0,0,.16), 0 3px 8px rgba(0,0,0,.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);overflow-x:hidden;font-family:'Pretendard Variable',Pretendard,-apple-system,'Malgun Gothic',sans-serif;
+  line-height:1.65;-webkit-text-size-adjust:100%;word-break:keep-all;overflow-wrap:anywhere}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.01em;overflow-wrap:anywhere}
+p,li{text-wrap:pretty}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bg);padding:.6rem 1rem;z-index:10}
+.skip:focus{left:1rem}
+
+.wrap{max-width:64rem;margin:0 auto;padding:0 1.2rem;min-width:0}
+section{padding:2.6rem 0}
+.sec-kicker{font-size:.78rem;font-weight:800;letter-spacing:.18em;color:var(--sub);margin-bottom:.4rem}
+h2{font-size:clamp(1.35rem,3.6vw,1.7rem);font-weight:900;margin-bottom:1rem}
+
+/* 히어로: 머스타드 옐로 */
+.hero{background:var(--accent);color:var(--accent-ink);text-align:center;padding:4.2rem 0 3.6rem}
+.hero .kicker{font-size:.85rem;font-weight:800;letter-spacing:.3em}
+.hero h1{font-size:clamp(2rem,7vw,3.2rem);font-weight:900;line-height:1.25;margin-top:.8rem}
+.hero h1::after{content:'';display:block;width:3.4rem;height:3px;background:#111111;margin:1.2rem auto 0}
+.hero .lead{font-size:1.05rem;font-weight:600;color:#3A3000;margin-top:1rem}
+.meta{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
+.meta span{border:1.5px solid #111111;border-radius:99px;padding:.35rem 1rem;font-size:.9rem;font-weight:700}
+.cta{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:0 1.4rem;border-radius:999px;
+  font:inherit;font-size:1rem;font-weight:800;text-decoration:none;cursor:pointer;border:2px solid #111111}
+.btn.primary{background:#111111;color:#FFFFFF}
+.btn.primary:hover{background:#333333}
+.btn.ghost{background:transparent;color:#111111}
+.btn.ghost:hover{background:rgba(255,255,255,.45)}
+.hero :focus-visible{outline-color:#111111}
+
+/* 표 */
+table.tbl{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;background:var(--paper);box-shadow:var(--shadow);border-radius:.8rem;overflow:hidden}
+table.tbl th, table.tbl td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.tbl tbody tr:last-child th, table.tbl tbody tr:last-child td{border-bottom:none}
+table.tbl thead th{background:#111111;color:#FFFFFF;font-weight:800}
+table.tbl tbody th{width:min(7.5rem,32%);color:var(--sub);font-weight:700;white-space:nowrap}
+
+/* 커리큘럼 카드 */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media (max-width:720px){.cards{grid-template-columns:1fr}}
+.card{min-width:0;background:var(--paper);border-radius:.8rem;box-shadow:var(--shadow);padding:1.2rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.35rem}
+.card .n{font-size:.75rem;font-weight:800;letter-spacing:.14em;color:var(--sub)}
+.card .t{font-size:1.1rem;font-weight:900}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:.2rem;font-size:.92rem;color:var(--sub)}
+.card li::before{content:'· '}
+
+/* 강사 소개 */
+.profile{display:flex;gap:1.2rem;align-items:flex-start;background:var(--paper);border-radius:.8rem;box-shadow:var(--shadow);padding:1.3rem}
+.avatar{flex:0 0 auto;width:4.4rem;height:4.4rem;border-radius:50%;background:var(--accent);color:#111111;display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;font-weight:900}
+.profile .name{font-size:1.15rem;font-weight:900}
+.profile .role{font-size:.9rem;color:var(--sub);font-weight:600}
+.profile ul{margin-top:.5rem;padding-left:1.1rem;font-size:.93rem;display:flex;flex-direction:column;gap:.15rem}
+@media (max-width:520px){.profile{flex-direction:column}}
+
+.bio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
+.bio-grid .card{min-width:0}
+.bio-grid .card ul{padding-left:1.1rem;list-style:disc;display:block}
+.bio-grid .card li{margin:.35rem 0}
+.bio-grid .card li::before{content:none}
+@media (max-width:640px){.bio-grid{grid-template-columns:1fr}}
+
+/* 입장 카드 */
+.entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+@media (max-width:640px){.entry-grid{grid-template-columns:1fr}}
+.entry{min-width:0;background:var(--paper);border-radius:.8rem;box-shadow:var(--shadow);padding:1.1rem 1.2rem;text-decoration:none;min-height:44px;
+  display:flex;flex-direction:column;gap:.25rem;transition:box-shadow .15s,transform .15s}
+.entry:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.entry .part{font-size:.75rem;font-weight:800;letter-spacing:.14em;color:var(--sub)}
+.entry .title{font-size:1.05rem;font-weight:900}
+.entry .desc{font-size:.88rem;color:var(--sub)}
+
+/* 프롬프트 목록 */
+.phead{display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.4rem}
+.phead h2{margin-bottom:0}
+.pnote{font-size:.9rem;color:var(--sub);margin-bottom:.9rem}
+.plist{list-style:none;display:flex;flex-direction:column;gap:.8rem;counter-reset:p}
+.pitem{background:var(--paper);border-radius:.8rem;box-shadow:var(--shadow);padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.5rem;counter-increment:p}
+.pitem .pt{font-size:1rem;font-weight:900}
+.pitem .pt::before{content:counter(p) ". "}
+.pitem .px{font-size:.92rem;line-height:1.65;white-space:pre-wrap;background:var(--soft);border-left:4px solid var(--ink);border-radius:.4rem;padding:.7rem .9rem}
+.pbtn{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 1.1rem;border-radius:999px;
+  border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);font:inherit;font-size:.9rem;font-weight:800;cursor:pointer}
+.pbtn:hover{opacity:.85}
+.pbtn.ghost{background:transparent;color:var(--ink)}
+.pstatus{font-size:.9rem;font-weight:700;min-height:1.4em;text-align:center;margin-top:.6rem}
+
+.resource-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;list-style:none}
+.resource-list a{display:block;min-width:0;background:var(--paper);border-radius:.8rem;box-shadow:var(--shadow);padding:1rem 1.2rem;text-decoration:none;font-weight:800;min-height:56px}
+.resource-list small{display:block;color:var(--sub);font-weight:600}
+@media (max-width:640px){.resource-list{grid-template-columns:1fr}.hero{padding:3.4rem 0 3rem}.wrap{padding:0 1rem}table.tbl th,table.tbl td{padding:.65rem .7rem}}
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.4rem;font-size:.85rem;color:var(--sub);text-align:center;line-height:1.8}
+footer nav{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem}
+footer nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .3rem;font-weight:700}
+
+@media (prefers-reduced-motion:reduce){ .entry{transition:none} .entry:hover{transform:none} }
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">🧠 한국AI연구소</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">홈</a></li>
-                <li><a href="#about" class="nav-link">소장소개</a></li>
-                <li><a href="#education" class="nav-link">교육프로그램</a></li>
-                <li><a href="#consulting" class="nav-link">선거전략</a></li>
-                <li><a href="#contact" class="nav-link">문의하기</a></li>
-            </ul>
-        </div>
-    </nav>
+<a class="skip" href="#main">본문 바로가기</a>
 
-    <section id="home" class="hero">
-        <div>
-            <h1>🧠 행정에 AI를 입히다</h1>
-            <p>한국AI연구소</p>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                소장: 나병인 박사<br>
-                가천대학교 겸임교수 | 중앙경찰학교 외래강사<br>
-                젠스파크 AI연구회 부회장 | 한국 AI 리터러시 강사 협회 이사
-            </p>
-            <a href="#education" class="btn">🎓 교육 프로그램</a>
-            <a href="#consulting" class="btn">📈 선거 컨설팅</a>
-        </div>
-    </section>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">한국AI연구소 · 생활 실습 강의</div>
+    <h1>생활 속의 AI</h1>
+    <p class="lead">검색부터 문서 읽기, 여행 이미지와 동영상까지 · 2시간 실습</p>
+    <div class="meta"><span>대상 · 50대 후반 일반인</span><span>2026년 9월 30일</span><span>강사 · 나병인 교수</span></div>
+    <div class="cta"><a class="btn primary" href="slides.html" target="_blank" rel="noopener">슬라이드 입장 →</a><a class="btn ghost" href="#curriculum">강의 순서 ↓</a></div>
+  </div>
+</header>
 
-    <section id="about" class="section">
-        <h2 class="section-title">소장 소개</h2>
-        <p class="section-subtitle">AI 시대를 이끄는 교육자이자 전략가</p>
-        
-        <div class="card" style="text-align: center; margin-bottom: 3rem;">
-            <div class="icon">👨‍💼</div>
-            <h3>나병인 소장</h3>
-            <p style="color: #4F46E5; font-size: 1.1rem; margin-bottom: 1.5rem;">한국AI연구소 소장</p>
-            <p style="line-height: 1.8;">
-                행정학 박사이자 AI 리터러시 교육의 선구자로서, 가천대학교 겸임교수, 중앙경찰학교 외래강사로 활동하고 있습니다. 
-                젠스파크 AI연구회 부회장과 한국 AI 리터러시 강사 협회 이사를 역임하며, AI 기술을 행정과 정치 분야에 접목시키는 혁신적인 교육을 선도하고 있습니다.
-            </p>
-        </div>
+<main id="main">
+  <section id="info" aria-labelledby="infoTitle"><div class="wrap">
+    <div class="sec-kicker">대상 · 일정</div><h2 id="infoTitle">수업 안내</h2>
+    <table class="tbl"><tbody>
+      <tr><th scope="row">대상</th><td>50대 후반 일반인 · AI 첫 실습부터 생활 활용까지</td></tr>
+      <tr><th scope="row">일시</th><td>2026년 9월 30일(수) · 2시간</td></tr>
+      <tr><th scope="row">준비물</th><td>노트북 · 크롬 · 구글 계정 · 실습 자료</td></tr>
+      <tr><th scope="row">결과물</th><td>공고 요약 · 생활 문서 질문 · 여행 이미지 · 짧은 영상 또는 장면표</td></tr>
+    </tbody></table>
+  </div></section>
 
-        <div class="grid">
-            <div class="card">
-                <div class="icon">🎓</div>
-                <h3>학력</h3>
-                <ul>
-                    <li><strong>가천대학교대학원</strong><br>행정학 박사</li>
-                    <li><strong>연세대학교 행정대학원</strong><br>국제관계학 석사</li>
-                    <li><strong>성균관대학교</strong><br>학사</li>
-                </ul>
-            </div>
+  <section id="curriculum" aria-labelledby="curTitle"><div class="wrap">
+    <div class="sec-kicker">커리큘럼 · 총 120분</div><h2 id="curTitle">6단계 실습</h2>
+    <div class="cards">
+      <article class="card"><div class="n">1부 · 30분</div><h3 class="t">제미나이 인 크롬</h3><ul><li>공고 요약 · 자격 확인 · 신청 준비</li><li>두 탭의 서류 비교</li></ul></article>
+      <article class="card"><div class="n">2부 · 15분</div><h3 class="t">카드 영수증</h3><ul><li>결제 내역 추출과 지출 분류</li><li>날짜·금액 원본 대조</li></ul></article>
+      <article class="card"><div class="n">3부 · 25분</div><h3 class="t">건강검진·보험약관</h3><ul><li>가상 PDF로 낯선 항목 읽기</li><li>원문 근거와 질문 목록 확인</li></ul></article>
+      <article class="card"><div class="n">휴식 · 10분</div><h3 class="t">짧은 쉼</h3><ul><li>앞 실습 결과 정리</li><li>여행 일정 요약 준비</li></ul></article>
+      <article class="card"><div class="n">4부 · 20분</div><h3 class="t">여행 이미지</h3><ul><li>산동유람 일정에서 장면 선정</li><li>이미지 생성·오류 확인·저장</li></ul></article>
+      <article class="card"><div class="n">5부 · 20분</div><h3 class="t">짧은 동영상</h3><ul><li>생성한 이미지로 영상 시도</li><li>재생·수정 또는 장면표 완성</li></ul></article>
+    </div>
+  </div></section>
 
-            <div class="card">
-                <div class="icon">💼</div>
-                <h3>주요 경력</h3>
-                <ul>
-                    <li>가천대학교 겸임교수</li>
-                    <li>중앙경찰학교 외래강사</li>
-                    <li>AI 선거전략연구소 위원</li>
-                    <li>한국보훈복지의료공단 사무국장</li>
-                    <li>제15대 대통령선거 유세부장</li>
-                </ul>
-            </div>
+  <section id="instructor" aria-labelledby="insTitle"><div class="wrap">
+    <div class="sec-kicker">강사 소개</div><h2 id="insTitle">나병인 교수</h2>
+    <div class="profile"><div class="avatar" aria-hidden="true">나</div><div>
+      <div class="name">나병인</div>
+      <div class="role">행정학박사 · 가천대학교 겸임교수 · 한국AI연구소 소장</div>
+      <p>조직과 사람을 가르친 30년의 경험, 생성형 AI를 일상과 현장에 연결하는 실습 강의</p>
+    </div></div>
+    <div class="bio-grid">
+      <article class="card"><div class="n">학문 · 교육</div><h3 class="t">행정학과 조직 연구</h3><ul>
+        <li>행정학박사 · 가천대학교 겸임교수</li>
+        <li>조직행동·리더십 교육 약 30년</li>
+        <li>박사 연구: 보건의료 위기와 혈액투석 환자의 건강결과</li>
+      </ul></article>
+      <article class="card"><div class="n">현재 역할</div><h3 class="t">AI 교육 현장</h3><ul>
+        <li>한국AI연구소 소장</li>
+        <li>한국AI강사협회 이사</li>
+        <li>경찰인재개발원 외래 AI 강사</li>
+        <li>대학·공공기관·교육 현장 실습 강의</li>
+      </ul></article>
+      <article class="card"><div class="n">전문 분야 · 집필</div><h3 class="t">AI 활용과 AX 전환</h3><ul>
+        <li>생성형 AI 활용 · AI 리터러시 · 조직의 AX 전환</li>
+        <li>AI 에이전트·지식관리·피지컬 AI 연구와 강의</li>
+        <li>AI 리터러시·젠스파크 교재와 칼럼 집필</li>
+        <li>Obsidian·NotebookLM 활용 실습 설계</li>
+      </ul></article>
+      <article class="card"><div class="n">수상 · 삶의 이야기</div><h3 class="t">아직 달린다</h3><ul>
+        <li>2026년 월간 문학세계 신인문학상 · 수필 「아직 달린다」</li>
+        <li>마라톤 27년 · 풀코스 2회 · 하프코스 약 10회</li>
+        <li>배움과 실천을 이어가는 평생 학습</li>
+      </ul></article>
+    </div>
+  </div></section>
 
-            <div class="card">
-                <div class="icon">🏆</div>
-                <h3>현직 및 활동</h3>
-                <ul>
-                    <li>젠스파크 AI연구회 부회장</li>
-                    <li>한국 AI 리터러시 강사 협회 이사</li>
-                    <li>한국AI NFT호남지회 지회장</li>
-                    <li>더불어민주당 국가보훈특별위원회 부위원장</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <section id="materials" aria-labelledby="materialTitle"><div class="wrap">
+    <div class="sec-kicker">실습 자료</div><h2 id="materialTitle">자료 내려받기</h2>
+    <p class="pnote">건강검진·보험약관·돌봄 공고: 교육용 가상 자료 · 실제 신청·진단·보장 판단 자료 아님</p>
+    <ul class="resource-list">
+      <li><a href="assets/02-health-practice6.pdf" download>② 건강검진 결과지 <small>NotebookLM · 항목 이해와 원문 확인</small></a></li>
+      <li><a href="assets/03-insurance-practice6.pdf" download>③ 보험약관 발췌본 <small>NotebookLM · 면책사유와 청구 서류</small></a></li>
+      <li><a href="assets/04-welfare-practice7.pdf" download>④ 어르신 돌봄 공고 <small>크롬 · 자격·서류·두 탭 비교</small></a></li>
+      <li><a href="assets/travel-practice.txt" download>① 산동유람 일정 요약 <small>이미지·영상 실습 · 참가자 이름 제외</small></a></li>
+      <li><a href="assets/card-receipt-practice.txt" download>카드 영수증 연습 자료 <small>가상 결제 내역 · 지출 분류</small></a></li>
+    </ul>
+  </div></section>
 
-    <section id="education" class="section">
-        <h2 class="section-title">AI 리터러시 교육 프로그램</h2>
-        <p class="section-subtitle">체계적이고 실용적인 AI 교육으로 미래 역량을 키웁니다</p>
+  <section id="prompts" aria-labelledby="pTitle"><div class="wrap">
+    <div class="phead"><h2 id="pTitle">실습 프롬프트</h2><button type="button" class="pbtn ghost" id="dlTxt">전체 받기 (TXT)</button></div>
+    <p class="pnote">질문 복사 → 도구에 붙여넣기 → 원문과 결과 대조</p>
+    <ol class="plist" id="plist"></ol><p class="pstatus" id="pStatus" role="status" aria-live="polite"></p>
+  </div></section>
 
-        <div class="grid">
-            <div class="feature">
-                <div class="icon">📖</div>
-                <h3>기초 AI 리터러시</h3>
-                <p>AI의 기본 개념부터 실생활 활용까지, 누구나 이해할 수 있는 쉬운 교육</p>
-            </div>
+  <section id="enter" aria-labelledby="enterTitle"><div class="wrap">
+    <div class="sec-kicker">웹슬라이드</div><h2 id="enterTitle">강의 입장</h2>
+    <div class="entry-grid"><a class="entry" href="slides.html" target="_blank" rel="noopener"><span class="part">33장 · 2시간 실습</span><span class="title">슬라이드 입장 →</span><span class="desc">← → 이동 · G 전체보기 · P PDF 저장</span></a><a class="entry" href="#materials"><span class="part">수업 전 준비</span><span class="title">실습 자료 →</span><span class="desc">가상 문서와 익명 일정 요약 내려받기</span></a></div>
+  </div></section>
+</main>
 
-            <div class="feature" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                <div class="icon">🚀</div>
-                <h3>행정 AI 전문가 과정</h3>
-                <p>행정 분야에 AI를 접목하는 실무 중심 전문 교육 과정</p>
-            </div>
+<footer><div class="wrap"><nav aria-label="바닥글 링크"><a href="slides.html" target="_blank" rel="noopener">슬라이드</a><a href="#materials">실습 자료</a><a href="#prompts">프롬프트</a></nav><p>생활 속의 AI · 나병인 교수</p><p>ⓒ 2026 한국AI연구소</p></div></footer>
 
-            <div class="feature">
-                <div class="icon">👥</div>
-                <h3>조직 맞춤형 교육</h3>
-                <p>기관 및 조직의 특성에 맞춘 커스터마이징 AI 교육 프로그램</p>
-            </div>
-        </div>
-    </section>
+<script>
+(function(){
+  /* 프롬프트 목록 · 슬라이드 프롬프트 카드와 같은 내용으로 유지 */
+  var PROMPTS = [
+    {
+        "title": "공고문 요약",
+        "text": "현재 공유한 돌봄 공고를 어려운 말 없이 다섯 줄로 요약해줘. 신청 기간과 신청 장소를 원문 표현대로 적어줘."
+    },
+    {
+        "title": "신청 자격 확인",
+        "text": "이 공고에서 만 60세이고 소득이 없는 사람의 신청 가능 여부를 알려줘. 연령의 예외 조건과 거주 조건을 구분하고 근거가 있는 항목을 표시해줘."
+    },
+    {
+        "title": "신청 준비 목록",
+        "text": "이 공고에 신청하려면 무엇을 언제 어디에 제출해야 해? 필수 서류와 해당자만 내는 서류를 나눠 순서대로 정리해줘."
+    },
+    {
+        "title": "두 탭 비교",
+        "text": "공유한 두 문서에서 돌봄사업 신청 서류와 보험금 청구 서류를 각각 찾아 표로 비교해줘. 서로 다른 목적의 서류임을 표시하고 원문 근거를 적어줘."
+    },
+    {
+        "title": "영수증 질문",
+        "text": "첨부한 연습용 영수증에서 날짜·가맹점·금액을 표로 정리해줘. 지출 항목을 분류하고 합계를 계산해줘. 읽기 어려운 부분은 추측하지 말고 표시해줘."
+    },
+    {
+        "title": "검진 질문",
+        "text": "이 결과지에서 기준을 벗어난 항목만 쉬운 말로 정리해줘. 2차 검진 시기와 준비물도 원문 근거를 붙여 알려줘. 수치만으로 진단하지 말고 의료진에게 물을 질문 세 개를 제안해줘."
+    },
+    {
+        "title": "보험약관 질문",
+        "text": "이 약관에서 꼭 알아야 할 내용 다섯 가지와 불리할 수 있는 조건을 정리해줘. 임플란트 보장 여부와 보험금 청구 기한·서류를 해당 조항을 인용해 알려줘."
+    },
+    {
+        "title": "여행 이미지 질문",
+        "text": "첨부한 산동유람 일정에서 2~3일차의 장소와 분위기를 참고해 가로형 여행 이미지를 만들어줘. 곡부 공자 유적과 청도 바다의 늦가을 풍경, 친구들의 여유로운 여행. 참가자 이름·연락처·글자 없음."
+    },
+    {
+        "title": "동영상 생성 질문",
+        "text": "이 이미지의 장소와 구도를 유지하며 짧은 여행 영상으로 만들어줘. 카메라가 천천히 앞으로 움직이고 나뭇잎과 바람만 자연스럽게 움직이게 해줘. 늦가을의 따뜻한 빛, 얼굴 변경·새 인물·글자 추가 없음."
+    }
+];
 
-    <section id="consulting" class="section consulting-section">
-        <h2 class="section-title">🗳️ AI 선거 전략 컨설팅</h2>
-        <p class="section-subtitle">6.3 지방선거, AI로 승리하세요</p>
+  var list = document.getElementById('plist');
+  var status = document.getElementById('pStatus');
+  function say(m){ status.textContent = m; clearTimeout(say.t); say.t = setTimeout(function(){ status.textContent = ''; }, 2000); }
 
-        <div class="card" style="margin-bottom: 2rem; text-align: center;">
-            <div class="icon">💡</div>
-            <h3>왜 AI 선거 전략인가?</h3>
-            <p style="line-height: 1.8;">
-                현대 선거는 데이터와 기술의 싸움입니다. AI를 활용한 유권자 분석, 여론 예측, 맞춤형 메시지 전달로 
-                경쟁자보다 한 발 앞서 나갈 수 있습니다. AI 선거전략연구소 위원이자 'AI활용 선거대책' 공저자인 
-                나병인 소장이 여러분의 승리를 위한 전략을 제시합니다.
-            </p>
-        </div>
+  /* 복사: clipboard API가 700ms 안에 끝나지 않으면 textarea 폴백 · 완료 표시는 한 번만 */
+  function copy(text, btn){
+    var settled = false;
+    function done(){
+      if (settled) return;
+      settled = true;
+      btn.textContent = '복사됨 ✓';
+      say('복사 완료');
+      setTimeout(function(){ btn.textContent = '복사'; }, 1500);
+    }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) { /* 구형 브라우저 · 무시 */ }
+      ta.remove(); done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      setTimeout(function(){ if (!settled) fallback(); }, 700);
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else {
+      fallback();
+    }
+  }
 
-        <div class="grid">
-            <div class="service-card">
-                <div class="icon">📊</div>
-                <h4>01. AI 데이터 분석</h4>
-                <p>유권자 데이터 분석 및 여론 동향 파악으로 정확한 전략 수립</p>
-            </div>
+  function download(name, text){
+    var blob = new Blob(['﻿' + text], { type: 'text/plain;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+    say(name + ' 받기 완료');
+  }
 
-            <div class="service-card">
-                <div class="icon">🎯</div>
-                <h4>02. 맞춤형 전략 수립</h4>
-                <p>후보자의 강점을 극대화하는 AI 기반 선거 전략 설계</p>
-            </div>
+  PROMPTS.forEach(function(p){
+    var li = document.createElement('li'); li.className = 'pitem';
+    var t = document.createElement('div'); t.className = 'pt'; t.textContent = p.title;
+    var x = document.createElement('div'); x.className = 'px'; x.textContent = p.text;
+    var c = document.createElement('button'); c.type = 'button'; c.className = 'pbtn'; c.textContent = '복사';
+    c.setAttribute('aria-label', p.title + ' 프롬프트 복사');
+    c.addEventListener('click', function(){ copy(p.text, c); });
+    li.appendChild(t); li.appendChild(x); li.appendChild(c);
+    list.appendChild(li);
+  });
 
-            <div class="service-card">
-                <div class="icon">✨</div>
-                <h4>03. AI 콘텐츠 제작</h4>
-                <p>AI를 활용한 효과적인 선거 홍보물 및 콘텐츠 제작</p>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">⚙️</div>
-                <h4>04. 선거캠프 AI 교육</h4>
-                <p>선거캠프 구성원 대상 AI 도구 활용 교육</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title">주요 활동 및 저서</h2>
-        <p class="section-subtitle">AI 리터러시 교육과 연구의 발자취</p>
-
-        <div class="grid">
-            <div class="card">
-                <div class="icon">📚</div>
-                <h3>저서</h3>
-                <ul>
-                    <li><strong>"AI 에이전트 시대 젠스파크 300배 활용법"</strong> (공저)</li>
-                    <li><strong>"누구나 배우는 AI 리터러시"</strong> (공저)</li>
-                    <li><strong>"AI활용 선거대책"</strong> (공저, eBook)</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="icon">🔬</div>
-                <h3>연구 분야</h3>
-                <ul>
-                    <li>AI와 국가 행정</li>
-                    <li>중국의 개혁개방</li>
-                    <li>공공병원 리더십</li>
-                    <li>AI 선거 전략</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="icon">👨‍🏫</div>
-                <h3>강의 및 교육</h3>
-                <ul>
-                    <li>가천대학교 AI 리터러시 강의</li>
-                    <li>중앙경찰학교 AI 교육</li>
-                    <li>공공기관 AI 특강</li>
-                    <li>정치인 대상 AI 선거전략 교육</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stats-grid">
-                <div>
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">교육 수료자</div>
-                </div>
-                <div>
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">기관 협력</div>
-                </div>
-                <div>
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">저서 출판</div>
-                </div>
-                <div>
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">년 경력</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2 class="section-title">문의하기</h2>
-        <p class="section-subtitle">한국AI연구소와 함께 미래를 준비하세요</p>
-
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-                <label for="name">이름 *</label>
-                <input type="text" id="name" required placeholder="이름을 입력하세요">
-            </div>
-
-            <div class="form-group">
-                <label for="email">이메일 *</label>
-                <input type="email" id="email" required placeholder="example@email.com">
-            </div>
-
-            <div class="form-group">
-                <label for="phone">연락처 *</label>
-                <input type="tel" id="phone" required placeholder="010-0000-0000">
-            </div>
-
-            <div class="form-group">
-                <label for="service">문의 유형 *</label>
-                <select id="service" required>
-                    <option value="">선택하세요</option>
-                    <option value="education">AI 리터러시 교육</option>
-                    <option value="consulting">선거 전략 컨설팅</option>
-                    <option value="custom">맞춤형 교육</option>
-                    <option value="other">기타 문의</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="message">문의 내용 *</label>
-                <textarea id="message" rows="5" required placeholder="문의하실 내용을 상세히 입력해주세요"></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit">✈️ 문의 보내기</button>
-        </form>
-
-        <div style="text-align: center; margin-top: 3rem;">
-            <p><strong>📧 이메일:</strong> contact@ailiteracy.edu</p>
-            <p><strong>🕐 운영시간:</strong> 평일 09:00 - 18:00</p>
-        </div>
-    </section>
-
-    <footer>
-        <h3>🧠 한국AI연구소</h3>
-        <p style="font-size: 1.2rem; margin: 1rem 0;">"행정에 AI를 입히다"</p>
-        <p>소장: 나병인 박사 (행정학 박사, AI 선거전략연구소 위원)</p>
-        <p style="margin-top: 2rem; font-size: 0.9rem;">© 2026 한국AI연구소. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert('문의가 접수되었습니다! 빠른 시일 내에 연락드리겠습니다.');
-            e.target.reset();
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
+  document.getElementById('dlTxt').addEventListener('click', function(){
+    var out = '생활 속의 AI 실습 프롬프트 ' + PROMPTS.length + '종\n[ ] 안을 내 내용으로 바꿔서 사용\n\n' + PROMPTS.map(function(p, i){
+      return '========================================\n' + (i + 1) + '. ' + p.title + '\n========================================\n' + p.text + '\n';
+    }).join('\n');
+    download('실습프롬프트_' + PROMPTS.length + '종.txt', out);
+  });
+})();
+</script>
 </body>
 </html>

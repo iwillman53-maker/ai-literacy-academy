@@ -1,0 +1,13 @@
+file '/workspace/scratch/e9da945ffc05/webslide-starter-kit/media/card_01.png'
+duration 5
+file '/workspace/scratch/e9da945ffc05/webslide-starter-kit/media/card_02.png'
+duration 5
+file '/workspace/scratch/e9da945ffc05/webslide-starter-kit/media/card_03.png'
+duration 5
+file '/workspace/scratch/e9da945ffc05/webslide-starter-kit/media/card_04.png'
+duration 5
+file '/workspace/scratch/e9da945ffc05/webslide-starter-kit/media/card_05.png'
+duration 5
+file '/workspace/scratch/e9da945ffc05/webslide-starter-kit/media/card_06.png'
+duration 5
+file '/workspace/scratch/e9da945ffc05/webslide-starter-kit/media/card_06.png'
