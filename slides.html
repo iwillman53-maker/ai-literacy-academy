@@ -385,7 +385,69 @@ table.tbl td:first-child{color:var(--sub)}
     <div class="kicker">동영상 실습 · 15분</div><h2>동영상 실습 준비</h2><ul class="bullets"><li>방금 만든 여행 이미지 한 장 선택</li><li>영상 생성 도구의 이미지→동영상 기능 열기</li><li>짧은 장면 한 개: 풍경·움직임·분위기 지정</li><li>계정의 영상 생성 가능 여부와 길이 확인</li></ul>
   </div>
 </section>
+<!-- 사진 6장 실습 자료 -->
+<section class="slide" aria-label="동영상 실습 사진 6장">
+  <div class="slide-content">
+    <div class="kicker">동영상 실습 · 사진 자료</div>
+    <h2>사진 6장 열기·저장</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      <a href="media/01-portrait.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
+        <img src="media/01-portrait.jpg" alt="인물 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+        <div>① 인물</div>
+      </a>
+      <a href="media/02-gate.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
+        <img src="media/02-gate.jpg" alt="성문 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+        <div>② 성문</div>
+      </a>
+      <a href="media/03-forest.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
+        <img src="media/03-forest.jpg" alt="숲길 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+        <div>③ 숲길</div>
+      </a>
+      <a href="media/04-friends.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
+        <img src="media/04-friends.jpg" alt="친구 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+        <div>④ 친구들</div>
+      </a>
+      <a href="media/05-rest.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
+        <img src="media/05-rest.jpg" alt="휴식 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+        <div>⑤ 휴식</div>
+      </a>
+      <a href="media/06-group.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
+        <img src="media/06-group.jpg" alt="단체 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
+        <div>⑥ 단체</div>
+      </a>
+    </div>
+    <p class="muted">사진을 누르면 크게 열립니다. 스마트폰에서는 사진을 길게 눌러 저장하세요.</p>
+  </div>
+</section>
 
+<!-- Astra 영상 프롬프트 -->
+<section class="slide" aria-label="Astra 영상 프롬프트">
+  <div class="slide-content">
+    <div class="kicker">동영상 실습 · 24~30초</div>
+    <h2>Astra 프롬프트 복사</h2>
+    <div class="prompt-card">
+      <div class="label">사진 6장으로 추억 영상 만들기
+        <button type="button" class="copy-btn" data-copy-target="astra-video-prompt" aria-label="프롬프트 복사">복사</button>
+      </div>
+      <blockquote id="astra-video-prompt">첨부한 사진 6장을 순서대로 사용하여 24~30초 분량의 추억 영상을 만들어 주세요. 전체 분위기는 따뜻하고 활기찬 동창 여행입니다. 사진 속 인물의 얼굴과 옷차림은 원본과 동일하게 유지하고, 과도한 얼굴 변형이나 새로운 인물 생성은 하지 마세요. 각 사진은 약 4초간 보여주고 부드러운 확대, 이동, 장면 전환을 적용해 주세요. 마지막 단체사진은 약 5초간 유지하고 ‘청춘은 계속된다’라는 문구로 마무리해 주세요. 화면 비율은 16:9, 잔잔하고 밝은 여행 영상 스타일로 제작해 주세요.</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Astra 영상 제작 순서 -->
+<section class="slide" aria-label="Astra 영상 제작 순서">
+  <div class="slide-content">
+    <div class="kicker">동영상 실습 · Astra</div>
+    <h2>사진 6장 → 24~30초 영상</h2>
+    <ul class="bullets">
+      <li>사진 6장을 ①~⑥ 순서대로 업로드</li>
+      <li>앞 슬라이드의 프롬프트를 복사해 붙여넣기</li>
+      <li>화면 비율은 16:9, 영상 길이는 24~30초로 지정</li>
+      <li>얼굴 변형 여부와 마지막 문구를 확인한 뒤 생성</li>
+    </ul>
+    <div class="kicker">완성 문구 · 청춘은 계속된다</div>
+  </div>
+</section>
 <!-- ===== 28. 영상 장면표 ===== -->
 <section class="slide" aria-label="28. 영상 장면표">
   <div class="slide-content">
