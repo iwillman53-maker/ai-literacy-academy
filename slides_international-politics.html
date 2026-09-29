@@ -148,7 +148,28 @@ html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
   function closeGrid(){grid.classList.remove('on')}
   var hush=$('hush'),hs=$('hs'),ht=null;
   function hushOff(){hush.classList.remove('on');clearInterval(ht);ht=null}
+  var actx=null;
+  function shh(){
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+      if(!actx)actx=new AC();
+      if(actx.state==='suspended')actx.resume();
+      var dur=1.5,sr=actx.sampleRate,buf=actx.createBuffer(1,Math.floor(sr*dur),sr),d=buf.getChannelData(0);
+      for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+      var src=actx.createBufferSource();src.buffer=buf;
+      var hp=actx.createBiquadFilter();hp.type='highpass';hp.frequency.value=2500;
+      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=5500;bp.Q.value=0.7;
+      var g=actx.createGain(),t=actx.currentTime;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(0.9,t+0.3);
+      g.gain.setValueAtTime(0.9,t+0.85);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      src.connect(hp);hp.connect(bp);bp.connect(g);g.connect(actx.destination);
+      src.start(t);
+    }catch(e){}
+  }
   function hushOn(){
+    shh();
     var n=7;hs.textContent=n;hush.classList.add('on');clearInterval(ht);
     ht=setInterval(function(){n--;if(n<=0){hs.textContent='끝';clearInterval(ht);ht=setTimeout(hushOff,900)}else{hs.textContent=n}},1000);
   }
