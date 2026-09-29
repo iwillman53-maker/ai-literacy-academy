@@ -248,6 +248,30 @@ table.tbl td:first-child{color:var(--pc);font-weight:800;background:var(--pc-sof
 @keyframes shhPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 @media (prefers-reduced-motion:reduce){#shh.open,#shh .emo{animation:none}}
 @media print{#shh{display:none!important}}
+
+/* 사다리타기 (L 키 · 🪜 버튼) */
+#ladder{position:fixed;inset:0;z-index:650;display:none;flex-direction:column;background:#FBF7F0;color:#2B2520;
+  font-family:'Pretendard Variable','Noto Sans KR','Noto Sans CJK KR','Malgun Gothic',sans-serif}
+#ladder.open{display:flex}
+#ladder .lhead{display:flex;align-items:center;gap:10px;padding:12px 18px;background:#2B2520;color:#FFF3D6;flex-wrap:wrap}
+#ladder .lhead strong{font-size:20px;margin-right:auto}
+#ladder .lhead button{min-height:44px;padding:0 16px;border-radius:999px;border:none;font:inherit;font-size:15px;font-weight:800;cursor:pointer}
+#ladder .lb-main{background:#F2B544;color:#2B2520}
+#ladder .lb-sub{background:#3E352E;color:#F6EFE4;border:1px solid #574B41!important}
+#ladder .lbody{flex:1;min-height:0;display:flex;flex-direction:column;padding:14px 3vw 18px}
+#ladder .row{display:grid;grid-template-columns:repeat(8,1fr);gap:1vw}
+#ladder input{width:100%;min-width:0;text-align:center;font:inherit;font-weight:800;font-size:clamp(13px,1.7vw,22px);padding:10px 4px;
+  border:3px solid var(--c,#2B2520);border-radius:14px;background:#fff;color:#2B2520}
+#ladder .who input{cursor:pointer}
+#ladder .who input:focus,#ladder .res input:focus{outline:3px solid #F2B544;outline-offset:2px}
+#ladder .res input{background:#FFF7E3}
+#ladder .res input{font-size:clamp(11px,1.35vw,19px);padding:10px 2px}
+#ladder .cell{position:relative;min-width:0}
+#ladder .cell.cover::after{content:'❓';position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(16px,2vw,26px);background:#EFE6D6;border:3px dashed #8A8076;border-radius:14px;pointer-events:none}
+#ladder .res input.hit{background:var(--c);color:#fff;transform:scale(1.06);transition:transform .2s}
+#ladder svg{flex:1;width:100%;min-height:0;display:block}
+#ladder .lnote{text-align:center;font-size:14px;color:#8A8076;margin-top:6px}
+@media print{#ladder{display:none!important}}
 </style>
 </head>
 <body>
@@ -561,7 +585,8 @@ table.tbl td:first-child{color:var(--pc);font-weight:800;background:var(--pc-sof
   <span id="counter" aria-live="polite">1 / 34</span>
   <button type="button" id="navNext" aria-label="다음 슬라이드">▶</button>
   <span class="grow"></span>
-  <span class="hint hide-sm">← → 이동 · G 전체보기 · S 쉿 · P PDF</span>
+  <span class="hint hide-sm">← → 이동 · G 전체보기 · S 쉿 · L 사다리 · P PDF</span>
+  <button type="button" id="ladderBtn" title="사다리타기 (L 키)" aria-label="사다리타기 열기">🪜 사다리</button>
   <button type="button" id="shhBtn" title="쉿! 집중 화면 (S 키)" aria-label="쉿 집중 화면 켜기">🤫 쉿</button>
   <button type="button" id="gridBtn" aria-haspopup="dialog" aria-controls="gridOverlay">▦ 전체 보기</button>
   <button type="button" id="printBtn" class="hide-sm">⎙ PDF 저장</button>
@@ -856,6 +881,160 @@ table.tbl td:first-child{color:var(--pc);font-weight:800;background:var(--pc-sof
     }
     if (isS) { e.preventDefault(); e.stopPropagation(); open(); }
   }, true);
+})();
+</script>
+<div id="ladder" role="dialog" aria-modal="true" aria-label="사다리타기">
+  <div class="lhead">
+    <strong>🪜 사다리타기</strong>
+    <button type="button" class="lb-main" id="ldShuffle">🔀 사다리 섞기</button>
+    <button type="button" class="lb-sub" id="ldAll">👀 전체 결과</button>
+    <button type="button" class="lb-sub" id="ldHide">🙈 결과 가리기</button>
+    <button type="button" class="lb-sub" id="ldClose">✕ 닫기 (Esc)</button>
+  </div>
+  <div class="lbody">
+    <div class="row who" id="ldWho"></div>
+    <svg id="ldSvg" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="row res" id="ldRes"></div>
+    <div class="lnote">위 이름 칸을 두 번 눌러 이름 바꾸기 · 한 번 누르면 출발 · 아래 결과 칸도 고칠 수 있어요</div>
+  </div>
+</div>
+<script>
+/* 사다리타기: L 키 또는 🪜 버튼 · 8명 · 결과는 가려 두었다가 출발하면 공개 */
+(function(){
+  var N = 8;
+  var NAMES = ['1번','2번','3번','4번','5번','6번','7번','8번'];
+  var RESULTS = ['☕ 커피 세 잔','☕ 커피 두 잔','🍦 아이스크림 3개','🍞 빵 3개','🍞 빵 5개','🙆 통과','🙆 통과','🙆 통과'];
+  var COLORS = ['#E4572E','#1C7C8C','#7457C4','#3C8A4E','#D9603F','#2F6DB5','#C9861A','#B03A7A'];
+  var W = 800, H = 400, LEVELS = 12;
+  var ov = document.getElementById('ladder'), svg = document.getElementById('ldSvg');
+  var whoRow = document.getElementById('ldWho'), resRow = document.getElementById('ldRes');
+  var rungs = [], hidden = true, last = null, ctx = null, busy = false;
+  var NS = 'http://www.w3.org/2000/svg';
+  function x(i){ return (i + .5) * W / N; }
+  function y(l){ return 18 + (l + .5) * (H - 36) / LEVELS; }
+  function el(tag, a){ var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  // 입력칸 만들기
+  var whoIn = [], resIn = [];
+  for (var i = 0; i < N; i++) {
+    var a = document.createElement('input'); a.value = NAMES[i]; a.readOnly = true; a.style.setProperty('--c', COLORS[i]);
+    a.setAttribute('aria-label', (i+1) + '번 출발 칸 (두 번 눌러 이름 수정)');
+    (function(k, inp){
+      inp.addEventListener('click', function(){ if (inp.readOnly) run(k); });
+      inp.addEventListener('dblclick', function(){ inp.readOnly = false; inp.select(); });
+      inp.addEventListener('blur', function(){ inp.readOnly = true; });
+      inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { inp.blur(); } });
+    })(i, a);
+    whoRow.appendChild(a); whoIn.push(a);
+    var r = document.createElement('input'); r.value = RESULTS[i]; r.setAttribute('aria-label', (i+1) + '번째 결과');
+    var cell = document.createElement('div'); cell.className = 'cell'; cell.appendChild(r);
+    resRow.appendChild(cell); resIn.push(r);
+  }
+  function shuffleResults(){
+    for (var i = RESULTS.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = RESULTS[i]; RESULTS[i] = RESULTS[j]; RESULTS[j] = t; }
+    resIn.forEach(function(r, i){ r.value = RESULTS[i]; });
+  }
+  function makeRungs(){
+    rungs = [];
+    for (var l = 0; l < LEVELS; l++) {
+      var row = [];
+      for (var c = 0; c < N - 1; c++) {
+        var prevHere = rungs[l - 1] && rungs[l - 1][c];
+        var ok = !row[c - 1] && !prevHere && Math.random() < 0.42;
+        row[c] = ok;
+      }
+      rungs.push(row);
+    }
+    // 모든 칸 사이에 최소 1개
+    for (var c = 0; c < N - 1; c++) {
+      var has = rungs.some(function(r){ return r[c]; });
+      if (!has) { for (var l = 0; l < LEVELS; l++) { if (!rungs[l][c-1] && !rungs[l][c+1]) { rungs[l][c] = true; break; } } }
+    }
+  }
+  function draw(){
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var g = el('g', {stroke:'#8A8076','stroke-width':5,'stroke-linecap':'round'});
+    for (var i = 0; i < N; i++) g.appendChild(el('line', {x1:x(i),y1:0,x2:x(i),y2:H}));
+    rungs.forEach(function(row, l){ row.forEach(function(on, c){ if (on) g.appendChild(el('line', {x1:x(c),y1:y(l),x2:x(c+1),y2:y(l)})); }); });
+    svg.appendChild(g);
+  }
+  function trace(start){
+    var c = start, pts = [[x(c), 0]];
+    for (var l = 0; l < LEVELS; l++) {
+      pts.push([x(c), y(l)]);
+      if (rungs[l][c]) { c = c + 1; pts.push([x(c), y(l)]); }
+      else if (c > 0 && rungs[l][c - 1]) { c = c - 1; pts.push([x(c), y(l)]); }
+    }
+    pts.push([x(c), H]);
+    return {pts: pts, end: c};
+  }
+  function setHidden(h){
+    hidden = h;
+    resIn.forEach(function(r){ r.parentNode.classList.toggle('cover', h && !r.classList.contains('hit')); });
+    document.getElementById('ldHide').textContent = h ? '🙈 결과 가림 중' : '🙈 결과 가리기';
+  }
+  function audio(){ try { ctx = ctx || new (window.AudioContext || window.webkitAudioContext)(); if (ctx.state === 'suspended') ctx.resume(); return ctx; } catch (e) { return null; } }
+  function drumroll(sec){
+    var a = audio(); if (!a) return;
+    var t0 = a.currentTime;
+    for (var t = 0; t < sec; t += 0.07) {
+      var len = Math.floor(a.sampleRate * 0.05), buf = a.createBuffer(1, len, a.sampleRate), d = buf.getChannelData(0);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / len);
+      var s = a.createBufferSource(); s.buffer = buf;
+      var f = a.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 900;
+      var g = a.createGain(); g.gain.value = 0.35 + 0.4 * (t / sec);
+      s.connect(f); f.connect(g); g.connect(a.destination); s.start(t0 + t);
+    }
+  }
+  function ding(){
+    var a = audio(); if (!a) return;
+    [880, 1318].forEach(function(fq, k){
+      var o = a.createOscillator(), g = a.createGain(), t = a.currentTime + k * 0.12;
+      o.type = 'sine'; o.frequency.value = fq;
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.4, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.8);
+      o.connect(g); g.connect(a.destination); o.start(t); o.stop(t + 0.85);
+    });
+  }
+  function run(start, instant){
+    if (busy && !instant) return;
+    var tr = trace(start), d = tr.pts.map(function(p, k){ return (k ? 'L' : 'M') + p[0] + ' ' + p[1]; }).join(' ');
+    var path = el('path', {d:d, fill:'none', stroke:COLORS[start], 'stroke-width':9, 'stroke-linecap':'round', 'stroke-linejoin':'round', opacity:.92});
+    svg.appendChild(path);
+    var res = resIn[tr.end];
+    function finish(){ res.style.setProperty('--c', COLORS[start]); res.classList.add('hit'); res.parentNode.classList.remove('cover'); }
+    if (instant) { finish(); return; }
+    busy = true;
+    var len = path.getTotalLength(); path.style.strokeDasharray = len; path.style.strokeDashoffset = len;
+    var dur = 2200, t0 = null; drumroll(dur / 1000);
+    function step(ts){
+      if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / dur);
+      path.style.strokeDashoffset = len * (1 - p);
+      if (p < 1) requestAnimationFrame(step); else { finish(); ding(); busy = false; }
+    }
+    requestAnimationFrame(step);
+  }
+  function reset(){
+    makeRungs(); shuffleResults(); draw();
+    resIn.forEach(function(r){ r.classList.remove('hit'); });
+    setHidden(true);
+  }
+  function open(){ last = document.activeElement; ov.classList.add('open'); document.getElementById('ldShuffle').focus(); }
+  function close(){ ov.classList.remove('open'); if (last && last.focus) last.focus(); }
+  document.getElementById('ladderBtn').addEventListener('click', function(e){ e.stopPropagation(); open(); });
+  document.getElementById('ldClose').addEventListener('click', close);
+  document.getElementById('ldShuffle').addEventListener('click', reset);
+  document.getElementById('ldAll').addEventListener('click', function(){ draw(); resIn.forEach(function(r){ r.classList.remove('hit'); }); for (var i = 0; i < N; i++) run(i, true); setHidden(false); });
+  document.getElementById('ldHide').addEventListener('click', function(){ setHidden(!hidden); });
+  document.addEventListener('keydown', function(e){
+    var t = e.target, inInput = t && t.closest && t.closest('input, textarea, select');
+    if (ov.classList.contains('open')) {
+      if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); if (inInput) t.blur(); else close(); return; }
+      if (!inInput) { e.stopPropagation(); if (/^Arrow|^Page| /.test(e.key)) e.preventDefault(); }
+      return;
+    }
+    if (inInput) return;
+    if ((e.key === 'l' || e.key === 'L' || e.key === 'ㅣ') && !e.ctrlKey && !e.metaKey && !e.altKey) { e.preventDefault(); e.stopPropagation(); open(); }
+  }, true);
+  reset();
 })();
 </script>
 </body></html>

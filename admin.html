@@ -2,7 +2,7 @@
 <!--
   관리자 제어판 목업 · 두온교육 「강의 사이트 제작 노하우」 참가자 키트
   - 서버 없음: 모든 상태를 이 브라우저 localStorage 한 칸(LS + 'admin')에만 저장
-  - slides.html 과 연결 안 됨 (슬라이드 저장 키 LS + 'slide' 와 일부러 분리)
+  - slides_v3.html 과 연결 안 됨 (슬라이드 저장 키 LS + 'slide' 와 일부러 분리)
   - 실제 연결: 각 카드의 「서버 연결 지점」 주석 위치에서 stats.php 호출로 교체 (심화 트랙)
   - 카드 순서 = 수업 중 손이 가는 순서 (진행 → 잠금·PDF → 타이머 → 후기 → 명단)
 -->
@@ -130,7 +130,7 @@ td.act{text-align:right;white-space:nowrap}
   <header class="top">
     <h1>관리자 제어판 <span class="demo-badge">목업 · 서버 없음</span></h1>
     <div class="row">
-      <a class="btn ghost" href="slides.html" target="_blank" rel="noopener">슬라이드 새 창</a>
+      <a class="btn ghost" href="slides_v3.html" target="_blank" rel="noopener">슬라이드 새 창</a>
       <a class="btn ghost" href="index.html" target="_blank" rel="noopener">랜딩 새 창</a>
       <button type="button" class="btn ghost" id="resetDemo">데모 초기화</button>
       <button type="button" class="btn ghost" id="logout">나가기</button>
@@ -151,7 +151,7 @@ td.act{text-align:right;white-space:nowrap}
         <button type="button" class="btn" id="nextBtn">다음 ▶</button>
       </div>
       <div class="jump" id="jump" role="group" aria-label="번호로 이동"></div>
-      <p class="note">점선 번호 = 휴식 슬라이드 · TITLES 배열은 slides.html 의 aria-label 과 같은 순서로 유지</p>
+      <p class="note">점선 번호 = 휴식 슬라이드 · TITLES 배열은 slides_v3.html 의 aria-label 과 같은 순서로 유지</p>
     </section>
 
     <!-- ② 정책 스위치 -->
@@ -225,7 +225,7 @@ td.act{text-align:right;white-space:nowrap}
 
 <script>
 (function(){
-  /* ▼ slides.html 과 같은 접두사로 변경 (예: 'ai0927_') */
+  /* ▼ slides_v3.html 과 같은 접두사로 변경 (예: 'ai0927_') */
   var LS = 'mykit_';
   var STATE_KEY = LS + 'admin';       /* 목업 상태 전체를 JSON 한 칸에 저장 */
   var AUTH_KEY = LS + 'admin_ok';     /* 세션 동안만 로그인 유지 */
@@ -233,9 +233,9 @@ td.act{text-align:right;white-space:nowrap}
   /* 데모 전용 비밀번호 · 보안 아님 (소스 보기로 누구나 확인 가능) */
   var DEMO_PW = '1234';
 
-  /* slides.html 의 aria-label 순서와 1:1 · 슬라이드 추가·삭제 시 함께 수정 */
-  var TITLES = ['표지', '오늘의 순서', '오늘의 결과물', 'AI 발달 7단계', 'AI의 역할', '크롬 실습 준비', '공고문 요약', '신청 자격 확인', '신청 준비 목록', '두 탭 비교', '영수증 실습 준비', '영수증 첨부', '영수증 질문', '지출표 확인', '건강검진 자료', '검진표 가리기', '검진표 첨부', '검진 질문', '검진 결과 점검', '보험약관 읽기', '보험약관 질문', '휴식', '이미지 실습 준비', '여행 이미지 질문', '이미지 결과 확인', '동영상 실습 준비', '동영상 실습 사진 6장', 'Astra 영상 프롬프트', 'Astra 영상 제작 순서', '영상 장면표', '동영상 생성 질문', '동영상 결과 확인', '실습 결과', '안전한 사용', '마침'];
-  var BREAKS = [21];                  /* 휴식 슬라이드 인덱스 (0부터) */
+  /* slides_v3.html 의 aria-label 순서와 1:1 · 슬라이드 추가·삭제 시 함께 수정 */
+  var TITLES = ['표지', '오늘의 순서', '오늘의 결과물', 'AI 발달 7단계', 'AI의 역할', '크롬 실습 준비', '공고문 요약', '신청 자격 확인', '신청 준비 목록', '두 탭 비교', '영수증 실습 준비', '영수증 질문', '지출표 확인', '건강검진 자료', '검진표 가리기', '검진표 첨부', '검진 질문', '검진 결과 점검', '보험약관 읽기', '보험약관 질문', '휴식', '이미지 실습 준비', '여행 이미지 질문', '이미지 결과 확인', '동영상 실습 준비', '영상 장면표', '동영상 생성 질문', '동영상 결과 확인', '동영상 실습 사진 6장', 'Astra 영상 프롬프트', 'Astra 영상 제작 순서', '실습 결과', '안전한 사용', '마침'];
+  var BREAKS = [20];                  /* 휴식 슬라이드 인덱스 (0부터) */
   var TOTAL = TITLES.length;
 
   function seed(){
