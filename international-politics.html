@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="최초의 상업국가, 네덜란드 · 글로벌시대의 국제정치 4주차">
 <meta property="og:description" content="제도 · 사람 · 지속성으로 읽는 17세기 네덜란드 상업 패권 · 나병인 교수">
-<meta property="og:image" content="https://0927iwillman.vercel.app/intl-politics/img/03.webp">
+<meta property="og:image" content="https://0927iwillman.vercel.app/og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,6 +84,17 @@ a.card:hover{transform:translateY(-3px);border-color:var(--lime)}
 .card.problem li::before{background:var(--coral)}
 .card .go{margin-top:auto;padding-top:.4rem;font-size:.85rem;font-weight:800;color:var(--lime)}
 .card.problem .go{color:var(--coral)}
+.chapters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.1rem}
+@media (max-width:900px){.chapters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.chapters{grid-template-columns:1fr}}
+.chap{display:flex;flex-direction:column;gap:.25rem;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.2rem;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+.chap:hover{transform:translateY(-3px);border-color:var(--lime)}
+.chap .n{font-size:.82rem;font-weight:800;color:var(--lime)}
+.chap .t{font-size:1.1rem;font-weight:900}
+.chap .d{font-size:.9rem;color:var(--sub)}
+.chap .go{margin-top:.3rem;font-size:.82rem;font-weight:800;color:var(--lime)}
+.lock{margin-top:1rem;font-size:.88rem;color:var(--mute)}
+@media (prefers-reduced-motion:reduce){.chap{transition:none}.chap:hover{transform:none}}
 .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem}
 @media (max-width:860px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:520px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -128,17 +139,18 @@ footer nav a:hover{color:var(--lime)}
 <a class="skip" href="#main">본문 바로가기</a>
 <div class="topbar"><div class="wrap">
   <a class="brand" href="#top"><i aria-hidden="true">⚓</i>글로벌시대의 국제정치</a>
-  <nav class="topnav" aria-label="페이지 안 이동"><a href="lectures.html">← 전체 강의</a><a href="#flow">강의 순서</a><a href="#core">핵심 3가지</a><a href="#numbers">핵심 숫자</a><a href="#instructor">강사</a></nav>
-  <a class="top-cta" href="slides_international-politics.html">슬라이드 입장 →</a>
+  <nav class="topnav" aria-label="페이지 안 이동"><a href="lectures.html">← 전체 강의</a><a href="#week3">3주차</a><a href="#flow">4주차 순서</a><a href="#core">핵심 3가지</a><a href="#numbers">핵심 숫자</a><a href="#instructor">강사</a></nav>
+  <a class="top-cta" href="slides_international-politics.html">4주차 슬라이드 →</a>
 </div></div>
 <header class="hero" id="top">
   <div class="wrap">
     <div class="kicker">가천대학교 행정학과 · 글로벌시대의 국제정치 4주차</div>
     <h1>최초의 상업국가,<span>네덜란드</span></h1>
     <p class="lead">농업에 불리한 물에 잠긴 땅이 세계 무역의 중심이 된 과정</p>
-    <div class="meta"><span>슬라이드 36장</span><span>4개 챕터</span><span>강사 · 나병인 교수</span></div>
+    <div class="meta"><span>4주차 · 슬라이드 36장</span><span>3주차 · 슬라이드 35장</span><span>강사 · 나병인 교수</span></div>
     <p class="promise">수업 뒤, 작은 저지대 국가의 부상과 패권 이양을 제도 · 사람 · 지속성으로 설명</p>
-    <div class="cta"><a class="btn primary" href="slides_international-politics.html">슬라이드 입장 →</a><a class="btn ghost" href="#flow">강의 순서 보기</a></div>
+    <div class="cta"><a class="btn primary" href="slides_international-politics.html">4주차 슬라이드 입장 →</a><a class="btn ghost" href="slides_international-politics-w3.html">3주차 슬라이드 (스페인) →</a><a class="btn ghost" href="#flow">강의 순서 보기</a></div>
+    <p class="lock">🤫 쉿~~ 슬라이드에서 S 키 또는 「쉿」 버튼 · 조용히 생각하는 7초</p>
   </div>
 </header>
 <main id="main">
@@ -187,6 +199,23 @@ footer nav a:hover{color:var(--lime)}
     <div class="assign"><div class="k">한 문장 과제</div><p>“네덜란드의 경험으로 오늘의 한국을 볼 때, 나는 [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]을(를) 확인하겠다.”</p></div>
     <p class="pnote" style="margin-top:1.2rem">다음 주 예고 (5주차): 영국은 어떻게 상업의 부를 산업(확대재생산)으로 전환하여 세계 패권을 이어받았는가</p>
   </div></section>
+  <section id="week3" aria-labelledby="w3Title"><div class="wrap">
+    <div class="sec-kicker">3주차 · 세계패권의 비밀</div><h2 id="w3Title">바다 위의 농업제국, 스페인</h2>
+    <p class="pnote">어떻게 세계를 지배했고, 왜 몰락했는가 · 2시간 · 4개 챕터 · 슬라이드 35장</p>
+    <div class="cards">
+      <article class="card"><div class="n">질문 1</div><h3 class="t">왜 금은이 스페인을 망하게 했는가?</h3><ul><li>풍요의 역설</li></ul></article>
+      <article class="card"><div class="n">질문 2</div><h3 class="t">해양 패권국이 왜 '농업제국'인가?</h3><ul><li>구조적 모순</li></ul></article>
+      <article class="card problem"><div class="n">질문 3</div><h3 class="t">패권의 정점에서 왜 갑자기 몰락했나?</h3><ul><li>1588년 이후</li></ul></article>
+    </div>
+    <div class="chapters">
+      <a class="chap" href="slides_international-politics-w3.html#4"><span class="n">Ch.1 · 25분</span><span class="t">이론 도입</span><span class="d">패권이론 · 세계체제론 · 이베리아 지정학</span><span class="go">슬라이드 4 →</span></a>
+      <a class="chap" href="slides_international-politics-w3.html#9"><span class="n">Ch.2 · 40분</span><span class="t">스페인의 부상</span><span class="d">레콘키스타 → 신대륙 → 금은독점 → 무적함대</span><span class="go">슬라이드 9 →</span></a>
+      <a class="chap" href="slides_international-politics-w3.html#20"><span class="n">Ch.3 · 30분</span><span class="t">황금기와 모순</span><span class="d">농업제국의 역설 · 가격혁명 · 국가파산</span><span class="go">슬라이드 20 →</span></a>
+      <a class="chap" href="slides_international-politics-w3.html#28"><span class="n">Ch.4 · 25분</span><span class="t">교훈과 시사점</span><span class="d">자원의 저주 · 현대적 함의 · Q&amp;A</span><span class="go">슬라이드 28 →</span></a>
+    </div>
+    <div class="assign"><div class="k">핵심</div><p>진짜 부는 금은이 아니라 '제도와 혁신'에서 나온다</p></div>
+    <div class="cta" style="justify-content:flex-start"><a class="btn primary" href="slides_international-politics-w3.html">3주차 슬라이드 입장 →</a></div>
+  </div></section>
   <section id="instructor" class="alt" aria-labelledby="insTitle"><div class="wrap">
     <div class="sec-kicker">강사 소개</div><h2 id="insTitle">나병인 박사</h2>
     <div class="profile"><div class="avatar"><img src="profile.jpg" alt="나병인 박사 캐리커처"></div>
@@ -208,13 +237,13 @@ footer nav a:hover{color:var(--lime)}
     <div class="band">
       <div class="sec-kicker">웹슬라이드</div><h2 id="enterTitle">강의 입장</h2>
       <div class="entry-grid">
-        <a class="entry main" href="slides_international-politics.html"><span class="part">36장 · 4주차</span><span class="title">슬라이드 처음부터 →</span><span class="desc">← → 이동 · G 전체보기 · F 전체화면 · P PDF 저장</span></a>
-        <a class="entry sub" href="lectures.html"><span class="part">전체 강의</span><span class="title">강의 목록으로 →</span><span class="desc">다른 강의 안내와 자료</span></a>
+        <a class="entry main" href="slides_international-politics.html"><span class="part">4주차 · 36장</span><span class="title">네덜란드 슬라이드 →</span><span class="desc">← → 이동 · G 전체보기 · F 전체화면 · P PDF 저장</span></a>
+        <a class="entry sub" href="slides_international-politics-w3.html"><span class="part">3주차 · 35장</span><span class="title">스페인 슬라이드 →</span><span class="desc">바다 위의 농업제국, 스페인</span></a>
       </div>
       <div class="slogan">제도 · 사람 · 지속성</div>
     </div>
   </div></section>
 </main>
-<footer><div class="wrap"><nav aria-label="바닥글 링크"><a href="lectures.html">전체 강의</a><a href="slides_international-politics.html">슬라이드</a></nav><p>AI교수 나병인 강의실</p><p>ⓒ 2026 AI교수나병인</p></div></footer>
+<footer><div class="wrap"><nav aria-label="바닥글 링크"><a href="lectures.html">전체 강의</a><a href="slides_international-politics-w3.html">3주차 슬라이드</a><a href="slides_international-politics.html">4주차 슬라이드</a></nav><p>AI교수 나병인 강의실</p><p>ⓒ 2026 AI교수나병인</p></div></footer>
 </body>
 </html>

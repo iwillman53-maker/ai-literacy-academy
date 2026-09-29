@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- 글로벌시대의 국제정치 · 4주차 네덜란드 웹슬라이드 · 위치: /slides_international-politics.html · 이미지: /intl-politics/img/NN.webp -->
+<!-- 글로벌시대의 국제정치 · 3주차 스페인 웹슬라이드 · 위치: /slides_international-politics-w3.html · 이미지: /intl-politics/w3/NN.webp -->
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>최초의 상업국가, 네덜란드 · 글로벌시대의 국제정치 4주차</title>
-<meta name="description" content="가천대학교 행정학과 글로벌시대의 국제정치 4주차 · 최초의 상업국가, 네덜란드 · 웹슬라이드 36장 · 나병인 교수">
+<title>바다 위의 농업제국, 스페인 · 글로벌시대의 국제정치 3주차</title>
+<meta name="description" content="가천대학교 행정학과 글로벌시대의 국제정치 3주차 · 바다 위의 농업제국, 스페인 · 웹슬라이드 35장 · 나병인 교수">
 <meta name="theme-color" content="#0B1220">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>">
@@ -72,7 +72,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
 <body>
 <div class="bar top">
   <a class="btn" href="international-politics.html">← 강의 안내</a>
-  <div class="ttl">최초의 상업국가, 네덜란드<small>글로벌시대의 국제정치 · 4주차</small></div>
+  <div class="ttl">바다 위의 농업제국, 스페인<small>글로벌시대의 국제정치 · 3주차</small></div>
   <span class="sp"></span>
   <button type="button" class="btn" id="bh" title="쉿, 조용히 생각하는 시간 (S)">🤫 쉿</button>
   <button type="button" class="btn hide-s" id="bg" title="전체보기 (G)">▦ 전체보기</button>
@@ -88,8 +88,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
 </main>
 <div class="bar bot">
   <button type="button" class="btn" id="bpv" aria-label="이전 슬라이드">← 이전</button>
-  <div id="prog" role="slider" tabindex="0" aria-label="슬라이드 위치" aria-valuemin="1" aria-valuemax="36" aria-valuenow="1"><div id="fill"></div></div>
-  <span id="cnt" aria-live="polite">1 / 36</span>
+  <div id="prog" role="slider" tabindex="0" aria-label="슬라이드 위치" aria-valuemin="1" aria-valuemax="35" aria-valuenow="1"><div id="fill"></div></div>
+  <span id="cnt" aria-live="polite">1 / 35</span>
   <button type="button" class="btn main" id="bnx" aria-label="다음 슬라이드">다음 →</button>
 </div>
 <div id="grid" role="dialog" aria-modal="true" aria-label="슬라이드 전체보기">
@@ -107,19 +107,13 @@ html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
 <p id="cap" role="status" aria-live="polite"></p>
 <script>
 (function(){
-  var LS='ip4_', N=36;
-  var TITLES=['표지 · 최초의 상업국가, 네덜란드','오늘 강의 순서','저지대 소국이 세계 최강 상업 패권국이 된 이야기','3주차 복기 · 스페인과 네덜란드, 같은 바다 다른 선택',
-  '저지대의 지형과 간척지','오늘의 핵심 테제','Chapter 1 · 네덜란드 부상의 3대 배경','청어 어업과 초기 자본 축적','바다가 적이자 스승이었다','사회적 자본의 중요성',
-  '제도적 배경 · 약한 봉건제, 강한 시민계급','관용이 부른 인재 유입','1581년 공화국의 탄생','문화적 배경 · 협력의 DNA와 부르주아 문명','3대 배경 종합 정리',
-  'Chapter 2 · 제도 혁신과 상업 패권의 완성','동인도회사 VOC (1602)','VOC, 숫자로 보는 200년 제국','향료 무역과 식민 지배의 비용','아시아 무역을 장악하다',
-  '암스테르담 금융 시스템의 탄생','플루이트 선박 혁신','삼각 중계무역 네트워크','황금시대(17세기)의 정점','Chapter 3 · 상업국가의 한계와 패권 이양',
-  '제조업 부재라는 오해와 구조적 부담','확대재투자체제의 구조적 한계','1672년 재앙의 해','영국과의 전쟁, 그리고 1672년의 교훈','네덜란드 vs 영국 · 패권 이양의 결정적 차이',
-  'Chapter 4 · 마무리, 교훈과 현대적 함의','17세기 네덜란드 황금시대 · 제국의 교훈','현대적 함의 · 싱가포르 모델과 디지털 VOC','현대적 함의 · 싱가포르와 디지털 VOC','오늘의 핵심 3가지','참고 자료와 반드시 확인할 5가지 개념'];
+  var LS='ip3_', N=35;
+  var TITLES=['표지 · 바다 위의 농업제국 스페인','오늘 강의 구성','오프닝 질문','Ch.1 이론 도입','패권이론 · 세계체제론','스페인 제국의 경제 구조','이베리아 반도의 지정학적 조건','대항해 시대 핵심 연표','Ch.2 스페인의 부상','레콘키스타의 유산','식민지 통치 4대 시스템','신대륙 발견의 충격','스페인 제국의 구조적 특성','식민지 착취 3대 제도','금은 독점 · 킨토 레알','카를로스 1세 · 합스부르크의 절정','합스부르크 결혼 외교','펠리페 2세 · 절정과 균열','무적함대 1588 · 패권의 균열','Ch.3 황금기와 모순','\'농업제국\'의 역설','쇠락의 4대 원인','가격혁명 · 풍요가 만든 빈곤','5차례 국가파산','상업혁신의 부재','스페인 패권의 종말','경쟁국의 부상','Ch.4 교훈과 시사점','3국 비교 · 패권 이동의 구조','자원의 저주','스페인의 교훈 5가지','현대적 함의','토론 주제','역사가들의 평가','강의 요약'];
   var $=function(i){return document.getElementById(i)};
   var img=$('img'),fill=$('fill'),cnt=$('cnt'),grid=$('grid'),gl=$('gl'),prog=$('prog'),cap=$('cap');
   var cur=1;
   function pad(n){return (n<10?'0':'')+n}
-  function src(n){return 'intl-politics/img/'+pad(n)+'.webp'}
+  function src(n){return 'intl-politics/w3/'+pad(n)+'.webp'}
   function store(v){try{localStorage.setItem(LS+'pos',v)}catch(e){}}
   function load(){try{return parseInt(localStorage.getItem(LS+'pos'),10)}catch(e){return NaN}}
   function go(n,noPush){
