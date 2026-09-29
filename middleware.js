@@ -13,18 +13,28 @@
   · 학기가 바뀌면 값을 바꾸고 다시 배포(Redeploy)하면 이전 비밀번호는 더 이상 통하지 않습니다.
 */
 
+const SEMINAR_FILES = [
+  '/slides_ai-admin-seminar.html',
+  '/01-notice-youth-rent.pdf',
+  '/02-press-release.pdf',
+  '/03-expense-records.pdf',
+  '/04-complaints-30.pdf',
+  '/05-ordinance-amendment.pdf',
+];
+
+// 순서 중요: 행정세미나를 먼저 검사합니다.
 const COURSES = [
-  {
-    env: 'LIFE_AI_PASSWORD',
-    realm: 'life-ai',
-    // 루트의 슬라이드 파일(slides.html, slides_v3.html 등), assets 폴더, 루트의 PDF
-    test: (p) => /^\/slides[^/]*\.html$/i.test(p) || p.startsWith('/assets/') || /^\/[^/]+\.pdf$/i.test(p),
-  },
   {
     env: 'ADMIN_SEMINAR_PASSWORD',
     realm: 'admin-seminar',
-    // admin-seminar 폴더 안 전부, 단 랜딩페이지(index.html)는 공개
-    test: (p) => p.startsWith('/admin-seminar/') && !/^\/admin-seminar\/(index\.html)?$/i.test(p),
+    // 행정세미나 슬라이드와 실습 PDF 5종 (랜딩페이지 admin-seminar.html은 공개)
+    test: (p) => SEMINAR_FILES.includes(p),
+  },
+  {
+    env: 'LIFE_AI_PASSWORD',
+    realm: 'life-ai',
+    // 생활 속의 AI: 루트의 슬라이드 파일(slides.html, slides_v3.html 등), assets 폴더, 루트의 나머지 PDF
+    test: (p) => /^\/slides[^/]*\.html$/i.test(p) || p.startsWith('/assets/') || /^\/[^/]+\.pdf$/i.test(p),
   },
 ];
 
