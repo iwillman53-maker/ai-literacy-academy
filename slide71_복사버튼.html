@@ -5,86 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>71번 슬라이드 - 실습 노트 복사</title>
 <style>
-  body { margin:0; background:#0B1220; font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif; }
+  :root { --bg:#0B1220; --card:#141C33; --lime:#D4FF3D; --coral:#FF6B5B; --muted:#B8C0D4; }
+  html,body { margin:0; height:100%; background:#060B16; font-family:'Pretendard','Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif; }
+  body { display:flex; align-items:center; justify-content:center; padding:2vh 0; box-sizing:border-box; }
 
-  /* ===== 여기부터 71번 슬라이드 CSS (class: s71) ===== */
-  .s71 { box-sizing:border-box; padding:28px 36px; color:#fff; background:#0B1220; max-width:1100px; margin:0 auto; }
+  /* 슬라이드 프레임: 70번과 같은 어두운 카드 */
+  .s71 { font-size:clamp(12px,1.05vw,20px); width:min(1460px,92vw); background:var(--bg); color:#fff;
+         border:1px solid #1C2745; border-radius:14px; padding:2.4em 3.2em 1.6em; box-sizing:border-box; }
   .s71 * { box-sizing:border-box; }
-  .s71 .kicker { color:#D4FF3D; font-size:13px; font-weight:700; margin:0 0 8px; }
-  .s71 h2 { font-size:34px; margin:0 0 6px; font-weight:800; }
-  .s71 .sub { color:#D4FF3D; font-size:17px; font-weight:700; margin:0 0 20px; }
-  .s71 .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
-  .s71 .card { background:#141C33; border-radius:14px; padding:14px 16px; }
-  .s71 .card .head { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
-  .s71 .tag { background:#FF6B5B; color:#fff; font-size:12px; font-weight:700; padding:4px 10px; border-radius:6px; }
-  .s71 pre { margin:0; background:#0B1220; color:#D4FF3D; border-radius:10px; padding:10px 14px;
-             font-family:Consolas,'Courier New',monospace; font-size:15px; line-height:1.55; }
-  .s71 .copy { background:#D4FF3D; color:#0B1220; border:0; border-radius:8px; font-weight:800;
-               font-size:14px; padding:7px 16px; cursor:pointer; }
-  .s71 .copy:hover { filter:brightness(.93); }
-  .s71 .copy.done { background:#fff; }
-  .s71 .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px; }
-  .s71 .step { background:#D4FF3D; color:#0B1220; border-radius:14px; padding:12px 16px; font-weight:700; font-size:15px; line-height:1.45; }
-  .s71 .step b { display:inline-block; background:#0B1220; color:#D4FF3D; border-radius:50%; width:24px; height:24px;
-                 text-align:center; line-height:24px; margin-right:6px; font-size:13px; }
-  .s71 .warn { margin-top:14px; color:#FF6B5B; font-weight:700; font-size:14px; }
-  @media (max-width:760px){ .s71 .grid,.s71 .steps{ grid-template-columns:1fr; } }
+  .s71 .kicker { color:var(--lime); font-weight:800; font-size:1.25em; margin:0 0 .5em; }
+  .s71 h2 { font-size:3.3em; line-height:1.15; margin:0 0 .25em; font-weight:800; }
+  .s71 .sub { color:var(--muted); font-size:1.7em; margin:0 0 .8em; }
+
+  .s71 .table { display:grid; gap:.4em; }
+  .s71 .tr { display:grid; grid-template-columns:2.2fr 1.9fr 1fr 1.5fr 1.2fr; align-items:center; padding:.55em 1.1em; border-radius:.55em; font-size:1.7em; font-weight:800; }
+  .s71 .th { background:var(--card); color:var(--muted); padding-top:.45em; padding-bottom:.45em; }
+  .s71 .td { background:var(--lime); color:var(--bg); }
+  .s71 .copy { justify-self:end; background:var(--bg); color:var(--lime); border:0; border-radius:.45em; font:inherit; font-size:.8em;
+               padding:.3em 1em; cursor:pointer; }
+  .s71 .copy:hover { filter:brightness(1.25); }
+  .s71 .copy.done { background:#fff; color:var(--bg); }
+
+  .s71 .note { color:var(--muted); font-size:1.5em; margin:.8em 0 .6em; }
+  .s71 .boxes { display:grid; grid-template-columns:1fr 1fr; gap:1em; }
+  .s71 .box { border-radius:.7em; padding:.9em 1.2em; font-size:1.55em; font-weight:800; line-height:1.4; text-align:center; display:flex; align-items:center; justify-content:center; min-height:3.6em; }
+  .s71 .box.a { background:var(--card); border:1px solid #27345C; }
+  .s71 .box.b { background:#1F2A1C; border:1px solid #6B8A1F; color:var(--lime); }
+  .s71 .foot { display:flex; justify-content:space-between; gap:1em; margin-top:1em; color:var(--muted); font-size:1.05em; }
+  .s71 .foot .warn { color:var(--coral); font-weight:700; }
+  @media (max-width:760px){ .s71 .tr { grid-template-columns:1.6fr 1.4fr .9fr 1.3fr 1fr; font-size:1.2em; } .s71 .boxes{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
 
-<!-- ===== 여기부터 71번 슬라이드 HTML ===== -->
 <section class="s71">
   <p class="kicker">속성 활용 3 / 4 · 실습</p>
   <h2>노트 4장에 속성 세 줄만 적습니다</h2>
   <p class="sub">[복사] → 빈 노트 맨 위에 붙여넣기 (Ctrl+V)</p>
 
-  <div class="grid">
-    <div class="card">
-      <div class="head"><span class="tag">정책보고서_A</span><button class="copy">복사</button></div>
-<pre>---
-type: 정책보고서
-status: 초안
-date: 2026-09-01
----</pre>
-    </div>
-    <div class="card">
-      <div class="head"><span class="tag">회의록_B</span><button class="copy">복사</button></div>
-<pre>---
-type: 회의록
-status: 완료
-date: 2026-09-05
----</pre>
-    </div>
-    <div class="card">
-      <div class="head"><span class="tag">정책보고서_C</span><button class="copy">복사</button></div>
-<pre>---
-type: 정책보고서
-status: 초안
-date: 2026-09-10
----</pre>
-    </div>
-    <div class="card">
-      <div class="head"><span class="tag">업무계획_D</span><button class="copy">복사</button></div>
-<pre>---
-type: 업무계획
-status: 보류
-date: 2026-09-15
----</pre>
-    </div>
+  <div class="table" id="s71-table">
+    <div class="tr th"><span>노트 이름</span><span>type</span><span>status</span><span>date</span><span style="justify-self:end">속성 세 줄</span></div>
   </div>
 
-  <div class="steps">
-    <div class="step"><b>1</b>폴더 <code>실습</code> 만들고 노트 4장 만들기</div>
-    <div class="step"><b>2</b>노트마다 [복사] → 맨 위에 붙여넣기</div>
-    <div class="step"><b>3</b><code>Ctrl+P</code> → 베이스: 새 베이스 생성하기 → 필터 <code>status = 초안</code></div>
+  <p class="note">폴더 <b>실습</b> 만들기 → 노트 4장 만들기 → 노트마다 [복사] 후 붙여넣기</p>
+
+  <div class="boxes">
+    <div class="box a">다 붙였으면: Ctrl+P → 베이스: 새 베이스 생성하기</div>
+    <div class="box b">필터에 status = 초안 추가 → 2장만 남으면 성공</div>
   </div>
-  <p class="warn">안 될 때: 맨 첫 줄이 --- 인지, type: 뒤에 한 칸 띄웠는지 확인</p>
+
+  <div class="foot">
+    <span class="warn">안 될 때: 맨 첫 줄이 --- 인지, type: 뒤에 한 칸 띄웠는지 확인</span>
+    <span>옵시디언 속성 · AI 활용 행정세미나 · 활용 3 / 4 · 실습</span>
+  </div>
 </section>
 
-<!-- ===== 여기부터 71번 슬라이드 JS (페이지 맨 아래 script 영역에 추가) ===== -->
 <script>
 (function () {
+  var notes = [
+    ['정책보고서_A', '정책보고서', '초안', '2026-09-01'],
+    ['회의록_B',     '회의록',     '완료', '2026-09-05'],
+    ['정책보고서_C', '정책보고서', '초안', '2026-09-10'],
+    ['업무계획_D',   '업무계획',   '보류', '2026-09-15']
+  ];
   function fallbackCopy(text) {
     var ta = document.createElement('textarea');
     ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
@@ -92,9 +75,15 @@ date: 2026-09-15
     try { document.execCommand('copy'); } catch (e) {}
     document.body.removeChild(ta);
   }
-  document.querySelectorAll('.s71 .copy').forEach(function (btn) {
+  var table = document.getElementById('s71-table');
+  notes.forEach(function (n) {
+    var text = '---\ntype: ' + n[1] + '\nstatus: ' + n[2] + '\ndate: ' + n[3] + '\n---\n';
+    var row = document.createElement('div');
+    row.className = 'tr td';
+    row.innerHTML = '<span>' + n[0] + '</span><span>' + n[1] + '</span><span>' + n[2] + '</span><span>' + n[3] + '</span>';
+    var btn = document.createElement('button');
+    btn.className = 'copy'; btn.textContent = '복사';
     btn.addEventListener('click', function () {
-      var text = btn.closest('.card').querySelector('pre').textContent;
       var done = function () {
         btn.textContent = '복사됨 ✓'; btn.classList.add('done');
         setTimeout(function () { btn.textContent = '복사'; btn.classList.remove('done'); }, 1500);
@@ -103,6 +92,8 @@ date: 2026-09-15
         navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
       } else { fallbackCopy(text); done(); }
     });
+    row.appendChild(btn);
+    table.appendChild(row);
   });
 })();
 </script>
