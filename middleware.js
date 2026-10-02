@@ -15,6 +15,7 @@
 
 const SEMINAR_FILES = [
   '/slides_ai-admin-seminar.html',
+    '/obsidian-slides.html',
   '/01-notice-youth-rent.pdf',
   '/02-press-release.pdf',
   '/03-expense-records.pdf',
