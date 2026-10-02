@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>2026 경찰인재개발원 AI 활용 교육 · 6시간 스마트폰 웹슬라이드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2150; --blue:#1E40AF; --sky:#0EA5C8; --teal:#14B8A6; --amber:#F59E0B; --red:#EF4444; --green:#10B981;
+  --g-dark:#14532D; --gold:#B8860B;
+  --ink:#0B2150; --muted:#4B5563; --card:#fff;
+  --bg1:#EAF6FF; --bg2:#F0FDFA;
+  --accent:#1E40AF; --accent2:#14B8A6;
+  --prompt-bg:linear-gradient(135deg,#DBEAFE,#CFFAFE);
+  --prompt-line:#3B82F6;
+  --tag:#1E3A9E;
+  --fs:clamp(15px,0.45vw + 10px,19px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#EAF6FF;color:var(--ink);font-family:'Noto Sans KR',system-ui,-apple-system,sans-serif;font-size:var(--fs);line-height:1.5;overflow:hidden;overscroll-behavior:none}
+body{word-break:keep-all}
+.slide{display:none;position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;padding:max(14px,env(safe-area-inset-top)) clamp(14px,4vw,64px) calc(76px + env(safe-area-inset-bottom));background:linear-gradient(160deg,var(--bg1),var(--bg2))}
+.slide.on{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:.0;transform:translateX(12px)}to{opacity:1;transform:none}}
+.in{max-width:1180px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;justify-content:center;gap:.7em;padding:.4em 0 1em}
+.p2{--ink:#0F3F26;--accent:#14532D;--accent2:#B8860B;--bg1:#F0FBEF;--bg2:#FAF8EC;--prompt-bg:linear-gradient(135deg,#E6F4E6,#F6EBC8);--prompt-line:#14532D;--tag:#14532D}
+.p0{background:linear-gradient(135deg,#0F2A6B 0%,#1E40AF 55%,#0EA5C8 100%);color:#fff;--ink:#fff}
+.p9{background:linear-gradient(135deg,#0B3B2E,#14532D 55%,#B8860B);color:#fff;--ink:#fff}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.4em;font-size:.62em;font-weight:700;align-items:center}
+.chip{padding:.28em .8em;border-radius:99px;background:var(--accent);color:#fff;white-space:nowrap}
+.chip.t{background:#fff;color:var(--accent);border:2px solid var(--accent)}
+.chip.ph{background:var(--green)}.chip.demo{background:var(--red)}.chip.mix{background:var(--amber)}.chip.lab{background:var(--red)}
+.p0 .chip,.p9 .chip{background:rgba(255,255,255,.18)}
+h1{font-size:2.7em;line-height:1.18;margin:.15em 0;font-weight:900;letter-spacing:-.02em}
+h2{font-size:1.9em;line-height:1.2;margin:.1em 0;font-weight:900;letter-spacing:-.02em}
+.sub{font-size:1em;color:var(--accent);font-weight:700;margin:0}
+.sub2{color:var(--muted);margin:0;font-size:.9em}
+.p0 .sub,.p9 .sub{color:#5EEAD4}.p0 .sub2,.p9 .sub2{color:#DBEAFE}
+.eyebrow{letter-spacing:.14em;font-size:.6em;font-weight:700;color:#5EEAD4;text-transform:uppercase}
+/* cards */
+.grid{display:grid;gap:.7em}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.g4{grid-template-columns:repeat(2,1fr)}.g4 .card{padding:.6em .7em}.g4 .big{font-size:1.5em}}
+@media(min-width:761px) and (max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border-radius:18px;padding:.8em 1em;box-shadow:0 6px 22px rgba(15,42,107,.09);border-top:5px solid var(--accent2)}
+.card h3{margin:.05em 0 .25em;font-size:1.05em;color:var(--accent)}
+.card p,.card li{margin:.15em 0;font-size:.92em}
+.card ul{padding-left:1.1em;margin:.2em 0}
+.card.b{border-top-color:var(--blue)}.card.t{border-top-color:var(--teal)}.card.r{border-top-color:var(--red)}.card.a{border-top-color:var(--amber)}.card.g{border-top-color:var(--green)}
+.card .big{font-size:2em;line-height:1;margin-bottom:.1em}
+.qbox{background:#fff;border-radius:22px;padding:1em 1.2em;box-shadow:0 10px 30px rgba(15,42,107,.12)}
+.qbox small{color:var(--accent);font-weight:700;display:block;margin-bottom:.3em}
+.qbox b{font-size:1.35em;line-height:1.35;display:block;color:var(--ink)}
+.qbox em{font-style:normal;color:var(--accent)}
+.p2 .qbox em{color:var(--gold)}
+.prof{background:linear-gradient(120deg,var(--accent),var(--accent2));color:#fff;border-radius:18px;padding:.8em 1em}
+.p1 .prof{background:linear-gradient(120deg,#1E40AF,#14B8A6)}
+.p2 .prof{background:linear-gradient(120deg,#14532D,#B8860B)}
+.prof small{opacity:.9;font-weight:700}
+.prof p{margin:.2em 0 0;font-size:.95em}
+.note{background:#FFF7E6;border:2px dashed #F59E0B;color:#7A4B00;border-radius:16px;padding:.7em .95em;font-size:.85em}
+.note b{color:#7A3E00}
+.warn{background:#FEE2E2;border:2px solid var(--red);color:#7F1D1D;border-radius:16px;padding:.7em .95em;font-size:.88em}
+.ok{background:#D1FAE5;border:2px solid var(--green);color:#064E3B;border-radius:16px;padding:.7em .95em;font-size:.88em}
+.slogan{background:linear-gradient(110deg,var(--blue),var(--teal));color:#fff;border-radius:18px;padding:.85em 1em;text-align:center;font-weight:900;font-size:1.25em}
+.p2 .slogan{background:linear-gradient(110deg,#14532D,#B8860B)}
+.slogan span{color:#FDE68A}
+/* prompt */
+.prompt{background:var(--prompt-bg);border:2.5px solid var(--prompt-line);border-radius:20px;padding:.75em .95em}
+.prompt .tag{display:inline-block;background:var(--tag);color:#fff;font-size:.62em;font-weight:700;padding:.3em .8em;border-radius:10px;margin-bottom:.4em}
+.prompt .ptxt{margin:0 0 .6em;font-size:1.08em;font-weight:700;line-height:1.5;color:#0B2150;white-space:pre-wrap;user-select:text;-webkit-user-select:text}
+.p2 .prompt .ptxt{color:#0F3F26}
+.prompt .ptxt[contenteditable]{background:rgba(255,255,255,.7);border-radius:10px;padding:.4em .55em;outline:2px dashed var(--prompt-line);font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:.45em}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-size:.78em;font-weight:700;padding:.65em 1em;border-radius:12px;color:#fff;background:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.35em;min-height:44px;box-shadow:0 3px 10px rgba(0,0,0,.14);line-height:1.2}
+.btn:active{transform:scale(.97)}
+.btn.copy{background:#0B2150}.p2 .btn.copy{background:#0F3F26}
+.btn.gpt{background:#10A37F}.btn.cl{background:#C2410C}.btn.gem{background:#4285F4}.btn.ai{background:#7C3AED}.btn.nlm{background:#14532D}
+.btn.line{background:#fff;color:var(--accent);border:2px solid var(--accent);box-shadow:none}
+.btn.big{font-size:.95em;padding:.8em 1.1em}
+.links{display:flex;flex-wrap:wrap;gap:.5em}
+/* table */
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:.82em;box-shadow:0 6px 20px rgba(15,42,107,.09)}
+th{background:var(--accent);color:#fff;text-align:left;padding:.5em .7em}
+td{padding:.5em .7em;border-top:1px solid #E5E7EB}
+.steps{counter-reset:s;display:grid;gap:.5em}
+.steps>div{counter-increment:s;background:#fff;border-radius:14px;padding:.6em .9em .6em 2.6em;position:relative;font-size:.92em;box-shadow:0 4px 14px rgba(15,42,107,.07)}
+.steps>div::before{content:counter(s);position:absolute;left:.55em;top:.5em;width:1.5em;height:1.5em;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:900;font-size:.85em}
+.steps b{color:var(--accent)}
+.check label{display:flex;gap:.6em;align-items:center;background:#fff;border-radius:12px;padding:.55em .8em;margin:.3em 0;font-size:.92em;cursor:pointer;min-height:44px}
+.check input{width:1.3em;height:1.3em;accent-color:var(--accent)}
+textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px solid #CBD5E1;border-radius:12px;padding:.5em .7em;resize:vertical;background:#fff;color:#0B2150}
+.foot{font-size:.62em;color:#6B7280;text-align:right;margin-top:.2em}
+.p0 .foot,.p9 .foot{color:#BFDBFE}
+.cover-lines{display:grid;gap:.5em}
+.pill{border:2px solid #5EEAD4;border-radius:14px;padding:.5em .9em;font-size:.82em;font-weight:700;background:rgba(255,255,255,.1)}
+.pill.g{border-color:#FCD34D}
+.promise{background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.4);border-radius:20px;padding:.9em 1.1em;font-size:1.05em;font-weight:700}
+.promise b{color:#FDE68A}
+/* nav */
+#nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:.5em;padding:.5em max(12px,env(safe-area-inset-left)) calc(.5em + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid #CBD5E1}
+#nav button{appearance:none;border:0;font:inherit;font-weight:900;font-size:.9em;min-width:52px;height:48px;border-radius:14px;background:#1E40AF;color:#fff;cursor:pointer}
+#nav button.alt{background:#E2E8F0;color:#0B2150}
+#nav .mid{flex:1;text-align:center;font-size:.7em;font-weight:700;color:#334155}
+#bar{height:6px;background:#E2E8F0;border-radius:6px;margin-top:4px;overflow:hidden}
+#bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1E40AF,#14B8A6)}
+#idx{display:none;position:fixed;inset:0;z-index:30;background:rgba(11,33,80,.55)}
+#idx.on{display:block}
+#idx .sheet{position:absolute;left:0;right:0;bottom:0;max-height:82vh;overflow:auto;background:#fff;border-radius:24px 24px 0 0;padding:1em 1em 2em}
+#idx h4{margin:.8em 0 .3em;font-size:.8em;color:#1E40AF}
+#idx a{display:flex;gap:.6em;padding:.55em .6em;border-radius:10px;color:#0B2150;text-decoration:none;font-size:.82em;min-height:44px;align-items:center}
+#idx a:hover,#idx a.cur{background:#DBEAFE}
+#idx a span{opacity:.55;min-width:2em}
+#toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(20px);background:#0B2150;color:#fff;padding:.7em 1.1em;border-radius:14px;font-size:.8em;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:50;max-width:92vw;text-align:center}
+#toast.on{opacity:1;transform:translateX(-50%)}
+#think{display:none;position:fixed;inset:0;z-index:40;background:rgba(11,33,80,.9);color:#fff;place-items:center;text-align:center}
+#think.on{display:grid}
+#think b{font-size:min(40vw,9rem);display:block;line-height:1}
+#think span{font-size:1em;color:#BAE6FD}
+@media (min-width:900px) and (min-height:600px){.in{gap:.9em}}
+@media print{.slide{display:block!important;position:static;page-break-after:always}#nav,#idx,#toast{display:none}html,body{overflow:visible}}
+</style>
+</head>
+<body>
+
+<!-- ============ 0. 표지 ============ -->
+<section class="slide p0" data-title="표지 · 오늘의 약속" data-part="0">
+<div class="in">
+  <div class="eyebrow">Korean National Police Human Resources Development Institute</div>
+  <h1>2026 경찰인재개발원<br>AI 활용 교육</h1>
+  <p class="sub" style="font-size:1.25em">스마트폰 하나로 · 생성형 AI 에이전트 실전 활용</p>
+  <p class="sub2">챗봇을 넘어, 일을 하는 AI 에이전트의 시대 · 총 6시간 (3시간 + 3시간, 쉬는 시간 포함)</p>
+  <div class="promise">6시간 뒤, 여러분은 <b>스마트폰 하나로</b> 인포그래픽 1장, 내 자료에만 답하는 AI, 그리고 나만의 <b>「도현 선배」</b>를 들고 나갑니다.</div>
+  <div class="cover-lines grid g2">
+    <div class="pill">1교시 · AI 기본기 · 3시간</div>
+    <div class="pill g">2교시 · NotebookLM + 도현 선배 · 3시간</div>
+  </div>
+  <p class="sub2">주최 경찰인재개발원 · 신임경찰교육생 과정 &nbsp;|&nbsp; 강사 가천대학교 겸임교수 · 나병인</p>
+  <div class="links"><button class="btn big" data-next>▶ 시작하기</button><button class="btn big line" data-open-idx style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">☰ 전체 목차</button></div>
+</div></section>
+
+<!-- ============ 로드맵 ============ -->
+<section class="slide p1" data-title="오늘의 로드맵 · 6시간 2교시" data-part="1" data-time="0~10분">
+<div class="in">
+  <h2>오늘의 로드맵 · 6시간</h2>
+  <p class="sub2">1교시 3시간 + 2교시 3시간(쉬는 시간 포함) · 전부 스마트폰으로 따라옵니다</p>
+  <div class="grid g2">
+    <div class="card b"><h3>1교시 ① 안전 + 기본기 + 에이전트 첫 만남</h3><p>0~80분</p><ul><li>AI에 넣어도 되는 것 / 안 되는 것</li><li>좋은 질문의 공식 · 폰으로 에이전트 체험</li></ul></div>
+    <div class="card t"><h3>1교시 ② 웹 · 검색 · 이미지</h3><p>90~170분</p><ul><li>링크 한 줄 → 3줄 요약</li><li>Google AI 모드 · 인포그래픽 1장</li></ul></div>
+    <div class="card g"><h3>2교시 ③ 내 자료를 넣은 AI</h3><p>0~58분</p><ul><li>NotebookLM으로 나만의 지식창고</li><li>출처 확인으로 환각 차단</li></ul></div>
+    <div class="card a"><h3>2교시 ④ 현장 적용 · 「도현 선배」</h3><p>68~180분</p><ul><li>매뉴얼 챗봇 → 도현 선배 만들기</li><li>음성으로 초동조치 보고서 · 내 적용 계획</li></ul></div>
+  </div>
+  <div class="slogan">흐름 ① → ④ 순서대로 · 마지막엔 <span>나만의 도현 선배</span>가 폰 안에 생깁니다</div>
+</div></section>
+
+<!-- ============ 환경 ============ -->
+<section class="slide p1" data-title="오늘 환경 · 스마트폰 준비" data-part="1" data-dev="phone" data-time="0~10분">
+<div class="in">
+  <h2>스마트폰만 가지고 오셨습니까?<br>그게 정답입니다.</h2>
+  <p class="sub2">오늘 모든 실습은 스마트폰에서 끝납니다. 노트북 전용 기능은 교수가 화면으로 시연합니다.</p>
+  <div class="grid g2">
+    <div class="card g"><h3>📱 내 폰으로 직접 (100%)</h3><ul><li>AI 챗봇 질문 · 파일/사진 첨부</li><li>Google AI 모드 검색</li><li>ChatGPT · Gemini 이미지 생성</li><li>NotebookLM 질문·출처·오디오</li></ul></div>
+    <div class="card r"><h3>💻 교수 시연 (눈으로)</h3><ul><li>Claude Cowork: 내 폴더를 AI가 직접 정리</li><li>PC 크롬의 Gemini 사이드 패널</li></ul><p>→ 여러분은 같은 목표를 <b>폰 방식</b>으로 체험합니다.</p></div>
+  </div>
+  <div class="prof"><small>🎙 교수 멘트</small><p>"어떤 기기를 가지고 계셔도 오늘 100% 따라오실 수 있습니다."</p></div>
+  <div class="note"><b>준비 체크 (30초)</b> — 아래 앱이 열리고 로그인되는지 눌러서 확인하세요. 막히면 옆 사람과 2인 1조!</div>
+  <div class="links">
+    <a class="btn gpt" target="_blank" rel="noopener" href="https://chatgpt.com/">ChatGPT 열기</a>
+    <a class="btn cl" target="_blank" rel="noopener" href="https://claude.ai/new">Claude 열기</a>
+    <a class="btn gem" target="_blank" rel="noopener" href="https://gemini.google.com/app">Gemini 열기</a>
+    <a class="btn ai" target="_blank" rel="noopener" href="https://www.google.com/search?udm=50">Google AI 모드</a>
+    <a class="btn nlm" target="_blank" rel="noopener" href="https://notebooklm.google.com/">NotebookLM</a>
+    <a class="btn line" target="_blank" rel="noopener" href="https://play.google.com/store/search?q=NotebookLM&c=apps">앱 설치(안드로이드)</a>
+  </div>
+  <div class="foot">오프닝 · 단계 0/15</div>
+</div></section>
+
+<!-- ============ 업무 지도 ============ -->
+<section class="slide p1" data-title="내 업무 지도 · 4가지 질문" data-part="1" data-dev="phone" data-time="10~20분" data-prac="1">
+<div class="in">
+  <h2>먼저, 내 일부터 그립니다</h2>
+  <p class="sub">AI 기능보다 "내 업무 지도"가 먼저입니다</p>
+  <div class="grid g4">
+    <div class="card b"><div class="big">1️⃣</div><h3>매일 반복하는 일</h3><p>예: 근무일지, 학습 복습</p></div>
+    <div class="card t"><div class="big">2️⃣</div><h3>매주 반복하는 일</h3><p>예: 평가 준비, 과제</p></div>
+    <div class="card a"><div class="big">3️⃣</div><h3>가장 시간 드는 일</h3><p>예: 법령 암기, 서식 작성</p></div>
+    <div class="card r"><div class="big">4️⃣</div><h3>가장 어려운 일</h3><p>예: 현장 판단, 법령 적용</p></div>
+  </div>
+  <div class="prompt" data-go="chatgpt,claude,gemini" data-edit="1" data-tag="괄호를 내 이야기로 바꾸고 → 눌러서 AI에게 보내기">나는 신임경찰교육생이야. 내 일을 적을게.
+① 매일 반복하는 일: (    )
+② 매주 반복하는 일: (    )
+③ 가장 시간이 많이 드는 일: (    )
+④ 가장 어려운 일: (    )
+이 일들을 더 작은 활동 단위로 쪼개서 표로 정리하고, AI에게 맡기면 좋은 것에 ★ 표시해줘.</div>
+  <button class="btn line" data-think>⏱ 7초 생각: "내가 하는 일 중 AI가 대신해도 되는 건?"</button>
+  <div class="foot">오프닝 · 내 업무 지도</div>
+</div></section>
+
+<section class="slide p1" data-title="AI 안전 신호등 · 넣어도 되는 것 / 안 되는 것" data-part="1" data-dev="phone" data-time="20~30분" data-prac="1">
+<div class="in">
+  <h2>AI에 넣어도 되는 것,<br>안 되는 것</h2>
+  <p class="sub">시작하기 전에 신호등 3색부터</p>
+  <div class="grid g3">
+    <div class="card g"><h3>🟢 넣어도 됩니다</h3><ul><li>공개된 법령 · 공식 홈페이지</li><li>교육원에서 나눠준 교재</li><li><b>가상 사례</b> (이름·장소를 지어낸 것)</li></ul></div>
+    <div class="card a"><h3>🟡 가려서 넣습니다</h3><ul><li>내부 업무 매뉴얼 — 공개 범위 확인</li><li>업무 문장 — 이름·연락처·주소는 지우고</li></ul></div>
+    <div class="card r"><h3>🔴 절대 금지</h3><ul><li>실제 사건자료 · 수사 중 정보 · 대외비</li><li>피해자·피의자·신고자 인적사항</li><li>주민번호 · 전화번호 · 계좌번호</li></ul></div>
+  </div>
+  <div class="prompt" data-go="chatgpt,claude,gemini" data-edit="1" data-tag="가리기 연습 · 아래는 전부 가상입니다">아래 가상 문장에서 개인정보에 해당하는 부분을 모두 찾아 'A씨', '○○동', '010-○○○○-○○○○'처럼 가려서 다시 써줘.
+[가상] 김가상(34세)이 가상시 가상구 가상로 12에서 010-0000-0000으로 신고했다.</div>
+  <div class="warn">소속 기관의 AI 보안 지침이 있으면 <b>그 지침이 우선</b>입니다. AI의 답은 <b>초안</b> — 책임은 사람에게 있습니다.</div>
+  <button class="btn line" data-think>⏱ 7초 생각: "내 폰에 있는 업무 파일 중 🔴는 몇 개일까?"</button>
+  <div class="foot">보강 · AI 안전</div>
+</div></section>
+
+<!-- ============ 1. 챗봇 vs 에이전트 ============ -->
+<section class="slide p1" data-title="챗봇 vs 에이전트" data-part="1" data-step="1" data-dev="phone" data-time="30~38분">
+<div class="in">
+  <h2>AI 챗봇 vs AI 에이전트</h2>
+  <p class="sub2">오늘 만나게 될 가장 중요한 구분</p>
+  <div class="qbox"><small>🌟 오늘의 핵심 질문</small><b>"AI가 답만 주는 것과,<br>일을 직접 하는 것은 뭐가 다를까?"</b></div>
+  <button class="btn line" data-think>⏱ 7초 생각하기</button>
+  <div class="grid g2">
+    <div class="card b"><h3>💬 챗봇 — 말 잘하는 비서</h3><table><tr><th>입력</th><td>질문</td></tr><tr><th>출력</th><td>답변(텍스트)</td></tr><tr><th>파일</th><td>만지지 않음</td></tr><tr><th>시간</th><td>수 초</td></tr></table></div>
+    <div class="card t"><h3>🤖 에이전트 — 일하는 조수</h3><table><tr><th>입력</th><td>지시(목표)</td></tr><tr><th>출력</th><td>완료된 작업물</td></tr><tr><th>파일</th><td>읽고, 만들고, 저장</td></tr><tr><th>시간</th><td>수 분 ~ 수십 분</td></tr></table></div>
+  </div>
+  <div class="note">📖 <b>용어</b> 챗봇 = Chat(대화)+Bot. 신임경찰 비유: 모를 때 물어보면 답을 알려주는 <b>선임</b> / 에이전트 = 지시하면 직접 조회·처리하고 보고서까지 올리는 <b>직원</b>.</div>
+  <div class="foot">단계 1/15 · 챗봇 vs 에이전트</div>
+</div></section>
+
+<section class="slide p1" data-title="실습 · 챗봇에게 질문하기" data-part="1" data-step="1" data-dev="phone" data-time="38~45분" data-prac="1">
+<div class="in">
+  <h2>실습 · 챗봇에게 질문하기</h2>
+  <p class="sub">버튼을 누르면 질문이 입력된 채로 열립니다</p>
+  <div class="prompt" data-go="chatgpt,claude,gemini" data-tag="📋 복사해서 그대로 입력">112 신고 출동 보고서 목차를 만들어줘.</div>
+  <div class="steps"><div><b>앱 열기</b> — 위 버튼 중 하나를 누르세요</div><div><b>붙여넣기</b> — Gemini는 복사 후 열리니 입력창을 길게 눌러 붙여넣기</div><div><b>답변 확인</b> — AI가 만들어 준 목차를 훑어보세요</div></div>
+  <div class="prof"><small>🎙 교수 멘트</small><p>"지금 AI가 우리에게 답을 했습니다. 이것이 챗봇입니다. 답을 <b>주는 것</b>까지만 합니다. 다음에서 한 단계 더 나갑니다."</p></div>
+  <div class="foot">단계 1/15 · 실습</div>
+</div></section>
+
+<section class="slide p1" data-title="좋은 질문의 공식 · 4칸" data-part="1" data-dev="phone" data-time="45~60분" data-prac="1">
+<div class="in">
+  <h2>좋은 질문의 공식 · 4칸</h2>
+  <p class="sub">질문은 길게가 아니라 <u>구체적으로</u> — 길이가 아닙니다</p>
+  <div class="grid g4">
+    <div class="card b"><div class="big">①</div><h3>역할</h3><p>나는 누구?</p></div>
+    <div class="card t"><div class="big">②</div><h3>상황</h3><p>무슨 일?</p></div>
+    <div class="card a"><div class="big">③</div><h3>할 일</h3><p>원하는 것은?</p></div>
+    <div class="card g"><div class="big">④</div><h3>형식·제약</h3><p>표 / 5줄 / 지어내지 마</p></div>
+  </div>
+  <div class="card r"><h3>❌ 방금 질문 (1칸짜리)</h3><p>112 신고 출동 보고서 목차를 만들어줘.</p></div>
+  <div class="prompt" data-go="chatgpt,claude,gemini" data-tag="✅ 4칸 다 채운 질문 · 방금과 답을 비교해 보세요">나는 지역경찰서에 첫 발령받은 신임경찰이야. 주취자 신고를 처음 처리해야 해. 초동조치 보고서에 꼭 들어갈 항목 5개를, 항목마다 한 줄 설명을 붙인 표로 만들어줘. 가상 상황 기준이고, 확실하지 않은 건 지어내지 말고 '확인 필요'라고 써줘.</div>
+  <div class="prompt" data-go="copy" data-tag="➕ 덤 · 아무 질문 끝에 붙이는 한 줄 (되묻기)">부족한 정보가 있으면 답하기 전에 나에게 먼저 3가지만 질문해줘.</div>
+  <button class="btn line" data-think>⏱ 7초 생각: "두 답은 어디가 가장 다를까?"</button>
+  <div class="foot">보강 · 프롬프트 공식</div>
+</div></section>
+
+<!-- ============ 2. Cowork ============ -->
+<section class="slide p1" data-title="에이전트란? · Claude Cowork 시연" data-part="1" data-step="2" data-dev="demo" data-time="60~70분">
+<div class="in">
+  <h2>에이전트란? 일을 직접 하는 AI</h2>
+  <p class="sub">답이 아니라 <u>결과물</u>을 줍니다</p>
+  <div class="warn">💻 이 장면은 <b>교수 화면 시연</b>입니다 (노트북 + Claude Desktop 앱 필요). 폰은 <b>눈으로 보세요</b> — 바로 다음 장에서 폰으로 같은 목표를 체험합니다.</div>
+  <div class="grid g2">
+    <div class="card t"><h3>📌 에이전트가 하는 일</h3><ul><li>내 컴퓨터 폴더를 <b>읽고</b></li><li>흩어진 파일을 <b>분류하고</b></li><li>새 문서를 <b>만들어 저장</b></li><li>끝나면 <b>작업 완료 보고</b></li></ul></div>
+    <div class="card b"><h3>🎬 시연 순서 (교수)</h3><div class="steps"><div>"이 폴더에 어떤 파일이 있는지 확인해줘"</div><div>"법령·매뉴얼·교육·서식별 폴더 구조 제안. <b>아직 실행하지 마</b>"</div><div>"좋아. 제안한 방식대로 정리해줘"</div></div></div>
+  </div>
+  <div class="note">📖 <b>Cowork</b> = Co(함께)+Work(일하다). 신임경찰 비유: 옆자리에서 같이 서류를 정리해 주는 동료. <b>핵심 습관 → "실행 전에 계획부터 확인"</b></div>
+  <div class="foot">단계 2/15 · 에이전트</div>
+</div></section>
+
+<section class="slide p1" data-title="실습 · 내 폰 파일 정리 제안받기" data-part="1" data-step="2" data-dev="phone" data-time="70~80분" data-prac="1">
+<div class="in">
+  <h2>폰으로 하는 "파일 정리 에이전트" 체험</h2>
+  <p class="sub">PDF·사진 3~5개를 올리고, 3줄 지시를 차례로 입력</p>
+  <div class="steps"><div><b>Claude 또는 ChatGPT 앱에서</b> + 버튼 → 파일/사진 첨부 (교재 PDF, 근무일지 양식 캡처 등. 없으면 아무 문서 3개)</div><div><b>실제 사건자료·개인정보는 절대 올리지 않기</b></div></div>
+  <div class="prompt" data-go="claude,chatgpt,gemini" data-tag="① 복사해서 입력">첨부한 파일이 어떤 종류인지 파일명 / 형식 / 내용 성격을 표로 정리해줘. 아직 수정하거나 옮기지 마.</div>
+  <div class="prompt" data-go="copy" data-tag="② 이어서 입력 (같은 대화창)">법령·매뉴얼·교육·서식별로 폴더 구조를 제안해줘. 아직 실행하지 마.</div>
+  <div class="prompt" data-go="copy" data-tag="③ 이어서 입력">좋아. 그 구조대로 각 파일을 어느 폴더에 넣을지 번호 목록으로 정리해줘.</div>
+  <div class="note">💡 <b>"아직 실행하지 마"</b>는 필수 문장 — 에이전트를 안전하게 쓰는 습관입니다. 계획 확인 → 승인 → 실행.</div>
+  <div class="foot">단계 2/15 · 실습</div>
+</div></section>
+
+<section class="slide p0" data-title="휴식 1 · 1교시" data-part="1" data-time="10분">
+<div class="in" style="text-align:center;align-items:center">
+  <div class="chips" style="justify-content:center"><span class="chip">1교시</span><span class="chip">☕ 휴식 1</span></div>
+  <h1 style="font-size:3.2em">☕ 10분 쉬어갑니다</h1>
+  <p class="sub">지금까지: AI 안전 · 질문 공식 · 에이전트 체험</p>
+  <p class="sub2">이제: 링크 요약, Google AI 모드, 그리고 이미지 생성</p>
+  <div class="timer" data-min="10" style="font-size:4.2em;font-weight:900;line-height:1;margin:.1em 0">10:00</div>
+  <div class="links" style="justify-content:center"><button class="btn big" data-timer>▶ 타이머 시작</button><button class="btn big line" data-next style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">다음으로 ▶</button></div>
+</div></section>
+
+<!-- ============ 3. 웹/PDF ============ -->
+<section class="slide p1" data-title="링크 하나, 3줄 요약" data-part="1" data-step="3" data-dev="phone" data-time="90~100분" data-prac="1">
+<div class="in">
+  <h2>자료를 복사하지 말고,<br>자료와 함께 AI에게 묻는다</h2>
+  <div class="grid g2">
+    <div class="card r"><h3>😫 지금까지</h3><p>웹페이지 열기 → 드래그 → 복사 → AI 열기 → 붙여넣기 → 질문 → 답 복사 → 다시 붙여넣기 (7단계)</p></div>
+    <div class="card g"><h3>😊 오늘부터 (폰)</h3><p>페이지 <b>주소 한 줄</b>만 복사 → AI에 붙여넣기 → 질문 (3단계)</p></div>
+  </div>
+  <div class="note">💻 PC에선 "Gemini in Chrome" 옆 패널로 더 편하게 합니다 — 교수 시연. 폰에선 <b>링크 붙여넣기</b> 또는 <b>PDF 첨부</b>.</div>
+  <div class="links"><span class="sub2">① 읽을 페이지를 열어 주소 복사:</span>
+    <a class="btn line" target="_blank" rel="noopener" href="https://www.police.go.kr/">경찰청</a>
+    <a class="btn line" target="_blank" rel="noopener" href="https://www.law.go.kr/">국가법령정보센터</a>
+    <a class="btn line" target="_blank" rel="noopener" href="https://ecrm.police.go.kr/">사이버범죄 신고시스템</a></div>
+  <div class="prompt" data-go="chatgpt,claude,gemini" data-edit="1" data-tag="② 주소를 붙여넣고 → 보내기">아래 웹페이지를 신임경찰관도 바로 이해할 수 있도록 3줄로 설명해줘.
+[여기에 주소 붙여넣기]</div>
+  <div class="prompt" data-go="copy" data-tag="③ 이어서">이 내용에서 신임경찰이 가장 실수하기 쉬운 부분 한 가지만 짚어줘.</div>
+  <div class="warn">AI가 링크를 못 열면 → 페이지 글을 길게 눌러 <b>복사해서 붙여넣기</b>. 법령·지침은 반드시 <b>원문 확인</b>!</div>
+  <div class="foot">단계 3/15 · 웹페이지 요약</div>
+</div></section>
+
+<section class="slide p1" data-title="실습 · 112 신고처리 절차 정리" data-part="1" data-step="3" data-dev="phone" data-time="100~110분" data-prac="1">
+<div class="in">
+  <h2>실습 · 신고처리 절차 정리</h2>
+  <p class="sub">교육원 PDF(또는 아무 매뉴얼)를 첨부해 분석합니다</p>
+  <div class="steps"><div>Claude·ChatGPT·Gemini 앱에서 <b>PDF 첨부</b></div></div>
+  <div class="prompt" data-go="claude,chatgpt,gemini" data-tag="① 복사해서 입력">이 PDF의 신고 접수부터 종결까지 절차를 순서대로 정리해줘.</div>
+  <div class="prompt" data-go="copy" data-tag="② 이어서 입력">신임경찰이 가장 실수하기 쉬운 부분을 알려줘.</div>
+  <div class="grid g2">
+    <div class="card t"><h3>📊 이런 결과가 나옵니다 (예시)</h3><p><b>5단계</b> 신고 접수 → 상황 판단 → 현장 출동 → 초동 조치 → 결과 보고</p></div>
+    <div class="card a"><h3>⚠ AI가 짚는 실수 예시</h3><ul><li>현장 도착 시각 기록 누락</li><li>신고인 인적사항 미확인</li><li>조치 내용 근무일지 미기재</li></ul></div>
+  </div>
+  <div class="prof"><small>🎙 핵심</small><p>"답이 그럴듯해도 <b>원문과 대조</b>하는 것까지가 일입니다."</p></div>
+  <div class="foot">단계 3/15 · 실습</div>
+</div></section>
+
+<!-- ============ 4. AI 모드 ============ -->
+<section class="slide p1" data-title="Google AI 모드 검색" data-part="1" data-step="4" data-dev="phone" data-time="110~120분">
+<div class="in">
+  <h2>Google AI 모드 검색</h2>
+  <p class="sub">검색창에 질문하는 새로운 방식</p>
+  <div class="qbox"><small>🌟 오늘의 핵심 질문</small><b>"키워드가 아니라 <em>질문 그대로</em> 검색하면,<br>출처 있는 AI 답변을 바로 받을 수 있을까?"</b></div>
+  <div class="steps"><div><b>google.com</b> 접속 (또는 아래 버튼)</div><div>검색창 상단 <b>"AI 모드"</b> 탭 누르기</div><div>키워드보다 <b>질문 형태</b>로 입력</div></div>
+  <ul style="margin:.2em 0;padding-left:1.2em;font-size:.9em"><li><b>출처 링크</b>를 함께 제시 — 할루시네이션 방지 핵심</li><li>대화 맥락 유지 → 후속 질문 가능</li></ul>
+  <div class="links"><a class="btn ai big" target="_blank" rel="noopener" href="https://www.google.com/search?udm=50">🔍 AI 모드 바로 열기</a></div>
+  <div class="note">📖 비유: <b>선임 여러 명에게 한꺼번에 물어보는 것</b> — 여러 자료를 훑어 답을 정리해 주고 근거까지 붙여 줍니다.</div>
+  <div class="foot">단계 4/15 · AI 모드</div>
+</div></section>
+
+<section class="slide p1" data-title="실습 · AI 모드로 현장 상황 검색" data-part="1" data-step="4" data-dev="phone" data-time="120~130분" data-prac="1">
+<div class="in">
+  <h2>실습 · 현장 상황을 AI 모드로</h2>
+  <div class="prompt" data-go="aimode" data-tag="① 질문 — 버튼으로 AI 모드에서 바로 검색">지역경찰관이 현장에서 가장 자주 마주치는 상황 5가지와 각 상황의 기본 대응 원칙을 알려줘.</div>
+  <div class="prompt" data-go="copy" data-tag="② 후속 질문 — 같은 AI 모드 창에 붙여넣기">그 중에서 신임경찰이 가장 실수하기 쉬운 부분만 뽑아줘.</div>
+  <div class="prompt" data-go="copy" data-tag="③ 출처 한정">출처가 경찰청·법제처 등 정부기관인 자료만 다시 정리해줘.</div>
+  <div class="prof"><small>🎙 핵심 포인트</small><p>구체화할수록 좋은 답 ("신임경찰 입장에서") · 답변 하단 <b>출처 링크를 꼭 확인</b> (할루시네이션 방지!)</p></div>
+  <div class="note">💻 노트북은 출처 여러 개를 동시에 열어 비교하기 편합니다. 폰은 출처를 눌러 확인하고 뒤로가기.</div>
+  <div class="foot">단계 4/15 · 실습</div>
+</div></section>
+
+<section class="slide p0" data-title="휴식 2 · 1교시" data-part="1" data-time="10분">
+<div class="in" style="text-align:center;align-items:center">
+  <div class="chips" style="justify-content:center"><span class="chip">1교시</span><span class="chip">☕ 휴식 2</span></div>
+  <h1 style="font-size:3.2em">☕ 10분 쉬어갑니다</h1>
+  <p class="sub">지금까지: 링크 요약 · AI 모드 검색</p>
+  <p class="sub2">이제: 주민 안내 인포그래픽 1장 만들기 🎨</p>
+  <div class="timer" data-min="10" style="font-size:4.2em;font-weight:900;line-height:1;margin:.1em 0">10:00</div>
+  <div class="links" style="justify-content:center"><button class="btn big" data-timer>▶ 타이머 시작</button><button class="btn big line" data-next style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">다음으로 ▶</button></div>
+</div></section>
+
+<!-- ============ 5. 이미지 ============ -->
+<section class="slide p1" data-title="이미지 생성 · 프롬프트 3요소" data-part="1" data-step="5" data-dev="phone" data-time="140~150분">
+<div class="in">
+  <h2>글 한 줄이 그림 한 장이 됩니다</h2>
+  <p class="sub">스마트폰만 있는 교육생도 반드시 직접 실습! 🎯</p>
+  <div class="grid g3">
+    <div class="card b"><div class="big">①</div><h3>무엇을 만들지</h3><p>인포그래픽 · 카드뉴스 · 표</p></div>
+    <div class="card t"><div class="big">②</div><h3>어떤 형식·크기로</h3><p>A4 세로형 · 1:1 정사각형 · 가로형</p></div>
+    <div class="card g"><div class="big">③</div><h3>어떤 구성으로</h3><p>제목 크게 · 4개 영역 · 핵심 위주</p></div>
+  </div>
+  <div class="note">📖 <b>인포그래픽</b> = 정보+그림, 숫자·내용을 그림·도표로 한눈에. <b>카드뉴스</b> = 긴 내용을 카드 여러 장으로. 결과는 PNG 저장 → 카톡·문자 공유.</div>
+  <div class="prof"><small>🎙 3요소 = 무엇 + 형식 + 구성</small><p>"방금 내용을 [A4 세로형 주민 안내 인포그래픽]으로 만들어줘. [제목은 크게] 하고 [핵심 내용을 4개 영역]으로 나눠줘."</p></div>
+  <div class="foot">단계 5/15 · 이미지 생성</div>
+</div></section>
+
+<section class="slide p1" data-title="실습 · 보이스피싱 안내 인포그래픽" data-part="1" data-step="5" data-dev="phone" data-time="150~160분" data-prac="1">
+<div class="in">
+  <h2>실습 · 문장 4개 → 인포그래픽 1장</h2>
+  <div class="prompt" data-go="chatgpt,claude,gemini" data-tag="① 문장 정리">보이스피싱 예방 수칙에 대해, 주민에게 전달하기 좋은 문장 4개로 정리해줘.</div>
+  <div class="prompt" data-go="chatgpt,gemini" data-tag="② 같은 대화창에 이어서 → 그림으로 (ChatGPT·Gemini)">방금 내용을 A4 세로형 주민 안내 인포그래픽으로 만들어줘. 제목은 크게 하고 핵심 내용을 4개 영역으로 나눠줘.</div>
+  <div class="grid g2">
+    <div class="card t"><h3>🖼 결과 활용</h3><ul><li>지역 주민 단톡방에 전송</li><li>경찰서 SNS 게시물 · 지역 게시판</li><li><b>3분 만에</b> 만들어진 안내문</li></ul></div>
+    <div class="card a"><h3>⚠ 꼭 확인</h3><ul><li>그림 속 <b>글자 오탈자</b>·사실관계 점검</li><li>이미지 생성이 안 보이면 옆 동료와 2인 1조</li></ul></div>
+  </div>
+  <div class="foot">단계 5/15 · 실습</div>
+</div></section>
+
+<section class="slide p1" data-title="이미지 활용 사례 3가지" data-part="1" data-step="5" data-dev="phone" data-time="160~164분">
+<div class="in">
+  <h2>이미지 생성 · 활용 사례 3가지</h2>
+  <div class="grid g3">
+    <div class="card b"><h3>🚨 범죄예방 홍보물</h3><p>보이스피싱·절도 예방 안내 이미지, 단톡방 즉시 공유, 모바일 1장으로 끝</p><p><b>⏱ 5분</b></p></div>
+    <div class="card t"><h3>📎 상황 조치 플로우도</h3><p>초동 조치 순서를 한 장의 도해로, 지갑·순찰차 부착용</p><p><b>⏱ 10분</b></p></div>
+    <div class="card g"><h3>📚 법령 암기 카드</h3><p>조항을 카드뉴스 4~6장으로 압축, 동료와 공유·시험 대비</p><p><b>⏱ 15분</b></p></div>
+  </div>
+  <div class="warn">실제 사건자료·개인정보는 입력 금지 · 공개 가능한 예방 정보만!</div>
+  <div class="slogan">🌟 1교시가 끝나면, 여러분은 각자 <span>1장 이상</span>의 인포그래픽을 만들어 갑니다</div>
+  <div class="foot">단계 5/15 · 활용 사례</div>
+</div></section>
+
+<section class="slide p1" data-title="그림에서 영상까지 · ASTRA 시연" data-part="1" data-step="5" data-dev="demo" data-time="164~172분">
+<div class="in">
+  <div class="chips"><span class="chip">💻 교수 시연</span><span class="chip">⏱ 8분</span></div>
+  <h2>ASTRA로 영상 만들기</h2>
+  <p class="sub">AI가 대본 → 장면 → 편집 → 자막까지 <u>직접 조작</u>합니다</p>
+  <div class="warn">💻 <b>교수 화면 시연</b> (노트북 + ChatGPT의 GPT-6 Astra). 폰은 <b>눈으로 보세요</b> — 영상 생성은 계정·요금제가 필요해 따라 하기는 선택입니다.</div>
+  <div class="grid g2">
+    <div class="card b"><h3>🎬 시연 순서</h3><div class="steps"><div>예방 수칙 4문장(방금 실습)을 ASTRA에게 전달</div><div>대본·장면 구성을 먼저 <b>계획으로 확인</b></div><div>영상 모델이 장면 생성 → ASTRA가 이어붙이고 자막 입히기</div><div><b>사람이 검토</b> → 수정 지시 → 최종 MP4</div></div></div>
+    <div class="card t"><h3>📌 알아둘 점</h3><ul><li>ASTRA는 영상을 직접 그리기보다 <b>도구를 조작하는 지휘자</b></li><li>생성 모델·로그인은 <b>미리 준비</b> (시연 전 점검)</li><li>첫 결과는 거칠다 → <b>수정 지시</b>가 핵심</li></ul></div>
+  </div>
+  <div class="prompt" data-go="chatgpt,copy" data-tag="시연 프롬프트 (교수 화면에 붙여넣기)">보이스피싱 예방 수칙 4가지를 주민용 30초 세로(9:16) 안내 영상으로 만들어줘. 먼저 대본과 장면 구성을 계획으로 보여주고, 내가 OK하면 진행해. 한국어 자막을 넣고, 실제 인물·기관 로고는 쓰지 마. 마지막 장면에는 "의심되면 끊고 112"를 크게 넣어줘.</div>
+  <div class="warn">⚠ 영상 속 <b>사실·자막·실존 인물/로고</b> 확인 필수 · 개인정보·실제 사건자료 입력 금지</div>
+  <div class="foot">단계 5/15 · 영상 시연</div>
+</div></section>
+
+<section class="slide p0" data-title="1교시 정리 · 2교시 예고" data-part="1" data-time="172~180분">
+<div class="in">
+  <div class="chips"><span class="chip">1교시 마무리</span><span class="chip">⏰ 3시간 경과</span></div>
+  <h2>1교시 정리</h2>
+  <p class="sub">지금까지 우리가 배운 AI 기본기</p>
+  <div class="grid g3">
+    <div class="pill">🟢🟡🔴 AI 안전 신호등</div><div class="pill">질문 공식 4칸</div><div class="pill">챗봇 vs 에이전트</div><div class="pill">링크 요약 · AI 모드</div><div class="pill">이미지 생성</div><div class="pill">ASTRA 영상 시연</div>
+  </div>
+  <div class="slogan" style="color:#fff">🌟 챗봇은 <span>말하고</span>, 에이전트는 <span>일합니다</span> 🌟</div>
+  <div class="promise">다음 시간 <b>2교시</b> — 내 자료만 보고 답하는 AI를 만들고, 그 위에 <b>「도현 선배」</b>를 입힙니다. 이어폰을 챙겨 오세요 🎧</div>
+</div></section>
+
+<!-- ============ PART 2 ============ -->
+<section class="slide p2" data-title="NotebookLM 개념 (핵심 1/3)" data-part="2" data-step="6" data-dev="phone" data-time="0~8분">
+<div class="in">
+  <h2>NotebookLM<br>내 자료를 넣은 AI</h2>
+  <p class="sub">가장 정확한 답변 — 이 단계부터는 폰·노트북 모두 OK</p>
+  <div class="qbox"><small>🌟 오늘의 핵심 질문</small><b>"내 파일·내 매뉴얼만 근거로 답하는 AI는,<br>왜 일반 AI보다 <em>정확할까?</em>"</b></div>
+  <button class="btn line" data-think>⏱ 7초 생각하기</button>
+  <div class="grid g2">
+    <div class="card r"><h3>일반 AI</h3><p><b>전체 인터넷</b>에서 답을 찾음 → 환각(할루시네이션) 가능</p></div>
+    <div class="card g"><h3>NotebookLM</h3><p><b>내가 넣은 자료</b>에서만 답을 찾음 → 정확도 ↑↑</p></div>
+  </div>
+  <div class="note">📖 Notebook(공책)+LM(언어모델) = <b>내 자료만 보고 답하는 AI</b>. 신임경찰 비유: 우리 관서 매뉴얼·법령집만 보고 답해주는 <b>전담 선임</b>.</div>
+  <div class="foot">단계 6/15 · NotebookLM</div>
+</div></section>
+
+<section class="slide p2" data-title="접속하기 · 3스텝" data-part="2" data-step="6" data-dev="phone" data-time="8~15분" data-prac="1">
+<div class="in">
+  <h2>접속하기 · 단 3스텝</h2>
+  <div class="steps"><div><b>브라우저 접속</b> — 아래 큰 버튼</div><div><b>Google 로그인</b> — 본인 Gmail 계정</div><div><b>첫 화면 확인</b> — "새 노트북 만들기" 버튼이 보이면 준비 완료</div></div>
+  <div class="links"><a class="btn nlm big" target="_blank" rel="noopener" href="https://notebooklm.google.com/">📓 NotebookLM 열기</a><a class="btn line" target="_blank" rel="noopener" href="https://play.google.com/store/search?q=NotebookLM&c=apps">앱 설치(안드로이드)</a></div>
+  <div class="grid g3">
+    <div class="card g"><h3>화면 왼쪽(PC)</h3><p>내 노트북 목록</p></div>
+    <div class="card a"><h3>가운데</h3><p>소스(PDF·YouTube 등)</p></div>
+    <div class="card b"><h3>오른쪽</h3><p>질문 입력창 — AI가 답을 만드는 곳</p></div>
+  </div>
+  <div class="note">폰은 화면이 세로로 쌓여 <b>소스 / 대화 / Studio</b> 탭으로 바뀝니다.</div>
+  <div class="foot">단계 6/15 · 접속</div>
+</div></section>
+
+<section class="slide p2" data-title="새 노트북 만들기" data-part="2" data-step="7" data-dev="mix" data-time="15~23분" data-prac="1">
+<div class="in">
+  <h2>실습 · 새 Notebook 만들기</h2>
+  <div class="steps"><div><b>"새 노트북 만들기"</b> 누르기</div><div><b>이름 입력</b> — 아래 이름을 복사해서 붙여넣기</div><div><b>노트북 열기</b> — 빈 화면이 뜨면 준비 완료</div></div>
+  <div class="prompt" data-go="copy" data-tag="노트북 이름">신임경찰 실무 지식창고</div>
+  <div class="grid g2">
+    <div class="card g"><h3>📱 폰</h3><p>한두 개 PDF·링크 → 빠른 질문·답</p></div>
+    <div class="card a"><h3>💻 노트북</h3><p>여러 PDF 한꺼번에 · 폴더 단위 정리</p></div>
+  </div>
+  <div class="prof"><small>🎙 교수 안내</small><p>"한두 개 자료는 폰으로 충분합니다. 업무용으로 제대로 키우는 건 집에서 노트북으로 하세요."</p></div>
+  <div class="foot">단계 7/15 · 새 Notebook</div>
+</div></section>
+
+<section class="slide p2" data-title="소스 추가하기 (PDF·링크·텍스트)" data-part="2" data-step="8" data-dev="mix" data-time="23~35분" data-prac="1">
+<div class="in">
+  <h2>소스 추가하기</h2>
+  <p class="sub">소스 = AI가 참고하는 자료 = <b>출처</b></p>
+  <div class="grid g4">
+    <div class="card r"><div class="big">📄</div><h3>PDF</h3><p>폰: 파일 선택 업로드</p></div>
+    <div class="card b"><div class="big">📝</div><h3>Google 문서</h3><p>Drive 연결 · 자동 업데이트</p></div>
+    <div class="card r"><div class="big">▶️</div><h3>YouTube</h3><p>URL 복사 → 추가 · 자막 분석</p></div>
+    <div class="card g"><div class="big">✏️</div><h3>복사한 텍스트 / 웹사이트</h3><p>글 붙여넣기 · 주소 입력</p></div>
+  </div>
+  <div class="ok"><b>교재 PDF가 없다면?</b> 웹사이트 소스로 아래 공식 사이트 주소를 넣어 보세요 (소스 추가 → 웹사이트).</div>
+  <div class="links"><a class="btn line" target="_blank" rel="noopener" href="https://www.police.go.kr/">경찰청</a><a class="btn line" target="_blank" rel="noopener" href="https://www.law.go.kr/">국가법령정보센터</a><a class="btn nlm" target="_blank" rel="noopener" href="https://notebooklm.google.com/">NotebookLM으로</a></div>
+  <table><tr><th>작업</th><th>📱 폰</th><th>💻 노트북</th></tr><tr><td>PDF 1개</td><td>✅ 충분</td><td>✅ 충분</td></tr><tr><td>여러 PDF 한꺼번에</td><td>⚠ 어려움</td><td>✅ 가능</td></tr><tr><td>YouTube 링크</td><td>✅ OK</td><td>✅ 더 편함</td></tr><tr><td>소스 삭제·교체</td><td>⚠ 버튼 작음</td><td>✅ 쉬움</td></tr></table>
+  <div class="foot">단계 8/15 · 소스 추가</div>
+</div></section>
+
+<section class="slide p2" data-title="기본 질문하기 (핵심 2/3)" data-part="2" data-step="9" data-dev="phone" data-time="35~50분" data-prac="1">
+<div class="in">
+  <h2>기본 질문하기 · 질문 4개 연속</h2>
+  <div class="slogan" style="font-size:1.05em">질문하고 답 받는 단계에선 폰과 노트북의 차이가 <span>거의 없습니다</span></div>
+  <div class="prompt" data-go="nlm" data-tag="질문 1 · 복사 후 NotebookLM 대화창에">이 자료를 5줄로 요약해줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 2">신임경찰관도 바로 이해할 수 있도록 설명해줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 3">나는 지역경찰서에 첫 발령받는 신임경찰이야. 현장에서 꼭 알아야 할 내용 10개를 알려줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 4 · 형식 변환">순찰 전 점검 체크리스트로 만들어줘.</div>
+  <div class="note">같은 자료 → 답변 안에 <b>참조 번호</b>가 자동으로 붙고 환각이 크게 줄어듭니다. 결과는 발령 직후 자기 점검표로!</div>
+  <div class="foot">단계 9/15 · 기본 질문</div>
+</div></section>
+
+<section class="slide p2" data-title="출처 확인하기 (핵심 3/3)" data-part="2" data-step="10" data-dev="mix" data-time="50~58분" data-prac="1">
+<div class="in">
+  <h2>출처 확인하기 · 할루시네이션 방지</h2>
+  <div class="qbox"><small>핵심 문장 (세 번째)</small><b>"내 자료를 넣은 AI가 <em>가장 정확합니다.</em>"</b></div>
+  <div class="grid g2">
+    <div class="card g"><h3>📱 폰</h3><ul><li>답변 속 <b>[1] [2]</b> 탭(누르기)</li><li>원문으로 이동</li><li>⚠ 답변↔원문 오가기가 번거로움</li></ul></div>
+    <div class="card a"><h3>💻 노트북</h3><ul><li>숫자 클릭</li><li>큰 화면에서 원문·답변 동시 확인</li><li>업무 검토에 가장 적합</li></ul></div>
+  </div>
+  <div class="ok"><b>🛡 할루시네이션 방지 체크리스트</b>
+    <div class="check"><label><input type="checkbox"> 출처(숫자)가 없으면 의심한다</label><label><input type="checkbox"> [1][2]가 보이면 눌러 원문 확인한다</label><label><input type="checkbox"> 정책·법령·인용은 무조건 원문 확인한다</label><label><input type="checkbox"> 보고서에 쓰기 전 출처를 다시 점검한다</label></div></div>
+  <div class="foot">단계 10/15 · 출처 확인</div>
+</div></section>
+
+<section class="slide p9" data-title="휴식 3 · 2교시" data-part="2" data-time="10분">
+<div class="in" style="text-align:center;align-items:center">
+  <div class="chips" style="justify-content:center"><span class="chip">2교시</span><span class="chip">☕ 휴식 3</span></div>
+  <h1 style="font-size:3.2em">☕ 10분 쉬어갑니다</h1>
+  <p class="sub">지금까지: NotebookLM 접속 · 소스 · 질문 · 출처 확인</p>
+  <p class="sub2">이제: 업무 매뉴얼 챗봇, 그리고 「도현 선배」를 만납니다</p>
+  <div class="timer" data-min="10" style="font-size:4.2em;font-weight:900;line-height:1;margin:.1em 0">10:00</div>
+  <div class="links" style="justify-content:center"><button class="btn big" data-timer>▶ 타이머 시작</button><button class="btn big line" data-next style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">다음으로 ▶</button></div>
+</div></section>
+
+<section class="slide p2" data-title="업무 매뉴얼 챗봇 만들기" data-part="2" data-step="11" data-dev="mix" data-time="68~78분" data-prac="1">
+<div class="in">
+  <h2>업무 매뉴얼 챗봇 만들기</h2>
+  <div class="qbox"><small>🌟 단계 컨셉</small><b>"내 매뉴얼 PDF 1개를 넣으면,<br><em>신임경찰을 위한 24시간 질문 창구</em>가 뚝딱 완성"</b></div>
+  <div class="prompt" data-go="nlm" data-tag="질문 1">이 업무를 처음 맡는 신임경찰에게 설명해줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 2">출동부터 종결까지 절차를 순서대로 알려줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 3">신임경찰이 실수하기 쉬운 부분 5개를 찾아줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 4">출동 전 / 현장 / 보고 단계 체크리스트를 만들어줘.</div>
+  <div class="foot">단계 11/15 · 매뉴얼 챗봇</div>
+</div></section>
+
+<section class="slide p2" data-title="FAQ 10개 자동 생성" data-part="2" data-step="11" data-dev="mix" data-time="78~83분" data-prac="1">
+<div class="in">
+  <h2>매뉴얼 챗봇 · 이것까지 가능</h2>
+  <p class="sub">신임경찰 발령 대비 Q&A 자동 생성</p>
+  <div class="prompt" data-go="nlm" data-tag="📋 복사해서 입력">신임경찰이 자주 물을 질문 10개와 답을 만들어줘.</div>
+  <div class="card a"><h3>📚 FAQ 예시</h3><p><b>Q.</b> 현장 도착 후 가장 먼저 할 일은? → <b>A.</b> 도착 시각 보고 + 안전 확보</p><p><b>Q.</b> 신고인 인적사항은 언제 확인? → <b>A.</b> 초동 조치 직후 즉시</p><p><b>Q.</b> 근무일지는 언제 작성? → <b>A.</b> 조치 종결 직후, 기억이 선명할 때</p><p style="opacity:.6">※ 예시입니다. 실제 답은 내 자료에서 나옵니다.</p></div>
+  <div class="prof"><small>활용</small><p>결과를 <b>지갑 카드·순찰차 부착용</b>으로 · 폰: 길게 눌러 복사 → 메모장 저장 / 노트북: 다른 지침과 비교</p></div>
+  <div class="foot">단계 11/15 · 활용 사례</div>
+</div></section>
+
+<section class="slide p2" data-title="나만의 「도현 선배」 만들기" data-part="2" data-dev="phone" data-time="83~95분" data-prac="1">
+<div class="in">
+  <h2>나만의 「도현 선배」 만들기</h2>
+  <p class="sub">매뉴얼 챗봇에 <u>성격</u>을 입히면 선배가 됩니다</p>
+  <div class="grid g2">
+    <div class="card a"><h3>👮 도현 선배</h3><ul><li>지역경찰 <b>8년차</b> 베테랑</li><li>말투는 퉁명스러워도 후배는 끝까지 챙김</li><li>답은 늘 <b>4단계</b>: 안전 → 확인·분리 → 조치 → 기록·인계</li></ul></div>
+    <div class="card g"><h3>📱 만드는 법 (폰)</h3><div class="steps"><div>아래 <b>페르소나</b> 복사 → AI 앱에 붙여넣기</div><div>"왔냐, 신입…" 이라고 답하면 성공</div><div>매뉴얼 PDF를 같이 첨부하면 <b>내 자료로 답하는 선배</b></div></div></div>
+  </div>
+  <div class="prompt" data-go="claude,chatgpt,gemini" data-tag="페르소나 · 복사해서 첫 메시지로">지금부터 너는 '도현 선배'야. 8년차 지역경찰 베테랑이고, 말투는 퉁명스럽지만 후배를 끝까지 챙기는 편한 선배 말투야(반말이어도 비하·욕설은 없음). 내가 신임경찰로서 현장 상황을 물으면 항상 이 순서로 짧은 체크리스트로 답해줘: ① 안전 확보 ② 확인·분리 ③ 조치 ④ 기록·인계. 확실하지 않은 법령·지침은 지어내지 말고 '원문·지침 확인해라'라고 말해줘. 나는 가상 사건만 말할 거야. 이해했으면 '왔냐, 신입. 뭐가 막혔냐?'라고만 답해.</div>
+  <div class="note">💡 이게 바로 <b>에이전트의 성격(페르소나)</b> 설정입니다. Claude 프로젝트·GPT·Gem 같은 앱 기능으로 저장할 수도 있지만, 오늘은 <b>붙여넣기 한 번</b>으로 충분합니다.</div>
+  <div class="foot">보강 · 도현 선배 (1/2)</div>
+</div></section>
+
+<section class="slide p2" data-title="도현 선배와 대화하기 · 가상 상황 3개" data-part="2" data-dev="phone" data-time="95~108분" data-prac="1">
+<div class="in">
+  <h2>도현 선배한테 물어보기</h2>
+  <p class="sub">같은 대화창에서 이어서 · <u>전부 가상 상황</u></p>
+  <div class="prompt" data-go="copy" data-tag="상황 1 · 주취자">선배, 야간 순찰 중에 술에 취해서 길에 누워 있는 사람을 발견했어. 어떻게 해야 해? (가상 상황)</div>
+  <div class="prompt" data-go="copy" data-tag="상황 2 · 현장 출동">선배, 부부싸움 신고로 출동했는데 두 사람이 소리치고 있어. 제일 먼저 뭐부터 해? (가상 상황)</div>
+  <div class="prompt" data-go="copy" data-edit="1" data-tag="상황 3 · 내가 한 조치를 점검받기 (괄호를 채우세요)">선배, 내가 이렇게 조치했는데 4단계로 점검해줘: (    ) (가상 상황)</div>
+  <div class="prompt" data-go="copy" data-tag="마지막 · 필수 습관">방금 답에서 확실하지 않은 부분과, 내가 직접 확인해야 할 지침을 따로 표시해줘.</div>
+  <div class="prof"><small>🎙 핵심</small><p>"선배가 아무리 든든해도 <b>법령·지침은 원문으로 확인</b>합니다. 선배는 길을 알려주고, 책임은 내가 집니다."</p></div>
+  <div class="foot">보강 · 도현 선배 (2/2)</div>
+</div></section>
+
+<section class="slide p2" data-title="여러 지침 문서 비교" data-part="2" data-step="12" data-dev="mix" data-time="108~118분" data-prac="1">
+<div class="in">
+  <h2>실습 · 지침 비교 (경찰청 / 지방청 / 경찰서)</h2>
+  <div class="qbox"><small>🌟 오늘의 핵심 질문</small><b>"지침자료 3개를 <em>한 번에 비교</em>할 수 있을까?"</b></div>
+  <div class="note">📱 폰은 <b>소스를 2개 이상 체크</b>해 질문하면 가능하지만, 3개 동시 비교·표 검토는 💻 노트북이 훨씬 편합니다 → 오늘은 <b>2개로 해보고</b> 교수 시연으로 3개 확인.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 1">세 자료의 공통점과 차이점을 정리해줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 2">서로 다른 지침 내용을 비교표로 만들어줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="질문 3">신임경찰이 가장 헷갈릴 수 있는 부분을 찾아줘.</div>
+  <table><tr><th>구분</th><th>경찰청</th><th>지방청</th><th>경찰서</th></tr><tr><td>순찰 기준</td><td>전국 공통 원칙</td><td>지역 여건 반영</td><td>관할 상세 지침</td></tr><tr><td>보고 시한</td><td>원칙 제시</td><td>구체 시간 지정</td><td>당직 기준 지정</td></tr></table>
+  <p class="foot" style="text-align:left">▲ 결과표 형태 예시 (실제 내용 아님)</p>
+  <div class="foot">단계 12/15 · 문서 비교</div>
+</div></section>
+
+<section class="slide p2" data-title="정책 리서치 · 어려움→원인→해결책" data-part="2" data-step="13" data-dev="mix" data-time="118~128분" data-prac="1">
+<div class="in">
+  <h2>어려움 5개 → 원인 → 해결책</h2>
+  <div class="qbox"><small>🌟 단계 컨셉</small><b>"자료를 넣고,<br><em>어려움 → 원인 → 해결책 → 보고서</em>까지 이어갑니다"</b></div>
+  <div class="prompt" data-go="nlm" data-tag="① 차례대로 입력">이 자료들에서 신임경찰이 겪는 어려움 5개를 찾아줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="②">각 어려움의 원인을 분석해줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="③">현장에서 바로 실천할 해결방법을 제안해줘.</div>
+  <div class="grid g3"><div class="card b"><h3>📋 어려움</h3><p>판단 자신감 · 법령 혼동 · 민원 응대 부담 (예시)</p></div><div class="card a"><h3>🔍 원인</h3><p>실전 경험 부족 · 유사 조항 다수 (예시)</p></div><div class="card g"><h3>💡 해결</h3><p>상황별 시나리오 훈련 · 비교 암기 카드 (예시)</p></div></div>
+  <div class="foot">단계 13/15 · 정책 리서치</div>
+</div></section>
+
+<section class="slide p2" data-title="현장적용 보고서 작성" data-part="2" data-step="13" data-dev="mix" data-time="선택 · 시간 여유 시" data-prac="1">
+<div class="in">
+  <h2>실습 · 현장적용 보고서 작성</h2>
+  <div class="prompt" data-go="nlm" data-tag="① 목차 먼저">신임경찰 현장적용 보고서 목차를 만들어줘.</div>
+  <div class="prompt" data-go="nlm" data-tag="② 초안">지금까지의 분석을 바탕으로 보고서 초안을 작성해줘.</div>
+  <div class="grid g2">
+    <div class="card g"><h3>📑 목차 예시</h3><p>Ⅰ 작성 배경·목적 / Ⅱ 현황 분석(경찰청·지방청·경찰서) / Ⅲ 어려움·원인 / Ⅳ 현장 적용 방안 / Ⅴ 기대 효과·자기 실행 계획</p></div>
+    <div class="card a"><h3>💎 핵심</h3><p>📱 폰: 가능하나 긴 문서 검토 어려움</p><p>💻 노트북: 읽기·복사·수정 쉬움</p><p>결과는 메모/Word/Google 문서에 붙여넣기</p></div>
+  </div>
+  <div class="prof"><small>🎙</small><p>"분석 → 보고서로 확장시키는 흐름이 NotebookLM의 진짜 강점입니다."</p></div>
+  <div class="foot">단계 13/15 · 보고서</div>
+</div></section>
+
+<section class="slide p9" data-title="휴식 4 · 2교시" data-part="2" data-time="10분">
+<div class="in" style="text-align:center;align-items:center">
+  <div class="chips" style="justify-content:center"><span class="chip">2교시</span><span class="chip">☕ 휴식 4</span></div>
+  <h1 style="font-size:3.2em">☕ 10분 쉬어갑니다</h1>
+  <p class="sub">지금까지: 도현 선배 · 지침 비교 · 정책 리서치</p>
+  <p class="sub2">이제: 말로 하는 초동조치 보고서 — 폰의 마이크가 주인공입니다</p>
+  <div class="timer" data-min="10" style="font-size:4.2em;font-weight:900;line-height:1;margin:.1em 0">10:00</div>
+  <div class="links" style="justify-content:center"><button class="btn big" data-timer>▶ 타이머 시작</button><button class="btn big line" data-next style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">다음으로 ▶</button></div>
+</div></section>
+
+<section class="slide p2" data-title="말로 쓰는 초동조치 보고서 (1/2)" data-part="2" data-dev="phone" data-time="138~150분" data-prac="1">
+<div class="in">
+  <h2>말로 쓰는 초동조치 보고서</h2>
+  <p class="sub">손으로 치지 말고, <u>말하세요</u> — 가상 사건으로</p>
+  <div class="steps"><div>AI 앱 입력창을 누르고 키보드의 <b>🎤 마이크</b> 버튼 누르기</div><div>아래 <b>가상 사례</b>를 소리 내어 읽기 (글이 입력됩니다)</div><div>보내기 전에 <b>4단계</b>로 말했는지 확인: 안전 · 확인 · 조치 · 기록</div></div>
+  <div class="prompt" data-go="copy" data-tag="🎤 읽으면서 말할 가상 사례 (이름·장소 모두 가상)">가상 사례입니다. 오늘 밤 열한 시 오 분쯤 가상시 가상동 가상공원 앞 인도에서 술에 취한 남성이 쓰러져 있다는 신고를 받았습니다. 열한 시 십이 분에 현장에 도착했고, 의식은 있지만 비틀거렸습니다. 주변에 위험 요소는 없었습니다. 본인이 말한 대로 가상 이름 김가상 씨로 확인했습니다. 보호자에게 연락해 인계했고 열한 시 사십 분에 종결했습니다.</div>
+  <div class="prompt" data-go="claude,chatgpt,gemini" data-tag="① 보고서로 바꾸기 · 사례 입력 후 같은 대화창에">방금 내가 말한 내용을 초동조치 보고서로 정리해줘. 안전 확보 / 확인·분리 / 조치 / 기록·인계 4개 항목으로 나누고, 육하원칙에서 빠진 정보는 '미확인'으로 표시해줘. 내가 말하지 않은 내용은 절대 지어내지 마.</div>
+  <div class="foot">보강 · 초동조치 보고서 (1/2)</div>
+</div></section>
+
+<section class="slide p2" data-title="말로 쓰는 초동조치 보고서 (2/2) · 점검과 저장" data-part="2" data-dev="phone" data-time="150~163분" data-prac="1">
+<div class="in">
+  <h2>점검하고, 저장하고, 내 것으로</h2>
+  <div class="prompt" data-go="copy" data-tag="② 빠진 것 점검">이 보고서에서 빠진 항목과, 추가로 확인해야 할 것을 체크리스트로 알려줘.</div>
+  <div class="prompt" data-go="copy" data-tag="③ 짧게 · 인수인계용">이 보고서를 인수인계용으로 5줄 이내로 요약해줘.</div>
+  <div class="grid g2">
+    <div class="card t"><h3>📤 결과 저장</h3><ul><li>길게 눌러 복사 → <b>메모 앱</b></li><li>또는 아래 버튼으로 새 문서에 붙여넣기</li></ul><div class="links"><a class="btn line" target="_blank" rel="noopener" href="https://docs.google.com/document/create">구글 문서 새로 만들기</a></div></div>
+    <div class="card a"><h3>⚠ 반드시 확인</h3><ul><li>AI가 <b>지어낸 시각·이름</b>이 없는지</li><li>실제 사건엔 <b>이 방식 그대로 쓰지 않기</b> — 소속 기관 지침 우선</li></ul></div>
+  </div>
+  <div class="slogan">말하면 <span>초안</span>이 나오고, 확인하면 <span>보고서</span>가 됩니다</div>
+  <div class="foot">보강 · 초동조치 보고서 (2/2)</div>
+</div></section>
+
+<section class="slide p2" data-title="NotebookLM Studio · 오디오(폰이 최고)" data-part="2" data-step="14" data-dev="phone" data-time="163~168분" data-prac="1">
+<div class="in">
+  <h2>NotebookLM Studio<br>내 자료 → 듣기 자료</h2>
+  <div class="prof"><small>🎙 교수 멘트</small><p>"오디오처럼 <b>듣는 기능</b>은 오히려 <b>스마트폰이 좋습니다.</b> 이어폰 꽂고 출퇴근길에!"</p></div>
+  <div class="grid g4">
+    <div class="card a"><div class="big">🎧</div><h3>오디오</h3><p>폰 ★ 매우 적합</p></div>
+    <div class="card g"><div class="big">🧠</div><h3>마인드맵</h3><p>폰 가능 · PC 더 편함</p></div>
+    <div class="card a"><div class="big">📊</div><h3>보고서</h3><p>PC 권장</p></div>
+    <div class="card g"><div class="big">🗂</div><h3>퀴즈/플래시카드</h3><p>시험 대비용</p></div>
+  </div>
+  <div class="steps"><div>Studio 탭(폰)에서 <b>오디오 개요</b> 만들기 → 생성 대기(수 분)</div><div>생성되면 이어폰으로 재생 — 오디오 설명 입력창에 아래 요청 붙여넣기</div></div>
+  <div class="prompt" data-go="nlm" data-tag="오디오 요청 (맞춤 설정)">신임경찰 입장에서, 출퇴근길 10분 안에 들을 수 있게 핵심 3가지만 쉽게 설명해줘.</div>
+  <div class="note">📖 <b>Studio</b> = 교육자료 제작실. 같은 매뉴얼 하나로 듣기자료·요약도·시험문제까지. 🎧 이어폰 챙기세요!</div>
+  <div class="foot">단계 14/15 · Studio</div>
+</div></section>
+
+<section class="slide p2" data-title="내 업무 AI 적용 계획 · 4가지 적기" data-part="2" data-step="15" data-dev="phone" data-time="168~180분" data-prac="1">
+<div class="in">
+  <h2>내 업무 AI 적용 계획</h2>
+  <p class="sub">처음에 ★ 표시한 일로 돌아와서 → 내 폰에 직접 적고 복사 / 공유로 저장</p>
+  <div class="grid g2">
+    <div class="card g"><h3>① AI에게 맡길 첫 번째 일 (★)</h3><textarea class="fill" data-f></textarea></div>
+    <div class="card a"><h3>② 쓸 도구와 방법 (폰 / 노트북)</h3><textarea class="fill" data-f></textarea></div>
+    <div class="card b"><h3>③ NotebookLM에 넣을 첫 교재</h3><textarea class="fill" data-f></textarea></div>
+    <div class="card t"><h3>④ 30일 뒤 나에게 한 줄 (점검)</h3><textarea class="fill" data-f></textarea></div>
+  </div>
+  <div class="links"><button class="btn copy big" id="saveCopy">📋 4가지 모두 복사 (메모앱에 붙여넣기)</button><button class="btn nlm big" id="saveShare">📤 공유 (카톡 "나에게")</button></div>
+  <div class="foot">단계 15/15 · 적용 계획</div>
+</div></section>
+
+<!-- ============ 마무리: Contributions ============ -->
+<section class="slide p9" data-title="마무리 · 오늘 가져가는 것" data-part="9" data-time="240분">
+<div class="in">
+  <div class="chips"><span class="chip">Contributions</span><span class="chip">⏰ 6시간 완료</span></div>
+  <h2>오늘 여러분이 가져가는 것</h2>
+  <div class="grid">
+    <div class="pill" style="font-size:1em">1 &nbsp;<b>챗봇은 말하고, 에이전트는 일합니다.</b></div>
+    <div class="pill g" style="font-size:1em">2 &nbsp;<b>자료를 복사하지 말고, 자료와 함께 AI에게 물어봅니다.</b></div>
+    <div class="pill" style="font-size:1em;border-color:#FDE68A">3 &nbsp;<b>내 자료를 넣은 AI가 가장 정확합니다.</b></div>
+  </div>
+  <div class="grid g3">
+    <div class="pill">📌 다음 스텝 #1<br><span style="font-weight:500">오늘 만든 노트북에 내 교재 1개 더 넣기</span></div>
+    <div class="pill">📌 다음 스텝 #2<br><span style="font-weight:500">인포그래픽 1장 단톡방에 공유</span></div>
+    <div class="pill">📌 다음 스텝 #3<br><span style="font-weight:500">발령 첫 주, 도현 선배와 4단계로 매일 점검</span></div>
+  </div>
+  <div class="promise" style="text-align:center;font-size:1.25em">오늘부터 여러분의 <b>폰도 일합니다</b> 📱 — 도현 선배가 폰 안에서 기다립니다. 이어폰은 퇴근길에 🎧</div>
+  <p class="sub2">가천대학교 겸임교수 · 나병인 &nbsp;|&nbsp; 강의 문의 iwillman53@hanmail.net</p>
+  <div class="links"><button class="btn big line" data-first style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">↺ 처음으로</button><button class="btn big line" data-open-idx style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">☰ 목차</button></div>
+</div></section>
+
+<!-- NAV -->
+<div id="nav" role="navigation" aria-label="슬라이드 이동">
+  <button class="alt" id="prev" aria-label="이전">◀</button>
+  <div class="mid"><span id="pos">1 / 1</span> · <span id="ttl"></span><div id="bar"><i></i></div></div>
+  <button class="alt" data-open-idx aria-label="목차">☰</button>
+  <button id="next" aria-label="다음">▶</button>
+</div>
+<div id="idx"><div class="sheet" id="sheet"></div></div>
+<div id="toast"></div>
+<div id="think"><div><b id="tn">7</b><span>생각하는 시간 — 7초 기다립니다</span></div></div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')), N=slides.length, cur=0;
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var toastEl=$('#toast'), tt;
+  function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove('on')},2200)}
+
+  /* chips + footer 자동 생성 */
+  slides.forEach(function(s,i){
+    var part=s.dataset.part, dev=s.dataset.dev, step=s.dataset.step, time=s.dataset.time;
+    if(s.querySelector('.chips'))return;
+    var h='';
+    var pl={'1':'1교시','2':'2교시'}[part];
+    if(pl&&step)h+='<span class="chip">'+pl+' · 단계 '+step+'/15</span>';
+    else if(pl)h+='<span class="chip">'+pl+'</span>';
+    if(dev==='phone')h+='<span class="chip ph">📱 스마트폰 가능</span>';
+    if(dev==='demo')h+='<span class="chip demo">💻 교수 시연</span>';
+    if(dev==='mix')h+='<span class="chip mix">📱 가능 / 💻 권장</span>';
+    if(time)h+='<span class="chip t">⏰ '+time+'</span>';
+    if(s.dataset.prac)h+='<span class="chip lab">🖱 실습 슬라이드</span>';
+    if(h){var d=document.createElement('div');d.className='chips';d.innerHTML=h;var inn=$('.in',s);inn.insertBefore(d,inn.firstChild)}
+  });
+
+  /* 프롬프트 박스 -> 버튼 */
+  var GO={
+    chatgpt:{c:'gpt',t:'ChatGPT에서 열기',u:function(q){return 'https://chatgpt.com/?q='+encodeURIComponent(q)}},
+    claude:{c:'cl',t:'Claude에서 열기',u:function(q){return 'https://claude.ai/new?q='+encodeURIComponent(q)}},
+    gemini:{c:'gem',t:'복사 + Gemini 열기',u:function(){return 'https://gemini.google.com/app'},copy:1},
+    aimode:{c:'ai',t:'AI 모드로 검색',u:function(q){return 'https://www.google.com/search?udm=50&q='+encodeURIComponent(q)}},
+    nlm:{c:'nlm',t:'복사 + NotebookLM 열기',u:function(){return 'https://notebooklm.google.com/'},copy:1}
+  };
+  function copyText(t){
+    if(navigator.clipboard&&window.isSecureContext){return navigator.clipboard.writeText(t).then(function(){return true}).catch(function(){return legacy(t)})}
+    return Promise.resolve(legacy(t));
+  }
+  function legacy(t){try{var a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;left:-999px;top:0';document.body.appendChild(a);a.select();a.setSelectionRange(0,99999);var ok=document.execCommand('copy');document.body.removeChild(a);return ok}catch(e){return false}}
+  [].forEach.call(document.querySelectorAll('.prompt'),function(p){
+    var txt=p.textContent.replace(/^\n+|\n+$/g,'');
+    var tag=p.dataset.tag||'📋 복사해서 그대로 입력';
+    var edit=p.dataset.edit;
+    var goes=(p.dataset.go||'copy').split(',');
+    p.innerHTML='';
+    var tg=document.createElement('span');tg.className='tag';tg.textContent=tag.indexOf('📋')===0?tag:'📋 '+tag;p.appendChild(tg);
+    var pt=document.createElement('p');pt.className='ptxt';pt.textContent=txt;
+    if(edit){pt.setAttribute('contenteditable','true');pt.setAttribute('spellcheck','false')}
+    p.appendChild(pt);
+    var b=document.createElement('div');b.className='btns';
+    var cb=document.createElement('button');cb.className='btn copy';cb.textContent='📋 복사';
+    cb.addEventListener('click',function(){copyText(pt.textContent).then(function(ok){toast(ok?'복사됨 ✔ 입력창에 붙여넣기 하세요':'길게 눌러 직접 복사해 주세요')})});
+    b.appendChild(cb);
+    goes.forEach(function(g){
+      var d=GO[g];if(!d)return;
+      var a=document.createElement('a');a.className='btn '+d.c;a.textContent=d.t;a.target='_blank';a.rel='noopener';a.href='#';
+      a.addEventListener('click',function(e){
+        e.preventDefault();var q=pt.textContent;
+        var url=d.u(q);
+        if(d.copy){copyText(q).then(function(){toast('복사됨 ✔ 열린 창에서 길게 눌러 붙여넣기');window.open(url,'_blank','noopener')})}
+        else{copyText(q);window.open(url,'_blank','noopener')}
+      });
+      b.appendChild(a);
+    });
+    p.appendChild(b);
+  });
+
+  /* 7초 생각 */
+  var th=$('#think'),tn=$('#tn'),ti;
+  [].forEach.call(document.querySelectorAll('[data-think]'),function(el){el.addEventListener('click',function(){
+    var n=7;tn.textContent=n;th.classList.add('on');clearInterval(ti);
+    ti=setInterval(function(){n--;tn.textContent=n;if(n<=0){clearInterval(ti);th.classList.remove('on')}},1000);
+  })});
+  th.addEventListener('click',function(){clearInterval(ti);th.classList.remove('on')});
+
+  /* 휴식 타이머 */
+  [].forEach.call(document.querySelectorAll('[data-timer]'),function(b){b.addEventListener('click',function(){
+    var box=b.closest('.in').querySelector('.timer'),end=Date.now()+(+box.dataset.min)*60000,id;
+    function tick(){var r=Math.max(0,end-Date.now()),m=Math.floor(r/60000),sec=Math.floor(r%60000/1000);box.textContent=m+':'+(sec<10?'0':'')+sec;if(r<=0){clearInterval(id);toast('휴식 끝 — 자리로 돌아와 주세요')}}
+    tick();id=setInterval(tick,500);b.textContent='⏱ 진행 중';
+  })});
+  /* 정리 슬라이드 */
+  function allText(){
+    var f=[].slice.call(document.querySelectorAll('[data-f]'));
+    var L=['① AI에게 맡길 첫 번째 일','② 쓸 도구와 방법','③ NotebookLM에 넣을 첫 교재','④ 30일 뒤 나에게 한 줄'];
+    return '[경찰인재개발원 AI 활용 교육 · 내 업무 AI 적용 계획]\n'+f.map(function(x,i){return L[i]+': '+(x.value||'-')}).join('\n');
+  }
+  var sc=$('#saveCopy'),ss=$('#saveShare');
+  if(sc)sc.addEventListener('click',function(){copyText(allText()).then(function(ok){toast(ok?'복사됨 ✔ 메모앱에 붙여넣기':'복사 실패 — 직접 선택해 주세요')})});
+  if(ss)ss.addEventListener('click',function(){var t=allText();if(navigator.share){navigator.share({text:t}).catch(function(){})}else{copyText(t).then(function(){toast('공유 기능이 없어 복사했습니다 ✔')})}});
+
+  /* 목차 */
+  var sheet=$('#sheet'),html='<h3 style="margin:0 0 .3em">전체 목차</h3>',lastP='';
+  var names={'0':'오프닝','1':'1교시 · AI 기본기','2':'2교시 · NotebookLM 실전','9':'마무리'};
+  slides.forEach(function(s,i){
+    var p=s.dataset.part; if(i>0&&i<4)p='0'; if(i===0)p='0';
+    if(p!==lastP){html+='<h4>'+(names[p]||'')+'</h4>';lastP=p}
+    html+='<a href="#'+(i+1)+'" data-i="'+i+'"><span>'+(i+1)+'</span>'+s.dataset.title+'</a>';
+  });
+  sheet.innerHTML=html;
+  var idx=$('#idx');
+  [].forEach.call(document.querySelectorAll('[data-open-idx]'),function(b){b.addEventListener('click',function(){idx.classList.add('on')})});
+  idx.addEventListener('click',function(e){if(e.target===idx)idx.classList.remove('on')});
+  sheet.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;e.preventDefault();go(+a.dataset.i);idx.classList.remove('on')});
+
+  /* 이동 */
+  function go(i,noHash){
+    i=Math.max(0,Math.min(N-1,i));cur=i;
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    slides[i].scrollTop=0;
+    $('#pos').textContent=(i+1)+' / '+N;
+    $('#ttl').textContent=slides[i].dataset.title;
+    $('#bar i').style.width=((i+1)/N*100)+'%';
+    [].forEach.call(sheet.querySelectorAll('a'),function(a){a.classList.toggle('cur',+a.dataset.i===i)});
+    if(!noHash){try{history.replaceState(null,'','#'+(i+1))}catch(e){location.hash=i+1}}
+  }
+  $('#prev').addEventListener('click',function(){go(cur-1)});
+  $('#next').addEventListener('click',function(){go(cur+1)});
+  [].forEach.call(document.querySelectorAll('[data-next]'),function(b){b.addEventListener('click',function(){go(cur+1)})});
+  [].forEach.call(document.querySelectorAll('[data-first]'),function(b){b.addEventListener('click',function(){go(0)})});
+  document.addEventListener('keydown',function(e){
+    var t=e.target;if(t&&(t.isContentEditable||/INPUT|TEXTAREA/.test(t.tagName)))return;
+    if(['ArrowRight','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();go(cur+1)}
+    else if(['ArrowLeft','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(cur-1)}
+    else if(e.key==='Home')go(0);else if(e.key==='End')go(N-1);
+    else if(e.key==='Escape')idx.classList.remove('on');
+  });
+  /* 스와이프 */
+  var sx=0,sy=0,sk=true;
+  document.addEventListener('touchstart',function(e){var t=e.target;sk=!!(t.closest('.btn,input,textarea,[contenteditable],table,#idx,a'));var p=e.touches[0];sx=p.clientX;sy=p.clientY},{passive:true});
+  document.addEventListener('touchend',function(e){if(sk)return;var p=e.changedTouches[0],dx=p.clientX-sx,dy=p.clientY-sy;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.6){go(cur+(dx<0?1:-1))}},{passive:true});
+  window.addEventListener('hashchange',function(){var n=parseInt(location.hash.slice(1),10);if(n&&n-1!==cur)go(n-1,true)});
+  var h0=parseInt(location.hash.slice(1),10);go(h0?h0-1:0,!h0);
+})();
+</script>
+</body>
+</html>
