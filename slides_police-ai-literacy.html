@@ -122,6 +122,12 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 #think.on{display:grid}
 #think b{font-size:min(40vw,9rem);display:block;line-height:1}
 #think span{font-size:1em;color:#BAE6FD}
+#hush{display:none;position:fixed;inset:0;z-index:60;background:radial-gradient(circle at 50% 40%,#1E40AF,#0B2150);color:#fff;place-items:center;text-align:center;cursor:pointer;padding:5vmin}
+#hush.on{display:grid}
+#hush .shh{width:min(60vw,46vh,340px);height:auto;margin:0 auto}
+#hush h2{font-size:clamp(1.6rem,7vw,3.4rem);margin:.2em 0;color:#FDE68A}
+#hush p{font-size:clamp(1rem,3.6vw,1.6rem);color:#BAE6FD;margin:.2em 0}
+#nav button.hushbtn{background:#FDE68A;color:#0B2150;min-width:48px}
 #think .shh{display:block;margin:0 auto .2em;animation:shh 1.2s ease-in-out infinite}
 @keyframes shh{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
 
@@ -747,9 +753,11 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 <div id="nav" role="navigation" aria-label="슬라이드 이동">
   <button class="alt" id="prev" aria-label="이전">◀</button>
   <div class="mid"><span id="pos">1 / 1</span> · <span id="ttl"></span><div id="bar"><i></i></div></div>
+  <button class="hushbtn" id="hushbtn" aria-label="쉿! 주의집중" title="쉿! 주의집중 (키보드 S)">🤫</button>
   <button class="alt" data-open-idx aria-label="목차">☰</button>
   <button id="next" aria-label="다음">▶</button>
 </div>
+<div id="hush"><div><svg class="shh big" width="220" height="220" viewBox="0 0 120 120" aria-label="쉿 캐릭터"><ellipse cx="60" cy="112" rx="30" ry="5" fill="rgba(0,0,0,.25)"/><circle cx="60" cy="60" r="48" fill="#FDE68A" stroke="#F59E0B" stroke-width="4"/><ellipse cx="28" cy="70" rx="9" ry="6" fill="#FCA5A5" opacity=".8"/><ellipse cx="92" cy="70" rx="9" ry="6" fill="#FCA5A5" opacity=".8"/><path d="M36 50 Q43 43 50 50" stroke="#0B2150" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M70 50 Q77 43 84 50" stroke="#0B2150" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M50 78 Q60 84 70 78" stroke="#0B2150" stroke-width="3.5" fill="none" stroke-linecap="round"/><rect x="55" y="58" width="12" height="36" rx="6" fill="#FFEDD5" stroke="#F59E0B" stroke-width="3" transform="rotate(-6 61 76)"/><text x="104" y="24" font-size="18" font-weight="900" fill="#BAE6FD" font-family="sans-serif">쉿</text></svg><h2>쉿~ 잠깐! 앞을 봐 주세요</h2><p>폰은 잠시 내려놓고 · 화면을 터치하면 돌아갑니다 🔊</p></div></div>
 <div id="idx"><div class="sheet" id="sheet"></div></div>
 <div id="toast"></div>
 <div id="think"><div><svg class="shh" viewBox="0 0 120 120" width="150" height="150" aria-label="쉿 캐릭터"><ellipse cx="60" cy="112" rx="30" ry="5" fill="rgba(0,0,0,.25)"/><circle cx="60" cy="60" r="48" fill="#FDE68A" stroke="#F59E0B" stroke-width="4"/><ellipse cx="28" cy="70" rx="9" ry="6" fill="#FCA5A5" opacity=".8"/><ellipse cx="92" cy="70" rx="9" ry="6" fill="#FCA5A5" opacity=".8"/><path d="M36 50 Q43 43 50 50" stroke="#0B2150" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M70 50 Q77 43 84 50" stroke="#0B2150" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M50 78 Q60 84 70 78" stroke="#0B2150" stroke-width="3.5" fill="none" stroke-linecap="round"/><rect x="55" y="58" width="12" height="36" rx="6" fill="#FFEDD5" stroke="#F59E0B" stroke-width="3" transform="rotate(-6 61 76)"/><text x="104" y="24" font-size="18" font-weight="900" fill="#BAE6FD" font-family="sans-serif">쉿</text></svg><b id="tn">7</b><span>생각하는 시간 — 7초 기다립니다</span></div></div>
@@ -898,6 +906,46 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
     if(t&&t.classList&&t.classList.contains('zoomable')){big.src=t.src;ov.style.display='flex';e.stopPropagation();}
   },true);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')ov.style.display='none';});
+})();
+
+(function(){
+  var h=document.getElementById('hush'),hb=document.getElementById('hushbtn');
+  var AC=null;
+  /* 쉿~ 소리: 필터 입힌 잡음을 2초간 swell→fade (파일 없이 생성) */
+  function shhSound(){
+    try{
+      var C=window.AudioContext||window.webkitAudioContext;if(!C)return;
+      if(!AC)AC=new C();
+      if(AC.state==='suspended')AC.resume();
+      var dur=2.0,sr=AC.sampleRate,buf=AC.createBuffer(1,Math.ceil(sr*(dur+0.2)),sr),d=buf.getChannelData(0);
+      for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+      var src=AC.createBufferSource();src.buffer=buf;
+      var bp=AC.createBiquadFilter();bp.type='bandpass';bp.Q.value=0.9;
+      var t=AC.currentTime;
+      bp.frequency.setValueAtTime(4200,t);bp.frequency.linearRampToValueAtTime(6200,t+0.5);bp.frequency.linearRampToValueAtTime(5000,t+dur);
+      var lp=AC.createBiquadFilter();lp.type='lowpass';lp.frequency.value=9000;
+      var g=AC.createGain();
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(1.0,t+0.35);
+      g.gain.setValueAtTime(1.0,t+1.1);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      src.connect(bp);bp.connect(lp);lp.connect(g);g.connect(AC.destination);
+      src.start(t);src.stop(t+dur+0.1);
+    }catch(err){}
+  }
+  function tog(f){
+    var on=h.classList.contains('on'),want=(f===undefined)?!on:f;
+    h.classList[want?'add':'remove']('on');
+    if(want&&!on)shhSound();
+  }
+  if(hb)hb.addEventListener('click',function(e){e.stopPropagation();tog(true)});
+  h.addEventListener('click',function(e){e.stopPropagation();tog(false)});
+  h.addEventListener('touchstart',function(e){e.stopPropagation()},{passive:true});
+  document.addEventListener('keydown',function(e){
+    var t=e.target;if(t&&(t.isContentEditable||/INPUT|TEXTAREA/.test(t.tagName)))return;
+    if(e.key==='s'||e.key==='S'||e.key==='ㄴ'){tog()}
+    else if(e.key==='Escape'){tog(false)}
+  });
 })();
 </script>
 </body>
