@@ -128,6 +128,21 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 #hush h2{font-size:clamp(1.6rem,7vw,3.4rem);margin:.2em 0;color:#FDE68A}
 #hush p{font-size:clamp(1rem,3.6vw,1.6rem);color:#BAE6FD;margin:.2em 0}
 #nav button.hushbtn{background:#FDE68A;color:#0B2150;min-width:48px}
+
+.lad{display:grid;grid-template-columns:repeat(7,1fr);gap:.45em;align-items:end;margin:.2em 0}
+.lad .st{color:#fff;border-radius:16px 16px 6px 6px;padding:.55em .6em;display:flex;flex-direction:column;gap:.2em;box-shadow:0 8px 20px rgba(15,42,107,.18);position:relative}
+.lad .n{font-weight:900;font-size:.75em;opacity:.85}
+.lad .em{font-size:1.6em;line-height:1}
+.lad .nm{font-weight:900;font-size:1.02em;line-height:1.15}
+.lad .ds{font-size:.74em;line-height:1.3;opacity:.95}
+.lad .tg{margin-top:auto;align-self:flex-start;background:rgba(255,255,255,.22);border-radius:999px;padding:.1em .55em;font-size:.68em;font-weight:800}
+.lad .st.me{outline:4px solid #FDE68A}
+@media(max-width:760px){.lad{grid-template-columns:1fr;align-items:stretch;gap:.35em}.lad .st{min-height:0!important;margin-left:calc(var(--i)*7px);border-radius:14px;flex-direction:row;flex-wrap:wrap;align-items:center;gap:.1em .5em;padding:.4em .7em}.lad .ds{flex-basis:100%}.lad .tg{margin-top:0;margin-left:auto}.lad .em{font-size:1.3em}}
+.dt{display:grid;grid-template-columns:auto 1fr;gap:.2em .8em;align-items:start}
+.dt .ic{font-size:2em;grid-row:span 3;line-height:1}
+.dt h3{margin:0}.dt p{margin:.1em 0;font-size:.9em}
+.tag2{display:inline-block;background:#E0F2FE;color:#0B2150;border-radius:999px;padding:.05em .6em;font-size:.78em;font-weight:800}
+.tag2.go{background:#DCFCE7}.tag2.see{background:#FEF3C7}
 #think .shh{display:block;margin:0 auto .2em;animation:shh 1.2s ease-in-out infinite}
 @keyframes shh{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
 
@@ -153,13 +168,52 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
   <div class="links"><button class="btn big" data-next>▶ 시작하기</button><button class="btn big line" data-open-idx style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">☰ 전체 목차</button></div>
 </div></section>
 
+<section class="slide p1" data-title="AI 발달 7단계 · 한눈에" data-part="1" data-time="0~3분">
+<div class="in">
+  <div class="chips"><span class="chip">🧭 AI 트렌드</span></div>
+  <h2>AI는 이렇게 발달해 왔습니다 · 7단계</h2>
+  <p class="sub">검색 → 생성 → 바이브코딩 → 에이전트 → 오케스트레이션 → 메타에이전트 → 재귀적 에이전트</p>
+  <div class="lad"><div class="st" style="background:#0EA5C8;min-height:8.5em;--i:0"><span class="n">1단계</span><span class="em">🔍</span><span class="nm">검색</span><span class="ds">찾아서 보여준다</span><span class="tg">실습</span></div><div class="st" style="background:#14B8A6;min-height:10.0em;--i:1"><span class="n">2단계</span><span class="em">✍️</span><span class="nm">생성</span><span class="ds">글·그림을 만들어준다</span><span class="tg">실습</span></div><div class="st" style="background:#10B981;min-height:11.5em;--i:2"><span class="n">3단계</span><span class="em">🎧</span><span class="nm">바이브코딩</span><span class="ds">말로 설명하면 앱을 만든다</span><span class="tg">맛보기</span></div><div class="st me" style="background:#1E40AF;min-height:13.0em;--i:3"><span class="n">4단계</span><span class="em">🤖</span><span class="nm">에이전트</span><span class="ds">목표를 주면 일을 한다</span><span class="tg">시연</span></div><div class="st" style="background:#0B2150;min-height:14.5em;--i:4"><span class="n">5단계</span><span class="em">🎼</span><span class="nm">오케스트레이션</span><span class="ds">여러 AI를 팀처럼 지휘한다</span><span class="tg">트렌드</span></div><div class="st" style="background:#B45309;min-height:16.0em;--i:5"><span class="n">6단계</span><span class="em">🏗️</span><span class="nm">메타에이전트</span><span class="ds">AI가 AI 일꾼을 만든다</span><span class="tg">트렌드</span></div><div class="st" style="background:#B91C1C;min-height:17.5em;--i:6"><span class="n">7단계</span><span class="em">♾️</span><span class="nm">재귀적 에이전트</span><span class="ds">스스로 점검·개선하며 반복한다</span><span class="tg">트렌드</span></div></div>
+  <div class="qbox"><small>🌟 오늘 기억할 한 문장</small><b>AI는 <em>답하는 도구</em>에서 <em>일하는 팀</em>으로 — 사람은 <em>질문자</em>에서 <em>지휘자</em>로</b></div>
+  <div class="note">🎬 <b>깜짝 공개</b> — 지금 보시는 이 슬라이드도 3단계(바이브코딩)로, 말로 설명해서 만들었습니다. (노란 테두리 4단계가 오늘의 주인공입니다)</div>
+  <div class="foot">오프닝 · AI 트렌드 1/3</div>
+</div></section>
+
+<section class="slide p1" data-title="1~4단계 · 검색에서 에이전트까지" data-part="1" data-time="3~7분">
+<div class="in">
+  <h2>1~4단계 · 오늘 직접 해보는 영역</h2>
+  <div class="grid g2">
+    <div class="card" style="border-top-color:#0EA5C8"><div class="dt"><span class="ic">🔍</span><h3>1단계 · 검색</h3><p>키워드를 넣으면 <b>링크 목록</b>이 나옵니다. 읽고 정리하는 건 사람.</p><p><span class="tag2 go">오늘</span> Google AI 모드</p></div></div>
+    <div class="card" style="border-top-color:#14B8A6"><div class="dt"><span class="ic">✍️</span><h3>2단계 · 생성</h3><p>질문하면 <b>글·그림·요약</b> 초안을 만들어 줍니다.</p><p><span class="tag2 go">오늘</span> 챗봇 질문 · 인포그래픽</p></div></div>
+    <div class="card" style="border-top-color:#10B981"><div class="dt"><span class="ic">🎧</span><h3>3단계 · 바이브코딩</h3><p>코딩을 몰라도 <b>"이런 거 만들어줘"</b>라고 말하면 앱·웹페이지가 나옵니다.</p><p><span class="tag2">예</span> 근무 교대표 계산기, 점검표 페이지</p></div></div>
+    <div class="card" style="border-top-color:#1E40AF"><div class="dt"><span class="ic">🤖</span><h3>4단계 · 에이전트</h3><p>목표를 주면 <b>계획 → 도구 사용 → 실행 → 보고</b>까지 직접 합니다.</p><p><span class="tag2 see">오늘</span> Claude Cowork · ASTRA 시연</p></div></div>
+  </div>
+  <div class="prof"><small>🎙 구두점 · 울타리</small><p>"지금까지 <b>답하는 AI</b>를 봤습니다. 이제 <b>일하는 AI</b>로 넘어갑니다. 챗봇이 아니라 <b>에이전트</b>입니다 — 둘은 다릅니다."</p></div>
+  <div class="foot">오프닝 · AI 트렌드 2/3</div>
+</div></section>
+
+<section class="slide p1" data-title="5~7단계 · 일하는 팀의 시대" data-part="1" data-time="7~10분">
+<div class="in">
+  <h2>5~7단계 · 눈으로 보는 미래</h2>
+  <div class="grid g3">
+    <div class="card" style="border-top-color:#0B2150"><div class="dt"><span class="ic">🎼</span><h3>5. 오케스트레이션</h3><p>조사·작성·검토 에이전트를 <b>지휘자</b>가 나눠 일 시킵니다.</p><p><span class="tag2">가상 예</span> 자료 수집 → 요약 → 보고서 초안 → 검토</p></div></div>
+    <div class="card" style="border-top-color:#B45309"><div class="dt"><span class="ic">🏗️</span><h3>6. 메타에이전트</h3><p>필요한 <b>AI 일꾼을 스스로 만들고</b> 배치·관리합니다.</p><p><span class="tag2">핵심</span> 사람은 일꾼이 아니라 <b>목표</b>를 정한다</p></div></div>
+    <div class="card" style="border-top-color:#B91C1C"><div class="dt"><span class="ic">♾️</span><h3>7. 재귀적 에이전트</h3><p>결과를 <b>스스로 점검하고 방법을 고쳐</b> 다시 실행하며 반복합니다.</p><p><span class="tag2">주의</span> 멈추는 버튼은 사람 손에</p></div></div>
+  </div>
+  <div class="steps"><div>사람의 역할: <b>질문자 → 지시자 → 지휘자 → 설계자·책임자</b></div><div>단계가 오를수록 <b>"무엇을 어디까지 맡길지"</b>와 <b>"누가 책임지는지"</b>가 더 중요해집니다</div><div>경찰 업무에서는 어느 단계든 <b>사람의 최종 확인</b>이 원칙입니다</div></div>
+  <div class="note">※ 5~7단계 이름은 업계 공식 표준 용어가 아니라, 흐름을 이해하기 위한 틀입니다. 연구·개발이 빠르게 바뀌는 영역이라 현장 적용은 신중하게 봅니다.</div>
+  <div class="links"><button class="btn line" data-think>⏱ 7초 생각: "내 업무 중 지휘자가 필요한 일은?"</button></div>
+  <div class="slogan">🌟 오늘 우리는 <span>1~4단계</span>를 직접 합니다 — 5~7단계는 <span>눈으로</span> 🌟</div>
+  <div class="foot">오프닝 · AI 트렌드 3/3</div>
+</div></section>
+
 <!-- ============ 로드맵 ============ -->
-<section class="slide p1" data-title="오늘의 로드맵 · 6시간 2교시" data-part="1" data-time="0~10분">
+<section class="slide p1" data-title="오늘의 로드맵 · 6시간 2교시" data-part="1" data-time="10~12분">
 <div class="in">
   <h2>오늘의 로드맵 · 6시간</h2>
   <p class="sub2">1교시 3시간 + 2교시 3시간(쉬는 시간 포함) · 전부 스마트폰으로 따라옵니다</p>
   <div class="grid g2">
-    <div class="card b"><h3>1교시 ① 안전 + 기본기 + 에이전트 첫 만남</h3><p>0~80분</p><ul><li>AI에 넣어도 되는 것 / 안 되는 것</li><li>좋은 질문의 공식 · 폰으로 에이전트 체험</li></ul></div>
+    <div class="card b"><h3>1교시 ① 안전 + 기본기 + 에이전트 첫 만남</h3><p>0~80분</p><ul><li>AI 발달 7단계 트렌드 · 넣어도 되는 것 / 안 되는 것</li><li>좋은 질문의 공식 · 폰으로 에이전트 체험</li></ul></div>
     <div class="card t"><h3>1교시 ② 웹 · 검색 · 이미지</h3><p>90~170분</p><ul><li>폰 크롬 Gemini로 페이지 읽기</li><li>Google AI 모드 · 인포그래픽 1장</li></ul></div>
     <div class="card g"><h3>2교시 ③ 내 자료를 넣은 AI</h3><p>0~58분</p><ul><li>NotebookLM으로 나만의 지식창고</li><li>출처 확인으로 환각 차단</li></ul></div>
     <div class="card a"><h3>2교시 ④ 현장 적용 · 「도현 선배」</h3><p>68~180분</p><ul><li>매뉴얼 챗봇 → 도현 선배 만들기</li><li>음성으로 초동조치 보고서 · 내 적용 계획</li></ul></div>
@@ -168,7 +222,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 </div></section>
 
 <!-- ============ 환경 ============ -->
-<section class="slide p1" data-title="오늘 환경 · 스마트폰 준비" data-part="1" data-dev="phone" data-time="0~10분">
+<section class="slide p1" data-title="오늘 환경 · 스마트폰 준비" data-part="1" data-dev="phone" data-time="12~18분">
 <div class="in">
   <h2>스마트폰만 가지고 오셨습니까?<br>그게 정답입니다.</h2>
   <p class="sub2">오늘 모든 실습은 스마트폰에서 끝납니다. 크롬의 Gemini도 폰으로 함께 켜 봅니다.</p>
@@ -190,7 +244,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 </div></section>
 
 <!-- ============ 업무 지도 ============ -->
-<section class="slide p1" data-title="내 업무 지도 · 4가지 질문" data-part="1" data-dev="phone" data-time="10~20분" data-prac="1">
+<section class="slide p1" data-title="내 업무 지도 · 4가지 질문" data-part="1" data-dev="phone" data-time="18~28분" data-prac="1">
 <div class="in">
   <h2>먼저, 내 일부터 그립니다</h2>
   <p class="sub">AI 기능보다 "내 업무 지도"가 먼저입니다</p>
@@ -210,7 +264,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
   <div class="foot">오프닝 · 내 업무 지도</div>
 </div></section>
 
-<section class="slide p1" data-title="AI 안전 신호등 · 넣어도 되는 것 / 안 되는 것" data-part="1" data-dev="phone" data-time="20~30분" data-prac="1">
+<section class="slide p1" data-title="AI 안전 신호등 · 넣어도 되는 것 / 안 되는 것" data-part="1" data-dev="phone" data-time="28~35분" data-prac="1">
 <div class="in">
   <h2>AI에 넣어도 되는 것,<br>안 되는 것</h2>
   <p class="sub">시작하기 전에 신호등 3색부터</p>
@@ -227,7 +281,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 </div></section>
 
 <!-- ============ 1. 챗봇 vs 에이전트 ============ -->
-<section class="slide p1" data-title="챗봇 vs 에이전트" data-part="1" data-step="1" data-dev="phone" data-time="30~38분">
+<section class="slide p1" data-title="챗봇 vs 에이전트" data-part="1" data-step="1" data-dev="phone" data-time="35~41분">
 <div class="in">
   <h2>AI 챗봇 vs AI 에이전트</h2>
   <p class="sub2">오늘 만나게 될 가장 중요한 구분</p>
@@ -241,7 +295,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
   <div class="foot">단계 1/15 · 챗봇 vs 에이전트</div>
 </div></section>
 
-<section class="slide p1" data-title="실습 · 챗봇에게 질문하기" data-part="1" data-step="1" data-dev="phone" data-time="38~45분" data-prac="1">
+<section class="slide p1" data-title="실습 · 챗봇에게 질문하기" data-part="1" data-step="1" data-dev="phone" data-time="41~47분" data-prac="1">
 <div class="in">
   <h2>실습 · 챗봇에게 질문하기</h2>
   <p class="sub">버튼을 누르면 질문이 입력된 채로 열립니다</p>
@@ -251,7 +305,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
   <div class="foot">단계 1/15 · 실습</div>
 </div></section>
 
-<section class="slide p1" data-title="좋은 질문의 공식 · 4칸" data-part="1" data-dev="phone" data-time="45~60분" data-prac="1">
+<section class="slide p1" data-title="좋은 질문의 공식 · 4칸" data-part="1" data-dev="phone" data-time="47~58분" data-prac="1">
 <div class="in">
   <h2>좋은 질문의 공식 · 4칸</h2>
   <p class="sub">질문은 길게가 아니라 <u>구체적으로</u> — 길이가 아닙니다</p>
@@ -269,7 +323,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 </div></section>
 
 <!-- ============ 2. Cowork ============ -->
-<section class="slide p1" data-title="에이전트란? · Claude Cowork 시연" data-part="1" data-step="2" data-dev="demo" data-time="60~70분">
+<section class="slide p1" data-title="에이전트란? · Claude Cowork 시연" data-part="1" data-step="2" data-dev="demo" data-time="58~68분">
 <div class="in">
   <h2>에이전트란? 일을 직접 하는 AI</h2>
   <p class="sub">답이 아니라 <u>결과물</u>을 줍니다</p>
@@ -282,7 +336,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
   <div class="foot">단계 2/15 · 에이전트</div>
 </div></section>
 
-<section class="slide p1" data-title="실습 · 내 폰 파일 정리 제안받기" data-part="1" data-step="2" data-dev="phone" data-time="70~80분" data-prac="1">
+<section class="slide p1" data-title="실습 · 내 폰 파일 정리 제안받기" data-part="1" data-step="2" data-dev="phone" data-time="68~80분" data-prac="1">
 <div class="in">
   <h2>폰으로 하는 "파일 정리 에이전트" 체험</h2>
   <p class="sub">PDF·사진 3~5개를 올리고, 3줄 지시를 차례로 입력</p>
