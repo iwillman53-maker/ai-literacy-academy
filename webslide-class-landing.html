@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노트 한 장이 슬라이드가 된다 | 웹슬라이드 워크숍</title>
+<meta name="description" content="옵시디언 노트를 웹슬라이드로 바꾸는 6시간 워크숍. 대학생·대학원생을 위한 나병인 박사의 실습 강의.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1220; --card:#141C33; --lime:#D4FF3D; --coral:#FF6B5B;
+  --text:#F6F3EC; --muted:#A9AEBB; --line:#293045;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h1,h2,h3{line-height:1.3;letter-spacing:-.02em}
+h2{font-size:clamp(26px,4vw,36px);font-weight:900;margin-bottom:8px}
+.eyebrow{color:var(--lime);font-weight:700;font-size:14px;letter-spacing:.12em;margin-bottom:14px;display:block}
+.lead{color:var(--muted);margin-bottom:32px}
+.lime{color:var(--lime)} .coral{color:var(--coral)}
+
+/* hero */
+.hero{padding:96px 0 80px;border-top:none}
+.hero h1{font-size:clamp(34px,7vw,64px);font-weight:900;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.promise{font-size:clamp(18px,2.6vw,22px);max-width:640px;margin-bottom:32px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+.chip{border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:999px;font-size:15px}
+.btn{display:inline-block;background:var(--lime);color:#0B1220;font-weight:900;padding:16px 30px;border-radius:12px;text-decoration:none;font-size:18px}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);margin-left:10px}
+
+/* symbol diagram */
+.symbol{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:44px}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:14px;min-width:150px}
+.sheet b{display:block;color:var(--lime);margin-bottom:4px}
+.sheet.slide{border-color:var(--lime);box-shadow:0 0 0 3px rgba(212,255,61,.12)}
+.arrow{color:var(--lime);font-size:28px;font-weight:900}
+
+/* grids */
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:16px}
+.card.problem{border-top:3px solid var(--coral)}
+.card.solution{border-top:3px solid var(--lime)}
+.num{font-size:40px;font-weight:900;color:var(--lime);line-height:1}
+
+/* timeline */
+.session{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.session summary{cursor:pointer;list-style:none;padding:20px 24px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.session summary::-webkit-details-marker{display:none}
+.session .t{color:var(--lime);font-weight:700;min-width:118px;font-size:15px}
+.session .n{font-weight:900;font-size:19px}
+.session .g{color:var(--muted);font-size:15px;flex-basis:100%;padding-left:134px}
+.session[open] summary{border-bottom:1px solid var(--line)}
+.body{padding:20px 24px;display:grid;gap:14px}
+.row{display:grid;grid-template-columns:96px 1fr;gap:12px}
+.row .k{color:var(--lime);font-weight:700;font-size:14px;padding-top:2px}
+.row .v{font-size:16px}
+.tag{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:1px 8px;margin-right:6px;background:rgba(212,255,61,.14);color:var(--lime)}
+.tag.q{background:rgba(255,107,91,.15);color:var(--coral)}
+.break{text-align:center;color:var(--muted);font-size:14px;padding:6px 0 18px}
+code,.prompt{font-family:Consolas,'Courier New',monospace;background:#0B1220;border:1px solid var(--line);border-radius:8px}
+.prompt{display:block;padding:12px 14px;font-size:14.5px;color:var(--text);margin-top:6px;white-space:pre-wrap}
+code{padding:1px 6px;font-size:.9em}
+
+/* deliverables, instructor */
+.list{list-style:none}
+.list li{padding:10px 0 10px 28px;border-bottom:1px solid var(--line);position:relative}
+.list li::before{content:"";position:absolute;left:4px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--lime)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:720px){.two{grid-template-columns:1fr}.session .g{padding-left:0}.row{grid-template-columns:1fr;gap:2px}.btn.ghost{margin:10px 0 0}}
+
+/* contributions + winston */
+.contrib{background:var(--lime);color:#0B1220;border-radius:18px;padding:40px 32px}
+.contrib h2{margin-bottom:18px}
+.contrib li{font-size:20px;font-weight:700;margin:8px 0 8px 22px}
+.slogan{font-size:clamp(22px,4vw,32px);font-weight:900;margin-top:24px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+th{background:var(--card);color:var(--lime);width:130px;white-space:nowrap}
+footer{padding:48px 0;text-align:center;color:var(--muted);border-top:1px solid var(--line);font-size:15px}
+footer .slogan{color:var(--text);margin:0 0 10px}
+</style>
+</head>
+<body>
+
+<!-- HERO : 약속으로 시작 -->
+<header class="hero">
+<div class="wrap">
+  <span class="eyebrow">WEB SLIDE WORKSHOP · 6 HOURS · 대학생·대학원생</span>
+  <h1>노트 한 장이<br><em>슬라이드 한 장</em>이 된다</h1>
+  <p class="promise">이 워크숍이 끝나면 여러분은 <b class="lime">이미 써 둔 옵시디언 노트를 웹슬라이드로 바꾸고, 링크 하나로 발표할 수 있습니다.</b> 오늘 집에 갈 때 주머니에 링크가 들어 있습니다.</p>
+  <div class="meta">
+    <span class="chip">⏱ 1일 6시간 (점심 별도)</span>
+    <span class="chip">🎓 대학생·대학원생</span>
+    <span class="chip">💻 노트북 실습</span>
+    <span class="chip">🔗 결과물: 내 웹슬라이드 링크</span>
+  </div>
+  <a class="btn" href="#curriculum">하루 일정 보기</a><a class="btn ghost" href="#contact">강의 문의</a>
+
+  <div class="symbol" aria-label="노트가 슬라이드가 되는 그림">
+    <div class="sheet"><b>노트</b># 제목<br>## 소제목<br>한 줄 메시지</div>
+    <span class="arrow">→</span>
+    <div class="sheet"><b>Claude</b>구조 읽기<br>HTML 변환</div>
+    <span class="arrow">→</span>
+    <div class="sheet slide"><b>웹슬라이드</b>링크 한 줄<br>#7 딥링크</div>
+  </div>
+</div>
+</header>
+
+<!-- SURPRISE -->
+<section>
+<div class="wrap">
+  <span class="eyebrow">SURPRISE</span>
+  <h2>슬라이드를 <span class="coral">만드는 데</span> 시간이 걸리는 게 아닙니다</h2>
+  <p class="lead">우리는 디자인 때문에 막힌다고 생각합니다. 실제로 막히는 곳은 다른 데입니다.</p>
+  <div class="grid g3">
+    <div class="card problem"><h3>원래는</h3><p>빈 슬라이드를 열고, 무슨 말을 할지 고민하고, 글을 넣고, 폰트와 정렬을 맞춥니다.</p></div>
+    <div class="card problem"><h3>사실은</h3><p>시간을 잡아먹는 건 "무슨 말을 할지"를 정리하는 일입니다. 디자인이 아니라 생각의 정리입니다.</p></div>
+    <div class="card solution"><h3>그래서 순서를 뒤집습니다</h3><p>생각은 노트에 이미 있습니다. 슬라이드는 노트에서 <b class="lime">꺼내는 것</b>입니다.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- TARGET / OUTCOMES -->
+<section>
+<div class="wrap">
+  <div class="two">
+    <div>
+      <span class="eyebrow">이런 분께</span>
+      <h2>발표 때마다<br>같은 일을 반복한다면</h2>
+      <ul class="list">
+        <li>수업 발표, 세미나, 학회 발표 때마다 PPT를 처음부터 만드는 분</li>
+        <li>옵시디언·노션에 정리는 많은데 발표 자료로 못 옮기는 분</li>
+        <li>링크 하나로 공유하고, 수정하면 바로 반영되는 슬라이드가 필요한 분</li>
+        <li>코딩을 몰라도 괜찮습니다. 복사해서 붙여 넣을 프롬프트를 드립니다.</li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">얻는 것</span>
+      <h2>하루 끝에<br>손에 남는 것</h2>
+      <ul class="list">
+        <li><b>내 웹슬라이드 한 벌</b> (10~15장, 본인 노트 기반)</li>
+        <li><b>노트 → 슬라이드 변환 프롬프트</b> 세트</li>
+        <li><b>배포된 링크</b>: GitHub와 Vercel로 올려 누구에게나 공유</li>
+        <li><b>다음 발표에도 쓰는 작업 순서</b> (재사용 체크리스트)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+<div class="wrap">
+  <span class="eyebrow">CURRICULUM</span>
+  <h2>하루 6교시 강의안</h2>
+  <p class="lead">교시를 눌러 펼치세요. 각 교시마다 <span class="tag">구두점</span>(이정표)과 <span class="tag q">질문 + 7초</span>가 들어 있습니다.</p>
+
+  <details class="session" open>
+    <summary><span class="t">09:30 – 10:20</span><span class="n">1교시 · 노트가 슬라이드가 되는 순간</span><span class="g">약속과 시연. 완성품을 먼저 보고 시작합니다.</span></summary>
+    <div class="body">
+      <div class="row"><span class="k">목표</span><span class="v">변환 결과물을 눈으로 확인하고, 오늘의 전체 지도를 머리에 넣는다.</span></div>
+      <div class="row"><span class="k">진행</span><span class="v">① 약속 선언(1분) ② 94장짜리 옵시디언 슬라이드가 웹으로 열리는 시연 ③ 오늘의 4단계 지도: 쓰기 → 읽히기 → 꾸미기 → 올리기 ④ 각자 변환할 노트 한 편 고르기</span></div>
+      <div class="row"><span class="k">구두점</span><span class="v"><span class="tag">이정표</span>"오늘 결과물을 봤습니다. 이제 그 재료인 노트부터 점검합니다."</span></div>
+      <div class="row"><span class="k">질문</span><span class="v"><span class="tag q">7초</span>"여러분이 지난 학기에 발표 자료를 만들 때 가장 오래 걸린 일은 무엇이었습니까?"</span></div>
+      <div class="row"><span class="k">판서</span><span class="v">칠판에 4단계 지도를 손으로 그린다. 이후 교시마다 여기로 돌아와 현재 위치에 표시한다.</span></div>
+    </div>
+  </details>
+  <div class="break">☕ 휴식 10분</div>
+
+  <details class="session">
+    <summary><span class="t">10:30 – 11:20</span><span class="n">2교시 · 슬라이드가 되는 노트 쓰기</span><span class="g">변환이 잘 되는 노트에는 구조가 있습니다.</span></summary>
+    <div class="body">
+      <div class="row"><span class="k">목표</span><span class="v">노트를 "한 장 한 메시지" 구조로 다듬는다.</span></div>
+      <div class="row"><span class="k">진행</span><span class="v">① 규칙 3가지: <code>#</code> 한 장의 제목, <code>##</code> 한 장의 소제목, 본문은 세 줄 이내 ② 중복 장 찾아 합치기 ③ 폴더 이름 정리(예: <code>00_inbox</code> 소문자 통일) ④ 내 노트 구조 점검 실습</span></div>
+      <div class="row"><span class="k">울타리</span><span class="v">"슬라이드용 노트는 보고서가 아닙니다. 한 장에 한 가지 말만 담습니다."</span></div>
+      <div class="row"><span class="k">핵심 1회</span><span class="v"><span class="tag">Salient ①</span>"슬라이드는 디자인하는 게 아니라 노트에서 꺼내는 것입니다."</span></div>
+      <div class="row"><span class="k">질문</span><span class="v"><span class="tag q">7초</span>"이 노트에서 청중이 딱 한 가지만 기억한다면 무엇입니까?"</span></div>
+    </div>
+  </details>
+  <div class="break">☕ 휴식 10분</div>
+
+  <details class="session">
+    <summary><span class="t">11:30 – 12:20</span><span class="n">3교시 · Claude로 노트를 웹슬라이드로</span><span class="g">변환 프롬프트를 써 보고, 처음 나온 결과를 고칩니다.</span></summary>
+    <div class="body">
+      <div class="row"><span class="k">목표</span><span class="v">내 노트로 첫 HTML 웹슬라이드를 만든다.</span></div>
+      <div class="row"><span class="k">진행</span><span class="v">① 노트를 Claude에 붙여 넣기 ② 변환 프롬프트 실행 ③ 결과 파일을 브라우저로 열어 확인 ④ 키보드(← →)와 번호 이동 확인</span></div>
+      <div class="row"><span class="k">프롬프트</span><span class="v">아래 문장을 복사해 쓰세요.<code class="prompt">다음 마크다운 노트를 한 파일짜리 HTML 웹슬라이드로 바꿔줘.
+- # 는 슬라이드 제목, ## 는 소제목으로 한 장씩
+- 한 장에 글은 세 줄 이내
+- 키보드 ← → 로 이동, #번호 딥링크 지원
+- 폰트는 Noto Sans KR, 배경은 어두운 남색, 강조색은 라임
+- 중복되는 슬라이드는 합쳐줘</code></span></div>
+      <div class="row"><span class="k">막히는 곳</span><span class="v">첫 결과는 글이 너무 많거나 같은 내용이 두 장으로 나뉩니다. 이것은 실패가 아니라 정상입니다. 4교시에서 고칩니다.</span></div>
+      <div class="row"><span class="k">구두점</span><span class="v"><span class="tag">이정표</span>"첫 슬라이드가 나왔습니다. 점심 후에는 이것을 읽히게 만들고 세상에 올립니다."</span></div>
+    </div>
+  </details>
+  <div class="break">🍚 점심 50분</div>
+
+  <details class="session">
+    <summary><span class="t">13:10 – 14:00</span><span class="n">4교시 · 읽히게 고치고 꾸미기</span><span class="g">글을 덜고, 한 장에 한 가지 말만 남깁니다.</span></summary>
+    <div class="body">
+      <div class="row"><span class="k">목표</span><span class="v">첫 결과물을 발표 가능한 품질로 다듬는다.</span></div>
+      <div class="row"><span class="k">진행</span><span class="v">① 글 줄이기 규칙: 읽을 글이 아니라 볼 그림 ② 중복·누락 점검 ③ 색은 문제는 산호색, 해결은 라임으로 구분 ④ 표지와 마지막 장 만들기</span></div>
+      <div class="row"><span class="k">판서</span><span class="v">칠판에 "Before 한 장 / After 한 장"을 직접 그려 보여 준다.</span></div>
+      <div class="row"><span class="k">핵심 2회</span><span class="v"><span class="tag">Salient ②</span>수강생 사례: 같은 노트의 Before/After 비교. "디자인을 바꾼 게 아니라 글을 덜었습니다."</span></div>
+      <div class="row"><span class="k">질문</span><span class="v"><span class="tag q">7초</span>"이 슬라이드에서 지워도 발표가 되는 문장은 어느 것입니까?"</span></div>
+    </div>
+  </details>
+  <div class="break">☕ 휴식 10분</div>
+
+  <details class="session">
+    <summary><span class="t">14:10 – 15:00</span><span class="n">5교시 · 링크 하나로 올리기</span><span class="g">GitHub에 올리고 Vercel로 공개합니다.</span></summary>
+    <div class="body">
+      <div class="row"><span class="k">목표</span><span class="v">내 웹슬라이드를 주소로 열리게 한다.</span></div>
+      <div class="row"><span class="k">진행</span><span class="v">① GitHub 저장소 만들기 ② <code>Add file → Upload files → Commit</code> ③ Vercel에 저장소 연결 ④ 주소 확인, 휴대폰으로 열어 보기 ⑤ 필요하면 비밀번호 걸기</span></div>
+      <div class="row"><span class="k">막히는 곳</span><span class="v">파일 이름 대소문자, 업로드 후 반영 지연, 캐시. "안 보여요"의 90%는 이 셋입니다. 해결 순서를 체크리스트로 드립니다.</span></div>
+      <div class="row"><span class="k">구두점</span><span class="v"><span class="tag">이정표</span>"링크가 열렸습니다. 마지막으로 이 슬라이드로 직접 발표해 봅니다."</span></div>
+    </div>
+  </details>
+  <div class="break">☕ 휴식 10분</div>
+
+  <details class="session">
+    <summary><span class="t">15:10 – 16:00</span><span class="n">6교시 · 발표와 Contributions</span><span class="g">내 링크로 3분 발표하고 가져갑니다.</span></summary>
+    <div class="body">
+      <div class="row"><span class="k">목표</span><span class="v">실제로 쓰고, 다음 발표에 다시 쓸 수 있는 습관을 만든다.</span></div>
+      <div class="row"><span class="k">진행</span><span class="v">① 둘씩 짝지어 3분 발표와 피드백 ② 재사용 체크리스트 점검 ③ 오늘의 Contributions 정리</span></div>
+      <div class="row"><span class="k">핵심 3회</span><span class="v"><span class="tag">Salient ③</span>"슬라이드는 노트에서 꺼내는 것." 마지막 장 직전에 한 번 더, 청중이 대신 말하게 한다.</span></div>
+      <div class="row"><span class="k">마무리</span><span class="v">"감사합니다"로 끝내지 않는다. Contributions 화면을 띄워 둔 채 슬로건으로 마친다.</span></div>
+    </div>
+  </details>
+</div>
+</section>
+
+<!-- DELIVERABLES / PREP -->
+<section>
+<div class="wrap">
+  <div class="two">
+    <div>
+      <span class="eyebrow">준비물</span>
+      <h2>가져오실 것</h2>
+      <ul class="list">
+        <li>노트북 (Windows·Mac 모두 가능)</li>
+        <li>옵시디언 노트 1편 (10장 안팎으로 나눌 수 있는 분량)</li>
+        <li>Claude 계정, GitHub 계정, Vercel 계정 (사전 가입 안내 제공)</li>
+        <li>휴대폰: 완성된 링크를 열어 보는 데 씁니다.</li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">강사</span>
+      <h2>나병인 박사</h2>
+      <p class="lead" style="margin-bottom:12px">AI교수나병인 · 가천대학교 행정학과 겸임교수</p>
+      <ul class="list">
+        <li>경찰인재개발원 AI 리터러시 강사</li>
+        <li>담대한전환 AX교육원 원장</li>
+        <li>행정학 박사(조직론·리더십), 30년 강의 경력</li>
+        <li>공공기관·기업·대학 AX(AI 조직 전환) 컨설팅과 교육</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONTRIBUTIONS -->
+<section>
+<div class="wrap">
+  <div class="contrib">
+    <span class="eyebrow" style="color:#0B1220">CONTRIBUTIONS</span>
+    <h2>오늘 여러분이 가져가는 것</h2>
+    <ul>
+      <li>내 노트로 만든 웹슬라이드 한 벌</li>
+      <li>노트를 슬라이드로 꺼내는 프롬프트와 작업 순서</li>
+      <li>링크 하나로 공유하는 배포 경험</li>
+    </ul>
+    <p class="slogan">쓰면 이미 발표입니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- WINSTON TABLE -->
+<section>
+<div class="wrap">
+  <span class="eyebrow">DESIGN NOTE</span>
+  <h2>윈스턴 설계표</h2>
+  <p class="lead">MIT 패트릭 윈스턴의 「How to Speak」 원칙으로 이 강의를 설계했습니다. (강사용)</p>
+  <table>
+    <tr><th>Symbol</th><td>노트 → Claude → 웹슬라이드로 이어지는 세 장의 종이 그림. 1교시 칠판에 손으로 그리고, 소품으로 A4 한 장을 접어 보여 준다.</td></tr>
+    <tr><th>Slogan</th><td>"노트 한 장이 슬라이드 한 장이 된다." / "쓰면 이미 발표입니다."</td></tr>
+    <tr><th>Surprise</th><td>시간이 걸리는 건 디자인이 아니라 "무슨 말을 할지 정하는 일"이다. 슬라이드는 만드는 게 아니라 꺼내는 것이다.</td></tr>
+    <tr><th>Salient idea</th><td>슬라이드는 디자인하는 게 아니라 노트에서 꺼내는 것이다. (2·4·6교시에 세 번 반복)</td></tr>
+    <tr><th>Story</th><td>왜: 발표 준비가 매번 처음부터라서 → 어떻게: 94장짜리 옵시디언 슬라이드를 웹으로 변환 → 막힘: 중복 슬라이드와 너무 많은 글 → 해결: 한 장 한 메시지 규칙 → 의미: 쓴 만큼 발표가 된다.</td></tr>
+    <tr><th>시작</th><td>약속: "이 워크숍이 끝나면 여러분은 이미 써 둔 노트를 웹슬라이드로 바꾸고 링크 하나로 발표할 수 있습니다." 첫 Surprise는 약속 직후 1교시에 배치.</td></tr>
+    <tr><th>전개</th><td>울타리: "슬라이드용 노트는 보고서가 아닙니다." 구두점: 교시마다 이정표 한 줄. 질문+7초: 교시마다 1개. 판서: 4단계 지도, Before/After.</td></tr>
+    <tr><th>마무리</th><td>Contributions 화면을 띄운 채, "감사합니다" 대신 슬로건 "쓰면 이미 발표입니다."로 마침.</td></tr>
+  </table>
+</div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact">
+<div class="wrap">
+  <p class="slogan">쓰면 이미 발표입니다.</p>
+  <p>강의 문의 · <a href="mailto:iwillman53@gmail.com">iwillman53@gmail.com</a></p>
+  <p style="margin-top:6px">AI교수나병인 · 담대한전환 AX교육원</p>
+</div>
+</footer>
+
+</body>
+</html>
