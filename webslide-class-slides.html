@@ -39,7 +39,8 @@ li::before{content:"";position:absolute;left:0;top:calc(.7vh + .55em);width:.45e
 .tag.q{background:rgba(255,107,91,.16);color:var(--coral)}
 .tag.t{background:#293045;color:var(--text)}
 pre,.prm{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.8vh 1.6vw;font-family:Consolas,'Courier New','Noto Sans KR',monospace;font-size:clamp(12px,1.55vw,22px);line-height:1.6;white-space:pre-wrap;color:var(--text);margin-top:1.4vh}
-.copy{margin-top:1.4vh;align-self:flex-start;background:var(--lime);color:#0B1220;border:0;border-radius:10px;font:900 clamp(12px,1.5vw,19px) 'Noto Sans KR',sans-serif;padding:1vh 1.6vw;cursor:pointer}
+.prm.sm{font-size:clamp(11px,1.28vw,18px);line-height:1.5;padding:1.2vh 1.4vw}
+.copy{margin:1.4vh .6vw 0 0;align-self:flex-start;background:var(--lime);color:#0B1220;border:0;border-radius:10px;font:900 clamp(12px,1.5vw,19px) 'Noto Sans KR',sans-serif;padding:1vh 1.6vw;cursor:pointer}
 code{font-family:Consolas,monospace;background:var(--card);border:1px solid var(--line);border-radius:7px;padding:0 .35em;font-size:.88em}
 .contrib{background:var(--lime);color:#0B1220;border-radius:20px;padding:4.5vh 3.6vw}
 .contrib .kicker{color:#0B1220}.contrib li::before{background:#0B1220}.contrib li{font-weight:700}
@@ -109,6 +110,42 @@ body.nonote .note{display:none}
 .tbl th,.tbl td{border:1px solid var(--line);padding:.9vh 1vw;text-align:left;font-size:clamp(12px,1.55vw,22px);vertical-align:top}
 .tbl th{background:var(--card);color:var(--lime)}
 .timer{display:inline-block;border:2px solid var(--lime);color:var(--lime);border-radius:99px;padding:.3vh 1.4vw;font-weight:900;font-size:clamp(14px,1.8vw,26px);margin-bottom:1.6vh;align-self:flex-start}
+
+.open{display:inline-flex;align-items:center;gap:.4em;background:var(--lime);color:#0B1220;font:900 clamp(13px,1.55vw,21px) 'Noto Sans KR',sans-serif;border-radius:10px;padding:.9vh 1.3vw;text-decoration:none;margin:.6vh .6vw .6vh 0;border:0;cursor:pointer}
+.open.ghost{background:transparent;color:var(--lime);border:1px solid var(--lime)}
+.open:hover{filter:brightness(1.1)}
+.btnrow{display:flex;flex-wrap:wrap;margin-top:1.4vh}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2vh 2vw}
+.chead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1vh}
+.yr{font-size:clamp(34px,6vw,88px);font-weight:900;color:var(--lime);line-height:1;letter-spacing:-.03em}
+.brow{display:grid;grid-template-columns:7em 1fr 3.4em;gap:1vw;align-items:center;margin:.9vh 0;font-size:clamp(13px,1.7vw,24px)}
+.btrack{background:#0B1220;border-radius:99px;height:2.6vh;overflow:hidden}
+.bfill{height:100%;background:var(--lime);border-radius:99px;width:0;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.bfill.k1{background:#6FD3FF}.bfill.k2{background:#FF6B5B}.bfill.k3{background:#FFC857}
+.bv{text-align:right;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:#D4FF3D;margin-top:1vh}
+.hit{cursor:pointer;transition:transform .15s,border-color .15s}.hit:hover{transform:translateY(-3px);border-color:var(--lime)}
+.hit i{font-style:normal;color:var(--lime);font-weight:900;display:block;margin-top:.8vh;font-size:clamp(12px,1.4vw,19px)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.74);display:none;align-items:center;justify-content:center;z-index:50;padding:4vh 4vw}
+.modal.on{display:flex}
+.mbox{background:var(--card);border:1px solid var(--line);border-radius:18px;width:min(1040px,100%);max-height:90vh;overflow:auto;padding:3vh 2.4vw;position:relative}
+.mbox h3{margin-bottom:1.2vh;color:var(--lime)}
+.mbox p,.mbox li{font-size:clamp(14px,1.8vw,25px)}
+.mx{position:absolute;right:1vw;top:.8vh;background:transparent;border:0;color:var(--text);font-size:clamp(22px,2.6vw,36px);cursor:pointer}
+.mbox iframe{width:100%;height:52vh;border:0;border-radius:12px;background:#222;margin-top:1vh}
+.tabs{display:flex;gap:.6vw;flex-wrap:wrap}
+.tabs button{background:#0B1220;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:.7vh 1.1vw;font:700 clamp(12px,1.4vw,19px) 'Noto Sans KR',sans-serif;cursor:pointer}
+.tabs button.on{background:var(--lime);color:#0B1220;border-color:var(--lime)}
+textarea.paste{width:100%;height:13vh;background:#0B1220;color:var(--text);border:2px dashed var(--lime);border-radius:12px;padding:1vh 1vw;font:inherit;font-size:clamp(13px,1.6vw,22px);margin-top:1.2vh}
+.toast{position:fixed;left:50%;bottom:9vh;transform:translateX(-50%);background:var(--lime);color:#0B1220;font-weight:900;border-radius:99px;padding:1vh 2vw;z-index:60;opacity:0;pointer-events:none;transition:opacity .25s;font-size:clamp(13px,1.6vw,22px)}
+.toast.on{opacity:1}
+.urlbox{background:#0B1220;border:1px solid var(--line);border-radius:12px;padding:1.4vh 1.4vw;font-family:Consolas,monospace;font-size:clamp(14px,2vw,30px);color:var(--lime);word-break:break-all}
+.vs td:nth-child(2){color:var(--coral)}.vs td:nth-child(3){color:var(--lime);font-weight:700}
+.vs th:nth-child(2){color:var(--coral)}
+.toolgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.4vw;margin-top:2vh}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2vh 1.4vw}
+.tool b{display:block;font-size:clamp(17px,2.1vw,30px)}
+.tool small{display:block;color:var(--muted);font-size:clamp(12px,1.35vw,19px);margin:.4vh 0 .8vh}
 @media(max-width:820px){.split{grid-template-columns:1fr}.slide{padding:6vh 5vw 12vh;overflow:auto}}
 </style>
 </head>
@@ -133,15 +170,16 @@ const tree=a=>a.map(([t,d,c])=>`<div class="ti ${c||''}" style="padding-left:${.
 const obs=(tr,ed)=>win('Obsidian — 나교수-볼트',`<div class="obs"><div class="side">${tree(tr)}</div><div class="ed">${ed}</div></div>`,{t:'dark'});
 const brow=(url,body,t)=>win('Chrome',body,{url,t:t||''});
 const steps=a=>`<ol class="steps">${a.map((s,i)=>`<li>${no(i+1)}<span>${s}</span></li>`).join('')}</ol>`;
-const split=(k,t,mock,st)=>`<div class="kicker">${k}</div><h2>${t}</h2><div class="split"><div>${mock}</div><div>${steps(st)}</div></div>`;
+const ob=(label,url,ghost)=>`<a class="open ${ghost?'ghost':''}" href="${url}" ${url.startsWith('http')?'target="_blank" rel="noopener"':''}>${label} ↗</a>`;
+const split=(k,t,mock,st,ex)=>`<div class="kicker">${k}</div><h2>${t}</h2><div class="split"><div>${mock}</div><div>${steps(st)}${ex?`<div class="btnrow">${ex}</div>`:''}</div></div>`;
 const cards=(a,c)=>`<div class="cols">${a.map(([b,s])=>`<div class="card ${c||''}"><b>${b}</b><span>${s}</span></div>`).join('')}</div>`;
 const stuck=(title,sym,cause,fix,extra)=>`<div class="kicker">막힘 → 해결</div><h2>${title}</h2><div class="cols"><div class="card p"><b class="coral">증상</b><span>${sym}</span></div><div class="card p"><b class="coral">원인</b><span>${cause}</span></div><div class="card s"><b class="lime">해결</b><span>${fix}</span></div></div>${extra||''}`;
-const prm=t=>`<pre class="prm" data-copy="1">${t}</pre>`;
+const prm=(t,id,c)=>`<pre class="prm ${c||''}" data-copy="1" ${id?`id="${id}"`:''}>${t}</pre>`;
 const Q=t=>`<span class="tag q">질문 · 7초 대기</span><div class="big">${t}</div>`;
 const M=t=>`<span class="tag">이정표</span><div class="big">${t}</div>`;
 const DIV=(n,t,s)=>`<div class="kicker">PART ${n}</div><h1>${t}</h1><p class="sub">${s}</p>`;
 const PR=(m,t)=>`<span class="timer">실습 · ${m}분</span><h2>${t}</h2>`;
-const splitN=(mock,st)=>`<div class="split"><div>${mock}</div><div>${steps(st)}</div></div>`;
+const splitN=(mock,st,ex)=>`<div class="split"><div>${mock}</div><div>${steps(st)}${ex?`<div class="btnrow">${ex}</div>`:''}</div></div>`;
 /* ===== 오프닝 ===== */
 setPart('오프닝');
 add(`<div class="kicker">WEB SLIDE WORKSHOP · 6 HOURS</div><h1>노트 한 장이<br><span class="lime">슬라이드 한 장</span>이 된다</h1><p class="sub">옵시디언 노트를 웹슬라이드로 · 대학생·대학원생 · 나병인 박사</p>`,
@@ -151,26 +189,55 @@ add(`<div class="kicker">INSTRUCTOR</div><div style="display:grid;grid-template-
 add(`<div class="kicker">PROMISE</div><div class="big">이 워크숍이 끝나면<br>여러분은 <span class="lime">이미 써 둔 노트를<br>웹슬라이드로 바꾸고,<br>링크 하나로 발표</span>할 수 있습니다.</div>`,
 `<b>⏱ 1분</b> 약속은 첫 1분 안에. 천천히 읽고 한 번 멈춘다.`);
 add(`<div class="kicker">TODAY</div><h2>오늘 하루 일정</h2><table class="tbl"><tr><th>시간</th><th>교시</th><th>손에 남는 것</th></tr>
-<tr><td>09:30</td><td>1교시 · 약속, 시연, 준비</td><td>변환할 내 노트 1편</td></tr>
-<tr><td>10:30</td><td>2교시 · 슬라이드가 되는 노트</td><td>정리된 노트</td></tr>
-<tr><td>11:30</td><td>3교시 · Claude로 변환</td><td>첫 웹슬라이드 (HTML 파일)</td></tr>
-<tr><td>12:20</td><td colspan="2">점심 50분</td></tr>
-<tr><td>13:10</td><td>4교시 · 읽히게 고치고 꾸미기</td><td>발표 가능한 슬라이드</td></tr>
-<tr><td>14:10</td><td>5교시 · GitHub·Vercel 배포</td><td>공개 링크</td></tr>
-<tr><td>15:10</td><td>6교시 · 3분 발표와 정리</td><td>재사용 체크리스트</td></tr></table>`,
-`<b>⏱ 2분</b> 쉬는 시간은 교시마다 10분. 화장실·커피는 그때. 막히면 손을 들라고 미리 말한다.`);
+<tr><td>09:30–10:40</td><td>1교시 · 시연, 준비, 약속</td><td>웹슬라이드를 만들어야 할 이유 · 내 노트 1편</td></tr>
+<tr><td>10:50–11:40</td><td>2교시 · 슬라이드가 되는 노트</td><td>정리된 노트</td></tr>
+<tr><td>11:50–12:40</td><td>3교시 · Claude로 변환</td><td>첫 웹슬라이드 (HTML 파일)</td></tr>
+<tr><td>12:40–13:30</td><td colspan="2">점심 50분</td></tr>
+<tr><td>13:30–14:30</td><td>4교시 · 읽히게 꾸미기 + 웹 장치 넣기</td><td>수치·창·지도·복사가 들어간 슬라이드</td></tr>
+<tr><td>14:40–15:30</td><td>5교시 · GitHub·Vercel 배포</td><td>공개 링크</td></tr>
+<tr><td>15:40–16:30</td><td>6교시 · 3분 발표와 정리</td><td>재사용 체크리스트</td></tr></table>`,
+`<b>⏱ 2분</b> 교시 사이 쉬는 시간은 10분. 오늘은 만들기 전에 "왜 만드는지"를 먼저 시연으로 보여드린다고 예고. 막히면 손을 들라고 미리 말한다.`);
 add(`<div class="kicker">TODAY'S MAP</div><h2>오늘의 4단계</h2><div class="flow"><div class="card"><b>① 쓰기</b><span>노트 구조</span></div><i>→</i><div class="card"><b>② 읽히기</b><span>Claude 변환</span></div><i>→</i><div class="card"><b>③ 꾸미기</b><span>글 덜기</span></div><i>→</i><div class="card hl"><b>④ 올리기</b><span>링크 배포</span></div></div><p class="sub">교시가 바뀔 때마다 이 지도로 돌아옵니다.</p>`,
 `<b>⏱ 2분 · 판서</b> 칠판에 4단계를 손으로 그린다. 이후 교시마다 현재 위치에 동그라미.`);
 add(`<div class="kicker">SURPRISE</div><h2>슬라이드 만드는 시간을 잡아먹는 건<br><span class="coral">디자인이 아닙니다</span></h2>${cards([['원래는','빈 슬라이드를 열고 글을 넣고 정렬한다'],['사실은','"무슨 말을 할지" 정하는 시간이 대부분이다'],['그래서','생각은 노트에 이미 있다. 슬라이드는 <b class="lime" style="display:inline">꺼내는 것</b>']].map((x,i)=>x),'')}`,
 `<b>⏱ 2분</b> 약속 직후 배치. 잠시 멈추고 반응을 본다.`);
 add(`<div class="kicker">SYMBOL</div><h2>세 장의 종이</h2><div class="flow"><div class="card"><b>노트</b><span># 제목<br>## 소제목<br>한 줄 메시지</span></div><i>→</i><div class="card"><b>Claude</b><span>구조를 읽고<br>HTML로 변환</span></div><i>→</i><div class="card hl"><b>웹슬라이드</b><span>링크 한 줄<br>#7 딥링크</span></div></div>`,
 `<b>⏱ 2분 · 소품</b> A4 한 장을 세 번 접어 보여 준다: 노트 → Claude → 슬라이드.`);
-add(`<div class="kicker">CHECK</div><h2>준비물 점검 · 손 들어 확인</h2>${cards([['노트북','충전기 연결, 크롬 설치'],['계정 3개','Claude · GitHub · Vercel 로그인 가능'],['옵시디언','볼트가 열려 있고 노트 1편 선택'],['휴대폰','나중에 완성 링크를 열어 보는 용도']])}<p class="sub">계정이 없으면 지금 가입합니다. 5분 드리겠습니다.</p>`,
-`<b>⏱ 6분</b> 한 줄씩 돌아다니며 확인. GitHub는 "Continue with Google"로 가입 가능. 이메일 인증 메일이 늦으면 스팸함을 보게 한다.`);
-add(split('DEMO ①','완성품을 먼저 봅니다',brow('0927iwillman.vercel.app/obsidian-slides.html#1',`<div style="background:#0B1220;color:#F6F3EC;padding:2.4em 2em;min-height:30vh"><div style="color:#D4FF3D;font-weight:700;font-size:.85em">OBSIDIAN LECTURE · 1 / 94</div><div style="font-size:2em;font-weight:900;line-height:1.25;margin-top:.4em">내 노트가<br><span style="color:#D4FF3D">그래프가 되는 순간</span></div></div>`,'vc'),['주소창을 보세요. 파일이 아니라 <b>링크</b>입니다','← → 키로 넘깁니다','주소 끝 <code>#7</code>은 7번 장으로 가는 문입니다']),
-`<b>⏱ 4분 · 시연</b> 실제 사이트를 연다. 휴대폰에서도 열어 보여 준다. "이 94장은 오늘 배울 방법으로 만들었다."`);
+/* ===== LIVE DEMO ===== */
+setPart('시연 · 웹슬라이드의 힘');
+add(`<div class="kicker">LIVE DEMO</div><h1>먼저 보여드립니다</h1><p class="sub">PPT에는 없는, 웹슬라이드만의 다섯 가지 · 이 화면에서 직접 눌러 보세요</p>${cards([['① 움직이는 수치','연도에 따라 값이 바뀐다'],['② 열리는 창','클릭하면 설명 창이 뜬다'],['③ 지도','장소가 슬라이드 안에서 열린다'],['④ 복사','글자·프롬프트를 그대로 복사'],['⑤ 링크 하나','수정해도 주소는 그대로']],'s')}`,
+`<b>⏱ 2분</b> 약속 직후 바로 시연으로. "만드는 법을 배우기 전에, 왜 만들어야 하는지부터 보여드립니다." 다섯 가지를 예고만 한다.`);
+add(`<div class="kicker">DEMO ① · 움직이는 수치</div><h2>연도를 바꾸면 <span class="lime">수치가 움직입니다</span></h2><div class="split" style="grid-template-columns:1.6fr 1fr"><div class="chart" data-demo="chart"><div class="chead"><div class="yr" data-yr>2020</div><div class="muted" style="font-size:clamp(11px,1.3vw,17px);text-align:right">시연용 가상 데이터<br>웹슬라이드로 발표한 건수</div></div><div data-bars></div><input type="range" min="2020" max="2026" step="1" value="2020" data-range aria-label="연도"><div class="btnrow"><button class="open" data-play>▶ 재생</button><button class="open ghost" data-step="-1">이전 해</button><button class="open ghost" data-step="1">다음 해</button></div></div><div><div class="card p"><b class="coral">PPT라면</b><span>연도별 그래프를 7장 따로 만들고, 장을 넘기며 비교해야 합니다</span></div><div class="card s" style="margin-top:1.4vh"><b class="lime">웹슬라이드는</b><span>한 장에서 슬라이더를 끌면 막대와 숫자가 함께 움직입니다. 발표 중 질문이 나오면 그 자리에서 해를 바꿔 보여 줍니다</span></div></div></div>`,
+`<b>⏱ 4분 · 시연</b> ▶ 재생을 누르고 숫자가 올라가는 것을 함께 본다. 슬라이더를 끌어 2023으로 가 보며 "여기서 차이가 벌어졌죠?" 질문. (모두 가상 데이터임을 분명히 말한다)`);
+add(`<div class="kicker">DEMO ② · 열리는 창</div><h2>클릭하면 <span class="lime">슬라이드 안에서 창이 열립니다</span></h2><div class="cols"><div class="card hit" data-modal="pop1"><b>연구 방법</b><span>설문·인터뷰·사례 비교</span><i>▶ 눌러서 열기</i></div><div class="card hit" data-modal="pop2"><b>사례 3개</b><span>표로 보는 비교</span><i>▶ 눌러서 열기</i></div><div class="card hit" data-modal="pop3"><b>참고 자료</b><span>링크 모음 · 새 창 열기</span><i>▶ 눌러서 열기</i></div></div><p class="sub">창을 닫으려면 <code>Esc</code>나 바깥 어두운 곳을 누르세요. 슬라이드 순서는 그대로입니다.</p>`,
+`<b>⏱ 3분 · 시연</b> 세 카드를 차례로 눌러 보인다. "발표 흐름을 끊지 않고 보충 자료를 열었다 닫는다. 질문 답변용 예비 자료를 숨겨 둘 수 있다."`);
+add(`<div class="kicker">DEMO ③ · 지도</div><h2>연결한 <span class="lime">지도가 슬라이드에서 열립니다</span></h2><p class="sub" style="margin-top:0">현장 답사, 기관 위치, 사건 장소를 지도로 바로 보여 줍니다 (인터넷 연결 필요)</p><div class="btnrow"><button class="open" data-modal="map">▶ 지도 열기</button>${ob('구글지도에서 따로 열기','https://www.google.com/maps?q=37.4504,127.1288','ghost')}</div>${cards([['PPT라면','지도를 캡처해 이미지로 붙이면 확대·이동이 안 됩니다'],['웹슬라이드는','확대하고 끌어서 움직이고, 장소 버튼으로 이동합니다']],'')}`,
+`<b>⏱ 3분 · 시연</b> 지도를 열어 확대·이동해 보인다. 탭으로 장소를 바꾼다. 인터넷이 안 되는 강의실이면 시연을 건너뛰고 캡처 영상으로 대체. 좌표는 예시 위치.`);
+add(`<div class="kicker">DEMO ④ · 복사</div><h2>글자가 <span class="lime">그대로 복사됩니다</span></h2><div class="btnrow"><button class="open" data-copytext="이 노트를 한 파일짜리 HTML 웹슬라이드로 바꿔줘. # 는 슬라이드 제목, ## 는 한 줄 메시지, - 는 본문 세 줄 이내.">① 프롬프트 복사</button><button class="open" data-copytext="연도\t발표 수\n2024\t41\n2025\t55\n2026\t68">② 표 복사</button><button class="open" data-copytext="https://claude.ai/new">③ 주소 복사</button></div><p class="sub" style="margin-top:1.4vh">아래 칸에 <b class="lime">붙여넣기(Ctrl + V)</b> 해 보세요</p><textarea class="paste" placeholder="여기에 붙여넣어 보세요"></textarea>`,
+`<b>⏱ 3분 · 시연</b> 버튼을 누르고 아래 칸에 붙여넣게 한다. "PPT를 사진으로 찍어 보내면 글자를 복사할 수 없다. 웹슬라이드는 프롬프트도 표도 주소도 그대로 가져간다." 오늘 프롬프트 장마다 같은 복사 버튼이 있다.`);
+add(`<div class="kicker">DEMO ⑤ · 링크 하나</div><h2>링크 하나로 공유하고,<br><span class="lime">고치면 주소는 그대로</span></h2><div class="urlbox">https://0927iwillman.vercel.app/slides.html#5</div><div class="btnrow"><button class="open" data-copytext="https://0927iwillman.vercel.app/slides.html#5">링크 복사</button>${ob('실제 강의 웹슬라이드 열기','https://0927iwillman.vercel.app/slides.html')}${ob('내 강의 사이트 목록 열기','https://0927iwillman.vercel.app/lectures.html','ghost')}</div>${cards([['<code>#5</code>','주소 끝 번호가 곧 5번 장으로 가는 문'],['수정','파일을 다시 올리면 모두의 화면이 바뀐다'],['휴대폰','설치 없이 브라우저로 바로 열린다']])}`,
+`<b>⏱ 3분 · 시연</b> 실제 강의에 쓰는 웹슬라이드를 열고, 휴대폰에서도 열어 보인다. 주소 끝 #번호를 바꿔 점프. 이 사이트는 오늘 만들 방식 그대로 만든 것이라고 말한다.`);
+add(`<div class="kicker">WHY</div><h2>왜 웹슬라이드를 만들어야 할까요</h2><table class="tbl vs"><tr><th>구분</th><th>일반 슬라이드 파일</th><th>웹슬라이드</th></tr>
+<tr><td>공유</td><td>파일을 첨부해 보냄</td><td>링크 하나</td></tr>
+<tr><td>수정</td><td>고친 파일을 다시 전달</td><td>올리면 같은 주소에서 바로 반영</td></tr>
+<tr><td>글자</td><td>이미지·캡처는 복사 불가</td><td>프롬프트·표·주소를 그대로 복사</td></tr>
+<tr><td>움직임</td><td>장을 따로 만들어야 함</td><td>슬라이더·팝업·지도를 한 장에</td></tr>
+<tr><td>도구 연결</td><td>링크를 누르면 화면을 벗어남</td><td>앱·사이트를 버튼 하나로 열기</td></tr>
+<tr><td>기기</td><td>프로그램 설치 필요</td><td>휴대폰 브라우저면 끝</td></tr>
+<tr><td>버전</td><td>final(2).pptx 반복</td><td>주소 하나, 지난 판은 GitHub에 기록</td></tr></table>`,
+`<b>⏱ 3분</b> 표를 읽지 않는다. 앞 시연 다섯 가지와 짝지어 한 줄씩 짚는다. 일반 슬라이드 파일도 장점이 있음을 인정하되, 오늘 목적(링크 공유·발표)에는 웹이 맞다고 정리.`);
+add(Q(`다음 발표에서<br><span class="lime">가장 먼저 쓰고 싶은 장치</span>는<br>무엇입니까?`),
+`<b>⏱ 2분 · 7초</b> 움직이는 수치·창·지도·복사·링크 중 하나를 고르게 한다. 답을 칠판에 적어 두면 4교시 실습 주제가 된다.`);
+add(`<div class="kicker">WHERE TO USE</div><h2>이런 발표에서 힘을 발휘합니다</h2>${cards([['수업·조별 발표','링크 하나로 조원이 같이 보고 고친다'],['공모전·창업 피칭','지도·수치 변화로 설득력을 높인다'],['졸업논문·학회 발표','질문받을 예비 자료를 팝업으로 숨겨 둔다'],['포트폴리오·면접','주소 하나를 이력서에 넣는다'],['스터디·세미나 자료','프롬프트와 코드를 복사해 가져간다']],'s')}`,
+`<b>⏱ 2분</b> "내 발표 중 어디에 쓸까?"를 한 장면씩 떠올리게 한다. 오늘 만들 슬라이드의 주제를 정하는 데 도움이 된다.`);
+/* ===== 필요한 것 ===== */
+setPart('시연 · 웹슬라이드의 힘');
+add(`<div class="kicker">WHAT YOU NEED</div><h2>이런 웹슬라이드를 만들려면<br><span class="lime">다섯 가지가 필요합니다</span></h2><div class="toolgrid"><div class="tool"><b>① 노트</b><small>옵시디언 · 이미 써 둔 글</small>${ob('옵시디언 열기','obsidian://open')}${ob('내려받기','https://obsidian.md/download','ghost')}</div><div class="tool"><b>② AI</b><small>Claude · 노트를 슬라이드로 변환</small>${ob('Claude 열기','https://claude.ai/new')}</div><div class="tool"><b>③ 브라우저</b><small>Chrome · 열어서 확인</small>${ob('Chrome 받기','https://www.google.com/chrome/','ghost')}</div><div class="tool"><b>④ 보관함</b><small>GitHub · 파일 올리기</small>${ob('GitHub 열기','https://github.com/login')}</div><div class="tool"><b>⑤ 게시판</b><small>Vercel · 주소로 공개</small>${ob('Vercel 열기','https://vercel.com/signup')}</div></div><p class="sub">코딩 지식은 필요 없습니다. 모두 개인 학습용 무료 요금제로 시작할 수 있습니다 (사용량 제한과 정책은 바뀔 수 있습니다).</p>`,
+`<b>⏱ 4분</b> 각 버튼을 눌러 열리는지 한 번씩 확인하게 한다. 옵시디언 버튼은 앱이 설치되어 있을 때만 열린다. 필요한 것은 "노트 + AI + 브라우저 + 보관함 + 게시판" 다섯 가지뿐이라고 단순화.`);
 add(split('DEMO ②','같은 장을 노트에서 찾습니다',obs([['00_inbox',0,'dim'],['lectures',0],['obsidian-slides.md',1,'on'],['assets',1,'dim']],md(`# 내 노트가\n## 그래프가 되는 순간\n- 링크 하나가 연결 하나\n- 연결이 쌓이면 지도가 된다`)),['왼쪽 노트의 <code>#</code>가 슬라이드 제목이 됩니다','<code>##</code>는 소제목, <code>-</code>는 본문 줄입니다','노트를 고치면 슬라이드도 고쳐집니다']),
 `<b>⏱ 3분</b> 노트 화면과 슬라이드를 나란히 놓고 대응 관계를 보여 준다. 오늘 전체의 핵심 그림.`);
+add(`<div class="kicker">CHECK</div><h2>준비물 점검 · 손 들어 확인</h2>${cards([['노트북','충전기 연결, 크롬 설치'],['옵시디언','볼트가 열려 있고 노트 1편 선택'],['계정 3개','Claude · GitHub · Vercel 로그인 가능'],['휴대폰','나중에 완성 링크를 열어 보는 용도']])}<div class="btnrow">${ob('Claude 가입·로그인','https://claude.ai/login')}${ob('GitHub 가입','https://github.com/signup')}${ob('Vercel 가입','https://vercel.com/signup')}${ob('옵시디언 내려받기','https://obsidian.md/download','ghost')}</div><p class="sub">계정이 없으면 지금 바로 가입합니다. 8분 드리겠습니다.</p>`,
+`<b>⏱ 8분</b> 한 줄씩 돌아다니며 확인. GitHub는 이메일 인증 메일이 늦으면 스팸함. Vercel은 반드시 "Continue with GitHub"로 가입(5교시에 편함). 옵시디언 노트가 없는 학생은 샘플 노트를 안내.`);
 add(`<div class="kicker">TODAY'S OUTPUT</div><h2>오늘 만들 것</h2><div style="margin-top:2vh"><div class="mini-slide"><b>1 · 표지</b>제목 한 줄</div><div class="mini-slide"><b>2 · 약속</b>이 발표가 끝나면</div><div class="mini-slide"><b>3~12 · 본문</b>한 장 한 메시지</div><div class="mini-slide"><b>13 · 정리</b>Contributions</div><div class="mini-slide"><b>14 · 마무리</b>슬로건</div><div class="mini-slide" style="border-color:#D4FF3D"><b>+ 링크</b>https://내이름.vercel.app</div></div><p class="sub">내 노트 → 10~15장 → 링크. 이 세 가지가 오늘의 숙제이자 결과물입니다.</p>`,
 `<b>⏱ 2분</b> 완성 모습을 구체적으로 그려 준다. 장수는 노트 분량에 맞춰 10~15장.`);
 add(Q(`지난 학기 발표 자료를 만들 때<br><span class="coral">가장 오래 걸린 일</span>은<br>무엇이었습니까?`),
@@ -181,7 +248,7 @@ add(M(`재료가 필요합니다.<br>이제 <span class="lime">내 노트</span>
 /* ===== PART 1 ===== */
 setPart('2교시 · 노트 구조');
 add(DIV(1,'슬라이드가 되는<br>노트 쓰기','2교시 · 50분 · 규칙 3개와 실습 5개'),`<b>⏱ 시작</b> 판서 지도의 ① 쓰기에 동그라미.`);
-add(split('옵시디언 화면 읽기','먼저 화면을 같은 눈으로 봅니다',obs([['00_inbox',0],['발표자료',0],['AI-리터러시.md',1,'on'],['조직변화.md',1],['templates',0,'dim']],md(`# AI 리터러시\n## 왜 필요한가\n- 질문하는 힘이 곧 실력이다\n- 도구는 바뀌어도 질문은 남는다`)),['<b>왼쪽 파일 목록</b>: 볼트 안의 폴더와 노트','<b>가운데 편집창</b>: 글을 쓰는 곳. <code>#</code> 표시가 보입니다','오른쪽 위 책 아이콘을 누르면 <b>읽기 모드</b>, 연필은 편집 모드']),
+add(split('옵시디언 화면 읽기','먼저 화면을 같은 눈으로 봅니다',obs([['00_inbox',0],['발표자료',0],['AI-리터러시.md',1,'on'],['조직변화.md',1],['templates',0,'dim']],md(`# AI 리터러시\n## 왜 필요한가\n- 질문하는 힘이 곧 실력이다\n- 도구는 바뀌어도 질문은 남는다`)),['<b>왼쪽 파일 목록</b>: 볼트 안의 폴더와 노트','<b>가운데 편집창</b>: 글을 쓰는 곳. <code>#</code> 표시가 보입니다','오른쪽 위 책 아이콘을 누르면 <b>읽기 모드</b>, 연필은 편집 모드'],ob('옵시디언 열기','obsidian://open')),
 `<b>⏱ 4분</b> 모두 같은 화면인지 확인. 편집/읽기 전환을 직접 눌러 보게 한다. 옵시디언을 처음 보는 학생을 위해 천천히.`);
 add(split('문법 ①','# 하나가 슬라이드 한 장',`${obs([['AI-리터러시.md',0,'on']],md(`# AI 리터러시란\n질문하는 힘이다.\n\n# 왜 지금인가\n도구는 매달 바뀐다.`))}`,['<code>#</code> 한 개 + 띄어쓰기 + 제목','줄이 바뀌고 <code>#</code>가 또 나오면 <b>다음 장</b>','<code>#</code> 뒤에 반드시 <b>한 칸</b> 띄웁니다. <code>#제목</code>은 제목이 아닙니다']),
 `<b>⏱ 3분</b> 규칙 ①. 띄어쓰기 실수가 가장 흔하다고 미리 말해 둔다.`);
@@ -222,12 +289,14 @@ add(`<div class="kicker">CHECKPOINT ②</div><h2>2교시 완료 기준</h2>${car
 `<b>⏱ 3분</b> 못 끝낸 학생은 수업 중 계속 정리해도 된다고 알려 준다. 3교시 입력은 "지금 상태 그대로"여도 된다.`);
 add(Q(`이 노트에서 청중이<br><span class="lime">딱 한 가지만</span> 기억한다면<br>무엇입니까?`),
 `<b>⏱ 2분 · 7초</b> 각자 노트 위에 별표를 하나만 치게 한다. 이 별표가 표지 제목의 후보가 된다.`);
+add(`<div class="kicker">WHY IT MATTERS</div><div class="big">노트가 <span class="lime">원본</span>입니다.<br>고치면 슬라이드도<br>같이 고쳐집니다.</div><p class="sub">한 번 쓴 노트가 수업 발표, 공모전, 면접 포트폴리오로 계속 재사용됩니다.</p>`,
+`<b>⏱ 1분 · 웹슬라이드의 힘</b> 일반 슬라이드는 장마다 따로 고친다. 노트가 원본이면 한 곳만 고치면 된다.`);
 add(M(`노트가 준비됐습니다.<br>이제 <span class="lime">Claude에게</span> 꺼내 달라고<br>합니다.`),
 `<b>구두점</b> 2교시 → 3교시. 휴식 10분. 판서 지도에서 ①에 체크, ②에 동그라미.`);
 /* ===== PART 2 ===== */
 setPart('3교시 · Claude 변환');
 add(DIV(2,'Claude로 노트를<br>웹슬라이드로','3교시 · 50분 · 붙여넣기 → 저장 → 열기 → 고치기'),`<b>⏱ 시작</b> 판서 지도 ②에 동그라미. 오늘의 핵심 도구 시간.`);
-add(split('Claude 열기','claude.ai에서 새 대화를 시작합니다',brow('claude.ai/new',`<div class="chat"><div style="text-align:center;font-size:1.6em;font-weight:700;margin:1.4em 0">무엇을 도와드릴까요?</div><div class="inbox">${no(2)} 메시지를 입력하세요…<span class="send">${no(3)} 전송 ↑</span></div></div>`),['크롬에서 <code>claude.ai</code>를 열고 로그인합니다','왼쪽 위 <b>새 대화(New chat)</b>를 누릅니다 (이전 대화가 섞이지 않게)','입력창이 하나 나옵니다. 여기에 <b>프롬프트 + 노트</b>를 붙입니다']),
+add(split('Claude 열기','claude.ai에서 새 대화를 시작합니다',brow('claude.ai/new',`<div class="chat"><div style="text-align:center;font-size:1.6em;font-weight:700;margin:1.4em 0">무엇을 도와드릴까요?</div><div class="inbox">${no(2)} 메시지를 입력하세요…<span class="send">${no(3)} 전송 ↑</span></div></div>`),['크롬에서 <code>claude.ai</code>를 열고 로그인합니다','왼쪽 위 <b>새 대화(New chat)</b>를 누릅니다 (이전 대화가 섞이지 않게)','입력창이 하나 나옵니다. 여기에 <b>프롬프트 + 노트</b>를 붙입니다'],ob('Claude 열기','https://claude.ai/new')),
 `<b>⏱ 3분</b> 반드시 새 대화. 예전 대화가 남아 있으면 규칙이 섞인다. 계정 로그인 안 된 학생 즉시 도움.`);
 add(`<div class="kicker">PROMPT 구조</div><h2>좋은 프롬프트는 네 칸입니다</h2>${cards([['① 할 일','"웹슬라이드로 바꿔줘"'],['② 규칙','장 나누기·글 줄 수·이동 키'],['③ 모양','폰트·색·배경'],['④ 입력','내 노트 (맨 아래)']],'s')}<p class="sub">순서가 중요합니다. 노트는 항상 <b class="lime">맨 아래</b>에 붙입니다.</p>`,
 `<b>⏱ 3분</b> 칸을 칠판에 그린다. 프롬프트 = 주문서. 규칙이 구체적일수록 결과가 안정된다.`);
@@ -246,7 +315,7 @@ add(`<div class="kicker">PROMPT</div><h2>복사해서 쓰는 변환 프롬프트
 - 제목은 크게, 한 장에 글은 적게
 
 [입력 노트]
-(아래에 노트를 붙여 넣음)`)}`,
+(아래에 노트를 붙여 넣음)`,'mainprompt','sm')}<div class="btnrow"><button class="open" data-copyopen="mainprompt" data-url="https://claude.ai/new">복사하고 Claude 열기 ↗</button></div>`,
 `<b>⏱ 4분</b> 복사 버튼을 누르고 Claude 입력창에 붙이게 한다. 한 줄씩 의미를 짚는다. 마지막 [입력 노트] 아래에 노트를 붙인다.`);
 add(split('붙여넣기','프롬프트 아래에 노트를 붙입니다',brow('claude.ai/chat',`<div class="chat"><div class="msg-u">다음 마크다운 노트를 한 파일짜리 HTML 웹슬라이드로 바꿔줘.\n[규칙] … [모양] …\n\n[입력 노트]\n# AI 리터러시란\n## 질문하는 힘이다\n- 도구는 바뀌어도 …\n# 왜 지금인가 …</div><div class="inbox">${no(3)} (위 내용이 입력창에 있음)<span class="send">${no(4)} ↑</span></div></div>`),['<code>Ctrl + V</code>로 <b>프롬프트</b>를 먼저 붙입니다','그 아래에 <b>내 노트 전체</b>를 복사해 붙입니다 (옵시디언에서 <code>Ctrl + A</code> → <code>Ctrl + C</code>)','내용이 맞는지 위에서 아래까지 훑어봅니다','전송 버튼 또는 <code>Enter</code>']),
 `<b>⏱ 4분</b> 노트 맨 위 --- 블록은 빼고 복사. 붙인 뒤 훑어보는 습관. 전송 후 결과가 나오기까지 1~2분 걸린다고 미리 말한다.`);
@@ -280,6 +349,8 @@ add(`<div class="kicker">CHECKPOINT ③</div><h2>3교시 완료 기준</h2>${car
 `<b>⏱ 2분</b> 손으로 확인. 아직 못 한 학생은 점심 전에 도움 받는다.`);
 add(Q(`첫 결과물에서<br><span class="coral">가장 아쉬운 점</span>은<br>무엇입니까?`),
 `<b>⏱ 2분 · 7초</b> 아쉬운 점이 곧 4교시의 주제다. 칠판에 적는다.`);
+add(`<div class="kicker">WHY IT MATTERS</div><div class="big">빈 화면에서 시작하지 않고<br><span class="lime">써 둔 글에서 시작</span>합니다.</div><p class="sub">내용은 이미 있습니다. 필요한 것은 요청 한 번과 확인 한 번입니다.</p>`,
+`<b>⏱ 1분 · 웹슬라이드의 힘</b> 방금 첫 슬라이드를 직접 만든 경험을 근거로 말한다.`);
 add(M(`첫 슬라이드가 나왔습니다.<br>점심 후에는 <span class="lime">읽히게 만들고</span><br>세상에 올립니다.`),
 `<b>구두점</b> 3교시 → 점심 50분. 오전 파일을 USB나 이메일로 꼭 저장해 두라고 안내.`);
 /* ===== PART 3 ===== */
@@ -340,6 +411,46 @@ add(`<div class="kicker">PROMPT</div><h2>마지막 두 장 프롬프트</h2>${pr
 - "(내 슬로건)"
 - "감사합니다"는 쓰지 마.`)}<p class="sub">괄호 안을 <b class="lime">내 내용</b>으로 바꾸세요. 슬로건은 오늘 발표를 한 줄로 줄인 문장입니다.</p>`,
 `<b>⏱ 4분</b> 슬로건 예: "쓰면 이미 발표입니다." 학생이 자기 슬로건을 한 줄로 만들게 한다.`);
+add(`<div class="kicker">WEB POWER</div><h2>이제 <span class="lime">웹슬라이드만의 장치</span>를 직접 넣습니다</h2>${cards([['① 움직이는 수치','연도 슬라이더 + 재생'],['② 열리는 창','클릭하면 설명 창'],['③ 지도','장소 버튼으로 이동'],['④ 복사 버튼','프롬프트·표·주소 복사'],['⑤ 앱 열기 버튼','Claude·GitHub를 바로']],'s')}<p class="sub">시연에서 본 것을 내 슬라이드에 넣습니다. 장치마다 프롬프트 하나면 됩니다.</p>`,
+`<b>⏱ 2분</b> 1교시 시연을 떠올리게 한다. 오늘 질문에서 학생이 고른 장치를 우선 넣게 한다. 모든 장치를 다 넣을 필요는 없고 두 가지면 충분하다고 말한다.`);
+add(`<div class="kicker">DEVICE ①</div><h2>연도 슬라이더 프롬프트</h2>${prm(`3번 슬라이드 아래에 연도별 막대그래프를 넣어줘.
+- 아래 데이터를 쓰고, 연도 슬라이더를 움직이면
+  막대와 숫자가 함께 부드럽게 바뀌게
+- ▶ 재생 버튼을 누르면 해마다 자동으로 넘어가게
+- 막대 색은 라임 #D4FF3D, 배경은 지금과 같게
+- 화면 위에 "가상 데이터"라고 작게 표시
+[데이터]
+2022: A 14, B 22, C 9
+2023: A 19, B 30, C 15
+2024: A 27, B 41, C 24`)}<p class="sub">괄호 안 데이터를 <b class="lime">내 수치</b>로 바꾸세요. 출처가 있는 실제 수치만 쓰고, 출처를 슬라이드에 적습니다.</p>`,
+`<b>⏱ 5분</b> 데이터는 반드시 출처가 있는 값만. 가짜 수치를 실제인 것처럼 쓰지 않는다. 시연의 막대 차트와 같은 장치다.`);
+add(`<div class="kicker">DEVICE ②</div><h2>클릭하면 열리는 창 프롬프트</h2>${prm(`5번 슬라이드의 세 항목을 눌러 보게 만들어줘.
+- 항목을 누르면 화면 가운데에 설명 창이 열리게
+- 창 안에는 내가 준 설명 글을 넣고
+- Esc 키나 바깥 어두운 곳을 누르면 닫히게
+- 창이 열려 있는 동안 ← → 로 슬라이드가 넘어가지 않게
+[항목과 설명]
+1) 연구 방법: (설명)
+2) 사례 비교: (설명)
+3) 참고 자료: (설명)`)}`,
+`<b>⏱ 4분</b> "질문받을 때 열어 보여 줄 예비 자료"를 창 안에 넣는 방식을 권한다. 본 흐름은 한 줄, 근거는 창 안에.`);
+add(`<div class="kicker">DEVICE ③</div><h2>지도 프롬프트</h2>${prm(`7번 슬라이드에 지도를 넣어줘.
+- OpenStreetMap 지도를 iframe으로 슬라이드 안에 띄우고
+- 장소 버튼 3개(○○, △△, □□)를 누르면 지도가 해당 위치로 이동하게
+- 각 장소의 위도·경도를 어디서 가져왔는지 표로 알려줘
+  (내가 직접 확인할 수 있게)
+- 지도를 못 불러오면 "구글지도로 열기" 링크를 대신 보여줘`)}<p class="sub">좌표는 AI가 틀릴 수 있습니다. <b class="coral">지도에서 위치를 직접 확인</b>하세요. 인터넷이 필요합니다.</p>`,
+`<b>⏱ 4분</b> 좌표 검증은 구글지도에서 장소를 검색해 비교하게 한다. 강의실 인터넷이 불안정하면 "구글지도로 열기" 링크가 안전한 대안.`);
+add(`<div class="kicker">DEVICE ④ ⑤</div><h2>복사 버튼과 앱 열기 버튼 프롬프트</h2>${prm(`슬라이드에 두 가지 버튼을 넣어줘.
+1) 12번 슬라이드의 프롬프트 박스 옆에 '복사' 버튼.
+   누르면 박스 글자가 클립보드에 복사되고
+   버튼 글자가 2초 동안 '복사됨'으로 바뀌게
+2) 14번 슬라이드에 'Claude 열기' 버튼.
+   누르면 https://claude.ai/new 가 새 탭으로 열리게
+   같은 방식으로 'GitHub 열기'(https://github.com/login)도`)}<div class="btnrow"><button class="open" data-copytext="https://claude.ai/new">시연: 주소 복사</button>${ob('시연: Claude 열기','https://claude.ai/new','1')}</div>`,
+`<b>⏱ 4분</b> 이 슬라이드의 복사·열기 버튼이 바로 그 결과물이라고 보여 준다. 강의 자료에 쓸 도구를 버튼으로 연결해 두면 학생도 헤매지 않는다.`);
+add(`${PR(10,'실습 4-2 · 웹 장치 두 가지 넣기')}<ul style="margin-top:1vh"><li>1교시 질문에서 고른 장치를 먼저 넣는다</li><li>두 번째 장치를 하나 더 고른다</li><li>넣을 때마다 파일을 덮어쓰고 <code>F5</code>로 확인</li><li>목표: <b class="lime">내 슬라이드에서 움직이거나 열리는 장면 두 개</b></li></ul>`,
+`<b>⏱ 10분</b> 돌아다니며 막힌 학생을 돕는다. 코드가 이상해지면 직전 파일(v1)로 되돌린다. 장치를 많이 넣기보다 두 개를 정확히.`);
 add(stuck('이미지를 넣고 싶다','사진·도표를 슬라이드에 넣었는데 깨진 아이콘이 뜬다','HTML에는 이미지가 <b>파일 이름만</b> 적혀 있고 파일이 따로 있다','<b>같은 폴더</b>에 이미지를 두고 <b>파일 이름을 영문 소문자</b>로. 배포할 때 이미지도 함께 올린다',prm('3번 슬라이드 오른쪽에 images/chart.png 를 넣어줘.\n이미지는 같은 폴더의 images 폴더에 있어.\n이미지 너비는 화면의 40%로 해줘.')),
 `<b>⏱ 4분</b> 이미지는 "폴더째 올린다"가 원칙. 5교시에 Upload files로 폴더도 올릴 수 있다고 예고.`);
 add(split('딥링크','#번호가 맞는지 확인합니다',brow('file:///…/my-slides.html#7',`<div style="background:#0B1220;color:#F6F3EC;padding:2em;min-height:24vh;position:relative"><div style="font-size:1.6em;font-weight:900">7번 장 · 한 줄 메시지</div><div style="position:absolute;right:1em;bottom:.6em;color:#aaa;font-size:.8em">7 / 14</div></div>`,'vc'),['주소 끝에 <code>#7</code>을 붙여 <code>Enter</code>','7번 장이 열리면 <b>정상</b>','발표 중 "5번 장으로 돌아가죠" 같은 점프에 씁니다']),
@@ -361,13 +472,13 @@ add(`<div class="kicker">MAP</div><h2>배포는 네 정거장입니다</h2><div 
 `<b>⏱ 3분 · 판서</b> 정거장 4개를 칠판에 그린다. GitHub=보관함, Vercel=게시판. 비유로 쉽게.`);
 add(split('준비','첫 화면 파일 이름을 index.html로 바꿉니다',win('파일 탐색기 — my-slides',`<div class="pad" style="background:#fff"><div style="padding:.2em 0;color:#999">📄 my-slides.html</div><div style="padding:.2em 0;font-weight:700;background:#cce8ff">📄 ${no(2)} index.html</div></div>`),['파일 탐색기에서 <code>my-slides.html</code> 선택','<code>F2</code>를 눌러 이름을 <code>index.html</code>로 바꿉니다','<b>index.html</b>은 주소만 입력해도 처음 열리는 문서의 이름입니다']),
 `<b>⏱ 3분</b> 이 규칙을 모르면 배포 후 404가 뜬다. 오늘 가장 중요한 한 가지.`);
-add(split('GitHub ①','github.com에 로그인합니다',brow('github.com/login',`<div style="background:#0d1117;color:#e6edf3;padding:1.6em;min-height:28vh;text-align:center"><div style="font-size:1.4em;font-weight:700;margin-bottom:.8em">Sign in to GitHub</div><div class="inp" style="max-width:20em;margin:.3em auto">${no(1)} Username or email</div><div class="inp" style="max-width:20em;margin:.3em auto">Password</div><div class="bg grn" style="margin-top:.6em">${no(2)} Sign in</div></div>`,'gh'),['<code>github.com</code>에서 로그인','계정이 없으면 <b>Sign up</b>: 이메일 인증 필요','로그인하면 왼쪽 위 아바타와 대시보드가 보입니다']),
+add(split('GitHub ①','github.com에 로그인합니다',brow('github.com/login',`<div style="background:#0d1117;color:#e6edf3;padding:1.6em;min-height:28vh;text-align:center"><div style="font-size:1.4em;font-weight:700;margin-bottom:.8em">Sign in to GitHub</div><div class="inp" style="max-width:20em;margin:.3em auto">${no(1)} Username or email</div><div class="inp" style="max-width:20em;margin:.3em auto">Password</div><div class="bg grn" style="margin-top:.6em">${no(2)} Sign in</div></div>`,'gh'),['<code>github.com</code>에서 로그인','계정이 없으면 <b>Sign up</b>: 이메일 인증 필요','로그인하면 왼쪽 위 아바타와 대시보드가 보입니다'],ob('GitHub 로그인 열기','https://github.com/login')+ob('가입','https://github.com/signup','1')),
 `<b>⏱ 3분</b> 인증 메일이 안 오면 스팸함. 구글 계정 연동 버튼이 있으면 쓰게 한다.`);
-add(split('GitHub ②','새 저장소(Repository)를 만듭니다',brow('github.com/new',`<div style="background:#0d1117;color:#e6edf3;padding:1.2em 1.6em;min-height:30vh"><div style="font-size:1.3em;font-weight:700;margin-bottom:.4em">Create a new repository</div><div class="inp">${no(1)} Repository name: <b>my-slides</b></div><div class="inp">${no(2)} ◉ Public &nbsp; ○ Private</div><div class="bg grn" style="margin-top:.6em">${no(3)} Create repository</div></div>`,'gh'),['오른쪽 위 <b>＋ → New repository</b>','<b>Repository name</b>: <code>my-slides</code> (영문 소문자, 하이픈)','<b>Public</b>을 고릅니다 (Vercel 무료 사용에 편함)','<b>Create repository</b> 클릭']),
+add(split('GitHub ②','새 저장소(Repository)를 만듭니다',brow('github.com/new',`<div style="background:#0d1117;color:#e6edf3;padding:1.2em 1.6em;min-height:30vh"><div style="font-size:1.3em;font-weight:700;margin-bottom:.4em">Create a new repository</div><div class="inp">${no(1)} Repository name: <b>my-slides</b></div><div class="inp">${no(2)} ◉ Public &nbsp; ○ Private</div><div class="bg grn" style="margin-top:.6em">${no(3)} Create repository</div></div>`,'gh'),['오른쪽 위 <b>＋ → New repository</b>','<b>Repository name</b>: <code>my-slides</code> (영문 소문자, 하이픈)','<b>Public</b>을 고릅니다 (Vercel 무료 사용에 편함)','<b>Create repository</b> 클릭'],ob('새 저장소 만들기 열기','https://github.com/new')),
 `<b>⏱ 4분</b> README 추가 체크는 해제해도 되고 해도 된다. Public이라 공개되어도 되는 내용인지 질문한다: 개인정보가 없는 노트만 올린다.`);
 add(stuck('Public이어도 괜찮을까?','내 노트가 모두에게 보일까 걱정된다','Public 저장소는 올린 파일이 누구에게나 공개된다','<b>올릴 파일은 index.html 하나뿐</b>이다. 개인정보·학번·비밀번호가 슬라이드에 없는지 한 번 더 확인. 걱정되면 Private 저장소도 Vercel에 연결 가능',`<div class="cols"><div class="card p"><b class="coral">올리지 말 것</b><span>이름·전화번호·학번·내부 자료</span></div><div class="card s"><b class="lime">올려도 되는 것</b><span>발표용으로 정리한 내용</span></div></div>`),
 `<b>⏱ 3분</b> 반드시 짚는다. 개인정보 점검 습관. 노트 전체가 아니라 슬라이드 HTML만 올라간다.`);
-add(split('GitHub ③','Upload files로 파일을 올립니다',brow('github.com/내아이디/my-slides',`<div style="background:#0d1117;color:#e6edf3;min-height:30vh"><div class="gh-nav"><div class="lg"></div><b>내아이디 / my-slides</b></div><div class="gh-tabs"><span class="on">Code</span><span>Issues</span><span>Settings</span></div><div class="pad"><span class="bg">${no(1)} Add file ▾</span><div class="menu"><div>Create new file</div><div class="on">${no(2)} Upload files</div></div></div></div>`,'gh'),['저장소 화면에서 <b>Add file</b> 버튼','메뉴에서 <b>Upload files</b>','빈 저장소라면 가운데 <b>uploading an existing file</b> 링크도 같은 기능입니다']),
+add(split('GitHub ③','Upload files로 파일을 올립니다',brow('github.com/내아이디/my-slides',`<div style="background:#0d1117;color:#e6edf3;min-height:30vh"><div class="gh-nav"><div class="lg"></div><b>내아이디 / my-slides</b></div><div class="gh-tabs"><span class="on">Code</span><span>Issues</span><span>Settings</span></div><div class="pad"><span class="bg">${no(1)} Add file ▾</span><div class="menu"><div>Create new file</div><div class="on">${no(2)} Upload files</div></div></div></div>`,'gh'),['저장소 화면에서 <b>Add file</b> 버튼','메뉴에서 <b>Upload files</b>','빈 저장소라면 가운데 <b>uploading an existing file</b> 링크도 같은 기능입니다'],ob('내 GitHub 열기','https://github.com/')),
 `<b>⏱ 3분</b> 영어 메뉴 위치를 손가락으로 짚는다. Create new file이 아님을 강조.`);
 add(split('GitHub ④','파일을 끌어다 놓습니다',brow('github.com/내아이디/my-slides/upload/main',`<div style="background:#0d1117;color:#e6edf3;min-height:30vh"><div class="gh-nav"><b>Upload files</b></div><div class="drop">${no(1)} 여기에 파일을 끌어다 놓으세요<br><span style="font-size:.9em">또는 choose your files</span></div><div class="fl"><span>📄 index.html</span><span style="color:#7ee787">✓ 업로드됨</span></div></div>`,'gh'),['파일 탐색기에서 <code>index.html</code>을 <b>끌어다 놓기</b>','이미지가 있다면 <b>images 폴더째</b> 함께','아래에 파일 이름이 뜨면 업로드 준비 완료']),
 `<b>⏱ 3분</b> 드래그가 안 되는 학생은 choose your files 클릭. 파일은 하나만 올려도 된다.`);
@@ -375,17 +486,17 @@ add(split('GitHub ⑤','Commit changes로 저장을 확정합니다',brow('githu
 `<b>⏱ 3분</b> 가장 자주 빠지는 단계. 업로드 표시만 보고 끝냈다고 생각하는 학생이 많다. Commit 누르지 않으면 아무 일도 일어나지 않는다.`);
 add(split('GitHub ⑥','파일이 올라갔는지 확인합니다',brow('github.com/내아이디/my-slides',`<div style="background:#0d1117;color:#e6edf3;min-height:30vh"><div class="gh-nav"><b>내아이디 / my-slides</b></div><div class="gh-tabs"><span class="on">Code</span></div><div class="fl"><span>📄 ${no(1)} index.html</span><span style="color:#9da7b3">Add index.html · 방금</span></div></div>`,'gh'),['저장소 첫 화면에 <code>index.html</code>이 보입니다','한글 이름이나 대문자가 아닌지 확인','이 화면이 보이면 <b>GitHub 단계는 끝</b>']),
 `<b>⏱ 2분</b> 한 번씩 손을 들게 한다. 여기까지 못 온 학생은 옆 사람이 돕는다.`);
-add(split('Vercel ①','Vercel에 GitHub 계정으로 가입합니다',brow('vercel.com/signup',`<div style="background:#000;color:#ededed;padding:1.6em;min-height:28vh;text-align:center"><div style="font-size:1.4em;font-weight:700;margin-bottom:.8em">Sign Up</div><div class="vc-btn" style="margin:.3em">${no(1)} Continue with GitHub</div><div style="color:#888;margin-top:.8em;font-size:.9em">${no(2)} Plan: Hobby (무료)</div></div>`,'vc'),['<code>vercel.com</code>에서 <b>Continue with GitHub</b>','GitHub 로그인 상태에서 권한 허용 화면이 뜨면 <b>Authorize</b>','요금제는 <b>Hobby(무료)</b>: 개인 학습용이면 충분']),
+add(split('Vercel ①','Vercel에 GitHub 계정으로 가입합니다',brow('vercel.com/signup',`<div style="background:#000;color:#ededed;padding:1.6em;min-height:28vh;text-align:center"><div style="font-size:1.4em;font-weight:700;margin-bottom:.8em">Sign Up</div><div class="vc-btn" style="margin:.3em">${no(1)} Continue with GitHub</div><div style="color:#888;margin-top:.8em;font-size:.9em">${no(2)} Plan: Hobby (무료)</div></div>`,'vc'),['<code>vercel.com</code>에서 <b>Continue with GitHub</b>','GitHub 로그인 상태에서 권한 허용 화면이 뜨면 <b>Authorize</b>','요금제는 <b>Hobby(무료)</b>: 개인 학습용이면 충분'],ob('Vercel 가입 열기','https://vercel.com/signup')),
 `<b>⏱ 4분</b> 팀 이름 입력 칸이 나오면 본인 이름. 신용카드를 요구하지 않는다. 유료 결제는 하지 않는다고 분명히 말한다.`);
-add(split('Vercel ②','Add New → Project',brow('vercel.com/dashboard',`<div style="background:#000;color:#ededed;min-height:30vh"><div class="gh-nav" style="background:#0a0a0a;border-color:#222"><b>내이름's projects</b><span class="vc-btn" style="margin-left:auto">${no(1)} Add New… ▾</span></div><div class="menu" style="margin:.4em 1em;background:#0a0a0a;border-color:#333"><div class="on">${no(2)} Project</div><div>Domain</div></div></div>`,'vc'),['대시보드 오른쪽 위 <b>Add New…</b>','<b>Project</b>를 선택합니다','다음 화면에서 GitHub 저장소 목록이 보입니다']),
+add(split('Vercel ②','Add New → Project',brow('vercel.com/dashboard',`<div style="background:#000;color:#ededed;min-height:30vh"><div class="gh-nav" style="background:#0a0a0a;border-color:#222"><b>내이름's projects</b><span class="vc-btn" style="margin-left:auto">${no(1)} Add New… ▾</span></div><div class="menu" style="margin:.4em 1em;background:#0a0a0a;border-color:#333"><div class="on">${no(2)} Project</div><div>Domain</div></div></div>`,'vc'),['대시보드 오른쪽 위 <b>Add New…</b>','<b>Project</b>를 선택합니다','다음 화면에서 GitHub 저장소 목록이 보입니다'],ob('Vercel 대시보드 열기','https://vercel.com/dashboard')),
 `<b>⏱ 3분</b> 버튼이 영어라 낯설어한다. 위치만 알려 주면 된다.`);
-add(split('Vercel ③','my-slides 옆 Import를 누릅니다',brow('vercel.com/new',`<div style="background:#000;color:#ededed;min-height:30vh"><div class="vc-card"><b>Import Git Repository</b></div><div class="vc-card" style="display:flex;justify-content:space-between;align-items:center"><span>◻ ${no(1)} 내아이디/my-slides</span><span class="vc-btn">${no(2)} Import</span></div></div>`,'vc'),['목록에서 <b>my-slides</b>를 찾습니다','오른쪽 <b>Import</b> 클릭','저장소가 안 보이면 다음 "막힘" 슬라이드를 봅니다']),
+add(split('Vercel ③','my-slides 옆 Import를 누릅니다',brow('vercel.com/new',`<div style="background:#000;color:#ededed;min-height:30vh"><div class="vc-card"><b>Import Git Repository</b></div><div class="vc-card" style="display:flex;justify-content:space-between;align-items:center"><span>◻ ${no(1)} 내아이디/my-slides</span><span class="vc-btn">${no(2)} Import</span></div></div>`,'vc'),['목록에서 <b>my-slides</b>를 찾습니다','오른쪽 <b>Import</b> 클릭','저장소가 안 보이면 다음 "막힘" 슬라이드를 봅니다'],ob('Import 화면 열기','https://vercel.com/new')),
 `<b>⏱ 3분</b> 이 단계에서 저장소 안 보이는 학생이 가장 많다. 바로 다음 장.`);
 add(stuck('Import 목록에 저장소가 안 보인다','방금 만든 my-slides가 목록에 없다','Vercel이 GitHub 저장소 접근 권한을 아직 받지 못했다','목록 아래 <b>Adjust GitHub App Permissions</b> → my-slides 저장소 <b>선택(Select)</b> → Save → Vercel 새로고침',`<div class="cols"><div class="card s"><b class="lime">순서</b><span>① Adjust GitHub App Permissions ② Repository access에서 my-slides 추가 ③ Save ④ vercel.com/new 새로고침</span></div></div>`),
 `<b>⏱ 3분</b> "All repositories"로 허용해도 되지만 필요한 것만 주는 것이 안전하다.`);
 add(split('Vercel ④','Deploy 설정은 그대로 둡니다',brow('vercel.com/new/내아이디/my-slides',`<div style="background:#000;color:#ededed;min-height:30vh"><div class="vc-card"><b>Configure Project</b></div><div class="vc-card">Project Name <b>my-slides</b><br>${no(1)} Framework Preset: <b>Other</b><br>Root Directory: <b>./</b></div><div style="margin:.5em 1em"><span class="vc-btn">${no(2)} Deploy</span></div></div>`,'vc'),['<b>Framework Preset</b>이 <b>Other</b>면 그대로','Build 설정은 건드리지 않습니다 (HTML 하나라 필요 없음)','<b>Deploy</b> 클릭']),
 `<b>⏱ 3분</b> 프리셋이 Next.js 등으로 잡혀 있으면 Other로 바꾼다. 건드릴 것이 없다고 안심시킨다.`);
-add(split('Vercel ⑤','배포가 끝나면 Congratulations!',brow('vercel.com/내아이디/my-slides',`<div style="background:#000;color:#ededed;min-height:30vh;text-align:center;padding:1.4em"><div style="font-size:1.6em;font-weight:900;margin-bottom:.4em">🎉 Congratulations!</div><div class="ok-box" style="display:inline-block">✓ Ready · 28s</div><div style="margin-top:.8em"><span class="vc-btn">${no(1)} Visit</span> <span class="vc-btn" style="background:#222;color:#ededed">Continue to Dashboard</span></div><div style="margin-top:.6em;color:#888;font-size:.9em">${no(2)} my-slides-abc12.vercel.app</div></div>`,'vc'),['<b>Visit</b>를 눌러 내 슬라이드를 엽니다','주소 <code>…vercel.app</code>이 <b>내 링크</b>입니다','1분 이내에 끝납니다. 오래 걸리면 새로고침']),
+add(split('Vercel ⑤','배포가 끝나면 Congratulations!',brow('vercel.com/내아이디/my-slides',`<div style="background:#000;color:#ededed;min-height:30vh;text-align:center;padding:1.4em"><div style="font-size:1.6em;font-weight:900;margin-bottom:.4em">🎉 Congratulations!</div><div class="ok-box" style="display:inline-block">✓ Ready · 28s</div><div style="margin-top:.8em"><span class="vc-btn">${no(1)} Visit</span> <span class="vc-btn" style="background:#222;color:#ededed">Continue to Dashboard</span></div><div style="margin-top:.6em;color:#888;font-size:.9em">${no(2)} my-slides-abc12.vercel.app</div></div>`,'vc'),['<b>Visit</b>를 눌러 내 슬라이드를 엽니다','주소 <code>…vercel.app</code>이 <b>내 링크</b>입니다','1분 이내에 끝납니다. 오래 걸리면 새로고침'],ob('Vercel 프로젝트 보기','https://vercel.com/dashboard')),
 `<b>⏱ 4분 · 환호</b> 이 순간 박수. 링크가 열리면 휴대폰으로 보내 확인하게 한다.`);
 add(split('확인','주소를 휴대폰으로 열어 봅니다',brow('my-slides-abc12.vercel.app/#1',`<div style="background:#0B1220;color:#F6F3EC;padding:2.2em 2em;min-height:24vh"><div style="color:#D4FF3D;font-size:.8em;font-weight:700">AI 리터러시 · 3분 발표</div><div style="font-size:2em;font-weight:900;margin-top:.3em">질문하는 힘이<br><span style="color:#D4FF3D">실력이다</span></div></div>`,'vc'),['<b>주소를 복사</b>해 카카오톡 나에게 보내기로 전송','휴대폰에서 열고 <b>좌우로 밀어</b> 넘겨 봅니다','<code>/#5</code>를 붙여 5번 장도 확인']),
 `<b>⏱ 4분</b> 모바일에서 글씨가 작거나 넘치면 4교시 후속 프롬프트로 고칠 수 있다.`);
@@ -405,6 +516,8 @@ add(`<div class="kicker">CHECKPOINT ⑤</div><h2>5교시 완료 기준</h2>${car
 `<b>⏱ 3분</b> 못 끝낸 학생은 휴식 중 도움. 링크 없이도 file:/// 로 발표 가능하다고 안심시킨다.`);
 add(Q(`내 링크를 <span class="lime">누구에게</span><br>가장 먼저 보내고 싶습니까?`),
 `<b>⏱ 2분 · 7초</b> 링크를 보낼 대상을 상상하게 한다. 동기를 만드는 질문.`);
+add(`<div class="kicker">WHY IT MATTERS</div><div class="big"><span class="lime">링크 하나</span>면<br>어디서나 열립니다.</div>${cards([['수정','같은 이름으로 다시 올리면 주소는 그대로'],['공유','카카오톡·이메일에 주소만'],['기록','지난 판은 GitHub에 남는다']],'s')}`,
+`<b>⏱ 2분 · 웹슬라이드의 힘</b> 방금 만든 링크가 곧 증거다. 휴대폰으로 열어 본 순간을 다시 떠올리게 한다.`);
 add(M(`링크가 열렸습니다.<br>이제 이 슬라이드로<br><span class="lime">직접 발표</span>해 봅니다.`),
 `<b>구두점</b> 5교시 → 6교시. 휴식 10분.`);
 /* ===== PART 5 ===== */
@@ -432,21 +545,72 @@ add(`<div class="contrib"><div class="kicker">CONTRIBUTIONS</div><h2>오늘 여�
 `<b>⏱ 마무리 · Contributions</b> 청중이 나갈 때까지 이 화면을 띄워 둔다. "감사합니다"로 끝내지 않는다.`);
 add(`<div class="big" style="text-align:center">쓰면<br><span class="lime">이미 발표입니다.</span></div><p class="sub" style="text-align:center">강의 문의 · iwillman53@gmail.com · AI교수나병인</p>`,
 `<b>마지막 한마디</b> 슬로건 반복. 가볍게 웃으며 마친다.`);
-/* ---- engine ---- */
+/* ---- demo engine ---- */
+const modalEl=document.createElement('div');modalEl.className='modal';modalEl.innerHTML='<div class="mbox"><button class="mx" aria-label="닫기">×</button><div class="mc"></div></div>';document.body.appendChild(modalEl);
+const toastEl=document.createElement('div');toastEl.className='toast';document.body.appendChild(toastEl);
+let toastT=null;const toast=m=>{toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>toastEl.classList.remove('on'),1800)};
+const copyText=async t=>{try{await navigator.clipboard.writeText(t);return true}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();let ok=false;try{ok=document.execCommand('copy')}catch(_){}a.remove();return ok}};
+const PLACES=[['가천대 글로벌캠퍼스',37.4504,127.1288],['서울시청',37.5663,126.9779],['부산역',35.1150,129.0422]];
+const osm=(la,lo)=>`https://www.openstreetmap.org/export/embed.html?bbox=${lo-.006},${la-.004},${lo+.006},${la+.004}&layer=mapnik&marker=${la},${lo}`;
+const MODALS={
+ pop1:()=>`<h3>연구 방법</h3><p>세 가지 방법을 함께 씁니다.</p><ul><li>설문: 200명 대상 (예시)</li><li>인터뷰: 심층 면담 8건 (예시)</li><li>사례 비교: 3개 기관 (예시)</li></ul><p class="sub">예비 설명 창 · Esc로 닫기</p>`,
+ pop2:()=>`<h3>사례 3개 비교</h3><table class="tbl"><tr><th>사례</th><th>방식</th><th>결과</th></tr><tr><td>A</td><td>링크 공유</td><td>수정이 즉시 반영</td></tr><tr><td>B</td><td>파일 첨부</td><td>버전이 여러 개</td></tr><tr><td>C</td><td>혼합</td><td>관리 부담</td></tr></table><p class="sub">시연용 예시 · 표는 글자라서 복사됩니다</p>`,
+ pop3:()=>`<h3>참고 자료</h3><p>링크를 누르면 새 창으로 열립니다. 슬라이드는 그대로 남습니다.</p><div class="btnrow"><a class="open" href="https://obsidian.md" target="_blank" rel="noopener">Obsidian ↗</a><a class="open" href="https://claude.ai" target="_blank" rel="noopener">Claude ↗</a><a class="open ghost" href="https://vercel.com" target="_blank" rel="noopener">Vercel ↗</a></div>`,
+ map:()=>`<h3>지도 · 예시 위치</h3><div class="tabs">${PLACES.map((p,i)=>`<button data-place="${i}" class="${i?'':'on'}">${p[0]}</button>`).join('')}</div><iframe id="mapf" src="${osm(PLACES[0][1],PLACES[0][2])}" loading="lazy" title="지도"></iframe><p class="sub">확대·이동해 보세요. 지도가 안 보이면 인터넷 연결을 확인하세요. <a class="open ghost" style="margin:0 0 0 .6vw" id="gmap" href="https://www.google.com/maps?q=${PLACES[0][1]},${PLACES[0][2]}" target="_blank" rel="noopener">구글지도로 열기 ↗</a></p>`
+};
+let modalOpen=false;
+const openModal=k=>{if(!MODALS[k])return;modalEl.querySelector('.mc').innerHTML=MODALS[k]();modalEl.classList.add('on');modalOpen=true};
+const closeModal=()=>{modalEl.classList.remove('on');modalOpen=false;modalEl.querySelector('.mc').innerHTML=''};
+modalEl.addEventListener('click',e=>{
+  if(e.target===modalEl||e.target.closest('.mx')){closeModal();return}
+  const b=e.target.closest('[data-place]');
+  if(b){const i=+b.dataset.place,p=PLACES[i];modalEl.querySelectorAll('[data-place]').forEach(x=>x.classList.toggle('on',x===b));modalEl.querySelector('#mapf').src=osm(p[1],p[2]);modalEl.querySelector('#gmap').href=`https://www.google.com/maps?q=${p[1]},${p[2]}`}
+});
+/* chart */
+const DATA={2020:[12,8,5,3],2021:[15,10,9,6],2022:[22,14,16,11],2023:[30,19,25,20],2024:[41,27,33,34],2025:[55,38,39,52],2026:[68,52,41,75]};
+const NAMES=['A 동아리','B 학과','C 연구실','D 스터디'];
+function countTo(el,to){const from=+el.textContent||0,t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/700);el.textContent=Math.round(from+(to-from)*k);if(k<1)requestAnimationFrame(f)})(t0)}
+function initChart(root){
+  const bars=root.querySelector('[data-bars]');
+  bars.innerHTML=NAMES.map((n,i)=>`<div class="brow"><span>${n}</span><div class="btrack"><div class="bfill ${['','k1','k2','k3'][i]}"></div></div><b class="bv">0</b></div>`).join('');
+  const fills=[...bars.querySelectorAll('.bfill')],vals=[...bars.querySelectorAll('.bv')],rng=root.querySelector('[data-range]'),yr=root.querySelector('[data-yr]'),pl=root.querySelector('[data-play]');
+  let timer=null;
+  const set=y=>{rng.value=y;yr.textContent=y;DATA[y].forEach((v,i)=>{fills[i].style.width=(v/80*100)+'%';countTo(vals[i],v)})};
+  const stop=()=>{clearInterval(timer);timer=null;pl.textContent='▶ 재생'};
+  const step=d=>{const y=Math.max(2020,Math.min(2026,+rng.value+d));set(y)};
+  rng.addEventListener('input',()=>{stop();set(+rng.value)});
+  rng.addEventListener('pointerup',()=>rng.blur());
+  root.querySelectorAll('[data-step]').forEach(b=>b.onclick=e=>{e.stopPropagation();stop();step(+b.dataset.step)});
+  pl.onclick=e=>{e.stopPropagation();if(timer){stop();return}
+    if(+rng.value>=2026)set(2020);pl.textContent='❚❚ 멈춤';
+    timer=setInterval(()=>{if(+rng.value>=2026){stop();return}step(1)},1100)};
+  root._reset=()=>{stop();set(2020)};
+  set(2020);
+}
+/* build slides */
 const deck=document.getElementById('deck'),pg=document.getElementById('pg'),bar=document.getElementById('bar'),partEl=document.getElementById('part');
 S.forEach((s,i)=>{const d=document.createElement('section');d.className='slide';d.innerHTML=s.html+(s.note?`<div class="note">${s.note}</div>`:'');deck.appendChild(d)});
 document.querySelectorAll('pre[data-copy]').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='프롬프트 복사';
-  b.onclick=e=>{e.stopPropagation();const t=pre.innerText;
-    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent='복사됨'},()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='선택됨 · Ctrl+C'});setTimeout(()=>{b.textContent='프롬프트 복사'},2500)};
-  pre.after(b)});
+  b.onclick=async e=>{e.stopPropagation();const ok=await copyText(pre.innerText);b.textContent=ok?'복사됨':'Ctrl+C로 복사';toast(ok?'복사했습니다':'직접 선택해 복사하세요');setTimeout(()=>{b.textContent='프롬프트 복사'},2500)};
+  const nx=pre.nextElementSibling;if(nx&&nx.classList.contains('btnrow')){nx.prepend(b)}else pre.after(b)});
+document.querySelectorAll('[data-demo="chart"]').forEach(initChart);
+deck.addEventListener('click',async e=>{
+  const m=e.target.closest('[data-modal]');if(m){openModal(m.dataset.modal);return}
+  const c=e.target.closest('[data-copytext]');if(c){e.stopPropagation();const t=c.dataset.copytext.replace(/\\t/g,'\t').replace(/\\n/g,'\n');const ok=await copyText(t);toast(ok?'복사했습니다 · Ctrl+V로 붙여넣기':'직접 선택해 복사하세요');return}
+  const o=e.target.closest('[data-copyopen]');if(o){e.stopPropagation();const el=document.getElementById(o.dataset.copyopen);const ok=await copyText(el.innerText);toast(ok?'복사했습니다 · 열린 창에서 Ctrl+V':'직접 복사한 뒤 붙여넣으세요');window.open(o.dataset.url,'_blank','noopener')}
+});
 let cur=0;
 function show(n){cur=Math.max(0,Math.min(S.length-1,n));
   document.querySelectorAll('.slide').forEach((el,i)=>el.classList.toggle('on',i===cur));
+  const root=document.querySelectorAll('.slide')[cur].querySelector('[data-demo="chart"]');if(root&&root._reset)root._reset();
   pg.textContent=(cur+1)+' / '+S.length;bar.style.width=((cur+1)/S.length*100)+'%';partEl.textContent=S[cur].part;
   try{history.replaceState(null,'','#'+(cur+1))}catch(e){}}
 const go=d=>show(cur+d);
 document.getElementById('prev').onclick=()=>go(-1);document.getElementById('next').onclick=()=>go(1);
 document.addEventListener('keydown',e=>{
+  if(modalOpen){if(e.key==='Escape')closeModal();return}
+  if(e.target.matches&&e.target.matches('textarea,input[type=text]'))return;
+  if((e.key==='Enter'||e.key===' ')&&e.target.closest&&e.target.closest('button,a'))return;
   if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();go(1)}
   else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();go(-1)}
   else if(e.key==='Home')show(0);else if(e.key==='End')show(S.length-1);
@@ -454,7 +618,7 @@ document.addEventListener('keydown',e=>{
   else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}});
 let x0=null;
 document.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
-document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)go(dx<0?1:-1);x0=null},{passive:true});
+document.addEventListener('touchend',e=>{if(x0===null||modalOpen)return;if(e.target.closest&&e.target.closest('input,textarea,.chart'))return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)go(dx<0?1:-1);x0=null},{passive:true});
 window.addEventListener('hashchange',()=>{const n=parseInt(location.hash.slice(1),10);if(n)show(n-1)});
 show((parseInt(location.hash.slice(1),10)||1)-1);
 </script>
