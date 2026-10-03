@@ -146,7 +146,23 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 #think .shh{display:block;margin:0 auto .2em;animation:shh 1.2s ease-in-out infinite}
 @keyframes shh{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
 
-@media (min-width:900px) and (min-height:600px){.in{gap:.9em}}
+
+/* ===== 대형 화면(모니터·빔) 전용: 화면 가득 + 자동 글자 키우기 ===== */
+@media (min-width:900px) and (min-height:500px){
+  .slide{padding-left:3vw;padding-right:3vw;padding-top:1.2vh}
+  .in{max-width:min(96vw,2400px);gap:.8em}
+  #nav{font-size:20px}
+  #nav button{height:54px;min-width:60px}
+  .zoomable{max-width:100%!important}
+  .slide.tight .in{gap:.3em;padding-top:0;padding-bottom:.3em}
+  .slide.tight .card{padding:.45em .8em}
+  .slide.tight .prompt{padding:.45em .8em}
+  .slide.tight .steps{gap:.25em}.slide.tight .steps>div{padding-top:.35em;padding-bottom:.35em}
+  .slide.tight h2{font-size:1.6em}
+  .slide.tight ul,.slide.tight p{margin-top:.15em;margin-bottom:.15em}
+  h1{font-size:3em}
+}
+
 @media print{.slide{display:block!important;position:static;page-break-after:always}#nav,#idx,#toast{display:none}html,body{overflow:visible}}
 </style>
 </head>
@@ -1000,6 +1016,44 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
     if(e.key==='s'||e.key==='S'||e.key==='ㄴ'){tog()}
     else if(e.key==='Escape'){tog(false)}
   });
+})();
+
+/* 대형 화면: 슬라이드가 한 화면에 딱 맞는 가장 큰 글자 크기를 자동 계산 */
+(function(){
+  var root=document.documentElement;
+  function fit(){
+    var big=innerWidth>=900&&innerHeight>=500;
+    if(!big){root.style.removeProperty('--fs');return}
+    var sl=document.querySelector('.slide.on');if(!sl)return;
+    sl.classList.remove('tight');
+    var lo=17,hi=Math.min(48,Math.max(20,innerWidth/36));
+    root.style.setProperty('--fs',hi+'px');
+    if(sl.scrollHeight<=sl.clientHeight+1)return;
+    for(var k=0;k<9;k++){
+      var mid=(lo+hi)/2;root.style.setProperty('--fs',mid+'px');
+      if(sl.scrollHeight>sl.clientHeight+1)hi=mid;else lo=mid;
+    }
+    root.style.setProperty('--fs',lo+'px');
+    if(sl.scrollHeight>sl.clientHeight+1){
+      sl.classList.add('tight');
+      var a=12.5,z=lo;root.style.setProperty('--fs',z+'px');
+      if(sl.scrollHeight>sl.clientHeight+1){
+        for(var k=0;k<8;k++){var m=(a+z)/2;root.style.setProperty('--fs',m+'px');
+          if(sl.scrollHeight>sl.clientHeight+1)z=m;else a=m;}
+        root.style.setProperty('--fs',a+'px');
+      }
+    }
+  }
+  window.__fit=fit;
+  window.addEventListener('resize',function(){fit()});
+  window.addEventListener('hashchange',function(){setTimeout(fit,30)});
+  window.addEventListener('load',function(){setTimeout(fit,50)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){fit()});
+  var lastOn=null;
+  var mo=new MutationObserver(function(){var c=document.querySelector('.slide.on');if(c!==lastOn){lastOn=c;fit()}});
+  [].forEach.call(document.querySelectorAll('.slide'),function(el){mo.observe(el,{attributes:true,attributeFilter:['class']})});
+  document.addEventListener('click',function(){setTimeout(fit,30)});
+  setTimeout(fit,80);
 })();
 </script>
 </body>
