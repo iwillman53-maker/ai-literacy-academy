@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!-- 글로벌시대의 국제정치 · 5주차 영국 웹슬라이드 · 위치: /slides_international-politics-w5.html · 원본: 5주차 영국_상업사회에서산업사회로 (pptx 35장 + pdf 26쪽) → 2시간 37장 · 윈스턴 How to Speak 적용 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>영국 산업사회의 완성과 쇠퇴 · 글로벌시대의 국제정치 6주차</title>
+<meta name="description" content="가천대학교 글로벌시대의 국제정치 5주차 · 상업사회에서 산업사회로, 18세기 영국 · 2시간 웹슬라이드 37장 · 나병인 교수">
+<meta name="theme-color" content="#0B1220">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{--bg:#0B1220;--card:#141C33;--line:#293045;--lime:#D4FF3D;--text:#F6F3EC;--sub:#B9C0D0}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
+  font-family:'Noto Sans KR','Noto Sans CJK KR',-apple-system,'Malgun Gothic',sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.bar{position:fixed;left:0;right:0;height:52px;display:flex;align-items:center;gap:.5rem;padding:0 .8rem;background:var(--card);z-index:3}
+.top{top:0;border-bottom:1px solid var(--line)}
+.bot{bottom:0;border-top:1px solid var(--line)}
+.ttl{font-weight:900;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ttl small{font-weight:500;color:var(--sub);margin-left:.5rem}
+.sp{flex:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 .95rem;border-radius:10px;border:1.5px solid var(--line);
+  background:transparent;color:var(--text);font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{border-color:var(--lime);color:var(--lime)}
+.btn.main{background:var(--lime);border-color:var(--lime);color:var(--bg)}
+#wrap{position:fixed;top:52px;bottom:52px;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:10px}
+#stage{position:relative;aspect-ratio:16/9;width:min(100%,calc((100vh - 52px - 52px - 20px) * 16 / 9));max-height:100%;background:var(--bg);border-radius:8px;overflow:hidden;box-shadow:0 10px 44px rgba(0,0,0,.5);container-type:inline-size;border:1px solid var(--line)}
+.hit{position:absolute;top:0;bottom:0;width:22%;z-index:2;border:0;background:none;cursor:pointer;color:var(--text);font-size:2.4rem;opacity:0;transition:opacity .15s}
+.hit:hover,.hit:focus-visible{opacity:.75}
+#hp{left:0;text-align:left;padding-left:.8rem}#hn{right:0;text-align:right;padding-right:.8rem}
+#prog{flex:1;height:8px;background:var(--line);border-radius:5px;cursor:pointer;position:relative;min-width:60px}
+#prog:focus-visible{outline-offset:6px}
+#fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--lime);border-radius:5px}
+#cnt{min-width:4.6rem;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+#cap{position:absolute;left:-9999px}
+#grid{position:fixed;inset:0;z-index:10;display:none;overflow:auto;padding:1rem;background:rgba(11,18,32,.97)}
+#grid.on{display:block}
+#grid h2{font-size:1.2rem;font-weight:900;margin:.2rem 0 1rem;display:flex;align-items:center;gap:1rem}
+#gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem}
+#gl button{min-height:5.2rem;position:relative;padding:0;border:2px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);cursor:pointer;color:var(--text);text-align:left}
+#gl button.cur,#gl button:hover{border-color:var(--lime)}
+#gl span{display:block;padding:.35rem .6rem;font-size:.82rem;font-weight:700;line-height:1.35}
+#gl b{color:var(--lime);margin-right:.35rem}
+#pr{display:none}
+#hush{position:fixed;inset:0;z-index:20;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:rgba(11,18,32,.96);text-align:center;cursor:pointer;padding:1rem}
+#hush.on{display:flex}
+#hush .ic{font-size:clamp(4rem,16vw,9rem);line-height:1}
+#hush h2{font-size:clamp(2.2rem,8vw,4.6rem);font-weight:900;color:var(--lime)}
+#hush p{font-size:clamp(1rem,3vw,1.5rem);color:var(--sub)}
+#hush .sec{font-size:clamp(3rem,10vw,6rem);font-weight:900;font-variant-numeric:tabular-nums}
+#hush .hint{font-size:.9rem;color:var(--sub)}
+@media (max-width:640px){.ttl small,.hide-s{display:none}.hit{width:30%}}
+@media (prefers-reduced-motion:reduce){.hit,.slide{transition:none!important;animation:none!important}}
+@page{size:16in 9in;margin:0}
+@media print{
+  html,body{height:auto;overflow:visible;background:#fff}
+  .bar,#wrap,#grid,#hush{display:none!important}
+}
+
+/* ===== slides (cqi 기준) ===== */
+.slide{position:absolute;inset:0;display:none;background:var(--bg);font-size:1.85cqi;line-height:1.5;color:var(--text)}
+.slide.active{display:block}
+.slide-content{position:absolute;inset:0;padding:3cqi 4.2cqi 3.6cqi;display:flex;flex-direction:column;gap:1.3cqi;overflow:hidden}
+.kick{font-size:1.3cqi;font-weight:700;color:var(--lime);letter-spacing:.02em;line-height:1.3}
+.t{font-size:3.3cqi;font-weight:900;line-height:1.4;text-wrap:balance;margin-top:-.3cqi}
+.main{flex:1;min-height:0;display:flex;flex-direction:column;gap:1.5cqi}
+.main.stack>.card.lg{flex:1}
+.foot{position:absolute;right:4.2cqi;bottom:1.3cqi;font-size:1.1cqi;color:var(--sub)}
+.slide.nofoot .foot{display:none}
+.grid{display:grid;gap:1.6cqi;flex:1;min-height:0}
+.g2,.g2b{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}
+.g2b{grid-template-rows:1fr 1fr}
+.main.stack>.grid{flex:1}
+.card{background:var(--card);border:1px solid var(--line);border-top:.45cqi solid var(--lime);border-radius:1cqi;padding:1.8cqi 2cqi;min-height:0;min-width:0;overflow:hidden;display:flex;flex-direction:column;gap:1cqi}
+.card h3{font-size:2.05cqi;font-weight:900;color:var(--lime);line-height:1.4;text-wrap:balance}
+.card h3.big{font-size:2.7cqi;color:var(--text)}
+.card p{font-size:1.9cqi;line-height:1.55}
+.ul{list-style:none;display:flex;flex-direction:column;gap:.95cqi}
+.ul li{position:relative;padding-left:2cqi;font-size:2.05cqi;line-height:1.5}
+.ul li::before{content:"";position:absolute;left:0;top:.72em;width:.85cqi;height:.85cqi;border-radius:50%;background:var(--lime)}
+.ul.arrow li{padding-left:0}.ul.arrow li::before{display:none}
+.card.lg{justify-content:center}.card.lg .ul{gap:1.5cqi}.card.lg .ul li{font-size:2.3cqi;padding-left:2.6cqi}.card.lg .ul li::before{width:1cqi;height:1cqi}
+.call{background:rgba(212,255,61,.09);border:1px solid rgba(212,255,61,.45);border-radius:1cqi;padding:1.3cqi 2cqi;font-size:1.95cqi;line-height:1.55;font-weight:500}
+.call b{color:var(--lime)}.call i{color:var(--sub)}
+.call.coral{background:rgba(255,107,91,.1);border-color:rgba(255,107,91,.55)}.call.coral b{color:#FF8B7D}
+.lead{font-size:1.95cqi;font-weight:700}
+.qt{font-style:italic;color:var(--lime);font-size:1.9cqi;line-height:1.5}
+.qt.big3{font-size:2.3cqi;line-height:1.6;color:var(--text);font-style:normal;font-weight:500}
+.src2{font-size:1.6cqi;color:var(--sub)}
+.g2 .card h3{font-size:2.4cqi}.g2 .ul{gap:1.5cqi}.g2 .ul li{font-size:2.35cqi;padding-left:2.4cqi}.g2 .ul li::before{width:1cqi;height:1cqi}
+.g3 .card h3{font-size:2.25cqi}.g3 .ul li{font-size:2.15cqi}
+.g2b .card p{font-size:2.05cqi;line-height:1.45}.g2b .card h3{font-size:2.15cqi}.g2b .card{gap:.6cqi;padding:1.3cqi 2cqi}.g2 .ul.arrow{gap:.9cqi}.g2 .ul.arrow li{font-size:2.05cqi}.g2 .card .lead{font-size:2.05cqi}.g2 .card .qt{font-size:2.05cqi}.kt p{font-size:2.3cqi}
+.qt.big3{font-size:2.5cqi}
+.big .ul{gap:2cqi}.big .ul li{font-size:2.8cqi;padding-left:2.8cqi}.big .ul li::before{width:1.1cqi;height:1.1cqi}.big .card h3{font-size:2.7cqi}.big .krow h3{flex:0 0 24cqi;font-size:2.7cqi}.big .krow p{font-size:2.7cqi}.big .card p{font-size:2.7cqi;line-height:1.55}
+/* cover / chapter */
+.cover .slide-content,.chapter .slide-content,.ending .slide-content,.quote .slide-content{justify-content:center;gap:2cqi;padding:5cqi 7cqi}
+.tag{align-self:flex-start;background:var(--lime);color:var(--bg);font-weight:900;font-size:1.5cqi;padding:.45cqi 1.4cqi;border-radius:.5cqi}
+.cov{font-size:6.2cqi;font-weight:900;line-height:1.5}
+.cov-sub{font-size:2.5cqi;font-weight:500}
+.cov-q{font-size:2.1cqi;color:var(--lime);font-style:italic}
+.cov-by{font-size:1.7cqi;color:var(--sub)}
+.chnum{font-size:11cqi;font-weight:900;color:var(--lime);line-height:1.5}
+.chtit{font-size:6cqi;font-weight:900;line-height:1.5}
+.chapter .slide-content{gap:1.2cqi;padding:3cqi 7cqi}
+.chsub{font-size:1.9cqi;color:var(--sub)}
+/* agenda */
+.agenda{justify-content:flex-start;gap:1.2cqi}.agenda .pt{font-size:1.6cqi;font-weight:700;color:var(--lime)}.agenda .sm{font-size:1.75cqi;color:var(--sub)}.agenda .min{margin-top:auto;font-size:3cqi;font-weight:900;color:var(--lime)}
+/* table */
+.tbl{width:100%;border-collapse:separate;border-spacing:.5cqi;flex:1;table-layout:fixed}
+.tbl th,.tbl td{background:var(--card);border-radius:.7cqi;padding:.6cqi 1.4cqi;font-size:2cqi;text-align:center;vertical-align:middle}
+.tbl thead th{background:var(--lime);color:var(--bg);font-weight:900}
+.tbl tbody th{color:var(--lime);font-weight:900;width:20%}
+.tbl td{font-weight:500}
+/* numbered */
+.nlist{display:flex;flex-direction:column;gap:1.3cqi;flex:1;min-height:0}
+.nrow{flex:1;min-height:0;display:flex;align-items:center;gap:1.8cqi;background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1cqi 2cqi}
+.nn{flex:none;width:4.2cqi;height:4.2cqi;border-radius:50%;background:var(--lime);color:var(--bg);font-weight:900;font-size:2.4cqi;display:flex;align-items:center;justify-content:center}
+.nrow h3{font-size:2.1cqi;font-weight:900;color:var(--lime)}.nrow p{font-size:1.9cqi}
+/* stat split */
+.split{flex-direction:row;gap:2cqi}.split>.card{flex:1}
+.stat{flex:0 0 32%;background:var(--card);border:1px solid var(--line);border-radius:1cqi;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1cqi;padding:1.5cqi;text-align:center;min-width:0}
+.big2{font-size:7.5cqi;font-weight:900;color:var(--lime);line-height:1.55}
+.sl{font-size:2.2cqi;font-weight:700}.ss{font-size:1.7cqi;color:var(--sub);line-height:1.5}.ss b{color:var(--lime);font-size:2.4cqi}
+.split2{justify-content:center}.split2 .ul{gap:1.4cqi}
+/* discussion */
+.dsub{font-size:1.8cqi;color:var(--sub);margin-top:-.6cqi}
+.qs{gap:1.6cqi}
+.q{flex:1;min-height:0;display:flex;align-items:center;gap:2cqi;background:var(--card);border:1px solid var(--line);border-left:.45cqi solid var(--lime);border-radius:1cqi;padding:1.2cqi 2.2cqi}
+.q>b{font-size:3cqi;font-weight:900;color:var(--lime)}
+.q1{font-size:2.3cqi;font-weight:700;line-height:1.45}.q2{font-size:1.95cqi;color:var(--sub);margin-top:.6cqi}
+/* flow */
+.flow{display:flex;align-items:center;gap:1cqi;justify-content:center}
+.fbox{flex:1;text-align:center;background:var(--lime);color:var(--bg);font-weight:900;font-size:2.1cqi;border-radius:1cqi;padding:1.2cqi .6cqi}
+.ar{color:var(--lime);font-weight:900;font-size:2.2cqi}
+.ctr{align-items:center;text-align:center;justify-content:center}.ctr h3{font-size:2.4cqi}.sm2{font-size:1.7cqi;color:var(--sub)}.b2{font-size:2.3cqi;font-weight:900}
+/* rows */
+.krows{display:flex;flex-direction:column;gap:1.2cqi;flex:1;min-height:0}
+.krow{flex:1;min-height:0;display:flex;align-items:center;gap:2cqi;background:var(--card);border:1px solid var(--line);border-left:.45cqi solid var(--lime);border-radius:1cqi;padding:.8cqi 2cqi}
+.krow h3{flex:0 0 12cqi;font-size:2.1cqi;font-weight:900;color:var(--lime)}.krow p{font-size:1.9cqi;line-height:1.5}
+/* quote slide */
+.quote .slide-content{align-items:center;text-align:center}
+.qmark{font-size:7cqi;font-weight:900;color:var(--lime);line-height:1.7;margin-bottom:-2.5cqi}.qmark.end{margin-bottom:0;margin-top:-2cqi}
+.bigq{font-size:4.6cqi;font-weight:900;line-height:1.45;text-wrap:balance}
+.src{font-size:1.8cqi;color:var(--sub)}.note{font-size:1.9cqi;color:var(--lime)}
+/* timeline */
+.tcol{background:var(--card);border:1px solid var(--line);border-top:.45cqi solid var(--lime);border-radius:1cqi;padding:1.8cqi 2cqi;display:flex;flex-direction:column;gap:1cqi;min-width:0}
+.tcol h3{font-size:2.6cqi;font-weight:900}.ttag{font-size:1.6cqi;font-weight:700;color:var(--lime)}
+.main.stack>.g3{flex:1}
+.good{border-top-color:var(--lime)}.bad{border-top-color:#FF6B5B}.bad h3{color:#FF8B7D}.bad .ul li::before{background:#FF6B5B}
+/* pairs */
+.pairs{gap:1cqi}.phead,.prow{display:grid;grid-template-columns:1fr 1fr;gap:1.6cqi;flex:1;min-height:0}
+.phead{flex:.8}
+.pa,.pb{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:1cqi;font-weight:700;font-size:2.1cqi;padding:.5cqi 1cqi;background:var(--card);border:1px solid var(--line)}
+.phead .pa{background:var(--lime);color:var(--bg);font-weight:900;font-size:2.3cqi}.phead .pb{background:#FF6B5B;color:var(--bg);font-weight:900;font-size:2.3cqi}
+.prow .pa{border-color:rgba(212,255,61,.5)}.prow .pb{border-color:rgba(255,107,91,.55)}
+/* takeaways */
+.kt{justify-content:flex-start;gap:1.2cqi}.kt .kn{font-size:5.5cqi;font-weight:900;color:var(--lime);line-height:1.5}.kt p{font-size:2cqi}
+/* ending */
+.endq{border-left:.6cqi solid var(--lime);padding-left:2.6cqi;display:flex;flex-direction:column;gap:1.6cqi}
+.endq p{font-size:3.4cqi;font-weight:900;line-height:1.35;text-wrap:balance}
+.next{background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1.4cqi 2cqi;display:flex;flex-direction:column;gap:.4cqi;font-size:2.1cqi}.next b{color:var(--lime)}.next span{color:var(--sub);font-size:1.9cqi}
+#gl button .gt{display:block;padding:.6rem .7rem;font-size:.85rem;font-weight:700;line-height:1.4}
+#print{display:none}
+@media print{
+  html,body{background:#fff}
+  #print{display:block}
+  #cap{display:none}
+  .pslide{width:16in;height:8.98in;position:relative;page-break-after:always;break-after:page;container-type:inline-size;overflow:hidden;background:#0B1220}
+  .pslide:last-child{page-break-after:auto;break-after:auto}
+  .pslide .slide{display:block}
+}
+
+/* ===== w5 추가 ===== */
+.g4{grid-template-columns:repeat(4,1fr)}
+.neu .phead .pb{background:var(--lime)}.neu .prow .pb{border-color:rgba(212,255,61,.5)}
+.dense .ul li{font-size:2.2cqi!important;padding-left:2.2cqi!important}.dense .ul{gap:1cqi!important}.dense .qt{font-size:2.2cqi!important}.dense .card h3{font-size:2.4cqi!important}.dense .card{padding:1.2cqi 1.6cqi;gap:.5cqi}.dense .card h3{font-size:2cqi}.dense .card p{font-size:2.05cqi;line-height:1.5}
+.tcol p{font-size:1.9cqi;line-height:1.5}.tcol .ul li{font-size:1.9cqi}
+.main.split{flex-direction:row;flex:1;min-height:0}.main.split>.card{flex:1}
+.sm2{font-size:1.6cqi;color:var(--sub)}
+/* ===== w5 interactive widgets ===== */
+.wg{position:relative;z-index:5;flex:1;min-height:0;display:flex;gap:1.4cqi}
+.wg.col{flex-direction:column}
+.wmap{position:relative;flex:1 1 0;min-width:0;background:#0d1530;border:1px solid var(--line);border-radius:1cqi;overflow:hidden}
+.wmap>svg{position:absolute;inset:0;width:100%;height:100%}
+.wside{flex:0 0 30%;display:flex;flex-direction:column;gap:1cqi;min-width:0;min-height:0}
+.chips{display:flex;flex-wrap:wrap;gap:.6cqi}
+.chip{font:inherit;font-size:1.65cqi;font-weight:700;color:var(--text);background:var(--card);border:1.5px solid var(--line);border-radius:.9cqi;padding:.4cqi 1.2cqi;cursor:pointer;min-height:44px;white-space:nowrap}
+.chip:hover{border-color:var(--lime);color:var(--lime)}
+.chip.on{background:var(--lime);border-color:var(--lime);color:var(--bg)}
+.info{flex:1;min-height:0;background:var(--card);border:1px solid var(--line);border-left:.45cqi solid var(--lime);border-radius:1cqi;padding:1.1cqi 1.5cqi;overflow:auto}
+.info h4{font-size:2cqi;font-weight:900;color:var(--lime);margin-bottom:.4cqi;line-height:1.35}
+.info p{font-size:1.65cqi;line-height:1.5}
+.info b{color:var(--lime)}
+.info .lk{display:inline-block;margin-top:.5cqi}
+.hint{font-size:1.4cqi;color:var(--sub)}
+.lkbox{position:absolute;right:4.2cqi;top:1.7cqi;z-index:6;display:flex;gap:.6cqi;flex-wrap:wrap;justify-content:flex-end;max-width:62%}
+.lk{display:inline-block;font-size:1.25cqi;font-weight:700;color:var(--sub);text-decoration:none;border:1px solid var(--line);border-radius:.6cqi;padding:.35cqi .9cqi;background:var(--card);line-height:1.3}
+.lk:hover{color:var(--lime);border-color:var(--lime)}
+.wmap svg text{font-family:inherit}
+.ct{fill:#18224a;stroke:#34426f;stroke-width:.9}
+.ct[data-k]{cursor:pointer}.ct[data-k]:hover{fill:#243268}
+.ct[data-k=uk]{fill:rgba(212,255,61,.22);stroke:#D4FF3D;stroke-width:1.6}
+.ct[data-k=uk]:hover{fill:rgba(212,255,61,.34)}
+.wmap[data-mode=rival] .ct[data-k=fr],.wmap[data-mode=rival] .ct[data-k=es],.wmap[data-mode=rival] .ct[data-k=nl],.wmap[data-mode=rival] .ct[data-k=ru],.wmap[data-mode=rival] .ct[data-k=pt]{fill:rgba(255,107,91,.28);stroke:#FF6B5B;stroke-width:1.4}
+.ct.sel{stroke-width:3!important;filter:brightness(1.3)}
+.sea{fill:#0d1530}
+.lb{fill:#F6F3EC;font-size:19px;font-weight:900;paint-order:stroke;stroke:#0d1530;stroke-width:5px;stroke-linejoin:round;pointer-events:none}
+.lb.sm{font-size:15px;font-weight:700}.lb.sea2{fill:#6f7ca8;font-size:15px;font-weight:700;font-style:italic;stroke-width:3px}
+.lb.l{fill:#D4FF3D}.lb.c{fill:#FF8B7D}
+.pt{fill:#D4FF3D;stroke:#0B1220;stroke-width:2.5;cursor:pointer}
+.pt:hover{r:11}
+.pt.rv{fill:#FF6B5B}.pt.sel{stroke:#fff;stroke-width:3.5}
+.hitc{fill:transparent;cursor:pointer}
+.arr{fill:none;stroke:#D4FF3D;stroke-width:3.5;stroke-dasharray:3 9;stroke-linecap:round;animation:fl 1.1s linear infinite}
+.arr.c{stroke:#FF6B5B}
+.rt{fill:none;stroke:#D4FF3D;stroke-width:3;stroke-dasharray:10 9;stroke-linecap:round;animation:fl 1.4s linear infinite;opacity:.9}
+.rt.c{stroke:#FF6B5B}.rt.b{stroke:#8fb4ff}
+@keyframes fl{to{stroke-dashoffset:-19}}
+@media (prefers-reduced-motion:reduce){.arr,.rt{animation:none}}
+.ring{fill:none;stroke:#D4FF3D;stroke-width:2.5}
+.lead2{stroke:#D4FF3D;stroke-width:1.6;stroke-dasharray:5 5;fill:none}
+.cbox{fill:#0B1220;stroke:#D4FF3D;stroke-width:1.6}
+.rl{fill:none;stroke:#D4FF3D;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .5s,stroke-width .4s;cursor:pointer}
+.rl.on{opacity:.85}.rl.new{stroke:#fff;stroke-width:7}
+.rlh{fill:none;stroke:transparent;stroke-width:22;cursor:pointer;pointer-events:stroke}
+.rlh.off{pointer-events:none}
+.city{fill:#F6F3EC;stroke:#0B1220;stroke-width:2}
+.big-n{font-size:5.2cqi;font-weight:900;color:var(--lime);line-height:1.1}
+.stat2{background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1cqi 1.5cqi;display:flex;flex-direction:column;gap:.3cqi}
+.stat2 .sl{font-size:1.6cqi;color:var(--sub)}
+.bxs{display:flex;align-items:stretch;gap:.8cqi;height:7cqi;padding-top:.5cqi}
+.bx{flex:1;display:grid;grid-template-rows:1fr auto;gap:.3cqi;min-width:0}
+.col{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-height:0}
+.fill{width:100%;background:#2b3866;border-radius:.5cqi .5cqi 0 0;height:var(--h,2%);min-height:2px;transition:height .5s,background .3s}
+.bx.on .fill{background:var(--lime)}
+.bx .nm{font-size:1.25cqi;color:var(--sub);text-align:center}
+.bx .vl{font-size:1.2cqi;color:var(--sub);text-align:center;font-variant-numeric:tabular-nums}
+.part{cursor:pointer}.part:hover .pf,.part.sel .pf{stroke:#D4FF3D;stroke-width:4}
+.tag{cursor:pointer}
+.rk{fill:#D4FF3D;stroke:#0B1220;stroke-width:2}.rkn{fill:#0B1220;font-size:16px;font-weight:900;text-anchor:middle;pointer-events:none}
+.tl{display:flex;gap:.5cqi;flex-wrap:nowrap;align-items:stretch;position:relative;padding:0 .2cqi}
+.tl .chip{flex:1;padding:.4cqi .3cqi;font-size:1.5cqi;text-align:center;min-width:0}
+.tl .chip small{display:block;font-size:1.05cqi;font-weight:500;opacity:.85;white-space:normal;line-height:1.2}
+.trio{display:flex;gap:1.2cqi;margin-top:.8cqi}
+.trio>div{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:.8cqi;padding:.8cqi 1.1cqi}
+.trio h5{font-size:1.4cqi;font-weight:900;color:var(--lime);margin-bottom:.25cqi}
+.trio p{font-size:1.55cqi}
+.invh{font-size:2.6cqi;font-weight:900;margin-bottom:.4cqi}.invh span{color:var(--lime);margin-right:.8cqi}
+.chcard{flex:1;display:flex;flex-direction:column;gap:1cqi;background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1.3cqi 1.8cqi;min-width:0}
+.cht{display:flex;align-items:stretch;gap:2cqi;flex:1;min-height:0;padding:.5cqi 1cqi 0}
+.cht .bx{grid-template-rows:1fr auto auto}
+.cht .fill{background:var(--lime)}.cht .bx.fr .fill{background:#8fb4ff}.cht .bx.ru .fill{background:#FF6B5B}
+.cht .vl{font-size:2.4cqi;font-weight:900;color:var(--text)}.cht .nm{font-size:1.8cqi;font-weight:700;color:var(--text)}
+
+.trio h5{font-size:1.9cqi}.trio p{font-size:2.1cqi}.invh+p{font-size:2.2cqi}.trio{margin-top:1.2cqi}
+.wmap svg [data-k]{cursor:pointer}.wmap svg g[data-k]:hover{filter:brightness(1.25)}
+.lb.nl{fill:#8fb4ff;font-size:19px}
+.bookbtn{position:relative;z-index:5;font:inherit;display:flex;align-items:center;gap:1.2cqi;margin-top:.8cqi;background:transparent;border:1.5px solid var(--line);border-radius:1cqi;padding:.6cqi 1.2cqi;color:var(--text);cursor:pointer;text-align:left;min-height:44px}
+.bookbtn:hover{border-color:var(--lime)}
+.bookbtn b{display:block;font-size:1.7cqi;color:var(--lime)}.bookbtn small{font-size:1.25cqi;color:var(--sub)}
+.bookbtn .bk{flex:0 0 5cqi;height:6.6cqi;background:#efe6cf;border:1px solid #b9a27a;border-radius:.3cqi;display:flex;align-items:center;justify-content:center;box-shadow:.3cqi .3cqi 0 rgba(0,0,0,.35)}
+.bookbtn .bk i{font-family:Georgia,'Times New Roman',serif;font-style:normal;font-weight:700;font-size:.85cqi;line-height:1.3;color:#3b2f1e;text-align:center}
+.lbx{position:absolute;inset:0;z-index:30;background:rgba(5,9,20,.88);display:none;align-items:center;justify-content:center;padding:3cqi}
+.lbx.open{display:flex}
+.lbx-in{position:relative;display:flex;gap:3cqi;align-items:center;max-height:100%}
+.lbx-x{position:absolute;right:-1cqi;top:-2.2cqi;font:inherit;font-size:2cqi;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:50%;width:4.4cqi;height:4.4cqi;cursor:pointer}
+.tp{width:34cqi;background:#efe6cf;color:#2b2113;font-family:Georgia,'Times New Roman',serif;text-align:center;padding:2.4cqi 2cqi;border:1px solid #b9a27a;box-shadow:.8cqi .8cqi 0 rgba(0,0,0,.4);display:flex;flex-direction:column;gap:.5cqi;letter-spacing:.04em}
+.tp hr{border:0;border-top:1px solid #8a7a58;width:35%;margin:.7cqi auto}
+.tp1{font-size:2.3cqi;font-weight:700}.tp2{font-size:1.5cqi;font-style:italic}.tp3{font-size:2.5cqi;font-weight:700}.tp4{font-size:2.9cqi;font-weight:700;line-height:1.15}
+.tp5{font-size:1.5cqi;font-weight:700}.tp6{font-size:1.15cqi;line-height:1.5}.tp7{font-size:1.5cqi;margin-top:.6cqi}
+.tn{max-width:36cqi;color:var(--text)}.tn h4{font-size:2.6cqi;color:var(--lime);margin-bottom:.8cqi}.tn p{font-size:1.9cqi;line-height:1.55;margin-bottom:.8cqi}.tn b{color:var(--lime)}
+/* ===== w6 ===== */
+.wg.colw{flex-direction:column}
+.tabs .chips{gap:.8cqi}
+.tabs .chip{white-space:normal;text-align:center;font-size:1.8cqi;padding:.4cqi 1.4cqi;line-height:1.25}
+.tabs .chip small,.chip small{display:block;font-size:1.15cqi;font-weight:500;opacity:.85}
+.tabs .info.big{padding:1.6cqi 2.2cqi}.tabs .info h4{font-size:2.6cqi}.tabs .info p{font-size:2.15cqi;line-height:1.55}
+.tabs .trio p{font-size:1.9cqi}.tabs .trio h5{font-size:1.9cqi}
+.info .lk{margin-top:1cqi;font-size:1.4cqi}
+.cntcol{flex:0 0 28%;display:flex;flex-direction:column;gap:1.2cqi}.cntcol .stat2{flex:1;justify-content:center}.cntcol .stat2 .big-n{font-size:4.4cqi}.cntcol .stat2 .sl{font-size:1.7cqi}
+.card .big-n{font-size:4.6cqi}
+.cht .bx.us .fill{background:#FFB84D}.cht .bx.de .fill{background:#C9A0FF}.cht .bx.uk .fill{background:var(--lime)}
+.cht .bx.lead .vl{color:var(--lime)}
+.cht.rlc .bx .fill{background:#2b3866}.cht.rlc .bx.on .fill{background:var(--lime)}
+.bign{display:flex;align-items:baseline;gap:1cqi}.bign .big-n{font-size:6.5cqi}.bign .u{font-size:2.4cqi;font-weight:700}
+.sidek{flex:0 0 24%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.6cqi}.sidek .big-n{font-size:6cqi}
+.cht.two{gap:5cqi}.grp{flex:1;display:flex;flex-direction:column;gap:.6cqi;min-height:0}.gt2{font-size:1.9cqi;font-weight:700;text-align:center}.grp .bx{flex:1;min-height:0}.bx.a .fill{background:var(--lime)}.bx.b .fill{background:#FF6B5B}
+.gq{font-size:3.1cqi;font-weight:700;line-height:1.6;text-align:center;padding:.6cqi}.gq b{color:var(--lime)}
+.chips.big{justify-content:center}.chips.big .chip{font-size:3cqi;padding:.6cqi 3cqi}
+.chip.ok{background:var(--lime);color:var(--bg);border-color:var(--lime)}.chip.no{background:#FF6B5B;color:var(--bg);border-color:#FF6B5B}
+.info.rev{flex:1}.info.rev p{font-size:2.1cqi}.info.rev h4{font-size:2.5cqi}
+.chcard>.lc{width:100%;height:0;flex:1 1 0;min-height:0}.lc .gl2{stroke:#293045;stroke-width:1}.ax{fill:#B9C0D0;font-size:14px}
+.lc .ln{fill:none;stroke-width:4;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.lc .dot{cursor:pointer;stroke:#0B1220;stroke-width:2}.lc .lg{font-size:18px;font-weight:900}.lc .vt{fill:#D4FF3D;font-size:13px;font-weight:700}
+.evl{stroke:#fff;stroke-width:2;stroke-dasharray:4 4;opacity:0}
+.evc .chip{font-size:1.35cqi;min-height:36px;padding:.2cqi .8cqi}
+.info.ev{flex:0 0 18%}.info.ev p{font-size:1.8cqi}.info.ev h4{font-size:2.1cqi}
+.cycl{flex:1 1 0;min-width:0;background:#0d1530;border:1px solid var(--line);border-radius:1cqi;position:relative}.cyc{position:absolute;inset:0;width:100%;height:100%}
+.nd{cursor:pointer}.nd rect{fill:var(--card);stroke:var(--lime);stroke-width:2}.nd text{fill:var(--text);font-size:17px;font-weight:900}.nd:hover rect,.nd.sel rect{fill:var(--lime)}.nd:hover text,.nd.sel text{fill:var(--bg)}
+.ctr2{fill:var(--lime);font-size:34px;font-weight:900;opacity:.3}
+.wside .info p{font-size:2cqi}.wside .info h4{font-size:2.4cqi}
+.wmap[data-mode=empire] g[data-layer=m]{opacity:.15}.wmap[data-mode=money] g[data-layer=e]{opacity:.15}
+.cks{display:flex;flex-direction:column;gap:1cqi;flex:1;min-height:0}.ck{flex:1;display:flex;align-items:center;gap:1.6cqi;text-align:left;font:inherit;font-size:2.1cqi;font-weight:700;color:var(--text);background:var(--card);border:1.5px solid var(--line);border-radius:1cqi;padding:.4cqi 1.6cqi;cursor:pointer}
+.bx2{flex:none;width:3cqi;height:3cqi;border:2px solid var(--lime);border-radius:.6cqi;display:flex;align-items:center;justify-content:center}.ck.on .bx2{background:var(--lime)}.ck.on .bx2::after{content:"✓";color:var(--bg);font-weight:900;font-size:2.2cqi}.ck.on{border-color:var(--lime)}
+.ckp{display:flex;align-items:center;gap:1.4cqi}.ckb{flex:1;height:1.2cqi;background:var(--line);border-radius:1cqi;overflow:hidden}.ckf{height:100%;width:0;background:var(--lime);transition:width .4s}.ckn{font-size:2cqi;color:var(--lime)}
+@keyframes rvin{from{opacity:0;transform:translateY(1.6cqi)}to{opacity:1;transform:none}}
+.slide.active .grid>.card,.slide.active .krow,.slide.active .nrow,.slide.active .q,.slide.active .fbox{animation:rvin .6s both}
+.slide.active .grid>.card:nth-child(2),.slide.active .krow:nth-child(2),.slide.active .q:nth-child(2){animation-delay:.12s}
+.slide.active .grid>.card:nth-child(3),.slide.active .krow:nth-child(3),.slide.active .q:nth-child(3){animation-delay:.24s}
+.slide.active .grid>.card:nth-child(4){animation-delay:.36s}
+.fbox small{font-size:1.4cqi;font-weight:500}
+.pt.rv{animation:none}
+@media (prefers-reduced-motion:reduce){.slide.active .grid>.card,.slide.active .krow,.slide.active .q,.slide.active .fbox{animation:none}.lc .ln{animation:none;stroke-dashoffset:0}}
+.cntcol .stat2 .big-n{font-size:3.9cqi;white-space:nowrap}
+.info.ev{flex:0 0 auto!important;min-height:11cqi}
+.evc .chip{min-height:34px}
+
+</style>
+</head>
+<body>
+<div class="bar top">
+  <a class="btn" href="international-politics.html">← 강의 안내</a>
+  <div class="ttl">영국 산업사회의 완성과 쇠퇴<small>글로벌시대의 국제정치 · 6주차 · 100분</small></div>
+  <span class="sp"></span>
+  <button type="button" class="btn" id="bh" title="쉿, 조용히 생각하는 시간 (S)">🤫 쉿</button>
+  <button type="button" class="btn hide-s" id="bg" title="전체보기 (G)">▦ 전체보기</button>
+  <button type="button" class="btn hide-s" id="bp" title="PDF 저장 (P)">PDF</button>
+  <button type="button" class="btn main" id="bf" title="전체화면 (F)">⛶ 전체화면</button>
+</div>
+<main id="wrap">
+  <div id="stage">
+<section class="slide cover nofoot"><div class="slide-content"><div class="tag">패권의 비밀 · 6강</div><h1 class="cov">영국 산업사회의<br>완성과 쇠퇴</h1><p class="cov-sub">세계의 공장은 왜 정점에서 흔들렸는가</p><p class="cov-q">"승자도 쇠퇴한다 — 그 이유를 오늘 찾습니다"</p><p class="cov-by">나병인 교수 | 가천대학교 행정학과 · 글로벌시대의 국제정치 6주차 (100분)</p><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">OPENING · 오늘의 약속</div><h2 class="t">100분 뒤, 여러분은 이 질문에 답할 수 있습니다</h2><div class="main stack"><div class="call"><b>핵심 질문</b>  한때 "세계의 공장"이라 불리던 나라가 왜 100년도 안 되어 1위 자리를 내놓았나? <b>승자도 쇠퇴하는 이유는 무엇인가?</b></div><div class="grid g3"><div class="card "><h3>① 완성</h3><p>기술·교통·제도·사회, 네 가지가 결합해 <b>확대재생산체제</b>를 완성합니다</p></div><div class="card "><h3>② 정점</h3><p>팍스 브리태니카: 해군·자유무역·파운드·규범의 시대</p></div><div class="card "><h3>③ 쇠퇴</h3><p>기술 확산 · 금융 치중 · 제국 유지비용의 악순환</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide quote"><div class="slide-content"><div class="qmark">“</div><p class="bigq" style="font-size:3.1cqi">1851년, 영국은 세계에서 가장 잘나가는 나라였다<br>63년 뒤, 1차 대전이 터질 때<br>제조업 규모는 미국과 독일에 밀려 3위였다</p><div class="qmark end">”</div><p class="src">1913년 세계 제조업 비중: 미국 32.0% · 독일 14.8% · 영국 13.6% (Bairoch 1982)</p><p class="note">🤫 7초 생각: 무슨 일이 있었을까요? (쉿 버튼 또는 S 키)</p><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">REVIEW · 5주차 복기</div><h2 class="t">상업사회 → 산업사회: 지난주에 만든 공식</h2><div class="main stack"><div class="flow"><div class="fbox">명예혁명<br><small>제도</small></div><span class="ar">→</span><div class="fbox">잉글랜드 은행<br><small>금융</small></div><span class="ar">→</span><div class="fbox">상업자본 축적</div><span class="ar">→</span><div class="fbox">확대재투자<br><small>상업</small></div><span class="ar">→</span><div class="fbox">확대재생산<br><small>산업</small></div></div><div class="grid g2"><div class="card "><h3>오늘의 첫 질문</h3><p>확대재생산체제는 어떻게 <b>완성</b>되었나?<br><span class="sm2">기술혁신 · 교통혁명 · 제도 · 사회조건</span></p></div><div class="card "><h3>오늘의 둘째 질문</h3><p>그 공식은 왜 <b>영원하지 않았나?</b><br><span class="sm2">기술 확산 · 금융 치중 · 제국 유지비용</span></p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">AGENDA</div><h2 class="t">오늘 강의 순서 (100분)</h2><div class="main stack"><div class="grid g4"><div class="card agenda"><div class="pt">도입</div><h3 class="big">정점의 이미지<br>1851 박람회</h3><p class="sm">5주차 복기 · 핵심 질문</p><div class="min">10분</div></div><div class="card agenda"><div class="pt">본강의 1</div><h3 class="big">산업혁명의<br>4대 성공 요인</h3><p class="sm">기술 · 교통 · 제도 · 사회</p><div class="min">35분</div></div><div class="card agenda"><div class="pt">본강의 2</div><h3 class="big">팍스<br>브리태니카</h3><p class="sm">세계의 공장 · 제국의 지도 · 선순환</p><div class="min">20분</div></div><div class="card agenda"><div class="pt">본강의 3</div><h3 class="big">쇠퇴의<br>구조</h3><p class="sm">기술 확산 · 금융 · 제국 · 1차 대전</p><div class="min">25분</div></div></div><div class="call">도입 10 + 본강의 1 35 + 본강의 2 20 + 본강의 3 25 + 마무리 10 = <b>100분</b></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Great_Exhibition" target="_blank" rel="noopener">🔗 위키: 만국박람회</a></div><div class="kick">도입 · 정점의 이미지</div><h2 class="t">1851 만국박람회: 영국이 세계에 자랑한 것</h2><div class="main stack"><div class="wg"><div class="cntcol"><div class="stat2"><span class="cn big-n" data-to="6039722" data-suf="명" data-dec="0" data-pre="">0</span><div class="sl">관람객(1851.5.1~10.15)</div></div><div class="stat2"><span class="cn big-n" data-to="13000" data-suf="건" data-dec="0" data-pre="">0</span><div class="sl">영국·식민지·외국 44개국 전시</div></div><div class="stat2"><span class="cn big-n" data-to="63" data-suf="년" data-dec="0" data-pre="">0</span><div class="sl">박람회 → 1차 대전(1914)</div></div></div><div class="wg colw tabs" data-wg="tabs" data-set="exh" ></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">본강의 1 · 산업혁명의 4대 성공 요인 (35분)</div><h2 class="t">네 가지가 맞물려 확대재생산체제를 완성했다</h2><div class="main stack"><div class="grid g4"><div class="card "><h3>① 기술혁신</h3><p>증기기관 · 석탄 · 철<br><span class="sm2">생산성의 천장을 없앤 힘</span></p></div><div class="card "><h3>② 교통혁명</h3><p>철도 · 증기선<br><span class="sm2">원료와 상품이 달리는 길</span></p></div><div class="card "><h3>③ 제도</h3><p>재산권 · 자유무역 · 파운드<br><span class="sm2">발명과 투자를 지키는 틀</span></p></div><div class="card "><h3>④ 사회조건</h3><p>인구 · 도시화 · 식민지<br><span class="sm2">노동력과 시장</span></p></div></div><div class="call"><b>4요소의 결합 = 확대재생산체제:</b> 번 돈이 다시 공장·철도·선박으로 들어가 생산 능력이 계속 불어나는 구조</div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Industrial_Revolution" target="_blank" rel="noopener">🔗 위키: 산업혁명</a></div><div class="kick">본강의 1 · ① 기술혁신</div><h2 class="t">증기기관의 폭발</h2><div class="main stack"><div class="wg colw tabs" data-wg="tabs" data-set="tech" ></div><div class="call"><b>한 문장:</b> "와트는 기관을 발명한 게 아니라, 생산성의 천장을 없앤 겁니다."</div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway" target="_blank" rel="noopener">🔗 위키: 스톡턴-달링턴 철도</a><a class="lk" href="https://www.campop.geog.cam.ac.uk/research/projects/transport/onlineatlas/railways.pdf" target="_blank" rel="noopener">🔗 철도망 연구(PDF)</a></div><div class="kick">본강의 1 · ② 교통혁명</div><h2 class="t">철도: 연도를 눌러 보세요</h2><div class="main stack"><div class="wg" data-wg="rail"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">본강의 1 · ② 교통혁명의 결합 효과</div><h2 class="t">철도 + 증기선 = 완전한 산업 사이클</h2><div class="main stack"><div class="wg" data-wg="cycle" data-set="c1"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Statute_of_Monopolies" target="_blank" rel="noopener">🔗 위키: 독점법(1624)</a></div><div class="kick">본강의 1 · ③ 제도적 기반</div><h2 class="t">발명과 투자를 지키는 세 가지 제도</h2><div class="main stack"><div class="wg colw tabs" data-wg="tabs" data-set="inst" ></div><div class="call">5주차의 <b>동의·신뢰의 제도</b>가 산업 단계에서는 재산권·시장·화폐 제도로 이어집니다.</div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Corn_Laws" target="_blank" rel="noopener">🔗 위키: 곡물법</a></div><div class="kick">본강의 1 · ③ 제도: 자유무역</div><h2 class="t">곡물법에서 제국특혜까지: 자유무역의 흥망</h2><div class="main stack"><div class="wg colw tabs" data-wg="tabs" data-set="trade" ></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">본강의 1 · ④ 사회적 조건</div><h2 class="t">사람과 시장: 인구·도시·식민지</h2><div class="main stack"><div class="wg"><div class="cntcol"><div class="stat2"><span class="cn big-n" data-to="6" data-suf="백만 명" data-dec="0" data-pre="약 ">0</span><div class="sl">1750년 잉글랜드 인구(추정)</div></div><div class="stat2"><span class="cn big-n" data-to="17" data-suf="백만 명" data-dec="0" data-pre="약 ">0</span><div class="sl">1850년 전후 인구(추정)</div></div><div class="stat2"><span class="big-n">절반 이상</span><div class="sl">1851년 도시 거주 비율 (세계 최초)</div></div></div><div class="card" style="flex:1"><h3>식민지의 이중 역할</h3><ul class="ul"><li><b>원자재 공급지</b>: 인도 면화 · 호주 양모 · 캐나다 목재</li><li><b>독점 수출 시장</b>: 영국 공산품을 팔고 현지 경쟁 산업은 억제</li><li><b>식민지 철도</b>: 자원 추출과 군사 통제를 동시에</li></ul></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide disc"><div class="slide-content"><div class="kick">DISCUSSION</div><h2 class="t">본강의 1 토론: 여러분의 생각은?</h2><p class="dsub">먼저 7초 침묵 → 2인 1조 3분 토론 후 발표</p><div class="main stack qs"><div class="q"><b>Q1</b><div><p class="q1">철도와 증기선이 없었다면 영국의 공장은 어디에서 멈췄을까?</p><p class="q2">생산·수송·시장 중 가장 먼저 막히는 것은?</p></div></div><div class="q"><b>Q2</b><div><p class="q1">4대 요인 가운데 다른 나라가 가장 따라 하기 어려운 것은 무엇인가?</p><p class="q2">기술은 따라 하기 쉽고 제도와 사회조건은 어렵다?</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://press.umich.edu/pdf/0472112872-ch2.pdf" target="_blank" rel="noopener">🔗 Bairoch 표(Michigan UP)</a></div><div class="kick">본강의 2 · 팍스 브리태니카 (20분)</div><h2 class="t">세계의 공장: 정점의 숫자들</h2><div class="main stack"><div class="grid g4"><div class="card "><h3><span class="cn big-n" data-to="19.9" data-suf="%" data-dec="1" data-pre="">0</span></h3><p>1860년 세계 제조업 비중 (5개국 중 1위)</p></div><div class="card "><h3><span class="cn big-n" data-to="13000" data-suf="마일" data-dec="0" data-pre="약 ">0</span></h3><p>1871년 영국 철도망 (13,000마일 이상)</p></div><div class="card "><h3><span class="cn big-n" data-to="37" data-suf="억 파운드" data-dec="0" data-pre="약 ">0</span></h3><p>1913년 말 해외 증권 보유 (£3,715m)</p></div><div class="card "><h3><span class="cn big-n" data-to="6" data-suf="백만 명" data-dec="0" data-pre="약 ">0</span></h3><p>1851년 박람회 관람객</p></div></div><div class="call"><b>숫자는 기준에 따라 달라집니다.</b> 생산·무역·수출 중 무엇을 재는가에 따라 영국의 "몫"이 커지거나 작아집니다. 오늘은 생산 기준 Bairoch(1982) 추정치를 씁니다.</div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/British_Empire" target="_blank" rel="noopener">🔗 위키: 대영제국</a><a class="lk" href="https://en.wikipedia.org/wiki/Suez_Canal" target="_blank" rel="noopener">🔗 위키: 수에즈 운하</a></div><div class="kick">본강의 2 · 팍스 브리태니카</div><h2 class="t">제국과 자본의 지도: 점을 눌러 보세요</h2><div class="main stack"><div class="wg" data-wg="wmap"><div class="wmap" data-mode="all"><svg viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" role="img" aria-label="세계 지도"><rect class="sea" width="1000" height="560"/><path class="ct" d="M389.5,521.6L389.7,522.7L389.8,523.7L385.8,523.4L381.8,523.5L378.9,522.8L378.9,522.7L377.4,522L381.6,522.1L385.7,522.3L386.5,521.4L387,520.6ZM202.6,520.3L199.5,520.6L195.7,519.8L193.3,519L193,518.9L190.7,518.2L190.5,517.4L194.6,517.7L197.6,518.5L200.4,519.3ZM414.1,517L416.9,518L418.3,519.4L419,520.4L419.6,521.5L417.1,522.2L414.4,522.8L411.2,523.3L407.6,523.7L403.2,523.6L400.3,522.9L400.1,522L403.7,521.3L404.9,520.6L405.5,519.6L406,518.8L406.7,517.9L407.5,517L408.4,517L411,516.4ZM257.9,505.7L260.8,506.1L262.8,505.6L262.5,506.6L261.3,507.2L258.3,507L255.5,506.1L255.1,505.2ZM249.1,505.6L253.2,506.7L251.9,506.6L249.1,506.3L245.7,505.6L246.6,505ZM299.2,501.6L301.7,502L303.7,501.7L306,503.2L304.2,503L301.9,503.1L299.3,503L296.7,503.1L294.2,502.6L292.3,501.5L293.3,501.1L296.1,501.4ZM359.8,499.1L360.7,500.3L360.8,501.3L360.8,502.3L358.6,502.6L356.6,503.1L353.9,503.1L354.4,502L352.2,502.4L350.1,502.8L348.2,502L347.4,500.9L349.1,499.9L350.3,499.6L352.7,499.7L352.6,498.3L352.2,497.3L351.1,495.2L351.6,493.9L353.3,493.5L354.9,494.5L355.9,495.5L357.4,496.7L358.7,497.9ZM189.3,530.9L189.3,530.9L189.3,530.9L189.4,530.9L187.7,529.9L192.6,530.5L192.6,530.4L192.6,530.2L192.6,530.1L192.6,529.9L192.7,529.8L192.9,529.8L193.2,529.9L198,530.6L197.9,529.9L198,529.8L202.2,529.4L205.1,529.9L206.6,530.1L210.9,530.7L217.2,531.1L222.7,531.6L230.6,532L234.1,531.5L242.3,531.9L248,532.4L251,531.9L254.5,531.4L252.7,530.7L245.7,530.6L239,530.2L235.7,529.5L230,529.1L228.3,528.2L227.2,527.4L226.3,526.7L224.2,525.9L220.1,525.3L217.3,524.5L213.2,523.9L217.9,524L221.5,523.7L225.4,524.4L227.5,523.8L229.2,522.9L229.4,522.2L227.3,521.3L223.9,520.7L220.2,520L216.1,519.9L212.2,519.6L208.2,519.3L205.7,518.5L202.1,517.7L199.4,516.9L194.8,514.2L196.1,514.4L198.9,515.2L201.7,514.9L204.3,514.6L207.4,515.6L210.1,515.4L211.9,514.9L213.4,514.2L214.6,513.4L217.2,513.2L215.9,512.3L214.1,511.3L213.6,510.5L215.6,510L217.7,510.9L220.1,510.4L221.7,509.7L224.4,509.7L226.8,509.4L228.8,508.8L230.3,508.3L232.1,507.7L233.8,507.9L235.4,508.1L238,507.7L241.1,508.2L243.7,508.1L246,507.8L248.9,508L252.1,508.3L254.7,508.2L257.7,508.2L260.7,508.3L263.3,508.2L264.6,507.4L266.6,507L269.6,507.6L271.6,507.1L272.9,506.2L274.9,507L276.4,507.9L278.5,508.8L279.8,508L283,509L286,509.3L288.8,510L291.5,509.8L293.6,509.4L296.7,509.5L299.6,509.8L302.7,510.3L302.8,509.2L300.8,508.3L299.1,507.4L296.4,507.2L294.5,506.3L293.3,505.3L291.1,503.4L292.9,503.8L295.6,503.9L298.1,503.8L300.8,504.2L303.4,504.9L305,505.8L307.8,506L310.1,505.6L312.5,505.1L314.7,504.8L317.2,505.4L319.7,505.2L320.1,503.3L322.5,504.4L325.1,504.9L327.5,504.6L329.8,505.6L332.5,505.7L335.1,506L337.8,506.6L338.8,505.6L339,504.7L341.6,505.7L344.2,505.5L346.6,506L348.5,506.9L351,506.6L352.7,506.1L354.4,505.4L356.6,505.1L359.3,504.8L361.6,504.4L363.3,503.9L364.1,503.1L364,501.9L363.2,500.9L362,499.8L360.8,498.8L359.6,497.8L358.6,496.8L358,495.8L357.7,494.7L358.2,493.7L358.5,492.6L358.3,491.5L357.4,490.4L356.6,489.3L357.1,488.1L357.9,487.3L358.8,486.2L359.9,485.4L361.3,484.5L361.6,483.3L362.5,482.6L363.5,481.9L365.6,481.7L366.6,480.8L367.9,480.3L369.6,479.9L370.9,479.2L371.8,478.3L373.4,478L374.9,478.7L374.4,479.7L372.5,480.5L371.8,481.1L370,480.7L368.4,480.9L367.1,481.6L365.8,482.3L365.1,483.1L365.3,484.2L365.8,485.2L367.2,486.2L366,486.8L364.1,487L363.3,487.9L362.5,488.8L361.7,490L361.8,491L363,492.1L364.5,493L366.5,493.6L368.5,494.4L369.8,495.5L370.7,496.5L371.8,497.5L373.2,498.4L374.2,499.4L375.6,501.8L376.6,502.8L377.3,503.8L378.4,504.8L378.7,506.2L378.2,507.2L377.4,508.1L375,508.4L374.5,509.3L373.8,510.2L371.3,511.1L368.9,511.5L366.8,512L364.5,512.6L363.6,513.6L360.5,513.7L357.1,513.6L354.1,513.8L350.9,513.8L352.1,514.7L355.3,515.1L357.9,515.8L359.7,516.6L358.1,517.4L354.7,517.1L352.4,517.7L353,518.7L353.7,519.6L356.5,520.4L357.6,521.2L360.6,522L364.8,522.4L368.6,523L371.8,523.7L375.7,524.3L380.5,524.7L385.4,525.2L388.9,525.9L392.8,526.5L395.4,527.5L396.9,528.2L398.4,527.5L400.9,526.9L403.6,526.3L407,525.8L409.8,525.2L414.3,525.2L418.9,525.4L422.8,525.9L423.5,525L425.7,524.4L430.3,524.4L433.7,523.9L436.9,523.5L440.6,523.2L444.6,522.8L447.2,522.2L445.7,521.4L444.6,520.6L444.4,519.8L440.8,519.9L437,520.2L433.4,520.2L432.6,519.4L432.2,517.7L432.9,517.1L435.4,516.6L438.5,516L440.6,515.3L442.7,514.6L444.2,513.7L446.8,513.2L449.3,512.9L450.6,512.7L453.6,512.6L456.3,512.3L458.7,511.8L460.9,511.2L463,510.6L465.6,509.8L467.2,509L469,508.2L469.4,507.2L467.2,506.6L467.8,505.6L469,504.8L471.1,504.3L473.2,503.7L475.2,502.9L476.7,501.8L477.6,500.6L479,499.9L481.4,500L482.5,500.9L484.9,501L484.9,500L485.9,499L488.2,499.3L488.7,500.2L491.1,500.4L493.8,499.9L496.3,499.6L498.7,499.8L499.5,500.9L501.8,500L503.9,499.5L506.2,499.2L508.5,498.8L510.6,498.2L512.9,497.8L514.7,497.2L516,496.2L517.5,496.9L519.7,496.6L521.1,497.8L522.2,498.7L524.6,498.2L525.6,497.2L527.7,496.4L530.4,496.6L531.1,497.6L532.9,496.6L535.2,496.3L537.6,496.2L539.8,496.2L542.1,496.6L544.3,496.7L545.1,497.6L546.3,498.4L548.7,497.9L551.1,497.8L553.4,497.8L555.7,497.8L557.9,497.4L560.1,497.1L562.1,496.3L564.1,495.9L566.3,495.6L568.1,494.9L569.5,493.4L570.9,492.5L573,492.9L573.6,493.9L575.2,494.5L577.5,494.3L578.7,495.2L580,495.9L582.3,495.3L583.4,494.1L585.4,493.7L587.8,492.8L590,492.4L592.6,491.9L594.4,491.3L596.3,490.6L598.2,490L600.1,490.4L602.3,489.4L603.9,488.7L605.9,488.7L607.9,488.1L608.6,487.1L610.7,486.3L612.6,485.8L614.9,485.4L616.9,485.1L618.8,485.3L620.7,485.6L622.1,486.3L621.9,487.5L623.4,488.4L624.4,489.2L626.8,489.5L627.9,490.3L629.3,491L631.2,491.2L633.2,490.6L635.5,489.5L637.2,490.1L639.1,490.4L641,490.7L642.9,490.9L645,490.9L645.4,493.8L645,494.4L644.1,495.7L641.8,496.3L639.7,497.3L639.5,498.4L641.8,498.3L641,499.4L639.5,500.3L637.9,501.4L639.1,502.2L641.3,502.5L643.9,502L645.5,501L646.7,500L648.3,499.2L650,498.4L651,497.5L652.8,496.2L654.2,495.9L656.6,495.8L658.9,495.5L661.2,495.1L662.8,494L664,493L666,492L668.4,491.3L670.5,490.8L672.1,489.9L673.6,489.4L675.4,489L677.3,489.2L679.4,489L681.7,488.7L683.9,488.8L685.9,488.1L688,486.2L688.4,487L688.6,488.3L690.1,488.8L692,489L694.2,488.7L696.3,488.9L698.2,489L699.7,488.7L701.4,488.9L702.6,489.5L704.8,489.1L707.1,489.1L709.3,488.7L711.2,489.1L713.2,488.2L714.9,487.3L716.9,486.5L721,484.4L722.1,484.8L723.2,485.6L724,486.5L725.5,488.2L727.6,488.3L729.5,488.3L732,487.9L734.6,487.6L736.9,486.8L739,486L741.5,485.9L743.5,485.3L744.8,485.8L745.2,486.7L746,487.6L748.4,487.5L749.4,488.2L751.3,488.9L753.8,489.1L756.1,488.9L758.5,488.1L760.6,487.2L762.7,487L764.3,487.4L766.3,487.6L768.7,487.2L770.6,487.2L772.3,487.5L774,487.7L776.3,487.3L779,486.8L781.3,486.7L783.7,486.7L785.9,486.4L788,486.2L789.8,484.9L790.9,483.7L791.6,484.5L790.8,485.7L790.5,486.9L790.6,487.8L791.9,488.3L794.5,488.1L797.3,488.1L799.4,487.9L802.2,487.9L804.2,487.8L806.9,487.9L809.1,488.2L809.7,489L808.3,490L808.8,490.8L810.4,491.5L812.1,492.2L814.3,492.7L816.7,493.1L818.4,493.5L820.7,493.6L823,492.7L824,493.4L824.7,494.2L825.8,494.9L828.1,495.1L830.1,495.4L829.9,496.5L831.5,497.1L832,498.1L833.8,498.5L836.3,498.4L838.3,498.6L840.8,498.5L843,498.7L844.8,499.1L846.2,499.7L847.7,500.2L848.1,501L846.6,502L844.3,503L841.9,504.1L840,505L837.6,506.1L834.5,506.5L832.1,507.4L828.8,507.9L826.6,508.9L824,509.9L821.5,510.7L819.2,511.7L817.5,512.6L815.7,513.7L814.4,514.6L814.1,515.6L813.2,516.4L812.8,517.3L815.8,517.6L814.9,518.6L810.9,519L807.2,519.5L803.5,519.6L799.7,520.9L797.6,521.9L795.3,522.7L792.9,523.5L793.9,524.3L793.1,525.1L793.1,525.9L793.8,526.6L794.9,527.2L796.1,527.8L798.6,528.4L797.1,529.3L801,529.7L800.9,529.9L800.7,530.4L806.9,529.9L809.1,530.5L810.7,530.9L793.7,534.7L771.9,536.9L500,536.9L228.1,536.9L206.3,534.7ZM341,450.5L344.6,452.3L348.2,453L347.6,454.5L345.5,454.7L343.9,453.6L343.6,454.8L341.9,455.7L339.3,455.4L337.2,454.5L334.6,454.1L331.1,452.4L328.1,450.8L323.6,447.4L325.8,448L329.8,450.1L333.3,451.1L334,449.8L334.1,447.7L335.8,446.4L337.6,446.8L339,448.2ZM360.1,442.1L362.4,443.5L362,444.6L359.1,445.5L357.7,444.4L356.1,445.8L354.5,444.4L356.8,442.6L359,443.3ZM669.3,437.9L665.5,438.1L666,436.4L666.7,435.1L667.1,434.5L668.4,435.5L670.5,435.9L670.4,436.5ZM866.8,410L868.7,411.1L870.3,410.6L872.6,410L874,410.2L872.1,414L870.6,415.1L868.9,417.6L868.6,416.7L865.6,418.9L865.2,418.8L863.7,418.7L863.7,416L864.5,413.9L864.5,411.1L865.3,409.7ZM936.2,410.4L936,411.7L938.6,410.4L938.5,411.7L937.6,413.1L935.7,414.5L932.6,416.8L930.5,418.1L930.4,419.6L928.4,419.7L925.5,420.8L923.4,422.9L919.8,426.1L916.9,427.5L915,428.3L912.8,428.3L911.9,427.3L909.4,427L909.8,425.9L912.7,423.6L917.9,420.5L919.9,419.9L922.5,418.7L925.7,417L928.3,415.4L930.9,413L932.4,412.2L933.8,410.5L936.5,409ZM949.1,395.2L949.1,398.6L950.4,396.4L951.1,397.3L950.1,399.7L951.5,400.7L953.1,401L955.3,399.8L956.4,400.1L954.1,403L952.2,404.8L950.3,404.7L949,405.7L948.4,407.1L947.7,407.7L945.7,409.4L943,411.5L940.3,412.8L940.4,412L939.6,411.5L942.7,408.9L943,407.2L941,405.9L941.8,404.7L944.3,403.6L946.1,401.2L947.2,399.1L947.3,397L947.7,396.4L947.2,395.1L946.7,392.3L946.7,390L947.8,389.8L948.3,391.6L949.9,392.4ZM948.1,350.5L946.8,351.3L945.6,350.4L944.1,349L942.9,347.3L941.7,345L941.7,343.9L942.8,344L944,345.1L944.9,346.2L945.5,347.1L947.1,349ZM982.7,335.1L983.4,336L982.5,337.7L980.7,338.1L979.3,337.8L979.4,336.3L980.7,335.3L981.9,335.7ZM987.7,332.6L985.8,333.4L983.9,334.1L983.8,332.9L985.3,332.2L986.2,332.1L988.1,331.1L987.7,332.6ZM11.9,331.1L11.9,331.1L12.5,330.9L12.5,332.5L12.3,332.6L12.3,332.6L12.3,332.6L11.9,331.1ZM954.8,332.3L953.8,332.8L953.2,331.4L953.5,330.5ZM953.9,327.5L953.8,330L953.1,329.6L952.5,329.8L952.3,328.9L952.8,326.5ZM636.2,323.1L636.4,326.9L637,328.4L636.7,329.9L636.1,330.9L635.3,329L634.8,329.9L635.1,332.3L634.8,333.6L634,334.4L633.6,337.1L632.3,340.8L630.6,345.2L628.4,351.2L627,355.7L625.5,359.4L623.2,360.1L620.8,361.5L619.3,360.7L617.3,359.5L616.7,357.8L616.8,355L616.1,352.5L616,350.2L616.7,347.9L617.9,347.3L618,346.3L619.5,343.8L619.9,341.8L619.4,340.3L619,338.3L618.9,335.3L620,333.6L620.5,331.5L621.8,331.4L623.4,330.8L624.4,330.2L625.6,330.2L627.3,328.3L629.6,326.4L630.5,324.8L630.2,323.4L631.4,323.8L633,321.6L633.1,319.7L634.1,318.3L635,319.6L635.6,321ZM890.5,323.7L891.1,326.2L893,325L893.7,326.4L894.8,327.6L894.3,329L894.3,331.8L894.4,333.4L895.1,333.7L895.2,336.5L894.6,338.1L895,340.3L897.5,342L899.1,343.5L900.6,344.9L900,345.6L901,347.6L901.2,351.1L902.4,350.4L903.1,351.8L903.9,351.3L903.4,354.7L904.7,356.6L905.6,357.8L906.9,360.4L906.8,363L906.3,364.8L905.4,366.8L905.7,369.5L904.5,372.3L903.5,373.8L901.7,376.7L901,378.5L899.6,380.8L897.2,383.7L894.7,385.3L892.6,387.8L891.1,389.3L889.1,392.1L887.4,393.7L885.6,396.1L884.2,398.3L883.9,399.3L881.9,400.4L879,400.5L876,401.8L874.2,403L872,404.4L870.6,403L869.3,402.4L870.5,400.8L868.8,401.4L865.4,403.7L863.7,402.8L862.4,402.3L861.1,402.1L859,401.2L858.3,399.2L858.9,396.8L859,395.2L858.3,393.9L856,393.5L857.5,391.9L857.8,389.6L855.7,391.8L853.1,392.4L855.2,390.6L856.3,388.8L858,387.2L858.7,384.8L855.5,387.6L853.4,388.6L851.4,391.2L849.9,389.9L850.7,388.2L850,385.9L849,384.7L849.8,383.9L847.2,382L845.4,381.9L843.4,380.3L838.6,380.6L834.8,381.8L831.5,382.9L829.1,382.6L825.7,384.3L823.2,385L822.2,386.7L820.7,388L818.5,388.1L816.8,388.4L814.7,387.8L812.7,388.1L810.9,388.3L808.7,390L808,389.8L806.4,390.7L804.8,391.7L803,391.6L801.2,391.6L799.2,389.6L798,389L798.7,387.1L800.1,386.7L800.8,386L801.1,384.8L802.1,382.6L802.4,380.7L802,377.5L802.1,375.7L802.7,373.8L802.3,371.8L802.4,370.8L801.6,369.5L801.9,367L801.1,364.5L801,363.1L801.9,364.5L801.7,361.6L802.8,362.5L803.3,363.7L803.6,362.1L802.9,359.6L802.9,358.6L802.5,357.6L803.2,355.8L803.9,355L804.6,353.4L804.7,351.5L806.3,349.2L806,351.6L807.6,349.4L810,348.4L811.6,347L813.9,345.8L815.2,345.6L815.8,346L818.2,344.8L819.9,344.4L820.4,343.7L821.2,343.5L822.7,343.5L825.7,342.6L827.4,341.2L828.4,339.5L830.3,337.9L830.7,336.6L831,334.9L833.4,332.1L834,334.9L835.3,334.3L834.6,332.8L835.7,331.2L836.8,331.9L837.5,329.5L839.2,327.9L840.1,326.7L841.5,326.1L841.7,325.2L842.8,325.6L843,324.8L844.3,324.3L845.6,323.9L847.4,325.4L848.7,327.3L850.3,327.3L852,327.6L851.7,325.8L853.4,323.3L854.8,322.4L854.4,321.6L855.9,319.8L857.7,318.7L859,319.1L861.4,318.5L861.5,316.9L859.7,315.8L861.2,315.3L862.9,316.1L864.2,317.4L866.4,318.3L867.2,317.9L868.7,318.9L870.4,318L871.4,318.3L872.2,317.7L873.2,319.2L872.2,320.9L871,322.2L870.1,322.3L870.2,323.6L869.1,325.2L867.9,326.8L868,327.7L869.8,329.4L871.8,330.4L873,331.5L874.6,333.4L875.3,333.4L876.6,334.2L876.8,335.2L879.2,336.3L881.2,335.2L882.1,333.5L882.9,332.1L883.5,330.3L884.8,327.8L884.7,326.3L885,325.3L885,323.5L885.7,321.1L886.3,320.5L886.1,319.4L887,317.7L887.7,316L887.9,315.1L889.1,313.9L889.6,315.4L889.6,317.4L890.2,317.8L890.1,319.2L890.9,320.8L890.8,322.6ZM942.7,313.3L943.3,314.4L941.4,314.4L940.6,312.4L942.1,313.2ZM829.7,312.5L828.5,312.6L825.1,310.4L827.7,309.7L829.1,310.7L829.9,311.7ZM939.5,311.4L938.4,311.4L936.8,311.1L936.2,310.6L936.6,309.4L938.3,309.9L939.1,310.5ZM941.8,310.5L941.3,311.1L939.6,308.3L939.3,306.4L940.2,306.4L940.9,309ZM839.9,312.2L837.5,312.9L837.2,312.5L837.5,311.4L838.9,309.5L841.7,308.2L842.1,307.5L844.5,306.8L846.4,306.7L847.3,306.3L848.3,306.7L847.2,307.5L844.3,308.9L841.9,309.8ZM822.6,305.7L823.5,306.6L825.2,306.3L825.8,307.6L822.6,308.3L820.6,308.7L819.2,308.7L820.3,306.9L821.8,306.8ZM836.3,305.7L835.7,307.5L831.5,308.4L827.9,308L828,306.8L830.3,306.2L831.9,307.1L833.7,306.9ZM937.4,306.5L937.4,307.1L935.4,305.8L934,304.6L933.1,303.6L933.5,303.2L934.7,304L936.8,305.5ZM931.3,303.3L930.7,303.5L929.6,302.8L928.6,301.5L928.8,301L930.3,302.3ZM797.5,301.5L802.7,301.8L803.4,300.5L808.4,302.1L809.2,304.1L813.3,304.7L816.5,306.6L813.3,307.8L810.4,306.5L807.9,306.6L805.1,306.4L802.6,305.8L799.5,304.6L797.5,304.3L796.3,304.7L791.4,303.4L791,302L788.5,301.8L790.6,298.7L793.9,298.9L796,300.2L797.2,300.4ZM869.1,299.7L867.5,301.9L867.4,299.5L868,298.4L868.6,297.3L869.2,298.2ZM926.9,301.7L926.1,302L925,300.8L924,298.7L923.5,296.3L923.9,296L924.2,297L925,297.7L926.1,299.7L927.3,300.8ZM916.5,297.4L915.1,297.7L914.6,298.5L913,299.3L911.6,300.1L910.1,300.1L907.9,299.1L906.4,298.2L906.7,297.3L909.2,297.7L910.7,297.5L911.2,296L911.6,295.9L911.7,297.6L913.3,297.3L914.2,296.2L915.7,295.1L915.6,293.2L917.2,293.2L917.7,293.7L917.6,295.5ZM849,291L848,292L846.1,291.5L845.6,290.1L848.4,289.9ZM857.9,289.8L858.8,292.3L856.6,290.9L854.3,290.7L852.7,290.9L850.8,290.8L851.5,289L854.9,288.9ZM919.9,294.3L919,295.1L918.6,293.3L918,292L916.8,291L915.3,289.6L913.3,288.7L914.1,287.9L915.6,288.8L916.5,289.5L917.6,290.3L918.7,291.6L919.7,292.6ZM868.1,283.7L868.8,288.8L871.6,290.7L874,287.3L877.1,285.4L879.6,285.4L881.9,286.5L883.9,287.7L886.8,288.3L891.5,290.4L896.5,292.3L898.3,293.9L899.8,295.5L900.1,297.4L904.5,299.3L905.1,301L902.5,301.3L902.9,303.5L905.2,305.5L906.6,308.9L908.2,308.8L907.9,310.2L910,310.8L909.1,311.4L911.8,312.7L911.4,313.6L909.6,313.8L909,313L906.7,312.7L904,312.2L902.1,310.2L900.8,308.4L899.6,305.6L896.2,304.2L893.8,305.1L892,306.2L892.1,308.5L889.9,309.6L888.4,309.1L885.6,309L883.4,306.3L880.7,305.7L879.9,306.6L876.4,306.7L877.8,304.1L879.6,303.2L879.2,299.8L878,297.1L872.9,294.4L870.6,294.2L866.6,291.2L865.7,292.8L864.7,293.1L864.1,291.9L864.1,290.5L862.1,289L865.1,287.8L867,287.9L866.8,287L862.8,287L861.8,285.1L859.3,284.5L858.2,283L861.9,282.2L863.3,281.2L867.7,282.5ZM843.7,275.5L841.5,278.6L839.4,279.3L836.8,278.6L832.2,278.8L829.8,279.2L829.4,281.6L831.9,284.5L833.4,283L838.5,282L838.3,283.4L837.1,283L835.9,284.8L833.4,286L835.9,290.1L835.4,291.2L837.7,294.9L837.6,297L836.1,297.9L835,296.8L836.5,294.2L833.7,295.4L833.1,294.5L833.5,293.3L831.6,291.4L831.9,288.3L830,289.3L830.1,293L830,297.6L828.3,298L827.2,297.1L828.1,294.2L827.8,291.1L826.6,291.1L825.8,288.9L827,286.8L827.5,284.3L828.9,279.5L829.4,278.2L831.7,275.8L833.9,276.8L837.4,277.2L840.5,277.1L843.2,274.8ZM853.2,276.4L853,279.2L851.6,278.9L851.2,280.8L852.3,282.5L851.5,282.9L850.5,280.8L849.6,276.8L850.1,274.3L851,273.1L851.3,274.8L852.9,275.1ZM790,298.6L786.9,298.6L784.7,296L781.3,293.4L780.2,291.5L778.2,288.9L776.9,286.5L774.8,282.1L772.4,279.4L771.6,276.7L770.6,274.2L768.1,272.2L766.6,269.5L764.5,267.7L761.5,264.2L761.2,262.6L762.9,262.7L767.2,263.3L769.7,266.4L771.9,268.6L773.5,269.9L776.1,273.3L778.9,273.4L781.3,275.6L782.9,278.2L785,279.7L783.9,282.3L785.4,283.4L786.4,283.4L786.9,285.7L787.8,287.4L789.8,287.7L791.1,289.7L790.3,293.7ZM823.4,274.2L826.6,277.1L823.3,277.5L822.4,279.7L822.5,282.6L819.9,284.7L819.7,287.9L818.5,292.7L818.2,291.6L815,293L814,291.1L812,290.9L810.7,289.9L807.4,291L806.4,289.5L804.6,289.7L802.4,289.3L802,285.1L800.7,284.2L799.4,281.5L799,278.7L799.3,275.7L800.9,273.6L802.9,274.7L805,274.1L805.5,271.4L806.7,270.8L810,270.1L811.9,267.6L813.1,265.6L814.2,264.4L816.4,262.7L818.4,260.5L819.6,258L820.7,258L822.3,259.6L822.5,261L824.3,261.9L826.6,262.8L826.5,264.1L824.7,264.2L825.2,265.8L823.3,266.9L821.8,269.7L823.9,272.7ZM845.7,253.3L846.1,255.4L846.4,257.2L845.7,260.1L844.5,256.8L843.3,258.5L844.3,260.8L843.7,262.3L840.3,260.4L839.4,258.1L840.1,256.6L838.3,255.1L837.5,256.4L836.2,256.3L834.3,258.1L833.8,257.2L834.7,254.5L836.3,253.6L837.7,252.4L838.8,253.8L840.8,253L841.1,251.5L843.1,251.5L842.7,249L845,250.5L845.4,252.1ZM722.5,260.3L720.1,261L718.7,258.5L718,254L719,248.8L721,250.6L722.4,252.8L723.9,256.1L723.6,259.4ZM333.6,247.9L331.3,248.2L330.8,248L331.6,247.1L331.6,245.8L333.2,245.4L333.8,245.5ZM838.6,247.3L837.7,248.4L837.1,250.4L836.3,251.3L834.4,249.1L834.9,248.3L835.5,247.4L835.6,245.4L837.1,245.2L836.8,247.4L838.5,244.3ZM823.9,250.4L820.5,253.4L821.7,251.2L823.5,249.2L824.9,247L826,243.9L826.8,246.5L825.2,248.2ZM832.3,242.2L834.1,243.2L835.8,243.2L835.9,244.5L834.8,245.9L833.1,246.8L832.9,245.4L832.9,243.7ZM842.1,241.4L843.3,244.9L841.1,244.1L841.2,245.1L842.1,247.1L840.9,247.8L840.5,245.6L839.7,245.4L839.1,243.5L840.7,243.7L840.5,242.5L838.6,240.1L841.2,240.2ZM830.9,238.5L830.5,241.2L829.1,239.6L827.4,237.2L829.8,237.3ZM827.6,221.2L829.5,222.1L830.1,221.2L830.5,222.1L830.3,223.4L831.7,225.7L831.4,228.3L829.9,229.4L829.9,231.9L830.9,234.5L832.4,234.8L833.5,234.4L837.2,236.2L837.1,237.9L838.1,238.7L838,240.2L835.7,238.6L834.5,236.9L834,238.1L832,236.2L829.5,236.7L828.1,236L828.1,234.7L828.8,233.8L827.9,233.1L827.7,234.3L826.1,232.4L825.5,231L824.9,228L826.2,229L825.6,224L826,221.2ZM322.8,222L322,222.8L320,222.8L318.4,222.9L318.4,221.6L318.8,221.1L321,221.1L322.4,221.4ZM292.1,223.2L291.2,223.7L289.8,223.2L288.3,222.1L288.8,221.3L289.9,221.1L290.5,221.2L292.3,221.5L293.6,222.3L294,223.1ZM304.5,216.8L306.8,217.3L307.2,216.8L309.3,216.8L310.8,217.6L311.5,217.5L311.8,218.6L313.3,218.6L313.1,219.5L314.3,219.6L315.5,220.8L314.4,222.1L313.2,221.4L311.9,221.6L311.1,221.4L310.5,222L309.5,222.2L309.1,221.4L308.2,221.9L306.9,224.1L306.2,223.5L306.2,222.6L304.5,222.1L303.2,222.3L301.5,222.1L300.2,222.7L298.9,221.7L299.2,220.7L301.7,221.1L303.7,221.3L304.7,220.6L303.6,219.3L303.8,218L302.2,217.5L302.9,216.7ZM797.9,220.6L795.8,222.1L793.4,221.2L792.9,218.4L794,217L796.8,216.1L798.3,216.1L799.1,217.4L798.2,218.8ZM80.4,219.3L79.9,219.8L79.3,219.4L79.6,218.5L79.4,217.3L79.7,217L80.3,216.5L80.2,215.8L80.5,215.5L80.7,215.6L81.6,216.1L82,216.4L82.3,216.8L82.7,218L82.6,218.1L81.4,218.8ZM80.2,214.3L79.2,214.6L78.9,213.9L78.7,213.6L78.7,213.4L79.1,213.2L79.9,213.5L80.5,214ZM78.8,212.6L78.6,213L77.2,212.9L77.5,212.5ZM76.5,212.2L76.3,212.4L76.2,212.3L75.3,212.2L75.1,211.5L75.1,211.4L75.9,210.9L76.1,211.1ZM72.6,210.1L72.2,210.4L71.4,209.8L71.7,209.6L72.2,209.3L72.8,209.3ZM286.6,207.6L287.5,208.7L290.1,208.4L290.9,209.1L292.9,211.1L294.4,212.5L295.3,212.5L296.8,213.1L296.5,214L298.5,214.2L300.3,215.5L299.9,216.2L298.1,216.6L296.3,216.8L294.4,216.5L290.5,216.9L292.6,215.1L291.6,214.2L289.9,214L289.1,213.1L288.7,211.3L287.1,211.4L284.8,210.6L284.1,209.9L280.6,209.4L279.8,208.8L280.9,208L278.3,207.8L276.1,209.5L275,209.5L274.5,210.3L273.1,210.6L272,210.3L273.6,209.4L274.4,208.2L275.7,207.5L277.1,206.9L279.2,206.6L279.9,206.2L282.2,206.4L284.3,206.5ZM292.9,204.4L292.2,204.5L291.8,202.7L290.9,201.8L291.8,199.8L292.6,199.9L293.1,202.5ZM824.5,207.5L823.9,210.1L821.9,207.4L821,205L821.8,201.9L823.4,199.5L824.8,200.4L824.9,202.4ZM293.6,195.4L290.6,195.9L290.6,194.7L291.9,194.4L293.6,194.5ZM295.7,195.3L294.9,197.6L294.5,197.2L294.8,195.5L293.8,194.3L293.9,193.9ZM848.9,171.2L849.6,172.3L848.9,174.2L847.5,173.2L846.4,173.9L846.4,175.8L844.4,174.9L843.8,173.4L844.6,171.5L846.2,171.8L846.7,170.5ZM589.1,166.3L587.5,167.7L587.7,168.3L587.8,168.5L585.3,169.8L584,169.4L583.3,168.1L584.5,168L584.7,168L585,167.2L586.8,167.3ZM561.1,166.2L562.6,167.3L564.5,167.1L566.5,167.3L566.5,167.9L567.8,167.5L567.6,168.4L563.9,168.7L563.9,168.2L560.7,167.6ZM539.6,158.2L538.8,160.7L539.2,161.7L538.8,163.3L536.7,162.1L535.4,161.7L531.8,160.1L532.1,158.5L535.1,158.8L537.7,158.4ZM523.2,148.7L524.8,151L524.6,155.2L523.4,155L522.4,156L521.4,155.2L521.2,151.3L520.6,149.5L522,149.7ZM861.2,161.6L861.4,164.2L862.5,165.8L862.1,168L859.4,169.5L855,169.7L852.7,173.4L850.5,172.1L849.5,169.7L845.2,170.5L842.7,172L839.7,172L843.3,174.4L843.5,179.8L842.2,181.1L840.5,179.9L840.2,177L838.2,176.1L836.3,173.9L838.4,172.9L839,170.9L841,169.3L842,167.1L846.8,166.1L849.8,166.8L850.1,161.1L852.4,162.6L854.8,159.4L855.7,158.2L855.4,154.3L853.3,150.8L853.3,148.8L855.7,148.2L859.3,152.6L860.5,155.1L859.6,158.3ZM524,145.7L523.2,148.2L522.1,147.5L521.4,145.4L521.9,144.2L523.4,143ZM857.3,139.4L859.4,140L860.4,138.7L862.9,142.2L859.7,143.1L859.2,146.2L854.1,144.1L854.6,147.5L851.8,147.6L849.8,144.4L849.8,142L852.3,141.8L850.6,137.5L850,135.1L854.8,138.3ZM343.9,131.9L345.6,132.4L347.9,132.3L346.3,133.5L345.4,133.7L342.6,132.4L342.3,131.4L343.4,130.4ZM350.6,124L349.4,124.1L346.5,123.1L344.7,121.6L345.6,121.4L348.6,122.2L350.7,123.4ZM200.4,125.9L199,126.3L195.8,124.9L195.7,123.8L194.1,122.7L194.2,121.8L192,121.3L192.1,119.6L192.8,118.9L194.9,119.6L196.1,120L198.1,120.3L198.3,121.4L198.7,122.9L200.4,124.1ZM365.6,119.1L363.3,121.8L365.1,120.8L366.6,121.5L365.4,122.5L367.4,123.4L368.7,122.6L370.8,123.6L369.5,125.8L371.4,125.3L371.3,126.9L371.6,128.9L369.9,131.6L368.8,131.7L367.3,131.1L368.5,128.6L367.9,128.2L364.4,130.9L363,130.8L365,129.3L362.9,128.6L360.2,128.8L355.5,128.7L355.4,127.7L357.2,126.6L356.3,125.8L358.9,123.9L362.7,119.1L364.6,117.3L367,116.3L368,116.4L367.4,117.2ZM188.9,109L191.3,108.7L188.3,112.2L188.7,114.6L187.8,114.6L187.3,113.2L187.3,111.8L186.8,110.9L187.2,109.5L188,108.6ZM843.9,119L849.9,124.4L845.7,123.4L847.1,127.9L851.4,131L852.7,133.2L849.7,131.3L849.5,133.8L847.5,131.1L845.9,128.1L843.5,124.8L842.6,122.4L840,118.3L836.5,115.3L833.8,111.2L835,109.8L833,108.4L833.7,108L835.8,110L838.7,112.9L840.8,115.9ZM483.9,114.3L479.6,116.1L476.3,115.7L478.3,112.5L477.3,109.4L480.6,107.1L482.4,105.7L484.3,105.6L486.8,107.4L485.5,109.5L485.8,111.6ZM529.4,104.3L528.2,106.7L525.7,105L525.3,103.8L528.6,102.8ZM148.8,99.8L145.5,100.9L145,100.2L145.8,98.8L148.8,97.7L150.4,97.3L151.7,97.5L151.9,98.4ZM493.2,95.3L490.7,98.5L493,98.1L495.5,98.1L494.9,100.5L492.8,103.2L495.2,103.4L497.4,107.2L499,107.7L500.4,111.1L501.1,112.3L504,112.9L503.7,114.8L502.5,115.7L503.5,117.3L501.3,118.9L498.1,118.9L494,119.7L492.9,119.1L491.3,120.6L489.1,120.2L487.4,121.4L486.1,120.8L489.7,117.5L491.9,116.9L488.1,116.4L487.5,115.2L490,114.2L488.7,112.6L489.2,110.6L492.7,110.9L493.1,109.1L491.5,107.2L488.7,106.7L488.2,105.9L489,104.6L488.3,103.7L487,105.2L487,102.3L485.8,100.8L486.8,97.7L488.6,95.3L490.4,95.6ZM127.6,91.6L125.8,92.1L124.8,91.5L124.3,90.7L127,90.2L128.5,90.5ZM324.8,85.2L323.2,86.7L322.4,86.4L322.2,85.6L322.4,85.4L323.7,84.5L324.5,84.6ZM319.8,83.6L316.4,85.1L314.9,85.1L314.8,84.3L317.1,83L320.1,83ZM125.4,80.5L126.2,81.1L127.8,80.8L128.8,81.5L130.6,81.9L130.1,82.2L127.8,82.8L126.8,82.2L126.5,81.7L124.4,81.9L124.1,81.6ZM317.1,75.3L316.8,76.5L318.2,76.1L319,76.8L320.9,77.8L322.9,78.7L322.4,80L324.1,79.8L325.2,80.7L322.8,81.6L319.7,80.9L319.2,79.7L316.2,81.1L312.3,82.6L312.5,81L309.4,81.2L312,79.8L313.5,77.6L315.7,75.1ZM469.1,73.1L468.4,74.9L470.6,76.8L467.6,78.9L461.2,80.8L459.2,81.4L456.4,80.9L450.4,80L452.7,78.8L448.2,77.4L452.1,76.9L452.2,76.1L447.7,75.4L449.5,73.6L452.8,73.2L455.8,75.1L459.3,73.6L461.9,74.4L465.5,72.9ZM339.2,71.2L336.7,71.3L336.9,70L338.6,68.5L340.7,68.1L342,68.8L341.4,70L341,70.4ZM623.6,148.5L625.3,150.7L626.5,150.9L627.4,151.7L625.4,152L625.4,154.5L625.1,155.6L624.3,156.3L624.6,157.9L625.8,160.2L628.4,160.9L630.4,162.5L634.1,163L638,162.2L638.1,161.4L637.3,159.2L637,155.9L634.9,154.8L635.1,152.6L633.4,152.4L633.4,149.8L636,150.5L638,149.5L635.8,147.6L634.7,145.8L632.8,146.6L633,149L631.8,146.9L631.6,146.1L631.9,144.8L631.2,143.7L628.1,142.6L626.4,139.8L624.9,139L624.6,138L627.1,138.3L626.7,136L628.7,135.5L631,136L630.7,132.9L629.8,131L627.4,131.1L625.2,130.4L622.7,131.8L620.5,132.4L619.8,134.3L617.5,134.8L615.6,138L618.4,141L618.6,143.1L622,146.8ZM888.7,77.2L888.7,77.2L887.4,78.4L884.3,78.2L888,79.7L891.9,82L893.8,82.8L895.4,84L895.7,84.7L890.9,84.1L887,86.3L885.4,86.6L884.1,88.6L882.6,90.4L883.2,91.7L877.9,89.7L874.3,92L872.3,90.9L871.3,92.1L867.9,91.7L869,93.6L868.9,96.5L870.1,97.7L873.3,98.3L876.8,102.6L874.8,102.7L876,105.2L878,106.5L875.2,108L877.2,111.5L874.3,112.2L876,115.3L874.7,118.2L872.3,116.1L867.8,111.6L861.2,104.9L858.8,100.8L859.2,99.1L858.1,97.7L861.1,97L861.8,93.3L862.9,90.4L864.6,88.1L862.4,84L859.9,84.3L861,86.6L858.4,89.8L853.1,86.2L848.4,87.2L847.2,92.1L850.7,93.8L846.3,94.6L843.1,94.9L841.4,92.8L837.5,92.4L836,93.8L828.6,93.3L821.9,94.1L819.1,99.9L815.4,106.9L819.3,107.3L821.8,109.2L824.5,109.8L825,108.3L827.7,108.5L833.5,111.8L835.3,114.4L835.6,117.5L837.8,121.1L839.9,126L838.9,130.5L839.4,132.7L838.1,136.3L836.7,140L836.1,141.8L833.7,143.7L832.2,143.7L829.8,142.2L827.6,144.5L827.8,145.5L826.7,145.3L826.2,146.4L825.9,147.5L827.1,149.7L826.1,150.4L825.9,151L825.4,151.9L823.9,152.5L823.2,153.3L823.7,154.7L823.6,155L824.8,155.6L826.9,157L830.7,160.7L832.2,162.8L833.7,166.4L833.4,168.2L831.3,168.8L829.7,170.1L827.5,170.4L826.5,168.7L826.1,166.3L823.7,163L825.3,162.4L822.5,159.7L821,159.1L820.9,159.7L820.3,160L820,159.4L819.2,159.1L818.3,158.6L818.4,157.2L818.8,156.8L818.4,156.2L818.3,154.5L817.9,154L816.3,153.6L814.7,152.8L811.5,153.7L810.3,155.2L807.9,156L808.7,154.6L807.6,153.3L808.7,151.2L806.7,149.5L804.9,150.7L803,152.9L802.3,154.9L799.9,155.1L799.2,156.6L801.4,158.7L803.7,159.2L804.3,160.7L806.7,161.6L808.7,159.3L811.4,160.6L813.1,160.6L814.2,162.3L810.9,163.2L810.3,164.9L808.4,166.5L807.9,168.7L811.3,170.5L813.4,173.6L816,176.6L818.6,179L819.3,181.4L817.9,182.3L819.1,184L820.9,185L821.3,187.6L821.4,190.1L820,190.4L819,193.9L817.9,198.1L816.4,201.9L813.4,204.8L810.3,207.5L807.4,207.9L806,209.3L804.9,208.3L803.7,209.8L800.3,211.4L797.5,211.9L797.2,215.3L795.8,215.5L794.6,213.2L795.1,211.9L791.2,210.9L790.1,211.4L787,214.2L785.3,217.2L785.1,219.4L787.7,222.8L790.8,226.9L793.6,228.9L795.6,231.5L797.6,237.3L797.8,242.9L795.7,245L792.8,247.1L790.8,249.7L787.6,252.7L786.5,250.7L787.1,248.5L784.9,246.7L782.5,246.2L781.3,244.6L779.6,241.3L777,239.8L774.7,239.9L774.8,237.4L772.4,237.4L772.6,240.9L771.5,245.5L770.9,248.4L771.2,250.7L773,250.8L774.3,253.7L775,256.4L776.6,258.2L778.3,258.6L779.8,260.2L780.5,260.5L782.2,262.5L783.4,264.6L783.7,266.7L783.4,268.2L783.7,269.3L784,271.1L784.9,272L786.1,274.8L786,275.9L784.1,276.1L781.5,273.8L778.2,271.2L777.8,269.6L776.2,267.5L775.7,264.9L774.6,263.1L774.8,260.8L774.2,259.5L773,258.3L772.4,256.7L770.9,254.9L769.5,253.4L769.1,255.2L768.5,253.5L768.7,251.5L769.2,248.5L768.8,246.1L769.4,243.7L768.3,241.8L768.2,238.3L766.9,236.7L765.6,232.8L764.6,228.8L763.1,226.2L761.5,227.8L758.7,230.1L757.2,229.8L755.4,229L755.8,225.1L754.9,222.1L752.2,218.4L752.4,217.3L750.7,216.9L748.4,214.3L747.4,212.6L747,211L746.2,209.4L744.8,207.6L742.3,207.4L742.8,208.8L742.2,210.5L741,209.9L740.7,210.5L739.9,210.1L738.8,209.8L738.6,211L736.7,211L733.5,211.6L734,214L732.9,215.9L729.3,218.1L726.8,221.8L725,223.8L722.5,225.9L722.7,227.4L721.4,228.2L719.1,229.3L717.9,229.5L717.3,231.9L718.2,236L718.6,238.7L717.7,241.7L718.1,247.1L716.7,247.3L715.6,249.7L716.5,250.7L714,251.6L713.2,253.8L712.2,254.7L709.4,251.7L707.9,247.3L706.6,244.1L705.6,242.6L703.9,239.5L702.9,235.5L702.3,233.5L699.4,229.2L697.7,223L696.4,218.9L696,215.1L695.1,212.1L691.4,214L689.5,213.6L685.5,209.7L686.6,208.6L685.7,207.3L682.2,204.6L680.1,203.8L679,201.5L676.6,199.1L671.8,199.7L667.5,199.7L663.8,200.2L658.6,199.2L655.7,198.5L652.6,198.1L651,194.1L649.6,193.6L647.7,194.1L645.2,195.7L641.8,194.6L638.9,192.2L636.2,191.3L634.1,188.2L631.6,184L630.3,184.5L628.4,183.4L627.6,184.7L626,184.5L626.8,185.9L626.6,186.7L627.7,189.1L629.1,191.8L630.5,192.6L631.1,193.7L633,195L633.3,196.3L633.2,197.4L633.6,198.5L634.5,199.4L634.9,200.4L635.4,201.2L635,198.9L635.5,197.2L636.2,196.9L637.1,197.9L637.4,199.7L637,201.6L637.6,202.8L638.1,202.7L638.3,203.6L640.3,203.1L642.5,203.1L644.2,203.2L645.8,201.1L647.5,199L649,197.1L649.6,196L650,196.2L649.9,197.6L649.6,198.1L650.2,200.7L651.7,202.9L653.3,204L655.3,204.4L657,205L658.4,206.8L659.2,207.9L660.2,208.3L660.3,209L659.5,210.9L659.2,211.8L658.2,212.8L657.4,215L656.1,214.9L655.7,215.6L655.4,217.2L655.9,219.4L655.7,219.8L654.4,219.7L652.9,220.9L652.7,222.5L652.2,223.2L650.5,223.1L649.5,223.9L649.6,225.2L648.4,226.1L646.8,225.8L645.1,226.9L643.9,227.1L642,227.9L641.5,229.3L641.6,230.4L638.9,231.8L634.7,233.3L632.4,235.5L631.2,235.7L630.4,235.5L628.8,236.8L627.1,237.4L624.9,237.6L624.2,237.8L623.6,238.6L622.9,238.8L622.6,239.7L621.2,239.6L620.3,240L618.5,239.9L617.7,238L617.7,236.3L617.2,235.3L616.5,233L615.7,231.7L616.2,231.5L615.8,230L616.1,229.4L615.9,228L615.5,226.7L614.6,225.7L614.4,224.4L612.9,223.3L611.3,220.6L610.4,218L608.4,215.8L607.1,215.3L605.1,212.3L604.7,210.1L604.6,208.2L602.9,204.6L601.5,203.4L600,202.7L599,200.9L599.1,200.2L598.2,198.5L597.4,197.8L596.2,195.4L594.3,192.8L592.8,190.6L591.5,190.6L591.8,188.9L591.8,187.8L592,186.5L591.9,186L591.3,187.3L590.9,189.7L590.3,191.4L589.7,192L588.8,190.9L587.5,189.5L585.2,184.9L585,185.2L586.3,188.6L588.2,191.8L590.6,196.8L591.7,198.5L592.7,200.3L595.3,203.9L594.8,204.4L595.1,206.5L598.4,209.4L598.9,210L600,213.1L599.4,213.7L600,217L601.2,220.8L602.3,221.6L603.8,222.8L605.6,226.5L606.5,229.4L608.1,230.9L611.9,234L613.5,235.8L615.1,237.6L616,238.7L617.3,239.7L618,240.6L618,242L616.5,242.7L617.7,243.6L618.6,244.2L619.2,245.5L620.5,246.8L621.8,246.8L624.4,246L627.3,245.6L629.7,244.7L631,244.4L632,243.9L633.5,243.8L634.4,243.7L635.6,243.2L637.1,242.9L638.3,241.8L639.3,241.8L639.4,242.7L639.3,244.5L639.4,246.2L638.8,247.3L638.2,250.8L637,254.3L635.4,258.4L633.2,263L630.9,266.6L627.7,270.9L625,273.5L620.9,276.7L618.4,279.1L615.4,282.9L614.7,284.6L614.1,285.3L612.2,286.6L611.5,287.9L610.5,288.2L610.1,290.4L609.2,291.7L608.6,293.8L607.5,294.8L606.2,298.8L606.3,300.6L608,301.7L608.1,302.5L607.3,304.5L607.4,305.4L607.2,306.9L608.1,308.9L609.1,312.1L610.1,312.8L610.5,314.2L610.3,317.4L610.5,320.2L610.4,325.1L610.8,326.7L609.9,329L608.7,331.2L606.9,333.1L604.3,334.4L601.2,335.9L598,339.3L596.9,339.9L594.9,342.2L593.7,342.9L593.4,345.2L594.5,347.6L594.9,349.5L594.9,350.4L595.4,350.3L595.1,353.4L594.6,354.9L595.1,355.4L594.7,356.8L593.5,357.9L591.2,359L587.9,360.7L586.6,361.9L586.7,363.2L587.4,363.5L587.1,365.1L586.2,367.5L585.7,370.1L584.9,371.6L583,373.2L582.4,373.7L581.2,375.3L580.3,376.9L578.7,379.2L575.5,382.5L573.5,384.4L571.4,385.9L568.6,387.1L567.3,387.3L566.9,388.2L565.3,387.7L564,388.3L561.2,387.7L559.6,388.1L558.6,387.9L555.8,389.2L553.6,389.7L551.9,390.9L550.7,391L549.7,389.8L548.8,389.8L547.8,388.3L547.6,388.8L547.3,387.9L547.4,386.1L546.7,383.9L547.6,383.3L547.6,380.9L546,377.9L544.9,375.2L544.8,375.2L543.1,371L541.2,368.6L540.3,366.3L539.8,363.1L539.2,360.8L538.5,355.9L538.5,352.1L538.2,350.3L537.2,349L535.9,346.4L534.6,342.6L534,340.6L531.9,337.4L531.8,335L531.5,333L531.9,330.2L532.9,327.3L533.1,325.9L534,323L534.7,321.7L536.3,319.7L537.2,318.2L537.5,315.9L537.4,314.1L536.6,312.9L535.8,311L535.2,309.1L535.4,308.5L536.2,307.2L535.4,304.1L534.9,302L533.5,300L533.8,299.4L533.4,298.4L532.7,296L530.4,292.6L527.6,289.4L525.8,286.8L524.1,283.5L524.2,282.5L524.8,281.5L525.5,279.1L526,276.8L525.5,276.3L526.5,272.7L526.9,270.2L525.8,268.1L524.5,267.6L524,266.2L523.3,265.7L523.3,264.8L520.5,266L519.4,265.8L518.4,266.5L516.2,266.5L514.7,264.5L513.8,262.2L511.8,260.1L509.8,260.1L507.4,260.1L505.1,260.5L502.9,261.2L498.6,263L497.1,264.1L494.6,265L492.2,264.1L490.9,264.2L489,263.6L487.3,263.6L484,264.1L482.1,265.1L479.4,266.2L478.9,266.1L478.1,266.2L475.3,264.7L472.8,262.2L470.5,260.5L468.7,258.5L467.9,258.2L466,256.9L464.6,255.2L464.1,254.1L463.8,251.7L462.6,249.8L461.5,248.6L460.9,248.2L460.2,247.6L459.9,246.1L459.5,245.4L458.7,244.9L457.3,243.6L456.1,243.4L455.5,242.5L455.5,242L454.7,241.3L454.6,240.7L454.1,238.2L454.5,236.8L453.4,234.3L452.1,233.2L453.3,232.6L454.7,230.4L455.4,228.7L455.2,227L456,225.4L456.4,222.4L456.1,219.3L455.9,217.7L456.2,216.1L455.5,214.6L454.1,213.2L454.3,211.9L454.5,210.4L455.5,209.5L456.4,207.8L456.3,206.8L457.3,204.5L458.9,202.5L459.8,202L460.5,200.1L460.6,198.4L461.7,196.4L463.5,195.2L465.2,192L466.7,190.7L469.1,190.4L471.3,188.2L472.6,187.3L474.9,184.7L474.3,180.7L475.4,177.9L475.8,176.2L477.5,174.1L480.1,172.6L482.1,171.3L483.9,168L484.7,166L486.6,166L488.2,167.4L490.6,167.2L493.3,167.9L494.4,167.9L496.9,166.2L499.7,165.6L501.3,164.3L503.8,163.3L508.1,162.8L512.4,162.5L513.7,163L516,161.7L518.8,161.7L519.8,162.4L521.6,162.3L524.3,161L526.2,161.3L526.1,163L528.3,161.8L528.5,162.4L527.2,164L527.3,165.4L528.2,166.2L527.9,169L526.3,170.6L526.8,172.3L528.2,172.4L528.9,173.9L529.9,174.4L533,175.5L534.1,175.2L536.3,175.8L539.8,177.2L541.1,180L543.5,180.7L547.2,182L550.1,183.6L551.3,182.8L552.5,181.3L551.8,178.8L552.5,177.3L554.3,175.8L556.1,175.3L559.6,176L560.6,177.4L561.6,177.4L562.5,178L565.1,178.4L565.8,179.4L569.3,179.4L571.8,180.2L574.5,181.2L575.8,181.7L577.7,180.6L578.7,179.7L581,179.5L582.9,179.9L583.7,181.5L584.2,180.4L586.4,181.2L588.5,181.3L589.7,180.5L590.3,179.5L590.1,179.3L590.7,177.8L591,175.4L591.3,174.6L591.4,174.6L592,172L593.1,169.7L593.1,169.6L592.6,167.1L593.1,165.8L592,164.4L592.8,163.2L591.3,163.5L589.1,162.7L587.5,164.6L583.6,164.9L581.4,163.2L578.6,163.1L578.1,164.4L576.4,164.8L573.8,163.1L571,163.2L569.2,160L567.1,158.2L568.2,155.8L566.4,154.2L568.9,151.2L572.8,151.1L573.6,148.7L578.5,149.1L581.3,147.1L584.1,146.2L588.2,146.1L592.9,148.3L596.7,149.5L599.5,149.1L601.7,149.3L604.5,147.7L604.6,146.3L603.7,144.2L602.1,143L600.6,142.7L599.6,141.7L596,139L593,137.9L590.6,136L592.3,135.5L593.9,132.9L592.3,131.7L595.7,130.4L595.6,129.7L593.4,130.2L591.5,130.5L590.1,131.5L587.8,131.6L585.9,132.8L586.3,134.7L587.6,135.5L590.1,135.3L589.8,136.4L587.1,137L584,138.8L582.6,138.1L582.9,136.7L580.1,135.8L580.5,135.2L582.7,134.1L581.9,133.4L577.9,132.6L577.6,131.4L575.4,131.8L574.7,133.5L573.1,135.9L573.2,136.7L572.1,137.3L571.3,137L571.1,140.8L569.9,142.1L569.2,144.4L570.2,146.2L570.7,147.4L573,148.4L572.6,149.2L569.6,149.4L568.6,150.4L566.7,152.1L565.8,150.6L565.7,149.9L564.2,149.8L562.8,149.5L559.9,150.4L561.8,152.2L560.5,152.7L559.1,152.7L557.6,151L557.2,151.7L557.9,153.6L559.3,155.1L558.4,155.8L560,157.3L561.3,158.2L561.5,160L559,159.2L559.9,160.8L558.3,161.1L559.5,163.9L557.8,164L555.6,162.6L554.5,160L553.9,157.9L552.8,156.5L551.3,154.6L551.1,153.7L550.6,153.5L550.6,152.8L549.1,151.7L548.8,150.2L548.8,148.1L549.1,147.1L548.6,146.6L548.1,146.4L547.3,145.3L546.2,144.7L543.7,143.5L542.2,142.4L539.9,141.5L537.7,139.1L538.1,138.9L536.9,137.6L536.8,136.5L535.2,136L534.5,137.4L533.7,136.3L533.7,135.3L533.8,135.2L534.4,134.9L532.4,134.5L530.4,135.6L530.6,137.1L530.4,138L531.3,139.6L533.7,141.2L535.1,143.8L538,146.4L540,146.3L540.6,147L539.9,147.7L542.3,148.8L544.2,149.8L546.4,151.4L546.8,152L546.4,153.1L544.9,151.7L542.6,151.1L541.7,153.2L543.6,154.4L543.4,156L542.3,156.2L541.1,158.9L540.1,159.2L540,158.2L540.5,156.5L541,155.8L539.9,154L539,152.4L537.9,152L537.1,150.6L535.5,150.1L534.3,148.8L532.4,148.6L530.4,147.1L528,145.1L526.3,143.3L525.4,140.2L524.1,139.8L522,138.8L520.9,139.2L519.5,140.6L518.5,140.9L516.3,142.7L511.4,141.8L507.7,142.8L507.5,144.7L507.6,146.6L505.3,148.7L502,149.3L501.8,150.4L500.3,152.2L499.3,154.7L500.3,156.6L498.8,158L498.3,160L496.3,160.7L494.5,163.1L491.2,163.2L488.8,163.1L487.2,164.2L486.2,165.4L484.9,165.2L484,164.1L483.3,162.3L480.9,161.8L479.8,162.6L478.5,162.1L477.2,162.5L477.6,160L477.5,158.1L476.3,157.8L475.7,156.6L476,154.5L477.1,153.3L477.3,152L477.9,150.1L477.9,148.8L477.4,147.7L477.3,146.6L477.5,144.3L476.5,143L480.1,140.7L483.2,141.3L486.5,141.3L489.2,141.8L491.2,141.6L495.3,141.7L496.6,139.8L497.1,133.6L494.6,130.3L492.8,128.8L489.1,127.6L488.9,125.3L492,124.6L496.1,125.4L495.3,121.9L497.6,123.3L503.2,120.9L503.9,118.4L506,117.7L507.9,117.1L509.1,116.3L511.1,111.8L514.3,110.6L516.3,110.6L516.7,110L518.6,109.8L519.1,110.5L520.6,109L520.1,107.9L519.9,106.2L518.8,104.5L518.6,101.5L519,100.7L519.6,99.8L521.6,99.6L522.4,98.8L524.2,98L524.2,99.5L523.6,100.5L523.9,101.3L525.2,101.7L524.7,102.9L524,102.5L522.4,104.7L523.1,106.1L523.2,107.3L525.6,108L525.7,109.1L528,108.5L529.3,107.7L532,108.9L533.2,109.8L534.7,108.9L538.2,107.5L541.1,106.5L543.5,107L543.7,107.8L546,107.8L546.4,106.5L549.5,105.5L548.7,103L548.5,100.8L549.4,98.9L551.5,97.9L553.6,100.1L555.4,100.1L555.5,97.8L555.6,96.1L554.8,96.4L553.2,95.4L552.8,93.7L555.5,92.9L558.3,92.5L560.8,93L563.1,92.9L565.4,91.3L562.8,89.9L558.8,90.1L555,91.2L551.5,91.8L549.9,90.2L547.7,89.3L547.8,86.4L546.4,83.9L547.2,82.2L548.9,80.4L553.4,77.4L554.8,76.8L554.4,75.6L551.2,74.3L547.6,75.1L545.8,77.1L546.4,78.8L543.2,81L539.3,83.5L538.1,87.5L539.9,89.5L542.2,91.1L540.5,94.4L538.2,95.1L537.8,100L536.7,102.8L533.9,102.5L532.8,104.9L530.1,105L529.1,102.2L527,98.8L525,94.7L523.4,92.9L519.1,96.3L516.1,97L512.9,95.5L512,92.3L511,85.7L513,83.9L518.7,81.5L522.8,78.6L526.5,74.7L531.1,69.4L534.4,67.3L539.7,64L544.1,62.8L547.5,62.9L550.2,60.7L554,60.9L557.5,60.3L564.4,62.3L561.9,63L564.5,64.7L566.4,63.7L570.2,65.4L576.1,66L584.8,69.1L586.8,70.3L587.5,72.2L585.5,73.6L582.2,74.4L572.1,72.3L570.7,72.6L574.6,74.6L575.8,78.8L578.8,79.6L580.7,80.4L580.7,79L579,77.8L580.2,76.7L585.8,78.5L587.5,77.8L585.5,75.8L589.8,73L591.8,73.2L594,74.2L594.7,72.3L592.5,70.6L593,69L591,67.3L597.1,68.2L598.8,69.7L596.2,70.1L596.7,71.6L598.7,72.5L601.8,71.9L601.7,70.2L605.7,68.9L612.2,66.5L613.8,66.7L612.3,68.3L615,68.6L616.2,67.7L620.1,67.6L622.7,66.5L625.8,68.1L627.4,66.3L624.6,64.8L625.3,63.9L631.8,64.7L635,65.5L644,68.6L644.8,67.2L641.9,65.8L641.6,65.2L639,64.9L639.1,63.7L637,61.6L636.5,60.7L639,58.4L639.1,56L640.3,55.5L646,56.2L647.3,57.6L646.5,59.7L648.2,60.6L649.8,62.4L651.3,66.1L654.4,67.8L654.4,69.6L652.2,73.5L654.8,73.9L655.2,72.9L657.2,72.2L657.1,70.8L658.2,69.5L656.2,68L656.3,66.2L653.9,66L652.6,64.5L652.8,61.8L649,59.6L651.6,57.9L650.1,56L651.1,56L653,57.4L653.6,59.9L656.1,60.4L654.1,58.5L656.9,57.5L661,57.4L665.6,58.8L662.5,56.7L660.6,53.9L663.7,53.4L668.6,53.5L672.7,53.2L670.1,51.9L671.2,50.2L673.4,50.1L676.3,48.9L681.2,48.6L681.3,47.9L686.3,47.7L688.3,48.2L691.6,46.9L695.2,46.9L694.8,45.9L695.7,44.9L699.2,43.9L703.3,44.6L701.2,45.2L705.9,45.6L707.6,46.8L708.8,46.2L714.5,46.3L720,47.5L722.5,48.4L723.2,49.7L721.8,50.4L717.8,51.8L717,52.6L719.8,52.9L723.3,53.6L724.7,53.1L727.1,54.7L727.4,54.1L730.3,53.7L737,54.1L738.6,55.3L747.4,55.7L745.6,53.7L750.3,54.1L753.5,54.1L758.1,55.5L760.6,57.2L760.5,58.2L765,60.3L769.3,61.4L768.5,58.6L773,59.8L775.7,59.1L780.5,59.9L781.2,59.2L785,59.5L781,57.1L782.4,56L802.5,57.7L806,59.2L813.6,61.2L821.3,60.7L825.9,61.2L828.8,62.3L830.8,64.2L834.3,65L836.4,64.4L840,64.4L844.5,64.9L848.1,64.6L854.6,67L856.1,66.1L852.4,64.4L851.9,63.2L859.4,64L863.5,63.8L871.1,65.1L875.5,66.3L888.7,77.2ZM124.5,66.3L124.5,66.3L124.5,66.3L127.1,68.3L129.4,71L127.2,72.7L127.8,73.4L129.6,71.4L134.9,71.8L136.2,74.4L132.7,75.6L128.8,75.9L125.7,78.6L124.2,79.2L122.3,79.1L121.7,78.2L119.7,77.4L120.7,76.1L119,75.7L116.1,76L116.1,75.1L117.8,74L114.4,74.7L113.9,76L111.3,77.2L111.3,77.2L124.5,66.3ZM300.8,65.9L298.8,66.8L296.6,66L294.7,66.3L292.7,65.1L295.1,64.3L297.3,63.1L299,63.9L299.9,64.3L300.2,64.8ZM867.8,60.3L869,61.3L866.9,61.4L865.5,60.6L866.6,59.5L867.8,60.3ZM133.4,59.5L133.4,59.5L133.4,59.5L132.2,60.3L133.4,59.5ZM133.4,59.5L133.8,59.4L135.5,59.4L137.5,60.1L136.8,60.5L133.9,61.1L131,61.3ZM312.1,64.8L310.3,67.6L314.4,65.5L315.8,67.2L314,69.2L314.9,71.1L318.3,69.1L321.2,66.7L323.1,63.8L325.9,64L328.8,64.4L330.8,65.7L330.1,67.1L327.8,68.5L328.4,70L327.4,71.3L322.2,73.2L319,73.6L317.2,72.8L315.8,74.2L312.4,76.5L311.1,77.8L307.5,79.7L304.3,79.8L301.9,81L300.7,82.9L297.9,83.2L293.9,85.5L289.7,88.8L287.5,91L285.5,94.4L288.6,94.9L288.2,97.6L288.1,99.9L291.6,99.3L295.2,100.6L297,101.7L298,103.1L300.5,103.9L302.4,105.2L306.1,105.3L308.5,105.6L307,108.2L306.5,111.3L306.8,114.7L309.2,117.6L311.4,116.6L313.9,113.4L314.6,108.7L313.6,107.1L317.9,105.7L321.4,103.6L323.6,101.5L324.2,99.5L323.7,97L321.9,94.8L326,91.8L326.2,89.2L327.6,84.7L329.5,84L332.9,84.8L335,85.1L337.2,84.3L338.8,85.3L340.8,87L341,88.1L344.9,88.3L343.8,90.7L343.1,94.4L344.9,94.8L345.9,96.6L349.8,94.9L353.2,91.7L355.2,90.4L356,93L357.6,96.7L358.9,100.2L357.4,102.1L359.9,103.8L361.4,105.5L364.9,106.2L366.1,107.2L366.3,109.7L368,110.1L368.6,111.3L367.8,114.7L365.8,115.8L363.8,116.9L359.6,118L355.8,120.5L351.6,121L346.7,120.4L343.1,120.3L340.6,120.6L337.9,122.8L334.4,124.1L329.6,128.2L325.9,131.1L328.1,130.6L333.3,126.5L339.1,123.9L342.9,123.6L344.5,125.1L341.7,127.2L341.5,130.6L341.6,132.9L344.4,134.5L348.6,134L352,130.5L351.6,132.8L352.9,133.9L349.3,135.9L343.4,137.8L340.6,139.1L337.2,141.3L335.4,141.1L336,138.5L341,135.9L337,136L334.1,136.3L334.3,137.4L331.2,138.9L328.4,140L325.5,140.9L323.5,143L323.1,143.5L322.6,145.2L323,146.8L324,146.9L324,145.8L324.6,146.5L324.2,147.4L322.3,147.9L321.2,147.8L319.2,148.4L318,148.5L316.5,148.7L314.2,149.6L318,149L318.6,149.6L314.8,150.5L313.2,150.6L313.4,150.2L312.4,151L313.1,151.2L312,153.5L309.5,155.9L309.5,155.1L309,154.9L308.4,154.1L308.5,155.8L308.9,156.4L308.7,157.6L307.6,158.9L305.5,161.4L305.3,161.3L306.6,159.1L305.6,157.9L306,155.2L305.2,156.6L305.2,158.6L303.7,158.2L305.1,159.2L304.5,162.2L305.2,162.4L305.2,163.5L304.8,166.7L302.6,169.1L299.7,170L297.6,171.9L296.2,172.1L294.7,173.3L294.1,174.3L290.7,176.4L288.9,177.9L287.3,179.8L286.4,182.1L286.4,184.3L286.7,187.1L287.5,189.3L287.2,190.7L287.8,194.4L287.3,196.6L287,197.8L286,199.8L285.1,200.2L283.9,199.8L283.7,198.4L282.8,197.6L281.9,194.9L281.1,192.5L281,191.2L281.9,189.1L281.5,187.3L280,184.6L279.1,184.1L276.2,185.6L275.7,185.4L274.8,183.9L273.3,183.2L270.2,183.6L268,183.2L265.9,183.4L264.7,183.9L265,184.8L264.7,186.1L265.1,186.7L264.5,187.1L263.6,186.7L262.5,187.3L260.6,187.2L259,185.5L256.7,185.9L254.9,185.1L253.2,185.4L250.8,186.1L247.9,188.5L245,189.9L243.2,191.4L242.2,192.8L241.7,195L241.5,196.6L241.8,197.6L241.8,197.7L241.8,197.7L240.2,200.4L239.3,202.8L238.3,207L237.7,208.6L237.9,210.3L238.5,211.9L238.6,214.4L240,216.7L240.3,218.6L241.2,220.1L243.9,221L244.8,222.3L247.3,221.4L249.4,221.1L251.5,220.5L253.3,220L255.2,218.7L256.1,216.8L256.7,214.1L257.3,213.2L259.3,212.4L262.3,211.6L264.6,211.7L266.3,211.5L266.8,212.1L266.5,213.7L264.8,215.6L263.9,217.5L264.3,218.1L263.7,219.5L262.7,221.9L262.1,221.1L261.5,221.2L261.5,221.6L262,221.7L261.8,222.5L261.2,223.9L261.4,224.4L261,225.5L261.1,225.8L260.6,227.5L260,228.3L259.5,228.4L258.8,229.5L259.6,230.1L259.9,229.6L260.7,230L260.9,230.1L261.6,229.6L262.4,229.5L262.6,229.8L263,229.6L264.3,229.9L265.5,229.8L266.4,229.5L266.8,229.1L267.6,229.3L268.3,229.5L269,229.4L269.5,229.2L270.7,229.6L271.2,229.7L271.9,230.3L272.6,231L273.6,231.5L274.2,232.3L273.9,232.6L273.7,233.4L273.9,234.5L273.2,235.6L272.7,236.9L272.5,238.3L272.6,239.1L272.6,240.5L272.1,240.9L271.7,242.2L271.9,243.1L271.2,243.9L271.3,244.7L271.7,245.3L272.2,247L273.2,248.3L274.4,249.6L275.3,250.8L275.2,251.4L276.3,251.6L276.6,251.3L277.3,252.1L278.6,251.9L279.9,251.1L281.6,250.4L282.5,249.5L284,249.7L283.9,250L285.4,250.1L286.6,250.6L287.5,251.6L288.4,252.5L289.9,252.6L292,250.3L293.2,250L293.3,249L293.9,246.3L295.6,244.8L297.3,244.7L297.6,244.1L299.7,244.3L301.9,242.7L303.1,242L304.5,240.5L305.4,240.7L306.1,241.5L305.5,242.6L305.4,243.3L303.7,243.7L304.5,245.2L304.4,246.8L303.1,248.7L304,251.2L305.2,251L305.9,248.7L305.1,247.6L305.1,245.2L308.6,243.9L308.3,242.4L309.4,241.4L310.2,243.6L312.1,243.6L313.8,245.4L313.8,246.5L316.3,246.5L319.2,246.2L320.7,247.6L322.8,248L324.3,247L324.4,246.2L327.8,246L331.1,246L328.7,246.9L329.6,248.4L331.7,248.6L333.7,250.2L334.1,252.8L335.5,252.7L336.5,253.4L338.3,254.6L339.9,256.7L339.9,258.3L341,258.4L342.4,259.9L343.4,261L346.7,261.7L347,261.1L349.2,260.9L352.1,261.7L353.1,262.1L355.1,262.8L357.9,265.5L358.3,266.8L359.3,266.7L359.9,268.4L361.4,274L362.9,274.5L362.9,276.7L360.9,279.3L361.7,280.3L366.6,280.7L366.7,283.9L368.7,281.8L372.2,283L376.8,284.9L378.1,286.8L377.7,288.5L380.9,287.6L386.2,289.2L390.3,289.1L394.4,291.8L398,295.3L400.1,296.2L402.4,296.4L403.4,297.4L404.4,301.4L404.9,303.3L404,308.6L402.6,310.6L398.9,315.1L397.3,318.7L395.4,321.4L394.7,321.5L394,323.8L394.5,329.8L394,334.7L393.8,336.8L393.1,338.1L392.8,342.3L390.4,346.5L390.2,349.8L388.1,351.2L387.6,353.1L384.7,353.1L380.6,354.3L378.8,355.7L375.9,356.7L373,359.2L371.1,362.4L371,364.8L371.6,366.5L371.5,369.8L371.1,371.3L369.4,373.1L367.2,378.7L365.3,381.2L363.7,382.7L362.9,385.8L361.5,387.6L360.7,389.6L358.1,391.4L356.1,390.8L354.7,391.1L352.1,389.7L350.3,389.8L348.5,388.1L348.6,389.7L352.3,392.5L352.4,394.7L354.2,396L354.4,397.6L352.7,401.7L349.2,403.4L344.2,404.1L341.4,403.7L342.3,405.6L342.3,408L343.1,409.6L341.9,410.7L339.4,411.2L336.7,410L335.9,410.8L337,414L339,414.9L340.1,413.9L341.2,415.6L339.2,416.5L337.6,418.5L338.1,421.7L337.9,423.3L335.6,423.3L334.1,424.9L334.1,427.3L337.1,429.6L339.6,430.2L339.6,433L337.3,434.7L336.8,438.3L335,439.6L334.5,441L336.3,444.2L338.5,445.9L337.4,445.8L335.3,445.8L334.4,446.5L332.7,447.6L333.3,450.4L332.3,450.5L329.3,449.5L325.8,447.4L322.3,445.7L320.8,443.7L320.8,441.9L318.9,439.9L316.8,434.7L316.8,431.7L318.6,429.3L314.6,428.4L316.1,425.6L315.3,420.4L318.4,421.5L317.9,415L316,414.2L316.3,418.1L314.6,417.6L314.1,413.1L313.4,407.3L314,405.1L312.5,402L311.5,398.4L312.5,398.3L312.9,393.2L313.6,388.1L313.8,383.3L312.3,378.5L312.6,375.9L311.5,371.9L312.4,368L311.9,361.8L311.8,355.2L311.8,348.1L311,342.8L309.9,338.3L307,336.5L306.6,335.2L300.9,332L295.7,328.5L293.5,326.6L292.1,323.9L292.5,323L289.8,318.8L286.7,313L283.8,306.6L282.6,305.2L281.6,302.8L279.4,300.8L277.4,299.5L278.2,298.1L276.8,295L277.6,292.8L279.7,290.8L281.1,288.4L280.5,287L279.5,288.5L277.8,287.1L278.4,286.2L277.9,283.4L278.8,282.9L279.4,280.9L280.4,278.9L280.2,277.6L281.7,276.9L283.6,275.6L283.2,274.6L284.3,274.4L284.2,272.8L284.8,271.7L286.2,271.4L287.4,269.4L288.5,267.8L287.5,267L288,265.2L287.5,262.3L288.1,261.4L287.8,258.8L286.8,257.1L285.9,256.1L285.4,254.4L286.1,253.6L285.4,253.4L285,252.3L283.7,251.4L282.5,251.6L281.8,252.7L280.7,253.5L280.1,253.6L279.8,254.3L281,256L280.2,256.4L279.8,256.9L278.5,257.1L278.2,255.2L277.8,255.7L276.9,255.5L276.4,254.2L275.3,254L274.6,253.7L273.4,253.7L273.3,254.4L273,253.9L271.6,253.2L271.1,252.5L271.4,252L271.3,251.3L270.6,250.5L269.6,249.9L268.7,249.5L268.6,248.5L267.9,248L268,248.9L267.4,249.6L266.8,248.8L266,248.5L265.7,247.8L265.7,246.8L266.2,245.8L265.4,245.4L266.1,244.8L265.2,243.8L264.1,242.5L263.6,241.4L262.5,240.4L261.3,239L261.6,238.5L262,239L262.2,238.7L261.9,237.8L261.1,237.5L260.7,238.2L259.1,238.2L258.2,237.9L257.1,237.2L255.6,237L254.9,236.4L253.6,235.8L251.9,235.7L250.7,235.1L249.4,233.8L246.7,230.4L245.4,229.3L243.3,228.5L241.8,228.7L239.4,229.9L238,230.2L236.2,229.4L234.3,228.8L231.9,227.3L229.9,226.9L227.1,225.4L225,223.9L224.5,223L223,222.8L220.4,221.8L219.5,220.4L216.9,218.6L215.9,216.6L215.5,215L216.5,214.7L216.3,213.8L217.1,213L217.3,211.9L216.7,210.4L216.7,209.1L216.1,207.5L214.4,204.4L212.2,201.9L211.4,199.9L209.4,198.6L209.1,197.8L210,195.8L208.8,195.1L207.6,193.5L207.5,191.3L206.1,191L205,189.3L204.2,187.8L204.4,186.8L203.7,184.4L203.4,181.9L203.8,180.7L202.3,179.4L201.4,179.6L200.2,178.7L199.4,180L199.3,181.5L198.9,183.9L199.4,185.2L200.7,187.4L201,188.2L201.3,188.4L201.4,189.5L201.8,189.5L201.8,191.5L202.4,192.3L202.7,193.5L204,195.1L204.1,198.1L204.6,199.5L205,201L204.7,202.7L206,202.8L206.8,204.2L207.4,205.7L207.3,206.2L205.9,207.4L205.4,207.4L205.1,205.4L203.7,203.6L202.2,202.1L201,201.3L201.6,198.9L201.6,197.2L200.6,196.2L199.1,194.8L198.7,195.2L198.2,194.4L196.8,193.6L195.7,191.7L196,191.5L197,191.7L198.3,190.5L198.8,189L197.4,186.7L196.1,185.9L195.7,183.9L195.4,181.8L194.9,179.2L194.8,176.3L194.9,174.7L193.8,172.9L192.7,172.5L192.8,171.6L191.4,171.4L190.7,170.5L188.4,170.2L188,169.7L188.3,168L187,164.8L186.5,160.3L186.9,159.6L186.2,158.5L185.3,155.9L186.1,153.3L185.5,151.6L187.2,148.9L188.4,146.2L188.7,143.8L191.1,140.8L194.5,135.1L196.3,131L196.9,128.3L197,126.9L197.6,126.3L200.6,127.3L200.3,130.2L201.3,129.4L202.3,126.9L202.9,124.3L202.5,124.3L199.6,121.3L198.7,120L195.1,118.7L195.4,116L196.9,114.1L194.7,112.8L195.9,110.4L194.5,108.2L195.5,106.7L195,105.5L193.6,104.6L194.8,102L193.6,99.6L194.4,96.8L192.4,96.6L188.8,96.6L186.8,95.7L184.6,92.7L182.9,92.1L179.8,91.1L176.5,91.4L173.2,90L171.6,88.8L168.6,89.4L167.3,91.4L165.9,91.6L162.7,92.2L159.9,93.2L156.9,93.8L158,92.1L161.6,89.3L164.8,88.4L164.8,87.7L160.5,89.3L157.2,91.2L152.2,93.2L152.5,94.7L148.6,96.8L145,98L142,98.9L140.3,100.2L135.3,101.7L133.4,103.1L129.6,104.4L128.2,104.2L125.3,105L122.1,106L119.3,107L114.6,107.9L114.7,107.4L118.4,106L121.5,105L125.4,103.4L128.5,103.1L130.7,101.9L135.5,100.1L136.5,99.5L139.1,98.5L141.5,96.2L144.2,94.5L140.8,95.4L140.5,94.9L138.3,95.9L138.2,94.5L136.6,95.5L137.1,94.1L133.7,95.2L132.4,95.2L133.8,93.5L135.2,92.4L134.7,91.4L131.3,91.9L130.7,90.6L129.8,89.9L131.4,88.3L130.9,87L133.5,85.4L136.9,83.8L139.2,82.3L141.2,82.1L142.2,82.6L145.4,81.2L146.7,81.5L149.3,80.6L150.2,79.3L149.5,78.8L152.2,77.7L150.8,77.8L147.9,78.4L146.6,79L145.5,78.4L142.1,78.7L139.7,78L140,76.9L139,75.3L143.3,74.1L149.6,72.8L151.3,72.8L149.5,74.1L154.2,74L154.3,72.3L152.8,71.3L152.9,69.9L152.1,68.8L150.3,67.9L153.1,66.5L156.9,66.4L160.9,65.2L162.9,63.9L166.5,62.6L168.9,62.3L174.1,61.1L175.8,61.3L180.6,59.9L183,60.4L183.2,61.6L184.7,61.1L188,61.3L187.2,61.9L189.8,62.3L192.2,62.1L195.6,62.9L199.3,63.2L200.5,63.5L203.7,63.1L206.1,63.9L207.9,64.2L211.2,64.9L213.2,66.2L215.1,66.4L218,65.3L221.3,64.5L224.1,64.8L228.3,63.6L232.3,63L232.7,64.1L234.8,63.4L236.4,62.2L237.6,62.5L238.9,64.9L243.3,63.1L241.8,65.1L244.7,64.6L246.2,63.9L248.6,64L250.8,65.1L254.8,66.1L257.3,66.6L259.5,66.4L261.2,67.8L257.2,69.1L260.5,69.7L266.5,69.4L268.6,68.9L269.7,70.6L273,69.2L271.7,68L273.7,67.1L276.4,67L278.3,66.7L279.5,67.3L280.5,68.8L283,68.6L285.9,69.8L289.4,69.4L292.5,69.5L293.4,67.8L295.6,67.3L298.2,68.2L296.5,70.8L299.3,68.6L300.9,68.7L303.6,66L302.5,64.3L300.8,63.2L303.1,60.3L306.8,58.4L309.2,58.8L310.5,60L311.2,63L308.5,64.3ZM271.1,55.3L269,56.5L274.2,55.7L275.8,57L279.2,55.7L280.4,56.5L279.9,59.1L281.8,58L282.6,55.4L284.7,55L286.3,55.4L287.7,56.4L287,59L286.2,60.8L288.6,62.2L291.4,63.4L290.3,64.6L286.8,64.8L287.4,65.8L285.9,66.8L282.5,66.4L279.4,65.7L276.9,65.8L272.3,66.8L265.7,67.2L262.7,67.4L262.6,66.1L260.4,65.4L258.3,65.7L257.5,63.6L259.1,63.3L262.7,62.8L265.5,63L268.5,62.5L265.1,61.9L260.5,62.1L257.6,62L257.4,61.1L263,60L259.9,60L256.9,59.3L260.4,57.4L262.7,56.4L269.5,54.8ZM291.1,54.5L287.9,56.2L286.3,54.4L287.3,54L290,53.9ZM346.9,55.3L346.7,56L344.6,56L342.4,55.9L340,56.3L339.5,56.1L338.2,54.7L338.8,53.8L339.9,53.6L344.3,53.9ZM326.5,55.2L327,56.8L330.2,54.7L336,53.7L337.7,56.3L336.4,58L340.9,57.3L343.4,56.2L347.1,57.6L349.2,58.8L348.8,60L352.9,59.4L354.2,61L358.6,62.1L359.8,63.2L360.6,65.7L356.2,66.9L360.3,68.7L363.3,69.3L365.3,71.8L368.6,72L367.1,73.9L362,77.1L359.8,75.9L357.6,73.3L354.7,73.6L353.7,75.2L355.3,76.8L357.6,78.1L358.2,78.9L358.5,81.6L356.9,83.7L354.4,82.9L349.9,80.7L352,83.1L353.5,84.8L353.5,85.8L348,84.7L344,83L341.9,81.6L343.1,80.8L340.5,79.4L338,78L337.6,78.8L331.1,79.3L329.8,78.3L332.2,76.3L336.3,76.2L340.9,75.9L340.7,74.9L342.1,73.5L346.2,70.8L346.2,69.6L345.8,68.7L343.3,67.4L339.6,66.4L341.3,65.8L340,64.1L338.2,63.9L337.1,63L335.6,63.8L331.6,64.2L324.4,63.6L320.6,62.8L317.5,62.4L316.4,61.5L319.3,60.2L316.4,60.2L317.5,57.6L320.7,55.3L323.5,54.2L329.1,53.5ZM300.2,53.4L302.2,54L306,53.6L305.9,54.4L303.1,55.6L305.4,56.7L303.3,59.1L299.2,60.1L297.4,59.9L296.7,58.9L293.2,56.9L293.9,56L297.8,56.4L296.9,54.7ZM787.7,55L784.7,55.1L780.2,54.8L779.7,54.6L780.5,53.6L782.7,53.4L786.7,54.4ZM312.5,56.2L308.9,58.1L306.7,58L307.1,55.7L308.1,54.5L309.9,53.4L312.4,52.7L316.5,52.8L319.9,53.4L315.2,55.7ZM254.4,59.8L247.8,61.1L247.8,59.9L244.4,58.5L245.9,57.7L249.5,55.5L252.9,53.8L252.5,52.3L259.6,51.9L261.9,52.4L266.8,52.6L268.1,53.3L269.2,54.4L266.1,55L259.5,56.8L255.4,58.7ZM796.2,50.3L795.2,51.3L791.7,51.1L786.9,50.1L786.4,49.2L790.5,49.6ZM315.8,50.5L314,51.5L311.3,51.3L309.4,50.7L311.4,49.5L314.7,48.9L315.7,49.8ZM783.7,49.1L784.4,50.9L777,50.9L774.4,51.5L768.7,49.8L767.7,48.1L769.8,47.7L775,47.8ZM309.8,46.2L310.3,47.4L309.3,48.6L306.9,50.5L303.5,50.7L301.7,50.3L303,48.9L299.6,49.1L301.1,47.2L303.2,47.2L306.8,46.4L309.4,46.6ZM289.9,47.5L289.8,48.4L291.9,48L293.9,48.1L293.1,49.3L290.9,50.5L283.9,50.9L277.9,52L274.9,52L275.4,51.2L280.5,50.1L271.3,50.4L269,49.9L274.1,47.5L276.6,46.8L281.2,47.6L283.3,49.1L286.5,49.3L286,46.9L288.6,46.1L290.3,46.3ZM618.1,61.6L617,61.8L610.1,61.4L609.1,60.3L605.1,59.6L604.3,58.2L606.2,57.6L605.5,56.2L608.6,54L606.6,53.7L610.4,51.4L609.3,50.3L613.1,49L618.7,47.4L624.9,46.9L627.7,46L631.3,45.7L633.2,46.7L632.3,47.4L626.1,48.6L620.8,49.8L615.8,52.2L614,54.7L611.9,57.2L613.3,59.4ZM318,45.3L319.5,46.1L323.3,46.1L324.3,46.9L323.1,47.8L324.9,48.4L325.7,49L328.3,49.1L331,49.3L334.5,48.7L338.6,48.5L341.6,48.7L343.1,49.6L342.8,50.7L341.2,51.4L337.9,51.9L335.6,51.6L329.6,52L325.5,52L322.5,51.7L317.9,50.9L318.3,49.5L319,48.3L317.9,47.2L314.2,46.9L312.6,46.2L314.1,45.2ZM278,44L275.8,45.8L273.4,46.7L271.5,46.8L266.8,47.9L263.3,48.2L261.2,47.7L266.5,45.9L272.1,44.3L275,44.3ZM320.5,44.3L319.5,44.4L316.1,44.2L316.2,43.5L320,43.6L320.9,44ZM289.6,43.9L285.3,44.6L283.3,43.8L285.7,43L288.7,42.8L291,43.2ZM547.1,43.5L543.1,44.5L539.6,43.9L540.8,43.3L539.5,42.6L543.3,42.1L544.2,43ZM292.9,41.7L290.1,42.2L286.9,42.2L287.3,41.9L290,41.2L290.9,41.3ZM317.8,43L314.5,43.5L313.5,43L313.5,42.1L314.3,41.1L316.7,41.2L317.6,41.4L319.1,42.2ZM310.4,42.4L310.2,43.4L307.3,43.1L304.9,42.3L300.8,42.3L303.3,41.6L301.6,41L302.4,40.1L305.8,40.4L310,41.3ZM699.2,42.4L689.4,43.3L689.8,40.3L691.1,40L692.6,40.2L698.8,41.5ZM534,39.2L540.5,40.9L536,41.8L535.2,43.6L533.6,44L533,46L530.7,46.1L526.4,44.6L528,43.8L525.1,43.1L521.1,41.1L519.5,39.3L524.4,38.5L525.6,39.3L528.2,39.3L528.8,38.5L531.5,38.4ZM547,37.6L550.8,38.4L548.4,39.6L543.1,39.9L537.5,39.5L537,38.9L534.3,38.8L532.1,37.8L537.7,37.2L540.5,37.7L542.2,37.1ZM594.2,37.3L591.9,37.6L590.3,37.8L590.3,38.1L588.3,38.5L586,38L586.7,37.3L582.6,37.2L586,36.8L588.8,36.8L589.5,37.4L590.2,36.9L591.7,36.5L594.7,37ZM688.1,41.1L684.3,41.4L678.4,40.7L674.5,39.8L671.5,38.2L668.5,37.8L671.7,36.3L675.1,35.8L679.9,36.9L686.5,39ZM337.8,39.3L339.4,40L336.2,40.7L331.2,42.5L327.7,42.6L324,42.3L322.8,41.4L323.7,40.5L325.7,39.9L322.3,40L321,39.2L320.9,38.2L323.2,37.2L325.2,36.5L327.3,36.4L327,35.9L331.4,35.8L332.5,36.9L335.1,37.4L337.7,37.8ZM378.4,32L383,32.2L386.6,32.4L389.4,33L388.9,33.5L383.7,34.4L379,34.8L377,35.3L380.9,35.3L375.6,36.6L372.1,37.2L367.5,39L363.4,39.4L361.9,39.8L356,40.1L358.4,40.4L356.8,40.8L357.5,41.9L355.1,42.7L351.6,43.4L350.1,44.3L346.9,45L346.7,45.6L350.1,45.5L349.7,46.1L343.5,47.6L338.9,46.9L333,47.3L330.3,47L326.7,46.8L327.4,45.7L331.4,45.1L331.9,43.4L333.2,43.2L337.5,44.3L336.1,42.7L333.4,42.3L335.7,41.4L339.5,40.8L340.7,40L338.9,39.1L339.2,38L344.1,38.1L345.4,38.3L349,37.5L345.1,37.3L338.5,37.4L336,36.7L335.4,35.8L334,35.2L334.4,34.4L337.5,34.1L339.7,34L343.6,33.7L347.2,32.9L349.3,33L350.5,33.6L353.1,32.5L355.9,32.2L359.3,32L364.8,31.9L365.5,32.1L371,31.8L374.7,31.9ZM452.2,31.2L462.8,32.8L459.2,33.5L452.3,33.6L442.6,33.8L443.3,34.2L449.8,34L455,34.7L458.7,34L460,34.8L457.7,36L462.5,35.2L471.5,34.4L476.8,34.8L477.7,35.7L470,37.3L468.9,37.8L462.9,38.1L467.1,38.2L464.7,39.9L462.8,41.4L462.4,44L464.4,45.6L461.4,45.7L458.1,46.5L461.4,47.8L461.5,49.9L459.4,50.1L461.6,52.3L457.2,52.5L459.3,53.5L458.5,54.4L455.6,54.8L452.8,54.8L455,56.6L454.9,57.7L451.1,56.6L449.9,57.3L452.5,58L454.9,59.6L455.3,61.7L451.6,62.2L450.2,61.2L447.9,59.7L448.3,61.5L445.6,62.9L451.1,63L453.9,63.1L447.9,65.5L441.9,67.6L435.5,68.5L433.2,68.5L430.8,69.6L427.2,72.5L422.2,74.4L420.6,74.5L417.6,75.2L414.4,75.9L412.1,77.6L411.5,79.5L409.9,81.4L405.8,83.7L406.1,85.9L404.4,88.3L402.6,91.1L399.4,91.2L396.7,88.9L392.2,88.9L390.5,87.3L389.9,84.5L387.2,81L386.7,79.2L387.3,76.6L385.2,74.1L386.7,72.1L385.6,71.1L388.9,67.9L392.4,66.9L393.6,65.8L394.8,63.7L392.1,64.6L390.8,65L388.8,65.4L386.6,64.5L387.2,62.7L388.5,61.3L390.5,61.3L394.4,62L391.5,60.3L390,59.4L387.9,59.8L386.4,59.1L389.7,56.7L388.9,55.7L388.1,53.9L386.9,51.2L384.9,50.2L385.4,49.2L380.9,47.7L376.9,47.6L371.6,47.7L366.8,47.8L365,47.1L362.6,45.5L368.1,44.8L372.1,44.6L364.3,44L360.6,43L361.5,42.1L369.5,41L377.1,39.9L378.4,39.1L373.9,38.3L376.2,37.4L383.7,35.9L386.5,35.7L386.5,34.7L391.2,34.2L397,33.8L402.6,33.8L404.1,34.5L409.6,33.3L413.4,34.1L415.9,34.3L419.2,34.9L415.6,33.8L416.4,33L423.1,31.8L429.3,31.9L431.9,31.2L438.3,31Z"/><g data-layer="em"><circle class="pt " data-k="London" cx="499.7" cy="116.6" r="11"/><text class="lb sm l" x="485.7" y="110.6" text-anchor="end">런던</text></g><g data-layer="e"><circle class="pt " data-k="Suez" cx="586.6" cy="180.6" r="8"/><text class="lb sm" x="598.6" y="176.6" text-anchor="start">수에즈</text></g><g data-layer="e"><circle class="pt " data-k="Bombay" cx="695.1" cy="219.6" r="8"/><text class="lb sm" x="683.1" y="225.6" text-anchor="end">봄베이</text></g><g data-layer="e"><circle class="pt " data-k="Calcutta" cx="736.9" cy="208.2" r="8"/><text class="lb sm" x="746.9" y="200.2" text-anchor="start">캘커타</text></g><g data-layer="e"><circle class="pt " data-k="CapeTown" cx="549.3" cy="387.3" r="8"/><text class="lb sm" x="561.3" y="393.3" text-anchor="start">케이프타운</text></g><g data-layer="e"><circle class="pt " data-k="Singapore" cx="778.2" cy="275.7" r="8"/><text class="lb sm" x="766.2" y="281.7" text-anchor="end">싱가포르</text></g><g data-layer="e"><circle class="pt " data-k="HongKong" cx="806.1" cy="209.2" r="8"/><text class="lb sm" x="818.1" y="205.2" text-anchor="start">홍콩</text></g><g data-layer="e"><circle class="pt " data-k="Sydney" cx="905.2" cy="387.3" r="8"/><text class="lb sm" x="893.2" y="393.3" text-anchor="end">시드니</text></g><g data-layer="e"><circle class="pt " data-k="Montreal" cx="312.3" cy="135.6" r="8"/><text class="lb sm" x="300.3" y="131.6" text-anchor="end">몬트리올</text></g><g data-layer="m"><circle class="pt rv" data-k="BuenosAires" cx="351.1" cy="389.5" r="8"/><text class="lb sm" x="339.1" y="395.5" text-anchor="end">부에노스아이레스</text></g></svg></div><div class="wside"><div class="chips"><button type="button" class="chip" data-mode="all">🌍 전체</button><button type="button" class="chip" data-mode="empire">🏴 제국 거점</button><button type="button" class="chip" data-mode="money">💷 자본 투자</button></div><div class="info"></div><p class="hint">👆 도시 점을 눌러 보세요</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Pax_Britannica" target="_blank" rel="noopener">🔗 위키: 팍스 브리태니카</a></div><div class="kick">본강의 2 · 팍스 브리태니카 1815~1914</div><h2 class="t">약 100년의 영국 주도 질서: 네 기둥</h2><div class="main stack"><div class="wg colw tabs" data-wg="tabs" data-set="pax" ></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">본강의 2 · 선순환의 정점</div><h2 class="t">2주차 이론이 영국에서 가장 완벽하게 작동했다</h2><div class="main stack"><div class="wg" data-wg="cycle" data-set="c2"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">QUIZ · 맞혀 보세요</div><h2 class="t">정점에서 얼마나 내려왔을까?</h2><div class="main stack"><div class="wg" data-wg="guess"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://press.umich.edu/pdf/0472112872-ch2.pdf" target="_blank" rel="noopener">🔗 Bairoch 표(Michigan UP)</a></div><div class="kick">본강의 3 · 쇠퇴의 구조 (25분) · 기술 확산의 역설</div><h2 class="t">연도를 눌러 보세요: 따라잡힌 공장</h2><div class="main stack"><div class="wg" data-wg="mfg"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://www.theworldwars.net/stats/file.php?e=ww1&s=steelprod" target="_blank" rel="noopener">🔗 철강 통계표</a></div><div class="kick">본강의 3 · 기술 확산의 역설</div><h2 class="t">철강: 영국이 만든 기술로 앞서 간 나라들</h2><div class="main stack"><div class="wg" data-wg="steel"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">본강의 3 · 선발자의 저주</div><h2 class="t">후발주자의 이점, 선발자의 부담</h2><div class="main stack"><table class="tbl"><thead><tr><th>구분</th><th>영국 (선발)</th><th>독일·미국 (후발)</th></tr></thead><tbody><tr><th>기술</th><td>개발 비용을 스스로 부담</td><td>이미 검증된 기술을 낮은 비용으로 습득</td></tr><tr><th>설비</th><td>구형 설비의 전환 비용</td><td>최신 설비를 처음부터 도입</td></tr><tr><th>무역정책</th><td>자유무역 고수</td><td>보호관세 속에서 성장 (독일 1879)</td></tr><tr><th>대표 산업</th><td>섬유 · 조선 · 석탄</td><td>화학·전기(독일) · 철강 대량생산(미국)</td></tr></tbody></table><div class="call coral"><b>선발자의 저주:</b> 먼저 투자한 설비와 체계가 오히려 다음 혁신의 발목을 잡습니다. (원인으로서의 비중은 학계 논쟁 중)</div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://www.nber.org/system/files/working_papers/w11266/w11266.pdf" target="_blank" rel="noopener">🔗 NBER: 영국의 해외투자 1870–1913</a></div><div class="kick">본강의 3 · 금융 치중과 산업 투자 소홀</div><h2 class="t">런던의 돈은 어디로 갔나</h2><div class="main stack"><div class="grid g3"><div class="card "><h3><span class="cn big-n" data-to="4" data-suf="~8%" data-dec="0" data-pre="">0</span></h3><p>1871~1913년 영국 GNP 중 해외로 나간 비율</p></div><div class="card "><h3><span class="cn big-n" data-to="3715" data-suf="백만 파운드" data-dec="0" data-pre="">0</span></h3><p>1913년 말 해외 증권 보유액</p></div><div class="card "><h3>같은 규모</h3><p>1865~1914년 아프리카·아시아·남미 투자가 영국 본토 투자와 맞먹었음</p></div></div><div class="grid g2"><div class="card "><h3>왜 해외로?</h3><p>국내 임금 상승 → 수익률 하락, 해외·식민지 투자 수익률이 높다고 판단</p></div><div class="card bad"><h3>반론</h3><p>해외 투자는 당시 합리적 선택이었고, 국내 투자 감소의 직접 원인인지는 논쟁 중</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/The_Rise_and_Fall_of_the_Great_Powers" target="_blank" rel="noopener">🔗 위키: 강대국의 흥망</a></div><div class="kick">본강의 3 · 제국 유지비용</div><h2 class="t">지키는 데 드는 돈</h2><div class="main stack"><div class="grid g2b"><div class="card "><h3>반란 진압과 행정</h3><p>1857 인도 대반란 등 식민지 관리·군사 유지 비용</p></div><div class="card "><h3>해군 군비경쟁</h3><p>독일 해군 증강에 맞서 해군력을 계속 확장</p></div><div class="card "><h3>사회 개혁 압력</h3><p>도시 빈민층이 늘며 복지·교육 개혁 요구가 재정 압박</p></div><div class="card "><h3>제국의 과부하</h3><p>능력보다 넓게 펼친 의무가 재투자 여력을 잠식 (Kennedy, "Imperial Overstretch")</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Gold_standard" target="_blank" rel="noopener">🔗 위키: 금본위제</a></div><div class="kick">본강의 3 · 1차 대전과 패권 이양</div><h2 class="t">파운드의 길: 금본위의 시작부터 평가절하까지</h2><div class="main stack"><div class="wg colw tabs" data-wg="tabs" data-set="gold" ></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">본강의 3 · 쇠퇴의 확인</div><h2 class="t">영국의 비중은 내려가고 미국은 올라갑니다</h2><div class="main stack"><div class="wg colw" data-wg="decl"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">본강의 3 · 쇠퇴의 정의</div><h2 class="t">줄어든 것이 아니라 상대적으로 작아졌다</h2><div class="main stack"><div class="wg" data-wg="rel"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">본강의 3 · 악순환 구조</div><h2 class="t">선순환이 거꾸로 돌아갈 때</h2><div class="main stack"><div class="wg" data-wg="cycle" data-set="c3"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Decline_of_the_British_Empire" target="_blank" rel="noopener">🔗 위키: 영국 제국의 쇠퇴</a></div><div class="kick">본강의 3 · 쇠퇴 원인 논쟁</div><h2 class="t">정답은 하나가 아닙니다: 여섯 가지 설명</h2><div class="main stack"><div class="wg colw tabs" data-wg="tabs" data-set="theory" ></div><p class="hint">연구자별 대표 주장의 요약입니다. 학계에 합의된 결론은 없습니다.</p></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Suez_Crisis" target="_blank" rel="noopener">🔗 위키: 수에즈 위기</a><a class="lk" href="https://en.wikipedia.org/wiki/Decolonisation_of_Africa" target="_blank" rel="noopener">🔗 위키: 아프리카 탈식민</a></div><div class="kick">본강의 3 · 그 뒤</div><h2 class="t">패권의 이양 이후: 해체의 연표</h2><div class="main stack"><div class="wg colw tabs" data-wg="tabs" data-set="decol" ></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">마무리 · 교훈 (10분)</div><h2 class="t">영국 패권 쇠퇴가 주는 네 가지 교훈</h2><div class="main stack"><div class="grid g2b"><div class="card "><h3>① 기술 우위는 영원하지 않다</h3><p>확산되고 추월당합니다 → <b>지속적 혁신</b>만이 답</p></div><div class="card "><h3>② 금융화의 함정</h3><p>생산보다 투자수익에 쏠리면 제조 기반이 비어 갑니다</p></div><div class="card "><h3>③ 제국의 과부하</h3><p>능력 이상의 팽창은 수축으로 돌아옵니다</p></div><div class="card "><h3>④ 자유무역의 역설</h3><p>패권국의 개방이 후발주자의 추격을 돕기도 합니다</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">마무리 · 현대적 함의</div><h2 class="t">오늘의 거울: 미국 · 한국 · AI</h2><div class="main stack"><div class="grid g3"><div class="card "><h3>미국의 현재</h3><p>금융화와 군사비 부담 — 영국의 쇠퇴 구조와 닮았을까, 다를까?<br><span class="sm2">토론 소재입니다. 정답은 아직 없습니다.</span></p></div><div class="card "><h3>한국의 과제</h3><p>반도체·조선·배터리 등 <b>제조 기반을 유지</b>하며 다음 혁신을 선점할 수 있는가</p></div><div class="card "><h3>4차 산업혁명 · AI</h3><p>기술 격차를 지키려면 <b>지속적 재투자</b>가 필수입니다</p></div></div><div class="call"><b>AX 연결:</b> 선발자의 저주는 기업과 조직에도 있습니다. 먼저 쌓은 방식이 다음 전환을 막지 않는지 점검하세요.</div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide disc"><div class="slide-content"><div class="kick">DISCUSSION</div><h2 class="t">최종 토론: 오늘의 3가지 질문</h2><p class="dsub">7초 침묵 → 2인 1조 → 전체 발표</p><div class="main stack qs"><div class="q"><b>Q1</b><div><p class="q1">오늘의 미국은 1900년의 영국과 닮았는가?</p><p class="q2">닮은 점과 다른 점을 하나씩 말해 봅시다.</p></div></div><div class="q"><b>Q2</b><div><p class="q1">한국이 선발자의 저주를 피하려면 무엇에 재투자해야 하는가?</p><p class="q2">제조·인재·제도 중 우선순위는?</p></div></div><div class="q"><b>Q3</b><div><p class="q1">AI 시대, 먼저 도입한 조직은 승자인가, 선발자인가?</p><p class="q2">"먼저 한 것이 발목을 잡는" 사례를 찾아 봅시다.</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide big"><div class="slide-content"><div class="kick">WRAP-UP · 세 번 반복합니다</div><h2 class="t">오늘 꼭 기억할 3가지</h2><div class="main stack "><div class="grid g3"><div class="card kt"><div class="kn">1</div><h3 class="big">네 요인의 결합</h3><p>기술·교통·제도·사회가 결합해 확대재생산체제를 완성, 팍스 브리태니카를 열었다</p></div><div class="card kt"><div class="kn">2</div><h3 class="big">철도와 증기선</h3><p>원료→생산→수출→재투자 사이클이 완성되고 무역망과 제국이 함께 커졌다</p></div><div class="card kt"><div class="kn">3</div><h3 class="big">악순환의 쇠퇴</h3><p>기술 확산·금융 치중·제국 비용이 겹쳐 패권이 미국으로 넘어갔다</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">CHECK · 오늘 확인</div><h2 class="t">학생용 확인 체크리스트: 눌러서 체크하세요</h2><div class="main stack"><div class="wg colw" data-wg="check"></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide big"><div class="slide-content"><div class="kick">CONTRIBUTIONS · 오늘 여러분이 얻은 것</div><h2 class="t">오늘 강의의 기여 (Contributions)</h2><div class="main stack"><div class="krows"><div class="krow"><h3>① 프레임</h3><p>영국의 성공을 <b>기술·교통·제도·사회 → 확대재생산 → 팍스 브리태니카</b>의 한 줄로 설명할 수 있습니다</p></div><div class="krow"><h3>② 개념</h3><p><b>선발자의 저주 · 금융 치중 · 제국의 과부하</b>로 쇠퇴의 구조를 말할 수 있습니다</p></div><div class="krow"><h3>③ 관점</h3><p>쇠퇴를 <b>상대적 변화</b>로 읽고, 미국·한국·AI 전환에 적용해 볼 수 있습니다</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 6강</div></div></section>
+<section class="slide ending nofoot"><div class="slide-content"><p class="kick">6주차를 마치며</p><div class="endq"><p>"승자도 쇠퇴한다"</p><p>그러나 쇠퇴에는 구조가 있고,<br>구조는 읽을 수 있습니다.</p></div><div class="next"><b>다음 강의 7주차: 영국 중심 유럽 패권의 황혼</b><span>🌍 지금 유럽이 겪는 위기의 뿌리는 어디에 있는가</span></div><p class="cov-by">나병인 교수 · 가천대학교 · 글로벌 시대 국제정치</p></div></section>
+<button type="button" class="hit" id="hp" aria-label="이전 슬라이드">‹</button>
+    <button type="button" class="hit" id="hn" aria-label="다음 슬라이드">›</button>
+  </div>
+</main>
+<div class="bar bot">
+  <button type="button" class="btn" id="bpv" aria-label="이전 슬라이드">← 이전</button>
+  <div id="prog" role="slider" tabindex="0" aria-label="슬라이드 위치" aria-valuemin="1" aria-valuemax="37" aria-valuenow="1"><div id="fill"></div></div>
+  <span id="cnt" aria-live="polite">1 / 37</span>
+  <button type="button" class="btn main" id="bnx" aria-label="다음 슬라이드">다음 →</button>
+</div>
+<div id="grid" role="dialog" aria-modal="true" aria-label="슬라이드 전체보기">
+  <h2>슬라이드 전체보기 <button type="button" class="btn" id="gc">닫기 (Esc)</button></h2>
+  <div id="gl"></div>
+</div>
+<div id="hush" role="dialog" aria-modal="true" aria-label="쉿, 조용히 생각하는 시간">
+  <div class="ic" aria-hidden="true">🤫</div>
+  <h2>쉿~~</h2>
+  <p>조용히 생각하는 시간</p>
+  <div class="sec" id="hs" aria-live="off">7</div>
+  <div class="hint">화면 누르기 · Esc · S 로 닫기</div>
+</div>
+<div id="print" aria-hidden="true"></div>
+<p id="cap" role="status" aria-live="polite"></p>
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+function on(w,sel,el){$$(sel,w).forEach(function(c){c.classList.toggle('on',c===el)})}
+function lk(u,t){return u?'<a class="lk" href="'+u+'" target="_blank" rel="noopener">🔗 '+(t||'더 보기')+'</a>':''}
+
+/* ---------- 데이터 ---------- */
+var YR=[1860,1900,1913,1928,1938,1953,1980];
+var MF={uk:[19.9,18.5,13.6,9.9,10.7,8.4,4.0],us:[7.2,23.6,32.0,39.3,31.4,44.7,31.5],de:[4.9,13.2,14.8,11.6,12.7,5.9,5.3],fr:[7.9,6.8,6.1,6.0,4.4,3.2,3.3],ru:[7.0,8.8,8.2,5.3,9.0,10.7,14.8]};
+var MFN={1860:'<b>영국 19.9%</b>: 5개국 중 1위. 공장의 세계는 영국이 열었습니다. (참고: 중국 19.7%)',1900:'<b>미국 23.6%가 영국 18.5%를 추월.</b> 독일(13.2%)도 바짝 따라옵니다.',1913:'<b>영국 13.6%</b>는 미국(32.0)은 물론 독일(14.8)보다도 작아졌습니다.',1928:'<b>영국 9.9%</b>. 1차 대전 뒤 미국은 39.3%로 정점에 오릅니다.',1938:'<b>영국 10.7%</b>. 대공황 뒤 소폭 회복했지만 추세는 바뀌지 않았습니다.',1953:'<b>영국 8.4%</b>. 2차 대전 이후 미국 44.7%, 소련 10.7%.',1980:'<b>영국 4.0%</b>. 1860년의 5분의 1 수준입니다. (러시아는 소련 기준)'};
+var CL={uk:['영국','uk'],us:['미국','us'],de:['독일','de'],fr:['프랑스','fr'],ru:['러시아·소련','ru']};
+
+var T={};
+T.exh=[
+{c:'숫자로 보기',t:'1851년 5월 1일 ~ 10월 15일, 런던 하이드파크',p:'관람객은 <b>6,039,722명</b>(하루 평균 약 4만 3천 명), 전시는 영국·식민지·외국 44개국의 약 <b>13,000</b>건이었습니다. 영국 인구의 상당수가 철도로 모여들었습니다.',l:['https://en.wikipedia.org/wiki/Great_Exhibition','위키: 만국박람회']},
+{c:'무엇을 보여줬나',t:'철·기계·섬유에서 영국이 앞섰다',p:'기록에 따르면 영국 전시품은 <b>철강·기계·직물</b> 등 강도·실용성·품질을 따지는 거의 모든 분야에서 앞서 있었습니다. 증기 해머, 방적기, 인쇄기가 관람객을 불러 모았습니다.'},
+{c:'건물: 수정궁',t:'조지프 팩스턴의 철과 유리 건물',p:'<b>크리스털 팰리스</b>는 철골과 유리를 공장에서 만든 규격 부품으로 조립한 건물입니다. 건물 자체가 영국 제조업의 광고였고, 박람회가 끝나면 해체해 옮길 수 있었습니다.'},
+{c:'오늘의 해석',t:'박람회는 "우리가 세계의 공장"이라는 선언',p:'<b>자유무역과 기술을 믿는 나라</b>가 스스로를 전시한 사건입니다. 그러나 독일·미국 방문객과 전시자도 이 현장에서 영국 기술을 가장 가까이 볼 수 있었습니다. <b>정점은 학습의 기회이기도 했습니다.</b>'}
+];
+T.trade=[
+{c:'1815',s:'곡물법',t:'1815 곡물법: 지주를 위한 방어벽',p:'나폴레옹 전쟁이 끝나자 외국산 곡물 수입을 막는 곡물법이 만들어졌습니다. 곡물 값은 높게 유지되고 지주는 보호받았지만, 빵값은 공장 노동자의 부담이 되었습니다.'},
+{c:'1846',s:'곡물법 폐지',t:'1846 곡물법 폐지: 총리가 자기 정당을 쪼갰다',p:'코브던과 브라이트의 반곡물법동맹(1838~)이 압박했고, 보수당의 필 총리가 폐지를 이끌었습니다. 보수당은 분열했고 필 지지파는 1859년 자유당 결성에 합류합니다. 값싼 식량이 공업 확대에 유리했다는 해석이 많습니다.',l:['https://en.wikipedia.org/wiki/Corn_Laws','위키: 곡물법']},
+{c:'1849',s:'항해법 폐지',t:'1849 항해법 폐지: 해운 보호의 종언',p:'영국 항구로 오는 상품을 영국·식민지 선박으로만 나르게 했던 항해법(1651~)이 폐지됩니다. 중상주의 시대의 대표 장치가 사라진 사건입니다.'},
+{c:'1860',s:'영·프 조약',t:'1860 코브던–슈발리에 조약: 자유무역이 번지다',p:'영국과 프랑스가 관세를 낮추는 조약을 맺고, 이후 유럽 각국의 무역조약 연결망이 넓어졌습니다. 자유무역이 유럽에서 가장 넓게 퍼진 시기로 꼽힙니다.'},
+{c:'1879',s:'독일 관세',t:'1879 독일의 보호관세: 후발국의 선택',p:'장기불황 속에서 독일은 철강·곡물에 보호관세를 도입합니다. 미국도 높은 관세 속에서 성장했습니다. 영국은 자유무역을 유지했습니다. 이것이 득이었는지 해였는지는 <b>논쟁 중</b>입니다.'},
+{c:'1932',s:'제국특혜',t:'1932 관세 도입과 제국특혜: 자유무역의 포기',p:'대공황 속에서 영국은 수입관세를 도입하고 오타와 협정(1932)으로 제국·자치령끼리 특혜 관세를 주고받는 블록으로 후퇴합니다. 곡물법 폐지 후 80여 년 만입니다.'}
+];
+T.gold=[
+{c:'1821',s:'금태환',t:'금본위의 법제화 (1816~1821)',p:'1816년 대주조로 금화(소버린)가 기본 화폐가 되고, 1819년 법이 태환 재개를 정해 1821년 금 태환이 실제로 재개됩니다. 파운드는 "금과 같은 돈"으로 통했습니다.',l:['https://en.wikipedia.org/wiki/Gold_standard','위키: 금본위제']},
+{c:'1914',s:'전쟁과 정지',t:'1914 전쟁이 금본위를 멈추다',p:'전쟁이 시작되자 금화는 유통에서 사라지고 재무부 지폐가 대신합니다. 전쟁 비용은 세금·국채·미국 차입으로 충당되었습니다.'},
+{c:'1925',s:'복귀',t:'1925 전전 평가로 금본위 복귀',p:'영국은 호주·남아공과 함께 금본위로 돌아옵니다. 파운드를 전쟁 전 가치로 되돌려 수출 산업에 부담을 줬다는 비판이 컸습니다(케인스 「처칠 씨의 경제적 귀결」, 1925).'},
+{c:'1931',s:'이탈',t:'1931년 9월, 금본위 이탈',p:'파운드에 대한 투기적 공격으로 영란은행이 금본위를 포기합니다. 임시 조치로 발표됐지만 영국은 돌아가지 않았고, 이후 통화 완화가 회복에 도움이 되었다는 평가가 많습니다.'},
+{c:'1947',s:'태환 실패',t:'1947 파운드 태환, 한 달 만에 중단',p:'미국 차관 조건이던 파운드 태환이 7월 15일 시작되자, 한 달 안에 파운드 보유국들이 영국의 달러 보유고에서 <b>거의 10억 달러</b>를 인출했고 영국은 태환을 정지합니다.',l:['https://en.wikipedia.org/wiki/Anglo-American_loan','위키: 영미 차관']},
+{c:'1967',s:'평가절하',t:'1967 파운드 평가절하',p:'1967년 11월 파운드를 달러당 2.80에서 2.40으로 평가절하합니다. 한때 세계 기축통화였던 파운드의 위상이 달러에 밀렸음을 보여줍니다.'}
+];
+T.decol=[
+{c:'1946',s:'미국 차관',t:'1945~46 영미 차관: 전쟁이 남긴 청구서',p:'미국이 <b>37억 5천만 달러</b>(캐나다 11억 9천만 달러)를 연 2%, 50년 상환으로 빌려줍니다. 영국은 2006년 12월에야 마지막 상환을 마칩니다.',l:['https://en.wikipedia.org/wiki/Anglo-American_loan','위키: 영미 차관']},
+{c:'1947',s:'인도 독립',t:'1947 인도·파키스탄 분리 독립',p:'1947년 8월 15일 영국령 인도가 인도와 파키스탄으로 나뉘어 독립합니다. "제국의 보석"을 잃은 것입니다. (분할 과정의 대규모 이주와 폭력도 함께 기억해야 합니다.)'},
+{c:'1956',s:'수에즈',t:'1956 수에즈 위기',p:'영국·프랑스가 이집트 수에즈 운하를 둘러싸고 군사행동에 나섰다가 10일 만에 휴전합니다. 다음 슬라이드에서 날짜별로 봅니다.',l:['https://en.wikipedia.org/wiki/Suez_Crisis','위키: 수에즈 위기']},
+{c:'1960',s:'변화의 바람',t:'1960 "변화의 바람"',p:'맥밀런 총리가 1960년 2월 남아프리카 의회 연설에서 아프리카 민족의식의 성장을 "변화의 바람"이라 부르며 탈식민을 받아들입니다. 1960년대에 영국령 아프리카 다수가 독립합니다.'},
+{c:'1968',s:'동쪽 철수',t:'1968 "수에즈 동쪽" 철수 선언',p:'1968년 영국 정부는 페르시아만·동남아 주둔 군대를 거두는 방침을 발표합니다. 세계 곳곳에 군대를 두던 해군·제국 체제의 실질적 마감으로 평가됩니다.'},
+{c:'1976',s:'IMF',t:'1976 IMF 구제금융 요청',p:'인플레이션이 25% 가까이 치솟자 영국은 약 <b>39억 달러</b>를 IMF에 요청합니다. 당시 IMF 역사상 최대 규모였고, 실제로는 절반만 인출해 1979년 5월에 갚았습니다.',l:['https://en.wikipedia.org/wiki/1976_sterling_crisis','위키: 1976 파운드 위기']},
+{c:'1997',s:'홍콩 반환',t:'1997 홍콩 반환',p:'1842년 난징조약으로 영국 땅이 된 홍콩이 1997년 중국에 반환됩니다. 영국 제국의 마지막 큰 식민지 중 하나였습니다.'}
+];
+T.suez=[
+{c:'7/26',s:'운하 국유화',t:'1956년 7월 26일 이집트, 수에즈 운하 회사 국유화',p:'나세르 대통령이 운하 회사를 국유화합니다. 수에즈 운하는 중동 석유와 아시아 무역이 유럽으로 오는 길목이었고, 영국 정부는 1875년 운하 지분을 사들인 이래 이곳을 제국의 생명선으로 여겨 왔습니다.'},
+{c:'10/29',s:'이스라엘 진격',t:'10월 29일 이스라엘, 시나이로 진격',p:'영국·프랑스·이스라엘의 비밀 합의(세브르 의정서) 속에 이스라엘이 이집트를 공격합니다. 영·프는 "분쟁을 갈라놓겠다"며 개입 명분을 만듭니다.'},
+{c:'10/30–11/2',s:'파운드 흔들',t:'10월 30일~11월 2일 영란은행, 4,500만 달러 상실',p:'영란은행은 나흘 동안 <b>4,500만 달러</b>를 잃었습니다. 재무장관은 파운드 평가절하를 막을 외환보유고가 부족하다고 경고했고, 식량·에너지 수입이 몇 주 안에 위태로워질 수 있었습니다. 미국이 파운드 지원을 군사행동 중단과 연계했다는 것이 많은 역사가의 평가입니다.'},
+{c:'11/5–6',s:'상륙',t:'11월 5~6일 영·프 군대, 포트사이드 상륙',p:'공수부대와 상륙군이 포트사이드를 장악했지만 국제 여론과 유엔, 그리고 미국의 압박이 커집니다.'},
+{c:'11/7',s:'휴전',t:'11월 7일 휴전',p:'<b>10월 29일부터 11월 7일, 열흘</b>. 운하는 1957년 3월까지 막혔고, 영국과 프랑스는 <b>미국의 동의 없이는 독자 외교를 펼칠 수 없다</b>는 점이 드러났다는 평가를 받습니다.'}
+];
+T.theory=[
+{c:'① 추격',t:'후발국은 따라잡을 수밖에 없었다',trio:[['주장','선발국의 기술을 빌려 쓰는 후발국은 더 빨리 큽니다. 점유율이 내려가는 것은 자연스럽습니다.'],['근거','1860→1913 미국 7.2→32.0%, 독일 4.9→14.8%.'],['반론','왜 영국의 <b>절대적 성장</b>까지 느려졌는지는 설명이 부족합니다.']]},
+{c:'② 선발자의 족쇄',t:'일찍 시작한 투자가 오히려 발목을 잡았다',trio:[['주장','먼저 깔아 둔 설비·철도·숙련 체계를 버리기 아까워 새 기술 전환이 늦었습니다.'],['근거','철강·화학·전기 같은 2차 산업혁명 분야에서 독일·미국이 앞섰습니다.'],['반론','기존 설비를 쓰는 것이 당시에는 합리적 선택이었다는 반박이 있습니다.']]},
+{c:'③ 문화',t:'산업 엘리트가 신사 계급의 가치를 따랐다',trio:[['주장','마틴 위너(1981)는 성공한 산업가의 자녀가 지주·전문직 가치로 흡수되어 산업 정신이 약해졌다고 봅니다.'],['근거','공립학교·옥스브리지 중심의 교육 전통.'],['반론','증거가 일반화되기 어렵고 기업가 정신이 실제로 부족했는지 논쟁이 큽니다.']]},
+{c:'④ 금융 vs 산업',t:'런던의 돈은 해외로 흘렀다',trio:[['주장','런던 시티와 제국 이익이 국내 산업 재투자보다 해외 투자를 선호했다는 "신사적 자본주의" 해석(케인·홉킨스)이 있습니다.'],['근거','1871~1913년 GNP의 4~8%가 해외로 나갔습니다.'],['반론','해외 투자는 당시 수익이 높은 합리적 선택이었다는 평가도 있습니다.']]},
+{c:'⑤ 제국의 비용',t:'지키는 데 너무 많이 썼다',trio:[['주장','폴 케네디(1987)는 강대국이 경제력보다 군사·제국 부담이 커질 때 쇠퇴한다는 "과잉 팽창"을 논합니다.'],['근거','두 차례 세계대전의 전비, 해군·식민지 방위비.'],['반론','제국은 시장·원료·병력도 제공했으므로 순비용인지는 따져야 합니다.']]},
+{c:'⑥ 제도 경직',t:'안정이 오래되면 변화를 막는 연합이 쌓인다',trio:[['주장','맨커 올슨(1982)은 오래 안정된 나라에 이익집단이 쌓여 성장을 늦춘다고 봅니다.'],['근거','노동·산업 관계의 관행과 규제 틀이 변화를 늦췄다는 주장.'],['반론','영국 노동조합과 제도가 실제로 어느 정도 영향을 줬는지 논쟁이 이어집니다.']]}
+];
+T.diag=[
+{c:'1851 박람회',t:'세 조건이 모두 맞아떨어진 시기',trio:[['확대재투자','● 이윤이 철도·공장·무역에 다시 들어갑니다.'],['기술혁신','● 증기·철·기계에서 세계를 이끕니다.'],['산업전환','● 농업→공업 전환을 가장 먼저 완성합니다.']]},
+{c:'1900년경',t:'조건은 남았지만 방향이 달라진 시기',trio:[['확대재투자','◐ 자본이 해외로 크게 나가고(GNP 4~8%), 국내 신산업에는 덜 갑니다.'],['기술혁신','◐ 철강·화학·전기에서 독일·미국이 앞서 나갑니다.'],['산업전환','◐ 구산업(섬유·조선·석탄) 중심이 유지됩니다.']]},
+{c:'1950년대',t:'제국 체제가 끝나 가는 시기',trio:[['확대재투자','○ 전쟁과 부채로 재투자 여력이 줄었습니다.'],['기술혁신','◐ 일부 첨단 분야는 있지만 대량생산에서 밀립니다.'],['산업전환','○ 제국 시장 중심에서 유럽·미국 의존으로 옮겨 갑니다.']]}
+];
+var LNK={theory:['https://en.wikipedia.org/wiki/British_Empire','위키: 대영제국'],diag:null};
+
+/* ---------- 탭 위젯 ---------- */
+function tabs(w){
+  var set=w.getAttribute('data-set'),items=T[set],cur=-1,t0=w.getAttribute('data-start');
+  var h='<div class="chips">'+items.map(function(it,i){return '<button type="button" class="chip" data-i="'+i+'">'+it.c+(it.s?'<small>'+it.s+'</small>':'')+'</button>'}).join('')+'</div><div class="info big"></div><p class="hint">👆 위의 버튼을 눌러 보세요</p>';
+  w.innerHTML=h;
+  var info=$('.info',w);
+  function set_(i){
+    cur=i;var it=items[i];on(w,'.chip',$$('.chip',w)[i]);
+    var s='<h4>'+it.t+'</h4>';
+    if(it.p)s+='<p>'+it.p+'</p>';
+    if(it.trio)s+='<div class="trio">'+it.trio.map(function(x){return '<div><h5>'+x[0]+'</h5><p>'+x[1]+'</p></div>'}).join('')+'</div>';
+    var l=it.l||LNK[set];
+    if(l)s+=lk(l[0],l[1]);
+    info.innerHTML=s;
+  }
+  w.addEventListener('click',function(e){var c=e.target.closest('.chip');if(c)set_(+c.getAttribute('data-i'))});
+  set_(t0==='last'?items.length-1:0);
+}
+
+/* ---------- 제조업 비중 슬라이더 ---------- */
+function mfg(w){
+  var timer=null,k=['uk','us','de','fr','ru'];
+  w.innerHTML='<div class="chcard"><div class="chips">'+YR.map(function(y){return '<button type="button" class="chip" data-y="'+y+'">'+y+'</button>'}).join('')+'<button type="button" class="chip play">▶ 재생</button></div><div class="cht">'+k.map(function(c){return '<div class="bx '+c+'" data-c="'+c+'"><div class="col"><div class="fill"></div></div><div class="vl"></div><div class="nm">'+CL[c][0]+'</div></div>'}).join('')+'</div><p class="src2">세계 제조업 생산 비중(%) · Bairoch(1982) 추정치 · <span class="cnote"></span></p></div>';
+  function set(y){
+    var i=YR.indexOf(y),mx=0;
+    on(w,'.chip[data-y]',$('.chip[data-y="'+y+'"]',w));
+    k.forEach(function(c){mx=Math.max(mx,MF[c][i])});
+    k.forEach(function(c){var v=MF[c][i],b=$('.bx[data-c="'+c+'"]',w);$('.fill',b).style.setProperty('--h',(v/45*100)+'%');$('.vl',b).textContent=v.toFixed(1)+'%';b.classList.toggle('lead',v===mx)});
+    $('.cnote',w).innerHTML=MFN[y];
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null}$('.play',w).textContent='▶ 재생'}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-y]');if(c){stop();set(+c.getAttribute('data-y'));return}
+    if(e.target.closest('.play')){if(timer){stop();return}var i=0;$('.play',w).textContent='⏸ 멈춤';set(YR[0]);timer=setInterval(function(){i++;if(i>=YR.length){stop();return}set(YR[i])},1800)}
+  });
+  set(1860);
+}
+
+/* ---------- 철도 ---------- */
+function rail(w){
+  var Y=[1830,1844,1851,1871,1914],M=[125,2000,6000,13000,20000],timer=null;
+  var N={1830:'1830년 리버풀–맨체스터 철도가 개통해 본격적인 증기 철도 시대가 열렸습니다. 이 해 영국의 철도는 겨우 <b>125마일</b> 남짓.',1844:'1844년 말 영국 철도는 <b>2,000마일</b> 남짓. 곧 1840년대 중반 "철도 광풍" 투자 열기가 일어납니다.',1851:'1851년 박람회 무렵 철도는 1844년의 거의 세 배인 <b>약 6,000마일</b>. 지방 사람들이 철도로 런던 박람회에 모였습니다.',1871:'1871년 말 <b>13,000마일 이상</b>. 이제 영국의 남는 자본은 미국·아르헨티나·인도 같은 해외 철도로 향합니다.',1914:'1914년 <b>약 20,000마일</b>. 철도는 완성됐지만, 이 즈음 새 기술 경쟁의 중심은 철강·전기·자동차로 옮겨 가 있었습니다.'};
+  w.innerHTML='<div class="chcard"><div class="chips">'+Y.map(function(y){return '<button type="button" class="chip" data-y="'+y+'">'+y+'</button>'}).join('')+'<button type="button" class="chip play">▶ 재생</button></div><div class="bign"><span class="big-n">0</span><span class="u">마일</span></div><div class="cht rlc">'+Y.map(function(y){return '<div class="bx" data-b="'+y+'"><div class="col"><div class="fill"></div></div><div class="vl"></div><div class="nm">'+y+'</div></div>'}).join('')+'</div><p class="src2 cnote"></p></div>';
+  function set(y){
+    var i=Y.indexOf(y);on(w,'.chip[data-y]',$('.chip[data-y="'+y+'"]',w));
+    $$('.bx',w).forEach(function(b,j){b.classList.toggle('on',j<=i);$('.fill',b).style.setProperty('--h',(M[j]/20000*100)+'%');$('.vl',b).textContent='약 '+fmt(M[j])});
+    $('.big-n',w).textContent=(y>=1851&&y<1914||y===1844?'약 ':'')+fmt(M[i]);
+    $('.cnote',w).innerHTML=N[y]+' <span style="color:var(--sub)">· 출처: Cambridge Group 철도망 연구 등</span>';
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null}$('.play',w).textContent='▶ 재생'}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-y]');if(c){stop();set(+c.getAttribute('data-y'));return}
+    if(e.target.closest('.play')){if(timer){stop();return}var i=0;$('.play',w).textContent='⏸ 멈춤';set(Y[0]);timer=setInterval(function(){i++;if(i>=Y.length){stop();return}set(Y[i])},1600)}
+  });
+  set(1830);
+}
+
+/* ---------- 철강 ---------- */
+function steel(w){
+  var Y=[1890,1900,1910,1913,1920,1930,1938];
+  var D={1890:[8.0,4.1,9.3],1900:[5.0,6.3,10.3],1910:[6.5,13.6,26.5],1913:[7.7,17.6,31.8],1920:[9.2,7.6,42.3],1930:[7.4,11.3,41.3],1938:[10.5,23.2,28.8]};
+  var N={1890:'<b>1890년은 선철</b> 기준(다음 해부터는 강철): 미국(9.3)이 영국(8.0)을 앞지릅니다.',1900:'독일(6.3)이 영국(5.0)을 처음 추월했습니다.',1910:'독일은 영국의 두 배, 미국은 네 배 가까이로 벌어집니다.',1913:'전쟁 직전. 독일 17.6, 미국 31.8 대비 영국 <b>7.7</b>.',1920:'전후 독일은 7.6으로 줄었고 미국 42.3이 압도합니다.',1930:'영국 7.4. 대공황이 시작된 시기입니다.',1938:'영국 10.5로 <b>1900년의 두 배</b>가 됐지만, 독일 23.2와 미국 28.8에는 멀리 못 미칩니다. (독일은 재무장 시기)'};
+  var C=[['영국','uk'],['독일','de'],['미국','us']];
+  w.innerHTML='<div class="chcard"><div class="chips">'+Y.map(function(y){return '<button type="button" class="chip" data-y="'+y+'">'+y+'</button>'}).join('')+'<button type="button" class="chip play">▶ 재생</button></div><div class="cht">'+C.map(function(c,i){return '<div class="bx '+c[1]+'" data-i="'+i+'"><div class="col"><div class="fill"></div></div><div class="vl"></div><div class="nm">'+c[0]+'</div></div>'}).join('')+'<div class="sidek"><div class="big-n sh">0%</div><div class="src2">세 나라 합계 중<br>영국 비중</div></div></div><p class="src2">생산량(백만 톤, 1890년만 선철·이후 강철) · The World Wars.net 정리표 <span class="cnote"></span></p></div>';
+  var timer=null;
+  function set(y){
+    on(w,'.chip[data-y]',$('.chip[data-y="'+y+'"]',w));
+    var d=D[y],sum=d[0]+d[1]+d[2],mx=Math.max.apply(null,d);
+    $$('.bx',w).forEach(function(b,i){$('.fill',b).style.setProperty('--h',(d[i]/45*100)+'%');$('.vl',b).textContent=d[i].toFixed(1);b.classList.toggle('lead',d[i]===mx)});
+    $('.sh',w).textContent=Math.round(d[0]/sum*100)+'%';
+    $('.cnote',w).innerHTML='· '+N[y];
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null}$('.play',w).textContent='▶ 재생'}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-y]');if(c){stop();set(+c.getAttribute('data-y'));return}
+    if(e.target.closest('.play')){if(timer){stop();return}var i=0;$('.play',w).textContent='⏸ 멈춤';set(Y[0]);timer=setInterval(function(){i++;if(i>=Y.length){stop();return}set(Y[i])},1700)}
+  });
+  set(1900);
+}
+
+/* ---------- 절대 vs 상대 ---------- */
+function rel(w){
+  var Y=[1900,1913,1938],S={1900:5.0,1913:7.7,1938:10.5},P={1900:18.5,1913:13.6,1938:10.7},timer=null;
+  w.innerHTML='<div class="chcard"><div class="chips">'+Y.map(function(y){return '<button type="button" class="chip" data-y="'+y+'">'+y+'</button>'}).join('')+'<button type="button" class="chip play">▶ 재생</button></div><div class="cht two"><div class="grp"><div class="gt2">영국 강철 생산량 (백만 톤)</div><div class="bx a"><div class="col"><div class="fill"></div></div><div class="vl"></div></div></div><div class="grp"><div class="gt2">세계 제조업 중 영국 비중 (%)</div><div class="bx b"><div class="col"><div class="fill"></div></div><div class="vl"></div></div></div></div><p class="src2 cnote"></p></div>';
+  function set(y){
+    on(w,'.chip[data-y]',$('.chip[data-y="'+y+'"]',w));
+    var a=$('.bx.a',w),b=$('.bx.b',w);
+    $('.fill',a).style.setProperty('--h',(S[y]/12*100)+'%');$('.vl',a).textContent=S[y].toFixed(1)+' ▲';
+    $('.fill',b).style.setProperty('--h',(P[y]/20*100)+'%');$('.vl',b).textContent=P[y].toFixed(1)+'% ▼';
+    $('.cnote',w).innerHTML=y===1900?'1900년: 강철 5.0 · 비중 18.5%':y===1913?'1913년: 강철 7.7(+54%) · 비중 13.6%':'1938년: 강철 10.5(1900년의 약 2.1배) · 비중 10.7%';
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null}$('.play',w).textContent='▶ 재생'}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-y]');if(c){stop();set(+c.getAttribute('data-y'));return}
+    if(e.target.closest('.play')){if(timer){stop();return}var i=0;$('.play',w).textContent='⏸ 멈춤';set(Y[0]);timer=setInterval(function(){i++;if(i>=Y.length){stop();return}set(Y[i])},1800)}
+  });
+  set(1900);
+}
+
+/* ---------- 맞혀 보기 ---------- */
+function guess(w){
+  var opts=[['5%',false],['14%',true],['20%',false],['30%',false]];
+  w.innerHTML='<div class="chcard"><p class="gq">1860년 영국은 세계 제조업의 <b>19.9%</b>를 만들었습니다.<br>그렇다면 <b>1913년</b>에는 몇 %였을까요?</p><div class="chips big">'+opts.map(function(o,i){return '<button type="button" class="chip" data-i="'+i+'">'+o[0]+'</button>'}).join('')+'</div><div class="info rev"><h4>먼저 고르세요 (7초 생각 → 손들기)</h4><p>손을 든 뒤 버튼을 눌러 정답을 확인합니다.</p></div></div>';
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip');if(!c)return;var i=+c.getAttribute('data-i');
+    $$('.chip',w).forEach(function(b,j){b.classList.toggle('ok',opts[j][1]);b.classList.toggle('no',j===i&&!opts[j][1])});
+    $('.info',w).innerHTML=opts[i][1]?'<h4>정답입니다: 13.6%</h4><p>그런데 더 놀라운 사실: 1913년에 <b>미국 32.0%</b>, <b>독일 14.8%</b>. 영국은 독일보다도 작았습니다. 1900년에 이미 미국에 추월당했습니다(23.6% vs 18.5%).</p>':'<h4>정답은 약 14% (13.6%)</h4><p>'+opts[i][0]+'는 아쉽습니다. 1913년 영국은 13.6%, 미국 32.0%, 독일 14.8%. 영국은 독일보다도 작았습니다.</p>';
+  });
+}
+
+/* ---------- 쇠퇴 곡선 ---------- */
+function decl(w){
+  var EV=[[1873,'장기불황','1873년 장기불황 시작: 영국은 가장 큰 타격을 입은 나라로 꼽히며, 대륙 유럽에 대한 산업 우위를 일부 잃었다고 평가됩니다.'],[1914,'1차 대전','1914년 1차 대전: 전비를 국채·미국 차입으로 충당하고 금본위가 정지됩니다. 미국이 채권국으로 올라섭니다.'],[1925,'금본위 복귀','1925년 전전 평가로 금본위 복귀: 수출 산업에 부담이 됐다는 비판이 컸습니다.'],[1931,'금본위 이탈','1931년 9월 금본위 이탈: 파운드 중심 체제의 한 축이 무너집니다.'],[1947,'태환 실패·인도','1947년: 파운드 태환이 한 달 만에 중단되고 인도가 독립합니다.'],[1956,'수에즈','1956년 수에즈: 영국은 미국의 동의 없이는 독자 외교가 어렵다는 점이 드러납니다.'],[1976,'IMF','1976년: 약 39억 달러 규모의 IMF 차관을 요청했습니다. 당시 IMF 역사상 최대 규모였습니다.']];
+  var X=function(y){return 70+(y-1860)/120*700},Yy=function(v){return 310-v*(280/50)};
+  var lines=[['us','미국','#FFB84D'],['uk','영국','#D4FF3D'],['de','독일','#C9A0FF']];
+  var s='<svg viewBox="0 0 820 380" class="lc" role="img" aria-label="세계 제조업 비중 선 그래프">';
+  [0,10,20,30,40,50].forEach(function(v){s+='<line x1="70" x2="770" y1="'+Yy(v)+'" y2="'+Yy(v)+'" class="gl2"/><text x="60" y="'+(Yy(v)+5)+'" class="ax" text-anchor="end">'+v+'</text>'});
+  [1860,1900,1950,1980].forEach(function(y){s+='<text x="'+X(y)+'" y="338" class="ax" text-anchor="middle">'+y+'</text>'});
+  s+='<line class="evl" id="evl" x1="0" x2="0" y1="20" y2="310"/>';
+  lines.forEach(function(L){
+    var pts=YR.map(function(y,i){return X(y)+','+Yy(MF[L[0]][i])}).join(' ');
+    s+='<polyline class="ln" points="'+pts+'" stroke="'+L[2]+'" pathLength="1"/>';
+    YR.forEach(function(y,i){s+='<circle class="dot" cx="'+X(y)+'" cy="'+Yy(MF[L[0]][i])+'" r="6" fill="'+L[2]+'" data-y="'+y+'"/>'});
+    var li=YR.length-1;s+='<text x="'+(X(YR[li])+8)+'" y="'+(Yy(MF[L[0]][li])+(L[0]==='de'?-8:L[0]==='uk'?16:5))+'" class="lg" fill="'+L[2]+'">'+L[1]+'</text>';
+  });
+  YR.forEach(function(y,i){s+='<text x="'+X(y)+'" y="'+(Yy(MF.uk[i])+(i===0?-14:22))+'" class="vt" text-anchor="middle">'+MF.uk[i].toFixed(1)+'</text>'});
+  s+='</svg>';
+  w.innerHTML='<div class="chcard">'+s+'<div class="chips evc">'+EV.map(function(e,i){return '<button type="button" class="chip" data-e="'+i+'">'+e[0]+' '+e[1]+'</button>'}).join('')+'</div><div class="info ev"><h4>영국(연두)은 내려가고 미국(주황)은 올라갑니다</h4><p>아래 사건 버튼을 눌러 시간축에 표시해 보세요. 점을 누르면 해당 연도 수치가 나옵니다.</p></div></div>';
+  var evl=$('#evl',w),info=$('.info',w);
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-e]');
+    if(c){var i=+c.getAttribute('data-e'),ev=EV[i];on(w,'.chip[data-e]',c);evl.setAttribute('x1',X(ev[0]));evl.setAttribute('x2',X(ev[0]));evl.style.opacity=1;info.innerHTML='<h4>'+ev[0]+' '+ev[1]+'</h4><p>'+ev[2]+'</p>';return}
+    var d=e.target.closest('.dot');
+    if(d){var y=+d.getAttribute('data-y'),i2=YR.indexOf(y);on(w,'.chip[data-e]',null);evl.setAttribute('x1',X(y));evl.setAttribute('x2',X(y));evl.style.opacity=1;info.innerHTML='<h4>'+y+'년</h4><p>영국 <b>'+MF.uk[i2]+'%</b> · 미국 <b>'+MF.us[i2]+'%</b> · 독일 <b>'+MF.de[i2]+'%</b></p>'}
+  });
+}
+
+/* ---------- 제국 지도 ---------- */
+var MP={
+ all:['🌍 영국의 세계','점(●)을 눌러 보세요. 영국의 정점은 <b>런던의 돈 · 해군 · 제국 거점</b>이 연결된 그물이었습니다.'],
+ empire:['🏴 제국 거점','식민지와 자치령, 해군 기지가 이어진 영토의 그물.'],
+ money:['💷 자본 투자','런던의 자본은 철도·항만·광산을 통해 지구 곳곳으로 흘렀습니다. (공식 식민지가 아닌 곳도 많았습니다.)']
+};
+var MI={
+ London:['런던','세계 금융과 해운 보험의 중심. 1913년 말 약 <b>37억 파운드</b>의 해외 증권이 보유되었습니다.'],
+ Suez:['수에즈(포트사이드)','1869년 개통된 운하. 영국 정부는 1875년 운하 지분을 사들였고, 인도로 가는 지름길을 제국의 생명선으로 삼았습니다. 1956년 위기의 무대이기도 합니다.'],
+ Bombay:['봄베이(인도)','1858년부터 영국 왕실이 직접 통치한 인도는 영국 상품의 큰 시장이자 병력과 세수의 원천이었습니다. 1947년 독립.'],
+ Calcutta:['캘커타(인도)','영국령 인도의 수도였던 도시. 철도·항만 투자의 중심지 중 하나.'],
+ CapeTown:['케이프타운','영국은 1806년 케이프 식민지를 장악했고, 금·다이아몬드를 둘러싼 보어 전쟁(1899~1902)을 치렀습니다. 인도 항로의 길목입니다.'],
+ Singapore:['싱가포르','1819년 래플스가 건설한 항구. 동남아 무역과 해군의 거점이었습니다.'],
+ HongKong:['홍콩','1842년 난징조약으로 영국에 할양되어 1997년 반환될 때까지 중국 무역의 창구였습니다.'],
+ Sydney:['시드니(호주)','1901년 연방을 이룬 자치령. 양모와 광물을 수출하고 영국 자본을 받았습니다.'],
+ Montreal:['몬트리올(캐나다)','1867년 연방 자치령이 된 캐나다. 철도와 곡물 무역이 영국 자본과 연결되었습니다.'],
+ BuenosAires:['부에노스아이레스','공식 식민지는 아니지만 영국 자본이 철도·냉동육 산업에 깊이 들어간 "비공식 제국"의 대표 사례로 자주 언급됩니다.']
+};
+function wmap(w){
+  var map=$('.wmap',w),info=$('.info',w);
+  function show(a){info.innerHTML='<h4>'+a[0]+'</h4><p>'+a[1]+'</p>'}
+  function mode(m,el){map.setAttribute('data-mode',m);on(w,'.chip[data-mode]',el||$('.chip[data-mode="'+m+'"]',w));show(MP[m]);$$('[data-k]',map).forEach(function(p){p.classList.remove('sel')})}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-mode]');if(c){mode(c.getAttribute('data-mode'),c);return}
+    var k=e.target.closest('[data-k]');if(k){var a=MI[k.getAttribute('data-k')];if(a){show(a);$$('[data-k]',map).forEach(function(p){p.classList.toggle('sel',p===k)})}}
+  });
+  mode('all');
+}
+
+/* ---------- 슬라이드 활성화 효과: 숫자 카운트 ---------- */
+function count(el){
+  var to=parseFloat(el.getAttribute('data-to')),dec=+el.getAttribute('data-dec')||0,pre=el.getAttribute('data-pre')||'',suf=el.getAttribute('data-suf')||'',t0=null;
+  function f(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/1300),v=to*(1-Math.pow(1-p,3));el.textContent=pre+(dec?v.toFixed(dec):fmt(Math.round(v)))+suf;if(p<1)requestAnimationFrame(f)}
+  requestAnimationFrame(f);
+}
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+$$('#stage > section.slide').forEach(function(s){
+  var was=false;
+  new MutationObserver(function(){
+    var a=s.classList.contains('active');
+    if(a&&!was){$$('.cn',s).forEach(function(el){if(reduce){el.textContent=(el.getAttribute('data-pre')||'')+(+el.getAttribute('data-dec')?parseFloat(el.getAttribute('data-to')).toFixed(+el.getAttribute('data-dec')):fmt(el.getAttribute('data-to')))+(el.getAttribute('data-suf')||'')}else count(el)})}
+    was=a;
+  }).observe(s,{attributes:true,attributeFilter:['class']});
+});
+
+
+T.tech=[
+{c:'1769',s:'와트',t:'와트의 증기기관 개량 (1769 특허)',p:'제임스 와트는 분리 응축기로 증기기관의 효율을 크게 높여 1769년 특허를 얻습니다. 사람·동물·물레방아의 힘에 묶여 있던 생산의 한계가 풀렸습니다.',l:['https://en.wikipedia.org/wiki/James_Watt','위키: 제임스 와트']},
+{c:'방적·직조',s:'면직 공장',t:'면직물 공장의 기계화',p:'수력 방적기에 이어 증기로 돌리는 방적기와 역직기가 퍼지며 면직물 생산이 폭발적으로 늘었습니다. 면직업은 산업혁명의 선두 산업이었고, 원료인 면화는 인도·미국 등에서 들어왔습니다.'},
+{c:'석탄',s:'에너지 전환',t:'목재·수력에서 석탄·증기로',p:'숲·강물·바람처럼 <b>자연 조건에 묶인 에너지</b>에서 필요한 곳에서 태울 수 있는 석탄으로 바뀌면서 공장이 강가를 벗어나 도시에 들어섭니다.'},
+{c:'코크스',s:'제철',t:'석탄으로 만든 철',p:'애브러햄 다비는 1709년 코크스로 철을 만드는 데 성공했고, 이후 값싼 철이 기계·철도·선박의 재료가 됩니다. 철은 산업혁명의 뼈대였습니다.'}
+];
+T.pax=[
+{c:'⚓ 해군',t:'로열 네이비: 해상 교통로를 지킨다',p:'1889년 "두 강국 기준(다음 두 해군을 합친 규모에 맞먹는 해군)"을 공식 방침으로 삼을 만큼 압도적 해군을 유지하며 바다를 지켰습니다.'},
+{c:'🆓 자유무역',t:'자국에 유리한 규칙으로 설계한 무역',p:'곡물법(1846)과 항해법(1849) 폐지로 시장을 열고 조약망을 넓혔습니다. 동시에 <b>가장 경쟁력 있는 영국 산업에 유리한 규칙</b>이었다는 점도 짚어야 합니다.'},
+{c:'💷 파운드',t:'금본위와 런던 금융',p:'파운드는 금과 바꿀 수 있는 신뢰받는 돈이었고, 런던 시티가 무역 결제·보험·투자 중개를 맡았습니다.'},
+{c:'📜 국제규범',t:'규칙과 표준을 정하는 힘',p:'분쟁 중재, 해상 규칙, 1884년 국제자오선회의의 그리니치 기준, 영어의 확산. <b>규칙을 만드는 나라가 게임을 설계합니다.</b>'}
+];
+T.inst=[
+{c:'특허법 1624',t:'발명가에게 독점권을 주는 제도',p:'1624년 독점법은 새 발명의 특허를 인정했습니다. 발명이 돈이 되는 제도 덕분에 와트 같은 기술자와 투자자가 모였습니다. (5주차 "의회가 증기기관을 지킨다"와 연결)'},
+{c:'자유무역',t:'곡물법 폐지 1846',p:'값싼 외국 곡물이 들어와 식비가 줄고 소비 시장이 넓어진다는 논리가 힘을 얻었습니다. 다음 슬라이드에서 연표로 봅니다.'},
+{c:'파운드·금본위',t:'신뢰받는 돈과 금융 허브',p:'금본위로 결제·투자 안정성을 확보하고, 런던의 은행들이 세계 무역 자금을 중개했습니다.'}
+];
+var CY={
+ c1:{n:[['원자재','인도 면화·호주 양모·캐나다 목재가 항구로 들어옵니다.'],['공장 생산','증기 동력 공장이 원료를 상품으로 바꿉니다.'],['철도 수송','철도가 공장과 항구를 잇고 시간·비용을 줄입니다.'],['증기선 수출','증기선이 상품을 세계 시장에 빠르게 보냅니다.'],['이윤 재투자','번 돈을 다시 공장·철도·선박에 투자 → <b>확대재생산</b>.']],start:'<b>산업 사이클</b>: 원자재 → 생산 → 수송 → 수출 → 재투자. 각 단계를 눌러 보세요.'},
+ c2:{n:[['산업혁명','생산력이 폭발합니다.'],['풍부한 세수','산업 소득이 늘어 세금과 국채 신용이 커집니다.'],['강력한 해군','돈으로 해군을 키웁니다.'],['식민지 확장','해군이 바다와 거점을 지킵니다.'],['시장·원료 독점','식민지가 원료 공급지이자 독점 시장이 됩니다.'],['부의 재창출','생산이 더 늘고 다시 세수로 돌아옵니다.']],start:'<b>경제↔전쟁 선순환</b>(김태유 『패권의 비밀』). 노드를 눌러 보세요.'},
+ c3:{n:[['기술 우위 상실','후발국이 최신 설비로 따라붙습니다.'],['생산성 정체','구형 설비·낮은 재투자로 성장이 둔화됩니다.'],['금융 치중','국내 수익률이 낮아 자본이 해외로 향합니다.'],['산업 투자 감소','설비 노후화가 계속됩니다.'],['제국 유지비용','군비·행정·복지 압력으로 부담이 늘어납니다.'],['재정 압박','혁신에 쓸 돈이 줄어 다시 기술 우위를 잃습니다.']],start:'<b>쇠퇴의 악순환</b>. 선순환이 거꾸로 돌아갑니다.'}
+};
+function cycle(w){
+  var d=CY[w.getAttribute('data-set')],n=d.n.length,cx=300,cy=165,rx=215,ry=118,P=[],i;
+  for(i=0;i<n;i++){var a=-Math.PI/2+i*2*Math.PI/n;P.push([cx+rx*Math.cos(a),cy+ry*Math.sin(a)])}
+  var s='<svg viewBox="0 0 600 330" class="cyc" role="img" aria-label="순환 도식">';
+  for(i=0;i<n;i++){var A=P[i],B=P[(i+1)%n],mx=(A[0]+B[0])/2+(cx-(A[0]+B[0])/2)*.0,my=(A[1]+B[1])/2;s+='<path class="rt'+(w.getAttribute('data-set')==='c3'?' c':'')+'" d="M'+A[0].toFixed(0)+' '+A[1].toFixed(0)+' L'+B[0].toFixed(0)+' '+B[1].toFixed(0)+'"/>'}
+  d.n.forEach(function(x,i){var p=P[i];s+='<g class="nd" data-k="'+i+'"><rect x="'+(p[0]-62)+'" y="'+(p[1]-24)+'" width="124" height="48" rx="12"/><text x="'+p[0]+'" y="'+(p[1]+6)+'" text-anchor="middle">'+x[0]+'</text></g>'});
+  s+='<text x="300" y="170" text-anchor="middle" class="ctr2">'+(w.getAttribute('data-set')==='c3'?'악순환':'선순환')+'</text></svg>';
+  w.innerHTML='<div class="cycl">'+s+'</div><div class="wside"><div class="info"></div><p class="hint">👆 단계(상자)를 눌러 보세요</p></div>';
+  var info=$('.info',w);info.innerHTML='<p>'+d.start+'</p>';
+  w.addEventListener('click',function(e){var g=e.target.closest('.nd');if(!g)return;var k=+g.getAttribute('data-k');$$('.nd',w).forEach(function(x){x.classList.toggle('sel',x===g)});info.innerHTML='<h4>'+(k+1)+'. '+d.n[k][0]+'</h4><p>'+d.n[k][1]+'</p>'});
+}
+var CK=['산업혁명의 4대 성공 요인(기술·교통·제도·사회)을 설명할 수 있다','증기기관과 철도가 ‘산업 사이클’을 완성한 방식을 안다','팍스 브리태니카의 4대 요소(해군·자유무역·파운드화·규범)를 안다','‘기술 확산의 역설’(선발자의 저주)이 무엇인지 안다','영국 쇠퇴의 구조적 원인(금융 치중·제국 과부하)을 설명할 수 있다','현대 미국의 상황과 영국 쇠퇴의 유사점을 생각해 봤다'];
+function check(w){
+  w.innerHTML='<div class="cks">'+CK.map(function(t,i){return '<button type="button" class="ck" data-i="'+i+'"><span class="bx2"></span><span>'+t+'</span></button>'}).join('')+'</div><div class="ckp"><div class="ckb"><div class="ckf"></div></div><b class="ckn">0 / 6</b></div>';
+  function up(){var n=$$('.ck.on',w).length;$('.ckf',w).style.width=(n/6*100)+'%';$('.ckn',w).textContent=n===6?'6 / 6 ✔ 오늘 수업 완주!':n+' / 6'}
+  w.addEventListener('click',function(e){var c=e.target.closest('.ck');if(c){c.classList.toggle('on');up()}});
+}
+
+var F={cycle:cycle,check:check,tabs:tabs,mfg:mfg,rail:rail,steel:steel,rel:rel,guess:guess,decl:decl,wmap:wmap};
+$$('[data-wg]').forEach(function(w){var f=F[w.getAttribute('data-wg')];if(f)f(w)});
+})();
+
+</script>
+<script>
+(function(){
+  var LS='ip6_', N=37;
+  var TITLES=["표지 · 영국 산업사회의 완성과 쇠퇴", "오늘의 약속 핵심 질문", "놀라운 사실 1851과 1914 7초 질문", "5주차 복기 확대재투자에서 확대재생산으로", "오늘 강의 순서 100분", "1851 만국박람회 (클릭)", "4대 성공 요인 개요", "① 기술혁신 증기기관 (클릭)", "② 교통혁명 철도 (클릭 차트)", "산업 사이클 도식 (클릭)", "③ 제도 재산권 파운드 (클릭)", "자유무역 연표 (클릭)", "④ 사회조건 인구 도시화 식민지", "본강의 1 토론", "정점 지표 세계의 공장", "제국과 자본의 지도 (클릭 지도)", "팍스 브리태니카 4요소 (클릭)", "경제 전쟁 선순환 도식 (클릭)", "맞혀 보세요 1913년 영국의 비중", "기술 확산의 역설 (연도 슬라이더)", "철강 추월 (클릭 차트)", "선발자의 저주 비교표", "금융 치중과 해외 투자", "제국 유지비용의 함정", "1차 대전 런던에서 뉴욕으로 (클릭)", "쇠퇴 곡선 (클릭 선 그래프)", "절대적 성장 vs 상대적 쇠퇴 (클릭)", "쇠퇴의 악순환 도식 (클릭)", "쇠퇴 원인 논쟁 (클릭)", "이후 제국의 해체 (클릭 연표)", "교훈 4가지", "현대적 함의 미국 한국 AI", "최종 토론 3가지 질문", "오늘 꼭 기억할 3가지", "학생용 확인 체크리스트 (클릭)", "오늘 강의의 기여 Contributions", "마무리 7주차 예고"];
+  var $=function(i){return document.getElementById(i)};
+  var slides=[].slice.call(document.querySelectorAll('#stage > section.slide')),fill=$('fill'),cnt=$('cnt'),grid=$('grid'),gl=$('gl'),prog=$('prog'),cap=$('cap');
+  var cur=1;
+  function store(v){try{localStorage.setItem(LS+'pos',v)}catch(e){}}
+  function load(){try{return parseInt(localStorage.getItem(LS+'pos'),10)}catch(e){return NaN}}
+  function go(n,noPush){
+    cur=Math.max(1,Math.min(N,n));
+    slides.forEach(function(s,i){var on=i+1===cur;s.classList.toggle('active',on);s.setAttribute('aria-hidden',on?'false':'true')});
+    fill.style.width=(cur/N*100)+'%';
+    cnt.textContent=cur+' / '+N;
+    prog.setAttribute('aria-valuenow',cur);
+    prog.setAttribute('aria-valuetext',cur+'번, '+TITLES[cur-1]);
+    cap.textContent=cur+'. '+TITLES[cur-1];
+    if(!noPush){try{history.replaceState(null,'','#'+cur)}catch(e){}}
+    store(cur);
+    [].forEach.call(gl.children,function(b,i){b.classList.toggle('cur',i+1===cur)});
+  }
+  TITLES.forEach(function(t,i){
+    var b=document.createElement('button');b.type='button';
+    b.innerHTML='<span class="gt"><b>'+(i+1)+'</b>'+t+'</span>';
+    b.onclick=function(){closeGrid();go(i+1)};
+    gl.appendChild(b);
+  });
+  function openGrid(){grid.classList.add('on');var c=gl.querySelector('.cur');if(c){c.scrollIntoView({block:'center'});c.focus()}}
+  function closeGrid(){grid.classList.remove('on')}
+  var hush=$('hush'),hs=$('hs'),ht=null;
+  function hushOff(){hush.classList.remove('on');clearInterval(ht);ht=null}
+  var actx=null;
+  function shh(){
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+      if(!actx)actx=new AC();
+      if(actx.state==='suspended')actx.resume();
+      var dur=1.5,sr=actx.sampleRate,buf=actx.createBuffer(1,Math.floor(sr*dur),sr),d=buf.getChannelData(0);
+      for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+      var src=actx.createBufferSource();src.buffer=buf;
+      var hp=actx.createBiquadFilter();hp.type='highpass';hp.frequency.value=2500;
+      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=5500;bp.Q.value=0.7;
+      var g=actx.createGain(),t=actx.currentTime;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(0.9,t+0.3);
+      g.gain.setValueAtTime(0.9,t+0.85);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      src.connect(hp);hp.connect(bp);bp.connect(g);g.connect(actx.destination);
+      src.start(t);
+    }catch(e){}
+  }
+  function hushOn(){
+    shh();
+    var n=7;hs.textContent=n;hush.classList.add('on');clearInterval(ht);
+    ht=setInterval(function(){n--;if(n<=0){hs.textContent='끝';clearInterval(ht);ht=setTimeout(hushOff,900)}else{hs.textContent=n}},1000);
+  }
+  $('bh').onclick=function(){hush.classList.contains('on')?hushOff():hushOn()};
+  hush.onclick=hushOff;
+  function fs(){var d=document;if(d.fullscreenElement){d.exitFullscreen()}else if(d.documentElement.requestFullscreen){d.documentElement.requestFullscreen()}}
+  function pdf(){
+    var pr=$('print');
+    if(!pr.children.length){slides.forEach(function(s){var w=document.createElement('div');w.className='pslide';var c=s.cloneNode(true);c.classList.add('active');c.removeAttribute('aria-hidden');w.appendChild(c);pr.appendChild(w)})}
+    window.print();
+  }
+  $('hp').onclick=$('bpv').onclick=function(){go(cur-1)};
+  $('hn').onclick=$('bnx').onclick=function(){go(cur+1)};
+  $('bg').onclick=openGrid;$('gc').onclick=closeGrid;$('bf').onclick=fs;$('bp').onclick=pdf;
+  prog.onclick=function(e){var r=prog.getBoundingClientRect();go(Math.ceil((e.clientX-r.left)/r.width*N))};
+  prog.onkeydown=function(e){if(e.key==='ArrowRight'){e.preventDefault();go(cur+1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1)}};
+  document.addEventListener('keydown',function(e){
+    var k=e.key,gridOn=grid.classList.contains('on');
+    if(e.ctrlKey||e.metaKey||e.altKey)return;
+    if(k==='Escape'){closeGrid();hushOff();return}
+    if(k==='s'||k==='S'){hush.classList.contains('on')?hushOff():hushOn();return}
+    if(hush.classList.contains('on'))return;
+    if(k==='g'||k==='G'){gridOn?closeGrid():openGrid();return}
+    if(gridOn)return;
+    var tag=(document.activeElement||{}).tagName;
+    if((k===' '||k==='Enter')&&(tag==='BUTTON'||tag==='A'||document.activeElement===prog))return;
+    if(k==='ArrowRight'||k==='PageDown'||k===' '){e.preventDefault();go(cur+1)}
+    else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();go(cur-1)}
+    else if(k==='Home')go(1);
+    else if(k==='End')go(N);
+    else if(k==='f'||k==='F')fs();
+    else if(k==='p'||k==='P')pdf();
+  });
+  var sx=null;
+  document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50&&!grid.classList.contains('on'))go(cur+(d<0?1:-1));sx=null});
+  var h=parseInt(location.hash.slice(1),10);
+  go(h>=1&&h<=N?h:(load()>=1?load():1),!(h>=1&&h<=N));
+})();
+</script>
+</body>
+</html>
