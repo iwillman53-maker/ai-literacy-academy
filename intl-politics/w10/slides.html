@@ -180,6 +180,61 @@ table.tbl td:first-child{color:var(--sub)}
 .balance-bars{display:flex;flex-direction:column;gap:1.2cqi}.bar-row{display:grid;grid-template-columns:10cqi 1fr 7cqi;gap:1cqi;align-items:center;font-size:1.5cqi;font-weight:800}.bar{height:2.1cqi;border-radius:99cqi;background:#ddd;overflow:hidden}.bar i{display:block;height:100%;background:var(--deep)}.bar-row.south .bar i{background:repeating-linear-gradient(135deg,#111 0 .45cqi,#444 .45cqi .9cqi)}
 .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:1.3cqi;position:relative;padding-top:3.7cqi}.timeline::before{content:'';position:absolute;top:1.4cqi;left:8%;right:8%;height:.28cqi;background:#111}.time-event{position:relative;background:#fff;border-radius:1cqi;padding:1.4cqi;box-shadow:var(--shadow);min-height:11cqi}.time-event::before{content:'';position:absolute;top:-3cqi;left:50%;width:1.5cqi;height:1.5cqi;background:var(--accent);border:.35cqi solid #111;border-radius:50%;transform:translateX(-50%)}.time-event b{font-size:1.65cqi}.time-event span{display:block;font-size:1.35cqi;color:var(--sub);line-height:1.4;margin-top:.6cqi}
 
+/* 10주차 시각 체계 · 역사 아카이브와 데이터 저널리즘 */
+#stage{background:#E9E5DA}
+.slide{padding:4.4cqi 5.8cqi;background-color:#F2EFE6;background-image:linear-gradient(rgba(17,17,17,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.025) 1px,transparent 1px);background-size:4.5cqi 4.5cqi,4.5cqi 4.5cqi}
+.slide::after{content:attr(aria-label);position:absolute;right:2.4cqi;bottom:1.8cqi;max-width:22cqi;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1.05cqi;font-weight:850;letter-spacing:.08em;color:rgba(17,17,17,.46);text-transform:uppercase}
+.slide-content{gap:1.55cqi}
+.kicker{font-size:1.35cqi;letter-spacing:.12em;text-transform:uppercase}
+.kicker::before{width:3.4cqi;height:.46cqi;background:var(--accent);box-shadow:1cqi 0 0 var(--ink)}
+h2{font-size:4.15cqi;letter-spacing:-.045em}
+.lede{font-size:2.05cqi}
+.card-grid{gap:1.3cqi}
+.card{border-radius:.25cqi;box-shadow:none;border-top:.5cqi solid var(--ink);padding:2cqi 1.8cqi;background:rgba(255,255,255,.9)}
+.card::after{display:none}
+.card .n{color:var(--accent);font-size:4.4cqi}
+.card .t{font-size:2.15cqi}
+.card .d{font-size:1.65cqi}
+.c4 .card:nth-child(even){transform:translateY(1.2cqi)}
+.bullets{counter-reset:item;gap:.55cqi;border-top:.22cqi solid var(--ink)}
+.bullets li{counter-increment:item;display:grid;grid-template-columns:4.8cqi 1fr;align-items:center;border-radius:0;box-shadow:none;background:rgba(255,255,255,.72);padding:.72cqi 1.4cqi;font-size:1.95cqi;border-bottom:.12cqi solid #C8C3B7}
+.bullets li::before{content:'0' counter(item);width:auto;height:auto;margin:0;background:none;color:var(--ink);font-size:1.35cqi;font-weight:900;letter-spacing:.1em}
+table.tbl{border-radius:.25cqi;box-shadow:none;border:.16cqi solid var(--ink);background:rgba(255,255,255,.86)}
+table.tbl th{background:var(--accent);color:var(--ink)}
+.prompt-card{border-radius:.3cqi;background:#171717;box-shadow:1.1cqi 1.1cqi 0 var(--accent)}
+.archive-panel,.bank-building,.debate-side,.tile-map,.boundary-card,.time-event{border-radius:.3cqi}
+.archive-panel{border:.15cqi solid #B8AF98;box-shadow:1cqi 1cqi 0 rgba(17,17,17,.1)}
+.fact{border-radius:.25cqi;box-shadow:none;border-left:.48cqi solid var(--accent)}
+.state{border-radius:.18cqi}
+.boundary-card{border-top:.6cqi solid var(--accent)}
+.time-event{box-shadow:none;border:.15cqi solid var(--ink);background:#FFFEFA}
+.slide:nth-child(5),.slide:nth-child(16),.slide:nth-child(34){background-color:#171717;color:#fff;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:4.5cqi 4.5cqi,4.5cqi 4.5cqi}
+.slide:nth-child(5) .kicker,.slide:nth-child(16) .kicker,.slide:nth-child(34) .kicker{color:#fff}
+.slide:nth-child(5) .card,.slide:nth-child(16) .card,.slide:nth-child(34) .card{background:#F8F5EC;color:#111;border-top-color:var(--accent)}
+.slide:nth-child(5)::after,.slide:nth-child(16)::after,.slide:nth-child(34)::after{color:rgba(255,255,255,.48)}
+.slide:nth-child(20) .card .t::before{display:block;font-size:3.2cqi;margin-bottom:.6cqi}
+.slide:nth-child(20) .card:nth-child(1) .t::before{content:'▰'}
+.slide:nth-child(20) .card:nth-child(2) .t::before{content:'●'}
+.slide:nth-child(20) .card:nth-child(3) .t::before{content:'ϟ'}
+.slide:nth-child(20) .card:nth-child(4) .t::before{content:'◉'}
+.chapter-slide{background:#171717;color:#fff}
+.chapter-slide::before{content:'II';position:absolute;right:5.5cqi;top:50%;transform:translateY(-52%);font-size:27cqi;font-weight:950;line-height:1;color:rgba(246,199,68,.18);letter-spacing:-.08em}
+.chapter-slide .slide-content{position:relative;z-index:1}
+.chapter-slide .card{background:transparent;color:#fff;border-top-color:var(--accent);border-bottom:.12cqi solid #555}
+.chapter-slide .card .d{color:#C7C7C7}
+.chapter-slide::after{color:rgba(255,255,255,.55)}
+.title-slide.cover-slide{background:#F6C744;color:#111;overflow:hidden}
+.title-slide.cover-slide .slide-content{align-items:flex-start;text-align:left;width:61%;position:relative;z-index:3}
+.title-slide.cover-slide h1{font-size:7.4cqi;line-height:1.02;letter-spacing:-.065em}
+.title-slide.cover-slide h1::after{margin:2cqi 0 0;width:10cqi}
+.title-slide.cover-slide .meta-row{justify-content:flex-start}
+.cover-art{position:absolute;right:-2cqi;top:0;width:44%;height:100%;background:#171717;clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);overflow:hidden}
+.cover-art::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3.1cqi,rgba(255,255,255,.08) 3.1cqi 3.25cqi)}
+.cover-art::after{content:'1776\A      1791\A 1865\A      1944';white-space:pre;position:absolute;right:3cqi;top:4cqi;color:rgba(255,255,255,.12);font-size:5.7cqi;font-weight:950;line-height:1.75;letter-spacing:-.04em;text-align:right}
+.industrial-skyline{position:absolute;left:5cqi;right:0;bottom:0;height:22cqi;border-bottom:2cqi solid #F6C744;background:linear-gradient(90deg,transparent 0 8%,#F6C744 8% 14%,transparent 14% 19%,#F6C744 19% 34%,transparent 34% 40%,#F6C744 40% 51%,transparent 51% 58%,#F6C744 58% 77%,transparent 77%);clip-path:polygon(0 100%,0 64%,8% 64%,8% 32%,14% 32%,14% 73%,19% 73%,19% 50%,27% 50%,27% 38%,34% 38%,34% 68%,40% 68%,40% 18%,44% 18%,44% 0,47% 0,47% 18%,51% 18%,51% 76%,58% 76%,58% 42%,65% 42%,65% 56%,71% 56%,71% 33%,77% 33%,77% 72%,100% 72%,100% 100%)}
+.closing-slide .slide-content{max-width:72cqi;margin:auto}
+.closing-slide::before{content:'04';position:absolute;right:4cqi;top:1cqi;font-size:20cqi;font-weight:950;color:rgba(17,17,17,.08);line-height:1}
+
 /* 하단 네비 */
 #nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:#0E0E0E;border-top:1px solid #222;
   display:flex;align-items:center;gap:8px;padding:0 14px;color:#EEEEEE;font-size:14px;z-index:200}
@@ -233,13 +288,14 @@ table.tbl td:first-child{color:var(--sub)}
 <main id="stage">
 
 <!-- ===== 1. 미국 패권의 완성 ===== -->
-<section class="slide active title-slide" aria-label="1. 미국 패권의 완성">
+<section class="slide active title-slide cover-slide" aria-label="1. 미국 패권의 완성">
   <div class="slide-content">
     <div class="kicker">글로벌시대의 국제정치 · 10주차</div>
     <h1>미국 패권의 완성</h1>
     <p class="lede">해밀턴의 국가 설계에서 브레튼우즈 체제까지</p>
     <div class="meta-row"><span>국가 설계</span><span>세계대전</span><span>국제질서</span></div>
   </div>
+  <div class="cover-art" aria-hidden="true"><div class="industrial-skyline"></div></div>
 </section>
 
 <!-- ===== 2. 강의 순서 ===== -->
@@ -525,7 +581,7 @@ table.tbl td:first-child{color:var(--sub)}
 </section>
 
 <!-- ===== 19. 후반부 전환 ===== -->
-<section class="slide" aria-label="19. 후반부 전환">
+<section class="slide chapter-slide" aria-label="19. 후반부 전환">
   <div class="slide-content">
     <div class="kicker">2부 · 세계 패권</div>
     <h2>후반부 전환</h2>
@@ -761,7 +817,7 @@ table.tbl td:first-child{color:var(--sub)}
 </section>
 
 <!-- ===== 36. 핵심 정리와 마침 ===== -->
-<section class="slide title-slide" aria-label="36. 핵심 정리와 마침">
+<section class="slide title-slide closing-slide" aria-label="36. 핵심 정리와 마침">
   <div class="slide-content">
     <div class="kicker">글로벌시대의 국제정치 · 10주차</div>
     <h1>핵심 정리와 마침</h1>
@@ -776,7 +832,7 @@ table.tbl td:first-child{color:var(--sub)}
 <nav id="nav" aria-label="슬라이드 이동">
   <a href="index.html" target="_blank" rel="noopener" class="hide-sm" aria-label="강의 홈 새 창으로 열기">⌂ 홈</a>
   <button type="button" id="navPrev" aria-label="이전 슬라이드">◀</button>
-  <span id="counter" aria-live="polite">1 / 8</span>
+  <span id="counter" aria-live="polite">1 / 36</span>
   <button type="button" id="navNext" aria-label="다음 슬라이드">▶</button>
   <span class="grow"></span>
   <span class="hint hide-sm">← → 이동 · G 전체보기 · P PDF</span>
