@@ -12,8 +12,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[강의 제목] 슬라이드</title>
-<meta name="description" content="[강의 제목] 수업 슬라이드 · [날짜] · 강사 [이름]">
+<title>미국 패권의 완성 · 글로벌시대의 국제정치 10주차</title>
+<meta name="description" content="해밀턴의 국가 설계에서 브레튼우즈 체제까지 살펴보는 글로벌시대의 국제정치 10주차 웹슬라이드">
 <meta name="theme-color" content="#111111">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -24,6 +24,7 @@
   --line:#E3E3E3;
   --slide-bg:#F4F4F3; --card:#FFFFFF;
   --accent:#F6C744; --accent-sub:#3A3000;
+  --paper:#F7F3E8; --deep:#171A1F; --fog:#E8E5DC;
   --shadow:0 .45cqi 1.4cqi rgba(0,0,0,.09), 0 .1cqi .3cqi rgba(0,0,0,.07);
   --shadow-lg:0 .8cqi 2.4cqi rgba(0,0,0,.13), 0 .18cqi .45cqi rgba(0,0,0,.08);
   --alert:#D32F2F;
@@ -43,7 +44,9 @@ button{font-family:inherit}
   width:min(100vw, calc((100vh - var(--nav-h)) * 16 / 9));aspect-ratio:16/9;
   container-type:inline-size;background:var(--slide-bg);overflow:hidden}
 
-.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:4.6cqi 6cqi;background:var(--slide-bg);color:var(--ink)}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:4.6cqi 6cqi;background:
+  radial-gradient(circle at 88% 12%,rgba(246,199,68,.14),transparent 22%),
+  linear-gradient(135deg,rgba(255,255,255,.72),rgba(244,244,243,.95));color:var(--ink)}
 .slide.active{display:flex}
 .slide-content{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.8cqi;min-height:0}
 
@@ -55,7 +58,9 @@ h2{font-size:3.9cqi;font-weight:800;line-height:1.28}
 .lede{font-size:2.2cqi;color:var(--sub);line-height:1.6}
 
 /* 표지·마침: 머스타드 옐로 / 휴식: 검정 반전 */
-.title-slide{background:var(--accent);color:#111111}
+.title-slide{background:
+  radial-gradient(circle at 78% 25%,rgba(255,255,255,.36),transparent 23%),
+  linear-gradient(135deg,#F6C744 0%,#F1B928 100%);color:#111111}
 .title-slide .slide-content{align-items:center;text-align:center}
 .title-slide .kicker{color:#111111}
 .title-slide h1::after{content:'';display:block;width:6cqi;height:.4cqi;background:#111111;margin:2.4cqi auto 0}
@@ -80,6 +85,8 @@ h2{font-size:3.9cqi;font-weight:800;line-height:1.28}
 .c4{grid-template-columns:repeat(4,1fr)}
 .card{background:var(--card);border-radius:1.2cqi;box-shadow:var(--shadow-lg);padding:2.2cqi;
   display:flex;flex-direction:column;gap:.8cqi;min-width:0}
+.card{position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;right:-2.2cqi;bottom:-2.2cqi;width:6cqi;height:6cqi;border:.18cqi solid rgba(17,17,17,.08);border-radius:50%}
 .card .n{font-size:3.4cqi;font-weight:900;line-height:1;color:var(--ink)}
 .card .t{font-size:2.3cqi;font-weight:800}
 .card .d{font-size:1.8cqi;color:var(--sub);line-height:1.5}
@@ -125,6 +132,112 @@ table.tbl td:first-child{color:var(--sub)}
 .break-big{cursor:pointer;user-select:none;text-align:center;font-variant-numeric:tabular-nums;background:none;border:none;
   font-size:16cqi;font-weight:900;line-height:1.05;color:#FFFFFF;min-height:44px;border-radius:1cqi}
 .break-big.warn{color:#FF8A80}
+
+/* 강의용 시각 모듈 */
+.eyebrow{font-size:1.45cqi;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.big-year{font-size:10cqi;font-weight:950;line-height:.85;letter-spacing:-.06em;color:var(--ink)}
+.source-note{font-size:1.18cqi;color:var(--mute);line-height:1.35}
+.source-note a{font-weight:800}
+.split-visual{display:grid;grid-template-columns:1.02fr .98fr;gap:2.4cqi;align-items:stretch;min-height:0}
+.archive-panel{background:var(--paper);border-radius:1.4cqi;padding:2.4cqi;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.archive-panel::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 1.7cqi,rgba(17,17,17,.035) 1.7cqi 1.82cqi);pointer-events:none}
+.archive-panel>*{position:relative}
+.quote-mark{font-size:7cqi;font-weight:900;line-height:.6;color:var(--accent)}
+.quote-text{font-size:2.15cqi;font-weight:800;line-height:1.45}
+.fact-stack{display:flex;flex-direction:column;gap:1cqi}
+.fact{display:grid;grid-template-columns:5.4cqi 1fr;gap:1.2cqi;align-items:center;background:#fff;border-radius:.9cqi;padding:1cqi 1.3cqi;box-shadow:var(--shadow)}
+.fact b{font-size:2.2cqi}.fact span{font-size:1.55cqi;color:var(--sub);line-height:1.35}
+.flowline{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqi;position:relative}
+.flowline::before{content:'';position:absolute;left:8%;right:8%;top:3.1cqi;height:.35cqi;background:var(--accent)}
+.flow-node{position:relative;text-align:center;padding-top:6.3cqi;font-size:1.65cqi;font-weight:850;line-height:1.35}
+.flow-node .source-note{display:block;margin-top:.35cqi}
+.flow-node::before{content:attr(data-n);position:absolute;top:0;left:50%;transform:translateX(-50%);width:6.2cqi;height:6.2cqi;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center;font-size:2.1cqi;font-weight:900;box-shadow:0 0 0 .7cqi var(--slide-bg)}
+.bank-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.5cqi;align-items:center}
+.bank-building{background:var(--deep);color:#fff;border-radius:1.3cqi;padding:2.2cqi;text-align:center;box-shadow:var(--shadow-lg)}
+.bank-pediment{width:0;height:0;border-left:13cqi solid transparent;border-right:13cqi solid transparent;border-bottom:6cqi solid var(--accent);margin:0 auto -1px}
+.bank-name{background:var(--accent);color:#111;padding:.7cqi;font-size:1.5cqi;font-weight:900;letter-spacing:.08em}
+.columns{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2cqi;padding:1.5cqi 2cqi 0}
+.columns i{display:block;height:10cqi;background:linear-gradient(90deg,#ddd,#fff,#bbb);border-radius:.25cqi .25cqi 0 0}
+.bank-base{height:1.2cqi;background:#fff;margin:.7cqi 1cqi 0}
+.stat-band{display:grid;grid-template-columns:repeat(3,1fr);gap:1cqi;margin-top:1cqi}
+.stat{background:#fff;padding:1.1cqi;border-radius:.8cqi;text-align:center;color:#111}.stat b{display:block;font-size:2.4cqi}.stat span{font-size:1.25cqi;color:var(--sub)}
+.debate{display:grid;grid-template-columns:1fr 8cqi 1fr;gap:1.5cqi;align-items:stretch}
+.debate-side{background:#fff;border-radius:1.2cqi;box-shadow:var(--shadow-lg);padding:2cqi;display:flex;flex-direction:column;gap:1cqi}
+.debate-side h3{font-size:2.4cqi}.debate-side p{font-size:1.65cqi;line-height:1.45;color:var(--sub)}
+.versus{display:grid;place-items:center;font-size:2.2cqi;font-weight:950;background:var(--accent);border-radius:50%;width:7cqi;height:7cqi;align-self:center}
+.map-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:2.2cqi;min-height:0;align-items:center}
+.tile-map{background:#fff;border-radius:1.2cqi;box-shadow:var(--shadow-lg);padding:1.5cqi;display:grid;grid-template-columns:repeat(11,1fr);grid-template-rows:repeat(7,1fr);gap:.38cqi;min-height:28cqi}
+.state{display:grid;place-items:center;border-radius:.42cqi;font-size:1.1cqi;font-weight:950;min-width:0;border:.12cqi solid #aaa;background:#eee}
+.state.free{background:#fff;border:.22cqi solid #111}
+.state.confed{background:repeating-linear-gradient(135deg,#111 0 .45cqi,#333 .45cqi .9cqi);color:#fff;border-color:#111}
+.state.border{background:var(--accent);border:.22cqi dashed #111;color:#111}
+.state.territory{background:#e7e7e7;color:#777;border-style:dotted}
+.map-legend{display:flex;flex-direction:column;gap:1cqi}
+.legend-item{display:grid;grid-template-columns:3.5cqi 1fr;gap:1cqi;align-items:center;font-size:1.45cqi;line-height:1.35}
+.legend-swatch{height:2.6cqi;border-radius:.4cqi;border:.2cqi solid #111}
+.legend-swatch.free{background:#fff}.legend-swatch.confed{background:repeating-linear-gradient(135deg,#111 0 .45cqi,#333 .45cqi .9cqi)}.legend-swatch.border{background:var(--accent);border-style:dashed}
+.boundary-card{background:var(--deep);color:#fff;border-radius:1.2cqi;padding:1.5cqi}.boundary-card b{display:block;color:var(--accent);font-size:1.6cqi;margin-bottom:.45cqi}.boundary-card span{font-size:1.35cqi;line-height:1.4}
+.balance-bars{display:flex;flex-direction:column;gap:1.2cqi}.bar-row{display:grid;grid-template-columns:10cqi 1fr 7cqi;gap:1cqi;align-items:center;font-size:1.5cqi;font-weight:800}.bar{height:2.1cqi;border-radius:99cqi;background:#ddd;overflow:hidden}.bar i{display:block;height:100%;background:var(--deep)}.bar-row.south .bar i{background:repeating-linear-gradient(135deg,#111 0 .45cqi,#444 .45cqi .9cqi)}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:1.3cqi;position:relative;padding-top:3.7cqi}.timeline::before{content:'';position:absolute;top:1.4cqi;left:8%;right:8%;height:.28cqi;background:#111}.time-event{position:relative;background:#fff;border-radius:1cqi;padding:1.4cqi;box-shadow:var(--shadow);min-height:11cqi}.time-event::before{content:'';position:absolute;top:-3cqi;left:50%;width:1.5cqi;height:1.5cqi;background:var(--accent);border:.35cqi solid #111;border-radius:50%;transform:translateX(-50%)}.time-event b{font-size:1.65cqi}.time-event span{display:block;font-size:1.35cqi;color:var(--sub);line-height:1.4;margin-top:.6cqi}
+
+/* 10주차 시각 체계 · 역사 아카이브와 데이터 저널리즘 */
+#stage{background:#E9E5DA}
+.slide{padding:4.4cqi 5.8cqi;background-color:#F2EFE6;background-image:linear-gradient(rgba(17,17,17,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.025) 1px,transparent 1px);background-size:4.5cqi 4.5cqi,4.5cqi 4.5cqi}
+.slide::after{content:attr(aria-label);position:absolute;right:2.4cqi;bottom:1.8cqi;max-width:22cqi;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1.05cqi;font-weight:850;letter-spacing:.08em;color:rgba(17,17,17,.46);text-transform:uppercase}
+.slide-content{gap:1.55cqi}
+.kicker{font-size:1.35cqi;letter-spacing:.12em;text-transform:uppercase}
+.kicker::before{width:3.4cqi;height:.46cqi;background:var(--accent);box-shadow:1cqi 0 0 var(--ink)}
+h2{font-size:4.15cqi;letter-spacing:-.045em}
+.lede{font-size:2.05cqi}
+.card-grid{gap:1.3cqi}
+.card{border-radius:.25cqi;box-shadow:none;border-top:.5cqi solid var(--ink);padding:2cqi 1.8cqi;background:rgba(255,255,255,.9)}
+.card::after{display:none}
+.card .n{color:var(--accent);font-size:4.4cqi}
+.card .t{font-size:2.15cqi}
+.card .d{font-size:1.65cqi}
+.c4 .card:nth-child(even){transform:translateY(1.2cqi)}
+.bullets{counter-reset:item;gap:.55cqi;border-top:.22cqi solid var(--ink)}
+.bullets li{counter-increment:item;display:grid;grid-template-columns:4.8cqi 1fr;align-items:center;border-radius:0;box-shadow:none;background:rgba(255,255,255,.72);padding:.72cqi 1.4cqi;font-size:1.95cqi;border-bottom:.12cqi solid #C8C3B7}
+.bullets li::before{content:'0' counter(item);width:auto;height:auto;margin:0;background:none;color:var(--ink);font-size:1.35cqi;font-weight:900;letter-spacing:.1em}
+table.tbl{border-radius:.25cqi;box-shadow:none;border:.16cqi solid var(--ink);background:rgba(255,255,255,.86)}
+table.tbl th{background:var(--accent);color:var(--ink)}
+.prompt-card{border-radius:.3cqi;background:#171717;box-shadow:1.1cqi 1.1cqi 0 var(--accent)}
+.archive-panel,.bank-building,.debate-side,.tile-map,.boundary-card,.time-event{border-radius:.3cqi}
+.archive-panel{border:.15cqi solid #B8AF98;box-shadow:1cqi 1cqi 0 rgba(17,17,17,.1)}
+.fact{border-radius:.25cqi;box-shadow:none;border-left:.48cqi solid var(--accent)}
+.state{border-radius:.18cqi}
+.boundary-card{border-top:.6cqi solid var(--accent)}
+.time-event{box-shadow:none;border:.15cqi solid var(--ink);background:#FFFEFA}
+.slide:nth-child(5),.slide:nth-child(16),.slide:nth-child(34){background-color:#171717;color:#fff;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:4.5cqi 4.5cqi,4.5cqi 4.5cqi}
+.slide:nth-child(5) .kicker,.slide:nth-child(16) .kicker,.slide:nth-child(34) .kicker{color:#fff}
+.slide:nth-child(5) .card,.slide:nth-child(16) .card,.slide:nth-child(34) .card{background:#F8F5EC;color:#111;border-top-color:var(--accent)}
+.slide:nth-child(5)::after,.slide:nth-child(16)::after,.slide:nth-child(34)::after{color:rgba(255,255,255,.48)}
+.slide:nth-child(20) .card .t::before{display:block;font-size:3.2cqi;margin-bottom:.6cqi}
+.slide:nth-child(20) .card:nth-child(1) .t::before{content:'▰'}
+.slide:nth-child(20) .card:nth-child(2) .t::before{content:'●'}
+.slide:nth-child(20) .card:nth-child(3) .t::before{content:'ϟ'}
+.slide:nth-child(20) .card:nth-child(4) .t::before{content:'◉'}
+.chapter-slide{background:#171717;color:#fff}
+.chapter-slide::before{content:'II';position:absolute;right:5.5cqi;top:50%;transform:translateY(-52%);font-size:27cqi;font-weight:950;line-height:1;color:rgba(246,199,68,.18);letter-spacing:-.08em}
+.chapter-slide .slide-content{position:relative;z-index:1}
+.chapter-slide .card{background:transparent;color:#fff;border-top-color:var(--accent);border-bottom:.12cqi solid #555}
+.chapter-slide .card .d{color:#C7C7C7}
+.chapter-slide::after{color:rgba(255,255,255,.55)}
+.title-slide.cover-slide{background:#F6C744;color:#111;overflow:hidden}
+.title-slide.cover-slide .slide-content{align-items:flex-start;text-align:left;width:61%;position:relative;z-index:3}
+.title-slide.cover-slide h1{font-size:7.4cqi;line-height:1.02;letter-spacing:-.065em}
+.title-slide.cover-slide h1::after{margin:2cqi 0 0;width:10cqi}
+.title-slide.cover-slide .meta-row{justify-content:flex-start}
+.cover-art{position:absolute;right:-2cqi;top:0;width:44%;height:100%;background:#171717;clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);overflow:hidden}
+.cover-art::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3.1cqi,rgba(255,255,255,.08) 3.1cqi 3.25cqi)}
+.cover-art::after{content:'1776\A      1791\A 1865\A      1944';white-space:pre;position:absolute;right:3cqi;top:4cqi;color:rgba(255,255,255,.12);font-size:5.7cqi;font-weight:950;line-height:1.75;letter-spacing:-.04em;text-align:right}
+.industrial-skyline{position:absolute;left:5cqi;right:0;bottom:0;height:22cqi;border-bottom:2cqi solid #F6C744;background:linear-gradient(90deg,transparent 0 8%,#F6C744 8% 14%,transparent 14% 19%,#F6C744 19% 34%,transparent 34% 40%,#F6C744 40% 51%,transparent 51% 58%,#F6C744 58% 77%,transparent 77%);clip-path:polygon(0 100%,0 64%,8% 64%,8% 32%,14% 32%,14% 73%,19% 73%,19% 50%,27% 50%,27% 38%,34% 38%,34% 68%,40% 68%,40% 18%,44% 18%,44% 0,47% 0,47% 18%,51% 18%,51% 76%,58% 76%,58% 42%,65% 42%,65% 56%,71% 56%,71% 33%,77% 33%,77% 72%,100% 72%,100% 100%)}
+.closing-slide .slide-content{max-width:72cqi;margin:auto}
+.closing-slide::before{content:'04';position:absolute;right:4cqi;top:1cqi;font-size:20cqi;font-weight:950;color:rgba(17,17,17,.08);line-height:1}
+.topic-card{appearance:none;text-align:left;font-family:inherit;color:inherit;cursor:pointer;width:100%;min-height:15cqi;transition:transform .18s ease,background .18s ease}.topic-card:hover,.topic-card:focus-visible{transform:translateY(-.6cqi);background:#FFF8DB;outline:.28cqi solid var(--ink);outline-offset:.25cqi}.topic-card .open-mark{margin-top:auto;font-size:1.25cqi;font-weight:900;letter-spacing:.08em}.topic-card .open-mark::after{content:'  →'}
+.topic-detail{position:absolute;inset:2.6cqi 3.4cqi 2.8cqi;z-index:20;display:none;grid-template-columns:1.18fr .82fr;background:#171717;color:#fff;box-shadow:0 1.4cqi 4cqi rgba(0,0,0,.38);overflow:hidden}.topic-detail.open{display:grid}.topic-detail figure{position:relative;min-width:0;overflow:hidden;background:#222}.topic-detail img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.04)}.topic-detail figure::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 68%,#171717 100%);pointer-events:none}
+.topic-copy{padding:3cqi 3.1cqi 2.5cqi;display:flex;flex-direction:column;justify-content:center;gap:1.15cqi;min-width:0}.topic-copy .eyebrow{color:var(--accent)}.topic-copy h3{font-size:3.5cqi;line-height:1.1;letter-spacing:-.04em}.topic-copy .summary{font-size:1.72cqi;line-height:1.5;color:#E4E4E4}.topic-points{display:flex;flex-direction:column;gap:.6cqi;border-top:.15cqi solid #555;padding-top:1cqi}.topic-points p{display:grid;grid-template-columns:5.6cqi 1fr;gap:.8cqi;font-size:1.35cqi;line-height:1.35;color:#D2D2D2}.topic-points b{color:#fff}.topic-close{position:absolute;right:1.2cqi;top:1.2cqi;z-index:3;width:4.3cqi;height:4.3cqi;border-radius:50%;border:.14cqi solid #fff;background:#171717;color:#fff;font-size:2.2cqi;font-weight:800;cursor:pointer}.topic-close:hover,.topic-close:focus-visible{background:var(--accent);color:#111;outline:.2cqi solid #fff;outline-offset:.2cqi}
+.power-detail{grid-template-columns:.88fr 1.12fr}.power-visual{position:relative;display:flex;flex-direction:column;justify-content:center;gap:2cqi;padding:4.5cqi 4cqi;background:#F6C744;color:#111;overflow:hidden}.power-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(17,17,17,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.08) 1px,transparent 1px);background-size:5cqi 5cqi}.power-visual>*{position:relative;z-index:1}.power-number{font-size:8.8cqi;font-weight:950;line-height:.88;letter-spacing:-.08em}.power-caption{font-size:1.55cqi;line-height:1.35;font-weight:850;max-width:28cqi}.power-bars{height:15cqi;display:flex;align-items:flex-end;gap:2.2cqi;border-bottom:.28cqi solid #111}.power-bar{width:8cqi;background:#111;color:#fff;padding:.8cqi .6cqi;font-size:1.2cqi;font-weight:900;text-align:center;min-height:2.5cqi}.power-bar.accent{background:#fff;color:#111;border:.18cqi solid #111}.power-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:.8cqi}.power-node{border:.2cqi solid #111;background:#fff;padding:1.2cqi .8cqi;text-align:center;font-size:1.28cqi;font-weight:900}.power-arrow{font-size:2.2cqi;font-weight:950}.power-source{font-size:1.05cqi;line-height:1.3;font-weight:750}.power-source a{color:inherit;text-decoration-thickness:.12cqi;text-underline-offset:.25cqi}.power-detail .topic-copy{padding-left:2.7cqi;padding-right:2.7cqi}.power-detail .topic-copy h3{font-size:3.1cqi}.power-detail .topic-copy .summary{font-size:1.5cqi}.power-detail .topic-points p{font-size:1.22cqi;grid-template-columns:5.2cqi 1fr}
 
 /* 하단 네비 */
 #nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:#0E0E0E;border-top:1px solid #222;
@@ -178,332 +291,550 @@ table.tbl td:first-child{color:var(--sub)}
 
 <main id="stage">
 
-<!-- ===== 1. 표지 ===== -->
-<section class="slide title-slide" aria-label="1. 표지">
+<!-- ===== 1. 미국 패권의 완성 ===== -->
+<section class="slide active title-slide cover-slide" aria-label="1. 미국 패권의 완성">
   <div class="slide-content">
-    <div class="kicker">50대 후반 일반인 · 2시간 실습</div>
-    <h1>생활 속의 AI</h1>
-    <p class="lede">검색·영수증·건강검진·이미지·동영상</p>
-    <div class="meta-row"><span>직접 질문</span><span>자료 이해</span><span>콘텐츠 제작</span></div>
+    <div class="kicker">글로벌시대의 국제정치 · 10주차</div>
+    <h1>미국 패권의 완성</h1>
+    <p class="lede">해밀턴의 국가 설계에서 브레튼우즈 체제까지</p>
+    <div class="meta-row"><span>국가 설계</span><span>세계대전</span><span>국제질서</span></div>
+  </div>
+  <div class="cover-art" aria-hidden="true"><div class="industrial-skyline"></div></div>
+</section>
+
+<!-- ===== 2. 강의 순서 ===== -->
+<section class="slide" aria-label="2. 강의 순서">
+  <div class="slide-content">
+    <div class="kicker">100분 진행표</div>
+    <h2>강의 순서</h2>
+    <table class="tbl">
+      <thead><tr><th scope="col">구간</th><th scope="col">핵심 흐름</th></tr></thead>
+      <tbody>
+        <tr class="today"><td>0~50분</td><td>제도 설계 → 산업 통합 → 단일시장</td></tr>
+        <tr><td>50~60분</td><td>휴식</td></tr>
+        <tr><td>60~100분</td><td>세계대전 → 브레튼우즈 → 미국 중심 질서</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
-<!-- ===== 2. 오늘의 순서 ===== -->
-<section class="slide" aria-label="2. 오늘의 순서">
+<!-- ===== 3. 핵심 질문 ===== -->
+<section class="slide" aria-label="3. 핵심 질문">
   <div class="slide-content">
-    <div class="kicker">120분 · 네 단계</div>
-    <h2>오늘의 순서</h2>
-    <div class="card-grid c4">
-      <div class="card"><div class="n">1</div><div class="t">생활문서 읽기</div><div class="d">돌봄 공고·두 탭 비교</div></div>
-      <div class="card"><div class="n">2</div><div class="t">내 자료 정리</div><div class="d">영수증·검진·보험약관</div></div>
-      <div class="card"><div class="n">3</div><div class="t">이미지 만들기</div><div class="d">여행 이미지 한 장</div></div>
-      <div class="card"><div class="n">4</div><div class="t">영상 만들기</div><div class="d">사진 6장으로 짧은 영상</div></div>
-    </div>
-    <p class="muted">중간 휴식 10분 · 마지막에 결과 확인</p>
-  </div>
-</section>
-
-<!-- ===== 3. 오늘의 결과물 ===== -->
-<section class="slide" aria-label="3. 오늘의 결과물">
-  <div class="slide-content">
-    <div class="kicker">학습 목표</div><h2>오늘의 결과물</h2><div class="card-grid c3"><div class="card"><div class="n">1</div><div class="t">공고</div><div class="d">자격·서류 요약</div></div><div class="card"><div class="n">2</div><div class="t">생활 자료</div><div class="d">지출표·검진 질문·약관 점검</div></div><div class="card"><div class="n">3</div><div class="t">창작</div><div class="d">산동유람 이미지와 영상 기획</div></div></div>
-  </div>
-</section>
-
-<!-- ===== 4. AI 발달 7단계 ===== -->
-<section class="slide" aria-label="4. AI 발달 7단계">
-  <div class="slide-content">
-    <div class="kicker">검색에서 자기개선까지</div>
-    <h2>AI 발달 7단계</h2>
-    <div class="card-grid c4">
-      <div class="card"><div class="n">1</div><div class="t">검색</div><div class="d">정보 찾기</div></div>
-      <div class="card"><div class="n">2</div><div class="t">생성</div><div class="d">글·이미지 만들기</div></div>
-      <div class="card"><div class="n">3</div><div class="t">바이브코딩</div><div class="d">말로 앱 만들기</div></div>
-      <div class="card"><div class="n">4</div><div class="t">에이전트</div><div class="d">목표를 받아 수행</div></div>
-    </div>
-    <div class="card-grid c3" style="margin-top:1.6cqi">
-      <div class="card"><div class="n">5</div><div class="t">오케스트레이션</div><div class="d">여러 AI를 연결·협업</div></div>
-      <div class="card"><div class="n">6</div><div class="t">메타에이전트</div><div class="d">에이전트를 감독·조정</div></div>
-      <div class="card"><div class="n">7</div><div class="t">재귀적 에이전트</div><div class="d">결과를 바탕으로 스스로 개선</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 5. AI의 역할 ===== -->
-<section class="slide" aria-label="5. AI의 역할">
-  <div class="slide-content">
-    <div class="kicker">기본 개념</div>
-    <h2>AI의 역할</h2>
-    <ul class="bullets"><li>질문을 받아 초안 생성</li><li>사진·문서의 문자와 내용 정리</li><li>이미지와 영상의 장면 생성</li><li>최종 선택과 사실 확인은 사람의 몫</li></ul>
-  </div>
-</section>
-
-<!-- ===== 6. 크롬 실습 준비 ===== -->
-<section class="slide" aria-label="6. 크롬 실습 준비">
-  <div class="slide-content">
-    <div class="kicker">제미나이 인 크롬 · 준비 5분</div><h2>크롬 실습 준비</h2><ul class="bullets"><li>자료 ④ 어르신 돌봄 공고를 크롬 탭에서 열기</li><li>상단 제미나이에게 물어보기 선택</li><li>질문창의 공유 탭에서 공고문 선택 표시 확인</li><li>PDF 내용을 읽지 못하면 본문을 Google 문서 탭에 붙여넣기</li></ul>
-  </div>
-</section>
-
-<!-- ===== 7. 공고문 요약 ===== -->
-<section class="slide" aria-label="7. 공고문 요약">
-  <div class="slide-content">
-    <div class="kicker">제미나이 인 크롬 · 실습 1</div><h2>공고문 요약</h2><div class="prompt-card"><div class="label">자료 ④ · 돌봄 공고</div><blockquote id="pt-chrome-1">현재 공유한 돌봄 공고를 어려운 말 없이 다섯 줄로 요약해줘. 신청 기간과 신청 장소를 원문 표현대로 적어줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-chrome-1" aria-label="공고문 요약 질문 복사">복사</button></div><div style="display:flex;align-items:center;gap:1.2cqi;flex-wrap:wrap"><button type="button" class="timer-chip" data-minutes="4" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">04:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a href="./assets/04-welfare-practice7.pdf" target="_blank" rel="noopener" style="background:#FFFFFF;color:#111111;border:.18cqi solid #111111;border-radius:99cqi;min-height:44px;padding:.8cqi 2cqi;font-size:1.55cqi;font-weight:800;text-decoration:none;display:inline-flex;align-items:center">📄 돌봄 공고 열기 ↗</a></div>
-  </div>
-</section>
-
-<!-- ===== 8. 신청 자격 확인 ===== -->
-<section class="slide" aria-label="8. 신청 자격 확인">
-  <div class="slide-content">
-    <div class="kicker">제미나이 인 크롬 · 실습 2</div><h2>신청 자격 확인</h2><div class="prompt-card"><div class="label">자료 ④ · 돌봄 공고</div><blockquote id="pt-chrome-2">이 공고에서 만 60세이고 소득이 없는 사람의 신청 가능 여부를 알려줘. 연령의 예외 조건과 거주 조건을 구분하고 근거가 있는 항목을 표시해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-chrome-2" aria-label="신청 자격 확인 질문 복사">복사</button></div><div style="display:flex;align-items:center;gap:1.2cqi;flex-wrap:wrap"><button type="button" class="timer-chip" data-minutes="5" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">05:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a href="./assets/04-welfare-practice7.pdf" target="_blank" rel="noopener" style="background:#FFFFFF;color:#111111;border:.18cqi solid #111111;border-radius:99cqi;min-height:44px;padding:.8cqi 2cqi;font-size:1.55cqi;font-weight:800;text-decoration:none;display:inline-flex;align-items:center">📄 돌봄 공고 열기 ↗</a></div>
-  </div>
-</section>
-
-<!-- ===== 9. 신청 준비 목록 ===== -->
-<section class="slide" aria-label="9. 신청 준비 목록">
-  <div class="slide-content">
-    <div class="kicker">제미나이 인 크롬 · 실습 3</div><h2>신청 준비 목록</h2><div class="prompt-card"><div class="label">자료 ④ · 돌봄 공고</div><blockquote id="pt-chrome-3">이 공고에 신청하려면 무엇을 언제 어디에 제출해야 해? 필수 서류와 해당자만 내는 서류를 나눠 순서대로 정리해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-chrome-3" aria-label="신청 준비 목록 질문 복사">복사</button></div><div style="display:flex;align-items:center;gap:1.2cqi;flex-wrap:wrap"><button type="button" class="timer-chip" data-minutes="5" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">05:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a href="./assets/04-welfare-practice7.pdf" target="_blank" rel="noopener" style="background:#FFFFFF;color:#111111;border:.18cqi solid #111111;border-radius:99cqi;min-height:44px;padding:.8cqi 2cqi;font-size:1.55cqi;font-weight:800;text-decoration:none;display:inline-flex;align-items:center">📄 돌봄 공고 열기 ↗</a></div>
-  </div>
-</section>
-
-<!-- ===== 10. 두 탭 비교 ===== -->
-<section class="slide" aria-label="10. 두 탭 비교">
-  <div class="slide-content">
-    <div class="kicker">제미나이 인 크롬 · 실습 4 · 6분</div><h2>두 탭 비교</h2><ul class="bullets"><li>자료 열기: 돌봄 공고·보험약관</li><li>탭 추가: 두 문서 선택·체크 → 질문 실행·원문 대조</li></ul><div style="display:flex;align-items:center;gap:1.2cqi;flex-wrap:wrap"><a href="./assets/04-welfare-practice7.pdf" target="_blank" rel="noopener" style="background:#FFFFFF;color:#111111;border:.18cqi solid #111111;border-radius:99cqi;min-height:44px;padding:.8cqi 2cqi;font-size:1.55cqi;font-weight:800;text-decoration:none;display:inline-flex;align-items:center">📄 돌봄 공고 열기 ↗</a><a href="./03-insurance-terms-practice.pdf" target="_blank" rel="noopener" style="background:#FFFFFF;color:#111111;border:.18cqi solid #111111;border-radius:99cqi;min-height:44px;padding:.8cqi 2cqi;font-size:1.55cqi;font-weight:800;text-decoration:none;display:inline-flex;align-items:center">📄 보험약관 열기 ↗</a></div><div class="prompt-card"><div class="label">두 문서 · 준비 서류 비교</div><blockquote id="pt-chrome-4">공유한 두 문서에서 돌봄사업 신청 서류와 보험금 청구 서류를 각각 찾아 표로 비교해줘. 서로 다른 목적의 서류임을 표시하고 원문 근거를 적어줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-chrome-4" aria-label="두 탭 비교 질문 복사">복사</button></div>
-  </div>
-</section>
-
-<!-- ===== 11. 영수증 실습 준비 ===== -->
-<section class="slide" aria-label="11. 영수증 실습 준비">
-  <div class="slide-content">
-    <div class="kicker">생활 자료 실습 · 준비</div>
-    <h2>영수증 실습 준비</h2>
-    <ul class="bullets"><li>개인정보: 이름·카드번호·승인번호 가리기</li><li>남길 정보: 결제일·가맹점·금액·품목</li><li>자료 선택: 개인정보를 가린 연습용 영수증</li><li>지출 분류: 식비·교통비·생활비</li><li>결과 점검: 합계·중복 결제 의심 항목</li></ul>
-  </div>
-</section>
-
-<!-- ===== 12. 영수증 첨부 ===== -->
-<section class="slide" aria-label="12. 영수증 첨부">
-  <div class="slide-content">
-    <div class="kicker">따라 하기</div>
-    <h2>영수증 첨부</h2>
-    <ul class="bullets"><li><a href="./01-receipts-practice5.pdf" target="_blank" style="color:#2563eb;text-decoration:underline;font-weight:700;">연습용 영수증 열기</a></li><li>오른쪽 위 ‘Gemini에게 물어보기’ 선택</li><li>현재 탭 공유 확인</li><li>표 정리 질문 입력</li></ul>
-  </div>
-</section>
-
-<!-- ===== 13. 영수증 질문 ===== -->
-<section class="slide" aria-label="13. 영수증 질문">
-  <div class="slide-content">
-    <div class="kicker">복사해서 사용</div>
-    <h2>영수증 질문</h2>
-    <div class="prompt-card"><div class="label">연습용 카드 영수증</div><blockquote id="pt-1">첨부한 연습용 영수증에서 날짜·가맹점·금액을 표로 정리해줘. 지출 항목을 분류하고 합계를 계산해줘. 읽기 어려운 부분은 추측하지 말고 표시해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-1" aria-label="영수증 질문 복사">복사</button></div>
-  </div>
-</section>
-
-<!-- ===== 14. 지출표 확인 ===== -->
-<section class="slide" aria-label="14. 지출표 확인">
-  <div class="slide-content">
-    <div class="kicker">결과 점검</div>
-    <h2>지출표 확인</h2>
-    <div class="card-grid c3"><div class="card"><div class="n">1</div><div class="t">날짜</div><div class="d">원본 영수증과 일치</div></div><div class="card"><div class="n">2</div><div class="t">금액</div><div class="d">합계 재계산</div></div><div class="card"><div class="n">3</div><div class="t">분류</div><div class="d">내 생활 기준으로 수정</div></div></div>
-  </div>
-</section>
-
-<!-- ===== 15. 건강검진 자료 ===== -->
-<section class="slide" aria-label="15. 건강검진 자료">
-  <div class="slide-content">
-    <div class="kicker">자료 ② · 가상 결과지</div><h2>건강검진 자료</h2><ul class="bullets"><li><a href="./02-health-practice6.pdf" target="_blank" style="color:#2563eb;text-decoration:underline;font-weight:700;">교육용 일반건강검진 결과 통보서 열기(2쪽)</a></li><li>기준을 벗어난 항목과 정상 항목 함께 포함</li><li><a href="https://notebooklm.google.com/" target="_blank">NotebookLM 바로 열기 — PDF를 소스로 추가</a></li><li>원문 인용 번호를 눌러 수치와 문구 확인</li></ul>
-  </div>
-</section>
-
-<!-- ===== 16. 검진표 가리기 ===== -->
-<section class="slide" aria-label="16. 검진표 가리기">
-  <div class="slide-content">
-    <div class="kicker">자료 준비</div>
-    <h2>검진표 가리기</h2>
-    <ul class="bullets"><li>이름·생년월일·등록번호 가리기</li><li>검사 항목·수치·참고 범위만 남기기</li><li>연습용 자료 우선 사용</li><li>개인 자료 사용 시 공유 범위 확인</li></ul>
-  </div>
-</section>
-
-<!-- ===== 17. 검진표 첨부 ===== -->
-<section class="slide" aria-label="17. 검진표 첨부">
-  <div class="slide-content">
-    <div class="kicker">따라 하기</div><h2>검진표 첨부</h2><ul class="bullets"><li><a href="https://notebooklm.google.com/" target="_blank">NotebookLM에서 새 노트북</a></li><li>자료 ② <a href="./02-health-practice6.pdf" target="_blank" style="color:#2563eb;text-decoration:underline;font-weight:700;">건강검진표 열기(2쪽)</a> → PDF를 소스로 추가</li><li>질문 후 인용 번호에서 원문 위치 확인</li><li>스튜디오 생성은 시간 여유가 있을 때 시연</li></ul>
-  </div>
-</section>
-
-<!-- ===== 18. 검진 질문 ===== -->
-<section class="slide" aria-label="18. 검진 질문">
-  <div class="slide-content">
-    <div class="kicker">복사해서 사용</div><h2>검진 질문</h2><div class="prompt-card"><div class="label">자료 ② · 건강검진표</div><blockquote id="pt-2">이 결과지에서 기준을 벗어난 항목만 쉬운 말로 정리해줘. 2차 검진 시기와 준비물도 원문 근거를 붙여 알려줘. 수치만으로 진단하지 말고 의료진에게 물을 질문 세 개를 제안해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-2" aria-label="검진 질문 복사">복사</button></div>
-  </div>
-</section>
-
-<!-- ===== 19. 검진 결과 점검 ===== -->
-<section class="slide" aria-label="19. 검진 결과 점검">
-  <div class="slide-content">
-    <div class="kicker">원문 대조</div><h2>검진 결과 점검</h2><ul class="bullets"><li>정상 항목을 이상 항목으로 잘못 분류했는지 확인</li><li>2차 검진 안내의 기간과 준비물 원문 대조</li><li>인용 번호 클릭 → 자료 ② 해당 위치 확인</li><li>실제 검진 결과의 해석은 의료진 상담</li></ul>
-  </div>
-</section>
-
-<!-- ===== 20. 보험약관 읽기 ===== -->
-<section class="slide" aria-label="20. 보험약관 읽기">
-  <div class="slide-content">
-    <div class="kicker">자료 ③ · 가상 약관</div><h2>보험약관 읽기</h2><ul class="bullets"><li>NotebookLM에 자료 ③ <a href="./03-insurance-terms-practice.pdf" target="_blank" style="color:#2563eb;text-decoration:underline;font-weight:700;">보험약관 열기(3쪽)</a> → PDF를 소스로 추가</li><li>보장 한도·자기부담금·면책사유 찾기</li><li>갱신 시 보험료 변경 조건 확인</li><li>실제 보험 적용은 가입 약관 원문과 보험사 확인</li></ul>
-  </div>
-</section>
-
-<!-- ===== 21. 보험약관 질문 ===== -->
-<section class="slide" aria-label="21. 보험약관 질문">
-  <div class="slide-content">
-    <div class="kicker">복사해서 사용</div><h2>보험약관 질문</h2><div class="prompt-card"><div class="label">자료 ③ · 보험약관</div><blockquote id="pt-insurance">이 약관에서 꼭 알아야 할 내용 다섯 가지와 불리할 수 있는 조건을 정리해줘. 임플란트 보장 여부와 보험금 청구 기한·서류를 해당 조항을 인용해 알려줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-insurance" aria-label="보험약관 질문 복사">복사</button></div>
-  </div>
-</section>
-
-<!-- ===== 22. 휴식 ===== -->
-<section class="slide dark" aria-label="22. 휴식">
-  <div class="slide-content">
-    <div class="kicker">잠깐 쉬기</div>
-    <button type="button" class="break-big" data-minutes="10" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋" aria-label="휴식 타이머 10분"><span class="time">10:00</span></button>
-    <p class="lede">10분 뒤 이미지·동영상 실습</p>
-  </div>
-</section>
-
-<!-- ===== 23. 이미지 실습 준비 ===== -->
-<section class="slide" aria-label="23. 이미지 실습 준비">
-  <div class="slide-content">
-    <div class="kicker">이미지 실습 · 20분</div><h2>이미지 실습 준비</h2><ul class="bullets"><li>자료 ① <a href="./2026 산동유람 11월.pdf" target="_blank" style="color:#2563eb;text-decoration:underline;font-weight:700;">산동유람 일정표 열기(2쪽)</a></li><li>핵심 장소: 곡부 공자 유적·청도 바닷가</li><li>여행 분위기: 여유·우정·늦가을</li><li>참가자 이름과 연락처 제거 후 일정만 입력</li></ul>
-  </div>
-</section>
-
-<!-- ===== 24. 여행 이미지 질문 ===== -->
-<section class="slide" aria-label="24. 여행 이미지 질문">
-  <div class="slide-content">
-    <div class="kicker">복사해서 사용</div><h2>여행 이미지 질문</h2><div class="prompt-card"><div class="label">자료 ① · 산동유람 일정</div><blockquote id="pt-3">첨부한 산동유람 일정에서 2~3일차의 장소와 분위기를 참고해 가로형 여행 이미지를 만들어줘. 곡부 공자 유적과 청도 바다의 늦가을 풍경, 친구들의 여유로운 여행. 참가자 이름·연락처·글자 없음.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-3" aria-label="여행 이미지 질문 복사">복사</button></div>
-  </div>
-</section>
-
-<!-- ===== 25. 이미지 결과 확인 ===== -->
-<section class="slide" aria-label="25. 이미지 결과 확인">
-  <div class="slide-content">
-    <div class="kicker">직접 만들기</div><h2>이미지 결과 확인</h2><ul class="bullets"><li>이미지 생성 도구에 일정과 질문 입력</li><li>곡부·청도 장소 표현과 화면 비율 확인</li><li>잘못된 글자·원치 않는 인물은 수정 요청</li><li>완성 이미지 한 장 저장 → 영상 실습에 사용</li></ul>
-  </div>
-</section>
-
-<!-- ===== 26. 동영상 실습 준비 ===== -->
-<section class="slide" aria-label="26. 동영상 실습 준비">
-  <div class="slide-content">
-    <div class="kicker">동영상 실습 · 15분</div><h2>동영상 실습 준비</h2><ul class="bullets"><li>방금 만든 여행 이미지 한 장 선택</li><li>영상 생성 도구의 이미지→동영상 기능 열기</li><li>짧은 장면 한 개: 풍경·움직임·분위기 지정</li><li>계정의 영상 생성 가능 여부와 길이 확인</li></ul>
-  </div>
-</section>
-<!-- ===== 27. 동영상 실습 사진 6장 ===== -->
-<section class="slide" aria-label="27. 동영상 실습 사진 6장">
-  <div class="slide-content">
-    <div class="kicker">동영상 실습 · 사진 자료</div>
-    <h2>사진 6장 열기·저장</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-      <a href="media/01-portrait.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
-        <img src="media/01-portrait.jpg" alt="인물 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
-        <div>① 인물</div>
-      </a>
-      <a href="media/02-gate.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
-        <img src="media/02-gate.jpg" alt="성문 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
-        <div>② 성문</div>
-      </a>
-      <a href="media/03-forest.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
-        <img src="media/03-forest.jpg" alt="숲길 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
-        <div>③ 숲길</div>
-      </a>
-      <a href="media/04-friends.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
-        <img src="media/04-friends.jpg" alt="친구 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
-        <div>④ 친구들</div>
-      </a>
-      <a href="media/05-rest.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
-        <img src="media/05-rest.jpg" alt="휴식 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
-        <div>⑤ 휴식</div>
-      </a>
-      <a href="media/06-group.jpg" target="_blank" download style="text-align:center;color:inherit;text-decoration:none;">
-        <img src="media/06-group.jpg" alt="단체 사진" style="width:100%;height:150px;object-fit:cover;border-radius:14px;">
-        <div>⑥ 단체</div>
-      </a>
-    </div>
-    <p class="muted">사진을 누르면 크게 열립니다. 스마트폰에서는 사진을 길게 눌러 저장하세요.</p>
-  </div>
-</section>
-
-<!-- ===== 28. Astra 영상 프롬프트 ===== -->
-<section class="slide" aria-label="28. Astra 영상 프롬프트">
-  <div class="slide-content">
-    <div class="kicker">동영상 실습 · 24~30초</div>
-    <h2>Astra 프롬프트 복사</h2>
+    <div class="kicker">오늘의 질문</div>
+    <h2>핵심 질문</h2>
     <div class="prompt-card">
-      <div class="label">사진 6장으로 추억 영상 만들기
-        <button type="button" class="copy-btn" data-copy-target="astra-video-prompt" aria-label="프롬프트 복사">복사</button>
-       <a href="https://chatgpt.com/" target="_blank" rel="noopener" style="display:inline-block;padding:10px 16px;border-radius:10px;background:#10a37f;color:white;text-decoration:none;font-weight:800;">Astra 열기</a>
+      <div class="label">생각 열기</div>
+      <blockquote>후발국 미국은 어떻게 세계질서의 설계자가 되었는가?</blockquote>
+    </div>
+    <p class="lede">관찰 초점: 생산력만으로 패권국이 될 수 있는가</p>
+  </div>
+</section>
+
+<!-- ===== 4. 9주차 연결 ===== -->
+<section class="slide" aria-label="4. 9주차 연결">
+  <div class="slide-content">
+    <div class="kicker">출발점</div>
+    <h2>9주차 연결</h2>
+    <div class="card-grid c4">
+      <button type="button" class="card topic-card" data-topic="resources"><span class="n">1</span><span class="t">자원</span><span class="d">농토·산림·광물·수로</span><span class="open-mark">장면 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="immigration"><span class="n">2</span><span class="t">이민</span><span class="d">노동력·기술·소비시장</span><span class="open-mark">장면 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="tariff"><span class="n">3</span><span class="t">보호관세</span><span class="d">후발 산업의 성장 장벽</span><span class="open-mark">장면 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="slavery"><span class="n">4</span><span class="t">노예제</span><span class="d">강제노동과 축적의 모순</span><span class="open-mark">장면 열기</span></button>
+    </div>
+  </div>
+  <article class="topic-detail" data-detail="resources" role="dialog" aria-modal="true" aria-label="자원 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><figure><img src="assets/w10-resources.png" alt="농토·산림·수력·석탄·철광석이 함께 보이는 초기 미국의 자원 개발 장면"></figure><div class="topic-copy"><div class="eyebrow">01 · Resource Endowment</div><h3>대륙 규모의 자원</h3><p class="summary">풍부한 토지와 광물은 농업·철도·철강의 원료 기반을 제공했지만, 자원 자체가 산업화를 보장한 것은 아님</p><div class="topic-points"><p><b>농토</b><span>식량 공급과 거대한 내수시장 형성</span></p><p><b>광물</b><span>석탄·철광석 기반의 철강 생산</span></p><p><b>수로</b><span>강·운하·항만을 활용한 저비용 운송</span></p><p><b>쟁점</b><span>제도·기술·자본과 결합할 때 성장 동력화</span></p></div></div></article>
+  <article class="topic-detail" data-detail="immigration" role="dialog" aria-modal="true" aria-label="이민 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><figure><img src="assets/w10-immigration.png" alt="증기선에서 내려 미국 항구에 도착한 19세기 말 이민자 가족들"></figure><div class="topic-copy"><div class="eyebrow">02 · Mass Immigration</div><h3>사람이 만든 규모</h3><p class="summary">이민은 공장의 노동력만이 아니라 기술·기업가정신·도시 소비를 동시에 확대하며 산업사회의 인구 기반을 형성</p><div class="topic-points"><p><b>노동</b><span>철도·광산·공장의 대규모 인력 공급</span></p><p><b>기술</b><span>유럽의 숙련과 지식이 산업 현장으로 이동</span></p><p><b>소비</b><span>도시 인구 증가와 대량소비시장 확대</span></p><p><b>그늘</b><span>저임금·차별·배제 정책이라는 사회적 비용</span></p></div></div></article>
+  <article class="topic-detail" data-detail="tariff" role="dialog" aria-modal="true" aria-label="보호관세 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><figure><img src="assets/w10-tariff.png" alt="직물·철강 공장과 항구 세관이 연결된 19세기 미국 산업도시"></figure><div class="topic-copy"><div class="eyebrow">03 · Protective Tariff</div><h3>시간을 사는 장벽</h3><p class="summary">값싼 영국 제품과 바로 경쟁하기보다 관세로 가격 차를 줄여 미국 제조업이 설비·숙련·규모를 축적할 시간을 확보</p><div class="topic-points"><p><b>보호</b><span>수입품 가격 상승과 국내 생산의 상대적 이점</span></p><p><b>육성</b><span>유치산업의 학습·투자·고용 확대</span></p><p><b>재정</b><span>소득세 이전 연방정부의 핵심 세입</span></p><p><b>비용</b><span>소비자 가격 상승과 지역 간 이해 충돌</span></p></div></div></article>
+  <article class="topic-detail" data-detail="slavery" role="dialog" aria-modal="true" aria-label="노예제 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><figure><img src="assets/w10-slavery.png" alt="감시 아래 면화를 수확하는 노예들과 강을 따라 운송되는 면화 더미"></figure><div class="topic-copy"><div class="eyebrow">04 · Slavery and Capital</div><h3>축적의 폭력적 토대</h3><p class="summary">노예제는 인간의 자유를 박탈한 강제노동 체제이자 면화 수출·금융·해운을 연결한 경제 구조로 미국 성장의 근본 모순</p><div class="topic-points"><p><b>강제노동</b><span>노예가 된 사람의 몸과 노동을 재산화</span></p><p><b>면화</b><span>영국 산업혁명과 연결된 핵심 수출품</span></p><p><b>금융</b><span>토지·노예·작물을 담보로 신용과 부 축적</span></p><p><b>모순</b><span>자유의 공화국과 인종적 지배의 정면 충돌</span></p></div></div></article>
+</section>
+
+<!-- ===== 5. 패권의 조건 ===== -->
+<section class="slide" aria-label="5. 패권의 조건">
+  <div class="slide-content">
+    <div class="kicker">분석 틀</div>
+    <h2>패권의 조건</h2>
+    <div class="card-grid c4">
+      <button type="button" class="card topic-card" data-topic="power-production"><span class="n">1</span><span class="t">생산력</span><span class="d">상품·기술의 대량생산</span><span class="open-mark">데이터 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="power-finance"><span class="n">2</span><span class="t">금융력</span><span class="d">신용·통화·자본의 공급</span><span class="open-mark">데이터 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="power-military"><span class="n">3</span><span class="t">군사력</span><span class="d">경제력의 전략적 투사</span><span class="open-mark">데이터 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="power-institution"><span class="n">4</span><span class="t">제도력</span><span class="d">규칙·기구·동맹의 설계</span><span class="open-mark">데이터 열기</span></button>
+    </div>
+    <p class="lede">패권의 비밀: 부를 신용·강제력·규칙으로 전환하는 능력</p>
+  </div>
+  <article class="topic-detail power-detail" data-detail="power-production" role="dialog" aria-modal="true" aria-label="생산력 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><div class="power-visual"><div class="eyebrow">U.S. MANUFACTURING INDEX</div><div class="power-number">14.8×</div><div class="power-caption">제조업 생산지수 1863년 7.5 → 1913년 111.1</div><div class="power-bars" aria-label="1863년과 1913년 제조업 생산지수 비교"><div class="power-bar" style="height:6%">1863<br>7.5</div><div class="power-bar accent" style="height:92%">1913<br>111.1</div></div><div class="power-source">출처: <a href="https://www2.census.gov/library/publications/1949/compendia/hist_stats_1789-1945/hist_stats_1789-1945-chJ.pdf" target="_blank" rel="noopener">U.S. Census, Historical Statistics, J14</a></div></div><div class="topic-copy"><div class="eyebrow">01 · Productive Capacity</div><h3>규모가 가격과 전쟁을 바꿈</h3><p class="summary">대륙 시장·철도·기업 조직이 결합하며 미국 제조업 생산 규모가 약 50년 사이 14.8배로 확대</p><div class="topic-points"><p><b>규모</b><span>표준화·대량생산으로 단위비용 하락</span></p><p><b>시장</b><span>내수 기반의 기업이 해외시장으로 확장</span></p><p><b>전환</b><span>민간 공장을 군수 생산기지로 빠르게 전환</span></p><p><b>영향</b><span>동맹국까지 공급하는 ‘민주주의의 병기창’ 형성</span></p></div></div></article>
+  <article class="topic-detail power-detail" data-detail="power-finance" role="dialog" aria-modal="true" aria-label="금융력 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><div class="power-visual"><div class="eyebrow">LIBERTY LOANS · 1917–1918</div><div class="power-number">$17B+</div><div class="power-caption">4차례 전시 국채로 조달 · 약 2천만 명 참여</div><div class="power-flow"><div class="power-node">저축</div><div class="power-arrow">→</div><div class="power-node">국채</div><div class="power-arrow">→</div><div class="power-node">전쟁·수출</div></div><div class="power-source">출처: <a href="https://www.federalreservehistory.org/essays/liberty-bonds" target="_blank" rel="noopener">Federal Reserve History, Liberty Bonds</a></div></div><div class="topic-copy"><div class="eyebrow">02 · Financial Capacity</div><h3>저축을 국가신용으로 전환</h3><p class="summary">연준·재무부는 대중의 저축과 은행 신용을 국채로 모아 전쟁비용의 약 3분의 2를 조달</p><div class="topic-points"><p><b>동원</b><span>4차례 국채 발행으로 170억 달러 이상 조달</span></p><p><b>확산</b><span>약 2천만 명 참여로 국가신용의 사회적 기반 확대</span></p><p><b>통화</b><span>전후 달러가 국제결제와 외환보유의 중심으로 부상</span></p><p><b>영향</b><span>자본 공급 능력이 외교·전쟁·재건의 지렛대로 변화</span></p></div></div></article>
+  <article class="topic-detail power-detail" data-detail="power-military" role="dialog" aria-modal="true" aria-label="군사력 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><div class="power-visual"><div class="eyebrow">U.S. MILITARY OUTLAYS · 1944</div><div class="power-number">$91B</div><div class="power-caption">전쟁 이전 수억 달러 수준에서 세계적 군수·병참 체제로 급팽창</div><div class="power-flow"><div class="power-node">공장</div><div class="power-arrow">→</div><div class="power-node">병참</div><div class="power-arrow">→</div><div class="power-node">6개 대륙</div></div><div class="power-source">출처: <a href="https://www.federalreservehistory.org/essays/feds-role-during-wwii" target="_blank" rel="noopener">Federal Reserve History, WWII</a> · <a href="https://history.army.mil/portals/143/Images/Publications/catalog/30-22.pdf" target="_blank" rel="noopener">U.S. Army CMH</a></div></div><div class="topic-copy"><div class="eyebrow">03 · Military Capacity</div><h3>경제력을 전장에 투사</h3><p class="summary">1944년 군사비 910억 달러는 무기 생산뿐 아니라 병력·수송·기지·동맹 지원을 묶은 세계 규모의 작전 능력</p><div class="topic-points"><p><b>생산</b><span>항공기·전차·함선·탄약의 압도적 공급</span></p><p><b>병참</b><span>대서양과 태평양을 잇는 수송·보급망 구축</span></p><p><b>동맹</b><span>무기대여와 연합지휘로 타국 전력까지 결합</span></p><p><b>영향</b><span>경제적 우위를 전쟁 결과와 협상력으로 전환</span></p></div></div></article>
+  <article class="topic-detail power-detail" data-detail="power-institution" role="dialog" aria-modal="true" aria-label="제도력 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><div class="power-visual"><div class="eyebrow">BRETTON WOODS · JULY 1944</div><div class="power-number">44</div><div class="power-caption">참가국이 미국에서 전후 통화·금융 질서의 기본 규칙에 합의</div><div class="power-flow"><div class="power-node">달러</div><div class="power-arrow">→</div><div class="power-node">IMF</div><div class="power-arrow">+</div><div class="power-node">IBRD</div></div><div class="power-source">출처: <a href="https://www.imf.org/external/about/timeline/index.htm" target="_blank" rel="noopener">IMF History Timeline</a></div></div><div class="topic-copy"><div class="eyebrow">04 · Institutional Capacity</div><h3>우위를 규칙으로 고정</h3><p class="summary">브레튼우즈의 44개국 합의는 달러 중심 환율체제와 IMF·세계은행을 결합해 미국의 힘을 반복 가능한 국제규칙으로 전환</p><div class="topic-points"><p><b>통화</b><span>금과 연결된 달러를 환율체제의 기준으로 설정</span></p><p><b>기구</b><span>IMF·세계은행으로 안정·재건 자금의 경로 설계</span></p><p><b>규칙</b><span>개별 압박보다 회원국이 따르는 절차로 영향력 행사</span></p><p><b>영향</b><span>일시적 승리를 장기간 지속되는 질서로 제도화</span></p></div></div></article>
+</section>
+
+<!-- ===== 6. 해밀턴의 문제의식 ===== -->
+<section class="slide" aria-label="6. 해밀턴의 문제의식">
+  <div class="slide-content">
+    <div class="kicker">1789년의 진단</div>
+    <div class="split-visual">
+      <div class="archive-panel">
+        <div class="eyebrow">Alexander Hamilton · 문제의식 요약</div>
+        <div class="big-year">1790</div>
+        <div class="quote-text">독립은 선언으로 끝나지 않음</div>
+        <div class="quote-text">신용·제조업·국가역량의 독립 필요</div>
+        <p class="source-note">핵심 보고서: 공공신용 보고서 1790 · 국립은행 보고서 1790 · 제조업 보고서 1791</p>
       </div>
-      <blockquote id="astra-video-prompt">첨부한 사진 6장을 순서대로 사용하여 24~30초 분량의 추억 영상을 만들어 주세요. 전체 분위기는 따뜻하고 활기찬 동창 여행입니다. 사진 속 인물의 얼굴과 옷차림은 원본과 동일하게 유지하고, 과도한 얼굴 변형이나 새로운 인물 생성은 하지 마세요. 각 사진은 약 4초간 보여주고 부드러운 확대, 이동, 장면 전환을 적용해 주세요. 마지막 단체사진은 약 5초간 유지하고 ‘청춘은 계속된다’라는 문구로 마무리해 주세요. 화면 비율은 16:9, 잔잔하고 밝은 여행 영상 스타일로 제작해 주세요.</blockquote>
+      <div class="fact-stack">
+        <div class="fact"><b>부채</b><span>독립전쟁 부채와 낮은 정부 신뢰</span></div>
+        <div class="fact"><b>통화</b><span>지역별 화폐와 불안정한 결제</span></div>
+        <div class="fact"><b>산업</b><span>영국 공산품과 해외 자본 의존</span></div>
+        <div class="fact"><b>연방</b><span>주별 이해관계를 묶을 중앙 역량 부족</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 29. Astra 영상 제작 순서 ===== -->
-<section class="slide" aria-label="29. Astra 영상 제작 순서">
+<!-- ===== 7. 연방정부의 강화 ===== -->
+<section class="slide" aria-label="7. 연방정부의 강화">
   <div class="slide-content">
-    <div class="kicker">동영상 실습 · Astra</div>
-    <h2>사진 6장 → 24~30초 영상</h2>
+    <div class="kicker">국가 설계</div>
+    <h2>연방정부의 강화</h2>
+    <div class="card-grid c2">
+      <div class="card bad"><div class="t">분산된 주권</div><div class="d">주별 재정·통화·규제</div><div class="d">공동 대응력 부족</div></div>
+      <div class="card good"><div class="t">통합된 연방</div><div class="d">공통 재정·통화·시장</div><div class="d">국가 규모의 동원력</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. 국가신용의 확립 ===== -->
+<section class="slide" aria-label="8. 국가신용의 확립">
+  <div class="slide-content">
+    <div class="kicker">재정 기반</div>
+    <h2>국가신용의 확립</h2>
     <ul class="bullets">
-      <li>사진 6장을 ①~⑥ 순서대로 업로드</li>
-      <li>앞 슬라이드의 프롬프트를 복사해 붙여넣기</li>
-      <li>화면 비율은 16:9, 영상 길이는 24~30초로 지정</li>
-      <li>얼굴 변형 여부와 마지막 문구를 확인한 뒤 생성</li>
+      <li>연방 부채: 독립전쟁 부채의 중앙 인수</li>
+      <li>상환 약속: 정부 채권의 신뢰 형성</li>
+      <li>과세 역량: 안정적 재정 수입 확보</li>
+      <li>결과: 공공신용과 민간투자의 연결</li>
     </ul>
-    <div class="kicker">완성 문구 · 청춘은 계속된다</div>
-  </div>
-</section>
-<!-- ===== 30. 영상 장면표 ===== -->
-<section class="slide" aria-label="30. 영상 장면표">
-  <div class="slide-content">
-    <div class="kicker">자료 ① · 일정 활용</div><h2>영상 장면표</h2><table class="tbl"><thead><tr><th scope="col">구간</th><th scope="col">화면·움직임</th></tr></thead><tbody><tr><td>시작</td><td>곡부 공자 유적지 · 천천히 앞으로</td></tr><tr><td>전환</td><td>청도 바다 · 부드러운 좌우 이동</td></tr><tr><td>끝</td><td>친구들의 뒷모습 · 따뜻한 마무리</td></tr></tbody></table>
   </div>
 </section>
 
-<!-- ===== 31. 동영상 생성 질문 ===== -->
-<section class="slide" aria-label="31. 동영상 생성 질문">
+<!-- ===== 9. 국립은행의 설립 ===== -->
+<section class="slide" aria-label="9. 국립은행의 설립">
   <div class="slide-content">
-    <div class="kicker">복사해서 사용</div><h2>동영상 생성 질문</h2><div class="prompt-card"><div class="label">저장한 여행 이미지 → 짧은 영상</div><blockquote id="pt-4">이 이미지의 장소와 구도를 유지하며 짧은 여행 영상으로 만들어줘. 카메라가 천천히 앞으로 움직이고 나뭇잎과 바람만 자연스럽게 움직이게 해줘. 늦가을의 따뜻한 빛, 얼굴 변경·새 인물·글자 추가 없음.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-4" aria-label="동영상 생성 질문 복사">복사</button></div>
+    <div class="kicker">1791~1811년 · 금융 인프라</div>
+    <h2>제1 미국은행</h2>
+    <div class="bank-wrap">
+      <div class="bank-building" aria-label="제1 미국은행 건축 도식">
+        <div class="bank-pediment"></div>
+        <div class="bank-name">BANK OF THE UNITED STATES</div>
+        <div class="columns"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="bank-base"></div>
+        <div class="stat-band">
+          <div class="stat"><b>1791</b><span>영업 시작</span></div>
+          <div class="stat"><b>20년</b><span>연방 헌장</span></div>
+          <div class="stat"><b>$1천만</b><span>자본금</span></div>
+        </div>
+      </div>
+      <div class="fact-stack">
+        <div class="fact"><b>보관</b><span>연방정부 세입과 공공자금의 안전한 관리</span></div>
+        <div class="fact"><b>결제</b><span>전국 지점망과 널리 통용되는 은행권</span></div>
+        <div class="fact"><b>신용</b><span>정부·상인·기업 대상 대출과 자금 이동</span></div>
+        <p class="source-note">자료: <a href="https://www.federalreservehistory.org/essays/first-bank-of-the-us" target="_blank" rel="noopener">Federal Reserve History · The First Bank of the United States</a></p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== 32. 동영상 결과 확인 ===== -->
-<section class="slide" aria-label="32. 동영상 결과 확인">
+<!-- ===== 10. 제조업의 보호 ===== -->
+<section class="slide" aria-label="10. 제조업의 보호">
   <div class="slide-content">
-    <div class="kicker">재생·수정</div><h2>동영상 결과 확인</h2><ul class="bullets"><li>이미지 업로드 → 질문 입력 → 생성 → 재생</li><li>장소·움직임·얼굴 왜곡과 글자 오류 확인</li><li>한 부분만 바꿔 재생성 또는 저장</li><li>영상 생성 불가 계정: 장면표와 질문 완성</li></ul>
+    <div class="kicker">1791년 제조업 보고서</div>
+    <h2>후발국의 산업 전략</h2>
+    <div class="flowline">
+      <div class="flow-node" data-n="1">수입품 관세<span class="source-note">가격 격차 완화</span></div>
+      <div class="flow-node" data-n="2">제조업 육성<span class="source-note">기술·설비 축적</span></div>
+      <div class="flow-node" data-n="3">내수시장 확대<span class="source-note">생산 규모 증가</span></div>
+      <div class="flow-node" data-n="4">해외시장 진출<span class="source-note">경쟁력의 외부 확장</span></div>
+    </div>
+    <p class="lede">핵심 논리: 자유경쟁 이전의 생산역량 확보</p>
   </div>
 </section>
 
-<!-- ===== 33. 실습 결과 ===== -->
-<section class="slide" aria-label="33. 실습 결과">
+<!-- ===== 11. 해밀턴 체제 ===== -->
+<section class="slide" aria-label="11. 해밀턴 체제">
   <div class="slide-content">
-    <div class="kicker">결과 공유</div><h2>실습 결과</h2><div class="card-grid c3"><div class="card"><div class="n">1</div><div class="t">문서</div><div class="d">공고·검진·약관의 근거 한 가지</div></div><div class="card"><div class="n">2</div><div class="t">이미지</div><div class="d">일정에서 만든 여행 이미지 한 장</div></div><div class="card"><div class="n">3</div><div class="t">영상</div><div class="d">짧은 결과물 또는 완성 장면표</div></div></div>
+    <div class="kicker">국가의 진로 논쟁</div>
+    <h2>해밀턴 대 제퍼슨</h2>
+    <div class="debate">
+      <div class="debate-side">
+        <div class="eyebrow">Hamilton</div><h3>상공업 공화국</h3>
+        <p>강한 연방 · 국립은행 · 제조업 · 적극적 헌법 해석</p>
+        <p><b>우려:</b> 영국 의존과 취약한 국가신용</p>
+      </div>
+      <div class="versus">VS</div>
+      <div class="debate-side">
+        <div class="eyebrow">Jefferson</div><h3>농업 공화국</h3>
+        <p>주권 강조 · 가족농 · 분산 금융 · 엄격한 헌법 해석</p>
+        <p><b>우려:</b> 금융 독점과 도시 엘리트의 지배</p>
+      </div>
+    </div>
+    <p class="source-note">자료: <a href="https://www.federalreservehistory.org/essays/before-the-fed" target="_blank" rel="noopener">Federal Reserve History · Before the Fed</a></p>
   </div>
 </section>
 
-<!-- ===== 34. 안전한 사용 ===== -->
-<section class="slide" aria-label="34. 안전한 사용">
+<!-- ===== 12. 남북 경제의 대립 ===== -->
+<section class="slide" aria-label="12. 남북 경제의 대립">
   <div class="slide-content">
-    <div class="kicker">생활 속 기준</div>
-    <h2>안전한 사용</h2>
-    <ul class="bullets"><li>개인 정보: 업로드 전 가리기</li><li>건강 정보: AI 설명은 질문 준비용</li><li>지출 정보: 원본 영수증과 금액 대조</li><li>영상 제작: 계정별 이용 가능 기능과 한도 확인</li></ul>
+    <div class="kicker">1861년 강의용 지역 도식</div>
+    <h2>북부·남부·경계주의 위치</h2>
+    <div class="map-layout">
+      <div class="tile-map" role="img" aria-label="1861년 북부 자유주, 남부 연합, 경계주의 강의용 지도">
+        <div class="state free" style="grid-column:11;grid-row:1">ME</div><div class="state free" style="grid-column:10;grid-row:2">NH</div><div class="state free" style="grid-column:9;grid-row:2">VT</div><div class="state free" style="grid-column:11;grid-row:2">MA</div>
+        <div class="state free" style="grid-column:11;grid-row:3">RI</div><div class="state free" style="grid-column:10;grid-row:3">CT</div><div class="state free" style="grid-column:9;grid-row:3">NY</div><div class="state free" style="grid-column:9;grid-row:4">PA</div><div class="state free" style="grid-column:10;grid-row:4">NJ</div>
+        <div class="state border" style="grid-column:10;grid-row:5">DE</div><div class="state border" style="grid-column:9;grid-row:5">MD</div><div class="state confed" style="grid-column:8;grid-row:5">VA</div><div class="state confed" style="grid-column:9;grid-row:6">NC</div><div class="state confed" style="grid-column:9;grid-row:7">SC</div>
+        <div class="state free" style="grid-column:7;grid-row:4">OH</div><div class="state free" style="grid-column:6;grid-row:4">IN</div><div class="state free" style="grid-column:5;grid-row:4">IL</div><div class="state free" style="grid-column:6;grid-row:3">MI</div><div class="state free" style="grid-column:5;grid-row:2">WI</div><div class="state free" style="grid-column:4;grid-row:2">MN</div><div class="state free" style="grid-column:4;grid-row:3">IA</div>
+        <div class="state border" style="grid-column:7;grid-row:5">KY</div><div class="state confed" style="grid-column:7;grid-row:6">TN</div><div class="state confed" style="grid-column:8;grid-row:6">GA</div><div class="state confed" style="grid-column:8;grid-row:7">FL</div><div class="state confed" style="grid-column:7;grid-row:7">AL</div><div class="state confed" style="grid-column:6;grid-row:7">MS</div>
+        <div class="state border" style="grid-column:4;grid-row:5">MO</div><div class="state confed" style="grid-column:5;grid-row:6">AR</div><div class="state confed" style="grid-column:5;grid-row:7">LA</div><div class="state confed" style="grid-column:3;grid-row:7">TX</div><div class="state free" style="grid-column:3;grid-row:4">KS</div>
+        <div class="state free" style="grid-column:1;grid-row:4">CA</div><div class="state free" style="grid-column:1;grid-row:2">OR</div><div class="state territory" style="grid-column:2;grid-row:3 / span 3">서부 영토</div>
+      </div>
+      <div class="map-legend">
+        <div class="legend-item"><i class="legend-swatch free"></i><span><b>북부·서부 자유주 19</b> · 노예제 금지·연방 잔류</span></div>
+        <div class="legend-item"><i class="legend-swatch confed"></i><span><b>남부 연합 11</b> · 1860~1861년 연방 탈퇴</span></div>
+        <div class="legend-item"><i class="legend-swatch border"></i><span><b>경계주 4</b> · 노예주이나 연방 잔류</span></div>
+        <p class="source-note">주 약어 위치를 단순화한 타일 지도</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== 35. 마침 ===== -->
-<section class="slide title-slide" aria-label="35. 마침">
+<!-- ===== 13. 남북전쟁의 경제성 ===== -->
+<section class="slide" aria-label="13. 남북전쟁의 경제성">
   <div class="slide-content">
-    <div class="kicker">생활 속의 AI</div>
-    <h1>한 가지부터 시작</h1>
-    <p class="lede">질문 → 초안 → 직접 확인 → 나에게 맞게 수정</p>
-    <div class="meta-row"><span>페이지</span><span>생활 자료</span><span>이미지·영상</span></div>
+    <div class="kicker">지도 읽기</div>
+    <h2>남북 경계의 실제</h2>
+    <div class="card-grid c3">
+      <div class="boundary-card"><b>상징적 경계</b><span>메이슨·딕슨선: 펜실베이니아와 메릴랜드 경계의 역사적 상징</span></div>
+      <div class="boundary-card"><b>군사적 경계</b><span>오하이오강과 포토맥강: 북부와 남부 전선의 주요 축</span></div>
+      <div class="boundary-card"><b>정치적 회색지대</b><span>델라웨어·메릴랜드·켄터키·미주리: 노예주이면서 연방 잔류</span></div>
+    </div>
+    <ul class="bullets">
+      <li>핵심: 남북전쟁의 경계는 한 줄이 아니라 주별 정치 선택</li>
+      <li>웨스트버지니아: 버지니아에서 분리되어 1863년 연방 가입</li>
+    </ul>
+    <p class="source-note">자료: <a href="https://www.loc.gov/exhibits/civil-war-in-america/prologue.html" target="_blank" rel="noopener">Library of Congress · The Civil War in America: Prologue</a></p>
+  </div>
+</section>
+
+<!-- ===== 14. 북부의 승리 ===== -->
+<section class="slide" aria-label="14. 북부의 승리">
+  <div class="slide-content">
+    <div class="kicker">전쟁 수행 능력</div>
+    <h2>북부 우위의 물적 기반</h2>
+    <div class="balance-bars">
+      <div class="bar-row"><span>인구</span><div class="bar"><i style="width:72%"></i></div><b>북부 우위</b></div>
+      <div class="bar-row"><span>공업 생산</span><div class="bar"><i style="width:90%"></i></div><b>압도적</b></div>
+      <div class="bar-row"><span>철도망</span><div class="bar"><i style="width:70%"></i></div><b>북부 우위</b></div>
+      <div class="bar-row south"><span>면화 수출</span><div class="bar"><i style="width:92%"></i></div><b>남부 우위</b></div>
+    </div>
+    <p class="lede">전쟁의 교훈: 생산·물류·금융·인구의 장기 동원력</p>
+  </div>
+</section>
+
+<!-- ===== 15. 단일시장의 완성 ===== -->
+<section class="slide" aria-label="15. 단일시장의 완성">
+  <div class="slide-content">
+    <div class="kicker">대륙 통합</div>
+    <h2>단일시장의 완성</h2>
+    <ul class="bullets">
+      <li>철도: 원료·제품·인구의 전국 이동</li>
+      <li>전신: 가격·주문·정보의 실시간 연결</li>
+      <li>표준화: 시간·규격·계약의 통일</li>
+      <li>결과: 대륙 규모 생산·유통망</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 16. 제도와 성장의 순환 ===== -->
+<section class="slide" aria-label="16. 제도와 성장의 순환">
+  <div class="slide-content">
+    <div class="kicker">성장 메커니즘</div>
+    <h2>제도와 성장의 순환</h2>
+    <div class="card-grid c4">
+      <div class="card"><div class="n">1</div><div class="t">국가역량</div><div class="d">재정·법·행정</div></div>
+      <div class="card"><div class="n">2</div><div class="t">산업화</div><div class="d">생산·고용·혁신</div></div>
+      <div class="card"><div class="n">3</div><div class="t">세수 확대</div><div class="d">정부 재원의 증가</div></div>
+      <div class="card"><div class="n">4</div><div class="t">재투자</div><div class="d">인프라·교육·국방</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 17. 제도 설계 실습 ===== -->
+<section class="slide" aria-label="17. 제도 설계 실습">
+  <div class="slide-content">
+    <div class="kicker">실습 1 · 5분</div>
+    <h2>제도 설계 실습</h2>
+    <div class="prompt-card">
+      <div class="label">모둠 토론</div>
+      <blockquote id="pt-1">해밀턴의 정책 가운데 현대 국가 성장에 가장 중요한 정책 하나를 골라줘.
+- 선택: 연방 강화·국가신용·국립은행·보호관세
+- 근거: 기대 효과 1개·부작용 1개
+- 결론: 30초 발표문</blockquote>
+      <button type="button" class="copy-btn" data-copy-target="pt-1" aria-label="제도 설계 실습문 복사">복사</button>
+    </div>
+    <button type="button" class="timer-chip" data-minutes="5" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">05:00</span> 선택·토론·발표 <span class="state">정지</span></button>
+  </div>
+</section>
+
+<!-- ===== 18. 중간 휴식 ===== -->
+<section class="slide dark" aria-label="18. 중간 휴식">
+  <div class="slide-content" style="align-items:center;text-align:center">
+    <div class="kicker">중간 휴식</div>
+    <button type="button" class="break-big" data-minutes="10" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋" aria-label="휴식 타이머 10분"><span class="time">10:00</span></button>
+    <p class="lede">10분 뒤 세계 패권의 완성 시작</p>
+  </div>
+</section>
+
+<!-- ===== 19. 후반부 전환 ===== -->
+<section class="slide chapter-slide" aria-label="19. 후반부 전환">
+  <div class="slide-content">
+    <div class="kicker">2부 · 세계 패권</div>
+    <h2>후반부 전환</h2>
+    <div class="card-grid c3">
+      <div class="card"><div class="t">대륙국가</div><div class="d">국내시장과 산업의 통합</div></div>
+      <div class="card"><div class="t">세계강국</div><div class="d">해외시장과 군사력의 확대</div></div>
+      <div class="card"><div class="t">질서설계자</div><div class="d">국제규칙과 기구의 구축</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 20. 산업생산의 우위 ===== -->
+<section class="slide" aria-label="20. 산업생산의 우위">
+  <div class="slide-content">
+    <div class="kicker">제2차 산업혁명</div>
+    <h2>산업생산의 우위</h2>
+    <div class="card-grid c4">
+      <div class="card"><div class="t">철강</div><div class="d">철도·도시·군수</div></div>
+      <div class="card"><div class="t">석유</div><div class="d">에너지·화학·운송</div></div>
+      <div class="card"><div class="t">전기</div><div class="d">공장·도시·통신</div></div>
+      <div class="card"><div class="t">자동차</div><div class="d">대량생산·대량소비</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 21. 대기업의 등장 ===== -->
+<section class="slide" aria-label="21. 대기업의 등장">
+  <div class="slide-content">
+    <div class="kicker">규모의 경제</div>
+    <h2>대기업의 등장</h2>
+    <ul class="bullets">
+      <li>수직통합: 원료·생산·유통의 기업 내부 결합</li>
+      <li>트러스트: 경쟁기업의 결합과 시장지배</li>
+      <li>대량생산: 단가 하락과 소비시장 확대</li>
+      <li>경영혁신: 소유와 전문경영의 분화</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 22. 국가의 시장 규율 ===== -->
+<section class="slide" aria-label="22. 국가의 시장 규율">
+  <div class="slide-content">
+    <div class="kicker">독점과 규제</div>
+    <h2>국가의 시장 규율</h2>
+    <div class="card-grid c2">
+      <div class="card bad"><div class="t">독점의 비용</div><div class="d">가격 통제·경쟁자 배제·정치 영향력</div></div>
+      <div class="card good"><div class="t">공공의 대응</div><div class="d">셔먼법·기업 분할·시장규칙 강화</div></div>
+    </div>
+    <p class="lede">핵심 과제: 규모의 효율과 경쟁의 균형</p>
+  </div>
+</section>
+
+<!-- ===== 23. 미서전쟁의 전환 ===== -->
+<section class="slide" aria-label="23. 미서전쟁의 전환">
+  <div class="slide-content">
+    <div class="kicker">1898년</div>
+    <h2>미서전쟁의 전환</h2>
+    <div class="card-grid c3">
+      <div class="card"><div class="t">카리브해</div><div class="d">쿠바 문제와 지역 영향력</div></div>
+      <div class="card"><div class="t">태평양</div><div class="d">필리핀·괌과 해양 진출</div></div>
+      <div class="card"><div class="t">세계정치</div><div class="d">대륙국가의 해외 팽창</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 24. 제국주의의 양면성 ===== -->
+<section class="slide" aria-label="24. 제국주의의 양면성">
+  <div class="slide-content">
+    <div class="kicker">가치와 현실</div>
+    <h2>제국주의의 양면성</h2>
+    <div class="card-grid c2">
+      <div class="card good"><div class="t">공식 가치</div><div class="d">자유·민주주의·민족자결</div></div>
+      <div class="card bad"><div class="t">권력 현실</div><div class="d">해외 지배·군사 개입·경제 종속</div></div>
+    </div>
+    <p class="lede">미국 패권의 지속적 긴장</p>
+  </div>
+</section>
+
+<!-- ===== 25. 제1차 세계대전의 기회 ===== -->
+<section class="slide" aria-label="25. 제1차 세계대전의 기회">
+  <div class="slide-content">
+    <div class="kicker">1914~1918년</div>
+    <h2>제1차 세계대전의 기회</h2>
+    <ul class="bullets">
+      <li>유럽: 생산시설·인력·재정의 소진</li>
+      <li>미국: 식량·무기·공산품의 수출 확대</li>
+      <li>금융: 연합국 대출과 달러 거래의 증가</li>
+      <li>결과: 경제 중심의 대서양 이동</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 26. 채무국에서 채권국으로 ===== -->
+<section class="slide" aria-label="26. 채무국에서 채권국으로">
+  <div class="slide-content">
+    <div class="kicker">금융 패권</div>
+    <h2>채무국에서 채권국으로</h2>
+    <div class="card-grid c2">
+      <div class="card bad"><div class="t">전쟁 이전</div><div class="d">유럽 자본 의존·대외 채무</div></div>
+      <div class="card good"><div class="t">전쟁 이후</div><div class="d">연합국 채권 보유·뉴욕 금융 부상</div></div>
+    </div>
+    <p class="lede">변화: 자본 수입국 → 자본 공급국</p>
+  </div>
+</section>
+
+<!-- ===== 27. 윌슨주의의 등장 ===== -->
+<section class="slide" aria-label="27. 윌슨주의의 등장">
+  <div class="slide-content">
+    <div class="kicker">질서 구상</div>
+    <h2>윌슨주의의 등장</h2>
+    <div class="card-grid c3">
+      <div class="card"><div class="t">민족자결</div><div class="d">민족 단위 정치공동체의 원칙</div></div>
+      <div class="card"><div class="t">국제연맹</div><div class="d">상설 다자협의 기구의 구상</div></div>
+      <div class="card"><div class="t">집단안보</div><div class="d">침략에 대한 공동 대응</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 28. 고립주의의 한계 ===== -->
+<section class="slide" aria-label="28. 고립주의의 한계">
+  <div class="slide-content">
+    <div class="kicker">전간기</div>
+    <h2>고립주의의 한계</h2>
+    <div class="card-grid c2">
+      <div class="card"><div class="t">정치적 후퇴</div><div class="d">국제연맹 불참·유럽 개입 회피</div></div>
+      <div class="card"><div class="t">경제적 연결</div><div class="d">대출·무역·투자의 세계적 확대</div></div>
+    </div>
+    <p class="lede">모순: 정치적 거리두기와 경제적 상호의존</p>
+  </div>
+</section>
+
+<!-- ===== 29. 대공황의 충격 ===== -->
+<section class="slide" aria-label="29. 대공황의 충격">
+  <div class="slide-content">
+    <div class="kicker">1929년 이후</div>
+    <h2>대공황의 충격</h2>
+    <div class="card-grid c4">
+      <div class="card"><div class="n">1</div><div class="t">금융 붕괴</div><div class="d">주가·은행의 연쇄 위기</div></div>
+      <div class="card"><div class="n">2</div><div class="t">생산 감소</div><div class="d">투자·소비·무역의 위축</div></div>
+      <div class="card"><div class="n">3</div><div class="t">대량실업</div><div class="d">생활 기반과 신뢰의 붕괴</div></div>
+      <div class="card"><div class="n">4</div><div class="t">세계 확산</div><div class="d">보호무역과 통화 갈등</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 30. 뉴딜의 국가역량 ===== -->
+<section class="slide" aria-label="30. 뉴딜의 국가역량">
+  <div class="slide-content">
+    <div class="kicker">위기 대응</div>
+    <h2>뉴딜의 국가역량</h2>
+    <ul class="bullets">
+      <li>구제: 실업자·농민·취약계층 지원</li>
+      <li>회복: 공공사업과 유효수요 확대</li>
+      <li>개혁: 금융감독·예금보호·노동권 강화</li>
+      <li>유산: 연방정부의 경제관리 역할 확대</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 31. 제2차 세계대전의 동원 ===== -->
+<section class="slide" aria-label="31. 제2차 세계대전의 동원">
+  <div class="slide-content">
+    <div class="kicker">1939~1945년</div>
+    <h2>제2차 세계대전의 동원</h2>
+    <div class="card-grid c3">
+      <div class="card"><div class="t">산업 동원</div><div class="d">민간 공장의 군수 생산 전환</div></div>
+      <div class="card"><div class="t">과학 동원</div><div class="d">정부·대학·기업의 연구 결합</div></div>
+      <div class="card"><div class="t">인력 동원</div><div class="d">여성·이민자·청년의 대규모 참여</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 32. 민주주의의 병기창 ===== -->
+<section class="slide" aria-label="32. 민주주의의 병기창">
+  <div class="slide-content">
+    <div class="kicker">생산력의 무기화</div>
+    <h2>민주주의의 병기창</h2>
+    <ul class="bullets">
+      <li>무기대여법: 연합국의 전쟁 수행 지원</li>
+      <li>대량생산: 함선·항공기·차량의 압도적 공급</li>
+      <li>후방 안전: 본토 피해 없이 유지된 생산 기반</li>
+      <li>전략 효과: 경제력의 군사력 전환</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 33. 브레튼우즈 체제 ===== -->
+<section class="slide" aria-label="33. 브레튼우즈 체제">
+  <div class="slide-content">
+    <div class="kicker">1944년 7월 · 44개국</div>
+    <h2>브레튼우즈의 설계</h2>
+    <div class="timeline">
+      <div class="time-event"><b>대공황</b><span>통화·무역 갈등의 기억</span></div>
+      <div class="time-event"><b>달러</b><span>금 1온스당 35달러의 중심축</span></div>
+      <div class="time-event"><b>고정환율</b><span>각국 통화의 달러 연계</span></div>
+      <div class="time-event"><b>IMF</b><span>환율 안정과 단기 지원</span></div>
+      <div class="time-event"><b>IBRD</b><span>전후 복구와 개발 금융</span></div>
+    </div>
+    <p class="source-note">자료: <a href="https://www.archives.gov/research/guide-fed-records/groups/043.html#43.3.7" target="_blank" rel="noopener">미국 국립문서기록관리청 · 브레튼우즈 회의 기록</a> · 핵심 전환: 힘의 우위 → 규칙의 우위</p>
+  </div>
+</section>
+
+<!-- ===== 34. 미국 중심 국제질서 ===== -->
+<section class="slide" aria-label="34. 미국 중심 국제질서">
+  <div class="slide-content">
+    <div class="kicker">패권의 제도화</div>
+    <h2>미국 중심 국제질서</h2>
+    <div class="card-grid c4">
+      <div class="card"><div class="t">UN</div><div class="d">정치·안보 협의</div></div>
+      <div class="card"><div class="t">GATT</div><div class="d">무역 자유화 규칙</div></div>
+      <div class="card"><div class="t">동맹</div><div class="d">집단방위와 기지망</div></div>
+      <div class="card"><div class="t">달러</div><div class="d">결제·준비·금융의 중심</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 35. 패권 설계 실습 ===== -->
+<section class="slide" aria-label="35. 패권 설계 실습">
+  <div class="slide-content">
+    <div class="kicker">실습 2 · 5분</div>
+    <h2>패권 설계 실습</h2>
+    <div class="prompt-card">
+      <div class="label">개인 선택·짝 토론</div>
+      <blockquote id="pt-2">패권의 결정적 조건 하나를 골라줘.
+- 선택: 생산력·금융력·군사력·제도력
+- 근거: 미국 역사 사례 2개
+- 반론: 다른 조건이 더 중요하다는 주장 1개
+- 결론: 한 문장</blockquote>
+      <button type="button" class="copy-btn" data-copy-target="pt-2" aria-label="패권 설계 실습문 복사">복사</button>
+    </div>
+    <button type="button" class="timer-chip" data-minutes="5" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">05:00</span> 선택·근거·반론 <span class="state">정지</span></button>
+  </div>
+</section>
+
+<!-- ===== 36. 핵심 정리와 마침 ===== -->
+<section class="slide title-slide closing-slide" aria-label="36. 핵심 정리와 마침">
+  <div class="slide-content">
+    <div class="kicker">글로벌시대의 국제정치 · 10주차</div>
+    <h1>핵심 정리와 마침</h1>
+    <p class="lede">국가 설계 → 산업 통합 → 전쟁 동원 → 국제질서 설계</p>
+    <div class="meta-row"><span>생산력</span><span>금융력</span><span>군사력</span><span>제도력</span></div>
   </div>
 </section>
 
@@ -513,7 +844,7 @@ table.tbl td:first-child{color:var(--sub)}
 <nav id="nav" aria-label="슬라이드 이동">
   <a href="index.html" target="_blank" rel="noopener" class="hide-sm" aria-label="강의 홈 새 창으로 열기">⌂ 홈</a>
   <button type="button" id="navPrev" aria-label="이전 슬라이드">◀</button>
-  <span id="counter" aria-live="polite">1 / 35</span>
+  <span id="counter" aria-live="polite">1 / 36</span>
   <button type="button" id="navNext" aria-label="다음 슬라이드">▶</button>
   <span class="grow"></span>
   <span class="hint hide-sm">← → 이동 · G 전체보기 · P PDF</span>
@@ -589,11 +920,41 @@ table.tbl td:first-child{color:var(--sub)}
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
+  /* 4페이지: 주제 카드 선택 → 역사 장면과 상세 설명 */
+  var topicLastFocus = null;
+  function closeTopic(){
+    var open = stage.querySelector('.topic-detail.open');
+    if (!open) return false;
+    open.classList.remove('open');
+    open.setAttribute('aria-hidden', 'true');
+    if (topicLastFocus && topicLastFocus.focus) topicLastFocus.focus();
+    return true;
+  }
+  stage.querySelectorAll('.topic-card').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      closeTopic();
+      topicLastFocus = btn;
+      var detail = stage.querySelector('[data-detail="' + btn.dataset.topic + '"]');
+      if (!detail) return;
+      detail.classList.add('open');
+      detail.setAttribute('aria-hidden', 'false');
+      detail.querySelector('.topic-close').focus();
+    });
+  });
+  stage.querySelectorAll('.topic-detail').forEach(function(detail){
+    detail.setAttribute('aria-hidden', 'true');
+    detail.querySelector('.topic-close').addEventListener('click', closeTopic);
+  });
+
   document.addEventListener('keydown', function(e){
     var t = e.target;
     if (t && t.closest && t.closest('input, textarea, select')) return;
     if (gridOverlay.classList.contains('open')) {
       if (e.key === 'Escape' || e.key === 'g' || e.key === 'G') { closeGrid(); }
+      return;
+    }
+    if (stage.querySelector('.topic-detail.open')) {
+      if (e.key === 'Escape') { e.preventDefault(); closeTopic(); }
       return;
     }
     /* 버튼에 포커스가 있을 때 스페이스·엔터는 버튼 동작에 양보 */
@@ -737,6 +1098,26 @@ table.tbl td:first-child{color:var(--sub)}
   });
   show(idx);
 })();
+</script>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js';
+import { getAnalytics, isSupported } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAZEbdXyhp3y2hKzKt9vAz-dqmpLLsUxHM',
+  authDomain: 'iwillman-ai.firebaseapp.com',
+  databaseURL: 'https://iwillman-ai-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId: 'iwillman-ai',
+  storageBucket: 'iwillman-ai.firebasestorage.app',
+  messagingSenderId: '116342263639',
+  appId: '1:116342263639:web:dc8cb9dce784982ff8b812',
+  measurementId: 'G-J2N2W8XV3X'
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+isSupported().then(function(supported){
+  if (supported) getAnalytics(firebaseApp);
+});
 </script>
 </body>
 </html>
