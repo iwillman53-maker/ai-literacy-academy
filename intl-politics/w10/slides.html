@@ -243,6 +243,12 @@ table.tbl th{background:var(--accent);color:var(--ink)}
 
 .credit-lab{display:grid;grid-template-columns:.92fr 1.08fr;gap:2.3cqi;min-height:39cqi}.credit-steps{display:flex;flex-direction:column;gap:1cqi}.credit-step{position:relative;display:grid;grid-template-columns:4.8cqi 1fr auto;align-items:center;gap:1.1cqi;min-height:8.3cqi;padding:1.2cqi 1.4cqi;background:#fff;border:.16cqi solid #B7B3AA;color:#111;text-align:left;font-family:inherit;cursor:pointer;transition:transform .25s,background .25s,border-color .25s}.credit-step:hover,.credit-step:focus-visible{transform:translateX(.5cqi);outline:.22cqi solid #111;outline-offset:.18cqi}.credit-step .step-n{display:flex;align-items:center;justify-content:center;width:4.3cqi;height:4.3cqi;background:#E6E2D8;font-size:1.7cqi;font-weight:950}.credit-step b{display:block;font-size:1.55cqi;margin-bottom:.35cqi}.credit-step small{display:block;font-size:1.08cqi;line-height:1.3;color:#666}.credit-step::after{content:'선택';font-size:.9cqi;font-weight:900;color:#777}.credit-step.done{background:#FFF5C9;border-color:#111}.credit-step.done .step-n{background:#F6C744}.credit-step.done::after{content:'완료';color:#111}.credit-reset{min-height:4cqi;border:0;background:#111;color:#fff;font:850 1.05cqi/1 inherit;cursor:pointer}.credit-engine{position:relative;display:flex;flex-direction:column;gap:1.45cqi;padding:2.3cqi 2.5cqi;background:#171717;color:#fff;overflow:hidden}.credit-engine::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:4cqi 4cqi}.credit-engine>*{position:relative;z-index:1}.credit-meter-head{display:flex;align-items:flex-end;justify-content:space-between}.credit-meter-head b{font-size:1.25cqi}.credit-score{font-size:4.7cqi;font-weight:950;line-height:.9;color:#F6C744}.credit-track{height:2cqi;border:.14cqi solid #777;background:#242424;padding:.25cqi}.credit-fill{height:100%;width:0;background:#F6C744;transition:width .5s cubic-bezier(.2,.8,.2,1)}.credit-message{min-height:4.4cqi;font-size:1.4cqi;line-height:1.4;color:#D9D9D9}.credit-market{display:grid;grid-template-columns:repeat(3,1fr);gap:.85cqi;margin-top:auto}.credit-outcome{min-height:10.5cqi;padding:1.25cqi;background:#242424;border:.13cqi solid #555;opacity:.35;transform:translateY(.6cqi);transition:opacity .35s,transform .35s,border-color .35s}.credit-outcome b{display:block;color:#F6C744;font-size:1.3cqi;margin-bottom:.55cqi}.credit-outcome span{font-size:1.05cqi;line-height:1.35;color:#ccc}.credit-engine.step-1 .credit-outcome:nth-child(1),.credit-engine.step-2 .credit-outcome:nth-child(-n+2),.credit-engine.step-3 .credit-outcome{opacity:1;transform:none;border-color:#F6C744}.credit-conclusion{padding:1cqi 1.2cqi;background:#F6C744;color:#111;font-size:1.15cqi;font-weight:900;text-align:center;opacity:0;transition:opacity .35s}.credit-engine.step-3 .credit-conclusion{opacity:1}.credit-engine .source-note{color:#bbb;font-size:.95cqi}.credit-engine .source-note a{color:#fff}
 
+.web-native{--web-phase:#F6C744}.web-native::after{content:attr(data-web-no);position:absolute;right:3.2cqi;bottom:1.2cqi;font-size:1cqi;font-weight:900;letter-spacing:.08em;color:#777}.web-native .slide-content{position:relative}.web-phase{position:absolute;right:0;top:.2cqi;display:flex;align-items:center;gap:.65cqi;font-size:1cqi;font-weight:900;letter-spacing:.1em;color:#555}.web-phase::before{content:'';width:2.8cqi;height:.42cqi;background:var(--web-phase)}.web-native h2{max-width:78cqi}.web-native .card,.web-native .fact,.web-native .flow-node,.web-native .debate-side,.web-native .legend-item,.web-native .boundary-card,.web-native .bar-row,.web-native .time-event,.web-native .bullets li,.web-native .meta-row span{transition:transform .22s,box-shadow .22s,opacity .22s,background .22s}.web-target{cursor:pointer;position:relative}.web-target::after{content:'＋';position:absolute;right:.8cqi;top:.65cqi;width:2cqi;height:2cqi;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#111;color:#fff;font-size:1.1cqi;font-weight:900;opacity:.72}.web-target:hover,.web-target:focus-visible{transform:translateY(-.45cqi);box-shadow:0 .8cqi 1.8cqi rgba(0,0,0,.16);outline:.2cqi solid #111;outline-offset:.18cqi}.web-target.spotlit{background:#FFF3B8!important;outline:.24cqi solid #111;box-shadow:.75cqi .75cqi 0 #111}.web-target.spotlit::after{content:'✓';background:#F6C744;color:#111;opacity:1}.web-native .bullets{display:grid;grid-template-columns:1fr 1fr;gap:1.1cqi;list-style:none}.web-native .bullets li{margin:0;min-height:8.1cqi;padding:1.55cqi 3.6cqi 1.35cqi 1.55cqi;background:#fff;border:.14cqi solid #C8C4BA;font-size:1.42cqi;line-height:1.4}.web-native .bullets li::before{display:none}.web-native .card-grid{gap:1.25cqi}.web-native .card{border-top:.5cqi solid var(--web-phase)}.web-native .flow-node{background:#fff}.web-native .time-event{border-left-color:#111}.web-native .time-event.web-target::after{right:1.1cqi;top:50%;transform:translateY(-50%)}.web-insight{position:absolute;left:5.8cqi;right:5.8cqi;bottom:2.4cqi;z-index:30;display:grid;grid-template-columns:15cqi 1fr auto;gap:1.8cqi;align-items:center;min-height:10cqi;padding:1.5cqi 1.8cqi;background:#111;color:#fff;border-left:.8cqi solid var(--web-phase);box-shadow:0 1.2cqi 3.4cqi rgba(0,0,0,.35);opacity:0;transform:translateY(125%);pointer-events:none;transition:opacity .24s,transform .3s cubic-bezier(.2,.8,.2,1)}.web-insight.open{opacity:1;transform:none;pointer-events:auto}.web-insight-kicker{font-size:1cqi;font-weight:950;letter-spacing:.12em;color:var(--web-phase)}.web-insight h3{font-size:1.75cqi;line-height:1.15}.web-insight p{font-size:1.24cqi;line-height:1.45;color:#D7D7D7}.web-insight-close{width:3.8cqi;height:3.8cqi;border:.14cqi solid #fff;border-radius:50%;background:transparent;color:#fff;font:800 1.7cqi/1 inherit;cursor:pointer}.web-insight-close:hover,.web-insight-close:focus-visible{background:var(--web-phase);color:#111}.web-native[data-web-chapter="Ⅱ"]{--web-phase:#D9D4C8}.web-native[data-web-chapter="Ⅲ"]{--web-phase:#F6C744}.web-native[data-web-chapter="Ⅳ"]{--web-phase:#fff}.web-native[data-web-chapter="Ⅳ"].chapter-slide{--web-phase:#F6C744}.web-native .balance-bars .web-target::after{right:0;top:-.2cqi}.web-native .tile-map .state{transition:filter .2s,opacity .2s,transform .2s}.web-native.map-free .state:not(.free),.web-native.map-confed .state:not(.confed),.web-native.map-border .state:not(.border){opacity:.18;filter:grayscale(1)}.web-native.map-free .state.free,.web-native.map-confed .state.confed,.web-native.map-border .state.border{transform:scale(1.08);z-index:2}.web-native .meta-row span.web-target{padding-right:2.8cqi}
+
+.web-insight{visibility:hidden;transform:translateY(1.5cqi)}.web-insight.open{visibility:visible;transform:none}
+
+.attention-cue{position:fixed;inset:0;z-index:800;display:flex;align-items:center;justify-content:center;background:rgba(8,8,8,.72);backdrop-filter:blur(5px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s,visibility 0s linear .3s}.attention-cue.active{opacity:1;visibility:visible;transition-delay:0s}.attention-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(64vw,620px);aspect-ratio:2/1;background:#F6C744;color:#111;border:.35rem solid #fff;box-shadow:1rem 1rem 0 #111;transform:scale(.82) rotate(-2deg);transition:transform .22s cubic-bezier(.2,.9,.2,1)}.attention-cue.active .attention-card{transform:scale(1) rotate(-2deg)}.attention-word{font-size:clamp(58px,11vw,142px);font-weight:950;line-height:.78;letter-spacing:-.08em}.attention-wave{display:inline-block;transform-origin:left center;animation:shh-wave .55s ease-in-out infinite alternate}.attention-sub{margin-top:1.2rem;font-size:clamp(15px,2vw,25px);font-weight:900;letter-spacing:.18em}.attention-rings{position:absolute;inset:8%;border:.18rem solid rgba(17,17,17,.24);animation:shh-ring 1s ease-out infinite}.attention-rings::after{content:'';position:absolute;inset:8%;border:.16rem solid rgba(17,17,17,.18)}@keyframes shh-wave{to{transform:scaleX(1.12)}}@keyframes shh-ring{from{transform:scale(.86);opacity:.8}to{transform:scale(1.08);opacity:0}}#attentionBtn{background:#F6C744!important;color:#111!important;border-color:#F6C744!important}#attentionBtn:hover,#attentionBtn:focus-visible{background:#fff!important}
+
 /* 하단 네비 */
 #nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:#0E0E0E;border-top:1px solid #222;
   display:flex;align-items:center;gap:8px;padding:0 14px;color:#EEEEEE;font-size:14px;z-index:200}
@@ -283,7 +289,7 @@ table.tbl th{background:var(--accent);color:var(--ink)}
 @page{size:13.333in 7.5in;margin:0}
 @media print{
   html, body{overflow:visible!important;height:auto!important;background:#FFFFFF}
-  #nav, #progress, .grid-overlay{display:none!important}
+  #nav, #progress, .grid-overlay, .attention-cue{display:none!important}
   #stage{position:static!important;transform:none!important;width:13.333in!important;aspect-ratio:auto!important;overflow:visible!important}
   #stage > .slide{position:relative!important;display:flex!important;width:13.333in;height:7.5in;
     break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -884,7 +890,8 @@ table.tbl th{background:var(--accent);color:var(--ink)}
   <span id="counter" aria-live="polite">1 / 36</span>
   <button type="button" id="navNext" aria-label="다음 슬라이드">▶</button>
   <span class="grow"></span>
-  <span class="hint hide-sm">← → 이동 · G 전체보기 · P PDF</span>
+  <span class="hint hide-sm">← → 이동 · S 쉿 · G 전체보기 · P PDF</span>
+  <button type="button" id="attentionBtn" aria-label="쉿 집중 신호 재생">쉿~~~~</button>
   <button type="button" id="gridBtn" aria-haspopup="dialog" aria-controls="gridOverlay">▦ 전체 보기</button>
   <button type="button" id="printBtn" class="hide-sm">⎙ PDF 저장</button>
 </nav>
@@ -892,6 +899,10 @@ table.tbl th{background:var(--accent);color:var(--ink)}
 <div class="grid-overlay" id="gridOverlay" role="dialog" aria-modal="true" aria-label="전체 슬라이드 보기">
   <div class="grid-head"><h2>전체 보기</h2><button type="button" id="gridClose">닫기 (Esc)</button></div>
   <div class="grid-list" id="gridList"></div>
+</div>
+
+<div class="attention-cue" id="attentionCue" role="status" aria-live="assertive" aria-label="집중 신호">
+  <div class="attention-card"><div class="attention-rings"></div><div class="attention-word">쉿<span class="attention-wave">~~~~</span></div><div class="attention-sub">시선은 화면으로</div></div>
 </div>
 
 <script>
@@ -926,6 +937,43 @@ table.tbl th{background:var(--accent);color:var(--ink)}
   var gridList = document.getElementById('gridList');
   var minis = [];
   var lastFocus = null;
+  var attentionCue = document.getElementById('attentionCue');
+  var attentionTimer = null;
+  var attentionAudio = null;
+
+  function playShh(){
+    clearTimeout(attentionTimer);
+    attentionCue.classList.remove('active');
+    void attentionCue.offsetWidth;
+    attentionCue.classList.add('active');
+    attentionTimer = setTimeout(function(){ attentionCue.classList.remove('active'); }, 1750);
+    try {
+      var AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      if (!attentionAudio) attentionAudio = new AudioCtx();
+      if (attentionAudio.state === 'suspended') attentionAudio.resume();
+      var duration = 1.45;
+      var buffer = attentionAudio.createBuffer(1, Math.floor(attentionAudio.sampleRate * duration), attentionAudio.sampleRate);
+      var data = buffer.getChannelData(0);
+      for (var i=0;i<data.length;i++) {
+        var t = i / data.length;
+        var envelope = Math.sin(Math.PI * Math.min(1,t * 4)) * Math.pow(1 - t,.65);
+        data[i] = (Math.random() * 2 - 1) * envelope;
+      }
+      var source = attentionAudio.createBufferSource();
+      var high = attentionAudio.createBiquadFilter();
+      var band = attentionAudio.createBiquadFilter();
+      var gain = attentionAudio.createGain();
+      high.type = 'highpass'; high.frequency.value = 900;
+      band.type = 'bandpass'; band.frequency.value = 3200; band.Q.value = .55;
+      gain.gain.setValueAtTime(.0001,attentionAudio.currentTime);
+      gain.gain.exponentialRampToValueAtTime(.23,attentionAudio.currentTime + .08);
+      gain.gain.exponentialRampToValueAtTime(.0001,attentionAudio.currentTime + duration);
+      source.buffer = buffer;
+      source.connect(high); high.connect(band); band.connect(gain); gain.connect(attentionAudio.destination);
+      source.start();
+    } catch (err) { /* 시각 신호는 계속 작동 */ }
+  }
 
   function show(i){
     idx = Math.max(0, Math.min(total - 1, i));
@@ -1027,6 +1075,87 @@ table.tbl th{background:var(--accent);color:var(--ink)}
   creditSteps.forEach(function(btn){ btn.addEventListener('click', function(e){ e.stopPropagation(); setCreditStep(Number(btn.dataset.creditStep)); }); });
   if (creditReset) creditReset.addEventListener('click', function(e){ e.stopPropagation(); setCreditStep(0); });
 
+  /* 9~36페이지: 요소별 역사 맥락을 여는 클릭 탐색 체계 */
+  var webStories = {
+    9:{selector:'.fact',items:[['공공자금의 결절점','세입을 한곳에 모아 정부 지출과 부채상환을 예측 가능한 체계로 전환'],['전국 결제망','지점과 은행권이 지역별 결제의 단절을 줄여 하나의 시장 형성을 지원'],['신용의 증폭','정부 예금을 기반으로 상인과 기업에 신용을 공급하며 재정과 민간투자를 연결']]},
+    10:{selector:'.flow-node',items:[['가격 장벽','관세로 수입품과 국산품의 가격 격차를 줄여 후발 제조업에 학습 시간을 제공'],['생산역량','보호 기간에 설비·숙련·기술을 축적해 반복 생산의 기반을 형성'],['시장 규모','도시화와 소득 증가가 국내 수요를 키워 대량생산의 조건을 조성'],['외부 확장','내수에서 얻은 규모와 기술을 바탕으로 해외시장 경쟁에 진입']]},
+    11:{selector:'.debate-side',items:[['해밀턴의 국가','취약한 신생국을 신용·제조업·연방 행정으로 결속하는 상공업 공화국 구상'],['제퍼슨의 경계','집중된 금융과 행정부가 자유를 침해할 수 있다는 농업 공화국의 견제 논리']]},
+    12:{selector:'.legend-item',items:[['자유주 19','산업·철도·인구가 집중된 북부와 서부가 연방의 생산·병참 기반을 담당'],['남부 연합 11','노예제와 면화 수출경제를 지키려 연방에서 이탈한 정치적 선택'],['경계주 4','노예주이면서 연방에 남아 전선·수도 방어·병력 동원에서 핵심 위치']]},
+    13:{selector:'.boundary-card',items:[['상징의 경계','메이슨·딕슨선은 노예제와 지역 정체성을 나누는 역사적 상징으로 기능'],['전쟁의 축','오하이오강과 포토맥강은 병력·물자·수도를 둘러싼 실제 작전 공간'],['선택의 경계','경계주는 경제구조보다 정치적 선택이 전쟁 지도를 결정했음을 보여주는 사례']]},
+    14:{selector:'.bar-row',items:[['인구의 우위','더 큰 인구는 병력뿐 아니라 공장 노동자·납세자·소비자의 지속적 공급을 의미'],['산업의 우위','철강·무기·의류·식량을 장기간 대량 공급할 수 있는 생산 기반'],['철도의 우위','병력과 보급품을 여러 전선으로 빠르게 이동시키는 대륙 병참망'],['남부의 면화','수출 경쟁력은 강했지만 단일 품목 의존이 장기전의 종합 동원력을 대신하지 못함']]},
+    15:{selector:'.bullets li',items:[['철도의 공간 압축','지역 시장을 전국 생산망으로 묶어 원료·제품·인구의 이동비용을 하락'],['전신의 시간 압축','가격과 주문이 빠르게 전달되며 재고·금융·운송의 조정 속도가 상승'],['표준의 통합','시간대·규격·계약이 통일되며 대륙 규모 거래의 불확실성을 축소'],['단일시장의 효과','기업은 더 큰 생산 규모를 확보하고 소비자는 전국 유통망에 편입']]},
+    16:{selector:'.card',items:[['국가역량','법·행정·재정이 시장의 공통 기반과 장기투자 조건을 제공'],['산업화','생산·고용·혁신이 확대되며 민간 부와 기술 기반이 성장'],['세수 확대','성장한 경제가 정부에 더 큰 재정 자원과 신용을 제공'],['재투자','늘어난 재원을 인프라·교육·국방에 투입하며 다음 성장 조건을 조성']]},
+    19:{selector:'.card',items:[['대륙국가','국내 시장·통화·교통망을 묶어 외부 충격을 견딜 생산 기반을 형성'],['세계강국','산업과 해군을 결합해 해외시장·해상로·전략 거점으로 영향력을 확장'],['질서설계자','승리의 힘을 국제기구·규칙·통화체제로 고정해 지속성을 확보']]},
+    20:{selector:'.card',items:[['철강','철도·교량·도시·군함을 동시에 가능하게 한 산업사회의 기초 소재'],['석유','운송과 군사기동의 에너지 기반이자 화학산업의 핵심 투입물'],['전기','공장 배치와 노동시간을 바꾸고 도시·통신망의 생산성을 확대'],['자동차','조립라인·부품 표준화·소비금융을 결합한 대량생산 체제의 상징']]},
+    21:{selector:'.bullets li',items:[['수직통합','원료에서 유통까지 통제해 비용과 공급 불확실성을 기업 내부에서 관리'],['트러스트','경쟁기업을 결합해 가격·생산량·시장 진입을 통제하는 지배력 형성'],['대량생산','높은 고정비를 거대한 판매량으로 분산해 단가를 낮추는 규모의 경제'],['경영혁신','전문관리자와 회계·조직 체계가 대륙 규모 기업 운영을 가능하게 함']]},
+    22:{selector:'.card',items:[['규모의 그늘','독점은 효율을 높일 수 있지만 가격 통제와 정치적 영향력의 집중을 초래'],['공공 규칙','반독점법과 규제기관은 대기업을 없애기보다 경쟁 가능한 시장의 경계를 설정']]},
+    23:{selector:'.card',items:[['카리브해','쿠바 전쟁은 미국이 서반구 질서에 직접 개입하는 계기로 작동'],['태평양','필리핀·괌 확보는 아시아 시장과 해상로를 향한 전략적 교두보 형성'],['세계정치','1898년은 대륙 팽창이 해외 영토·해군·제국 경쟁으로 전환된 분기점']]},
+    24:{selector:'.card',items:[['보편 가치','자유와 민주주의 언어는 국제적 정당성과 동맹 결집의 자원으로 기능'],['권력 현실','해외 지배와 군사개입은 선언된 가치와 실제 행동 사이의 구조적 긴장을 노출']]},
+    25:{selector:'.bullets li',items:[['유럽의 소진','전쟁이 생산시설·인력·재정을 파괴하며 기존 중심국의 상대적 역량을 약화'],['미국의 수출','본토 밖 전쟁을 이용해 식량·무기·공산품 생산과 해외 판매를 확대'],['금융의 이동','대출과 무역결제가 런던 중심에서 뉴욕·달러 중심으로 이동'],['대서양의 재편','생산과 채권의 중심 이동이 전후 협상에서 미국의 발언권을 확대']]},
+    26:{selector:'.card',items:[['자본 수입국','철도와 산업화에 필요한 자본을 유럽 금융시장에 의존한 단계'],['자본 공급국','전쟁 대출과 무역흑자로 채권을 축적하며 타국의 회복과 정책에 영향력 행사']]},
+    27:{selector:'.card',items:[['민족자결','제국의 해체 이후 정치공동체를 재구성하는 정당성 원칙'],['국제연맹','분쟁을 상설 협의기구에서 다루려는 제도화된 다자주의 구상'],['집단안보','한 국가에 대한 침략을 공동 문제로 규정하는 안보의 연대 논리']]},
+    28:{selector:'.card',items:[['정치적 거리두기','국제연맹 불참과 제한적 개입으로 전쟁 책임을 피하려 한 국내 정치 선택'],['경제적 상호의존','대출·투자·무역은 이미 세계 경제와 연결되어 완전한 고립을 불가능하게 함']]},
+    29:{selector:'.card',items:[['금융 붕괴','자산가격 하락과 은행 파산이 신용 수축을 통해 실물경제로 전달'],['생산 감소','소비·투자 위축이 공장 가동과 국제무역을 동시에 축소'],['대량실업','소득 상실이 수요를 더 줄이며 경제·정치 체제에 대한 신뢰를 훼손'],['세계 확산','보호무역과 경쟁적 통화정책이 위기를 국가 간 갈등으로 증폭']]},
+    30:{selector:'.bullets li',items:[['구제','생존 위기에 놓인 시민에게 직접 지원을 제공해 사회 붕괴를 완충'],['회복','공공사업과 정부지출로 수요·고용·인프라를 동시에 확대'],['개혁','금융감독·예금보호·노동권으로 시장 실패의 재발 가능성을 축소'],['국가역량','위기 관리가 연방정부의 상시적 경제관리 책임으로 제도화']]},
+    31:{selector:'.card',items:[['산업 동원','민간 자동차·기계 공장을 전차·항공기·함선 생산체제로 전환'],['과학 동원','정부·대학·기업 연구망이 레이더·의학·원자력 등 전략기술을 가속'],['인력 동원','여성·이민자·청년의 노동과 군 복무가 총력전의 사회적 기반을 형성']]},
+    32:{selector:'.bullets li',items:[['무기대여법','미국의 생산물을 동맹국 전력으로 바꾸며 참전 이전부터 전쟁 결과에 영향'],['대량생산','표준화된 함선·항공기·차량이 손실보다 빠른 보충과 공세 지속을 가능하게 함'],['후방 안전','본토 산업시설의 보존이 유럽·아시아 경쟁국과 다른 장기 생산 우위를 제공'],['전략 전환','경제적 산출량이 동맹 지원·병참·전투력으로 바뀌며 군사적 패권을 형성']]},
+    33:{selector:'.time-event',items:[['대공황의 기억','통화 블록과 보호무역이 위기를 악화했다는 경험이 협력 규칙의 필요성을 강화'],['달러 기준','금 1온스 35달러의 달러를 중심축으로 삼아 미국 신용을 세계 통화질서에 연결'],['고정환율','각국 통화를 달러에 연계해 무역과 투자에서 환율 불확실성을 축소'],['IMF','단기 유동성 지원과 환율 협의를 맡는 상설 안정기구를 설계'],['IBRD','전후 복구와 장기 개발금융을 제도화해 미국 자본의 국제적 경로를 형성']]},
+    34:{selector:'.card',items:[['UN','정치·안보 협의를 상설화하고 미국을 안전보장이사회 핵심국으로 제도화'],['GATT','관세 인하와 비차별 규칙으로 미국의 대량생산에 열린 시장을 확대'],['동맹','집단방위와 해외기지망으로 군사력의 지속적 전진배치를 가능하게 함'],['달러','결제·준비·금융의 중심 통화가 되어 미국 정책과 시장의 세계적 파급력을 확대']]},
+    36:{selector:'.meta-row span',items:[['생산력','상품·기술·인프라를 대량 공급하는 물적 토대'],['금융력','저축과 신용을 국내외 전략자원으로 전환하는 능력'],['군사력','생산과 금융을 병참·동맹·전투력으로 투사하는 능력'],['제도력','힘의 우위를 다른 국가도 따르는 규칙과 기구로 고정하는 능력']]}
+  };
+  function webPhase(n){
+    if (n <= 11) return ['Ⅰ','국가 설계'];
+    if (n <= 18) return ['Ⅱ','대륙 통합'];
+    if (n <= 28) return ['Ⅲ','세계 진출'];
+    return ['Ⅳ','질서 설계'];
+  }
+  slides.forEach(function(slide,n0){
+    var n = n0 + 1;
+    if (n < 9) return;
+    var phase = webPhase(n);
+    slide.classList.add('web-native');
+    slide.dataset.webNo = String(n).padStart(2,'0') + ' · WEB SLIDE';
+    slide.dataset.webChapter = phase[0];
+    var phaseEl = document.createElement('div');
+    phaseEl.className = 'web-phase';
+    phaseEl.textContent = phase[0] + ' · ' + phase[1];
+    var content = slide.querySelector('.slide-content');
+    if (content) content.appendChild(phaseEl);
+    var story = webStories[n];
+    if (!story) return;
+    var targets = Array.prototype.slice.call(slide.querySelectorAll(story.selector));
+    if (!targets.length) return;
+    var dock = document.createElement('article');
+    dock.className = 'web-insight';
+    dock.setAttribute('aria-live','polite');
+    dock.innerHTML = '<div><div class="web-insight-kicker">CLICK INSIGHT</div><h3></h3></div><p></p><button type="button" class="web-insight-close" aria-label="설명 닫기">×</button>';
+    slide.appendChild(dock);
+    function closeInsight(){ dock.classList.remove('open'); targets.forEach(function(t){t.classList.remove('spotlit');}); }
+    dock.querySelector('.web-insight-close').addEventListener('click',function(e){e.stopPropagation();closeInsight();});
+    targets.forEach(function(target,i){
+      var item = story.items[i];
+      if (!item) return;
+      target.classList.add('web-target');
+      target.setAttribute('role','button');
+      target.setAttribute('tabindex','0');
+      target.setAttribute('aria-label',(target.textContent || '').trim() + ' 상세 설명');
+      function openInsight(e){
+        e.stopPropagation();
+        targets.forEach(function(t){t.classList.remove('spotlit');});
+        target.classList.add('spotlit');
+        dock.querySelector('h3').textContent = item[0];
+        dock.querySelector('p').textContent = item[1];
+        dock.classList.add('open');
+        if (n === 12) {
+          slide.classList.remove('map-free','map-confed','map-border');
+          slide.classList.add(i === 0 ? 'map-free' : i === 1 ? 'map-confed' : 'map-border');
+        }
+      }
+      target.addEventListener('click',openInsight);
+      target.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openInsight(e);}});
+    });
+  });
+
   document.addEventListener('keydown', function(e){
     var t = e.target;
     if (t && t.closest && t.closest('input, textarea, select')) return;
@@ -1036,6 +1165,18 @@ table.tbl th{background:var(--accent);color:var(--ink)}
     }
     if (stage.querySelector('.topic-detail.open')) {
       if (e.key === 'Escape') { e.preventDefault(); closeTopic(); }
+      return;
+    }
+    var openInsight = stage.querySelector('.slide.active .web-insight.open');
+    if (openInsight && e.key === 'Escape') {
+      e.preventDefault();
+      openInsight.classList.remove('open');
+      stage.querySelectorAll('.slide.active .web-target').forEach(function(t){ t.classList.remove('spotlit'); });
+      return;
+    }
+    if (e.key === 's' || e.key === 'S' || e.key === 'ㄴ') {
+      e.preventDefault();
+      playShh();
       return;
     }
     /* 버튼에 포커스가 있을 때 스페이스·엔터는 버튼 동작에 양보 */
@@ -1051,12 +1192,16 @@ table.tbl th{background:var(--accent);color:var(--ink)}
 
   /* 무대 클릭: 오른쪽 절반 다음 · 왼쪽 절반 이전 (버튼·링크·프롬프트 카드 제외) */
   stage.addEventListener('click', function(e){
-    if (e.target.closest('button, a, .prompt-card')) return;
+    if (e.target.closest('button, a, .prompt-card, .web-target, .web-insight')) return;
     var rect = stage.getBoundingClientRect();
     if (e.clientX - rect.left > rect.width / 2) show(idx + 1); else show(idx - 1);
   });
   navPrev.addEventListener('click', function(){ show(idx - 1); });
   navNext.addEventListener('click', function(){ show(idx + 1); });
+  document.getElementById('attentionBtn').addEventListener('click', function(e){
+    e.stopPropagation();
+    playShh();
+  });
   document.getElementById('gridBtn').addEventListener('click', openGrid);
   document.getElementById('gridClose').addEventListener('click', closeGrid);
   document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
