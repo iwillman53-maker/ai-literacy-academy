@@ -247,6 +247,10 @@ table.tbl th{background:var(--accent);color:var(--ink)}
 
 .web-insight{visibility:hidden;transform:translateY(1.5cqi)}.web-insight.open{visibility:visible;transform:none}
 
+/* 파운딩 파더스: 초반 인물 지도 + 개별 탐색 화면 */
+.founder-overview .slide-content{gap:1.35cqi}.founder-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.15cqi;width:100%}.founder-card{appearance:none;position:relative;min-height:31cqi;padding:0;background:#171717;color:#fff;border:.15cqi solid #111;overflow:hidden;text-align:left;font-family:inherit;cursor:pointer;transition:transform .2s,box-shadow .2s}.founder-card:hover,.founder-card:focus-visible{transform:translateY(-.7cqi);box-shadow:.7cqi .7cqi 0 #F6C744;outline:.2cqi solid #111;outline-offset:.18cqi}.founder-card img{width:100%;height:18.5cqi;object-fit:cover;object-position:center 18%;display:block;filter:grayscale(.2) contrast(1.04)}.founder-card .founder-mini{padding:1.2cqi 1.25cqi}.founder-card b{display:block;font-size:1.45cqi;line-height:1.1}.founder-card small{display:block;margin-top:.45cqi;color:#F6C744;font-size:1cqi;font-weight:850}.founder-card span{display:block;margin-top:.85cqi;color:#D0D0D0;font-size:1.02cqi;line-height:1.35}.founder-card::after{content:'인물 열기 →';position:absolute;right:1cqi;bottom:.8cqi;font-size:.82cqi;font-weight:900;letter-spacing:.05em;color:#fff}.founder-note{display:flex;align-items:center;justify-content:space-between;width:100%;font-size:1cqi;color:#666}.founder-note a{color:inherit}
+.founder-slide{background:#EEEAE1}.founder-layout{display:grid;grid-template-columns:31cqi 1fr;gap:3cqi;width:100%;min-height:41cqi}.founder-portrait{position:relative;overflow:hidden;background:#171717;border:.18cqi solid #111}.founder-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}.founder-portrait::after{content:'';position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,rgba(0,0,0,.88))}.founder-years{position:absolute;left:1.7cqi;right:1.7cqi;bottom:1.5cqi;z-index:1;color:#fff}.founder-years b{display:block;font-size:2.2cqi}.founder-years span{display:block;margin-top:.35cqi;color:#F6C744;font-size:1.08cqi;font-weight:900;letter-spacing:.08em}.founder-profile{display:flex;flex-direction:column;gap:1.25cqi}.founder-profile .eyebrow{color:#555}.founder-profile h2{font-size:4.1cqi}.founder-thesis{font-size:1.55cqi;line-height:1.42;font-weight:750;max-width:52cqi}.founder-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:.8cqi}.founder-tab{min-height:4.4cqi;border:.16cqi solid #111;background:#fff;color:#111;font:900 1.15cqi/1 inherit;cursor:pointer}.founder-tab:hover,.founder-tab:focus-visible,.founder-tab.active{background:#F6C744;outline:.18cqi solid #111;outline-offset:.12cqi}.founder-panel{display:grid;grid-template-columns:12cqi 1fr;gap:1.5cqi;align-items:start;min-height:15.5cqi;padding:1.65cqi 1.8cqi;background:#171717;color:#fff;border-left:.75cqi solid #F6C744}.founder-panel h3{font-size:1.75cqi;color:#F6C744}.founder-panel p{font-size:1.35cqi;line-height:1.5;color:#E2E2E2}.founder-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:.85cqi}.founder-fact{padding:1cqi 1.1cqi;background:#fff;border:.12cqi solid #BEB9AE}.founder-fact b{display:block;font-size:1.2cqi}.founder-fact span{display:block;margin-top:.35cqi;font-size:1cqi;line-height:1.3;color:#666}.founder-source{margin-top:auto;font-size:.9cqi;color:#666}.founder-source a{color:inherit}
+
 .attention-cue{position:fixed;inset:0;z-index:800;display:flex;align-items:center;justify-content:center;background:rgba(8,8,8,.72);backdrop-filter:blur(5px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s,visibility 0s linear .3s}.attention-cue.active{opacity:1;visibility:visible;transition-delay:0s}.attention-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(64vw,620px);aspect-ratio:2/1;background:#F6C744;color:#111;border:.35rem solid #fff;box-shadow:1rem 1rem 0 #111;transform:scale(.82) rotate(-2deg);transition:transform .22s cubic-bezier(.2,.9,.2,1)}.attention-cue.active .attention-card{transform:scale(1) rotate(-2deg)}.attention-word{font-size:clamp(58px,11vw,142px);font-weight:950;line-height:.78;letter-spacing:-.08em}.attention-wave{display:inline-block;transform-origin:left center;animation:shh-wave .55s ease-in-out infinite alternate}.attention-sub{margin-top:1.2rem;font-size:clamp(15px,2vw,25px);font-weight:900;letter-spacing:.18em}.attention-rings{position:absolute;inset:8%;border:.18rem solid rgba(17,17,17,.24);animation:shh-ring 1s ease-out infinite}.attention-rings::after{content:'';position:absolute;inset:8%;border:.16rem solid rgba(17,17,17,.18)}@keyframes shh-wave{to{transform:scaleX(1.12)}}@keyframes shh-ring{from{transform:scale(.86);opacity:.8}to{transform:scale(1.08);opacity:0}}#attentionBtn{background:#F6C744!important;color:#111!important;border-color:#F6C744!important}#attentionBtn:hover,#attentionBtn:focus-visible{background:#fff!important}
 
 /* 하단 네비 */
@@ -320,7 +324,7 @@ table.tbl th{background:var(--accent);color:var(--ink)}
     <table class="tbl">
       <thead><tr><th scope="col">구간</th><th scope="col">핵심 흐름</th></tr></thead>
       <tbody>
-        <tr class="today"><td>0~50분</td><td>제도 설계 → 산업 통합 → 단일시장</td></tr>
+        <tr class="today"><td>0~50분</td><td>파운딩 파더스 → 제도 설계 → 산업 통합</td></tr>
         <tr><td>50~60분</td><td>휴식</td></tr>
         <tr><td>60~100분</td><td>세계대전 → 브레튼우즈 → 미국 중심 질서</td></tr>
       </tbody>
@@ -339,6 +343,87 @@ table.tbl th{background:var(--accent);color:var(--ink)}
     </div>
     <p class="lede">관찰 초점: 생산력만으로 패권국이 될 수 있는가</p>
   </div>
+</section>
+
+<!-- ===== 4. 파운딩 파더스 5인 ===== -->
+<section class="slide founder-overview" aria-label="4. 파운딩 파더스 5인">
+  <div class="slide-content">
+    <div class="kicker">혁명에서 국가 설계까지</div>
+    <h2>파운딩 파더스 5인</h2>
+    <div class="founder-grid" aria-label="파운딩 파더스 인물 선택">
+      <button type="button" class="founder-card" data-jump="5"><img src="assets/founder-washington.jpg" alt="조지 워싱턴 초상화"><span class="founder-mini"><b>조지 워싱턴</b><small>1732–1799</small><span>독립전쟁 · 헌정 질서 · 대통령직의 선례</span></span></button>
+      <button type="button" class="founder-card" data-jump="6"><img src="assets/founder-hamilton.jpg" alt="알렉산더 해밀턴 초상화"><span class="founder-mini"><b>알렉산더 해밀턴</b><small>1757–1804</small><span>연방 재정 · 국립은행 · 제조업 국가</span></span></button>
+      <button type="button" class="founder-card" data-jump="7"><img src="assets/founder-jefferson.jpg" alt="토머스 제퍼슨 초상화"><span class="founder-mini"><b>토머스 제퍼슨</b><small>1743–1826</small><span>독립선언 · 공화주의 · 대륙 확장</span></span></button>
+      <button type="button" class="founder-card" data-jump="8"><img src="assets/founder-madison.jpg" alt="제임스 매디슨 초상화"><span class="founder-mini"><b>제임스 매디슨</b><small>1751–1836</small><span>헌법 설계 · 권력 분립 · 권리장전</span></span></button>
+      <button type="button" class="founder-card" data-jump="9"><img src="assets/founder-franklin.jpg" alt="벤저민 프랭클린 초상화"><span class="founder-mini"><b>벤저민 프랭클린</b><small>1706–1790</small><span>과학 · 외교 · 대타협의 중재</span></span></button>
+    </div>
+    <div class="founder-note"><span>인물 카드를 눌러 개별 화면으로 이동</span><span>초상화: Smithsonian Open Access 계열 작품 · 공개영역</span></div>
+  </div>
+</section>
+
+<!-- ===== 5. 조지 워싱턴 ===== -->
+<section class="slide founder-slide" aria-label="5. 조지 워싱턴">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-washington.jpg" alt="길버트 스튜어트가 그린 조지 워싱턴 초상화"><figcaption class="founder-years"><b>George Washington</b><span>1732–1799</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">01 · COMMAND → CONSTITUTION</div><h2>조지 워싱턴</h2><p class="founder-thesis">군사적 승리를 헌정 질서와 절제된 대통령 권력으로 전환한 국가 통합의 상징</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="대륙군 총사령관으로 독립전쟁을 이끌고, 1787년 헌법제정회의 의장과 초대 대통령으로 새 연방정부의 권위를 정착">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="강한 연방정부와 국가 통합을 지지하면서도 정당 갈등과 유럽 전쟁에 대한 과도한 개입을 경계한 실용적 연방주의">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="자유 공화국의 지도자이면서 노예 소유주였다는 근본 모순, 대통령 권력과 시민적 절제의 선례가 함께 남은 유산">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>대륙군 총사령관으로 독립전쟁을 이끌고, 1787년 헌법제정회의 의장과 초대 대통령으로 새 연방정부의 권위를 정착</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1781</b><span>요크타운 승리</span></div><div class="founder-fact"><b>1787</b><span>헌법제정회의 의장</span></div><div class="founder-fact"><b>1789–1797</b><span>초대 대통령</span></div></div>
+      <div class="founder-source">자료: <a href="https://npg.si.edu/portraits/collection-highlights/highlights-george-washington-1732-1799" target="_blank" rel="noopener">Smithsonian NPG</a> · <a href="https://www.mountvernon.org/george-washington/biography" target="_blank" rel="noopener">Mount Vernon</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 6. 알렉산더 해밀턴 ===== -->
+<section class="slide founder-slide" aria-label="6. 알렉산더 해밀턴">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-hamilton.jpg" alt="존 트럼불이 그린 알렉산더 해밀턴 초상화"><figcaption class="founder-years"><b>Alexander Hamilton</b><span>1757–1804</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">02 · CREDIT → INDUSTRY</div><h2>알렉산더 해밀턴</h2><p class="founder-thesis">국가신용·은행·관세·제조업을 하나의 체제로 묶어 연방의 경제적 능력을 설계한 인물</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="초대 재무장관으로 연방 부채의 통합, 국립은행, 조세 기반, 제조업 육성안을 추진해 국가신용과 자본시장의 토대를 구축">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="상공업·금융·도시 성장을 중시한 강한 연방주의, 광범위한 헌법 해석과 행정부 역량을 선호한 연방당 노선">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="엘리트 중심 정치와 친영 외교 성향이 제퍼슨·매디슨의 농업 공화주의와 충돌하며 최초 정당체제 형성을 촉진">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>초대 재무장관으로 연방 부채의 통합, 국립은행, 조세 기반, 제조업 육성안을 추진해 국가신용과 자본시장의 토대를 구축</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1787–1788</b><span>연방주의자 논고 공동 집필</span></div><div class="founder-fact"><b>1789–1795</b><span>초대 재무장관</span></div><div class="founder-fact"><b>1791</b><span>국립은행·제조업 보고서</span></div></div>
+      <div class="founder-source">자료: <a href="https://www.archives.gov/founding-docs/founding-fathers-new-york" target="_blank" rel="noopener">U.S. National Archives</a> · <a href="https://npg.si.edu/object/npg_NPG.79.216" target="_blank" rel="noopener">Smithsonian NPG</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 7. 토머스 제퍼슨 ===== -->
+<section class="slide founder-slide" aria-label="7. 토머스 제퍼슨">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-jefferson.jpg" alt="렘브란트 필이 그린 토머스 제퍼슨 초상화"><figcaption class="founder-years"><b>Thomas Jefferson</b><span>1743–1826</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">03 · LIBERTY → EXPANSION</div><h2>토머스 제퍼슨</h2><p class="founder-thesis">개인의 자유와 농업 공화국을 내세우면서도 대통령 권력을 활용해 대륙국가의 규모를 확장한 인물</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="독립선언서의 주 저자, 종교자유법과 버지니아대학교 설립, 대통령 재임 중 루이지애나 매입으로 미국 영토를 거의 두 배로 확대">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="주 권리·엄격한 헌법 해석·자영농 중심 공화주의를 강조하고 중앙 금융권력과 상비군 확대에 비판적인 민주공화당 노선">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="모든 인간의 평등을 선언했지만 평생 수백 명을 노예화한 현실, 자유의 언어와 노예제·팽창정책 사이의 구조적 모순">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>독립선언서의 주 저자, 종교자유법과 버지니아대학교 설립, 대통령 재임 중 루이지애나 매입으로 미국 영토를 거의 두 배로 확대</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1776</b><span>독립선언서 주 저자</span></div><div class="founder-fact"><b>1801–1809</b><span>제3대 대통령</span></div><div class="founder-fact"><b>1803</b><span>루이지애나 매입</span></div></div>
+      <div class="founder-source">자료: <a href="https://npg.si.edu/learn/classroom-resource/thomas-jefferson-1743%E2%80%931826" target="_blank" rel="noopener">Smithsonian NPG</a> · <a href="https://www.archives.gov/founding-docs" target="_blank" rel="noopener">U.S. National Archives</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 8. 제임스 매디슨 ===== -->
+<section class="slide founder-slide" aria-label="8. 제임스 매디슨">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-madison.jpg" alt="토머스 설리가 그린 제임스 매디슨 초상화"><figcaption class="founder-years"><b>James Madison</b><span>1751–1836</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">04 · FACTION → CHECKS</div><h2>제임스 매디슨</h2><p class="founder-thesis">파벌을 없애기보다 넓은 공화국과 권력 분립으로 통제하는 헌법적 장치를 설계한 인물</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="버지니아안을 준비하고 헌법제정회의 논의를 기록했으며, 연방주의자 논고와 권리장전을 이끌어 ‘헌법의 아버지’로 평가">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="초기에는 강한 연방 설계를 주도했으나 해밀턴의 금융정책에 반대하며 제퍼슨과 민주공화당을 조직한 견제와 균형의 공화주의">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="1812년 전쟁에서 행정부·재정·군사 역량의 취약성을 경험하며 작은 정부 이상과 국가역량 필요 사이의 긴장을 노출">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>버지니아안을 준비하고 헌법제정회의 논의를 기록했으며, 연방주의자 논고와 권리장전을 이끌어 ‘헌법의 아버지’로 평가</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1787</b><span>헌법제정회의 핵심 설계</span></div><div class="founder-fact"><b>1791</b><span>권리장전 비준</span></div><div class="founder-fact"><b>1809–1817</b><span>제4대 대통령</span></div></div>
+      <div class="founder-source">자료: <a href="https://www.archives.gov/founding-docs/founding-fathers-virginia" target="_blank" rel="noopener">U.S. National Archives</a> · <a href="https://npg.si.edu/object/npg_NPG.2019.32" target="_blank" rel="noopener">Smithsonian NPG</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 9. 벤저민 프랭클린 ===== -->
+<section class="slide founder-slide" aria-label="9. 벤저민 프랭클린">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-franklin.jpg" alt="조제프 시프레드 뒤플레시가 그린 벤저민 프랭클린 초상화"><figcaption class="founder-years"><b>Benjamin Franklin</b><span>1706–1790</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">05 · KNOWLEDGE → DIPLOMACY</div><h2>벤저민 프랭클린</h2><p class="founder-thesis">과학자의 신뢰와 인쇄 네트워크를 외교 자산으로 바꾸고, 타협을 통해 연합을 가능하게 한 공공 지식인</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="독립선언서와 헌법 서명, 프랑스와의 동맹·원조 확보, 파리조약 협상 참여로 혁명전쟁의 국제적 승리 조건을 마련">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="실험·토론·시민결사를 중시한 계몽주의적 공화주의, 강경한 이념보다 연합 유지와 실행 가능한 타협을 우선한 실용주의">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="초기 노예 소유에서 말년의 노예제 폐지 청원으로 이동한 변화, 헌법의 불완전함을 인정하면서도 연합을 위해 서명을 촉구">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>독립선언서와 헌법 서명, 프랑스와의 동맹·원조 확보, 파리조약 협상 참여로 혁명전쟁의 국제적 승리 조건을 마련</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1776–1785</b><span>주프랑스 외교 대표</span></div><div class="founder-fact"><b>1783</b><span>파리조약 협상</span></div><div class="founder-fact"><b>1787</b><span>헌법 서명·타협 촉구</span></div></div>
+      <div class="founder-source">자료: <a href="https://npg.si.edu/learn/classroom-resource/benjamin-franklin-1706%E2%80%931790" target="_blank" rel="noopener">Smithsonian NPG</a> · <a href="https://www.archives.gov/founding-docs/more-perfect-union" target="_blank" rel="noopener">U.S. National Archives</a></div>
+    </div>
+  </div></div>
 </section>
 
 <!-- ===== 4. 9주차 연결 ===== -->
@@ -913,6 +998,10 @@ table.tbl th{background:var(--accent);color:var(--ink)}
   var stage = document.getElementById('stage');
   var slides = Array.prototype.slice.call(stage.querySelectorAll(':scope > section.slide'));
   var total = slides.length;
+  slides.forEach(function(slide,n){
+    var label = slide.getAttribute('aria-label') || '';
+    slide.setAttribute('aria-label',(n + 1) + '. ' + label.replace(/^\d+\.\s*/,''));
+  });
   var STORAGE_KEY = LS + 'slide';
   var idx = 0;
 
@@ -988,6 +1077,21 @@ table.tbl th{background:var(--accent);color:var(--ink)}
     minis.forEach(function(m, n){ m.classList.toggle('current', n === idx); });
     lsSet(STORAGE_KEY, String(idx));
   }
+
+  /* 초반 인물 지도와 개별 인물 탐색 */
+  stage.querySelectorAll('.founder-card').forEach(function(card){
+    card.addEventListener('click',function(){ show(parseInt(card.dataset.jump,10) - 1); });
+  });
+  stage.querySelectorAll('.founder-slide').forEach(function(slide){
+    var panel = slide.querySelector('.founder-panel');
+    slide.querySelectorAll('.founder-tab').forEach(function(tab){
+      tab.addEventListener('click',function(){
+        slide.querySelectorAll('.founder-tab').forEach(function(t){ t.classList.toggle('active',t === tab); });
+        panel.querySelector('h3').textContent = tab.dataset.title;
+        panel.querySelector('p').textContent = tab.dataset.copy;
+      });
+    });
+  });
 
   function scaleMinis(){
     minis.forEach(function(m){ m.firstChild.style.transform = 'scale(' + (m.clientWidth / 960) + ')'; });
@@ -1111,8 +1215,9 @@ table.tbl th{background:var(--accent);color:var(--ink)}
   }
   slides.forEach(function(slide,n0){
     var n = n0 + 1;
-    if (n < 9) return;
-    var phase = webPhase(n);
+    var legacyNo = n >= 10 ? n - 6 : n;
+    if (legacyNo < 9) return;
+    var phase = webPhase(legacyNo);
     slide.classList.add('web-native');
     slide.dataset.webNo = String(n).padStart(2,'0') + ' · WEB SLIDE';
     slide.dataset.webChapter = phase[0];
@@ -1121,7 +1226,7 @@ table.tbl th{background:var(--accent);color:var(--ink)}
     phaseEl.textContent = phase[0] + ' · ' + phase[1];
     var content = slide.querySelector('.slide-content');
     if (content) content.appendChild(phaseEl);
-    var story = webStories[n];
+    var story = webStories[legacyNo];
     if (!story) return;
     var targets = Array.prototype.slice.call(slide.querySelectorAll(story.selector));
     if (!targets.length) return;
@@ -1146,7 +1251,7 @@ table.tbl th{background:var(--accent);color:var(--ink)}
         dock.querySelector('h3').textContent = item[0];
         dock.querySelector('p').textContent = item[1];
         dock.classList.add('open');
-        if (n === 12) {
+        if (legacyNo === 12) {
           slide.classList.remove('map-free','map-confed','map-border');
           slide.classList.add(i === 0 ? 'map-free' : i === 1 ? 'map-confed' : 'map-border');
         }
