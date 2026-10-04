@@ -1001,5 +1001,25 @@ table.tbl td:first-child{color:var(--sub)}
   show(idx);
 })();
 </script>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js';
+import { getAnalytics, isSupported } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAZEbdXyhp3y2hKzKt9vAz-dqmpLLsUxHM',
+  authDomain: 'iwillman-ai.firebaseapp.com',
+  databaseURL: 'https://iwillman-ai-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId: 'iwillman-ai',
+  storageBucket: 'iwillman-ai.firebasestorage.app',
+  messagingSenderId: '116342263639',
+  appId: '1:116342263639:web:dc8cb9dce784982ff8b812',
+  measurementId: 'G-J2N2W8XV3X'
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+isSupported().then(function(supported){
+  if (supported) getAnalytics(firebaseApp);
+});
+</script>
 </body>
 </html>
