@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!-- 글로벌시대의 국제정치 · 3회 스페인 웹슬라이드 · 위치: /intl-politics/lectures/slides_international-politics-w3.html · 이미지: /intl-politics/w3/NN.webp -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>바다 위의 농업제국, 스페인 · 글로벌시대의 국제정치 3회</title>
+<meta name="description" content="가천대학교 행정학과 글로벌시대의 국제정치 3회 · 바다 위의 농업제국, 스페인 · 웹슬라이드 35장 · 나병인 교수">
+<meta name="theme-color" content="#0B1220">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{--bg:#0B1220;--card:#141C33;--line:#293045;--lime:#D4FF3D;--text:#F6F3EC;--sub:#B9C0D0}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
+  font-family:'Noto Sans KR','Noto Sans CJK KR',-apple-system,'Malgun Gothic',sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.bar{position:fixed;left:0;right:0;height:52px;display:flex;align-items:center;gap:.5rem;padding:0 .8rem;background:var(--card);z-index:3}
+.top{top:0;border-bottom:1px solid var(--line)}
+.bot{bottom:0;border-top:1px solid var(--line)}
+.ttl{font-weight:900;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ttl small{font-weight:500;color:var(--sub);margin-left:.5rem}
+.sp{flex:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 .95rem;border-radius:10px;border:1.5px solid var(--line);
+  background:transparent;color:var(--text);font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{border-color:var(--lime);color:var(--lime)}
+.btn.main{background:var(--lime);border-color:var(--lime);color:var(--bg)}
+#stage{position:fixed;top:52px;bottom:52px;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:10px}
+#frame{position:relative;aspect-ratio:16/9;width:min(100%,calc((100vh - 52px - 52px - 20px) * 16 / 9));max-height:100%;background:#000;border-radius:8px;overflow:hidden;box-shadow:0 10px 44px rgba(0,0,0,.5)}
+#frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .16s;user-select:none;-webkit-user-drag:none}
+#frame img.fade{opacity:0}
+.hit{position:absolute;top:0;bottom:0;width:22%;z-index:2;border:0;background:none;cursor:pointer;color:var(--text);font-size:2.4rem;opacity:0;transition:opacity .15s}
+.hit:hover,.hit:focus-visible{opacity:.75}
+#hp{left:0;text-align:left;padding-left:.8rem}#hn{right:0;text-align:right;padding-right:.8rem}
+#prog{flex:1;height:8px;background:var(--line);border-radius:5px;cursor:pointer;position:relative;min-width:60px}
+#prog:focus-visible{outline-offset:6px}
+#fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--lime);border-radius:5px}
+#cnt{min-width:4.6rem;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+#cap{position:absolute;left:-9999px}
+#grid{position:fixed;inset:0;z-index:10;display:none;overflow:auto;padding:1rem;background:rgba(11,18,32,.97)}
+#grid.on{display:block}
+#grid h2{font-size:1.2rem;font-weight:900;margin:.2rem 0 1rem;display:flex;align-items:center;gap:1rem}
+#gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem}
+#gl button{position:relative;padding:0;border:2px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);cursor:pointer;color:var(--text);text-align:left}
+#gl button.cur,#gl button:hover{border-color:var(--lime)}
+#gl img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+#gl span{display:block;padding:.35rem .6rem;font-size:.82rem;font-weight:700;line-height:1.35}
+#gl b{color:var(--lime);margin-right:.35rem}
+#pr{display:none}
+#hush{position:fixed;inset:0;z-index:20;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:rgba(11,18,32,.96);text-align:center;cursor:pointer;padding:1rem}
+#hush.on{display:flex}
+#hush .ic{font-size:clamp(4rem,16vw,9rem);line-height:1}
+#hush h2{font-size:clamp(2.2rem,8vw,4.6rem);font-weight:900;color:var(--lime)}
+#hush p{font-size:clamp(1rem,3vw,1.5rem);color:var(--sub)}
+#hush .sec{font-size:clamp(3rem,10vw,6rem);font-weight:900;font-variant-numeric:tabular-nums}
+#hush .hint{font-size:.9rem;color:var(--sub)}
+@media (max-width:640px){.ttl small,.hide-s{display:none}.hit{width:30%}}
+@media (prefers-reduced-motion:reduce){#frame img,.hit{transition:none}}
+@page{size:16in 9in;margin:0}
+@media print{
+  html,body{height:auto;overflow:visible;background:#fff}
+  .bar,#stage,#grid,#hush,.hit{display:none!important}
+  #pr{display:block}
+  #pr img{display:block;width:16in;height:9in;object-fit:contain;page-break-after:always;break-after:page}
+  #pr img:last-child{page-break-after:auto;break-after:auto}
+}
+</style>
+</head>
+<body>
+<div class="bar top">
+  <a class="btn" href="../index.html">← 강의 안내</a>
+  <div class="ttl">바다 위의 농업제국, 스페인<small>글로벌시대의 국제정치 · 3회</small></div>
+  <span class="sp"></span>
+  <button type="button" class="btn" id="bh" title="쉿, 조용히 생각하는 시간 (S)">🤫 쉿</button>
+  <button type="button" class="btn hide-s" id="bg" title="전체보기 (G)">▦ 전체보기</button>
+  <button type="button" class="btn hide-s" id="bp" title="PDF 저장 (P)">PDF</button>
+  <button type="button" class="btn main" id="bf" title="전체화면 (F)">⛶ 전체화면</button>
+</div>
+<main id="stage">
+  <div id="frame">
+    <img id="img" alt="">
+    <button type="button" class="hit" id="hp" aria-label="이전 슬라이드">‹</button>
+    <button type="button" class="hit" id="hn" aria-label="다음 슬라이드">›</button>
+  </div>
+</main>
+<div class="bar bot">
+  <button type="button" class="btn" id="bpv" aria-label="이전 슬라이드">← 이전</button>
+  <div id="prog" role="slider" tabindex="0" aria-label="슬라이드 위치" aria-valuemin="1" aria-valuemax="35" aria-valuenow="1"><div id="fill"></div></div>
+  <span id="cnt" aria-live="polite">1 / 35</span>
+  <button type="button" class="btn main" id="bnx" aria-label="다음 슬라이드">다음 →</button>
+</div>
+<div id="grid" role="dialog" aria-modal="true" aria-label="슬라이드 전체보기">
+  <h2>슬라이드 전체보기 <button type="button" class="btn" id="gc">닫기 (Esc)</button></h2>
+  <div id="gl"></div>
+</div>
+<div id="hush" role="dialog" aria-modal="true" aria-label="쉿, 조용히 생각하는 시간">
+  <div class="ic" aria-hidden="true">🤫</div>
+  <h2>쉿~~</h2>
+  <p>조용히 생각하는 시간</p>
+  <div class="sec" id="hs" aria-live="off">7</div>
+  <div class="hint">화면 누르기 · Esc · S 로 닫기</div>
+</div>
+<div id="pr" aria-hidden="true"></div>
+<p id="cap" role="status" aria-live="polite"></p>
+<script>
+(function(){
+  var LS='ip3_', N=35;
+  var TITLES=['표지 · 바다 위의 농업제국 스페인','오늘 강의 구성','오프닝 질문','Ch.1 이론 도입','패권이론 · 세계체제론','스페인 제국의 경제 구조','이베리아 반도의 지정학적 조건','대항해 시대 핵심 연표','Ch.2 스페인의 부상','레콘키스타의 유산','식민지 통치 4대 시스템','신대륙 발견의 충격','스페인 제국의 구조적 특성','식민지 착취 3대 제도','금은 독점 · 킨토 레알','카를로스 1세 · 합스부르크의 절정','합스부르크 결혼 외교','펠리페 2세 · 절정과 균열','무적함대 1588 · 패권의 균열','Ch.3 황금기와 모순','\'농업제국\'의 역설','쇠락의 4대 원인','가격혁명 · 풍요가 만든 빈곤','5차례 국가파산','상업혁신의 부재','스페인 패권의 종말','경쟁국의 부상','Ch.4 교훈과 시사점','3국 비교 · 패권 이동의 구조','자원의 저주','스페인의 교훈 5가지','현대적 함의','토론 주제','역사가들의 평가','강의 요약'];
+  var $=function(i){return document.getElementById(i)};
+  var img=$('img'),fill=$('fill'),cnt=$('cnt'),grid=$('grid'),gl=$('gl'),prog=$('prog'),cap=$('cap');
+  var cur=1;
+  function pad(n){return (n<10?'0':'')+n}
+  function src(n){return '../w3/'+pad(n)+'.webp'}
+  function store(v){try{localStorage.setItem(LS+'pos',v)}catch(e){}}
+  function load(){try{return parseInt(localStorage.getItem(LS+'pos'),10)}catch(e){return NaN}}
+  function go(n,noPush){
+    cur=Math.max(1,Math.min(N,n));
+    var p=new Image();
+    img.classList.add('fade');
+    p.onload=p.onerror=function(){img.src=src(cur);img.alt=cur+'. '+TITLES[cur-1];img.classList.remove('fade')};
+    p.src=src(cur);
+    fill.style.width=(cur/N*100)+'%';
+    cnt.textContent=cur+' / '+N;
+    prog.setAttribute('aria-valuenow',cur);
+    prog.setAttribute('aria-valuetext',cur+'번, '+TITLES[cur-1]);
+    cap.textContent=cur+'. '+TITLES[cur-1];
+    if(!noPush){try{history.replaceState(null,'','#'+cur)}catch(e){}}
+    store(cur);
+    for(var k=cur+1;k<=cur+2&&k<=N;k++){new Image().src=src(k)}
+    [].forEach.call(gl.children,function(b,i){b.classList.toggle('cur',i+1===cur)});
+  }
+  TITLES.forEach(function(t,i){
+    var b=document.createElement('button');b.type='button';
+    b.innerHTML='<img loading="lazy" alt="" src="'+src(i+1)+'"><span><b>'+(i+1)+'</b>'+t+'</span>';
+    b.onclick=function(){closeGrid();go(i+1)};
+    gl.appendChild(b);
+  });
+  function openGrid(){grid.classList.add('on');var c=gl.querySelector('.cur');if(c){c.scrollIntoView({block:'center'});c.focus()}}
+  function closeGrid(){grid.classList.remove('on')}
+  var hush=$('hush'),hs=$('hs'),ht=null;
+  function hushOff(){hush.classList.remove('on');clearInterval(ht);ht=null}
+  var actx=null;
+  function shh(){
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+      if(!actx)actx=new AC();
+      if(actx.state==='suspended')actx.resume();
+      var dur=1.5,sr=actx.sampleRate,buf=actx.createBuffer(1,Math.floor(sr*dur),sr),d=buf.getChannelData(0);
+      for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+      var src=actx.createBufferSource();src.buffer=buf;
+      var hp=actx.createBiquadFilter();hp.type='highpass';hp.frequency.value=2500;
+      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=5500;bp.Q.value=0.7;
+      var g=actx.createGain(),t=actx.currentTime;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(0.9,t+0.3);
+      g.gain.setValueAtTime(0.9,t+0.85);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      src.connect(hp);hp.connect(bp);bp.connect(g);g.connect(actx.destination);
+      src.start(t);
+    }catch(e){}
+  }
+  function hushOn(){
+    shh();
+    var n=7;hs.textContent=n;hush.classList.add('on');clearInterval(ht);
+    ht=setInterval(function(){n--;if(n<=0){hs.textContent='끝';clearInterval(ht);ht=setTimeout(hushOff,900)}else{hs.textContent=n}},1000);
+  }
+  $('bh').onclick=function(){hush.classList.contains('on')?hushOff():hushOn()};
+  hush.onclick=hushOff;
+  function fs(){var d=document;if(d.fullscreenElement){d.exitFullscreen()}else if(d.documentElement.requestFullscreen){d.documentElement.requestFullscreen()}}
+  function pdf(){
+    var pr=$('pr');
+    if(!pr.children.length){for(var k=1;k<=N;k++){var im=new Image();im.src=src(k);im.alt='';pr.appendChild(im)}}
+    var imgs=[].slice.call(pr.children),t=0;
+    (function wait(){var ok=imgs.every(function(i){return i.complete});if(ok||t++>60){window.print()}else{setTimeout(wait,150)}})();
+  }
+  $('hp').onclick=$('bpv').onclick=function(){go(cur-1)};
+  $('hn').onclick=$('bnx').onclick=function(){go(cur+1)};
+  $('bg').onclick=openGrid;$('gc').onclick=closeGrid;$('bf').onclick=fs;$('bp').onclick=pdf;
+  prog.onclick=function(e){var r=prog.getBoundingClientRect();go(Math.ceil((e.clientX-r.left)/r.width*N))};
+  prog.onkeydown=function(e){if(e.key==='ArrowRight'){e.preventDefault();go(cur+1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1)}};
+  document.addEventListener('keydown',function(e){
+    var k=e.key,gridOn=grid.classList.contains('on');
+    if(e.ctrlKey||e.metaKey||e.altKey)return;
+    if(k==='Escape'){closeGrid();hushOff();return}
+    if(k==='s'||k==='S'){hush.classList.contains('on')?hushOff():hushOn();return}
+    if(hush.classList.contains('on'))return;
+    if(k==='g'||k==='G'){gridOn?closeGrid():openGrid();return}
+    if(gridOn)return;
+    var tag=(document.activeElement||{}).tagName;
+    if((k===' '||k==='Enter')&&(tag==='BUTTON'||tag==='A'||document.activeElement===prog))return;
+    if(k==='ArrowRight'||k==='PageDown'||k===' '){e.preventDefault();go(cur+1)}
+    else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();go(cur-1)}
+    else if(k==='Home')go(1);
+    else if(k==='End')go(N);
+    else if(k==='f'||k==='F')fs();
+    else if(k==='p'||k==='P')pdf();
+  });
+  var sx=null;
+  document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50&&!grid.classList.contains('on'))go(cur+(d<0?1:-1));sx=null});
+  var h=parseInt(location.hash.slice(1),10);
+  go(h>=1&&h<=N?h:(load()>=1?load():1),!(h>=1&&h<=N));
+})();
+</script>
+</body>
+</html>
