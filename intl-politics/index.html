@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="가천대학교 글로벌시대 국제정치 강의 안내와 수업 자료 입장 페이지">
+  <title>글로벌시대 국제정치 | 가천대학교</title>
+  <style>
+    :root {
+      --navy: #071b33;
+      --navy-soft: #102e50;
+      --blue: #175cd3;
+      --sky: #dcecff;
+      --cream: #f7f4ec;
+      --paper: #fffdf8;
+      --gold: #ffcf5c;
+      --ink: #10233c;
+      --muted: #5d6b7d;
+      --line: rgba(7, 27, 51, .14);
+      --shadow: 0 22px 60px rgba(7, 27, 51, .15);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 4px solid var(--gold); outline-offset: 4px; }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      padding: 10px 16px;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 8px;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .hero {
+      min-height: 100svh;
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(23, 92, 211, .72), transparent 27%),
+        radial-gradient(circle at 16% 86%, rgba(255, 207, 92, .16), transparent 25%),
+        var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .17;
+      background-image:
+        linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+      pointer-events: none;
+    }
+    .orb {
+      position: absolute;
+      width: min(48vw, 640px);
+      aspect-ratio: 1;
+      right: -11vw;
+      top: -13vw;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 55px rgba(255,255,255,.035), 0 0 0 110px rgba(255,255,255,.025);
+    }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; position: relative; z-index: 1; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.02em; }
+    .brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; color: var(--gold); }
+    .topbar a { color: #fff; text-decoration: none; }
+    .quick-nav { display: flex; gap: 24px; font-size: .92rem; color: #d8e5f3; }
+
+    .hero-grid {
+      min-height: calc(100svh - 88px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr);
+      gap: 72px;
+      align-items: center;
+      padding: 44px 0 84px;
+    }
+    .eyebrow { margin: 0 0 20px; color: var(--gold); font-weight: 800; letter-spacing: .16em; font-size: .82rem; }
+    h1 { margin: 0; max-width: 780px; font-size: clamp(3rem, 7.1vw, 6.8rem); line-height: .98; letter-spacing: -.065em; }
+    .hero-copy { margin: 26px 0 0; max-width: 610px; color: #cbd9e8; font-size: clamp(1.08rem, 2vw, 1.35rem); }
+    .accent-line { display: inline-block; width: 52px; height: 5px; margin-right: 12px; border-radius: 9px; background: var(--gold); vertical-align: middle; }
+
+    .info-card {
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 26px;
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+    .info-card h2 { margin: 0 0 18px; color: #fff; font-size: 1rem; letter-spacing: .08em; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(255,255,255,.12); }
+    .fact { min-height: 92px; padding: 16px; background: rgba(7,27,51,.62); }
+    .fact span { display: block; margin-bottom: 5px; color: #9eb1c6; font-size: .78rem; }
+    .fact strong { color: #fff; font-size: 1rem; }
+    .cta-stack { display: grid; gap: 12px; margin-top: 22px; }
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      padding: 0 22px;
+      border: 2px solid transparent;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 1.05rem;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .cta:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.22); }
+    .cta.primary { color: var(--navy); background: var(--gold); }
+    .cta.secondary { color: #fff; border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.08); }
+    .cta.secondary:hover { background: rgba(255,255,255,.16); }
+    .arrow { font-size: 1.35rem; }
+
+    main section { padding: 112px 0; }
+    .section-head { display: grid; grid-template-columns: .6fr 1.4fr; gap: 48px; margin-bottom: 54px; align-items: end; }
+    .section-no { color: var(--blue); font-weight: 900; letter-spacing: .18em; }
+    .section-head h2 { margin: 0; max-width: 760px; font-size: clamp(2.1rem, 4.5vw, 4rem); line-height: 1.08; letter-spacing: -.045em; }
+
+    .goals { background: var(--paper); }
+    .materials { background: var(--cream); }
+    .material-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .material-card {
+      min-height: 290px;
+      padding: 34px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 14px 42px rgba(7,27,51,.08);
+    }
+    .material-card.featured { color: #fff; background: linear-gradient(145deg, var(--navy-soft), var(--blue)); }
+    .week-label { color: var(--blue); font-weight: 900; letter-spacing: .12em; font-size: .8rem; }
+    .featured .week-label { color: var(--gold); }
+    .material-card h3 { margin: 16px 0 10px; font-size: clamp(1.55rem, 3vw, 2.2rem); line-height: 1.2; }
+    .material-card p { margin: 0 0 28px; color: var(--muted); }
+    .featured p { color: #d7e4f2; }
+    .material-link { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; padding: 13px 18px; border-radius: 10px; color: #fff; background: var(--blue); font-weight: 900; text-decoration: none; }
+    .featured .material-link { color: var(--navy); background: var(--gold); }
+    .goal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .goal-card { min-height: 300px; padding: 30px; border: 1px solid var(--line); border-radius: 22px; background: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+    .goal-card:nth-child(2) { background: var(--sky); }
+    .goal-card:nth-child(3) { color: #fff; background: var(--blue); }
+    .goal-num { font-size: 3.2rem; font-weight: 900; line-height: 1; opacity: .25; }
+    .goal-card h3 { margin: 32px 0 10px; font-size: 1.45rem; line-height: 1.25; }
+    .goal-card p { margin: 0; color: var(--muted); }
+    .goal-card:nth-child(3) p { color: #dce7fb; }
+
+    .flow { background: var(--navy); color: #fff; }
+    .flow .section-no { color: var(--gold); }
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: step; }
+    .step { position: relative; padding: 32px 24px 28px 0; border-top: 1px solid rgba(255,255,255,.28); }
+    .step::before { content: ""; position: absolute; top: -7px; left: 0; width: 13px; height: 13px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 6px rgba(255,207,92,.13); }
+    .step small { color: var(--gold); font-weight: 800; }
+    .step h3 { margin: 12px 0 8px; font-size: 1.3rem; }
+    .step p { margin: 0; padding-right: 18px; color: #b9c8d8; font-size: .95rem; }
+
+    .details { background: var(--cream); }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .panel { padding: 38px; border-radius: 24px; background: #fff; box-shadow: 0 12px 40px rgba(7,27,51,.07); }
+    .panel h3 { margin: 0 0 22px; font-size: 1.6rem; }
+    .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 15px; }
+    .check-list li { position: relative; padding-left: 32px; }
+    .check-list li::before { content: "✓"; position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 23px; height: 23px; color: #fff; background: var(--blue); border-radius: 50%; font-weight: 900; font-size: .75rem; }
+    .notice { margin-top: 24px; padding: 24px 28px; border-left: 5px solid var(--gold); background: #fff8df; }
+    .notice h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    .notice p { margin: 0; color: #5c5135; }
+
+    .instructor { padding: 0 0 112px; background: var(--cream); }
+    .profile {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 330px;
+      overflow: hidden;
+      border-radius: 28px;
+      color: #fff;
+      background: var(--navy-soft);
+      box-shadow: var(--shadow);
+    }
+    .portrait {
+      background: #f4f5f7;
+      position: relative;
+      overflow: hidden;
+    }
+    .portrait img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 18%; }
+    .bio { padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+    .bio .label { color: var(--gold); font-weight: 900; letter-spacing: .12em; font-size: .78rem; }
+    .bio h2 { margin: 10px 0 16px; font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.04em; }
+    .bio p { margin: 0; max-width: 660px; color: #c7d6e6; }
+
+    footer { padding: 38px 0; color: #c0cede; background: #041324; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    footer p { margin: 0; }
+    .admin-link { color: #dce7f3; font-size: .85rem; text-underline-offset: 4px; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 860px) {
+      .quick-nav { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; padding-top: 48px; }
+      .hero-copy { margin-top: 20px; }
+      .info-card { max-width: 620px; }
+      .section-head { grid-template-columns: 1fr; gap: 12px; }
+      .goal-grid { grid-template-columns: 1fr; }
+      .material-grid { grid-template-columns: 1fr; }
+      .goal-card { min-height: 240px; }
+      .timeline { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .profile { grid-template-columns: 190px 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1160px); }
+      .topbar { padding: 18px 0; }
+      .brand { font-size: .9rem; }
+      .hero-grid { min-height: auto; padding: 58px 0 66px; }
+      h1 { font-size: clamp(3rem, 16vw, 4.8rem); }
+      .info-card { padding: 20px; border-radius: 20px; }
+      .facts { grid-template-columns: 1fr; }
+      .fact { min-height: auto; padding: 14px 16px; }
+      .cta { min-height: 64px; padding: 0 18px; }
+      main section { padding: 82px 0; }
+      .section-head { margin-bottom: 36px; }
+      .timeline { grid-template-columns: 1fr; }
+      .step { padding: 26px 0 12px; }
+      .panel { padding: 28px 22px; }
+      .profile { grid-template-columns: 1fr; }
+      .portrait { min-height: 210px; }
+      .bio { padding: 30px 24px 36px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <header class="hero">
+    <div class="orb" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="#" aria-label="가천대학교 글로벌시대 국제정치 홈">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span>가천대학교 · 행정학</span>
+        </a>
+        <nav class="quick-nav" aria-label="페이지 주요 메뉴">
+          <a href="#goals">수업 목표</a>
+          <a href="#curriculum">수업 순서</a>
+          <a href="#instructor">강사 소개</a>
+        </nav>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow"><span class="accent-line" aria-hidden="true"></span>GLOBAL POLITICS</p>
+          <h1>글로벌시대<br>국제정치</h1>
+          <p class="hero-copy">국경을 넘어 움직이는 권력, 협력, 갈등의 흐름을 읽고 오늘의 국제문제를 스스로 분석하는 힘을 기릅니다.</p>
+        </div>
+
+        <aside class="info-card" aria-labelledby="class-info-title">
+          <h2 id="class-info-title">강의 정보</h2>
+          <div class="facts">
+            <div class="fact"><span>강의일자</span><strong>매주 목요일</strong></div>
+            <div class="fact"><span>강의시간</span><strong>2시간</strong></div>
+            <div class="fact"><span>강의대상</span><strong>대학생 및 대학원생</strong></div>
+            <div class="fact"><span>강사</span><strong>나병인 교수</strong></div>
+          </div>
+          <div class="cta-stack">
+            <a class="cta primary" href="#materials">웹슬라이드 입장 <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="cta secondary" href="submissions.html">결과물 게시판 <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="materials" id="materials" aria-labelledby="materials-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-no">COURSE MATERIALS</div>
+          <h2 id="materials-title">주차별 웹슬라이드를<br>선택해 입장하세요.</h2>
+        </div>
+        <div class="material-grid">
+          <article class="material-card reveal">
+            <span class="week-label">04 WEEK</span>
+            <h3>최초의 상업국가, 네덜란드</h3>
+            <p>세계 최초의 주식회사와 상업 패권의 흥망성쇠를 살펴봅니다.</p>
+            <a class="material-link" href="lectures/4주차 네덜란드 slides_international-politics.html" target="_blank" rel="noopener noreferrer">4주차 슬라이드 열기 <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="material-card reveal">
+            <span class="week-label">05 WEEK</span>
+            <h3>상업사회에서 산업사회로</h3>
+            <p>18세기 영국이 해가 지지 않는 제국으로 전환한 과정을 살펴봅니다.</p>
+            <a class="material-link" href="lectures/5주차 영국1차 slides_international-politics-w5.html" target="_blank" rel="noopener noreferrer">5주차 슬라이드 열기 <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="material-card reveal">
+            <span class="week-label">06 WEEK</span>
+            <h3>영국 산업사회의 완성과 쇠퇴</h3>
+            <p>세계의 공장이 정점에 오른 뒤 흔들리기 시작한 이유를 분석합니다.</p>
+            <a class="material-link" href="lectures/slides_international-politics-w6.html" target="_blank" rel="noopener noreferrer">6주차 슬라이드 열기 <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="material-card reveal">
+            <span class="week-label">07 WEEK</span>
+            <h3>유럽의 황혼</h3>
+            <p>패권의 역사와 위기의 미래를 통해 유럽의 쇠퇴를 탐구합니다.</p>
+            <a class="material-link" href="lectures/slides_international-politics-w7.html" target="_blank" rel="noopener noreferrer">7주차 슬라이드 열기 <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="material-card featured reveal">
+            <span class="week-label">10 WEEK</span>
+            <h3>미국 패권의 완성</h3>
+            <p>해밀턴의 국가 설계에서 브레튼우즈 체제까지 미국의 부상을 탐구합니다.</p>
+            <a class="material-link" href="w10/slides.html">10주차 슬라이드 열기 <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="goals" id="goals" aria-labelledby="goals-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-no">01 · LEARNING GOALS</div>
+          <h2 id="goals-title">세계를 보는 관점을<br>세 단계로 확장합니다.</h2>
+        </div>
+        <div class="goal-grid">
+          <article class="goal-card reveal">
+            <span class="goal-num" aria-hidden="true">01</span>
+            <div><h3>기본 개념 이해</h3><p>국가, 권력, 주권, 안보, 국제기구 등 국제정치의 핵심 언어를 탄탄하게 익힙니다.</p></div>
+          </article>
+          <article class="goal-card reveal">
+            <span class="goal-num" aria-hidden="true">02</span>
+            <div><h3>국제정치 흐름 분석</h3><p>역사적 맥락과 주요 이론을 바탕으로 변화하는 국제질서의 원인과 방향을 분석합니다.</p></div>
+          </article>
+          <article class="goal-card reveal">
+            <span class="goal-num" aria-hidden="true">03</span>
+            <div><h3>실제 문제에 적용</h3><p>뉴스 속 갈등과 협력 사례를 토론하며 개념을 현실의 국제문제에 적용합니다.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow" id="curriculum" aria-labelledby="flow-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-no">02 · CLASS FLOW</div>
+          <h2 id="flow-title">이해에서 분석으로,<br>분석에서 적용으로.</h2>
+        </div>
+        <div class="timeline">
+          <article class="step reveal"><small>15 MIN</small><h3>이슈 브리핑</h3><p>한 주의 주요 국제뉴스를 살펴보고 오늘의 질문을 발견합니다.</p></article>
+          <article class="step reveal"><small>40 MIN</small><h3>핵심 개념 강의</h3><p>국제정치 이론과 역사적 배경을 사례 중심으로 학습합니다.</p></article>
+          <article class="step reveal"><small>40 MIN</small><h3>사례 분석과 토론</h3><p>소그룹에서 실제 국제문제의 이해관계와 선택지를 분석합니다.</p></article>
+          <article class="step reveal"><small>25 MIN</small><h3>공유와 정리</h3><p>분석 결과를 발표하고 다음 수업으로 이어질 질문을 정리합니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="details" aria-labelledby="details-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-no">03 · BEFORE CLASS</div>
+          <h2 id="details-title">수업 전, 이것만<br>준비해 주세요.</h2>
+        </div>
+        <div class="detail-grid">
+          <article class="panel reveal">
+            <h3>준비물</h3>
+            <ul class="check-list">
+              <li>웹슬라이드를 볼 수 있는 노트북 또는 태블릿</li>
+              <li>필기도구와 개인 노트</li>
+              <li>관심 있는 국제뉴스 기사 1건</li>
+            </ul>
+          </article>
+          <article class="panel reveal">
+            <h3>수업 참여 방법</h3>
+            <ul class="check-list">
+              <li>수업 전 웹슬라이드에서 해당 주차 내용을 확인합니다.</li>
+              <li>토론에서는 근거와 출처를 바탕으로 의견을 제시합니다.</li>
+              <li>활동 결과는 결과물 게시판에 제출합니다.</li>
+            </ul>
+          </article>
+        </div>
+        <aside class="notice reveal" aria-labelledby="notice-title">
+          <h3 id="notice-title">유의사항</h3>
+          <p>수업 자료는 교육 목적으로만 사용해 주세요. 제출물에 타인의 글이나 이미지를 활용할 때에는 출처를 정확히 표시하고, 국제 현안 토론에서는 서로 다른 관점을 존중해 주세요.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="instructor" id="instructor" aria-labelledby="instructor-title">
+      <div class="wrap">
+        <div class="profile reveal">
+          <div class="portrait">
+            <img src="assets/profile.jpg" alt="정장을 입고 펜을 든 나병인 교수 캐리커처">
+          </div>
+          <div class="bio">
+            <span class="label">INSTRUCTOR</span>
+            <h2 id="instructor-title">나병인 교수</h2>
+            <p>가천대학교에서 글로벌 시대의 국제정치를 강의합니다. 개념을 암기하는 데 그치지 않고, 빠르게 변하는 세계를 학생들이 자신만의 관점으로 읽고 질문할 수 있도록 이론과 현실을 연결하는 수업을 지향합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p><strong>글로벌시대 국제정치</strong><br><small>가천대학교 · 나병인 교수</small></p>
+      <a class="admin-link" href="admin.html">관리자 페이지</a>
+    </div>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealElements.forEach((element) => observer.observe(element));
+    } else {
+      revealElements.forEach((element) => element.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>

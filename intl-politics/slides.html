@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>웹슬라이드 | 글로벌시대 국제정치</title>
+  <style>
+    *{box-sizing:border-box} body{margin:0;background:#071b33;color:#fff;font-family:system-ui,"Noto Sans KR",sans-serif;line-height:1.6} main{width:min(1000px,calc(100% - 32px));margin:auto;padding:36px 0 80px} a{color:#ffcf5c}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px}.slide{min-height:65vh;padding:clamp(28px,6vw,72px);border:1px solid #36516f;border-radius:28px;background:linear-gradient(145deg,#102e50,#0a213c);box-shadow:0 24px 60px #0005;display:flex;flex-direction:column;justify-content:center}.tag{color:#ffcf5c;font-weight:800;letter-spacing:.14em}.slide h1{margin:.2em 0;font-size:clamp(2.6rem,8vw,6rem);line-height:1;letter-spacing:-.06em}.slide p{max-width:700px;color:#cbd9e8;font-size:clamp(1rem,2vw,1.3rem)}.nav{display:flex;gap:12px;margin-top:24px}.nav button{padding:13px 20px;border:0;border-radius:10px;background:#ffcf5c;color:#071b33;font-weight:800;cursor:pointer}.nav button:disabled{opacity:.4;cursor:not-allowed}.count{margin-left:auto;color:#9fb4ca}
+  </style>
+</head>
+<body><main><div class="top"><a href="index.html">← 강의 홈</a><strong>웹슬라이드</strong></div><article class="slide" aria-live="polite"><span class="tag" id="tag"></span><h1 id="title"></h1><p id="copy"></p></article><div class="nav"><button id="prev">이전</button><button id="next">다음</button><span class="count" id="count"></span></div></main>
+<script>
+const slides=[
+ {tag:'01 · ORIENTATION',title:'글로벌시대 국제정치',copy:'국제정치의 흐름을 읽는 관점과 이번 수업에서 다룰 핵심 질문을 소개합니다.'},
+ {tag:'02 · KEY CONCEPTS',title:'누가 세계를 움직이는가?',copy:'국가, 국제기구, 다국적기업, 시민사회 등 국제정치의 다양한 행위자를 살펴봅니다.'},
+ {tag:'03 · ANALYSIS',title:'갈등과 협력의 구조',copy:'권력, 안보, 제도와 규범이 국가의 선택에 어떤 영향을 미치는지 분석합니다.'},
+ {tag:'04 · DISCUSSION',title:'오늘의 국제문제에 적용하기',copy:'최근 국제뉴스를 하나 선택해 이해관계자와 선택지, 예상 결과를 토론합니다.'}
+];let i=0;const $=s=>document.querySelector(s);function render(){const s=slides[i];$('#tag').textContent=s.tag;$('#title').textContent=s.title;$('#copy').textContent=s.copy;$('#count').textContent=`${i+1} / ${slides.length}`;$('#prev').disabled=i===0;$('#next').disabled=i===slides.length-1}$('#prev').onclick=()=>{if(i>0){i--;render()}};$('#next').onclick=()=>{if(i<slides.length-1){i++;render()}};document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')$('#next').click();if(e.key==='ArrowLeft')$('#prev').click()});render();
+</script></body></html>
