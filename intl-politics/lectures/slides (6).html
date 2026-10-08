@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<!--
+  웹슬라이드 스타터 · 두온교육 「강의 사이트 제작 노하우」 참가자 키트
+  먼저 바꿀 것
+  1) 아래 스크립트의 LS = 'mykit_' → 내 강의 고유 접두사 (예: 'ai0927_')
+     접두사가 겹치면 다른 강의 사이트와 저장값이 섞임
+  2) <title>, description, 표지·마침 슬라이드의 [ ] 자리
+  3) 슬라이드 추가·삭제 시 aria-label 번호와 주석 번호 함께 재정렬 (AGENTS.md 참고)
+  외부 파일 없음 · 백엔드 없음 · 이 파일 하나로 동작
+-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>미국 패권의 완성 · 글로벌시대의 국제정치 10주차</title>
+<meta name="description" content="해밀턴의 국가 설계에서 브레튼우즈 체제까지 살펴보는 글로벌시대의 국제정치 10주차 웹슬라이드">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --ink:#111111; --sub:#555555; --mute:#767676;
+  --line:#E3E3E3;
+  --slide-bg:#F4F4F3; --card:#FFFFFF;
+  --accent:#F6C744; --accent-sub:#3A3000;
+  --paper:#F7F3E8; --deep:#171A1F; --fog:#E8E5DC;
+  --shadow:0 .45cqi 1.4cqi rgba(0,0,0,.09), 0 .1cqi .3cqi rgba(0,0,0,.07);
+  --shadow-lg:0 .8cqi 2.4cqi rgba(0,0,0,.13), 0 .18cqi .45cqi rgba(0,0,0,.08);
+  --alert:#D32F2F;
+  --nav-h:60px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{background:#0E0E0E;color:var(--ink);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+  word-break:keep-all;overflow-wrap:anywhere;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:inherit;text-wrap:balance;letter-spacing:-.01em}
+p,li{text-wrap:pretty}
+button{font-family:inherit}
+
+/* 16:9 무대 · 모든 크기를 무대 폭 기준 cqi로 → 창 크기와 무관하게 같은 비율 */
+#stage{position:fixed;left:50%;top:calc((100vh - var(--nav-h)) / 2);transform:translate(-50%,-50%);
+  width:min(100vw, calc((100vh - var(--nav-h)) * 16 / 9));aspect-ratio:16/9;
+  container-type:inline-size;background:var(--slide-bg);overflow:hidden}
+
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:4.6cqi 6cqi;background:
+  radial-gradient(circle at 88% 12%,rgba(246,199,68,.14),transparent 22%),
+  linear-gradient(135deg,rgba(255,255,255,.72),rgba(244,244,243,.95));color:var(--ink)}
+.slide.active{display:flex}
+.slide-content{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.8cqi;min-height:0}
+
+/* 타이포 (단위 cqi) */
+.kicker{display:flex;align-items:center;gap:1cqi;font-size:1.6cqi;font-weight:800;letter-spacing:.06em;color:var(--ink)}
+.kicker::before{content:'';flex:0 0 auto;width:2.4cqi;height:.36cqi;background:currentColor}
+h1{font-size:6cqi;font-weight:900;line-height:1.22}
+h2{font-size:3.9cqi;font-weight:800;line-height:1.28}
+.lede{font-size:2.2cqi;color:var(--sub);line-height:1.6}
+
+/* 표지·마침: 머스타드 옐로 / 휴식: 검정 반전 */
+.title-slide{background:
+  radial-gradient(circle at 78% 25%,rgba(255,255,255,.36),transparent 23%),
+  linear-gradient(135deg,#F6C744 0%,#F1B928 100%);color:#111111}
+.title-slide .slide-content{align-items:center;text-align:center}
+.title-slide .kicker{color:#111111}
+.title-slide h1::after{content:'';display:block;width:6cqi;height:.4cqi;background:#111111;margin:2.4cqi auto 0}
+.title-slide .lede{color:var(--accent-sub)}
+.slide.dark{background:#111111;color:#FFFFFF}
+.slide.dark .kicker{color:#FFFFFF}
+.slide.dark .lede{color:#BDBDBD}
+.meta-row{display:flex;justify-content:center;gap:1.2cqi;flex-wrap:wrap;font-size:1.7cqi}
+.meta-row span{border:.18cqi solid #111111;border-radius:99cqi;padding:.7cqi 2cqi;color:#111111;font-weight:600}
+
+/* 불릿: 한 줄씩 그림자 박스 */
+.bullets{display:flex;flex-direction:column;gap:1.2cqi}
+.bullets li{list-style:none;display:flex;gap:1.4cqi;align-items:flex-start;font-size:2.25cqi;line-height:1.55;
+  background:var(--card);box-shadow:var(--shadow);border-radius:1cqi;padding:1.25cqi 2cqi}
+.bullets li::before{content:'';flex:0 0 auto;width:.75cqi;height:.75cqi;background:var(--ink);margin-top:1.36cqi}
+.slide-content a{color:inherit;text-underline-offset:.3em;text-decoration-thickness:.15em}
+
+/* 카드 */
+.card-grid{display:grid;gap:1.8cqi}
+.c2{grid-template-columns:repeat(2,1fr)}
+.c3{grid-template-columns:repeat(3,1fr)}
+.c4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border-radius:1.2cqi;box-shadow:var(--shadow-lg);padding:2.2cqi;
+  display:flex;flex-direction:column;gap:.8cqi;min-width:0}
+.card{position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;right:-2.2cqi;bottom:-2.2cqi;width:6cqi;height:6cqi;border:.18cqi solid rgba(17,17,17,.08);border-radius:50%}
+.card .n{font-size:3.4cqi;font-weight:900;line-height:1;color:var(--ink)}
+.card .t{font-size:2.3cqi;font-weight:800}
+.card .d{font-size:1.8cqi;color:var(--sub);line-height:1.5}
+/* 색으로만 구분 금지: 아쉬운 예 = 점선 + ✕, 좋은 예 = 굵은 검정 막대 + ✓ */
+.card.bad{background:#FAFAFA;box-shadow:none;border:.2cqi dashed #9E9E9E}
+.card.bad .t{color:var(--sub)}
+.card.bad .t::before{content:'✕  '}
+.card.good{border-left:.7cqi solid var(--ink)}
+.card.good .t::before{content:'✓  '}
+
+/* 표 */
+table.tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:1.85cqi;line-height:1.35;
+  background:var(--card);box-shadow:var(--shadow-lg);border-radius:1.2cqi;overflow:hidden}
+table.tbl th, table.tbl td{padding:.8cqi 1.6cqi;text-align:left;border-bottom:.12cqi solid var(--line)}
+table.tbl tbody tr:last-child td{border-bottom:none}
+table.tbl th{background:#111111;color:#FFFFFF;font-weight:800}
+table.tbl tr.today td{font-weight:800}
+table.tbl tr.today td:first-child{box-shadow:inset .55cqi 0 0 #111111}
+table.tbl td:first-child, table.tbl th:first-child{white-space:nowrap}
+table.tbl td:first-child{color:var(--sub)}
+
+/* 프롬프트 카드: 검정 박스 + 오른쪽 위 복사 버튼 */
+.prompt-card{position:relative;background:#111111;color:#F2F2F2;border-radius:1.2cqi;box-shadow:var(--shadow-lg);
+  padding:2cqi 2.4cqi;display:flex;flex-direction:column;gap:1cqi}
+.prompt-card .label{font-size:1.5cqi;font-weight:800;letter-spacing:.06em;color:#BDBDBD;padding-right:14cqi}
+.prompt-card blockquote{font-size:2cqi;line-height:1.6;color:#FFFFFF;border-left:.3cqi solid #666666;padding-left:1.6cqi;
+  font-style:normal;white-space:pre-wrap}
+.copy-btn{position:absolute;top:1.5cqi;right:1.6cqi;font-size:1.5cqi;font-weight:800;
+  padding:.7cqi 1.8cqi;border-radius:99cqi;border:none;background:#FFFFFF;color:#111111;cursor:pointer;min-height:44px;min-width:44px}
+.copy-btn:hover, .copy-btn.copied{background:#E2E2E2}
+.copy-btn:focus-visible{outline:.25cqi solid #FFFFFF;outline-offset:.25cqi}
+
+/* 타이머: 클릭 시작/일시정지 · 더블클릭 또는 R 키 리셋 */
+.timer-chip{display:inline-flex;align-items:center;gap:1cqi;align-self:flex-start;cursor:pointer;user-select:none;
+  background:var(--card);box-shadow:var(--shadow);border:.18cqi solid var(--ink);border-radius:99cqi;min-height:44px;
+  padding:.9cqi 2.2cqi;font-size:2cqi;font-weight:800;color:var(--ink)}
+.timer-chip .time{font-variant-numeric:tabular-nums;min-width:3.4em;text-align:center}
+.timer-chip.running{background:#111111;color:#FFFFFF}
+.timer-chip.warn .time{color:var(--alert)}
+.timer-chip.running.warn .time{color:#FF8A80}
+.timer-chip .state{font-size:1.4cqi;font-weight:700;opacity:.8}
+.timer-chip:focus-visible, .break-big:focus-visible{outline:.3cqi solid currentColor;outline-offset:.4cqi}
+.break-big{cursor:pointer;user-select:none;text-align:center;font-variant-numeric:tabular-nums;background:none;border:none;
+  font-size:16cqi;font-weight:900;line-height:1.05;color:#FFFFFF;min-height:44px;border-radius:1cqi}
+.break-big.warn{color:#FF8A80}
+
+/* 강의용 시각 모듈 */
+.eyebrow{font-size:1.45cqi;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.big-year{font-size:10cqi;font-weight:950;line-height:.85;letter-spacing:-.06em;color:var(--ink)}
+.source-note{font-size:1.18cqi;color:var(--mute);line-height:1.35}
+.source-note a{font-weight:800}
+.split-visual{display:grid;grid-template-columns:1.02fr .98fr;gap:2.4cqi;align-items:stretch;min-height:0}
+.archive-panel{background:var(--paper);border-radius:1.4cqi;padding:2.4cqi;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.archive-panel::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 1.7cqi,rgba(17,17,17,.035) 1.7cqi 1.82cqi);pointer-events:none}
+.archive-panel>*{position:relative}
+.quote-mark{font-size:7cqi;font-weight:900;line-height:.6;color:var(--accent)}
+.quote-text{font-size:2.15cqi;font-weight:800;line-height:1.45}
+.fact-stack{display:flex;flex-direction:column;gap:1cqi}
+.fact{display:grid;grid-template-columns:5.4cqi 1fr;gap:1.2cqi;align-items:center;background:#fff;border-radius:.9cqi;padding:1cqi 1.3cqi;box-shadow:var(--shadow)}
+.fact b{font-size:2.2cqi}.fact span{font-size:1.55cqi;color:var(--sub);line-height:1.35}
+.flowline{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqi;position:relative}
+.flowline::before{content:'';position:absolute;left:8%;right:8%;top:3.1cqi;height:.35cqi;background:var(--accent)}
+.flow-node{position:relative;text-align:center;padding-top:6.3cqi;font-size:1.65cqi;font-weight:850;line-height:1.35}
+.flow-node .source-note{display:block;margin-top:.35cqi}
+.flow-node::before{content:attr(data-n);position:absolute;top:0;left:50%;transform:translateX(-50%);width:6.2cqi;height:6.2cqi;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center;font-size:2.1cqi;font-weight:900;box-shadow:0 0 0 .7cqi var(--slide-bg)}
+.bank-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.5cqi;align-items:center}
+.bank-building{background:var(--deep);color:#fff;border-radius:1.3cqi;padding:2.2cqi;text-align:center;box-shadow:var(--shadow-lg)}
+.bank-pediment{width:0;height:0;border-left:13cqi solid transparent;border-right:13cqi solid transparent;border-bottom:6cqi solid var(--accent);margin:0 auto -1px}
+.bank-name{background:var(--accent);color:#111;padding:.7cqi;font-size:1.5cqi;font-weight:900;letter-spacing:.08em}
+.columns{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2cqi;padding:1.5cqi 2cqi 0}
+.columns i{display:block;height:10cqi;background:linear-gradient(90deg,#ddd,#fff,#bbb);border-radius:.25cqi .25cqi 0 0}
+.bank-base{height:1.2cqi;background:#fff;margin:.7cqi 1cqi 0}
+.stat-band{display:grid;grid-template-columns:repeat(3,1fr);gap:1cqi;margin-top:1cqi}
+.stat{background:#fff;padding:1.1cqi;border-radius:.8cqi;text-align:center;color:#111}.stat b{display:block;font-size:2.4cqi}.stat span{font-size:1.25cqi;color:var(--sub)}
+.debate{display:grid;grid-template-columns:1fr 8cqi 1fr;gap:1.5cqi;align-items:stretch}
+.debate-side{background:#fff;border-radius:1.2cqi;box-shadow:var(--shadow-lg);padding:2cqi;display:flex;flex-direction:column;gap:1cqi}
+.debate-side h3{font-size:2.4cqi}.debate-side p{font-size:1.65cqi;line-height:1.45;color:var(--sub)}
+.versus{display:grid;place-items:center;font-size:2.2cqi;font-weight:950;background:var(--accent);border-radius:50%;width:7cqi;height:7cqi;align-self:center}
+.map-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:2.2cqi;min-height:0;align-items:center}
+.tile-map{background:#fff;border-radius:1.2cqi;box-shadow:var(--shadow-lg);padding:1.5cqi;display:grid;grid-template-columns:repeat(11,1fr);grid-template-rows:repeat(7,1fr);gap:.38cqi;min-height:28cqi}
+.state{display:grid;place-items:center;border-radius:.42cqi;font-size:1.1cqi;font-weight:950;min-width:0;border:.12cqi solid #aaa;background:#eee}
+.state.free{background:#fff;border:.22cqi solid #111}
+.state.confed{background:repeating-linear-gradient(135deg,#111 0 .45cqi,#333 .45cqi .9cqi);color:#fff;border-color:#111}
+.state.border{background:var(--accent);border:.22cqi dashed #111;color:#111}
+.state.territory{background:#e7e7e7;color:#777;border-style:dotted}
+.map-legend{display:flex;flex-direction:column;gap:1cqi}
+.legend-item{display:grid;grid-template-columns:3.5cqi 1fr;gap:1cqi;align-items:center;font-size:1.45cqi;line-height:1.35}
+.legend-swatch{height:2.6cqi;border-radius:.4cqi;border:.2cqi solid #111}
+.legend-swatch.free{background:#fff}.legend-swatch.confed{background:repeating-linear-gradient(135deg,#111 0 .45cqi,#333 .45cqi .9cqi)}.legend-swatch.border{background:var(--accent);border-style:dashed}
+.boundary-card{background:var(--deep);color:#fff;border-radius:1.2cqi;padding:1.5cqi}.boundary-card b{display:block;color:var(--accent);font-size:1.6cqi;margin-bottom:.45cqi}.boundary-card span{font-size:1.35cqi;line-height:1.4}
+.balance-bars{display:flex;flex-direction:column;gap:1.2cqi}.bar-row{display:grid;grid-template-columns:10cqi 1fr 7cqi;gap:1cqi;align-items:center;font-size:1.5cqi;font-weight:800}.bar{height:2.1cqi;border-radius:99cqi;background:#ddd;overflow:hidden}.bar i{display:block;height:100%;background:var(--deep)}.bar-row.south .bar i{background:repeating-linear-gradient(135deg,#111 0 .45cqi,#444 .45cqi .9cqi)}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:1.3cqi;position:relative;padding-top:3.7cqi}.timeline::before{content:'';position:absolute;top:1.4cqi;left:8%;right:8%;height:.28cqi;background:#111}.time-event{position:relative;background:#fff;border-radius:1cqi;padding:1.4cqi;box-shadow:var(--shadow);min-height:11cqi}.time-event::before{content:'';position:absolute;top:-3cqi;left:50%;width:1.5cqi;height:1.5cqi;background:var(--accent);border:.35cqi solid #111;border-radius:50%;transform:translateX(-50%)}.time-event b{font-size:1.65cqi}.time-event span{display:block;font-size:1.35cqi;color:var(--sub);line-height:1.4;margin-top:.6cqi}
+
+/* 10주차 시각 체계 · 역사 아카이브와 데이터 저널리즘 */
+#stage{background:#E9E5DA}
+.slide{padding:4.4cqi 5.8cqi;background-color:#F2EFE6;background-image:linear-gradient(rgba(17,17,17,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.025) 1px,transparent 1px);background-size:4.5cqi 4.5cqi,4.5cqi 4.5cqi}
+.slide::after{content:attr(aria-label);position:absolute;right:2.4cqi;bottom:1.8cqi;max-width:22cqi;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1.05cqi;font-weight:850;letter-spacing:.08em;color:rgba(17,17,17,.46);text-transform:uppercase}
+.slide-content{gap:1.55cqi}
+.kicker{font-size:1.35cqi;letter-spacing:.12em;text-transform:uppercase}
+.kicker::before{width:3.4cqi;height:.46cqi;background:var(--accent);box-shadow:1cqi 0 0 var(--ink)}
+h2{font-size:4.15cqi;letter-spacing:-.045em}
+.lede{font-size:2.05cqi}
+.card-grid{gap:1.3cqi}
+.card{border-radius:.25cqi;box-shadow:none;border-top:.5cqi solid var(--ink);padding:2cqi 1.8cqi;background:rgba(255,255,255,.9)}
+.card::after{display:none}
+.card .n{color:var(--accent);font-size:4.4cqi}
+.card .t{font-size:2.15cqi}
+.card .d{font-size:1.65cqi}
+.c4 .card:nth-child(even){transform:translateY(1.2cqi)}
+.bullets{counter-reset:item;gap:.55cqi;border-top:.22cqi solid var(--ink)}
+.bullets li{counter-increment:item;display:grid;grid-template-columns:4.8cqi 1fr;align-items:center;border-radius:0;box-shadow:none;background:rgba(255,255,255,.72);padding:.72cqi 1.4cqi;font-size:1.95cqi;border-bottom:.12cqi solid #C8C3B7}
+.bullets li::before{content:'0' counter(item);width:auto;height:auto;margin:0;background:none;color:var(--ink);font-size:1.35cqi;font-weight:900;letter-spacing:.1em}
+table.tbl{border-radius:.25cqi;box-shadow:none;border:.16cqi solid var(--ink);background:rgba(255,255,255,.86)}
+table.tbl th{background:var(--accent);color:var(--ink)}
+.prompt-card{border-radius:.3cqi;background:#171717;box-shadow:1.1cqi 1.1cqi 0 var(--accent)}
+.archive-panel,.bank-building,.debate-side,.tile-map,.boundary-card,.time-event{border-radius:.3cqi}
+.archive-panel{border:.15cqi solid #B8AF98;box-shadow:1cqi 1cqi 0 rgba(17,17,17,.1)}
+.fact{border-radius:.25cqi;box-shadow:none;border-left:.48cqi solid var(--accent)}
+.state{border-radius:.18cqi}
+.boundary-card{border-top:.6cqi solid var(--accent)}
+.time-event{box-shadow:none;border:.15cqi solid var(--ink);background:#FFFEFA}
+.slide:nth-child(5),.slide:nth-child(16),.slide:nth-child(34){background-color:#171717;color:#fff;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:4.5cqi 4.5cqi,4.5cqi 4.5cqi}
+.slide:nth-child(5) .kicker,.slide:nth-child(16) .kicker,.slide:nth-child(34) .kicker{color:#fff}
+.slide:nth-child(5) .card,.slide:nth-child(16) .card,.slide:nth-child(34) .card{background:#F8F5EC;color:#111;border-top-color:var(--accent)}
+.slide:nth-child(5)::after,.slide:nth-child(16)::after,.slide:nth-child(34)::after{color:rgba(255,255,255,.48)}
+.slide:nth-child(20) .card .t::before{display:block;font-size:3.2cqi;margin-bottom:.6cqi}
+.slide:nth-child(20) .card:nth-child(1) .t::before{content:'▰'}
+.slide:nth-child(20) .card:nth-child(2) .t::before{content:'●'}
+.slide:nth-child(20) .card:nth-child(3) .t::before{content:'ϟ'}
+.slide:nth-child(20) .card:nth-child(4) .t::before{content:'◉'}
+.chapter-slide{background:#171717;color:#fff}
+.chapter-slide::before{content:'II';position:absolute;right:5.5cqi;top:50%;transform:translateY(-52%);font-size:27cqi;font-weight:950;line-height:1;color:rgba(246,199,68,.18);letter-spacing:-.08em}
+.chapter-slide .slide-content{position:relative;z-index:1}
+.chapter-slide .card{background:transparent;color:#fff;border-top-color:var(--accent);border-bottom:.12cqi solid #555}
+.chapter-slide .card .d{color:#C7C7C7}
+.chapter-slide::after{color:rgba(255,255,255,.55)}
+.title-slide.cover-slide{background:#F6C744;color:#111;overflow:hidden}
+.title-slide.cover-slide .slide-content{align-items:flex-start;text-align:left;width:61%;position:relative;z-index:3}
+.title-slide.cover-slide h1{font-size:7.4cqi;line-height:1.02;letter-spacing:-.065em}
+.title-slide.cover-slide h1::after{margin:2cqi 0 0;width:10cqi}
+.title-slide.cover-slide .meta-row{justify-content:flex-start}
+.cover-art{position:absolute;right:-2cqi;top:0;width:44%;height:100%;background:#171717;clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);overflow:hidden}
+.cover-art::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3.1cqi,rgba(255,255,255,.08) 3.1cqi 3.25cqi)}
+.cover-art::after{content:'1776\A      1791\A 1865\A      1944';white-space:pre;position:absolute;right:3cqi;top:4cqi;color:rgba(255,255,255,.12);font-size:5.7cqi;font-weight:950;line-height:1.75;letter-spacing:-.04em;text-align:right}
+.industrial-skyline{position:absolute;left:5cqi;right:0;bottom:0;height:22cqi;border-bottom:2cqi solid #F6C744;background:linear-gradient(90deg,transparent 0 8%,#F6C744 8% 14%,transparent 14% 19%,#F6C744 19% 34%,transparent 34% 40%,#F6C744 40% 51%,transparent 51% 58%,#F6C744 58% 77%,transparent 77%);clip-path:polygon(0 100%,0 64%,8% 64%,8% 32%,14% 32%,14% 73%,19% 73%,19% 50%,27% 50%,27% 38%,34% 38%,34% 68%,40% 68%,40% 18%,44% 18%,44% 0,47% 0,47% 18%,51% 18%,51% 76%,58% 76%,58% 42%,65% 42%,65% 56%,71% 56%,71% 33%,77% 33%,77% 72%,100% 72%,100% 100%)}
+.closing-slide .slide-content{max-width:72cqi;margin:auto}
+.closing-slide::before{content:'04';position:absolute;right:4cqi;top:1cqi;font-size:20cqi;font-weight:950;color:rgba(17,17,17,.08);line-height:1}
+.topic-card{appearance:none;text-align:left;font-family:inherit;color:inherit;cursor:pointer;width:100%;min-height:15cqi;transition:transform .18s ease,background .18s ease}.topic-card:hover,.topic-card:focus-visible{transform:translateY(-.6cqi);background:#FFF8DB;outline:.28cqi solid var(--ink);outline-offset:.25cqi}.topic-card .open-mark{margin-top:auto;font-size:1.25cqi;font-weight:900;letter-spacing:.08em}.topic-card .open-mark::after{content:'  →'}
+.topic-detail{position:absolute;inset:2.6cqi 3.4cqi 2.8cqi;z-index:20;display:none;grid-template-columns:1.18fr .82fr;background:#171717;color:#fff;box-shadow:0 1.4cqi 4cqi rgba(0,0,0,.38);overflow:hidden}.topic-detail.open{display:grid}.topic-detail figure{position:relative;min-width:0;overflow:hidden;background:#222}.topic-detail img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.04)}.topic-detail figure::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 68%,#171717 100%);pointer-events:none}
+.topic-copy{padding:3cqi 3.1cqi 2.5cqi;display:flex;flex-direction:column;justify-content:center;gap:1.15cqi;min-width:0}.topic-copy .eyebrow{color:var(--accent)}.topic-copy h3{font-size:3.5cqi;line-height:1.1;letter-spacing:-.04em}.topic-copy .summary{font-size:1.72cqi;line-height:1.5;color:#E4E4E4}.topic-points{display:flex;flex-direction:column;gap:.6cqi;border-top:.15cqi solid #555;padding-top:1cqi}.topic-points p{display:grid;grid-template-columns:5.6cqi 1fr;gap:.8cqi;font-size:1.35cqi;line-height:1.35;color:#D2D2D2}.topic-points b{color:#fff}.topic-close{position:absolute;right:1.2cqi;top:1.2cqi;z-index:3;width:4.3cqi;height:4.3cqi;border-radius:50%;border:.14cqi solid #fff;background:#171717;color:#fff;font-size:2.2cqi;font-weight:800;cursor:pointer}.topic-close:hover,.topic-close:focus-visible{background:var(--accent);color:#111;outline:.2cqi solid #fff;outline-offset:.2cqi}
+.power-detail{grid-template-columns:.88fr 1.12fr}.power-visual{position:relative;display:flex;flex-direction:column;justify-content:center;gap:2cqi;padding:4.5cqi 4cqi;background:#F6C744;color:#111;overflow:hidden}.power-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(17,17,17,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.08) 1px,transparent 1px);background-size:5cqi 5cqi}.power-visual>*{position:relative;z-index:1}.power-number{font-size:8.8cqi;font-weight:950;line-height:.88;letter-spacing:-.08em}.power-caption{font-size:1.55cqi;line-height:1.35;font-weight:850;max-width:28cqi}.power-bars{height:15cqi;display:flex;align-items:flex-end;gap:2.2cqi;border-bottom:.28cqi solid #111}.power-bar{width:8cqi;background:#111;color:#fff;padding:.8cqi .6cqi;font-size:1.2cqi;font-weight:900;text-align:center;min-height:2.5cqi}.power-bar.accent{background:#fff;color:#111;border:.18cqi solid #111}.power-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:.8cqi}.power-node{border:.2cqi solid #111;background:#fff;padding:1.2cqi .8cqi;text-align:center;font-size:1.28cqi;font-weight:900}.power-arrow{font-size:2.2cqi;font-weight:950}.power-source{font-size:1.05cqi;line-height:1.3;font-weight:750}.power-source a{color:inherit;text-decoration-thickness:.12cqi;text-underline-offset:.25cqi}.power-detail .topic-copy{padding-left:2.7cqi;padding-right:2.7cqi}.power-detail .topic-copy h3{font-size:3.1cqi}.power-detail .topic-copy .summary{font-size:1.5cqi}.power-detail .topic-points p{font-size:1.22cqi;grid-template-columns:5.2cqi 1fr}
+
+.federal-lab{display:grid;grid-template-columns:1.08fr .92fr;gap:2.4cqi;min-height:39cqi}.union-board{position:relative;background:#171717;color:#fff;border:.18cqi solid #111;padding:2.3cqi 2.5cqi;overflow:hidden}.union-board::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 52%,rgba(246,199,68,.2),transparent 34%),linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:auto,4cqi 4cqi,4cqi 4cqi}.union-head,.state-cloud,.federal-toggle,.union-result{position:relative;z-index:1}.union-head{display:flex;align-items:center;justify-content:space-between;gap:1cqi}.union-status{font-size:1.2cqi;font-weight:900;letter-spacing:.12em;color:#AAA}.union-status::before{content:'';display:inline-block;width:.9cqi;height:.9cqi;margin-right:.7cqi;border-radius:50%;background:#8E8E8E}.state-cloud{display:grid;grid-template-columns:repeat(5,1fr);gap:1cqi;margin:2.3cqi 0 2cqi;min-height:20cqi;align-content:center}.state-chip{display:flex;align-items:center;justify-content:center;min-height:5.2cqi;border:.16cqi solid #777;background:#262626;color:#ddd;font-size:1.18cqi;font-weight:950;transition:transform .48s cubic-bezier(.2,.8,.2,1),background .35s,color .35s,border-color .35s}.state-chip:nth-child(3n+1){transform:translate(-.7cqi,.5cqi) rotate(-5deg)}.state-chip:nth-child(3n+2){transform:translate(.5cqi,-.65cqi) rotate(4deg)}.state-chip:nth-child(4n){transform:translate(.8cqi,.7cqi) rotate(6deg)}.state-chip:nth-child(13){grid-column:4}.federal-toggle{width:100%;min-height:5.3cqi;border:.16cqi solid #F6C744;background:#F6C744;color:#111;font:900 1.4cqi/1 inherit;letter-spacing:.04em;cursor:pointer}.federal-toggle:hover,.federal-toggle:focus-visible{background:#fff;outline:.22cqi solid #fff;outline-offset:.25cqi}.union-result{margin-top:1.2cqi;text-align:center;font-size:1.15cqi;color:#aaa;font-weight:750}.union-board.is-unified .state-chip{transform:none;background:#F6C744;color:#111;border-color:#F6C744;box-shadow:0 0 1.8cqi rgba(246,199,68,.22)}.union-board.is-unified .union-status{color:#F6C744}.union-board.is-unified .union-status::before{background:#F6C744;box-shadow:0 0 1cqi #F6C744}.union-board.is-unified .union-result{color:#fff}.federal-panel{display:flex;flex-direction:column;gap:1.4cqi}.federal-panel h3{font-size:2.25cqi;line-height:1.15}.federal-panel>.summary{font-size:1.35cqi;line-height:1.45;color:var(--sub)}.federal-powers{display:grid;grid-template-columns:1fr 1fr;gap:1cqi}.power-cell{position:relative;min-height:9.2cqi;padding:1.5cqi;background:#E8E5DC;border:.16cqi dashed #AAA;opacity:.52;transform:translateY(.5cqi);transition:opacity .35s,transform .35s,background .35s,border-color .35s}.power-cell b{display:block;font-size:1.6cqi;margin-bottom:.55cqi}.power-cell span{display:block;font-size:1.18cqi;line-height:1.35;color:#555}.power-cell::after{content:'대기';position:absolute;right:1cqi;top:1cqi;font-size:.92cqi;font-weight:900;color:#777}.federal-panel.is-unified .power-cell{opacity:1;transform:none;background:#fff;border-style:solid;border-color:#111}.federal-panel.is-unified .power-cell::after{content:'활성';color:#111;background:#F6C744;padding:.25cqi .55cqi}.federal-equation{margin-top:auto;background:#111;color:#fff;padding:1.25cqi 1.5cqi;font-size:1.25cqi;font-weight:850;line-height:1.35}.federal-equation strong{color:#F6C744}.federal-panel .source-note{font-size:1cqi}
+
+.credit-lab{display:grid;grid-template-columns:.92fr 1.08fr;gap:2.3cqi;min-height:39cqi}.credit-steps{display:flex;flex-direction:column;gap:1cqi}.credit-step{position:relative;display:grid;grid-template-columns:4.8cqi 1fr auto;align-items:center;gap:1.1cqi;min-height:8.3cqi;padding:1.2cqi 1.4cqi;background:#fff;border:.16cqi solid #B7B3AA;color:#111;text-align:left;font-family:inherit;cursor:pointer;transition:transform .25s,background .25s,border-color .25s}.credit-step:hover,.credit-step:focus-visible{transform:translateX(.5cqi);outline:.22cqi solid #111;outline-offset:.18cqi}.credit-step .step-n{display:flex;align-items:center;justify-content:center;width:4.3cqi;height:4.3cqi;background:#E6E2D8;font-size:1.7cqi;font-weight:950}.credit-step b{display:block;font-size:1.55cqi;margin-bottom:.35cqi}.credit-step small{display:block;font-size:1.08cqi;line-height:1.3;color:#666}.credit-step::after{content:'선택';font-size:.9cqi;font-weight:900;color:#777}.credit-step.done{background:#FFF5C9;border-color:#111}.credit-step.done .step-n{background:#F6C744}.credit-step.done::after{content:'완료';color:#111}.credit-reset{min-height:4cqi;border:0;background:#111;color:#fff;font:850 1.05cqi/1 inherit;cursor:pointer}.credit-engine{position:relative;display:flex;flex-direction:column;gap:1.45cqi;padding:2.3cqi 2.5cqi;background:#171717;color:#fff;overflow:hidden}.credit-engine::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:4cqi 4cqi}.credit-engine>*{position:relative;z-index:1}.credit-meter-head{display:flex;align-items:flex-end;justify-content:space-between}.credit-meter-head b{font-size:1.25cqi}.credit-score{font-size:4.7cqi;font-weight:950;line-height:.9;color:#F6C744}.credit-track{height:2cqi;border:.14cqi solid #777;background:#242424;padding:.25cqi}.credit-fill{height:100%;width:0;background:#F6C744;transition:width .5s cubic-bezier(.2,.8,.2,1)}.credit-message{min-height:4.4cqi;font-size:1.4cqi;line-height:1.4;color:#D9D9D9}.credit-market{display:grid;grid-template-columns:repeat(3,1fr);gap:.85cqi;margin-top:auto}.credit-outcome{min-height:10.5cqi;padding:1.25cqi;background:#242424;border:.13cqi solid #555;opacity:.35;transform:translateY(.6cqi);transition:opacity .35s,transform .35s,border-color .35s}.credit-outcome b{display:block;color:#F6C744;font-size:1.3cqi;margin-bottom:.55cqi}.credit-outcome span{font-size:1.05cqi;line-height:1.35;color:#ccc}.credit-engine.step-1 .credit-outcome:nth-child(1),.credit-engine.step-2 .credit-outcome:nth-child(-n+2),.credit-engine.step-3 .credit-outcome{opacity:1;transform:none;border-color:#F6C744}.credit-conclusion{padding:1cqi 1.2cqi;background:#F6C744;color:#111;font-size:1.15cqi;font-weight:900;text-align:center;opacity:0;transition:opacity .35s}.credit-engine.step-3 .credit-conclusion{opacity:1}.credit-engine .source-note{color:#bbb;font-size:.95cqi}.credit-engine .source-note a{color:#fff}
+
+.web-native{--web-phase:#F6C744}.web-native::after{content:attr(data-web-no);position:absolute;right:3.2cqi;bottom:1.2cqi;font-size:1cqi;font-weight:900;letter-spacing:.08em;color:#777}.web-native .slide-content{position:relative}.web-phase{position:absolute;right:0;top:.2cqi;display:flex;align-items:center;gap:.65cqi;font-size:1cqi;font-weight:900;letter-spacing:.1em;color:#555}.web-phase::before{content:'';width:2.8cqi;height:.42cqi;background:var(--web-phase)}.web-native h2{max-width:78cqi}.web-native .card,.web-native .fact,.web-native .flow-node,.web-native .debate-side,.web-native .legend-item,.web-native .boundary-card,.web-native .bar-row,.web-native .time-event,.web-native .bullets li,.web-native .meta-row span{transition:transform .22s,box-shadow .22s,opacity .22s,background .22s}.web-target{cursor:pointer;position:relative}.web-target::after{content:'＋';position:absolute;right:.8cqi;top:.65cqi;width:2cqi;height:2cqi;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#111;color:#fff;font-size:1.1cqi;font-weight:900;opacity:.72}.web-target:hover,.web-target:focus-visible{transform:translateY(-.45cqi);box-shadow:0 .8cqi 1.8cqi rgba(0,0,0,.16);outline:.2cqi solid #111;outline-offset:.18cqi}.web-target.spotlit{background:#FFF3B8!important;outline:.24cqi solid #111;box-shadow:.75cqi .75cqi 0 #111}.web-target.spotlit::after{content:'✓';background:#F6C744;color:#111;opacity:1}.web-native .bullets{display:grid;grid-template-columns:1fr 1fr;gap:1.1cqi;list-style:none}.web-native .bullets li{margin:0;min-height:8.1cqi;padding:1.55cqi 3.6cqi 1.35cqi 1.55cqi;background:#fff;border:.14cqi solid #C8C4BA;font-size:1.42cqi;line-height:1.4}.web-native .bullets li::before{display:none}.web-native .card-grid{gap:1.25cqi}.web-native .card{border-top:.5cqi solid var(--web-phase)}.web-native .flow-node{background:#fff}.web-native .time-event{border-left-color:#111}.web-native .time-event.web-target::after{right:1.1cqi;top:50%;transform:translateY(-50%)}.web-insight{position:absolute;left:5.8cqi;right:5.8cqi;bottom:2.4cqi;z-index:30;display:grid;grid-template-columns:15cqi 1fr auto;gap:1.8cqi;align-items:center;min-height:10cqi;padding:1.5cqi 1.8cqi;background:#111;color:#fff;border-left:.8cqi solid var(--web-phase);box-shadow:0 1.2cqi 3.4cqi rgba(0,0,0,.35);opacity:0;transform:translateY(125%);pointer-events:none;transition:opacity .24s,transform .3s cubic-bezier(.2,.8,.2,1)}.web-insight.open{opacity:1;transform:none;pointer-events:auto}.web-insight-kicker{font-size:1cqi;font-weight:950;letter-spacing:.12em;color:var(--web-phase)}.web-insight h3{font-size:1.75cqi;line-height:1.15}.web-insight p{font-size:1.24cqi;line-height:1.45;color:#D7D7D7}.web-insight-close{width:3.8cqi;height:3.8cqi;border:.14cqi solid #fff;border-radius:50%;background:transparent;color:#fff;font:800 1.7cqi/1 inherit;cursor:pointer}.web-insight-close:hover,.web-insight-close:focus-visible{background:var(--web-phase);color:#111}.web-native[data-web-chapter="Ⅱ"]{--web-phase:#D9D4C8}.web-native[data-web-chapter="Ⅲ"]{--web-phase:#F6C744}.web-native[data-web-chapter="Ⅳ"]{--web-phase:#fff}.web-native[data-web-chapter="Ⅳ"].chapter-slide{--web-phase:#F6C744}.web-native .balance-bars .web-target::after{right:0;top:-.2cqi}.web-native .tile-map .state{transition:filter .2s,opacity .2s,transform .2s}.web-native.map-free .state:not(.free),.web-native.map-confed .state:not(.confed),.web-native.map-border .state:not(.border){opacity:.18;filter:grayscale(1)}.web-native.map-free .state.free,.web-native.map-confed .state.confed,.web-native.map-border .state.border{transform:scale(1.08);z-index:2}.web-native .meta-row span.web-target{padding-right:2.8cqi}
+
+.web-insight{visibility:hidden;transform:translateY(1.5cqi)}.web-insight.open{visibility:visible;transform:none}
+
+/* 파운딩 파더스: 초반 인물 지도 + 개별 탐색 화면 */
+.founder-overview .slide-content{gap:1.35cqi}.founder-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.15cqi;width:100%}.founder-card{appearance:none;position:relative;min-height:31cqi;padding:0;background:#171717;color:#fff;border:.15cqi solid #111;overflow:hidden;text-align:left;font-family:inherit;cursor:pointer;transition:transform .2s,box-shadow .2s}.founder-card:hover,.founder-card:focus-visible{transform:translateY(-.7cqi);box-shadow:.7cqi .7cqi 0 #F6C744;outline:.2cqi solid #111;outline-offset:.18cqi}.founder-card img{width:100%;height:18.5cqi;object-fit:cover;object-position:center 18%;display:block;filter:grayscale(.2) contrast(1.04)}.founder-card .founder-mini{padding:1.2cqi 1.25cqi}.founder-card b{display:block;font-size:1.45cqi;line-height:1.1}.founder-card small{display:block;margin-top:.45cqi;color:#F6C744;font-size:1cqi;font-weight:850}.founder-card span{display:block;margin-top:.85cqi;color:#D0D0D0;font-size:1.02cqi;line-height:1.35}.founder-card::after{content:'인물 열기 →';position:absolute;right:1cqi;bottom:.8cqi;font-size:.82cqi;font-weight:900;letter-spacing:.05em;color:#fff}.founder-note{display:flex;align-items:center;justify-content:space-between;width:100%;font-size:1cqi;color:#666}.founder-note a{color:inherit}
+.founder-slide{background:#EEEAE1}.founder-layout{display:grid;grid-template-columns:31cqi 1fr;gap:3cqi;width:100%;min-height:41cqi}.founder-portrait{position:relative;overflow:hidden;background:#171717;border:.18cqi solid #111}.founder-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}.founder-portrait::after{content:'';position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,rgba(0,0,0,.88))}.founder-years{position:absolute;left:1.7cqi;right:1.7cqi;bottom:1.5cqi;z-index:1;color:#fff}.founder-years b{display:block;font-size:2.2cqi}.founder-years span{display:block;margin-top:.35cqi;color:#F6C744;font-size:1.08cqi;font-weight:900;letter-spacing:.08em}.founder-profile{display:flex;flex-direction:column;gap:1.25cqi}.founder-profile .eyebrow{color:#555}.founder-profile h2{font-size:4.1cqi}.founder-thesis{font-size:1.55cqi;line-height:1.42;font-weight:750;max-width:52cqi}.founder-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:.8cqi}.founder-tab{min-height:4.4cqi;border:.16cqi solid #111;background:#fff;color:#111;font:900 1.15cqi/1 inherit;cursor:pointer}.founder-tab:hover,.founder-tab:focus-visible,.founder-tab.active{background:#F6C744;outline:.18cqi solid #111;outline-offset:.12cqi}.founder-panel{display:grid;grid-template-columns:12cqi 1fr;gap:1.5cqi;align-items:start;min-height:15.5cqi;padding:1.65cqi 1.8cqi;background:#171717;color:#fff;border-left:.75cqi solid #F6C744}.founder-panel h3{font-size:1.75cqi;color:#F6C744}.founder-panel p{font-size:1.35cqi;line-height:1.5;color:#E2E2E2}.founder-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:.85cqi}.founder-fact{padding:1cqi 1.1cqi;background:#fff;border:.12cqi solid #BEB9AE}.founder-fact b{display:block;font-size:1.2cqi}.founder-fact span{display:block;margin-top:.35cqi;font-size:1cqi;line-height:1.3;color:#666}.founder-source{margin-top:auto;font-size:.9cqi;color:#666}.founder-source a{color:inherit}
+
+.attention-cue{position:fixed;inset:0;z-index:800;display:flex;align-items:center;justify-content:center;background:rgba(8,8,8,.72);backdrop-filter:blur(5px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s,visibility 0s linear .3s}.attention-cue.active{opacity:1;visibility:visible;transition-delay:0s}.attention-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(64vw,620px);aspect-ratio:2/1;background:#F6C744;color:#111;border:.35rem solid #fff;box-shadow:1rem 1rem 0 #111;transform:scale(.82) rotate(-2deg);transition:transform .22s cubic-bezier(.2,.9,.2,1)}.attention-cue.active .attention-card{transform:scale(1) rotate(-2deg)}.attention-word{font-size:clamp(58px,11vw,142px);font-weight:950;line-height:.78;letter-spacing:-.08em}.attention-wave{display:inline-block;transform-origin:left center;animation:shh-wave .55s ease-in-out infinite alternate}.attention-sub{margin-top:1.2rem;font-size:clamp(15px,2vw,25px);font-weight:900;letter-spacing:.18em}.attention-rings{position:absolute;inset:8%;border:.18rem solid rgba(17,17,17,.24);animation:shh-ring 1s ease-out infinite}.attention-rings::after{content:'';position:absolute;inset:8%;border:.16rem solid rgba(17,17,17,.18)}@keyframes shh-wave{to{transform:scaleX(1.12)}}@keyframes shh-ring{from{transform:scale(.86);opacity:.8}to{transform:scale(1.08);opacity:0}}#attentionBtn{background:#F6C744!important;color:#111!important;border-color:#F6C744!important}#attentionBtn:hover,#attentionBtn:focus-visible{background:#fff!important}
+
+/* 하단 네비 */
+#nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:#0E0E0E;border-top:1px solid #222;
+  display:flex;align-items:center;gap:8px;padding:0 14px;color:#EEEEEE;font-size:14px;z-index:200}
+#nav button, #nav a{background:#1F1F1F;color:#EEEEEE;border:1px solid #2E2E2E;border-radius:8px;
+  height:44px;min-width:44px;padding:0 14px;font-size:14px;font-weight:700;cursor:pointer;
+  text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+#nav button:hover, #nav a:hover{background:#2C2C2C}
+#nav button:disabled{opacity:.35;cursor:default}
+#nav button:focus-visible, #nav a:focus-visible{outline:2px solid #FFFFFF;outline-offset:2px}
+#nav .grow{flex:1}
+#counter{font-variant-numeric:tabular-nums;font-weight:800;min-width:5.5em;text-align:center}
+.hint{color:#9A9A9A;font-size:12.5px}
+#progress{position:fixed;left:0;bottom:var(--nav-h);height:3px;background:#FFFFFF;width:0;z-index:201;transition:width .2s}
+@media (max-width:760px){ #nav .hide-sm{display:none} }
+
+/* 전체보기: 실제 축소판 */
+.grid-overlay{position:fixed;inset:0;z-index:500;background:rgba(10,10,10,.97);display:none;overflow:auto;padding:22px 22px 40px}
+.grid-overlay.open{display:block}
+.grid-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.grid-head h2{color:#FFFFFF;font-size:20px;font-weight:800}
+.grid-head button{background:#1F1F1F;color:#EEEEEE;border:1px solid #2E2E2E;border-radius:8px;height:44px;padding:0 16px;
+  font-size:14px;font-weight:700;cursor:pointer}
+.grid-head button:focus-visible{outline:2px solid #FFFFFF;outline-offset:2px}
+.grid-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.mini{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;cursor:pointer;
+  outline:3px solid transparent;outline-offset:2px;background:var(--slide-bg)}
+.mini:hover, .mini:focus-visible, .mini.current{outline-color:#FFFFFF}
+/* 960px 기준으로 그린 뒤 축소 · 240px에 직접 그리면 브라우저 최소 글꼴 크기에 걸려 넘침 */
+.mini-inner{position:absolute;left:0;top:0;width:960px;height:540px;container-type:inline-size;
+  transform-origin:0 0;pointer-events:none;background:var(--slide-bg)}
+.mini-inner .slide{display:flex}
+.mini-num{position:absolute;right:6px;top:6px;background:rgba(0,0,0,.78);color:#FFFFFF;font-size:12px;font-weight:700;
+  padding:2px 8px;border-radius:99px;z-index:2}
+
+@media (prefers-reduced-motion:reduce){ #progress{transition:none} }
+
+/* PDF: 16:9 페이지 1장 = 슬라이드 1장 */
+@page{size:13.333in 7.5in;margin:0}
+@media print{
+  html, body{overflow:visible!important;height:auto!important;background:#FFFFFF}
+  #nav, #progress, .grid-overlay, .attention-cue{display:none!important}
+  #stage{position:static!important;transform:none!important;width:13.333in!important;aspect-ratio:auto!important;overflow:visible!important}
+  #stage > .slide{position:relative!important;display:flex!important;width:13.333in;height:7.5in;
+    break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #stage > .slide:last-child{break-after:auto;page-break-after:auto}
+}
+</style>
+<!-- mobile-fix v1 -->
+<style id="mf-css">
+@media screen{
+  html.mf .top .ttl{display:none}
+  html.mf .bar{gap:.4rem;padding:0 .5rem}
+  html.mf .bar .btn{padding:0 .75rem;font-size:.85rem}
+  html.mf .mf-canvas{position:absolute!important;left:50%!important;top:50%!important;width:1280px!important;height:720px!important;
+    margin:-360px 0 0 -640px!important;max-height:none!important;max-width:none!important;aspect-ratio:auto!important;
+    border-radius:0!important;box-shadow:none!important;transform-origin:50% 50%!important}
+  html.mf .mf-canvas.mf-vp{position:fixed!important}
+  html.mf-port .mf-cont{padding:4px!important}
+  html.mf-land .mf-cont{top:0!important;bottom:40px!important;padding:0!important}
+  html.mf-land .top{display:none}
+  html.mf-land.mf-top .top{display:flex;position:fixed;top:0;left:0;right:0;z-index:30}
+  html.mf-land .bot{height:40px}
+  html.mf-land .bot .btn{min-height:32px;height:32px}
+  html.mf-land{--nav-h:40px}
+  html.mf-land #nav button,html.mf-land #nav a{height:32px;min-height:32px}
+  html.mf #nav .hint{display:none}
+  html.mf #nav{gap:4px;padding:0 8px}
+  html.mf #nav button,html.mf #nav a{white-space:nowrap;padding:0 10px;font-size:13px}
+  html.mf #counter{min-width:4.2em}
+  #mf-hint{display:none;position:fixed;left:8px;right:8px;bottom:64px;z-index:40;padding:.6rem .8rem;border-radius:10px;
+    background:rgba(20,28,51,.96);color:#F6F3EC;border:1px solid #D4FF3D;font:700 .9rem/1.4 -apple-system,'Noto Sans KR','Malgun Gothic',sans-serif;
+    align-items:center;gap:.6rem}
+  #mf-hint button{flex:0 0 auto;min-width:44px;min-height:44px;border:0;border-radius:8px;background:#D4FF3D;color:#0B1220;font:900 1rem inherit;cursor:pointer}
+  html.mf-port #mf-hint.on{display:flex}
+}
+</style>
+</head>
+<body>
+
+<main id="stage">
+
+<!-- ===== 1. 미국 패권의 완성 ===== -->
+<section class="slide active title-slide cover-slide" aria-label="1. 미국 패권의 완성">
+  <div class="slide-content">
+    <div class="kicker">글로벌시대의 국제정치 · 10주차</div>
+    <h1>미국 패권의 완성</h1>
+    <p class="lede">해밀턴의 국가 설계에서 브레튼우즈 체제까지</p>
+    <div class="meta-row"><span>국가 설계</span><span>세계대전</span><span>국제질서</span></div>
+  </div>
+  <div class="cover-art" aria-hidden="true"><div class="industrial-skyline"></div></div>
+</section>
+
+<!-- ===== 2. 강의 순서 ===== -->
+<section class="slide" aria-label="2. 강의 순서">
+  <div class="slide-content">
+    <div class="kicker">100분 진행표</div>
+    <h2>강의 순서</h2>
+    <table class="tbl">
+      <thead><tr><th scope="col">구간</th><th scope="col">핵심 흐름</th></tr></thead>
+      <tbody>
+        <tr class="today"><td>0~50분</td><td>파운딩 파더스 → 제도 설계 → 산업 통합</td></tr>
+        <tr><td>50~60분</td><td>휴식</td></tr>
+        <tr><td>60~100분</td><td>세계대전 → 브레튼우즈 → 미국 중심 질서</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== 3. 핵심 질문 ===== -->
+<section class="slide" aria-label="3. 핵심 질문">
+  <div class="slide-content">
+    <div class="kicker">오늘의 질문</div>
+    <h2>핵심 질문</h2>
+    <div class="prompt-card">
+      <div class="label">생각 열기</div>
+      <blockquote>후발국 미국은 어떻게 세계질서의 설계자가 되었는가?</blockquote>
+    </div>
+    <p class="lede">관찰 초점: 생산력만으로 패권국이 될 수 있는가</p>
+  </div>
+</section>
+
+<!-- ===== 4. 파운딩 파더스 5인 ===== -->
+<section class="slide founder-overview" aria-label="4. 파운딩 파더스 5인">
+  <div class="slide-content">
+    <div class="kicker">혁명에서 국가 설계까지</div>
+    <h2>파운딩 파더스 5인</h2>
+    <div class="founder-grid" aria-label="파운딩 파더스 인물 선택">
+      <button type="button" class="founder-card" data-jump="5"><img src="assets/founder-washington.jpg" alt="조지 워싱턴 초상화"><span class="founder-mini"><b>조지 워싱턴</b><small>1732–1799</small><span>독립전쟁 · 헌정 질서 · 대통령직의 선례</span></span></button>
+      <button type="button" class="founder-card" data-jump="6"><img src="assets/founder-hamilton.jpg" alt="알렉산더 해밀턴 초상화"><span class="founder-mini"><b>알렉산더 해밀턴</b><small>1757–1804</small><span>연방 재정 · 국립은행 · 제조업 국가</span></span></button>
+      <button type="button" class="founder-card" data-jump="7"><img src="assets/founder-jefferson.jpg" alt="토머스 제퍼슨 초상화"><span class="founder-mini"><b>토머스 제퍼슨</b><small>1743–1826</small><span>독립선언 · 공화주의 · 대륙 확장</span></span></button>
+      <button type="button" class="founder-card" data-jump="8"><img src="assets/founder-madison.jpg" alt="제임스 매디슨 초상화"><span class="founder-mini"><b>제임스 매디슨</b><small>1751–1836</small><span>헌법 설계 · 권력 분립 · 권리장전</span></span></button>
+      <button type="button" class="founder-card" data-jump="9"><img src="assets/founder-franklin.jpg" alt="벤저민 프랭클린 초상화"><span class="founder-mini"><b>벤저민 프랭클린</b><small>1706–1790</small><span>과학 · 외교 · 대타협의 중재</span></span></button>
+    </div>
+    <div class="founder-note"><span>인물 카드를 눌러 개별 화면으로 이동</span><span>초상화: Smithsonian Open Access 계열 작품 · 공개영역</span></div>
+  </div>
+</section>
+
+<!-- ===== 5. 조지 워싱턴 ===== -->
+<section class="slide founder-slide" aria-label="5. 조지 워싱턴">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-washington.jpg" alt="길버트 스튜어트가 그린 조지 워싱턴 초상화"><figcaption class="founder-years"><b>George Washington</b><span>1732–1799</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">01 · COMMAND → CONSTITUTION</div><h2>조지 워싱턴</h2><p class="founder-thesis">군사적 승리를 헌정 질서와 절제된 대통령 권력으로 전환한 국가 통합의 상징</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="대륙군 총사령관으로 독립전쟁을 이끌고, 1787년 헌법제정회의 의장과 초대 대통령으로 새 연방정부의 권위를 정착">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="강한 연방정부와 국가 통합을 지지하면서도 정당 갈등과 유럽 전쟁에 대한 과도한 개입을 경계한 실용적 연방주의">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="자유 공화국의 지도자이면서 노예 소유주였다는 근본 모순, 대통령 권력과 시민적 절제의 선례가 함께 남은 유산">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>대륙군 총사령관으로 독립전쟁을 이끌고, 1787년 헌법제정회의 의장과 초대 대통령으로 새 연방정부의 권위를 정착</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1781</b><span>요크타운 승리</span></div><div class="founder-fact"><b>1787</b><span>헌법제정회의 의장</span></div><div class="founder-fact"><b>1789–1797</b><span>초대 대통령</span></div></div>
+      <div class="founder-source">자료: <a href="https://npg.si.edu/portraits/collection-highlights/highlights-george-washington-1732-1799" target="_blank" rel="noopener">Smithsonian NPG</a> · <a href="https://www.mountvernon.org/george-washington/biography" target="_blank" rel="noopener">Mount Vernon</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 6. 알렉산더 해밀턴 ===== -->
+<section class="slide founder-slide" aria-label="6. 알렉산더 해밀턴">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-hamilton.jpg" alt="존 트럼불이 그린 알렉산더 해밀턴 초상화"><figcaption class="founder-years"><b>Alexander Hamilton</b><span>1757–1804</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">02 · CREDIT → INDUSTRY</div><h2>알렉산더 해밀턴</h2><p class="founder-thesis">국가신용·은행·관세·제조업을 하나의 체제로 묶어 연방의 경제적 능력을 설계한 인물</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="초대 재무장관으로 연방 부채의 통합, 국립은행, 조세 기반, 제조업 육성안을 추진해 국가신용과 자본시장의 토대를 구축">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="상공업·금융·도시 성장을 중시한 강한 연방주의, 광범위한 헌법 해석과 행정부 역량을 선호한 연방당 노선">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="엘리트 중심 정치와 친영 외교 성향이 제퍼슨·매디슨의 농업 공화주의와 충돌하며 최초 정당체제 형성을 촉진">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>초대 재무장관으로 연방 부채의 통합, 국립은행, 조세 기반, 제조업 육성안을 추진해 국가신용과 자본시장의 토대를 구축</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1787–1788</b><span>연방주의자 논고 공동 집필</span></div><div class="founder-fact"><b>1789–1795</b><span>초대 재무장관</span></div><div class="founder-fact"><b>1791</b><span>국립은행·제조업 보고서</span></div></div>
+      <div class="founder-source">자료: <a href="https://www.archives.gov/founding-docs/founding-fathers-new-york" target="_blank" rel="noopener">U.S. National Archives</a> · <a href="https://npg.si.edu/object/npg_NPG.79.216" target="_blank" rel="noopener">Smithsonian NPG</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 7. 토머스 제퍼슨 ===== -->
+<section class="slide founder-slide" aria-label="7. 토머스 제퍼슨">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-jefferson.jpg" alt="렘브란트 필이 그린 토머스 제퍼슨 초상화"><figcaption class="founder-years"><b>Thomas Jefferson</b><span>1743–1826</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">03 · LIBERTY → EXPANSION</div><h2>토머스 제퍼슨</h2><p class="founder-thesis">개인의 자유와 농업 공화국을 내세우면서도 대통령 권력을 활용해 대륙국가의 규모를 확장한 인물</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="독립선언서의 주 저자, 종교자유법과 버지니아대학교 설립, 대통령 재임 중 루이지애나 매입으로 미국 영토를 거의 두 배로 확대">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="주 권리·엄격한 헌법 해석·자영농 중심 공화주의를 강조하고 중앙 금융권력과 상비군 확대에 비판적인 민주공화당 노선">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="모든 인간의 평등을 선언했지만 평생 수백 명을 노예화한 현실, 자유의 언어와 노예제·팽창정책 사이의 구조적 모순">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>독립선언서의 주 저자, 종교자유법과 버지니아대학교 설립, 대통령 재임 중 루이지애나 매입으로 미국 영토를 거의 두 배로 확대</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1776</b><span>독립선언서 주 저자</span></div><div class="founder-fact"><b>1801–1809</b><span>제3대 대통령</span></div><div class="founder-fact"><b>1803</b><span>루이지애나 매입</span></div></div>
+      <div class="founder-source">자료: <a href="https://npg.si.edu/learn/classroom-resource/thomas-jefferson-1743%E2%80%931826" target="_blank" rel="noopener">Smithsonian NPG</a> · <a href="https://www.archives.gov/founding-docs" target="_blank" rel="noopener">U.S. National Archives</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 8. 제임스 매디슨 ===== -->
+<section class="slide founder-slide" aria-label="8. 제임스 매디슨">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-madison.jpg" alt="토머스 설리가 그린 제임스 매디슨 초상화"><figcaption class="founder-years"><b>James Madison</b><span>1751–1836</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">04 · FACTION → CHECKS</div><h2>제임스 매디슨</h2><p class="founder-thesis">파벌을 없애기보다 넓은 공화국과 권력 분립으로 통제하는 헌법적 장치를 설계한 인물</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="버지니아안을 준비하고 헌법제정회의 논의를 기록했으며, 연방주의자 논고와 권리장전을 이끌어 ‘헌법의 아버지’로 평가">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="초기에는 강한 연방 설계를 주도했으나 해밀턴의 금융정책에 반대하며 제퍼슨과 민주공화당을 조직한 견제와 균형의 공화주의">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="1812년 전쟁에서 행정부·재정·군사 역량의 취약성을 경험하며 작은 정부 이상과 국가역량 필요 사이의 긴장을 노출">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>버지니아안을 준비하고 헌법제정회의 논의를 기록했으며, 연방주의자 논고와 권리장전을 이끌어 ‘헌법의 아버지’로 평가</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1787</b><span>헌법제정회의 핵심 설계</span></div><div class="founder-fact"><b>1791</b><span>권리장전 비준</span></div><div class="founder-fact"><b>1809–1817</b><span>제4대 대통령</span></div></div>
+      <div class="founder-source">자료: <a href="https://www.archives.gov/founding-docs/founding-fathers-virginia" target="_blank" rel="noopener">U.S. National Archives</a> · <a href="https://npg.si.edu/object/npg_NPG.2019.32" target="_blank" rel="noopener">Smithsonian NPG</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 9. 벤저민 프랭클린 ===== -->
+<section class="slide founder-slide" aria-label="9. 벤저민 프랭클린">
+  <div class="slide-content"><div class="founder-layout">
+    <figure class="founder-portrait"><img src="assets/founder-franklin.jpg" alt="조제프 시프레드 뒤플레시가 그린 벤저민 프랭클린 초상화"><figcaption class="founder-years"><b>Benjamin Franklin</b><span>1706–1790</span></figcaption></figure>
+    <div class="founder-profile"><div class="eyebrow">05 · KNOWLEDGE → DIPLOMACY</div><h2>벤저민 프랭클린</h2><p class="founder-thesis">과학자의 신뢰와 인쇄 네트워크를 외교 자산으로 바꾸고, 타협을 통해 연합을 가능하게 한 공공 지식인</p>
+      <div class="founder-tabs"><button type="button" class="founder-tab active" data-title="핵심 업적" data-copy="독립선언서와 헌법 서명, 프랑스와의 동맹·원조 확보, 파리조약 협상 참여로 혁명전쟁의 국제적 승리 조건을 마련">핵심 업적</button><button type="button" class="founder-tab" data-title="정치 노선" data-copy="실험·토론·시민결사를 중시한 계몽주의적 공화주의, 강경한 이념보다 연합 유지와 실행 가능한 타협을 우선한 실용주의">정치 노선</button><button type="button" class="founder-tab" data-title="역사적 쟁점" data-copy="초기 노예 소유에서 말년의 노예제 폐지 청원으로 이동한 변화, 헌법의 불완전함을 인정하면서도 연합을 위해 서명을 촉구">역사적 쟁점</button></div>
+      <div class="founder-panel"><h3>핵심 업적</h3><p>독립선언서와 헌법 서명, 프랑스와의 동맹·원조 확보, 파리조약 협상 참여로 혁명전쟁의 국제적 승리 조건을 마련</p></div>
+      <div class="founder-facts"><div class="founder-fact"><b>1776–1785</b><span>주프랑스 외교 대표</span></div><div class="founder-fact"><b>1783</b><span>파리조약 협상</span></div><div class="founder-fact"><b>1787</b><span>헌법 서명·타협 촉구</span></div></div>
+      <div class="founder-source">자료: <a href="https://npg.si.edu/learn/classroom-resource/benjamin-franklin-1706%E2%80%931790" target="_blank" rel="noopener">Smithsonian NPG</a> · <a href="https://www.archives.gov/founding-docs/more-perfect-union" target="_blank" rel="noopener">U.S. National Archives</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== 4. 9주차 연결 ===== -->
+<section class="slide" aria-label="4. 9주차 연결">
+  <div class="slide-content">
+    <div class="kicker">출발점</div>
+    <h2>9주차 연결</h2>
+    <div class="card-grid c4">
+      <button type="button" class="card topic-card" data-topic="resources"><span class="n">1</span><span class="t">자원</span><span class="d">농토·산림·광물·수로</span><span class="open-mark">장면 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="immigration"><span class="n">2</span><span class="t">이민</span><span class="d">노동력·기술·소비시장</span><span class="open-mark">장면 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="tariff"><span class="n">3</span><span class="t">보호관세</span><span class="d">후발 산업의 성장 장벽</span><span class="open-mark">장면 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="slavery"><span class="n">4</span><span class="t">노예제</span><span class="d">강제노동과 축적의 모순</span><span class="open-mark">장면 열기</span></button>
+    </div>
+  </div>
+  <article class="topic-detail" data-detail="resources" role="dialog" aria-modal="true" aria-label="자원 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><figure><img src="assets/w10-resources.png" alt="농토·산림·수력·석탄·철광석이 함께 보이는 초기 미국의 자원 개발 장면"></figure><div class="topic-copy"><div class="eyebrow">01 · Resource Endowment</div><h3>대륙 규모의 자원</h3><p class="summary">풍부한 토지와 광물은 농업·철도·철강의 원료 기반을 제공했지만, 자원 자체가 산업화를 보장한 것은 아님</p><div class="topic-points"><p><b>농토</b><span>식량 공급과 거대한 내수시장 형성</span></p><p><b>광물</b><span>석탄·철광석 기반의 철강 생산</span></p><p><b>수로</b><span>강·운하·항만을 활용한 저비용 운송</span></p><p><b>쟁점</b><span>제도·기술·자본과 결합할 때 성장 동력화</span></p></div></div></article>
+  <article class="topic-detail" data-detail="immigration" role="dialog" aria-modal="true" aria-label="이민 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><figure><img src="assets/w10-immigration.png" alt="증기선에서 내려 미국 항구에 도착한 19세기 말 이민자 가족들"></figure><div class="topic-copy"><div class="eyebrow">02 · Mass Immigration</div><h3>사람이 만든 규모</h3><p class="summary">이민은 공장의 노동력만이 아니라 기술·기업가정신·도시 소비를 동시에 확대하며 산업사회의 인구 기반을 형성</p><div class="topic-points"><p><b>노동</b><span>철도·광산·공장의 대규모 인력 공급</span></p><p><b>기술</b><span>유럽의 숙련과 지식이 산업 현장으로 이동</span></p><p><b>소비</b><span>도시 인구 증가와 대량소비시장 확대</span></p><p><b>그늘</b><span>저임금·차별·배제 정책이라는 사회적 비용</span></p></div></div></article>
+  <article class="topic-detail" data-detail="tariff" role="dialog" aria-modal="true" aria-label="보호관세 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><figure><img src="assets/w10-tariff.png" alt="직물·철강 공장과 항구 세관이 연결된 19세기 미국 산업도시"></figure><div class="topic-copy"><div class="eyebrow">03 · Protective Tariff</div><h3>시간을 사는 장벽</h3><p class="summary">값싼 영국 제품과 바로 경쟁하기보다 관세로 가격 차를 줄여 미국 제조업이 설비·숙련·규모를 축적할 시간을 확보</p><div class="topic-points"><p><b>보호</b><span>수입품 가격 상승과 국내 생산의 상대적 이점</span></p><p><b>육성</b><span>유치산업의 학습·투자·고용 확대</span></p><p><b>재정</b><span>소득세 이전 연방정부의 핵심 세입</span></p><p><b>비용</b><span>소비자 가격 상승과 지역 간 이해 충돌</span></p></div></div></article>
+  <article class="topic-detail" data-detail="slavery" role="dialog" aria-modal="true" aria-label="노예제 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><figure><img src="assets/w10-slavery.png" alt="감시 아래 면화를 수확하는 노예들과 강을 따라 운송되는 면화 더미"></figure><div class="topic-copy"><div class="eyebrow">04 · Slavery and Capital</div><h3>축적의 폭력적 토대</h3><p class="summary">노예제는 인간의 자유를 박탈한 강제노동 체제이자 면화 수출·금융·해운을 연결한 경제 구조로 미국 성장의 근본 모순</p><div class="topic-points"><p><b>강제노동</b><span>노예가 된 사람의 몸과 노동을 재산화</span></p><p><b>면화</b><span>영국 산업혁명과 연결된 핵심 수출품</span></p><p><b>금융</b><span>토지·노예·작물을 담보로 신용과 부 축적</span></p><p><b>모순</b><span>자유의 공화국과 인종적 지배의 정면 충돌</span></p></div></div></article>
+</section>
+
+<!-- ===== 5. 패권의 조건 ===== -->
+<section class="slide" aria-label="5. 패권의 조건">
+  <div class="slide-content">
+    <div class="kicker">분석 틀</div>
+    <h2>패권의 조건</h2>
+    <div class="card-grid c4">
+      <button type="button" class="card topic-card" data-topic="power-production"><span class="n">1</span><span class="t">생산력</span><span class="d">상품·기술의 대량생산</span><span class="open-mark">데이터 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="power-finance"><span class="n">2</span><span class="t">금융력</span><span class="d">신용·통화·자본의 공급</span><span class="open-mark">데이터 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="power-military"><span class="n">3</span><span class="t">군사력</span><span class="d">경제력의 전략적 투사</span><span class="open-mark">데이터 열기</span></button>
+      <button type="button" class="card topic-card" data-topic="power-institution"><span class="n">4</span><span class="t">제도력</span><span class="d">규칙·기구·동맹의 설계</span><span class="open-mark">데이터 열기</span></button>
+    </div>
+    <p class="lede">패권의 비밀: 부를 신용·강제력·규칙으로 전환하는 능력</p>
+  </div>
+  <article class="topic-detail power-detail" data-detail="power-production" role="dialog" aria-modal="true" aria-label="생산력 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><div class="power-visual"><div class="eyebrow">U.S. MANUFACTURING INDEX</div><div class="power-number">14.8×</div><div class="power-caption">제조업 생산지수 1863년 7.5 → 1913년 111.1</div><div class="power-bars" aria-label="1863년과 1913년 제조업 생산지수 비교"><div class="power-bar" style="height:6%">1863<br>7.5</div><div class="power-bar accent" style="height:92%">1913<br>111.1</div></div><div class="power-source">출처: <a href="https://www2.census.gov/library/publications/1949/compendia/hist_stats_1789-1945/hist_stats_1789-1945-chJ.pdf" target="_blank" rel="noopener">U.S. Census, Historical Statistics, J14</a></div></div><div class="topic-copy"><div class="eyebrow">01 · Productive Capacity</div><h3>규모가 가격과 전쟁을 바꿈</h3><p class="summary">대륙 시장·철도·기업 조직이 결합하며 미국 제조업 생산 규모가 약 50년 사이 14.8배로 확대</p><div class="topic-points"><p><b>규모</b><span>표준화·대량생산으로 단위비용 하락</span></p><p><b>시장</b><span>내수 기반의 기업이 해외시장으로 확장</span></p><p><b>전환</b><span>민간 공장을 군수 생산기지로 빠르게 전환</span></p><p><b>영향</b><span>동맹국까지 공급하는 ‘민주주의의 병기창’ 형성</span></p></div></div></article>
+  <article class="topic-detail power-detail" data-detail="power-finance" role="dialog" aria-modal="true" aria-label="금융력 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><div class="power-visual"><div class="eyebrow">LIBERTY LOANS · 1917–1918</div><div class="power-number">$17B+</div><div class="power-caption">4차례 전시 국채로 조달 · 약 2천만 명 참여</div><div class="power-flow"><div class="power-node">저축</div><div class="power-arrow">→</div><div class="power-node">국채</div><div class="power-arrow">→</div><div class="power-node">전쟁·수출</div></div><div class="power-source">출처: <a href="https://www.federalreservehistory.org/essays/liberty-bonds" target="_blank" rel="noopener">Federal Reserve History, Liberty Bonds</a></div></div><div class="topic-copy"><div class="eyebrow">02 · Financial Capacity</div><h3>저축을 국가신용으로 전환</h3><p class="summary">연준·재무부는 대중의 저축과 은행 신용을 국채로 모아 전쟁비용의 약 3분의 2를 조달</p><div class="topic-points"><p><b>동원</b><span>4차례 국채 발행으로 170억 달러 이상 조달</span></p><p><b>확산</b><span>약 2천만 명 참여로 국가신용의 사회적 기반 확대</span></p><p><b>통화</b><span>전후 달러가 국제결제와 외환보유의 중심으로 부상</span></p><p><b>영향</b><span>자본 공급 능력이 외교·전쟁·재건의 지렛대로 변화</span></p></div></div></article>
+  <article class="topic-detail power-detail" data-detail="power-military" role="dialog" aria-modal="true" aria-label="군사력 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><div class="power-visual"><div class="eyebrow">U.S. MILITARY OUTLAYS · 1944</div><div class="power-number">$91B</div><div class="power-caption">전쟁 이전 수억 달러 수준에서 세계적 군수·병참 체제로 급팽창</div><div class="power-flow"><div class="power-node">공장</div><div class="power-arrow">→</div><div class="power-node">병참</div><div class="power-arrow">→</div><div class="power-node">6개 대륙</div></div><div class="power-source">출처: <a href="https://www.federalreservehistory.org/essays/feds-role-during-wwii" target="_blank" rel="noopener">Federal Reserve History, WWII</a> · <a href="https://history.army.mil/portals/143/Images/Publications/catalog/30-22.pdf" target="_blank" rel="noopener">U.S. Army CMH</a></div></div><div class="topic-copy"><div class="eyebrow">03 · Military Capacity</div><h3>경제력을 전장에 투사</h3><p class="summary">1944년 군사비 910억 달러는 무기 생산뿐 아니라 병력·수송·기지·동맹 지원을 묶은 세계 규모의 작전 능력</p><div class="topic-points"><p><b>생산</b><span>항공기·전차·함선·탄약의 압도적 공급</span></p><p><b>병참</b><span>대서양과 태평양을 잇는 수송·보급망 구축</span></p><p><b>동맹</b><span>무기대여와 연합지휘로 타국 전력까지 결합</span></p><p><b>영향</b><span>경제적 우위를 전쟁 결과와 협상력으로 전환</span></p></div></div></article>
+  <article class="topic-detail power-detail" data-detail="power-institution" role="dialog" aria-modal="true" aria-label="제도력 상세 설명"><button type="button" class="topic-close" aria-label="상세 설명 닫기">×</button><div class="power-visual"><div class="eyebrow">BRETTON WOODS · JULY 1944</div><div class="power-number">44</div><div class="power-caption">참가국이 미국에서 전후 통화·금융 질서의 기본 규칙에 합의</div><div class="power-flow"><div class="power-node">달러</div><div class="power-arrow">→</div><div class="power-node">IMF</div><div class="power-arrow">+</div><div class="power-node">IBRD</div></div><div class="power-source">출처: <a href="https://www.imf.org/external/about/timeline/index.htm" target="_blank" rel="noopener">IMF History Timeline</a></div></div><div class="topic-copy"><div class="eyebrow">04 · Institutional Capacity</div><h3>우위를 규칙으로 고정</h3><p class="summary">브레튼우즈의 44개국 합의는 달러 중심 환율체제와 IMF·세계은행을 결합해 미국의 힘을 반복 가능한 국제규칙으로 전환</p><div class="topic-points"><p><b>통화</b><span>금과 연결된 달러를 환율체제의 기준으로 설정</span></p><p><b>기구</b><span>IMF·세계은행으로 안정·재건 자금의 경로 설계</span></p><p><b>규칙</b><span>개별 압박보다 회원국이 따르는 절차로 영향력 행사</span></p><p><b>영향</b><span>일시적 승리를 장기간 지속되는 질서로 제도화</span></p></div></div></article>
+</section>
+
+<!-- ===== 6. 해밀턴의 문제의식 ===== -->
+<section class="slide" aria-label="6. 해밀턴의 문제의식">
+  <div class="slide-content">
+    <div class="kicker">1789년의 진단</div>
+    <div class="split-visual">
+      <div class="archive-panel">
+        <div class="eyebrow">Alexander Hamilton · 문제의식 요약</div>
+        <div class="big-year">1790</div>
+        <div class="quote-text">독립은 선언으로 끝나지 않음</div>
+        <div class="quote-text">신용·제조업·국가역량의 독립 필요</div>
+        <p class="source-note">핵심 보고서: 공공신용 보고서 1790 · 국립은행 보고서 1790 · 제조업 보고서 1791</p>
+      </div>
+      <div class="fact-stack">
+        <div class="fact"><b>부채</b><span>독립전쟁 부채와 낮은 정부 신뢰</span></div>
+        <div class="fact"><b>통화</b><span>지역별 화폐와 불안정한 결제</span></div>
+        <div class="fact"><b>산업</b><span>영국 공산품과 해외 자본 의존</span></div>
+        <div class="fact"><b>연방</b><span>주별 이해관계를 묶을 중앙 역량 부족</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. 연방정부의 강화 ===== -->
+<section class="slide" aria-label="7. 연방정부의 강화">
+  <div class="slide-content">
+    <div class="kicker">국가 설계</div>
+    <h2>연방정부의 강화</h2>
+    <div class="federal-lab">
+      <div class="union-board" id="unionBoard">
+        <div class="union-head"><span class="eyebrow">13 STATES · ONE UNION</span><span class="union-status" id="unionStatus">분산 상태</span></div>
+        <div class="state-cloud" aria-label="미국의 초기 13개 주">
+          <span class="state-chip">NH</span><span class="state-chip">MA</span><span class="state-chip">RI</span><span class="state-chip">CT</span><span class="state-chip">NY</span><span class="state-chip">NJ</span><span class="state-chip">PA</span><span class="state-chip">DE</span><span class="state-chip">MD</span><span class="state-chip">VA</span><span class="state-chip">NC</span><span class="state-chip">SC</span><span class="state-chip">GA</span>
+        </div>
+        <button type="button" class="federal-toggle" id="federalToggle" aria-pressed="false">연방 권한 결합 실행 →</button>
+        <div class="union-result" id="unionResult">주별 재정·규제 · 불안정한 공동 대응</div>
+      </div>
+      <div class="federal-panel" id="federalPanel">
+        <div class="eyebrow">ARTICLE I · SECTION 8</div>
+        <h3>통합은 무엇을 가능하게 했는가</h3>
+        <p class="summary">헌법은 개별 주가 감당하기 어려운 권한을 연방 차원에 결합</p>
+        <div class="federal-powers">
+          <div class="power-cell"><b>과세</b><span>전국 단위 세입과 공공재정</span></div>
+          <div class="power-cell"><b>차입</b><span>미합중국 명의의 국가신용</span></div>
+          <div class="power-cell"><b>통상</b><span>주간·대외 교역의 공통 규칙</span></div>
+          <div class="power-cell"><b>공동방위</b><span>군대·해군·민병대의 동원</span></div>
+        </div>
+        <div class="federal-equation"><strong>13개의 역량</strong> → 하나의 재정·시장·방위 체계 → 국가 규모의 동원력</div>
+        <p class="source-note">근거: <a href="https://constitution.congress.gov/constitution/article-1/" target="_blank" rel="noopener">U.S. Constitution · Article I, Section 8</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. 국가신용의 확립 ===== -->
+<section class="slide" aria-label="8. 국가신용의 확립">
+  <div class="slide-content">
+    <div class="kicker">재정 기반</div>
+    <h2>국가신용의 확립</h2>
+    <div class="credit-lab">
+      <div class="credit-steps" aria-label="국가신용 형성 단계">
+        <button type="button" class="credit-step" data-credit-step="1"><span class="step-n">01</span><span><b>부채 인수</b><small>주정부의 독립전쟁 부채를 연방 부채로 통합</small></span></button>
+        <button type="button" class="credit-step" data-credit-step="2"><span class="step-n">02</span><span><b>상환 약속</b><small>기존 채권의 원리금을 새 연방채권으로 보장</small></span></button>
+        <button type="button" class="credit-step" data-credit-step="3"><span class="step-n">03</span><span><b>과세 기반</b><small>관세·소비세로 지속적인 상환 재원을 확보</small></span></button>
+        <button type="button" class="credit-reset" id="creditReset">처음부터 다시 구성 ↺</button>
+      </div>
+      <div class="credit-engine" id="creditEngine">
+        <div class="credit-meter-head"><b>국가신용 구조 완성도</b><span class="credit-score" id="creditScore">0%</span></div>
+        <div class="credit-track" aria-hidden="true"><div class="credit-fill" id="creditFill"></div></div>
+        <p class="credit-message" id="creditMessage">왼쪽 단계를 차례로 선택해 연방 신용체계를 조립</p>
+        <div class="credit-market">
+          <div class="credit-outcome"><b>연방채권</b><span>전국에서 거래되는 공통 안전자산의 형성</span></div>
+          <div class="credit-outcome"><b>민간자본</b><span>채권시장·은행·투자로 이어지는 자금순환</span></div>
+          <div class="credit-outcome"><b>국가역량</b><span>전쟁·산업·인프라에 필요한 장기자금 조달</span></div>
+        </div>
+        <div class="credit-conclusion">부채를 없앤 것이 아니라 신뢰 가능한 국가 약속으로 전환</div>
+        <p class="source-note">근거: <a href="https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001" target="_blank" rel="noopener">Hamilton · First Report on Public Credit, 1790</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. 국립은행의 설립 ===== -->
+<section class="slide" aria-label="9. 국립은행의 설립">
+  <div class="slide-content">
+    <div class="kicker">1791~1811년 · 금융 인프라</div>
+    <h2>제1 미국은행</h2>
+    <div class="bank-wrap">
+      <div class="bank-building" aria-label="제1 미국은행 건축 도식">
+        <div class="bank-pediment"></div>
+        <div class="bank-name">BANK OF THE UNITED STATES</div>
+        <div class="columns"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="bank-base"></div>
+        <div class="stat-band">
+          <div class="stat"><b>1791</b><span>영업 시작</span></div>
+          <div class="stat"><b>20년</b><span>연방 헌장</span></div>
+          <div class="stat"><b>$1천만</b><span>자본금</span></div>
+        </div>
+      </div>
+      <div class="fact-stack">
+        <div class="fact"><b>보관</b><span>연방정부 세입과 공공자금의 안전한 관리</span></div>
+        <div class="fact"><b>결제</b><span>전국 지점망과 널리 통용되는 은행권</span></div>
+        <div class="fact"><b>신용</b><span>정부·상인·기업 대상 대출과 자금 이동</span></div>
+        <p class="source-note">자료: <a href="https://www.federalreservehistory.org/essays/first-bank-of-the-us" target="_blank" rel="noopener">Federal Reserve History · The First Bank of the United States</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. 제조업의 보호 ===== -->
+<section class="slide" aria-label="10. 제조업의 보호">
+  <div class="slide-content">
+    <div class="kicker">1791년 제조업 보고서</div>
+    <h2>후발국의 산업 전략</h2>
+    <div class="flowline">
+      <div class="flow-node" data-n="1">수입품 관세<span class="source-note">가격 격차 완화</span></div>
+      <div class="flow-node" data-n="2">제조업 육성<span class="source-note">기술·설비 축적</span></div>
+      <div class="flow-node" data-n="3">내수시장 확대<span class="source-note">생산 규모 증가</span></div>
+      <div class="flow-node" data-n="4">해외시장 진출<span class="source-note">경쟁력의 외부 확장</span></div>
+    </div>
+    <p class="lede">핵심 논리: 자유경쟁 이전의 생산역량 확보</p>
+  </div>
+</section>
+
+<!-- ===== 11. 해밀턴 체제 ===== -->
+<section class="slide" aria-label="11. 해밀턴 체제">
+  <div class="slide-content">
+    <div class="kicker">국가의 진로 논쟁</div>
+    <h2>해밀턴 대 제퍼슨</h2>
+    <div class="debate">
+      <div class="debate-side">
+        <div class="eyebrow">Hamilton</div><h3>상공업 공화국</h3>
+        <p>강한 연방 · 국립은행 · 제조업 · 적극적 헌법 해석</p>
+        <p><b>우려:</b> 영국 의존과 취약한 국가신용</p>
+      </div>
+      <div class="versus">VS</div>
+      <div class="debate-side">
+        <div class="eyebrow">Jefferson</div><h3>농업 공화국</h3>
+        <p>주권 강조 · 가족농 · 분산 금융 · 엄격한 헌법 해석</p>
+        <p><b>우려:</b> 금융 독점과 도시 엘리트의 지배</p>
+      </div>
+    </div>
+    <p class="source-note">자료: <a href="https://www.federalreservehistory.org/essays/before-the-fed" target="_blank" rel="noopener">Federal Reserve History · Before the Fed</a></p>
+  </div>
+</section>
+
+<!-- ===== 12. 남북 경제의 대립 ===== -->
+<section class="slide" aria-label="12. 남북 경제의 대립">
+  <div class="slide-content">
+    <div class="kicker">1861년 강의용 지역 도식</div>
+    <h2>북부·남부·경계주의 위치</h2>
+    <div class="map-layout">
+      <div class="tile-map" role="img" aria-label="1861년 북부 자유주, 남부 연합, 경계주의 강의용 지도">
+        <div class="state free" style="grid-column:11;grid-row:1">ME</div><div class="state free" style="grid-column:10;grid-row:2">NH</div><div class="state free" style="grid-column:9;grid-row:2">VT</div><div class="state free" style="grid-column:11;grid-row:2">MA</div>
+        <div class="state free" style="grid-column:11;grid-row:3">RI</div><div class="state free" style="grid-column:10;grid-row:3">CT</div><div class="state free" style="grid-column:9;grid-row:3">NY</div><div class="state free" style="grid-column:9;grid-row:4">PA</div><div class="state free" style="grid-column:10;grid-row:4">NJ</div>
+        <div class="state border" style="grid-column:10;grid-row:5">DE</div><div class="state border" style="grid-column:9;grid-row:5">MD</div><div class="state confed" style="grid-column:8;grid-row:5">VA</div><div class="state confed" style="grid-column:9;grid-row:6">NC</div><div class="state confed" style="grid-column:9;grid-row:7">SC</div>
+        <div class="state free" style="grid-column:7;grid-row:4">OH</div><div class="state free" style="grid-column:6;grid-row:4">IN</div><div class="state free" style="grid-column:5;grid-row:4">IL</div><div class="state free" style="grid-column:6;grid-row:3">MI</div><div class="state free" style="grid-column:5;grid-row:2">WI</div><div class="state free" style="grid-column:4;grid-row:2">MN</div><div class="state free" style="grid-column:4;grid-row:3">IA</div>
+        <div class="state border" style="grid-column:7;grid-row:5">KY</div><div class="state confed" style="grid-column:7;grid-row:6">TN</div><div class="state confed" style="grid-column:8;grid-row:6">GA</div><div class="state confed" style="grid-column:8;grid-row:7">FL</div><div class="state confed" style="grid-column:7;grid-row:7">AL</div><div class="state confed" style="grid-column:6;grid-row:7">MS</div>
+        <div class="state border" style="grid-column:4;grid-row:5">MO</div><div class="state confed" style="grid-column:5;grid-row:6">AR</div><div class="state confed" style="grid-column:5;grid-row:7">LA</div><div class="state confed" style="grid-column:3;grid-row:7">TX</div><div class="state free" style="grid-column:3;grid-row:4">KS</div>
+        <div class="state free" style="grid-column:1;grid-row:4">CA</div><div class="state free" style="grid-column:1;grid-row:2">OR</div><div class="state territory" style="grid-column:2;grid-row:3 / span 3">서부 영토</div>
+      </div>
+      <div class="map-legend">
+        <div class="legend-item"><i class="legend-swatch free"></i><span><b>북부·서부 자유주 19</b> · 노예제 금지·연방 잔류</span></div>
+        <div class="legend-item"><i class="legend-swatch confed"></i><span><b>남부 연합 11</b> · 1860~1861년 연방 탈퇴</span></div>
+        <div class="legend-item"><i class="legend-swatch border"></i><span><b>경계주 4</b> · 노예주이나 연방 잔류</span></div>
+        <p class="source-note">주 약어 위치를 단순화한 타일 지도</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 13. 남북전쟁의 경제성 ===== -->
+<section class="slide" aria-label="13. 남북전쟁의 경제성">
+  <div class="slide-content">
+    <div class="kicker">지도 읽기</div>
+    <h2>남북 경계의 실제</h2>
+    <div class="card-grid c3">
+      <div class="boundary-card"><b>상징적 경계</b><span>메이슨·딕슨선: 펜실베이니아와 메릴랜드 경계의 역사적 상징</span></div>
+      <div class="boundary-card"><b>군사적 경계</b><span>오하이오강과 포토맥강: 북부와 남부 전선의 주요 축</span></div>
+      <div class="boundary-card"><b>정치적 회색지대</b><span>델라웨어·메릴랜드·켄터키·미주리: 노예주이면서 연방 잔류</span></div>
+    </div>
+    <ul class="bullets">
+      <li>핵심: 남북전쟁의 경계는 한 줄이 아니라 주별 정치 선택</li>
+      <li>웨스트버지니아: 버지니아에서 분리되어 1863년 연방 가입</li>
+    </ul>
+    <p class="source-note">자료: <a href="https://www.loc.gov/exhibits/civil-war-in-america/prologue.html" target="_blank" rel="noopener">Library of Congress · The Civil War in America: Prologue</a></p>
+  </div>
+</section>
+
+<!-- ===== 14. 북부의 승리 ===== -->
+<section class="slide" aria-label="14. 북부의 승리">
+  <div class="slide-content">
+    <div class="kicker">전쟁 수행 능력</div>
+    <h2>북부 우위의 물적 기반</h2>
+    <div class="balance-bars">
+      <div class="bar-row"><span>인구</span><div class="bar"><i style="width:72%"></i></div><b>북부 우위</b></div>
+      <div class="bar-row"><span>공업 생산</span><div class="bar"><i style="width:90%"></i></div><b>압도적</b></div>
+      <div class="bar-row"><span>철도망</span><div class="bar"><i style="width:70%"></i></div><b>북부 우위</b></div>
+      <div class="bar-row south"><span>면화 수출</span><div class="bar"><i style="width:92%"></i></div><b>남부 우위</b></div>
+    </div>
+    <p class="lede">전쟁의 교훈: 생산·물류·금융·인구의 장기 동원력</p>
+  </div>
+</section>
+
+<!-- ===== 15. 단일시장의 완성 ===== -->
+<section class="slide" aria-label="15. 단일시장의 완성">
+  <div class="slide-content">
+    <div class="kicker">대륙 통합</div>
+    <h2>단일시장의 완성</h2>
+    <ul class="bullets">
+      <li>철도: 원료·제품·인구의 전국 이동</li>
+      <li>전신: 가격·주문·정보의 실시간 연결</li>
+      <li>표준화: 시간·규격·계약의 통일</li>
+      <li>결과: 대륙 규모 생산·유통망</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 16. 제도와 성장의 순환 ===== -->
+<section class="slide" aria-label="16. 제도와 성장의 순환">
+  <div class="slide-content">
+    <div class="kicker">성장 메커니즘</div>
+    <h2>제도와 성장의 순환</h2>
+    <div class="card-grid c4">
+      <div class="card"><div class="n">1</div><div class="t">국가역량</div><div class="d">재정·법·행정</div></div>
+      <div class="card"><div class="n">2</div><div class="t">산업화</div><div class="d">생산·고용·혁신</div></div>
+      <div class="card"><div class="n">3</div><div class="t">세수 확대</div><div class="d">정부 재원의 증가</div></div>
+      <div class="card"><div class="n">4</div><div class="t">재투자</div><div class="d">인프라·교육·국방</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 17. 제도 설계 실습 ===== -->
+<section class="slide" aria-label="17. 제도 설계 실습">
+  <div class="slide-content">
+    <div class="kicker">실습 1 · 5분</div>
+    <h2>제도 설계 실습</h2>
+    <div class="prompt-card">
+      <div class="label">모둠 토론</div>
+      <blockquote id="pt-1">해밀턴의 정책 가운데 현대 국가 성장에 가장 중요한 정책 하나를 골라줘.
+- 선택: 연방 강화·국가신용·국립은행·보호관세
+- 근거: 기대 효과 1개·부작용 1개
+- 결론: 30초 발표문</blockquote>
+      <button type="button" class="copy-btn" data-copy-target="pt-1" aria-label="제도 설계 실습문 복사">복사</button>
+    </div>
+    <button type="button" class="timer-chip" data-minutes="5" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">05:00</span> 선택·토론·발표 <span class="state">정지</span></button>
+  </div>
+</section>
+
+<!-- ===== 18. 중간 휴식 ===== -->
+<section class="slide dark" aria-label="18. 중간 휴식">
+  <div class="slide-content" style="align-items:center;text-align:center">
+    <div class="kicker">중간 휴식</div>
+    <button type="button" class="break-big" data-minutes="10" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋" aria-label="휴식 타이머 10분"><span class="time">10:00</span></button>
+    <p class="lede">10분 뒤 세계 패권의 완성 시작</p>
+  </div>
+</section>
+
+<!-- ===== 19. 후반부 전환 ===== -->
+<section class="slide chapter-slide" aria-label="19. 후반부 전환">
+  <div class="slide-content">
+    <div class="kicker">2부 · 세계 패권</div>
+    <h2>후반부 전환</h2>
+    <div class="card-grid c3">
+      <div class="card"><div class="t">대륙국가</div><div class="d">국내시장과 산업의 통합</div></div>
+      <div class="card"><div class="t">세계강국</div><div class="d">해외시장과 군사력의 확대</div></div>
+      <div class="card"><div class="t">질서설계자</div><div class="d">국제규칙과 기구의 구축</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 20. 산업생산의 우위 ===== -->
+<section class="slide" aria-label="20. 산업생산의 우위">
+  <div class="slide-content">
+    <div class="kicker">제2차 산업혁명</div>
+    <h2>산업생산의 우위</h2>
+    <div class="card-grid c4">
+      <div class="card"><div class="t">철강</div><div class="d">철도·도시·군수</div></div>
+      <div class="card"><div class="t">석유</div><div class="d">에너지·화학·운송</div></div>
+      <div class="card"><div class="t">전기</div><div class="d">공장·도시·통신</div></div>
+      <div class="card"><div class="t">자동차</div><div class="d">대량생산·대량소비</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 21. 대기업의 등장 ===== -->
+<section class="slide" aria-label="21. 대기업의 등장">
+  <div class="slide-content">
+    <div class="kicker">규모의 경제</div>
+    <h2>대기업의 등장</h2>
+    <ul class="bullets">
+      <li>수직통합: 원료·생산·유통의 기업 내부 결합</li>
+      <li>트러스트: 경쟁기업의 결합과 시장지배</li>
+      <li>대량생산: 단가 하락과 소비시장 확대</li>
+      <li>경영혁신: 소유와 전문경영의 분화</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 22. 국가의 시장 규율 ===== -->
+<section class="slide" aria-label="22. 국가의 시장 규율">
+  <div class="slide-content">
+    <div class="kicker">독점과 규제</div>
+    <h2>국가의 시장 규율</h2>
+    <div class="card-grid c2">
+      <div class="card bad"><div class="t">독점의 비용</div><div class="d">가격 통제·경쟁자 배제·정치 영향력</div></div>
+      <div class="card good"><div class="t">공공의 대응</div><div class="d">셔먼법·기업 분할·시장규칙 강화</div></div>
+    </div>
+    <p class="lede">핵심 과제: 규모의 효율과 경쟁의 균형</p>
+  </div>
+</section>
+
+<!-- ===== 23. 미서전쟁의 전환 ===== -->
+<section class="slide" aria-label="23. 미서전쟁의 전환">
+  <div class="slide-content">
+    <div class="kicker">1898년</div>
+    <h2>미서전쟁의 전환</h2>
+    <div class="card-grid c3">
+      <div class="card"><div class="t">카리브해</div><div class="d">쿠바 문제와 지역 영향력</div></div>
+      <div class="card"><div class="t">태평양</div><div class="d">필리핀·괌과 해양 진출</div></div>
+      <div class="card"><div class="t">세계정치</div><div class="d">대륙국가의 해외 팽창</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 24. 제국주의의 양면성 ===== -->
+<section class="slide" aria-label="24. 제국주의의 양면성">
+  <div class="slide-content">
+    <div class="kicker">가치와 현실</div>
+    <h2>제국주의의 양면성</h2>
+    <div class="card-grid c2">
+      <div class="card good"><div class="t">공식 가치</div><div class="d">자유·민주주의·민족자결</div></div>
+      <div class="card bad"><div class="t">권력 현실</div><div class="d">해외 지배·군사 개입·경제 종속</div></div>
+    </div>
+    <p class="lede">미국 패권의 지속적 긴장</p>
+  </div>
+</section>
+
+<!-- ===== 25. 제1차 세계대전의 기회 ===== -->
+<section class="slide" aria-label="25. 제1차 세계대전의 기회">
+  <div class="slide-content">
+    <div class="kicker">1914~1918년</div>
+    <h2>제1차 세계대전의 기회</h2>
+    <ul class="bullets">
+      <li>유럽: 생산시설·인력·재정의 소진</li>
+      <li>미국: 식량·무기·공산품의 수출 확대</li>
+      <li>금융: 연합국 대출과 달러 거래의 증가</li>
+      <li>결과: 경제 중심의 대서양 이동</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 26. 채무국에서 채권국으로 ===== -->
+<section class="slide" aria-label="26. 채무국에서 채권국으로">
+  <div class="slide-content">
+    <div class="kicker">금융 패권</div>
+    <h2>채무국에서 채권국으로</h2>
+    <div class="card-grid c2">
+      <div class="card bad"><div class="t">전쟁 이전</div><div class="d">유럽 자본 의존·대외 채무</div></div>
+      <div class="card good"><div class="t">전쟁 이후</div><div class="d">연합국 채권 보유·뉴욕 금융 부상</div></div>
+    </div>
+    <p class="lede">변화: 자본 수입국 → 자본 공급국</p>
+  </div>
+</section>
+
+<!-- ===== 27. 윌슨주의의 등장 ===== -->
+<section class="slide" aria-label="27. 윌슨주의의 등장">
+  <div class="slide-content">
+    <div class="kicker">질서 구상</div>
+    <h2>윌슨주의의 등장</h2>
+    <div class="card-grid c3">
+      <div class="card"><div class="t">민족자결</div><div class="d">민족 단위 정치공동체의 원칙</div></div>
+      <div class="card"><div class="t">국제연맹</div><div class="d">상설 다자협의 기구의 구상</div></div>
+      <div class="card"><div class="t">집단안보</div><div class="d">침략에 대한 공동 대응</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 28. 고립주의의 한계 ===== -->
+<section class="slide" aria-label="28. 고립주의의 한계">
+  <div class="slide-content">
+    <div class="kicker">전간기</div>
+    <h2>고립주의의 한계</h2>
+    <div class="card-grid c2">
+      <div class="card"><div class="t">정치적 후퇴</div><div class="d">국제연맹 불참·유럽 개입 회피</div></div>
+      <div class="card"><div class="t">경제적 연결</div><div class="d">대출·무역·투자의 세계적 확대</div></div>
+    </div>
+    <p class="lede">모순: 정치적 거리두기와 경제적 상호의존</p>
+  </div>
+</section>
+
+<!-- ===== 29. 대공황의 충격 ===== -->
+<section class="slide" aria-label="29. 대공황의 충격">
+  <div class="slide-content">
+    <div class="kicker">1929년 이후</div>
+    <h2>대공황의 충격</h2>
+    <div class="card-grid c4">
+      <div class="card"><div class="n">1</div><div class="t">금융 붕괴</div><div class="d">주가·은행의 연쇄 위기</div></div>
+      <div class="card"><div class="n">2</div><div class="t">생산 감소</div><div class="d">투자·소비·무역의 위축</div></div>
+      <div class="card"><div class="n">3</div><div class="t">대량실업</div><div class="d">생활 기반과 신뢰의 붕괴</div></div>
+      <div class="card"><div class="n">4</div><div class="t">세계 확산</div><div class="d">보호무역과 통화 갈등</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 30. 뉴딜의 국가역량 ===== -->
+<section class="slide" aria-label="30. 뉴딜의 국가역량">
+  <div class="slide-content">
+    <div class="kicker">위기 대응</div>
+    <h2>뉴딜의 국가역량</h2>
+    <ul class="bullets">
+      <li>구제: 실업자·농민·취약계층 지원</li>
+      <li>회복: 공공사업과 유효수요 확대</li>
+      <li>개혁: 금융감독·예금보호·노동권 강화</li>
+      <li>유산: 연방정부의 경제관리 역할 확대</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 31. 제2차 세계대전의 동원 ===== -->
+<section class="slide" aria-label="31. 제2차 세계대전의 동원">
+  <div class="slide-content">
+    <div class="kicker">1939~1945년</div>
+    <h2>제2차 세계대전의 동원</h2>
+    <div class="card-grid c3">
+      <div class="card"><div class="t">산업 동원</div><div class="d">민간 공장의 군수 생산 전환</div></div>
+      <div class="card"><div class="t">과학 동원</div><div class="d">정부·대학·기업의 연구 결합</div></div>
+      <div class="card"><div class="t">인력 동원</div><div class="d">여성·이민자·청년의 대규모 참여</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 32. 민주주의의 병기창 ===== -->
+<section class="slide" aria-label="32. 민주주의의 병기창">
+  <div class="slide-content">
+    <div class="kicker">생산력의 무기화</div>
+    <h2>민주주의의 병기창</h2>
+    <ul class="bullets">
+      <li>무기대여법: 연합국의 전쟁 수행 지원</li>
+      <li>대량생산: 함선·항공기·차량의 압도적 공급</li>
+      <li>후방 안전: 본토 피해 없이 유지된 생산 기반</li>
+      <li>전략 효과: 경제력의 군사력 전환</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 33. 브레튼우즈 체제 ===== -->
+<section class="slide" aria-label="33. 브레튼우즈 체제">
+  <div class="slide-content">
+    <div class="kicker">1944년 7월 · 44개국</div>
+    <h2>브레튼우즈의 설계</h2>
+    <div class="timeline">
+      <div class="time-event"><b>대공황</b><span>통화·무역 갈등의 기억</span></div>
+      <div class="time-event"><b>달러</b><span>금 1온스당 35달러의 중심축</span></div>
+      <div class="time-event"><b>고정환율</b><span>각국 통화의 달러 연계</span></div>
+      <div class="time-event"><b>IMF</b><span>환율 안정과 단기 지원</span></div>
+      <div class="time-event"><b>IBRD</b><span>전후 복구와 개발 금융</span></div>
+    </div>
+    <p class="source-note">자료: <a href="https://www.archives.gov/research/guide-fed-records/groups/043.html#43.3.7" target="_blank" rel="noopener">미국 국립문서기록관리청 · 브레튼우즈 회의 기록</a> · 핵심 전환: 힘의 우위 → 규칙의 우위</p>
+  </div>
+</section>
+
+<!-- ===== 34. 미국 중심 국제질서 ===== -->
+<section class="slide" aria-label="34. 미국 중심 국제질서">
+  <div class="slide-content">
+    <div class="kicker">패권의 제도화</div>
+    <h2>미국 중심 국제질서</h2>
+    <div class="card-grid c4">
+      <div class="card"><div class="t">UN</div><div class="d">정치·안보 협의</div></div>
+      <div class="card"><div class="t">GATT</div><div class="d">무역 자유화 규칙</div></div>
+      <div class="card"><div class="t">동맹</div><div class="d">집단방위와 기지망</div></div>
+      <div class="card"><div class="t">달러</div><div class="d">결제·준비·금융의 중심</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 35. 패권 설계 실습 ===== -->
+<section class="slide" aria-label="35. 패권 설계 실습">
+  <div class="slide-content">
+    <div class="kicker">실습 2 · 5분</div>
+    <h2>패권 설계 실습</h2>
+    <div class="prompt-card">
+      <div class="label">개인 선택·짝 토론</div>
+      <blockquote id="pt-2">패권의 결정적 조건 하나를 골라줘.
+- 선택: 생산력·금융력·군사력·제도력
+- 근거: 미국 역사 사례 2개
+- 반론: 다른 조건이 더 중요하다는 주장 1개
+- 결론: 한 문장</blockquote>
+      <button type="button" class="copy-btn" data-copy-target="pt-2" aria-label="패권 설계 실습문 복사">복사</button>
+    </div>
+    <button type="button" class="timer-chip" data-minutes="5" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">05:00</span> 선택·근거·반론 <span class="state">정지</span></button>
+  </div>
+</section>
+
+<!-- ===== 36. 핵심 정리와 마침 ===== -->
+<section class="slide title-slide closing-slide" aria-label="36. 핵심 정리와 마침">
+  <div class="slide-content">
+    <div class="kicker">글로벌시대의 국제정치 · 10주차</div>
+    <h1>핵심 정리와 마침</h1>
+    <p class="lede">국가 설계 → 산업 통합 → 전쟁 동원 → 국제질서 설계</p>
+    <div class="meta-row"><span>생산력</span><span>금융력</span><span>군사력</span><span>제도력</span></div>
+  </div>
+</section>
+
+</main>
+
+<div id="progress" aria-hidden="true"></div>
+<nav id="nav" aria-label="슬라이드 이동">
+  <a href="index.html" target="_blank" rel="noopener" class="hide-sm" aria-label="강의 홈 새 창으로 열기">⌂ 홈</a>
+  <button type="button" id="navPrev" aria-label="이전 슬라이드">◀</button>
+  <span id="counter" aria-live="polite">1 / 36</span>
+  <button type="button" id="navNext" aria-label="다음 슬라이드">▶</button>
+  <span class="grow"></span>
+  <span class="hint hide-sm">← → 이동 · S 쉿 · G 전체보기 · P PDF</span>
+  <button type="button" id="attentionBtn" aria-label="쉿 집중 신호 재생">쉿~~~~</button>
+  <button type="button" id="gridBtn" aria-haspopup="dialog" aria-controls="gridOverlay">▦ 전체 보기</button>
+  <button type="button" id="printBtn" class="hide-sm">⎙ PDF 저장</button>
+</nav>
+
+<div class="grid-overlay" id="gridOverlay" role="dialog" aria-modal="true" aria-label="전체 슬라이드 보기">
+  <div class="grid-head"><h2>전체 보기</h2><button type="button" id="gridClose">닫기 (Esc)</button></div>
+  <div class="grid-list" id="gridList"></div>
+</div>
+
+<div class="attention-cue" id="attentionCue" role="status" aria-live="assertive" aria-label="집중 신호">
+  <div class="attention-card"><div class="attention-rings"></div><div class="attention-word">쉿<span class="attention-wave">~~~~</span></div><div class="attention-sub">시선은 화면으로</div></div>
+</div>
+
+<script>
+(function(){
+  /* ▼ 내 강의 고유 접두사로 변경 (예: 'ai0927_') */
+  var LS = 'mykit_';
+
+  var stage = document.getElementById('stage');
+  var slides = Array.prototype.slice.call(stage.querySelectorAll(':scope > section.slide'));
+  var total = slides.length;
+  slides.forEach(function(slide,n){
+    var label = slide.getAttribute('aria-label') || '';
+    slide.setAttribute('aria-label',(n + 1) + '. ' + label.replace(/^\d+\.\s*/,''));
+  });
+  var STORAGE_KEY = LS + 'slide';
+  var idx = 0;
+
+  function lsGet(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v){ try { localStorage.setItem(k, v); } catch (e) { /* 저장 불가 환경 · 무시 */ } }
+
+  /* 시작 위치: ?slide=N 우선, 없으면 마지막으로 본 장 */
+  var params = new URLSearchParams(location.search);
+  var qSlide = parseInt(params.get('slide'), 10);
+  if (!isNaN(qSlide) && qSlide >= 1 && qSlide <= total) {
+    idx = qSlide - 1;
+  } else {
+    var saved = parseInt(lsGet(STORAGE_KEY), 10);
+    if (!isNaN(saved) && saved >= 0 && saved < total) idx = saved;
+  }
+
+  var progressEl = document.getElementById('progress');
+  var counterEl = document.getElementById('counter');
+  var navPrev = document.getElementById('navPrev');
+  var navNext = document.getElementById('navNext');
+  var gridOverlay = document.getElementById('gridOverlay');
+  var gridList = document.getElementById('gridList');
+  var minis = [];
+  var lastFocus = null;
+  var attentionCue = document.getElementById('attentionCue');
+  var attentionTimer = null;
+  var attentionAudio = null;
+
+  function playShh(){
+    clearTimeout(attentionTimer);
+    attentionCue.classList.remove('active');
+    void attentionCue.offsetWidth;
+    attentionCue.classList.add('active');
+    attentionTimer = setTimeout(function(){ attentionCue.classList.remove('active'); }, 1750);
+    try {
+      var AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      if (!attentionAudio) attentionAudio = new AudioCtx();
+      if (attentionAudio.state === 'suspended') attentionAudio.resume();
+      var duration = 1.45;
+      var buffer = attentionAudio.createBuffer(1, Math.floor(attentionAudio.sampleRate * duration), attentionAudio.sampleRate);
+      var data = buffer.getChannelData(0);
+      for (var i=0;i<data.length;i++) {
+        var t = i / data.length;
+        var envelope = Math.sin(Math.PI * Math.min(1,t * 4)) * Math.pow(1 - t,.65);
+        data[i] = (Math.random() * 2 - 1) * envelope;
+      }
+      var source = attentionAudio.createBufferSource();
+      var high = attentionAudio.createBiquadFilter();
+      var band = attentionAudio.createBiquadFilter();
+      var gain = attentionAudio.createGain();
+      high.type = 'highpass'; high.frequency.value = 900;
+      band.type = 'bandpass'; band.frequency.value = 3200; band.Q.value = .55;
+      gain.gain.setValueAtTime(.0001,attentionAudio.currentTime);
+      gain.gain.exponentialRampToValueAtTime(.23,attentionAudio.currentTime + .08);
+      gain.gain.exponentialRampToValueAtTime(.0001,attentionAudio.currentTime + duration);
+      source.buffer = buffer;
+      source.connect(high); high.connect(band); band.connect(gain); gain.connect(attentionAudio.destination);
+      source.start();
+    } catch (err) { /* 시각 신호는 계속 작동 */ }
+  }
+
+  function show(i){
+    idx = Math.max(0, Math.min(total - 1, i));
+    slides.forEach(function(s, n){
+      s.classList.toggle('active', n === idx);
+      s.setAttribute('aria-hidden', n === idx ? 'false' : 'true');
+    });
+    progressEl.style.width = ((idx + 1) / total * 100) + '%';
+    counterEl.textContent = (idx + 1) + ' / ' + total;
+    navPrev.disabled = idx === 0;
+    navNext.disabled = idx === total - 1;
+    minis.forEach(function(m, n){ m.classList.toggle('current', n === idx); });
+    lsSet(STORAGE_KEY, String(idx));
+  }
+
+  /* 초반 인물 지도와 개별 인물 탐색 */
+  stage.querySelectorAll('.founder-card').forEach(function(card){
+    card.addEventListener('click',function(){ show(parseInt(card.dataset.jump,10) - 1); });
+  });
+  stage.querySelectorAll('.founder-slide').forEach(function(slide){
+    var panel = slide.querySelector('.founder-panel');
+    slide.querySelectorAll('.founder-tab').forEach(function(tab){
+      tab.addEventListener('click',function(){
+        slide.querySelectorAll('.founder-tab').forEach(function(t){ t.classList.toggle('active',t === tab); });
+        panel.querySelector('h3').textContent = tab.dataset.title;
+        panel.querySelector('p').textContent = tab.dataset.copy;
+      });
+    });
+  });
+
+  function scaleMinis(){
+    minis.forEach(function(m){ m.firstChild.style.transform = 'scale(' + (m.clientWidth / 960) + ')'; });
+  }
+  window.addEventListener('resize', function(){ if (gridOverlay.classList.contains('open')) scaleMinis(); });
+  function openGrid(){
+    lastFocus = document.activeElement;
+    gridOverlay.classList.add('open');
+    scaleMinis();
+    var c = minis[idx];
+    if (c) { c.scrollIntoView({block:'center'}); c.focus(); }
+  }
+  function closeGrid(){
+    gridOverlay.classList.remove('open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  /* 4페이지: 주제 카드 선택 → 역사 장면과 상세 설명 */
+  var topicLastFocus = null;
+  function closeTopic(){
+    var open = stage.querySelector('.topic-detail.open');
+    if (!open) return false;
+    open.classList.remove('open');
+    open.setAttribute('aria-hidden', 'true');
+    if (topicLastFocus && topicLastFocus.focus) topicLastFocus.focus();
+    return true;
+  }
+  stage.querySelectorAll('.topic-card').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      closeTopic();
+      topicLastFocus = btn;
+      var detail = stage.querySelector('[data-detail="' + btn.dataset.topic + '"]');
+      if (!detail) return;
+      detail.classList.add('open');
+      detail.setAttribute('aria-hidden', 'false');
+      detail.querySelector('.topic-close').focus();
+    });
+  });
+  stage.querySelectorAll('.topic-detail').forEach(function(detail){
+    detail.setAttribute('aria-hidden', 'true');
+    detail.querySelector('.topic-close').addEventListener('click', closeTopic);
+  });
+
+  /* 7페이지: 분산된 13개 주 → 통합된 연방 전환 */
+  var federalToggle = document.getElementById('federalToggle');
+  var unionBoard = document.getElementById('unionBoard');
+  var federalPanel = document.getElementById('federalPanel');
+  var unionStatus = document.getElementById('unionStatus');
+  var unionResult = document.getElementById('unionResult');
+  if (federalToggle) {
+    federalToggle.addEventListener('click', function(){
+      var unified = !unionBoard.classList.contains('is-unified');
+      unionBoard.classList.toggle('is-unified', unified);
+      federalPanel.classList.toggle('is-unified', unified);
+      federalToggle.setAttribute('aria-pressed', unified ? 'true' : 'false');
+      federalToggle.textContent = unified ? '분산 상태로 되돌리기 ↺' : '연방 권한 결합 실행 →';
+      unionStatus.textContent = unified ? '연방 활성' : '분산 상태';
+      unionResult.textContent = unified ? '공통 재정·시장·방위 · 국가 규모의 공동 대응' : '주별 재정·규제 · 불안정한 공동 대응';
+    });
+  }
+
+  /* 8페이지: 국가신용 형성 단계 조립 */
+  var creditEngine = document.getElementById('creditEngine');
+  var creditScore = document.getElementById('creditScore');
+  var creditFill = document.getElementById('creditFill');
+  var creditMessage = document.getElementById('creditMessage');
+  var creditSteps = Array.prototype.slice.call(stage.querySelectorAll('.credit-step'));
+  var creditReset = document.getElementById('creditReset');
+  var creditMessages = [
+    '왼쪽 단계를 차례로 선택해 연방 신용체계를 조립',
+    '흩어진 주정부 채무가 미합중국의 공동 의무로 결합',
+    '상환 약속이 채권 보유자의 신뢰와 전국 채권시장을 형성',
+    '과세 기반이 약속의 지속성을 뒷받침하며 공공신용을 완성'
+  ];
+  function setCreditStep(step){
+    if (!creditEngine) return;
+    creditEngine.classList.remove('step-1','step-2','step-3');
+    if (step > 0) creditEngine.classList.add('step-' + step);
+    creditSteps.forEach(function(btn){ btn.classList.toggle('done', Number(btn.dataset.creditStep) <= step); });
+    var score = step === 0 ? 0 : step === 1 ? 34 : step === 2 ? 67 : 100;
+    creditScore.textContent = score + '%';
+    creditFill.style.width = score + '%';
+    creditMessage.textContent = creditMessages[step];
+  }
+  creditSteps.forEach(function(btn){ btn.addEventListener('click', function(e){ e.stopPropagation(); setCreditStep(Number(btn.dataset.creditStep)); }); });
+  if (creditReset) creditReset.addEventListener('click', function(e){ e.stopPropagation(); setCreditStep(0); });
+
+  /* 9~36페이지: 요소별 역사 맥락을 여는 클릭 탐색 체계 */
+  var webStories = {
+    9:{selector:'.fact',items:[['공공자금의 결절점','세입을 한곳에 모아 정부 지출과 부채상환을 예측 가능한 체계로 전환'],['전국 결제망','지점과 은행권이 지역별 결제의 단절을 줄여 하나의 시장 형성을 지원'],['신용의 증폭','정부 예금을 기반으로 상인과 기업에 신용을 공급하며 재정과 민간투자를 연결']]},
+    10:{selector:'.flow-node',items:[['가격 장벽','관세로 수입품과 국산품의 가격 격차를 줄여 후발 제조업에 학습 시간을 제공'],['생산역량','보호 기간에 설비·숙련·기술을 축적해 반복 생산의 기반을 형성'],['시장 규모','도시화와 소득 증가가 국내 수요를 키워 대량생산의 조건을 조성'],['외부 확장','내수에서 얻은 규모와 기술을 바탕으로 해외시장 경쟁에 진입']]},
+    11:{selector:'.debate-side',items:[['해밀턴의 국가','취약한 신생국을 신용·제조업·연방 행정으로 결속하는 상공업 공화국 구상'],['제퍼슨의 경계','집중된 금융과 행정부가 자유를 침해할 수 있다는 농업 공화국의 견제 논리']]},
+    12:{selector:'.legend-item',items:[['자유주 19','산업·철도·인구가 집중된 북부와 서부가 연방의 생산·병참 기반을 담당'],['남부 연합 11','노예제와 면화 수출경제를 지키려 연방에서 이탈한 정치적 선택'],['경계주 4','노예주이면서 연방에 남아 전선·수도 방어·병력 동원에서 핵심 위치']]},
+    13:{selector:'.boundary-card',items:[['상징의 경계','메이슨·딕슨선은 노예제와 지역 정체성을 나누는 역사적 상징으로 기능'],['전쟁의 축','오하이오강과 포토맥강은 병력·물자·수도를 둘러싼 실제 작전 공간'],['선택의 경계','경계주는 경제구조보다 정치적 선택이 전쟁 지도를 결정했음을 보여주는 사례']]},
+    14:{selector:'.bar-row',items:[['인구의 우위','더 큰 인구는 병력뿐 아니라 공장 노동자·납세자·소비자의 지속적 공급을 의미'],['산업의 우위','철강·무기·의류·식량을 장기간 대량 공급할 수 있는 생산 기반'],['철도의 우위','병력과 보급품을 여러 전선으로 빠르게 이동시키는 대륙 병참망'],['남부의 면화','수출 경쟁력은 강했지만 단일 품목 의존이 장기전의 종합 동원력을 대신하지 못함']]},
+    15:{selector:'.bullets li',items:[['철도의 공간 압축','지역 시장을 전국 생산망으로 묶어 원료·제품·인구의 이동비용을 하락'],['전신의 시간 압축','가격과 주문이 빠르게 전달되며 재고·금융·운송의 조정 속도가 상승'],['표준의 통합','시간대·규격·계약이 통일되며 대륙 규모 거래의 불확실성을 축소'],['단일시장의 효과','기업은 더 큰 생산 규모를 확보하고 소비자는 전국 유통망에 편입']]},
+    16:{selector:'.card',items:[['국가역량','법·행정·재정이 시장의 공통 기반과 장기투자 조건을 제공'],['산업화','생산·고용·혁신이 확대되며 민간 부와 기술 기반이 성장'],['세수 확대','성장한 경제가 정부에 더 큰 재정 자원과 신용을 제공'],['재투자','늘어난 재원을 인프라·교육·국방에 투입하며 다음 성장 조건을 조성']]},
+    19:{selector:'.card',items:[['대륙국가','국내 시장·통화·교통망을 묶어 외부 충격을 견딜 생산 기반을 형성'],['세계강국','산업과 해군을 결합해 해외시장·해상로·전략 거점으로 영향력을 확장'],['질서설계자','승리의 힘을 국제기구·규칙·통화체제로 고정해 지속성을 확보']]},
+    20:{selector:'.card',items:[['철강','철도·교량·도시·군함을 동시에 가능하게 한 산업사회의 기초 소재'],['석유','운송과 군사기동의 에너지 기반이자 화학산업의 핵심 투입물'],['전기','공장 배치와 노동시간을 바꾸고 도시·통신망의 생산성을 확대'],['자동차','조립라인·부품 표준화·소비금융을 결합한 대량생산 체제의 상징']]},
+    21:{selector:'.bullets li',items:[['수직통합','원료에서 유통까지 통제해 비용과 공급 불확실성을 기업 내부에서 관리'],['트러스트','경쟁기업을 결합해 가격·생산량·시장 진입을 통제하는 지배력 형성'],['대량생산','높은 고정비를 거대한 판매량으로 분산해 단가를 낮추는 규모의 경제'],['경영혁신','전문관리자와 회계·조직 체계가 대륙 규모 기업 운영을 가능하게 함']]},
+    22:{selector:'.card',items:[['규모의 그늘','독점은 효율을 높일 수 있지만 가격 통제와 정치적 영향력의 집중을 초래'],['공공 규칙','반독점법과 규제기관은 대기업을 없애기보다 경쟁 가능한 시장의 경계를 설정']]},
+    23:{selector:'.card',items:[['카리브해','쿠바 전쟁은 미국이 서반구 질서에 직접 개입하는 계기로 작동'],['태평양','필리핀·괌 확보는 아시아 시장과 해상로를 향한 전략적 교두보 형성'],['세계정치','1898년은 대륙 팽창이 해외 영토·해군·제국 경쟁으로 전환된 분기점']]},
+    24:{selector:'.card',items:[['보편 가치','자유와 민주주의 언어는 국제적 정당성과 동맹 결집의 자원으로 기능'],['권력 현실','해외 지배와 군사개입은 선언된 가치와 실제 행동 사이의 구조적 긴장을 노출']]},
+    25:{selector:'.bullets li',items:[['유럽의 소진','전쟁이 생산시설·인력·재정을 파괴하며 기존 중심국의 상대적 역량을 약화'],['미국의 수출','본토 밖 전쟁을 이용해 식량·무기·공산품 생산과 해외 판매를 확대'],['금융의 이동','대출과 무역결제가 런던 중심에서 뉴욕·달러 중심으로 이동'],['대서양의 재편','생산과 채권의 중심 이동이 전후 협상에서 미국의 발언권을 확대']]},
+    26:{selector:'.card',items:[['자본 수입국','철도와 산업화에 필요한 자본을 유럽 금융시장에 의존한 단계'],['자본 공급국','전쟁 대출과 무역흑자로 채권을 축적하며 타국의 회복과 정책에 영향력 행사']]},
+    27:{selector:'.card',items:[['민족자결','제국의 해체 이후 정치공동체를 재구성하는 정당성 원칙'],['국제연맹','분쟁을 상설 협의기구에서 다루려는 제도화된 다자주의 구상'],['집단안보','한 국가에 대한 침략을 공동 문제로 규정하는 안보의 연대 논리']]},
+    28:{selector:'.card',items:[['정치적 거리두기','국제연맹 불참과 제한적 개입으로 전쟁 책임을 피하려 한 국내 정치 선택'],['경제적 상호의존','대출·투자·무역은 이미 세계 경제와 연결되어 완전한 고립을 불가능하게 함']]},
+    29:{selector:'.card',items:[['금융 붕괴','자산가격 하락과 은행 파산이 신용 수축을 통해 실물경제로 전달'],['생산 감소','소비·투자 위축이 공장 가동과 국제무역을 동시에 축소'],['대량실업','소득 상실이 수요를 더 줄이며 경제·정치 체제에 대한 신뢰를 훼손'],['세계 확산','보호무역과 경쟁적 통화정책이 위기를 국가 간 갈등으로 증폭']]},
+    30:{selector:'.bullets li',items:[['구제','생존 위기에 놓인 시민에게 직접 지원을 제공해 사회 붕괴를 완충'],['회복','공공사업과 정부지출로 수요·고용·인프라를 동시에 확대'],['개혁','금융감독·예금보호·노동권으로 시장 실패의 재발 가능성을 축소'],['국가역량','위기 관리가 연방정부의 상시적 경제관리 책임으로 제도화']]},
+    31:{selector:'.card',items:[['산업 동원','민간 자동차·기계 공장을 전차·항공기·함선 생산체제로 전환'],['과학 동원','정부·대학·기업 연구망이 레이더·의학·원자력 등 전략기술을 가속'],['인력 동원','여성·이민자·청년의 노동과 군 복무가 총력전의 사회적 기반을 형성']]},
+    32:{selector:'.bullets li',items:[['무기대여법','미국의 생산물을 동맹국 전력으로 바꾸며 참전 이전부터 전쟁 결과에 영향'],['대량생산','표준화된 함선·항공기·차량이 손실보다 빠른 보충과 공세 지속을 가능하게 함'],['후방 안전','본토 산업시설의 보존이 유럽·아시아 경쟁국과 다른 장기 생산 우위를 제공'],['전략 전환','경제적 산출량이 동맹 지원·병참·전투력으로 바뀌며 군사적 패권을 형성']]},
+    33:{selector:'.time-event',items:[['대공황의 기억','통화 블록과 보호무역이 위기를 악화했다는 경험이 협력 규칙의 필요성을 강화'],['달러 기준','금 1온스 35달러의 달러를 중심축으로 삼아 미국 신용을 세계 통화질서에 연결'],['고정환율','각국 통화를 달러에 연계해 무역과 투자에서 환율 불확실성을 축소'],['IMF','단기 유동성 지원과 환율 협의를 맡는 상설 안정기구를 설계'],['IBRD','전후 복구와 장기 개발금융을 제도화해 미국 자본의 국제적 경로를 형성']]},
+    34:{selector:'.card',items:[['UN','정치·안보 협의를 상설화하고 미국을 안전보장이사회 핵심국으로 제도화'],['GATT','관세 인하와 비차별 규칙으로 미국의 대량생산에 열린 시장을 확대'],['동맹','집단방위와 해외기지망으로 군사력의 지속적 전진배치를 가능하게 함'],['달러','결제·준비·금융의 중심 통화가 되어 미국 정책과 시장의 세계적 파급력을 확대']]},
+    36:{selector:'.meta-row span',items:[['생산력','상품·기술·인프라를 대량 공급하는 물적 토대'],['금융력','저축과 신용을 국내외 전략자원으로 전환하는 능력'],['군사력','생산과 금융을 병참·동맹·전투력으로 투사하는 능력'],['제도력','힘의 우위를 다른 국가도 따르는 규칙과 기구로 고정하는 능력']]}
+  };
+  function webPhase(n){
+    if (n <= 11) return ['Ⅰ','국가 설계'];
+    if (n <= 18) return ['Ⅱ','대륙 통합'];
+    if (n <= 28) return ['Ⅲ','세계 진출'];
+    return ['Ⅳ','질서 설계'];
+  }
+  slides.forEach(function(slide,n0){
+    var n = n0 + 1;
+    var legacyNo = n >= 10 ? n - 6 : n;
+    if (legacyNo < 9) return;
+    var phase = webPhase(legacyNo);
+    slide.classList.add('web-native');
+    slide.dataset.webNo = String(n).padStart(2,'0') + ' · WEB SLIDE';
+    slide.dataset.webChapter = phase[0];
+    var phaseEl = document.createElement('div');
+    phaseEl.className = 'web-phase';
+    phaseEl.textContent = phase[0] + ' · ' + phase[1];
+    var content = slide.querySelector('.slide-content');
+    if (content) content.appendChild(phaseEl);
+    var story = webStories[legacyNo];
+    if (!story) return;
+    var targets = Array.prototype.slice.call(slide.querySelectorAll(story.selector));
+    if (!targets.length) return;
+    var dock = document.createElement('article');
+    dock.className = 'web-insight';
+    dock.setAttribute('aria-live','polite');
+    dock.innerHTML = '<div><div class="web-insight-kicker">CLICK INSIGHT</div><h3></h3></div><p></p><button type="button" class="web-insight-close" aria-label="설명 닫기">×</button>';
+    slide.appendChild(dock);
+    function closeInsight(){ dock.classList.remove('open'); targets.forEach(function(t){t.classList.remove('spotlit');}); }
+    dock.querySelector('.web-insight-close').addEventListener('click',function(e){e.stopPropagation();closeInsight();});
+    targets.forEach(function(target,i){
+      var item = story.items[i];
+      if (!item) return;
+      target.classList.add('web-target');
+      target.setAttribute('role','button');
+      target.setAttribute('tabindex','0');
+      target.setAttribute('aria-label',(target.textContent || '').trim() + ' 상세 설명');
+      function openInsight(e){
+        e.stopPropagation();
+        targets.forEach(function(t){t.classList.remove('spotlit');});
+        target.classList.add('spotlit');
+        dock.querySelector('h3').textContent = item[0];
+        dock.querySelector('p').textContent = item[1];
+        dock.classList.add('open');
+        if (legacyNo === 12) {
+          slide.classList.remove('map-free','map-confed','map-border');
+          slide.classList.add(i === 0 ? 'map-free' : i === 1 ? 'map-confed' : 'map-border');
+        }
+      }
+      target.addEventListener('click',openInsight);
+      target.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openInsight(e);}});
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    var t = e.target;
+    if (t && t.closest && t.closest('input, textarea, select')) return;
+    if (gridOverlay.classList.contains('open')) {
+      if (e.key === 'Escape' || e.key === 'g' || e.key === 'G') { closeGrid(); }
+      return;
+    }
+    if (stage.querySelector('.topic-detail.open')) {
+      if (e.key === 'Escape') { e.preventDefault(); closeTopic(); }
+      return;
+    }
+    var openInsight = stage.querySelector('.slide.active .web-insight.open');
+    if (openInsight && e.key === 'Escape') {
+      e.preventDefault();
+      openInsight.classList.remove('open');
+      stage.querySelectorAll('.slide.active .web-target').forEach(function(t){ t.classList.remove('spotlit'); });
+      return;
+    }
+    if (e.key === 's' || e.key === 'S' || e.key === 'ㄴ') {
+      e.preventDefault();
+      playShh();
+      return;
+    }
+    /* 버튼에 포커스가 있을 때 스페이스·엔터는 버튼 동작에 양보 */
+    var onButton = t && t.closest && t.closest('button, a');
+    if ((e.key === ' ' || e.key === 'Enter') && onButton) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(idx + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(idx - 1); }
+    else if (e.key === 'g' || e.key === 'G' || e.key === 'ㅎ') { openGrid(); }
+    else if (e.key === 'p' || e.key === 'P' || e.key === 'ㅔ') { e.preventDefault(); window.print(); }
+    else if (e.key === 'Home') { show(0); }
+    else if (e.key === 'End') { show(total - 1); }
+  });
+
+  /* 무대 클릭: 오른쪽 절반 다음 · 왼쪽 절반 이전 (버튼·링크·프롬프트 카드 제외) */
+  stage.addEventListener('click', function(e){
+    if (e.target.closest('button, a, .prompt-card, .web-target, .web-insight')) return;
+    var rect = stage.getBoundingClientRect();
+    if (e.clientX - rect.left > rect.width / 2) show(idx + 1); else show(idx - 1);
+  });
+  navPrev.addEventListener('click', function(){ show(idx - 1); });
+  navNext.addEventListener('click', function(){ show(idx + 1); });
+  document.getElementById('attentionBtn').addEventListener('click', function(e){
+    e.stopPropagation();
+    playShh();
+  });
+  document.getElementById('gridBtn').addEventListener('click', openGrid);
+  document.getElementById('gridClose').addEventListener('click', closeGrid);
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+
+  /* 타이머: 벽시계 기준 (탭이 뒤로 가도 시간이 밀리지 않음) */
+  function initTimer(el){
+    var totalSec = parseInt(el.dataset.minutes, 10) * 60;
+    var remaining = totalSec;
+    var endAt = null;
+    var running = false;
+    var tickId = null;
+    var timeEl = el.querySelector('.time');
+    var stateEl = el.querySelector('.state');
+
+    function currentRemaining(){
+      if (!running) return remaining;
+      return Math.round((endAt - Date.now()) / 1000);
+    }
+    function format(sec){
+      var neg = sec < 0, abs = Math.abs(sec);
+      var m = Math.floor(abs / 60), s = abs % 60;
+      return (neg ? '+' : '') + m + ':' + (s < 10 ? '0' + s : s);
+    }
+    function render(){
+      var sec = currentRemaining();
+      timeEl.textContent = format(sec);
+      el.classList.toggle('warn', sec <= 60);
+      if (stateEl) stateEl.textContent = running ? '진행' : '정지';
+    }
+    function start(){
+      if (running) return;
+      running = true;
+      endAt = Date.now() + remaining * 1000;
+      el.classList.add('running');
+      tickId = setInterval(render, 250);
+      render();
+    }
+    function pause(){
+      if (running) remaining = currentRemaining();
+      running = false;
+      el.classList.remove('running');
+      clearInterval(tickId);
+      render();
+    }
+    function reset(){
+      running = false;
+      clearInterval(tickId);
+      remaining = totalSec;
+      el.classList.remove('running');
+      render();
+    }
+    el.addEventListener('click', function(){ if (running) pause(); else start(); });
+    el.addEventListener('dblclick', function(e){ e.stopPropagation(); reset(); });
+    el.addEventListener('keydown', function(e){ if (e.key === 'r' || e.key === 'R' || e.key === 'ㄱ') { e.preventDefault(); reset(); } });
+    render();
+  }
+  stage.querySelectorAll('.timer-chip, .break-big[data-minutes]').forEach(initTimer);
+
+  /* 복사 버튼: clipboard API가 700ms 안에 끝나지 않으면 textarea 폴백 · 완료 표시는 한 번만 */
+  stage.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var target = document.getElementById(btn.dataset.copyTarget);
+      var text = target ? target.textContent : '';
+      var settled = false;
+      function done(){
+        if (settled) return;
+        settled = true;
+        btn.textContent = '복사됨 ✓';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        setTimeout(function(){ if (!settled) fallbackCopy(text, done); }, 700);
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+      } else {
+        fallbackCopy(text, done);
+      }
+    });
+  });
+  function fallbackCopy(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) { /* 구형 브라우저 · 무시 */ }
+    document.body.removeChild(ta);
+    done();
+  }
+
+  /* 전체보기 축소판: 타이머·복사 핸들러를 붙인 뒤 마지막에 생성 · 복제본은 inert로 포커스 제외 */
+  slides.forEach(function(s, n){
+    var mini = document.createElement('div');
+    mini.className = 'mini';
+    mini.tabIndex = 0;
+    mini.setAttribute('role', 'button');
+    mini.setAttribute('aria-label', (s.getAttribute('aria-label') || String(n + 1)) + ' 슬라이드로 이동');
+    var copy = document.createElement('div');
+    copy.className = s.className.replace(/\bactive\b/, '').trim();
+    copy.setAttribute('aria-hidden', 'true');
+    copy.setAttribute('inert', '');
+    copy.innerHTML = s.innerHTML;
+    copy.querySelectorAll('[id]').forEach(function(el){ el.removeAttribute('id'); });
+    var num = document.createElement('span');
+    num.className = 'mini-num';
+    num.setAttribute('aria-hidden', 'true');
+    num.textContent = n + 1;
+    var inner = document.createElement('div');
+    inner.className = 'mini-inner';
+    inner.appendChild(copy);
+    mini.appendChild(inner);
+    mini.appendChild(num);
+    mini.addEventListener('click', function(){ show(n); closeGrid(); });
+    mini.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(n); closeGrid(); } });
+    gridList.appendChild(mini);
+    minis.push(mini);
+  });
+  show(idx);
+})();
+</script>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js';
+import { getAnalytics, isSupported } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAZEbdXyhp3y2hKzKt9vAz-dqmpLLsUxHM',
+  authDomain: 'iwillman-ai.firebaseapp.com',
+  databaseURL: 'https://iwillman-ai-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId: 'iwillman-ai',
+  storageBucket: 'iwillman-ai.firebasestorage.app',
+  messagingSenderId: '116342263639',
+  appId: '1:116342263639:web:dc8cb9dce784982ff8b812',
+  measurementId: 'G-J2N2W8XV3X'
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+isSupported().then(function(supported){
+  if (supported) getAnalytics(firebaseApp);
+});
+</script>
+<script id="mf-js">
+(function(){
+  var root=document.documentElement,mq=window.matchMedia('(max-width:900px),(max-height:520px)');
+  var frame=document.getElementById('frame'),stage=document.getElementById('stage'),wrap=document.getElementById('wrap');
+  var canvas,cont=null,vp=false;
+  if(frame){canvas=frame;cont=stage}else if(wrap){canvas=stage;cont=wrap}else{canvas=stage;vp=true}
+  if(!canvas)return;
+  canvas.classList.add('mf-canvas');if(vp)canvas.classList.add('mf-vp');if(cont)cont.classList.add('mf-cont');
+  var nav=document.getElementById('nav'),bot=document.querySelector('.bar.bot');
+  var hint=document.createElement('div');hint.id='mf-hint';
+  hint.innerHTML='<span>📱 폰을 가로로 돌리면 슬라이드가 훨씬 크게 보여요. 두 손가락으로 확대할 수도 있어요.</span><button type="button" aria-label="안내 닫기">×</button>';
+  document.body.appendChild(hint);
+  var dis=false;try{dis=sessionStorage.getItem('mf_hint')==='1'}catch(e){}
+  hint.querySelector('button').onclick=function(){hint.classList.remove('on');dis=true;try{sessionStorage.setItem('mf_hint','1')}catch(e){}};
+  var menu=null;
+  if(bot){
+    menu=document.createElement('button');menu.type='button';menu.className='btn';menu.id='mf-menu';menu.textContent='☰';menu.setAttribute('aria-label','상단 메뉴 보기/숨기기');
+    menu.style.display='none';
+    menu.onclick=function(){root.classList.toggle('mf-top')};
+    bot.appendChild(menu);
+  }
+  function fit(){
+    if(!mq.matches){
+      root.classList.remove('mf','mf-land','mf-port','mf-top');canvas.style.transform='';canvas.style.removeProperty('top');
+      if(menu)menu.style.display='none';hint.classList.remove('on');return;
+    }
+    var land=window.innerWidth>window.innerHeight;
+    root.classList.add('mf');root.classList.toggle('mf-land',land);root.classList.toggle('mf-port',!land);
+    if(!land)root.classList.remove('mf-top');
+    var aw,ah;
+    if(cont){var pad=land?0:4;aw=cont.clientWidth-2*pad;ah=cont.clientHeight-2*pad}
+    else{aw=window.innerWidth;ah=window.innerHeight-(nav?nav.offsetHeight:0);canvas.style.setProperty('top',(ah/2)+'px','important')}
+    var s=Math.min(aw/1280,ah/720);
+    canvas.style.transform='scale('+s+')';
+    if(menu)menu.style.display=land?'':'none';
+    if(!land&&!dis)hint.classList.add('on');else hint.classList.remove('on');
+  }
+  window.addEventListener('resize',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,200)});
+  if(mq.addEventListener)mq.addEventListener('change',fit);
+  fit();setTimeout(fit,300);
+})();
+</script>
+</body>
+</html>
