@@ -68,6 +68,35 @@ html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
   #pr img:last-child{page-break-after:auto;break-after:auto}
 }
 </style>
+<!-- mobile-fix v1 -->
+<style id="mf-css">
+@media screen{
+  html.mf .top .ttl{display:none}
+  html.mf .bar{gap:.4rem;padding:0 .5rem}
+  html.mf .bar .btn{padding:0 .75rem;font-size:.85rem}
+  html.mf .mf-canvas{position:absolute!important;left:50%!important;top:50%!important;width:1280px!important;height:720px!important;
+    margin:-360px 0 0 -640px!important;max-height:none!important;max-width:none!important;aspect-ratio:auto!important;
+    border-radius:0!important;box-shadow:none!important;transform-origin:50% 50%!important}
+  html.mf .mf-canvas.mf-vp{position:fixed!important}
+  html.mf-port .mf-cont{padding:4px!important}
+  html.mf-land .mf-cont{top:0!important;bottom:40px!important;padding:0!important}
+  html.mf-land .top{display:none}
+  html.mf-land.mf-top .top{display:flex;position:fixed;top:0;left:0;right:0;z-index:30}
+  html.mf-land .bot{height:40px}
+  html.mf-land .bot .btn{min-height:32px;height:32px}
+  html.mf-land{--nav-h:40px}
+  html.mf-land #nav button,html.mf-land #nav a{height:32px;min-height:32px}
+  html.mf #nav .hint{display:none}
+  html.mf #nav{gap:4px;padding:0 8px}
+  html.mf #nav button,html.mf #nav a{white-space:nowrap;padding:0 10px;font-size:13px}
+  html.mf #counter{min-width:4.2em}
+  #mf-hint{display:none;position:fixed;left:8px;right:8px;bottom:64px;z-index:40;padding:.6rem .8rem;border-radius:10px;
+    background:rgba(20,28,51,.96);color:#F6F3EC;border:1px solid #D4FF3D;font:700 .9rem/1.4 -apple-system,'Noto Sans KR','Malgun Gothic',sans-serif;
+    align-items:center;gap:.6rem}
+  #mf-hint button{flex:0 0 auto;min-width:44px;min-height:44px;border:0;border-radius:8px;background:#D4FF3D;color:#0B1220;font:900 1rem inherit;cursor:pointer}
+  html.mf-port #mf-hint.on{display:flex}
+}
+</style>
 </head>
 <body>
 <div class="bar top">
@@ -203,6 +232,48 @@ html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
   document.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50&&!grid.classList.contains('on'))go(cur+(d<0?1:-1));sx=null});
   var h=parseInt(location.hash.slice(1),10);
   go(h>=1&&h<=N?h:(load()>=1?load():1),!(h>=1&&h<=N));
+})();
+</script>
+<script id="mf-js">
+(function(){
+  var root=document.documentElement,mq=window.matchMedia('(max-width:900px),(max-height:520px)');
+  var frame=document.getElementById('frame'),stage=document.getElementById('stage'),wrap=document.getElementById('wrap');
+  var canvas,cont=null,vp=false;
+  if(frame){canvas=frame;cont=stage}else if(wrap){canvas=stage;cont=wrap}else{canvas=stage;vp=true}
+  if(!canvas)return;
+  canvas.classList.add('mf-canvas');if(vp)canvas.classList.add('mf-vp');if(cont)cont.classList.add('mf-cont');
+  var nav=document.getElementById('nav'),bot=document.querySelector('.bar.bot');
+  var hint=document.createElement('div');hint.id='mf-hint';
+  hint.innerHTML='<span>📱 폰을 가로로 돌리면 슬라이드가 훨씬 크게 보여요. 두 손가락으로 확대할 수도 있어요.</span><button type="button" aria-label="안내 닫기">×</button>';
+  document.body.appendChild(hint);
+  var dis=false;try{dis=sessionStorage.getItem('mf_hint')==='1'}catch(e){}
+  hint.querySelector('button').onclick=function(){hint.classList.remove('on');dis=true;try{sessionStorage.setItem('mf_hint','1')}catch(e){}};
+  var menu=null;
+  if(bot){
+    menu=document.createElement('button');menu.type='button';menu.className='btn';menu.id='mf-menu';menu.textContent='☰';menu.setAttribute('aria-label','상단 메뉴 보기/숨기기');
+    menu.style.display='none';
+    menu.onclick=function(){root.classList.toggle('mf-top')};
+    bot.appendChild(menu);
+  }
+  function fit(){
+    if(!mq.matches){
+      root.classList.remove('mf','mf-land','mf-port','mf-top');canvas.style.transform='';canvas.style.removeProperty('top');
+      if(menu)menu.style.display='none';hint.classList.remove('on');return;
+    }
+    var land=window.innerWidth>window.innerHeight;
+    root.classList.add('mf');root.classList.toggle('mf-land',land);root.classList.toggle('mf-port',!land);
+    if(!land)root.classList.remove('mf-top');
+    var aw,ah;
+    if(cont){var pad=land?0:4;aw=cont.clientWidth-2*pad;ah=cont.clientHeight-2*pad}
+    else{aw=window.innerWidth;ah=window.innerHeight-(nav?nav.offsetHeight:0);canvas.style.setProperty('top',(ah/2)+'px','important')}
+    var s=Math.min(aw/1280,ah/720);
+    canvas.style.transform='scale('+s+')';
+    if(menu)menu.style.display=land?'':'none';
+    if(!land&&!dis)hint.classList.add('on');else hint.classList.remove('on');
+  }
+  window.addEventListener('resize',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,200)});
+  if(mq.addEventListener)mq.addEventListener('change',fit);
+  fit();setTimeout(fit,300);
 })();
 </script>
 </body>
