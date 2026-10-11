@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<!-- 글로벌시대의 국제정치 · 2회 웹슬라이드 · 위치: /slides_international-politics-w2-cycle.html · 원본: 2회 강의안 (경제와 전쟁의 순환, 그 이론과 역사) -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>경제와 전쟁의 순환 · 글로벌시대의 국제정치 2회</title>
+<meta name="description" content="가천대학교 행정학과 글로벌시대의 국제정치 2회 · 경제와 전쟁의 순환 · 웹슬라이드 33장 · 나병인 교수">
+<meta name="theme-color" content="#0B1220">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{--bg:#0B1220;--card:#141C33;--line:#293045;--lime:#D4FF3D;--text:#F6F3EC;--sub:#B9C0D0}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
+  font-family:'Noto Sans KR','Noto Sans CJK KR',-apple-system,'Malgun Gothic',sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.bar{position:fixed;left:0;right:0;height:52px;display:flex;align-items:center;gap:.5rem;padding:0 .8rem;background:var(--card);z-index:3}
+.top{top:0;border-bottom:1px solid var(--line)}
+.bot{bottom:0;border-top:1px solid var(--line)}
+.ttl{font-weight:900;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ttl small{font-weight:500;color:var(--sub);margin-left:.5rem}
+.sp{flex:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 .95rem;border-radius:10px;border:1.5px solid var(--line);
+  background:transparent;color:var(--text);font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{border-color:var(--lime);color:var(--lime)}
+.btn.main{background:var(--lime);border-color:var(--lime);color:var(--bg)}
+#wrap{position:fixed;top:52px;bottom:52px;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:10px}
+#stage{position:relative;aspect-ratio:16/9;width:min(100%,calc((100vh - 52px - 52px - 20px) * 16 / 9));max-height:100%;background:var(--bg);border-radius:8px;overflow:hidden;box-shadow:0 10px 44px rgba(0,0,0,.5);container-type:inline-size;border:1px solid var(--line)}
+.hit{position:absolute;top:0;bottom:0;width:22%;z-index:2;border:0;background:none;cursor:pointer;color:var(--text);font-size:2.4rem;opacity:0;transition:opacity .15s}
+.hit:hover,.hit:focus-visible{opacity:.75}
+#hp{left:0;text-align:left;padding-left:.8rem}#hn{right:0;text-align:right;padding-right:.8rem}
+#prog{flex:1;height:8px;background:var(--line);border-radius:5px;cursor:pointer;position:relative;min-width:60px}
+#prog:focus-visible{outline-offset:6px}
+#fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--lime);border-radius:5px}
+#cnt{min-width:4.6rem;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+#cap{position:absolute;left:-9999px}
+#grid{position:fixed;inset:0;z-index:10;display:none;overflow:auto;padding:1rem;background:rgba(11,18,32,.97)}
+#grid.on{display:block}
+#grid h2{font-size:1.2rem;font-weight:900;margin:.2rem 0 1rem;display:flex;align-items:center;gap:1rem}
+#gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem}
+#gl button{min-height:5.2rem;position:relative;padding:0;border:2px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);cursor:pointer;color:var(--text);text-align:left}
+#gl button.cur,#gl button:hover{border-color:var(--lime)}
+#gl span{display:block;padding:.35rem .6rem;font-size:.82rem;font-weight:700;line-height:1.35}
+#gl b{color:var(--lime);margin-right:.35rem}
+#pr{display:none}
+#hush{position:fixed;inset:0;z-index:20;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:rgba(11,18,32,.96);text-align:center;cursor:pointer;padding:1rem}
+#hush.on{display:flex}
+#hush .ic{font-size:clamp(4rem,16vw,9rem);line-height:1}
+#hush h2{font-size:clamp(2.2rem,8vw,4.6rem);font-weight:900;color:var(--lime)}
+#hush p{font-size:clamp(1rem,3vw,1.5rem);color:var(--sub)}
+#hush .sec{font-size:clamp(3rem,10vw,6rem);font-weight:900;font-variant-numeric:tabular-nums}
+#hush .hint{font-size:.9rem;color:var(--sub)}
+@media (max-width:640px){.ttl small,.hide-s{display:none}.hit{width:30%}}
+@media (prefers-reduced-motion:reduce){.hit,.slide{transition:none!important;animation:none!important}}
+@page{size:16in 9in;margin:0}
+@media print{
+  html,body{height:auto;overflow:visible;background:#fff}
+  .bar,#wrap,#grid,#hush{display:none!important}
+}
+
+/* ===== slides (cqi 기준) ===== */
+.slide{position:absolute;inset:0;display:none;background:var(--bg);font-size:1.85cqi;line-height:1.5;color:var(--text)}
+.slide.active{display:block}
+.slide-content{position:absolute;inset:0;padding:3cqi 4.2cqi 3.6cqi;display:flex;flex-direction:column;gap:1.3cqi;overflow:hidden}
+.kick{font-size:1.3cqi;font-weight:700;color:var(--lime);letter-spacing:.02em;line-height:1.3}
+.t{font-size:3.3cqi;font-weight:900;line-height:1.4;text-wrap:balance;margin-top:-.3cqi}
+.main{flex:1;min-height:0;display:flex;flex-direction:column;gap:1.5cqi}
+.main.stack>.card.lg{flex:1}
+.foot{position:absolute;right:4.2cqi;bottom:1.3cqi;font-size:1.1cqi;color:var(--sub)}
+.slide.nofoot .foot{display:none}
+.grid{display:grid;gap:1.6cqi;flex:1;min-height:0}
+.g2,.g2b{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}
+.g2b{grid-template-rows:1fr 1fr}
+.main.stack>.grid{flex:1}
+.card{background:var(--card);border:1px solid var(--line);border-top:.45cqi solid var(--lime);border-radius:1cqi;padding:1.8cqi 2cqi;min-height:0;min-width:0;overflow:hidden;display:flex;flex-direction:column;gap:1cqi}
+.card h3{font-size:2.05cqi;font-weight:900;color:var(--lime);line-height:1.4;text-wrap:balance}
+.card h3.big{font-size:2.7cqi;color:var(--text)}
+.card p{font-size:1.9cqi;line-height:1.55}
+.ul{list-style:none;display:flex;flex-direction:column;gap:.95cqi}
+.ul li{position:relative;padding-left:2cqi;font-size:2.05cqi;line-height:1.5}
+.ul li::before{content:"";position:absolute;left:0;top:.72em;width:.85cqi;height:.85cqi;border-radius:50%;background:var(--lime)}
+.ul.arrow li{padding-left:0}.ul.arrow li::before{display:none}
+.card.lg{justify-content:center}.card.lg .ul{gap:1.5cqi}.card.lg .ul li{font-size:2.3cqi;padding-left:2.6cqi}.card.lg .ul li::before{width:1cqi;height:1cqi}
+.call{background:rgba(212,255,61,.09);border:1px solid rgba(212,255,61,.45);border-radius:1cqi;padding:1.3cqi 2cqi;font-size:1.95cqi;line-height:1.55;font-weight:500}
+.call b{color:var(--lime)}.call i{color:var(--sub)}
+.call.coral{background:rgba(255,107,91,.1);border-color:rgba(255,107,91,.55)}.call.coral b{color:#FF8B7D}
+.lead{font-size:1.95cqi;font-weight:700}
+.qt{font-style:italic;color:var(--lime);font-size:1.9cqi;line-height:1.5}
+.qt.big3{font-size:2.3cqi;line-height:1.6;color:var(--text);font-style:normal;font-weight:500}
+.src2{font-size:1.6cqi;color:var(--sub)}
+.g2 .card h3{font-size:2.4cqi}.g2 .ul{gap:1.5cqi}.g2 .ul li{font-size:2.35cqi;padding-left:2.4cqi}.g2 .ul li::before{width:1cqi;height:1cqi}
+.g3 .card h3{font-size:2.25cqi}.g3 .ul li{font-size:2.15cqi}
+.g2b .card p{font-size:2.05cqi;line-height:1.45}.g2b .card h3{font-size:2.15cqi}.g2b .card{gap:.6cqi;padding:1.3cqi 2cqi}.g2 .ul.arrow{gap:.9cqi}.g2 .ul.arrow li{font-size:2.05cqi}.g2 .card .lead{font-size:2.05cqi}.g2 .card .qt{font-size:2.05cqi}.kt p{font-size:2.3cqi}
+.qt.big3{font-size:2.5cqi}
+.big .ul{gap:2cqi}.big .ul li{font-size:2.8cqi;padding-left:2.8cqi}.big .ul li::before{width:1.1cqi;height:1.1cqi}.big .card h3{font-size:2.7cqi}.big .krow h3{flex:0 0 24cqi;font-size:2.7cqi}.big .krow p{font-size:2.7cqi}.big .card p{font-size:2.7cqi;line-height:1.55}
+/* cover / chapter */
+.cover .slide-content,.chapter .slide-content,.ending .slide-content,.quote .slide-content{justify-content:center;gap:2cqi;padding:5cqi 7cqi}
+.tag{align-self:flex-start;background:var(--lime);color:var(--bg);font-weight:900;font-size:1.5cqi;padding:.45cqi 1.4cqi;border-radius:.5cqi}
+.cov{font-size:6.2cqi;font-weight:900;line-height:1.5}
+.cov-sub{font-size:2.5cqi;font-weight:500}
+.cov-q{font-size:2.1cqi;color:var(--lime);font-style:italic}
+.cov-by{font-size:1.7cqi;color:var(--sub)}
+.chnum{font-size:11cqi;font-weight:900;color:var(--lime);line-height:1.5}
+.chtit{font-size:6cqi;font-weight:900;line-height:1.5}
+.chapter .slide-content{gap:1.2cqi;padding:3cqi 7cqi}
+.chsub{font-size:1.9cqi;color:var(--sub)}
+/* agenda */
+.agenda{justify-content:flex-start;gap:1.2cqi}.agenda .pt{font-size:1.6cqi;font-weight:700;color:var(--lime)}.agenda .sm{font-size:1.75cqi;color:var(--sub)}.agenda .min{margin-top:auto;font-size:3cqi;font-weight:900;color:var(--lime)}
+/* table */
+.tbl{width:100%;border-collapse:separate;border-spacing:.5cqi;flex:1;table-layout:fixed}
+.tbl th,.tbl td{background:var(--card);border-radius:.7cqi;padding:.6cqi 1.4cqi;font-size:2cqi;text-align:center;vertical-align:middle}
+.tbl thead th{background:var(--lime);color:var(--bg);font-weight:900}
+.tbl tbody th{color:var(--lime);font-weight:900;width:20%}
+.tbl td{font-weight:500}
+/* numbered */
+.nlist{display:flex;flex-direction:column;gap:1.3cqi;flex:1;min-height:0}
+.nrow{flex:1;min-height:0;display:flex;align-items:center;gap:1.8cqi;background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1cqi 2cqi}
+.nn{flex:none;width:4.2cqi;height:4.2cqi;border-radius:50%;background:var(--lime);color:var(--bg);font-weight:900;font-size:2.4cqi;display:flex;align-items:center;justify-content:center}
+.nrow h3{font-size:2.1cqi;font-weight:900;color:var(--lime)}.nrow p{font-size:1.9cqi}
+/* stat split */
+.split{flex-direction:row;gap:2cqi}.split>.card{flex:1}
+.stat{flex:0 0 32%;background:var(--card);border:1px solid var(--line);border-radius:1cqi;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1cqi;padding:1.5cqi;text-align:center;min-width:0}
+.big2{font-size:7.5cqi;font-weight:900;color:var(--lime);line-height:1.55}
+.sl{font-size:2.2cqi;font-weight:700}.ss{font-size:1.7cqi;color:var(--sub);line-height:1.5}.ss b{color:var(--lime);font-size:2.4cqi}
+.split2{justify-content:center}.split2 .ul{gap:1.4cqi}
+/* discussion */
+.dsub{font-size:1.8cqi;color:var(--sub);margin-top:-.6cqi}
+.qs{gap:1.6cqi}
+.q{flex:1;min-height:0;display:flex;align-items:center;gap:2cqi;background:var(--card);border:1px solid var(--line);border-left:.45cqi solid var(--lime);border-radius:1cqi;padding:1.2cqi 2.2cqi}
+.q>b{font-size:3cqi;font-weight:900;color:var(--lime)}
+.q1{font-size:2.3cqi;font-weight:700;line-height:1.45}.q2{font-size:1.95cqi;color:var(--sub);margin-top:.6cqi}
+/* flow */
+.flow{display:flex;align-items:center;gap:1cqi;justify-content:center}
+.fbox{flex:1;text-align:center;background:var(--lime);color:var(--bg);font-weight:900;font-size:2.1cqi;border-radius:1cqi;padding:1.2cqi .6cqi}
+.ar{color:var(--lime);font-weight:900;font-size:2.2cqi}
+.ctr{align-items:center;text-align:center;justify-content:center}.ctr h3{font-size:2.4cqi}.sm2{font-size:1.7cqi;color:var(--sub)}.b2{font-size:2.3cqi;font-weight:900}
+/* rows */
+.krows{display:flex;flex-direction:column;gap:1.2cqi;flex:1;min-height:0}
+.krow{flex:1;min-height:0;display:flex;align-items:center;gap:2cqi;background:var(--card);border:1px solid var(--line);border-left:.45cqi solid var(--lime);border-radius:1cqi;padding:.8cqi 2cqi}
+.krow h3{flex:0 0 12cqi;font-size:2.1cqi;font-weight:900;color:var(--lime)}.krow p{font-size:1.9cqi;line-height:1.5}
+/* quote slide */
+.quote .slide-content{align-items:center;text-align:center}
+.qmark{font-size:7cqi;font-weight:900;color:var(--lime);line-height:1.7;margin-bottom:-2.5cqi}.qmark.end{margin-bottom:0;margin-top:-2cqi}
+.bigq{font-size:4.6cqi;font-weight:900;line-height:1.45;text-wrap:balance}
+.src{font-size:1.8cqi;color:var(--sub)}.note{font-size:1.9cqi;color:var(--lime)}
+/* timeline */
+.tcol{background:var(--card);border:1px solid var(--line);border-top:.45cqi solid var(--lime);border-radius:1cqi;padding:1.8cqi 2cqi;display:flex;flex-direction:column;gap:1cqi;min-width:0}
+.tcol h3{font-size:2.6cqi;font-weight:900}.ttag{font-size:1.6cqi;font-weight:700;color:var(--lime)}
+.main.stack>.g3{flex:1}
+.good{border-top-color:var(--lime)}.bad{border-top-color:#FF6B5B}.bad h3{color:#FF8B7D}.bad .ul li::before{background:#FF6B5B}
+/* pairs */
+.pairs{gap:1cqi}.phead,.prow{display:grid;grid-template-columns:1fr 1fr;gap:1.6cqi;flex:1;min-height:0}
+.phead{flex:.8}
+.pa,.pb{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:1cqi;font-weight:700;font-size:2.1cqi;padding:.5cqi 1cqi;background:var(--card);border:1px solid var(--line)}
+.phead .pa{background:var(--lime);color:var(--bg);font-weight:900;font-size:2.3cqi}.phead .pb{background:#FF6B5B;color:var(--bg);font-weight:900;font-size:2.3cqi}
+.prow .pa{border-color:rgba(212,255,61,.5)}.prow .pb{border-color:rgba(255,107,91,.55)}
+/* takeaways */
+.kt{justify-content:flex-start;gap:1.2cqi}.kt .kn{font-size:5.5cqi;font-weight:900;color:var(--lime);line-height:1.5}.kt p{font-size:2cqi}
+/* ending */
+.endq{border-left:.6cqi solid var(--lime);padding-left:2.6cqi;display:flex;flex-direction:column;gap:1.6cqi}
+.endq p{font-size:3.4cqi;font-weight:900;line-height:1.35;text-wrap:balance}
+.next{background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1.4cqi 2cqi;display:flex;flex-direction:column;gap:.4cqi;font-size:2.1cqi}.next b{color:var(--lime)}.next span{color:var(--sub);font-size:1.9cqi}
+#gl button .gt{display:block;padding:.6rem .7rem;font-size:.85rem;font-weight:700;line-height:1.4}
+#print{display:none}
+@media print{
+  html,body{background:#fff}
+  #print{display:block}
+  #cap{display:none}
+  .pslide{width:16in;height:8.98in;position:relative;page-break-after:always;break-after:page;container-type:inline-size;overflow:hidden;background:#0B1220}
+  .pslide:last-child{page-break-after:auto;break-after:auto}
+  .pslide .slide{display:block}
+}
+/* ===== w5 interactive widgets ===== */
+.wg{position:relative;z-index:5;flex:1;min-height:0;display:flex;gap:1.4cqi}
+.wg.col{flex-direction:column}
+.wmap{position:relative;flex:1 1 0;min-width:0;background:#0d1530;border:1px solid var(--line);border-radius:1cqi;overflow:hidden}
+.wmap>svg{position:absolute;inset:0;width:100%;height:100%}
+.wside{flex:0 0 30%;display:flex;flex-direction:column;gap:1cqi;min-width:0;min-height:0}
+.chips{display:flex;flex-wrap:wrap;gap:.6cqi}
+.chip{font:inherit;font-size:1.65cqi;font-weight:700;color:var(--text);background:var(--card);border:1.5px solid var(--line);border-radius:.9cqi;padding:.4cqi 1.2cqi;cursor:pointer;min-height:44px;white-space:nowrap}
+.chip:hover{border-color:var(--lime);color:var(--lime)}
+.chip.on{background:var(--lime);border-color:var(--lime);color:var(--bg)}
+.info{flex:1;min-height:0;background:var(--card);border:1px solid var(--line);border-left:.45cqi solid var(--lime);border-radius:1cqi;padding:1.1cqi 1.5cqi;overflow:auto}
+.info h4{font-size:2cqi;font-weight:900;color:var(--lime);margin-bottom:.4cqi;line-height:1.35}
+.info p{font-size:1.65cqi;line-height:1.5}
+.info b{color:var(--lime)}
+.info .lk{display:inline-block;margin-top:.5cqi}
+.hint{font-size:1.4cqi;color:var(--sub)}
+.lkbox{position:absolute;right:4.2cqi;top:1.7cqi;z-index:6;display:flex;gap:.6cqi;flex-wrap:wrap;justify-content:flex-end;max-width:62%}
+.lk{display:inline-block;font-size:1.25cqi;font-weight:700;color:var(--sub);text-decoration:none;border:1px solid var(--line);border-radius:.6cqi;padding:.35cqi .9cqi;background:var(--card);line-height:1.3}
+.lk:hover{color:var(--lime);border-color:var(--lime)}
+.wmap svg text{font-family:inherit}
+.ct{fill:#18224a;stroke:#34426f;stroke-width:.9}
+.ct[data-k]{cursor:pointer}.ct[data-k]:hover{fill:#243268}
+.ct[data-k=uk]{fill:rgba(212,255,61,.22);stroke:#D4FF3D;stroke-width:1.6}
+.ct[data-k=uk]:hover{fill:rgba(212,255,61,.34)}
+.wmap[data-mode=rival] .ct[data-k=fr],.wmap[data-mode=rival] .ct[data-k=es],.wmap[data-mode=rival] .ct[data-k=nl],.wmap[data-mode=rival] .ct[data-k=ru],.wmap[data-mode=rival] .ct[data-k=pt]{fill:rgba(255,107,91,.28);stroke:#FF6B5B;stroke-width:1.4}
+.ct.sel{stroke-width:3!important;filter:brightness(1.3)}
+.sea{fill:#0d1530}
+.lb{fill:#F6F3EC;font-size:19px;font-weight:900;paint-order:stroke;stroke:#0d1530;stroke-width:5px;stroke-linejoin:round;pointer-events:none}
+.lb.sm{font-size:15px;font-weight:700}.lb.sea2{fill:#6f7ca8;font-size:15px;font-weight:700;font-style:italic;stroke-width:3px}
+.lb.l{fill:#D4FF3D}.lb.c{fill:#FF8B7D}
+.pt{fill:#D4FF3D;stroke:#0B1220;stroke-width:2.5;cursor:pointer}
+.pt:hover{r:11}
+.pt.rv{fill:#FF6B5B}.pt.sel{stroke:#fff;stroke-width:3.5}
+.hitc{fill:transparent;cursor:pointer}
+.arr{fill:none;stroke:#D4FF3D;stroke-width:3.5;stroke-dasharray:3 9;stroke-linecap:round;animation:fl 1.1s linear infinite}
+.arr.c{stroke:#FF6B5B}
+.rt{fill:none;stroke:#D4FF3D;stroke-width:3;stroke-dasharray:10 9;stroke-linecap:round;animation:fl 1.4s linear infinite;opacity:.9}
+.rt.c{stroke:#FF6B5B}.rt.b{stroke:#8fb4ff}
+@keyframes fl{to{stroke-dashoffset:-19}}
+@media (prefers-reduced-motion:reduce){.arr,.rt{animation:none}}
+.ring{fill:none;stroke:#D4FF3D;stroke-width:2.5}
+.lead2{stroke:#D4FF3D;stroke-width:1.6;stroke-dasharray:5 5;fill:none}
+.cbox{fill:#0B1220;stroke:#D4FF3D;stroke-width:1.6}
+.rl{fill:none;stroke:#D4FF3D;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .5s,stroke-width .4s;cursor:pointer}
+.rl.on{opacity:.85}.rl.new{stroke:#fff;stroke-width:7}
+.rlh{fill:none;stroke:transparent;stroke-width:22;cursor:pointer;pointer-events:stroke}
+.rlh.off{pointer-events:none}
+.city{fill:#F6F3EC;stroke:#0B1220;stroke-width:2}
+.big-n{font-size:5.2cqi;font-weight:900;color:var(--lime);line-height:1.1}
+.stat2{background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1cqi 1.5cqi;display:flex;flex-direction:column;gap:.3cqi}
+.stat2 .sl{font-size:1.6cqi;color:var(--sub)}
+.bxs{display:flex;align-items:stretch;gap:.8cqi;height:7cqi;padding-top:.5cqi}
+.bx{flex:1;display:grid;grid-template-rows:1fr auto;gap:.3cqi;min-width:0}
+.col{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-height:0}
+.fill{width:100%;background:#2b3866;border-radius:.5cqi .5cqi 0 0;height:var(--h,2%);min-height:2px;transition:height .5s,background .3s}
+.bx.on .fill{background:var(--lime)}
+.bx .nm{font-size:1.25cqi;color:var(--sub);text-align:center}
+.bx .vl{font-size:1.2cqi;color:var(--sub);text-align:center;font-variant-numeric:tabular-nums}
+.part{cursor:pointer}.part:hover .pf,.part.sel .pf{stroke:#D4FF3D;stroke-width:4}
+.tag{cursor:pointer}
+.rk{fill:#D4FF3D;stroke:#0B1220;stroke-width:2}.rkn{fill:#0B1220;font-size:16px;font-weight:900;text-anchor:middle;pointer-events:none}
+.tl{display:flex;gap:.5cqi;flex-wrap:nowrap;align-items:stretch;position:relative;padding:0 .2cqi}
+.tl .chip{flex:1;padding:.4cqi .3cqi;font-size:1.5cqi;text-align:center;min-width:0}
+.tl .chip small{display:block;font-size:1.05cqi;font-weight:500;opacity:.85;white-space:normal;line-height:1.2}
+.trio{display:flex;gap:1.2cqi;margin-top:.8cqi}
+.trio>div{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:.8cqi;padding:.8cqi 1.1cqi}
+.trio h5{font-size:1.4cqi;font-weight:900;color:var(--lime);margin-bottom:.25cqi}
+.trio p{font-size:1.55cqi}
+.invh{font-size:2.6cqi;font-weight:900;margin-bottom:.4cqi}.invh span{color:var(--lime);margin-right:.8cqi}
+.chcard{flex:1;display:flex;flex-direction:column;gap:1cqi;background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1.3cqi 1.8cqi;min-width:0}
+.cht{display:flex;align-items:stretch;gap:2cqi;flex:1;min-height:0;padding:.5cqi 1cqi 0}
+.cht .bx{grid-template-rows:1fr auto auto}
+.cht .fill{background:var(--lime)}.cht .bx.fr .fill{background:#8fb4ff}.cht .bx.ru .fill{background:#FF6B5B}
+.cht .vl{font-size:2.4cqi;font-weight:900;color:var(--text)}.cht .nm{font-size:1.8cqi;font-weight:700;color:var(--text)}
+
+.trio h5{font-size:1.9cqi}.trio p{font-size:2.1cqi}.invh+p{font-size:2.2cqi}.trio{margin-top:1.2cqi}
+.wmap svg [data-k]{cursor:pointer}.wmap svg g[data-k]:hover{filter:brightness(1.25)}
+.lb.nl{fill:#8fb4ff;font-size:19px}
+.bookbtn{position:relative;z-index:5;font:inherit;display:flex;align-items:center;gap:1.2cqi;margin-top:.8cqi;background:transparent;border:1.5px solid var(--line);border-radius:1cqi;padding:.6cqi 1.2cqi;color:var(--text);cursor:pointer;text-align:left;min-height:44px}
+.bookbtn:hover{border-color:var(--lime)}
+.bookbtn b{display:block;font-size:1.7cqi;color:var(--lime)}.bookbtn small{font-size:1.25cqi;color:var(--sub)}
+.bookbtn .bk{flex:0 0 5cqi;height:6.6cqi;background:#efe6cf;border:1px solid #b9a27a;border-radius:.3cqi;display:flex;align-items:center;justify-content:center;box-shadow:.3cqi .3cqi 0 rgba(0,0,0,.35)}
+.bookbtn .bk i{font-family:Georgia,'Times New Roman',serif;font-style:normal;font-weight:700;font-size:.85cqi;line-height:1.3;color:#3b2f1e;text-align:center}
+.lbx{position:absolute;inset:0;z-index:30;background:rgba(5,9,20,.88);display:none;align-items:center;justify-content:center;padding:3cqi}
+.lbx.open{display:flex}
+.lbx-in{position:relative;display:flex;gap:3cqi;align-items:center;max-height:100%}
+.lbx-x{position:absolute;right:-1cqi;top:-2.2cqi;font:inherit;font-size:2cqi;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:50%;width:4.4cqi;height:4.4cqi;cursor:pointer}
+.tp{width:34cqi;background:#efe6cf;color:#2b2113;font-family:Georgia,'Times New Roman',serif;text-align:center;padding:2.4cqi 2cqi;border:1px solid #b9a27a;box-shadow:.8cqi .8cqi 0 rgba(0,0,0,.4);display:flex;flex-direction:column;gap:.5cqi;letter-spacing:.04em}
+.tp hr{border:0;border-top:1px solid #8a7a58;width:35%;margin:.7cqi auto}
+.tp1{font-size:2.3cqi;font-weight:700}.tp2{font-size:1.5cqi;font-style:italic}.tp3{font-size:2.5cqi;font-weight:700}.tp4{font-size:2.9cqi;font-weight:700;line-height:1.15}
+.tp5{font-size:1.5cqi;font-weight:700}.tp6{font-size:1.15cqi;line-height:1.5}.tp7{font-size:1.5cqi;margin-top:.6cqi}
+.tn{max-width:36cqi;color:var(--text)}.tn h4{font-size:2.6cqi;color:var(--lime);margin-bottom:.8cqi}.tn p{font-size:1.9cqi;line-height:1.55;margin-bottom:.8cqi}.tn b{color:var(--lime)}
+
+/* ===== w9 (미국편) ===== */
+.wmap .st{fill:#202f62;stroke:#3d4e8a;stroke-width:.8;transition:fill .7s,opacity .7s,stroke .7s}
+.wmap[data-mode=tar] .st.ind{fill:#364a12;stroke:#D4FF3D;stroke-width:1.3}
+.wmap[data-mode=pla] .st.slv{fill:#4a2a2a;stroke:#FF8B7D;stroke-width:1}
+.wmap[data-mode=pla] .st.cot{fill:#7a3524;stroke:#FF6B5B;stroke-width:1.4}
+.wmap[data-mode=imm] .st{fill:#1a2a5a}
+.wmap[data-mode=res] .st{fill:#1c2a52}
+.tlmap .st.ghost{fill:#1c2858;stroke:#34437c;opacity:.95}
+.tlmap .st.on{opacity:.9;stroke:#0B1220}
+.tlmap .st[data-r=r1783].on{fill:#4b72d6}.tlmap .st[data-r=r1803].on{fill:#2fb0a4}.tlmap .st[data-r=r1819].on{fill:#7fcf48}.tlmap .st[data-r=r1845].on{fill:#c9e63a}
+.tlmap .st[data-r=r1846].on{fill:#e8c22f}.tlmap .st[data-r=r1848].on{fill:#ee8a35}.tlmap .st[data-r=r1867].on{fill:#ee5a4a}.tlmap .st[data-r=r1898].on{fill:#b078ee}
+.tlmap .st.new{opacity:1;stroke:#fff;stroke-width:2;filter:drop-shadow(0 0 10px rgba(255,255,255,.65));animation:nw 1.2s ease-out 1}
+@keyframes nw{0%{filter:brightness(2.4) drop-shadow(0 0 20px #fff)}100%{filter:brightness(1) drop-shadow(0 0 10px rgba(255,255,255,.65))}}
+.hud{position:absolute;left:1.4cqi;top:1.1cqi;pointer-events:none;z-index:2;font-family:ui-monospace,Menlo,Consolas,monospace}
+.hud-y{font-size:6.2cqi;font-weight:900;color:#fff;line-height:1;text-shadow:0 0 1.2cqi rgba(212,255,61,.55)}
+.hud-n{font-size:2.2cqi;font-weight:900;color:var(--lime);margin-top:.3cqi}
+.hud-t{font-size:1.2cqi;color:var(--sub);letter-spacing:.14em;margin-top:.3cqi}
+.hud::after{content:"";position:absolute;left:-.4cqi;top:-.2cqi;width:100%;height:.25cqi;background:linear-gradient(90deg,var(--lime),transparent);opacity:.6}
+.kpi{display:flex;gap:.8cqi}.kpi .stat2{flex:1;min-width:0;padding:.6cqi 1cqi}.kpi .big-n{font-size:3.6cqi}.kpi .kp{font-size:2.2cqi;font-weight:900;color:var(--lime)}
+.kpi .sl{font-size:1.3cqi}.kpi .ss{font-size:1.2cqi}
+.wmap.amm{background:#070d22}
+.gl{fill:#24376f;stroke:#4a5c9c;stroke-width:.7}
+.gl.us{fill:rgba(212,255,61,.28);stroke:#D4FF3D;stroke-width:1.6}
+.ct[data-k=us]{fill:rgba(212,255,61,.28);stroke:#D4FF3D;stroke-width:1.6}
+.wmap[data-mode=monroe] .ct[data-k=mx],.wmap[data-mode=monroe] .ct[data-k=br]{fill:rgba(143,180,255,.2);stroke:#8fb4ff}
+.rl2{fill:none;stroke:#8fb4ff;stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;opacity:.95}
+.rl2.hot{stroke:#D4FF3D;stroke-width:4.4}
+.blk{cursor:pointer}
+/* cols */
+.cplot{flex:1 1 0;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:1cqi;padding:1.2cqi 1.8cqi;display:flex;flex-direction:column;gap:.7cqi;position:relative;z-index:5}
+.chead{display:flex;align-items:baseline;justify-content:space-between;gap:1.5cqi;flex-wrap:wrap}
+.ctit{font-size:2.1cqi;font-weight:900;color:var(--lime)}
+.cleg{display:flex;gap:1.6cqi;font-size:1.5cqi;font-weight:700;align-items:center;flex-wrap:wrap}
+.cleg i{display:inline-block;width:1.3cqi;height:1.3cqi;border-radius:.3cqi;margin-right:.5cqi;vertical-align:-.15cqi}.cleg small{color:var(--sub);font-weight:500}
+.cbars{flex:1;min-height:0;display:flex;align-items:stretch;gap:1.6cqi;padding-top:.5cqi;border-bottom:2px solid var(--line)}
+.cg{flex:1;min-width:0;display:flex;flex-direction:column}
+.cgb{flex:1;min-height:0;display:flex;align-items:stretch;justify-content:center;gap:.7cqi}
+.cb{position:relative;flex:1;max-width:8cqi}
+.cb i{position:absolute;left:0;right:0;bottom:0;display:block;background:var(--c);border-radius:.5cqi .5cqi 0 0;height:calc(var(--h,0)*1%);transition:height 1s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 1.2cqi color-mix(in srgb,var(--c) 40%,transparent)}
+.cb em{position:absolute;left:-.8cqi;right:-.8cqi;text-align:center;bottom:calc(var(--h,0)*1% + .2cqi);font-style:normal;font-size:1.7cqi;font-weight:900;opacity:0;transition:bottom 1s cubic-bezier(.2,.8,.2,1),opacity .4s .6s;white-space:nowrap}
+.cg.on .cb em{opacity:1}
+.cg>span{text-align:center;font-size:1.7cqi;font-weight:900;color:var(--sub);padding-top:.4cqi}
+.cg.cur>span{color:var(--lime)}
+.cfoot{font-size:1.2cqi;color:var(--sub)}
+.wside .chips .chip.play{border-color:var(--lime);color:var(--lime)}
+.wside .chips .chip.play:hover{background:var(--lime);color:var(--bg)}
+.wg[data-wg=tlap] .wside{flex:0 0 36%}.wg[data-wg=tlap] .wside .hint{display:none}.wg[data-wg=tlap] .chips.tl2 .chip{padding:.2cqi .7cqi;min-height:40px}
+.wg[data-wg=tlap] .kpi .stat2{padding:.4cqi .8cqi}.wg[data-wg=tlap] .kpi .big-n{font-size:3.2cqi}
+.hud-t{max-width:30cqi}.tlnote{position:absolute;left:1.4cqi;bottom:.8cqi;font-size:1.15cqi;color:var(--sub);z-index:2;pointer-events:none}
+.s37 .g2 .ul li{font-size:1.95cqi}.s37 .g2 .card h3{font-size:2.2cqi}.s37 .g2 .ul{gap:.9cqi}
+.wmap.usm .lb.sm{font-size:19px}.wmap.usm .pt{r:9px}.wmap.usm .pt:hover{r:12px}.wmap.usm[data-mode=imm] .st,.wmap.usm[data-mode=res] .st{fill:#233468}
+.wg[data-wg=tlap] .info p{font-size:1.5cqi;line-height:1.45}.wg[data-wg=tlap] .info h4{font-size:1.8cqi}
+/* ===== w11 (일본편) ===== */
+.lbody{flex:1;min-height:0;display:flex}.lsvg{width:100%;height:100%}
+.lsvg .gl2{stroke:var(--line);stroke-width:1}.lsvg .ax{fill:var(--sub);font-size:17px}
+.lsvg .lpath{fill:none;stroke:var(--lime);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s ease;filter:drop-shadow(0 0 6px rgba(212,255,61,.45))}
+.lsvg .ldot{fill:var(--navy,#0B1230);stroke:var(--sub);stroke-width:2;opacity:.35;cursor:pointer;transition:all .3s}
+.lsvg .ldot.on{opacity:1;stroke:var(--lime)}.lsvg .ldot.cur{fill:#FF6B5B;stroke:#fff;r:8}
+.lsvg .lval{fill:#fff;font-size:27px;font-weight:900;paint-order:stroke;stroke:#0B1230;stroke-width:4px}
+.jpm .ct{fill:#1a2650;stroke:#34426f;stroke-width:.8}
+.jpm .ct[data-k=jp]{fill:rgba(255,107,91,.18);stroke:#FF6B5B;stroke-width:1.8}
+.g5{grid-template-columns:repeat(3,1fr)}
+.g3 .stat{padding:1cqi}.g3 .big2{font-size:5cqi}.g3 .sl{font-size:2cqi}.g3 .ss{font-size:1.5cqi}
+
+/* ===== w10 (중국편) ===== */
+.g4{grid-template-columns:repeat(4,1fr)}
+.cnm .ct,.brim .ct{fill:#1a2650;stroke:#34426f;stroke-width:.8}
+.cnm .ct[data-k=cn],.brim .ct[data-k=cn]{fill:rgba(255,107,91,.3);stroke:#FF6B5B;stroke-width:1.8}
+.brim .lb.sm{font-size:14px}.brim .pt{r:7px}
+@keyframes fk{from{transform:scale(.85,.8)}to{transform:scale(1.15,1.3)}}
+@keyframes sm{0%{transform:translateY(0) scale(1);opacity:.6}100%{transform:translateY(-70px) scale(2.2);opacity:0}}
+@keyframes fly{0%{transform:translateY(0);opacity:1}70%{transform:translateY(-110px);opacity:1}100%{transform:translateY(-120px);opacity:0}}
+@keyframes tp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes tr{0%{transform:translate(95px,208px)}100%{transform:translate(445px,208px)}}
+@keyframes wk{from{transform:translateX(0)}to{transform:translateX(55px)}}
+.hpr{opacity:0;transform-box:fill-box;transform-origin:center;animation:hpp .5s ease-out forwards}
+@keyframes hpp{from{opacity:0;transform:scale(2.4)}to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.hpr{animation:none;opacity:1}}
+.dense4 .g2 .ul li{font-size:1.9cqi}.dense4 .g2 .ul{gap:.8cqi}.dense4 .g2 .card h3{font-size:2.2cqi}.g4 .big2{font-size:4.4cqi}.g4 .stat{padding:1cqi}.g4 .sl{font-size:1.9cqi}
+.dense7 .nrow{padding:.5cqi 1.2cqi}.dense7 .nrow h3{font-size:2cqi}.dense7 .nrow p{font-size:1.5cqi}.dense7 .nlist{gap:.6cqi}
+.g4 .stat{padding:.9cqi}.g4 .big2{font-size:4.2cqi}.g4 .sl{font-size:1.8cqi}.g4 .ss{font-size:1.4cqi}
+.g3 .stat{padding:1cqi}.g3 .big2{font-size:5cqi}.g3 .sl{font-size:2cqi}.g3 .ss{font-size:1.5cqi}
+.covmap{position:absolute;right:1cqi;top:2cqi;width:36%;height:auto;opacity:.95;pointer-events:none}.cover .slide-content>*:not(.covmap){position:relative;z-index:1}</style>
+</head>
+<body>
+<div class="bar top">
+  <a class="btn" href="international-politics.html">← 강의 안내</a>
+  <div class="ttl">경제와 전쟁의 순환<small>글로벌시대의 국제정치 · 2회</small></div>
+  <span class="sp"></span>
+  <button type="button" class="btn" id="bh" title="쉿, 조용히 생각하는 시간 (S)">🤫 쉿</button>
+  <button type="button" class="btn hide-s" id="bg" title="전체보기 (G)">▦ 전체보기</button>
+  <button type="button" class="btn hide-s" id="bp" title="PDF 저장 (P)">PDF</button>
+  <button type="button" class="btn main" id="bf" title="전체화면 (F)">⛶ 전체화면</button>
+</div>
+<main id="wrap">
+  <div id="stage">
+<section class="slide cover nofoot"><div class="slide-content"><svg class="covmap" viewBox="30 10 540 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><circle cx="300" cy="290" r="200" fill="none" stroke="#34426f" stroke-width="3" stroke-dasharray="6 9"/><circle cx="300" cy="80" r="58" fill="#14204a" stroke="#D4FF3D" stroke-width="5"/><text x="300" y="87" text-anchor="middle" style="fill:#D4FF3D;font-size:22px;font-weight:900">경제</text><circle cx="490" cy="290" r="58" fill="#14204a" stroke="#8fb4ff" stroke-width="5"/><text x="490" y="297" text-anchor="middle" style="fill:#8fb4ff;font-size:22px;font-weight:900">군사력</text><circle cx="300" cy="480" r="58" fill="#14204a" stroke="#FF6B5B" stroke-width="5"/><text x="300" y="487" text-anchor="middle" style="fill:#FF6B5B;font-size:22px;font-weight:900">전쟁</text><circle cx="110" cy="290" r="58" fill="#14204a" stroke="#36c5b8" stroke-width="5"/><text x="110" y="297" text-anchor="middle" style="fill:#36c5b8;font-size:19px;font-weight:900">시장·자원</text><circle r="12" fill="#D4FF3D"><animateMotion dur="8s" repeatCount="indefinite" path="M300 80 A200 200 0 0 1 500 290 A200 200 0 0 1 300 490 A200 200 0 0 1 100 290 A200 200 0 0 1 300 80"/></circle><text x="300" y="288" text-anchor="middle" style="fill:#fff;font-size:26px;font-weight:900">순환</text></svg><div class="tag">글로벌시대의 국제정치 · 2회</div><h1 class="cov">경제와 전쟁의<br>순환</h1><p class="cov-sub">그 이론과 역사 — 농업·상업·산업 사회는 어떻게 전쟁을 바꾸었나</p><p class="cov-q">"왜 경제 1위 국가가 결국 전쟁터 한복판에 서게 되는가?"</p><p class="cov-by">나병인 교수 | 가천대학교 행정학과</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">OPENING · 오늘의 약속</div><h2 class="t">100분 뒤, 여러분은 이 세 문장을 말할 수 있습니다</h2><div class="main stack"><div class="nlist"><div class="nrow"><div class="nn">1</div><div><h3>순환의 논리</h3><p>경제가 커지면 군사력을 키우고, 이웃의 불안(안보 딜레마)이 전쟁의 씨앗이 된다.</p></div></div><div class="nrow"><div class="nn">2</div><div><h3>생산 방식과 전쟁</h3><p>농업→상업→산업으로 재생산 방식이 바뀌면서 전쟁의 양상도 바뀌었다.</p></div></div><div class="nrow"><div class="nn">3</div><div><h3>선순환과 악순환</h3><p>경제의 선순환이 패권을 유지하고, 악순환이 패권을 무너뜨린다.</p></div></div></div><div class="call "><b>오늘의 한 줄:</b> 패권은 전쟁에서 이긴 게 아니라, 경제를 굴린 나라가 전쟁도 이긴다. <i>(1/3 · 이 문장을 세 번 만나게 됩니다)</i></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">AGENDA</div><h2 class="t">오늘 강의 순서 (100분)</h2><div class="main stack"><div class="nlist"><div class="nrow"><div class="nn">1</div><div><h3>도입 · 10분</h3><p>기술 패권이 곧 전쟁터다</p></div></div><div class="nrow"><div class="nn">2</div><div><h3>본강의 1 · 10~55분</h3><p>경제↔전쟁 순환 논리와 3가지 사회의 경제 구조</p></div></div><div class="nrow"><div class="nn">3</div><div><h3>본강의 2 · 55~80분</h3><p>선순환·악순환과 산업 사회의 전쟁 양상</p></div></div><div class="nrow"><div class="nn">4</div><div><h3>마무리 · 80~100분</h3><p>핵심 한 줄, 3회 예고, 활동</p></div></div></div><div class="call "><b>★ 클릭 슬라이드</b>(그림·연표)는 심화용입니다. 시간이 모자라면 건너뛰어도 흐름이 이어집니다.</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide quote nofoot"><div class="slide-content"><div class="qmark">“</div><p class="bigq">왜 경제 1위 국가가<br>결국 전쟁터 한복판에 서게 될까?</p><p class="bigq" style="font-size:3cqi;color:var(--lime)">그리고 그 나라는 언제쯤 쇠퇴할까?</p><p class="note">🤫 S 키 — 7초만 조용히 생각해 봅시다</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">목표</div><h2 class="t">2회의 강의 목표 3가지</h2><div class="main stack"><div class="grid g3 "><div class="card "><h3>① 순환 이해</h3><ul class="ul"><li>경제적 번영과 군사력(전쟁)이 어떻게 <b>순환</b>하는지 구조적으로 이해한다</li></ul></div><div class="card "><h3>② 전쟁 양상의 변화</h3><ul class="ul"><li>농업→상업→산업 사회로 바뀌며 <b>전쟁의 양상</b>이 어떻게 변했는지 안다</li></ul></div><div class="card "><h3>③ 선·악순환</h3><ul class="ul"><li>경제의 선순환/악순환이 <b>패권의 유지와 쇠퇴</b>를 결정함을 파악한다</li></ul></div></div><div class="call "><b>개요:</b> 사회의 생산 방식(단순재생산→자본축적→확대재생산)이 바뀔 때 전쟁의 양상이 어떻게 달라지는지를 구조적으로 추적합니다.</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide chapter"><div class="slide-content"><div class="chnum">01</div><h1 class="chtit">기술 패권이<br>곧 전쟁터다</h1><p class="chsub">도입 · CHAPTER 01</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide quote nofoot"><div class="slide-content"><div class="qmark">“</div><p class="bigq">뉴스에서 제일 많이 보는 단어는?</p><p class="bigq" style="font-size:3cqi;color:var(--lime)">AI, 반도체, 희토류 — 그런데 왜 전쟁 이야기와 같이 나올까요?</p><p class="note">🤫 S 키 — 오늘 그 연결 고리를 찾습니다</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/China%E2%80%93United_States_trade_war" target="_blank" rel="noopener">🔗 위키: 미중 기술 경쟁</a></div><div class="kick">도입 · 미·중 기술 패권 경쟁 ★</div><h2 class="t">경제 경쟁이 왜 전쟁으로 이어지는가</h2><div class="main stack"><div class="wg" data-wg="tech"><div class="wmap " data-mode=""><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="미중 기술 패권 경쟁"><rect width="640" height="400" fill="#101a38"/><g data-layer="f"><text x="320" y="52" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">미·중 경쟁 분야</text><g data-k="ai"><rect class="fp" x="30" y="90" width="180" height="100" rx="12" fill="#1a2547" stroke="#8fb4ff" stroke-width="3"/><text x="120" y="138" text-anchor="middle" style="fill:#8fb4ff;font-size:19px;font-weight:900;stroke:none">AI</text><text x="120" y="160" text-anchor="middle" style="fill:#9fb0d8;font-size:12px;font-weight:500;stroke:none">인공지능</text></g><g data-k="qc"><rect class="fp" x="230" y="90" width="180" height="100" rx="12" fill="#1a2547" stroke="#8fb4ff" stroke-width="3"/><text x="320" y="140" text-anchor="middle" style="fill:#8fb4ff;font-size:19px;font-weight:900;stroke:none">양자컴퓨팅</text></g><g data-k="bio"><rect class="fp" x="430" y="90" width="180" height="100" rx="12" fill="#1a2547" stroke="#8fb4ff" stroke-width="3"/><text x="520" y="140" text-anchor="middle" style="fill:#8fb4ff;font-size:19px;font-weight:900;stroke:none">합성생물학</text></g><g data-k="rob"><rect class="fp" x="130" y="220" width="180" height="100" rx="12" fill="#1a2547" stroke="#8fb4ff" stroke-width="3"/><text x="220" y="270" text-anchor="middle" style="fill:#8fb4ff;font-size:19px;font-weight:900;stroke:none">첨단로봇</text></g><g data-k="g6"><rect class="fp" x="330" y="220" width="180" height="100" rx="12" fill="#1a2547" stroke="#8fb4ff" stroke-width="3"/><text x="420" y="270" text-anchor="middle" style="fill:#8fb4ff;font-size:19px;font-weight:900;stroke:none">통신(6G)</text></g><text x="320" y="350" text-anchor="middle" style="fill:#D4FF3D;font-size:17px;font-weight:900;stroke:none">기술을 쥔 쪽이 경제와 안보를 함께 쥡니다</text></g><g data-layer="c"><text x="320" y="52" text-anchor="middle" style="fill:#FF6B5B;font-size:22px;font-weight:900;stroke:none">중국: 지정학적 영향력 확대</text><g data-k="re"><rect class="fp" x="30" y="120" width="180" height="120" rx="12" fill="#1a2547" stroke="#FF6B5B" stroke-width="3"/><text x="120" y="178" text-anchor="middle" style="fill:#FF6B5B;font-size:19px;font-weight:900;stroke:none">희토류</text><text x="120" y="200" text-anchor="middle" style="fill:#9fb0d8;font-size:12px;font-weight:500;stroke:none">우위 분야</text></g><g data-k="ev"><rect class="fp" x="230" y="120" width="180" height="120" rx="12" fill="#1a2547" stroke="#FF6B5B" stroke-width="3"/><text x="320" y="178" text-anchor="middle" style="fill:#FF6B5B;font-size:19px;font-weight:900;stroke:none">전기차</text><text x="320" y="200" text-anchor="middle" style="fill:#9fb0d8;font-size:12px;font-weight:500;stroke:none">우위 분야</text></g><g data-k="ship"><rect class="fp" x="430" y="120" width="180" height="120" rx="12" fill="#1a2547" stroke="#FF6B5B" stroke-width="3"/><text x="520" y="178" text-anchor="middle" style="fill:#FF6B5B;font-size:19px;font-weight:900;stroke:none">조선</text><text x="520" y="200" text-anchor="middle" style="fill:#9fb0d8;font-size:12px;font-weight:500;stroke:none">우위 분야</text></g><text x="320" y="310" text-anchor="middle" style="fill:#ffd0c9;font-size:17px;font-weight:700;stroke:none">공급망의 핵심 고리를 쥐고 영향력을 키웁니다</text></g><g data-layer="u"><text x="320" y="52" text-anchor="middle" style="fill:#8fb4ff;font-size:22px;font-weight:900;stroke:none">미국: 맞대응</text><g data-k="tar"><rect class="fp" x="30" y="120" width="180" height="120" rx="12" fill="#1a2547" stroke="#8fb4ff" stroke-width="3"/><text x="120" y="178" text-anchor="middle" style="fill:#8fb4ff;font-size:19px;font-weight:900;stroke:none">관세</text><text x="120" y="200" text-anchor="middle" style="fill:#9fb0d8;font-size:12px;font-weight:500;stroke:none">압박 수단</text></g><g data-k="exp"><rect class="fp" x="230" y="120" width="180" height="120" rx="12" fill="#1a2547" stroke="#8fb4ff" stroke-width="3"/><text x="320" y="178" text-anchor="middle" style="fill:#8fb4ff;font-size:19px;font-weight:900;stroke:none">수출통제</text><text x="320" y="200" text-anchor="middle" style="fill:#9fb0d8;font-size:12px;font-weight:500;stroke:none">압박 수단</text></g><g data-k="ally"><rect class="fp" x="430" y="120" width="180" height="120" rx="12" fill="#1a2547" stroke="#8fb4ff" stroke-width="3"/><text x="520" y="178" text-anchor="middle" style="fill:#8fb4ff;font-size:19px;font-weight:900;stroke:none">동맹 압박</text><text x="520" y="200" text-anchor="middle" style="fill:#9fb0d8;font-size:12px;font-weight:500;stroke:none">압박 수단</text></g><text x="320" y="310" text-anchor="middle" style="fill:#cfe0ff;font-size:17px;font-weight:700;stroke:none">맞서면서 갈등이 더 커집니다</text></g><g data-layer="w"><text x="320" y="52" text-anchor="middle" style="fill:#ff9a3d;font-size:22px;font-weight:900;stroke:none">경고의 목소리</text><path data-k="warn" d="M320 100 L420 280 L220 280 Z" fill="#26202a" stroke="#ff9a3d" stroke-width="6"><animate attributeName="stroke-opacity" values="1;.3;1" dur="1.4s" repeatCount="indefinite"/></path><text x="320" y="255" text-anchor="middle" style="fill:#ff9a3d;font-size:90px;font-weight:900;stroke:none">!</text><text x="320" y="330" text-anchor="middle" style="fill:#ffe0b8;font-size:17px;font-weight:700;stroke:none">"10년 내 무력충돌 가능성" — 양측 모두를 경고하는 분석들</text></g></svg></div><div class="wside"><div class="chips"><button type="button" class="chip" data-mode="f">① 경쟁 분야</button><button type="button" class="chip" data-mode="c">② 중국</button><button type="button" class="chip" data-mode="u">③ 미국</button><button type="button" class="chip" data-mode="w">④ 경고</button></div><div class="info"></div><p class="hint">👆 단계와 상자를 눌러 보세요</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide chapter"><div class="slide-content"><div class="chnum">02</div><h1 class="chtit">경제와 전쟁의 순환<br>(이론)</h1><p class="chsub">본강의 1 · CHAPTER 02</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Security_dilemma" target="_blank" rel="noopener">🔗 위키: 안보 딜레마</a></div><div class="kick">Ch.2 · 현실주의적 순환 ★</div><h2 class="t">경제 경쟁 → 안보 딜레마 → 군사 충돌 위험</h2><div class="main stack"><div class="wg" data-wg="dil"><div class="wmap " data-mode=""><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="경제와 안보 딜레마"><rect width="640" height="400" fill="#101a38"/><path d="M20 330 L620 330" stroke="#34426f" stroke-width="4"/><g data-layer="d1"><text x="320" y="50" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">경제가 성장한 국가 → 군사력 확대</text><rect data-k="grow" x="60" y="290" width="40" height="40" fill="#D4FF3D" opacity=".85"><animate attributeName="height" values="0;40" dur="1.2s" fill="freeze" begin="0.0s"/><animate attributeName="y" values="330;290" dur="1.2s" fill="freeze" begin="0.0s"/></rect><rect data-k="grow" x="115" y="255" width="40" height="75" fill="#D4FF3D" opacity=".85"><animate attributeName="height" values="0;75" dur="1.2s" fill="freeze" begin="0.3s"/><animate attributeName="y" values="330;255" dur="1.2s" fill="freeze" begin="0.3s"/></rect><rect data-k="grow" x="170" y="220" width="40" height="110" fill="#D4FF3D" opacity=".85"><animate attributeName="height" values="0;110" dur="1.2s" fill="freeze" begin="0.6s"/><animate attributeName="y" values="330;220" dur="1.2s" fill="freeze" begin="0.6s"/></rect><rect data-k="grow" x="225" y="185" width="40" height="145" fill="#D4FF3D" opacity=".85"><animate attributeName="height" values="0;145" dur="1.2s" fill="freeze" begin="0.9s"/><animate attributeName="y" values="330;185" dur="1.2s" fill="freeze" begin="0.9s"/></rect><rect data-k="grow" x="280" y="150" width="40" height="180" fill="#D4FF3D" opacity=".85"><animate attributeName="height" values="0;180" dur="1.2s" fill="freeze" begin="1.2s"/><animate attributeName="y" values="330;150" dur="1.2s" fill="freeze" begin="1.2s"/></rect><text x="190" y="360" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:700;stroke:none">경제력</text><path class="arr" d="M350 220 L 450 220" stroke="#D4FF3D" stroke-width="4"/><rect x="470" y="76" width="90" height="34" rx="8" fill="#1a2547" stroke="#8fb4ff" stroke-width="2"/><text x="515" y="99" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:700;stroke:none">자원</text><rect x="470" y="120" width="90" height="34" rx="8" fill="#1a2547" stroke="#8fb4ff" stroke-width="2"/><text x="515" y="143" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:700;stroke:none">시장</text><rect x="470" y="164" width="90" height="34" rx="8" fill="#1a2547" stroke="#8fb4ff" stroke-width="2"/><text x="515" y="187" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:700;stroke:none">해상로</text><path d="M515 245 l30 -30 l30 30 v45 h-60 z" fill="#26365e" stroke="#8fb4ff" stroke-width="3"/><text x="545" y="316" text-anchor="middle" style="fill:#cfe0ff;font-size:14px;font-weight:700;stroke:none">지키려 군대를 세운다</text></g><g data-layer="d2"><text x="320" y="50" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">이웃은 불안하다: 안보 딜레마</text><g data-k="nA국"><rect x="80" y="194" width="70" height="136" fill="#D4FF3D" opacity=".9"/><rect x="80" y="180" width="70" height="14" fill="#fff" opacity=".6"/></g><text x="115" y="356" text-anchor="middle" style="fill:#D4FF3D;font-size:16px;font-weight:900;stroke:none">A국</text><g data-k="nB국"><rect x="490" y="274" width="70" height="56" fill="#8fb4ff" opacity=".9"/><rect x="490" y="260" width="70" height="14" fill="#fff" opacity=".6"/></g><text x="525" y="356" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:900;stroke:none">B국</text><path d="M150 230 Q 320 160 480 260" fill="none" stroke="#D4FF3D" stroke-width="4" stroke-dasharray="8 6"/><text x="320" y="170" text-anchor="middle" style="fill:#D4FF3D;font-size:17px;font-weight:700">"우리는 지키려는 것뿐"</text><g data-k="fear"><circle cx="525" cy="190" r="34" fill="#26202a" stroke="#ff9a3d" stroke-width="3"/><text x="525" y="203" text-anchor="middle" style="fill:#ff9a3d;font-size:30px;font-weight:900;stroke:none">?!</text></g><text x="500" y="120" text-anchor="middle" style="fill:#ffe0b8;font-size:14px;font-weight:700;stroke:none">"저쪽이 커지면 나를 칠 수 있다"</text></g><g data-layer="d3"><text x="320" y="50" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">군비 경쟁 → 오판 → 충돌</text><rect x="60" y="280" width="30" height="50" fill="#D4FF3D"/><rect x="90" y="268" width="30" height="62" fill="#8fb4ff"/><rect x="130" y="250" width="30" height="80" fill="#D4FF3D"/><rect x="160" y="238" width="30" height="92" fill="#8fb4ff"/><rect x="200" y="220" width="30" height="110" fill="#D4FF3D"/><rect x="230" y="208" width="30" height="122" fill="#8fb4ff"/><rect x="270" y="190" width="30" height="140" fill="#D4FF3D"/><rect x="300" y="178" width="30" height="152" fill="#8fb4ff"/><rect x="340" y="160" width="30" height="170" fill="#D4FF3D"/><rect x="370" y="148" width="30" height="182" fill="#8fb4ff"/><g data-k="boom"><polygon points="500,150 520,190 565,180 535,215 570,250 520,240 505,285 485,240 440,255 470,215 440,180 485,190" fill="#FF6B5B"><animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur=".8s" repeatCount="indefinite" additive="sum"/></polygon></g><text x="505" y="232" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">충돌</text><text x="220" y="375" text-anchor="middle" style="fill:#9fb0d8;font-size:14px;font-weight:500;stroke:none">서로의 군사력이 서로의 불안을 키운다</text></g></svg></div><div class="wside"><div class="chips"><button type="button" class="chip" data-mode="d1">① 성장→군사력</button><button type="button" class="chip" data-mode="d2">② 안보 딜레마</button><button type="button" class="chip" data-mode="d3">③ 군비경쟁→충돌</button></div><div class="info"></div><p class="hint">👆 단계를 눌러 보세요</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide quote nofoot"><div class="slide-content"><div class="qmark">“</div><p class="bigq">경제가 커지면 사냥감이 됩니다.</p><p class="bigq" style="font-size:3cqi;color:var(--lime)">내 물건을 지키려고 군대를 세우면, 옆 나라는 불안합니다.</p><p class="note">그 불안이 전쟁의 씨앗입니다</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide dense2"><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/German_Naval_Laws" target="_blank" rel="noopener">🔗 위키: 독일 해군법</a></div><div class="kick">Ch.2 · 사례 ★</div><h2 class="t">19세기 독일의 부상과 영국: 군비경쟁에서 1차 대전으로</h2><div class="main stack"><div class="wg col" data-wg="tl" data-src="naval" data-first="0"><div class="tl"><button type="button" class="chip" data-i="0">1871<small>독일 통일</small></button><button type="button" class="chip" data-i="1">1898<small>독일 해군법</small></button><button type="button" class="chip" data-i="2">1906<small>드레드노트 취역</small></button><button type="button" class="chip" data-i="3">1914<small>제1차 세계대전</small></button></div><div class="info" style="border-left-width:.45cqi"></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide chapter"><div class="slide-content"><div class="chnum">03</div><h1 class="chtit">3가지 사회의<br>경제 구조</h1><p class="chsub">농업 · 상업 · 산업 · CHAPTER 03</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">Ch.3 · 큰 그림</div><h2 class="t">재생산 방식이 곧 전쟁의 양상을 결정한다</h2><div class="main stack"><div class="grid g3 "><div class="card "><h3>농업 사회</h3><ul class="ul"><li><b>단순재생산</b></li><li>잉여가 새 생산 요소가 되지 않음</li><li>전쟁: 토지·인구·육군 (~15세기)</li></ul></div><div class="card "><h3>상업 사회</h3><ul class="ul"><li><b>자본축적·확대 재투자</b></li><li>사치품 무역으로 이윤 확보</li><li>전쟁: 해상로·식민지·해군 (16~18세기)</li></ul></div><div class="card "><h3>산업 사회</h3><ul class="ul"><li><b>확대재생산</b></li><li>이윤이 기술 혁신에 재투자</li><li>전쟁: 총력전·기술전·군산복합체 (19~21세기)</li></ul></div></div><div class="call "><b>핵심:</b> 경제 체제의 성격(어떻게 생산하고 잉여를 처리하는가)이 전쟁의 양상을 결정하고, 이것이 패권의 흥망을 가릅니다.</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">Ch.3 · 농업 사회의 경제 ★</div><h2 class="t">단순재생산: 풍년이 들어도 구조는 변하지 않는다</h2><div class="main stack"><div class="wg" data-wg="farm"><div class="wmap " data-mode=""><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="농업 사회의 경제"><rect width="640" height="400" fill="#101a38"/><path d="M60 340 L600 340 M60 340 L60 60" stroke="#4a5784" stroke-width="3"/><g data-layer="f1"><text x="320" y="50" text-anchor="middle" style="fill:#ff9a3d;font-size:20px;font-weight:900;stroke:none">단순재생산: 종자와 식량만 남기고 모두 소비</text><g data-k="harvest"><rect x="70" y="130" width="130" height="90" rx="12" fill="#3a4a2a" stroke="#cfe08a" stroke-width="3"/><text x="135" y="182" text-anchor="middle" style="fill:#cfe08a;font-size:20px;font-weight:900;stroke:none">수확</text></g><path d="M206 175 L256 175" stroke="#D4FF3D" stroke-width="4" fill="none" stroke-dasharray="8 6"><animate attributeName="stroke-dashoffset" values="28;0" dur="1.2s" repeatCount="indefinite"/></path><path d="M262 175 l-14 -9 v18 z" fill="#D4FF3D"/><g data-k="seed"><rect x="262" y="90" width="130" height="60" rx="10" fill="#1a2547" stroke="#D4FF3D" stroke-width="3"/><text x="327" y="127" text-anchor="middle" style="fill:#D4FF3D;font-size:17px;font-weight:900;stroke:none">종자 + 식량</text></g><g data-k="eat"><rect x="262" y="190" width="130" height="60" rx="10" fill="#1a2547" stroke="#ff9a3d" stroke-width="3"/><text x="327" y="227" text-anchor="middle" style="fill:#ff9a3d;font-size:17px;font-weight:900;stroke:none">소비 · 세금</text></g><g data-k="nofac"><rect x="440" y="130" width="150" height="90" rx="12" fill="#1a1a2a" stroke="#6a6f88" stroke-width="3" stroke-dasharray="8 6"/><text x="515" y="168" text-anchor="middle" style="fill:#aab0c8;font-size:18px;font-weight:900;stroke:none">공장·기계로</text><text x="515" y="196" text-anchor="middle" style="fill:#aab0c8;font-size:15px;font-weight:700;stroke:none">바뀌지 않음</text><path d="M450 140 L580 210 M580 140 L450 210" stroke="#FF6B5B" stroke-width="5" opacity=".45"/></g><text x="320" y="300" text-anchor="middle" style="fill:#cfe0ff;font-size:15px;font-weight:700;stroke:none">잉여가 새 생산 요소(자본·기술)로 투입되지 않는 폐쇄적 구조</text></g><g data-layer="f2"><text x="320" y="50" text-anchor="middle" style="fill:#ff9a3d;font-size:19px;font-weight:900;stroke:none">수확체감: 힘을 더 들여도 늘어나는 수확은 점점 줄어든다</text><path data-k="curve" class="fp" d="M60 340 Q 150 120 600 100" fill="none" stroke="#ff9a3d" stroke-width="8"/><text x="330" y="375" text-anchor="middle" style="fill:#9fb0d8;font-size:14px;font-weight:500;stroke:none">투입(노동·노력) →</text><text x="40" y="70" text-anchor="middle" style="fill:#9fb0d8;font-size:14px;font-weight:500;stroke:none">산출</text><circle cx="100" cy="215" r="7" fill="#FF6B5B"/><circle cx="200" cy="150" r="7" fill="#FF6B5B"/><circle cx="320" cy="118" r="7" fill="#FF6B5B"/><circle cx="460" cy="104" r="7" fill="#FF6B5B"/><text x="330" y="250" text-anchor="middle" style="fill:#ffe0b8;font-size:17px;font-weight:700;stroke:none">"더 열심히 하자"만으로는 증산 한계</text></g><g data-layer="f3"><text x="320" y="50" text-anchor="middle" style="fill:#ff9a3d;font-size:20px;font-weight:900;stroke:none">풍작이 들어도 구조는 그대로</text><rect x="70" y="100" width="200" height="120" rx="10" fill="#3a4a2a" stroke="#cfe08a" stroke-width="3"/><text x="170" y="90" text-anchor="middle" style="fill:#cfe08a;font-size:16px;font-weight:900;stroke:none">올해 (풍년)</text><circle cx="100" cy="250" r="11" fill="#e5c96a"/><circle cx="128" cy="250" r="11" fill="#e5c96a"/><circle cx="156" cy="250" r="11" fill="#e5c96a"/><circle cx="184" cy="250" r="11" fill="#e5c96a"/><circle cx="212" cy="250" r="11" fill="#e5c96a"/><circle cx="240" cy="250" r="11" fill="#e5c96a"/><rect x="360" y="100" width="200" height="120" rx="10" fill="#3a4a2a" stroke="#cfe08a" stroke-width="3"/><text x="460" y="90" text-anchor="middle" style="fill:#cfe08a;font-size:16px;font-weight:900;stroke:none">내년</text><circle cx="390" cy="160" r="11" fill="#e5c96a"/><circle cx="418" cy="160" r="11" fill="#e5c96a"/><circle cx="446" cy="160" r="11" fill="#e5c96a"/><circle cx="474" cy="160" r="11" fill="#e5c96a"/><circle cx="502" cy="160" r="11" fill="#e5c96a"/><circle cx="530" cy="160" r="11" fill="#e5c96a"/><path d="M280 160 L 350 160" stroke="#D4FF3D" stroke-width="4"/><path d="M356 160 l-12 -8 v16 z" fill="#D4FF3D"/><g data-k="same"><text x="320" y="300" text-anchor="middle" style="fill:#D4FF3D;font-size:19px;font-weight:900;stroke:none">곡식은 2배, 논은 그대로</text></g><text x="320" y="330" text-anchor="middle" style="fill:#cfe0ff;font-size:14px;font-weight:500;stroke:none">남은 것은 먹거나 탕진 → 다음 해의 확대 투자로 이어지지 않음</text></g><g data-layer="f4"><text x="320" y="50" text-anchor="middle" style="fill:#ff9a3d;font-size:20px;font-weight:900;stroke:none">경제 성장의 감속: 장기적으로 정체하는 사회</text><path data-k="flat" class="fp" d="M60 300 Q 200 200 330 180 T 600 168" fill="none" stroke="#ff9a3d" stroke-width="9"/><path d="M60 300 L 600 300" stroke="#34426f" stroke-dasharray="6 8" stroke-width="3"/><text x="450" y="140" text-anchor="middle" style="fill:#FF6B5B;font-size:20px;font-weight:900;stroke:none">천 년 넘게 비슷한 수준</text><text x="330" y="370" text-anchor="middle" style="fill:#9fb0d8;font-size:14px;font-weight:500;stroke:none">시간 →</text></g></svg></div><div class="wside"><div class="chips"><button type="button" class="chip" data-mode="f1">① 단순재생산</button><button type="button" class="chip" data-mode="f2">② 수확체감</button><button type="button" class="chip" data-mode="f3">③ 풍작도 불변</button><button type="button" class="chip" data-mode="f4">④ 성장 감속</button></div><div class="info"></div><p class="hint">👆 단계와 그림을 눌러 보세요</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide dense4"><div class="slide-content"><div class="kick">Ch.3 · 농업 사회의 전쟁</div><h2 class="t">땅과 인구를 위한 전쟁</h2><div class="main stack"><div class="grid g2 "><div class="card "><h3>경제 구조</h3><ul class="ul"><li>소농 중심 자급자족 · 단순재생산</li><li>수확체감 → 증산 동기 부족</li><li>장기적으로 성장이 멈추는 정체 사회</li></ul></div><div class="card "><h3>전쟁 양상 (~15세기)</h3><ul class="ul"><li><b>조공·육군·영토 확장</b> 중심</li><li>잉여가 축적되지 않아 대규모 산업 동원 전쟁은 불가능</li><li>목적은 <b>땅과 인구</b> 확보(더 많은 농지 = 더 많은 조공)</li></ul></div></div><div class="call "><b>교수 한마디:</b> "팔을 많이 놀려도 조금만 더 걷는다면 결국 제자리걸음입니다. 농업 사회 경제는 그래서 오래 비슷한 수준이었습니다."</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">Ch.3 · 상업 사회의 경제 ★</div><h2 class="t">돈이 돈을 부르기 시작하다: 확대 재투자</h2><div class="main stack"><div class="wg" data-wg="trade"><div class="wmap " data-mode=""><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="상업 사회의 경제"><rect width="640" height="400" fill="#101a38"/><g data-layer="t1"><text x="320" y="50" text-anchor="middle" style="fill:#36c5b8;font-size:20px;font-weight:900;stroke:none">사치품 무역: 멀리 운반해 되팔아 차익을 남긴다</text><rect x="0" y="230" width="640" height="170" fill="#0c3a66"/><text x="60" y="190" text-anchor="middle" style="fill:#fff;font-size:18px;font-weight:900;stroke:none">동방</text><text x="520" y="190" text-anchor="middle" style="fill:#fff;font-size:18px;font-weight:900;stroke:none">유럽</text><g data-k="ship"><path d="M50 260 l140 0 l-24 40 h-92 z" fill="#8a6a4a"/><path d="M118 260 v-90 l60 70 z" fill="#f6f3ec"/><animateTransform attributeName="transform" type="translate" values="0 0;340 0" dur="5s" repeatCount="indefinite"/></g><rect x="130" y="90" width="90" height="38" rx="8" fill="#1a2547" stroke="#36c5b8" stroke-width="2"/><text x="175" y="115" text-anchor="middle" style="fill:#36c5b8;font-size:16px;font-weight:700;stroke:none">비단</text><rect x="260" y="90" width="90" height="38" rx="8" fill="#1a2547" stroke="#36c5b8" stroke-width="2"/><text x="305" y="115" text-anchor="middle" style="fill:#36c5b8;font-size:16px;font-weight:700;stroke:none">향료</text><rect x="390" y="90" width="90" height="38" rx="8" fill="#1a2547" stroke="#36c5b8" stroke-width="2"/><text x="435" y="115" text-anchor="middle" style="fill:#36c5b8;font-size:16px;font-weight:700;stroke:none">도자기</text><text x="320" y="360" text-anchor="middle" style="fill:#cfe0ff;font-size:15px;font-weight:700;stroke:none">비단·향료·도자기 같은 고가품 → 큰 상업 이윤</text></g><g data-layer="t2"><text x="320" y="50" text-anchor="middle" style="fill:#36c5b8;font-size:20px;font-weight:900;stroke:none">이윤 → 자본 → 다음 배: 확대 재투자</text><g data-k="fleet"><path d="M50 260 l50 0 l-14 24 h-22 z" fill="#8a6a4a" transform="scale(1)"/><path d="M75 260 v-40 l20 20 z" fill="#f6f3ec"/></g><g data-k="fleet"><path d="M190 260 l64 0 l-14 24 h-36 z" fill="#8a6a4a" transform="scale(1)"/><path d="M222 260 v-52 l28 28 z" fill="#f6f3ec"/></g><g data-k="fleet"><path d="M330 260 l78 0 l-14 24 h-50 z" fill="#8a6a4a" transform="scale(1)"/><path d="M369 260 v-64 l36 36 z" fill="#f6f3ec"/></g><g data-k="fleet"><path d="M470 260 l92 0 l-14 24 h-64 z" fill="#8a6a4a" transform="scale(1)"/><path d="M516 260 v-76 l44 44 z" fill="#f6f3ec"/></g><circle cx="320" cy="140" r="34" fill="#ffcf5c"><animate attributeName="r" values="30;38;30" dur="1.6s" repeatCount="indefinite"/></circle><text x="320" y="150" text-anchor="middle" style="fill:#7a5a00;font-size:26px;font-weight:900;stroke:none">돈</text><path class="arr" d="M320 176 L 320 230" stroke="#D4FF3D" stroke-width="4"/><text x="320" y="340" text-anchor="middle" style="fill:#D4FF3D;font-size:17px;font-weight:900;stroke:none">돈이 돈을 부르는 구조가 생기기 시작</text></g><g data-layer="t3"><text x="320" y="50" text-anchor="middle" style="fill:#ff9a3d;font-size:20px;font-weight:900;stroke:none">그래도 근본은 농업</text><rect x="80" y="240" width="480" height="90" rx="10" fill="#3a4a2a" stroke="#cfe08a" stroke-width="3"/><text x="320" y="292" text-anchor="middle" style="fill:#cfe08a;font-size:20px;font-weight:900;stroke:none">농업 생산물 (곡물·원료)</text><g data-k="grain"><path d="M200 220 l80 0 l-12 22 h-56 z" fill="#8a6a4a"/><path d="M240 220 v-60 l36 46 z" fill="#f6f3ec"/></g><g data-k="grain2"><path d="M380 220 l80 0 l-12 22 h-56 z" fill="#8a6a4a"/><path d="M420 220 v-60 l36 46 z" fill="#f6f3ec"/></g><text x="320" y="120" text-anchor="middle" style="fill:#ffe0b8;font-size:18px;font-weight:700;stroke:none">상인이 돈을 벌어도 파는 건 농부가 기른 것</text></g><g data-layer="t4"><text x="320" y="50" text-anchor="middle" style="fill:#8fb4ff;font-size:20px;font-weight:900;stroke:none">과도기이자 모태</text><g data-k="stage0"><rect class="fp" x="40" y="140" width="160" height="110" rx="14" fill="#1a2547" stroke="#ff9a3d" stroke-width="4"/><text x="120" y="205" text-anchor="middle" style="fill:#ff9a3d;font-size:24px;font-weight:900;stroke:none">농업</text></g><g data-k="stage1"><rect class="fp" x="240" y="140" width="160" height="110" rx="14" fill="#1a2547" stroke="#36c5b8" stroke-width="4"/><text x="320" y="205" text-anchor="middle" style="fill:#36c5b8;font-size:24px;font-weight:900;stroke:none">상업</text><text x="320" y="232" text-anchor="middle" style="fill:#36c5b8;font-size:14px;font-weight:700;stroke:none">(대기실)</text></g><g data-k="stage2"><rect class="fp" x="440" y="140" width="160" height="110" rx="14" fill="#1a2547" stroke="#D4FF3D" stroke-width="4"/><text x="520" y="205" text-anchor="middle" style="fill:#D4FF3D;font-size:24px;font-weight:900;stroke:none">산업</text></g><path d="M206 195 L232 195" stroke="#D4FF3D" stroke-width="4" fill="none" stroke-dasharray="8 6"><animate attributeName="stroke-dashoffset" values="28;0" dur="1.2s" repeatCount="indefinite"/></path><path d="M238 195 l-14 -9 v18 z" fill="#D4FF3D"/><path d="M406 195 L432 195" stroke="#D4FF3D" stroke-width="4" fill="none" stroke-dasharray="8 6"><animate attributeName="stroke-dashoffset" values="28;0" dur="1.2s" repeatCount="indefinite"/></path><path d="M438 195 l-14 -9 v18 z" fill="#D4FF3D"/><text x="320" y="320" text-anchor="middle" style="fill:#cfe0ff;font-size:16px;font-weight:700;stroke:none">축적된 상업 자본과 무역망이 산업혁명을 낳는 모태</text></g></svg></div><div class="wside"><div class="chips"><button type="button" class="chip" data-mode="t1">① 사치품 무역</button><button type="button" class="chip" data-mode="t2">② 재투자</button><button type="button" class="chip" data-mode="t3">③ 농업 기반</button><button type="button" class="chip" data-mode="t4">④ 과도기·모태</button></div><div class="info"></div><p class="hint">👆 단계와 그림을 눌러 보세요</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide dense4"><div class="slide-content"><div class="kick">Ch.3 · 상업 사회의 전쟁</div><h2 class="t">바다와 식민지를 위한 전쟁</h2><div class="main stack"><div class="grid g2 "><div class="card "><h3>경제 구조</h3><ul class="ul"><li>사치품 무역 → 상업 이윤 → 자본 축적</li><li>자본이 다시 선박·창고에 재투자</li><li>그러나 근본은 <b>농업 생산물</b> 거래</li></ul></div><div class="card "><h3>전쟁 양상 (16~18세기)</h3><ul class="ul"><li><b>해상 무역·식민지·해군</b> 중심</li><li>해상로와 식민지를 둘러싼 쟁탈전</li><li>예: 스페인 무적함대 vs 영국 해군</li></ul></div></div><div class="call "><b>핵심:</b> 상업 사회는 산업 사회로 가기 직전의 "대기실"입니다. 3회부터 사례로 봅니다.</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">Ch.3 · 산업 사회의 경제 ★</div><h2 class="t">공장에서 확대재생산으로: 멈추지 않는 성장</h2><div class="main stack"><div class="wg" data-wg="fac"><div class="wmap " data-mode=""><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="산업 사회의 경제"><rect width="640" height="400" fill="#101a38"/><g data-layer="i1"><text x="320" y="50" text-anchor="middle" style="fill:#D4FF3D;font-size:20px;font-weight:900;stroke:none">논밭이 아니라 공장: 인위적 생산 공간</text><rect x="20" y="80" width="110" height="38" rx="8" fill="#1a2547" stroke="#8fb4ff" stroke-width="2"/><text x="75" y="105" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:700;stroke:none">자본</text><path class="arr" d="M134 99 L 240 200" stroke="#8fb4ff" stroke-width="3" fill="none"/><rect x="20" y="130" width="110" height="38" rx="8" fill="#1a2547" stroke="#8fb4ff" stroke-width="2"/><text x="75" y="155" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:700;stroke:none">노동</text><path class="arr" d="M134 149 L 240 200" stroke="#8fb4ff" stroke-width="3" fill="none"/><rect x="20" y="180" width="110" height="38" rx="8" fill="#1a2547" stroke="#8fb4ff" stroke-width="2"/><text x="75" y="205" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:700;stroke:none">기술</text><path class="arr" d="M134 199 L 240 200" stroke="#8fb4ff" stroke-width="3" fill="none"/><rect x="20" y="230" width="110" height="38" rx="8" fill="#1a2547" stroke="#8fb4ff" stroke-width="2"/><text x="75" y="255" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:700;stroke:none">원자재</text><path class="arr" d="M134 249 L 240 200" stroke="#8fb4ff" stroke-width="3" fill="none"/><rect x="20" y="280" width="110" height="38" rx="8" fill="#1a2547" stroke="#8fb4ff" stroke-width="2"/><text x="75" y="305" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:700;stroke:none">에너지</text><path class="arr" d="M134 299 L 240 200" stroke="#8fb4ff" stroke-width="3" fill="none"/><g data-k="fac"><rect x="240" y="170" width="170" height="110" fill="#3a4676" stroke="#D4FF3D" stroke-width="4"/><rect x="258" y="120" width="26" height="54" fill="#3a4676"/><rect x="304" y="136" width="26" height="40" fill="#3a4676"/><circle cx="271" cy="106" r="12" fill="#9fb0d8" opacity=".7"><animate attributeName="cy" values="112;76" dur="2s" repeatCount="indefinite"/></circle></g><text x="325" y="240" text-anchor="middle" style="fill:#fff;font-size:20px;font-weight:900;stroke:none">공장·기업</text><path d="M416 225 L470 225" stroke="#D4FF3D" stroke-width="4" fill="none" stroke-dasharray="8 6"><animate attributeName="stroke-dashoffset" values="28;0" dur="1.2s" repeatCount="indefinite"/></path><path d="M476 225 l-14 -9 v18 z" fill="#D4FF3D"/><rect x="476" y="190" width="140" height="70" rx="10" fill="#1a2547" stroke="#D4FF3D" stroke-width="3"/><text x="546" y="232" text-anchor="middle" style="fill:#D4FF3D;font-size:20px;font-weight:900;stroke:none">재화·용역</text></g><g data-layer="i2"><text x="320" y="50" text-anchor="middle" style="fill:#D4FF3D;font-size:20px;font-weight:900;stroke:none">이윤이 다음 혁신의 씨앗이 된다</text><g data-k="p이윤"><circle cx="130" cy="150" r="48" fill="#1a2547" stroke="#ffcf5c" stroke-width="4"/><text x="130" y="156" text-anchor="middle" style="fill:#ffcf5c;font-size:16px;font-weight:900;stroke:none">이윤</text></g><g data-k="p자본"><circle cx="320" cy="100" r="48" fill="#1a2547" stroke="#8fb4ff" stroke-width="4"/><text x="320" y="106" text-anchor="middle" style="fill:#8fb4ff;font-size:16px;font-weight:900;stroke:none">자본 축적</text></g><g data-k="p기술"><circle cx="510" cy="150" r="48" fill="#1a2547" stroke="#D4FF3D" stroke-width="4"/><text x="510" y="156" text-anchor="middle" style="fill:#D4FF3D;font-size:16px;font-weight:900;stroke:none">기술 혁신</text></g><g data-k="p신제"><circle cx="410" cy="280" r="48" fill="#1a2547" stroke="#36c5b8" stroke-width="4"/><text x="410" y="286" text-anchor="middle" style="fill:#36c5b8;font-size:16px;font-weight:900;stroke:none">신제품</text></g><g data-k="p더 "><circle cx="230" cy="280" r="48" fill="#1a2547" stroke="#ffcf5c" stroke-width="4"/><text x="230" y="286" text-anchor="middle" style="fill:#ffcf5c;font-size:16px;font-weight:900;stroke:none">더 큰 이윤</text></g><path d="M130 150 L320 100 L510 150 L410 280 L230 280 L130 150" fill="none" stroke="#D4FF3D" stroke-width="3" stroke-dasharray="9 7" opacity=".6"/><circle r="9" fill="#D4FF3D"><animateMotion dur="5s" repeatCount="indefinite" path="M130 150 L320 100 L510 150 L410 280 L230 280 L130 150"/></circle><text x="320" y="350" text-anchor="middle" style="fill:#cfe0ff;font-size:15px;font-weight:700;stroke:none">이익이 소비로 사라지지 않고 다음 혁신으로 돈다</text></g><g data-layer="i3"><text x="320" y="50" text-anchor="middle" style="fill:#D4FF3D;font-size:20px;font-weight:900;stroke:none">확대재생산의 선순환: 멈추지 않고 계속 는다</text><path d="M60 340 L600 340 M60 340 L60 70" stroke="#4a5784" stroke-width="3"/><path d="M60 330 Q 300 320 420 210 T 590 80" fill="none" stroke="#D4FF3D" stroke-width="10"/><path d="M60 330 Q 250 230 330 215 T 590 205" fill="none" stroke="#ff9a3d" stroke-width="5" stroke-dasharray="9 8"/><text x="500" y="190" text-anchor="middle" style="fill:#ff9a3d;font-size:15px;font-weight:700;stroke:none">농업: 늘다가 멈춤</text><g data-k="boom2"><text x="230" y="170" text-anchor="middle" style="fill:#D4FF3D;font-size:19px;font-weight:900;stroke:none">산업: 계속 늘어난다</text></g></g></svg></div><div class="wside"><div class="chips"><button type="button" class="chip" data-mode="i1">① 인위적 생산</button><button type="button" class="chip" data-mode="i2">② 이윤→혁신</button><button type="button" class="chip" data-mode="i3">③ 확대재생산</button></div><div class="info"></div><p class="hint">👆 단계와 그림을 눌러 보세요</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">Ch.3 · 세 사회의 비교</div><h2 class="t">한눈에 비교하기</h2><div class="main stack"><table class="tbl"><thead><tr><th>구분</th><th>농업 사회</th><th>상업 사회</th><th>산업 사회</th></tr></thead><tbody><tr><td>생산 방식</td><td>소농 자급자족</td><td>사치품 무역</td><td>공장·기업(인위적 공간)</td></tr><tr><td>잉여의 처리</td><td>소비·저장(재투입 없음)</td><td>자본 축적·확대 재투자</td><td>기술 혁신에 재투입</td></tr><tr><td>성장</td><td>체감·감속·정체</td><td>과도기</td><td>확대재생산의 선순환</td></tr><tr><td>전쟁 양상</td><td>토지·인구·육군(~15세기)</td><td>해상로·식민지·해군(16~18세기)</td><td>총력전·기술전(19~21세기)</td></tr></tbody></table><div class="call "><b>한 줄:</b> 잉여를 어디에 쓰느냐가 사회의 운명을 가릅니다.</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide dense4"><div class="slide-content"><div class="kick">Ch.3 · 연결 개념</div><h2 class="t">패권안정이론과 『강대국의 흥망』</h2><div class="main stack"><div class="grid g2 "><div class="card "><h3>패권안정이론 (헤거지·키오한)</h3><ul class="ul"><li>자유무역 질서는 <b>단일 패권국</b>이 지배할 때 가장 안정적</li><li>패권국이 쇠퇴하면 질서도 흔들린다</li></ul></div><div class="card "><h3>폴 케네디 『강대국의 흥망』</h3><ul class="ul"><li><b>경제력과 군사력의 불일치</b></li><li>과도한 부채·전쟁 비용이 대국을 무너뜨린다</li></ul></div></div><div class="call "><b>다음:</b> 이 두 이론을 선순환·악순환 모델로 정리합니다.</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide chapter"><div class="slide-content"><div class="chnum">04</div><h1 class="chtit">경제의 선순환과<br>패권 유지</h1><p class="chsub">본강의 2 · CHAPTER 04</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">Ch.4 · 선순환과 악순환 ★</div><h2 class="t">패권을 유지하는 고리, 무너뜨리는 고리</h2><div class="main stack"><div class="wg" data-wg="loop"><div class="wmap " data-mode=""><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="선순환과 악순환"><rect width="640" height="400" fill="#101a38"/><g data-layer="v"><path d="M320 70 L520 150 L450 300 L190 300 L120 150 Z" fill="none" stroke="#D4FF3D" stroke-width="3" stroke-dasharray="10 8" opacity=".6"/><g data-k="v0"><circle cx="320" cy="70" r="46" fill="#1a2547" stroke="#D4FF3D" stroke-width="4"/><text x="320" y="66" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">잉여</text><text x="320" y="84" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">생산</text></g><g data-k="v1"><circle cx="520" cy="150" r="46" fill="#1a2547" stroke="#D4FF3D" stroke-width="4"/><text x="520" y="146" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">적절한</text><text x="520" y="164" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">분배</text></g><g data-k="v2"><circle cx="450" cy="300" r="46" fill="#1a2547" stroke="#D4FF3D" stroke-width="4"/><text x="450" y="296" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">사회</text><text x="450" y="314" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">안정</text></g><g data-k="v3"><circle cx="190" cy="300" r="46" fill="#1a2547" stroke="#D4FF3D" stroke-width="4"/><text x="190" y="296" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">재투자</text><text x="190" y="314" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">혁신</text></g><g data-k="v4"><circle cx="120" cy="150" r="46" fill="#1a2547" stroke="#D4FF3D" stroke-width="4"/><text x="120" y="146" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">패권</text><text x="120" y="164" text-anchor="middle" style="fill:#D4FF3D;font-size:15px;font-weight:900;stroke:none">유지</text></g><circle r="9" fill="#D4FF3D"><animateMotion dur="6s" repeatCount="indefinite" path="M320 70 L520 150 L450 300 L190 300 L120 150 Z"/></circle><text x="320" y="205" text-anchor="middle" style="fill:#D4FF3D;font-size:26px;font-weight:900;stroke:none">선순환</text><text x="320" y="235" text-anchor="middle" style="fill:#cfe0ff;font-size:14px;font-weight:500;stroke:none">유지의 고리</text></g><g data-layer="x"><path d="M320 70 L520 150 L450 300 L190 300 L120 150 Z" fill="none" stroke="#FF6B5B" stroke-width="3" stroke-dasharray="10 8" opacity=".6"/><g data-k="x0"><circle cx="320" cy="70" r="46" fill="#1a2547" stroke="#FF6B5B" stroke-width="4"/><text x="320" y="66" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">혁신</text><text x="320" y="84" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">저하</text></g><g data-k="x1"><circle cx="520" cy="150" r="46" fill="#1a2547" stroke="#FF6B5B" stroke-width="4"/><text x="520" y="146" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">생산성</text><text x="520" y="164" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">정체</text></g><g data-k="x2"><circle cx="450" cy="300" r="46" fill="#1a2547" stroke="#FF6B5B" stroke-width="4"/><text x="450" y="296" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">양극화</text><text x="450" y="314" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">갈등</text></g><g data-k="x3"><circle cx="190" cy="300" r="46" fill="#1a2547" stroke="#FF6B5B" stroke-width="4"/><text x="190" y="296" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">전쟁</text><text x="190" y="314" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">비용 과다</text></g><g data-k="x4"><circle cx="120" cy="150" r="46" fill="#1a2547" stroke="#FF6B5B" stroke-width="4"/><text x="120" y="146" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">새 패권국</text><text x="120" y="164" text-anchor="middle" style="fill:#FF6B5B;font-size:15px;font-weight:900;stroke:none">대체</text></g><circle r="9" fill="#FF6B5B"><animateMotion dur="9s" repeatCount="indefinite" path="M320 70 L520 150 L450 300 L190 300 L120 150 Z"/></circle><text x="320" y="205" text-anchor="middle" style="fill:#FF6B5B;font-size:26px;font-weight:900;stroke:none">악순환</text><text x="320" y="235" text-anchor="middle" style="fill:#cfe0ff;font-size:14px;font-weight:500;stroke:none">쇠퇴의 고리</text></g></svg></div><div class="wside"><div class="chips"><button type="button" class="chip" data-mode="v">① 선순환(유지)</button><button type="button" class="chip" data-mode="x">② 악순환(쇠퇴)</button></div><div class="info"></div><p class="hint">👆 단계와 원을 눌러 보세요</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="kick">Ch.4 · 유지 vs 쇠퇴 판별</div><h2 class="t">네 가지 지표로 판단한다</h2><div class="main stack"><table class="tbl"><thead><tr><th>지표</th><th>선순환(유지)</th><th>악순환(쇠퇴)</th></tr></thead><tbody><tr><td>기술혁신 투자</td><td>높음</td><td>정체</td></tr><tr><td>생산성 성장</td><td>지속</td><td>둔화</td></tr><tr><td>소득 분배</td><td>안정</td><td>양극화</td></tr><tr><td>사회 안정성</td><td>높음</td><td>갈등 증폭</td></tr></tbody></table><div class="call "><b>활동 예고:</b> 이 네 지표로 "지금 대한민국"을 진단해 봅니다.</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide chapter"><div class="slide-content"><div class="chnum">05</div><h1 class="chtit">산업 사회의<br>전쟁 양상</h1><p class="chsub">본강의 3 · CHAPTER 05</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide "><div class="slide-content"><div class="lkbox"><a class="lk" href="https://en.wikipedia.org/wiki/Total_war" target="_blank" rel="noopener">🔗 위키: 총력전</a><a class="lk" href="https://en.wikipedia.org/wiki/Military%E2%80%93industrial_complex" target="_blank" rel="noopener">🔗 위키: 군산복합체</a></div><div class="kick">Ch.5 · 산업 사회의 전쟁 ★</div><h2 class="t">전선이 아니라 공장이 승부처</h2><div class="main stack"><div class="wg" data-wg="war"><div class="wmap " data-mode=""><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="산업 사회의 전쟁 양상 5가지"><rect width="640" height="400" fill="#101a38"/><g data-k="total"><rect class="fp" x="30" y="80" width="180" height="120" rx="14" fill="#1a2547" stroke="#4a5784" stroke-width="3"/><text x="120" y="142" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">총력전</text><text x="120" y="170" text-anchor="middle" style="fill:#9fb0d8;font-size:13px;font-weight:500;stroke:none">국민·자원 총동원</text></g><g data-k="tech"><rect class="fp" x="230" y="80" width="180" height="120" rx="14" fill="#1a2547" stroke="#4a5784" stroke-width="3"/><text x="320" y="142" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">기술전</text><text x="320" y="170" text-anchor="middle" style="fill:#9fb0d8;font-size:13px;font-weight:500;stroke:none">신무기·기계화</text></g><g data-k="fac"><rect class="fp" x="430" y="80" width="180" height="120" rx="14" fill="#1a2547" stroke="#4a5784" stroke-width="3"/><text x="520" y="142" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">공장의 전쟁</text><text x="520" y="170" text-anchor="middle" style="fill:#9fb0d8;font-size:13px;font-weight:500;stroke:none">산업력이 승패</text></g><g data-k="blk"><rect class="fp" x="130" y="230" width="180" height="120" rx="14" fill="#1a2547" stroke="#4a5784" stroke-width="3"/><text x="220" y="292" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">블록화</text><text x="220" y="320" text-anchor="middle" style="fill:#9fb0d8;font-size:13px;font-weight:500;stroke:none">이념·경제 블록</text></g><g data-k="mic"><rect class="fp" x="330" y="230" width="180" height="120" rx="14" fill="#1a2547" stroke="#4a5784" stroke-width="3"/><text x="420" y="292" text-anchor="middle" style="fill:#fff;font-size:22px;font-weight:900;stroke:none">군산복합체</text><text x="420" y="320" text-anchor="middle" style="fill:#9fb0d8;font-size:13px;font-weight:500;stroke:none">전시경제의 상설화</text></g><g data-layer="w1"><rect x="30" y="80" width="180" height="120" rx="14" fill="none" stroke="#D4FF3D" stroke-width="7"><animate attributeName="stroke-opacity" values="1;.4;1" dur="1.4s" repeatCount="indefinite"/></rect><text x="320" y="50" text-anchor="middle" style="fill:#D4FF3D;font-size:22px;font-weight:900;stroke:none">1. 총력전</text></g><g data-layer="w2"><rect x="230" y="80" width="180" height="120" rx="14" fill="none" stroke="#D4FF3D" stroke-width="7"><animate attributeName="stroke-opacity" values="1;.4;1" dur="1.4s" repeatCount="indefinite"/></rect><text x="320" y="50" text-anchor="middle" style="fill:#D4FF3D;font-size:22px;font-weight:900;stroke:none">2. 기술전</text></g><g data-layer="w3"><rect x="430" y="80" width="180" height="120" rx="14" fill="none" stroke="#D4FF3D" stroke-width="7"><animate attributeName="stroke-opacity" values="1;.4;1" dur="1.4s" repeatCount="indefinite"/></rect><text x="320" y="50" text-anchor="middle" style="fill:#D4FF3D;font-size:22px;font-weight:900;stroke:none">3. 공장의 전쟁</text></g><g data-layer="w4"><rect x="130" y="230" width="180" height="120" rx="14" fill="none" stroke="#D4FF3D" stroke-width="7"><animate attributeName="stroke-opacity" values="1;.4;1" dur="1.4s" repeatCount="indefinite"/></rect><text x="320" y="50" text-anchor="middle" style="fill:#D4FF3D;font-size:22px;font-weight:900;stroke:none">4. 블록화</text></g><g data-layer="w5"><rect x="330" y="230" width="180" height="120" rx="14" fill="none" stroke="#D4FF3D" stroke-width="7"><animate attributeName="stroke-opacity" values="1;.4;1" dur="1.4s" repeatCount="indefinite"/></rect><text x="320" y="50" text-anchor="middle" style="fill:#D4FF3D;font-size:22px;font-weight:900;stroke:none">5. 군산복합체</text></g><text x="320" y="380" text-anchor="middle" style="fill:#9fb0d8;font-size:15px;font-weight:500;stroke:none">19~21세기: 전선이 아니라 공장이 승부처</text></svg></div><div class="wside"><div class="chips"><button type="button" class="chip" data-mode="w1">① 총력전</button><button type="button" class="chip" data-mode="w2">② 기술전</button><button type="button" class="chip" data-mode="w3">③ 공장</button><button type="button" class="chip" data-mode="w4">④ 블록화</button><button type="button" class="chip" data-mode="w5">⑤ 군산복합체</button></div><div class="info"></div><p class="hint">👆 단계와 상자를 눌러 보세요</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide dense4"><div class="slide-content"><div class="kick">Ch.5 · 산업 사회 전쟁의 5가지 특징</div><h2 class="t">정리하기</h2><div class="main stack"><div class="nlist"><div class="nrow"><div class="nn">1</div><div><h3>총력전</h3><p>국민 전체와 국가의 모든 자원을 동원</p></div></div><div class="nrow"><div class="nn">2</div><div><h3>기술전</h3><p>신무기·기계화 군대·공업 생산력 기반 군비경쟁</p></div></div><div class="nrow"><div class="nn">3</div><div><h3>산업력·경제력</h3><p>전쟁 승패의 결정적 요소 — 승부처는 전선이 아니라 공장</p></div></div><div class="nrow"><div class="nn">4</div><div><h3>세계대전과 블록화</h3><p>이데올로기 동맹과 경제 블록 충돌</p></div></div><div class="nrow"><div class="nn">5</div><div><h3>군산복합체</h3><p>전시경제 체제가 상설화되며 권력화</p></div></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide quote nofoot"><div class="slide-content"><div class="qmark">“</div><p class="bigq">패권은 전쟁에서 이긴 게 아니라,</p><p class="bigq" style="font-size:3cqi;color:var(--lime)">경제를 굴린 나라가 전쟁도 이긴다.</p><p class="note">오늘의 한 줄 · 2/3</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide disc"><div class="slide-content"><div class="kick">DISCUSSION</div><h2 class="t">토론과 활동: 한 줄 쓰기</h2><p class="dsub">2인 1조 · 3분 토론 후 발표</p><div class="main stack qs"><div class="q"><b>Q1</b><div><p class="q1">"경제 경쟁이 왜 전쟁으로 이어지는가?" 오늘 배운 단어를 써서 설명해 보세요.</p><p class="q2">안보 딜레마·군비경쟁·오판을 연결해 보세요.</p></div></div><div class="q"><b>Q2</b><div><p class="q1">지금 대한민국은 선순환 중인가, 악순환 조짐이 있는가?</p><p class="q2">기술투자·생산성·분배·사회 안정 네 지표로 한 줄 써 보세요.</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide dense7"><div class="slide-content"><div class="kick">학생 체크리스트</div><h2 class="t">오늘 이것만은 말할 수 있어야 합니다</h2><div class="main stack"><div class="nlist"><div class="nrow"><div class="nn">☐</div><div><h3>현실주의적 순환</h3><p>경제→안보 딜레마→군비경쟁→전쟁을 설명할 수 있다.</p></div></div><div class="nrow"><div class="nn">☐</div><div><h3>세 사회의 차이</h3><p>농업(단순재생산)·상업(자본축적)·산업(확대재생산)을 안다.</p></div></div><div class="nrow"><div class="nn">☐</div><div><h3>생산의 체감</h3><p>농업 사회 성장이 감속하는 이유를 안다.</p></div></div><div class="nrow"><div class="nn">☐</div><div><h3>선·악순환 4단계</h3><p>흐름을 그릴 수 있다.</p></div></div><div class="nrow"><div class="nn">☐</div><div><h3>산업 사회 전쟁 5특징</h3><p>총력전·기술전 등을 안다.</p></div></div><div class="nrow"><div class="nn">☐</div><div><h3>패권안정이론</h3><p>핵심을 한 문장으로 말할 수 있다.</p></div></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide"><div class="slide-content"><div class="kick">마무리 · Key Takeaways</div><h2 class="t">오늘 강의의 핵심: 3가지</h2><div class="main"><div class="grid g3"><div class="card kt"><div class="kn">01</div><h3 class="big">경제는 전쟁을 부른다</h3><p>경제 경쟁은 안보 딜레마를 키워 전쟁으로 이어진다. 미·중 기술 패권이 대표 사례.</p></div><div class="card kt"><div class="kn">02</div><h3 class="big">선순환이 패권을 지킨다</h3><p>혁신·분배·안정의 선순환이 패권을 유지하고, 악순환이 패권을 무너뜨린다.</p></div><div class="card kt"><div class="kn">03</div><h3 class="big">생산 방식이 전쟁을 바꾼다</h3><p>농업→상업→산업으로 바뀌며 전쟁도 총력전·기술전·군산복합체로 변했다.</p></div></div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide dense4"><div class="slide-content"><div class="kick">다음 시간 예고</div><h2 class="t">3회: 바다 위의 농업 제국, 스페인</h2><div class="main stack"><div class="grid g2 "><div class="card "><h3>3회의 질문</h3><ul class="ul"><li>최초의 해양 제국은 왜 쇠퇴했나?</li><li>단순재생산 구조에서 벗어나지 못한 채 <b>은(銀)을 탕진한</b> 비극</li></ul></div><div class="card "><h3>준비</h3><ul class="ul"><li>오늘의 선순환·악순환 4단계를 기억해 오기</li><li>스페인에 어떤 지표가 나빠졌을지 예상해 보기</li></ul></div></div><div class="call "><b>한 줄:</b> 스페인은 신대륙의 금은을 갖고도 왜 망했을까요?</div></div><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+<section class="slide ending nofoot"><div class="slide-content"><p class="kick">3/3 · 오늘의 한 줄</p><div class="endq"><p>패권은 전쟁에서 이긴 게 아니라,<br>경제를 굴린 나라가 전쟁도 이긴다.</p><p style="font-size:2.4cqi;font-weight:500">공장이 멈추면 전선도 멈춥니다 — <b style="color:var(--lime)">경제는 가장 오래가는 무기입니다.</b></p></div><div class="next"><b>다음 시간(3회): 바다 위의 농업 제국, 스페인</b><span>은을 갖고도 망한 이유를 찾아봅니다.</span></div><p class="cov-by">나병인 교수 · 가천대학교 · 글로벌시대의 국제정치</p><div class="foot">글로벌 시대 국제정치 · 2회</div></div></section>
+    <button type="button" class="hit" id="hp" aria-label="이전 슬라이드">‹</button>
+    <button type="button" class="hit" id="hn" aria-label="다음 슬라이드">›</button>
+  </div>
+</main>
+<div class="bar bot">
+  <button type="button" class="btn" id="bpv" aria-label="이전 슬라이드">← 이전</button>
+  <div id="prog" role="slider" tabindex="0" aria-label="슬라이드 위치" aria-valuemin="1" aria-valuemax="33" aria-valuenow="1"><div id="fill"></div></div>
+  <span id="cnt" aria-live="polite">1 / 33</span>
+  <button type="button" class="btn main" id="bnx" aria-label="다음 슬라이드">다음 →</button>
+</div>
+<div id="grid" role="dialog" aria-modal="true" aria-label="슬라이드 전체보기">
+  <h2>슬라이드 전체보기 <button type="button" class="btn" id="gc">닫기 (Esc)</button></h2>
+  <div id="gl"></div>
+</div>
+<div id="hush" role="dialog" aria-modal="true" aria-label="쉿, 조용히 생각하는 시간">
+  <div class="ic" aria-hidden="true">🤫</div>
+  <h2>쉿~~</h2>
+  <p>조용히 생각하는 시간</p>
+  <div class="sec" id="hs" aria-live="off">7</div>
+  <div class="hint">화면 누르기 · Esc · S 로 닫기</div>
+</div>
+<div id="print" aria-hidden="true"></div>
+<p id="cap" role="status" aria-live="polite"></p>
+<script>
+(function(){
+var D={"tech": {"start": "f", "modes": {"f": ["① 미·중 기술 패권 경쟁 분야", "Hal Brands(존스홉킨스 석좌교수) 분석(매일경제 2025.05.20 인용)이 꼽은 경쟁 분야: <b>AI, 양자컴퓨팅, 합성생물학, 첨단로봇, 통신(6G)</b>. 기술 경쟁이 곧 경제와 안보의 경쟁입니다."], "c": ["② 중국: 희토류·전기차·조선 우위", "중국은 <b>희토류·전기차·조선</b>의 우위를 바탕으로 지정학적 영향력을 넓힙니다."], "u": ["③ 미국: 관세·수출통제·동맹 압박", "미국은 <b>관세, 수출통제, 동맹 압박</b>으로 맞서고, 그 과정에서 갈등이 더 증폭됩니다."], "w": ["④ \"10년 내 무력충돌 가능성\"", "양측 모두 <b>10년 내 무력충돌 가능성</b>을 경고하는 분석이 잇따릅니다. 그래서 오늘의 질문이 나옵니다: <b>경제 경쟁은 왜 전쟁으로 이어지는가?</b>"]}, "info": {"ai": ["AI", "반도체·데이터·인재와 맞물린 핵심 분야."], "qc": ["양자컴퓨팅", "암호와 계산 능력의 판을 바꿀 기술."], "bio": ["합성생물학", "바이오·의약·소재의 새 경쟁 분야."], "rob": ["첨단로봇", "제조와 국방에 쓰이는 로봇 기술."], "g6": ["통신(6G)", "차세대 통신 표준 경쟁."], "re": ["희토류", "전기차·풍력·미사일에 쓰이는 핵심 소재."], "ev": ["전기차", "배터리·소프트웨어까지 얽힌 산업."], "ship": ["조선", "해상 운송과 해군력의 산업 기반."], "tar": ["관세", "상대 제품에 비용을 얹는 수단."], "exp": ["수출통제", "핵심 기술·장비의 이전을 막는 수단."], "ally": ["동맹 압박", "동맹국도 함께 참여하도록 요구."], "warn": ["경고", "과장된 예측일 수 있지만, 위험을 진지하게 보라는 신호입니다."]}}, "dil": {"start": "d1", "modes": {"d1": ["① 성장한 나라는 군사력을 키운다", "경제가 성장한 국가는 <b>자원·시장·해상로</b>를 지키려 군사력을 키웁니다. \"경제가 커지면 사냥감이 된다.\""], "d2": ["② 이웃은 불안하다: 안보 딜레마", "이웃 국가는 \"저쪽이 커지면 나를 칠 수 있다\"고 불안해합니다. 한쪽의 방어 노력이 다른 쪽에게는 위협으로 보이는 것이 <b>안보 딜레마</b>입니다."], "d3": ["③ 군비경쟁 → 오판 → 충돌", "서로의 군사력 증강이 서로의 불안을 키워 <b>군비 경쟁</b>이 시작되고, 오판·충돌이 전쟁으로 이어집니다. 현실주의적 순환: 경제 경쟁 → 안보 딜레마 심화 → 군사 충돌 위험 증가."]}, "info": {"grow": ["성장하는 경제", "생산과 기술이 커질수록 지킬 것도 많아집니다."], "nA국": ["A국", "경제가 커진 나라."], "nB국": ["B국", "상대적으로 작은 이웃."], "fear": ["불안", "상대의 의도를 확신할 수 없기에 최악을 가정합니다."], "boom": ["충돌", "한 번의 오판이 전쟁으로 번질 수 있습니다."]}}, "farm": {"start": "f1", "modes": {"f1": ["① 단순재생산 사회", "농업 사회는 생산이 대부분 자가 소비로 충당되는 <b>소농 중심의 자급자족형</b> 사회입니다. 농민은 종자와 식량만 남기고 나머지는 소비하며, 잉여가 새 생산 요소(자본·기술)로 투입되지 않는 폐쇄적 구조입니다."], "f2": ["② 생산의 체감(수확체감)", "같은 땅에 힘을 더 들여도 늘어나는 수확은 점점 줄어듭니다. 그래서 농민 개개인을 <b>증산하도록 끌어들일 방책이 없습니다</b>."], "f3": ["③ 풍작도 구조를 못 바꾼다", "풍작으로 곡식이 두 배가 되어도 논이 늘지는 않습니다. 남은 곡식은 <b>소비되거나 저장될 뿐</b> 다음 해 생산을 확장하는 자본이 되지 않습니다."], "f4": ["④ 경제 성장의 감속", "투입 대비 산출의 증가 속도가 점점 낮아져 <b>정체</b>합니다. 농업 사회는 장기적으로 성장이 멈추는 정체 사회입니다."]}, "info": {"harvest": ["수확", "가을에 거둔 곡식."], "seed": ["종자 + 식량", "다음 해 농사와 생존에 필요한 최소한."], "eat": ["소비·세금", "나머지는 먹거나 세금으로 냅니다."], "nofac": ["공장·기계로 바뀌지 않음", "창고에 쌓을 수는 있어도 생산 설비로 바뀌지 않습니다."], "curve": ["수확체감의 법칙", "투입을 늘릴수록 추가 산출이 줄어듭니다."], "same": ["논은 그대로", "구조가 바뀌지 않습니다."], "flat": ["성장의 감속", "농업 사회 경제는 천 년 넘게 비슷한 수준이었다는 것이 교수의 설명입니다(개략)."]}}, "trade": {"start": "t1", "modes": {"t1": ["① 사치품 무역과 상업 이윤", "상업 사회는 주로 <b>사치품 무역</b>으로 이윤을 얻습니다. 비단·향료·도자기 같은 고가품을 먼 곳으로 운반해 되팔며 차익을 남깁니다."], "t2": ["② 자본 축적과 확대 재투자", "상업 이윤이 자본으로 쌓이고, 그 자본이 다시 <b>무역·선박·창고에 재투자</b>됩니다. 이 지점에서 산업 사회의 성장 유형에 가까워집니다."], "t3": ["③ 근본은 농업 사회", "거래되는 품목이 주로 <b>농업 생산물(곡물·원료)</b>이므로 상업 사회는 근본적으로 농업 사회에 기반합니다. 생산 방식 자체는 달라지지 않았습니다."], "t4": ["④ 과도기이자 모태", "상업 사회는 농업에서 산업으로 가는 <b>과도기</b>입니다. 축적된 상업 자본과 무역망이 산업혁명의 모태가 됩니다. \"산업 사회로 가기 직전의 대기실.\""]}, "info": {"ship": ["무역선", "해상 운송이 상업 이윤의 원천."], "fleet": ["늘어나는 선단", "돈이 다음 배를 삽니다."], "grain": ["농업 생산물", "파는 것은 결국 농부가 기른 것."], "grain2": ["농업 생산물", "상업은 농업 위에 서 있습니다."], "stage0": ["농업 사회", "단순재생산."], "stage1": ["상업 사회", "자본축적과 확대 재투자."], "stage2": ["산업 사회", "확대재생산."]}}, "fac": {"start": "i1", "modes": {"i1": ["① 인위적 생산 공간", "산업 사회는 <b>공장·기업</b> 같은 인위적 공간에서 자본·노동·기술·원자재·에너지를 투입해 재화와 용역을 생산합니다. 생산이 자연(농토)이 아니라 사람이 만든 시설에서 일어납니다."], "i2": ["② 이윤의 자본화와 기술 혁신", "이윤이 자본으로 쌓이고 다시 <b>기술 혁신</b>에 투입되어 신기술에 의한 신제품이 계속 개발됩니다. 이익이 소비로 사라지지 않고 다음 혁신의 씨앗이 됩니다."], "i3": ["③ 확대재생산의 선순환", "상업 사회의 성장 한계가 극복되고 <b>확대재생산의 선순환</b>이 지속됩니다. 농업의 정체를 깨고 끝없는 생산 확장이 가능해집니다."]}, "info": {"fac": ["공장", "논밭을 대체한 새로운 생산 공간."], "pi": ["이윤", "다음 단계의 재료."], "p자": ["자본 축적", "쌓인 이윤이 투자 재원이 됩니다."], "p기": ["기술 혁신", "신기술의 개발."], "p신": ["신제품", "새 시장을 만듭니다."], "p더": ["더 큰 이윤", "다시 투자로 이어집니다."], "boom2": ["산업 사회", "멈추지 않고 계속 늘어납니다."]}}, "loop": {"start": "v", "modes": {"v": ["① 선순환: 패권 유지의 고리", "<b>경제적 잉여 생산 → 적절한 분배 → 사회 안정 → 재투자·혁신 → 패권 유지</b>. 생산력 향상·기술혁신이 잉여를 만들고, 불평등이 완화되어 내부 갈등이 줄면 사회가 안정되며, 안정된 사회는 다시 생산과 혁신에 재투자합니다."], "x": ["② 악순환: 패권 쇠퇴의 고리", "<b>혁신 역량 저하 → 생산성 정체 → 양극화·갈등 → 과도한 전쟁 비용 → 새로운 패권국에 대체</b>. 갈등을 억누르려 군사·복지 비용을 과도하게 쓰다가 부채가 폭발합니다."]}, "info": {"v0": ["잉여 생산", "생산력·기술혁신이 만드는 출발점."], "v1": ["적절한 분배", "불평등을 완화해 갈등을 줄입니다."], "v2": ["사회 안정", "내부 갈등이 최소화된 상태."], "v3": ["재투자·혁신", "안정된 사회가 다시 투자합니다."], "v4": ["패권 유지", "선순환이 유지되는 동안 패권도 유지됩니다."], "x0": ["혁신 저하", "성장이 꺾이는 출발점."], "x1": ["생산성 정체", "잉여가 줄어듭니다."], "x2": ["양극화·갈등", "갈등을 키웁니다."], "x3": ["과도한 전쟁 비용", "군사·복지 비용 과다 → 부채 폭발."], "x4": ["새 패권국 대체", "쇠퇴의 결과."]}}, "war": {"start": "w1", "modes": {"w1": ["① 총력전 (Total War)", "<b>국민 전체와 국가의 모든 자원</b>을 전쟁에 동원합니다. 전선의 군인뿐 아니라 공장 노동자·농민·가정이 모두 전쟁의 일부가 됩니다."], "w2": ["② 기술전", "신무기·기계화 군대·공업 생산력에 기반한 <b>군비경쟁</b>. 더 좋은 기술을 더 많이 만드는 쪽이 유리합니다."], "w3": ["③ 공장이 승부처", "<b>산업력·경제력이 승패의 결정적 요소</b>로 부상합니다. 전선이 아니라 공장이 승부처입니다."], "w4": ["④ 세계대전과 블록화", "이데올로기 동맹과 경제 블록이 충돌합니다. 전쟁이 지구적 규모로 커집니다."], "w5": ["⑤ 군산복합체", "<b>전시경제 체제가 상설화</b>되며 권력화됩니다(Military-Industrial Complex)."]}, "info": {"total": ["총력전", "국민 전체와 국가 모든 자원 동원."], "tech": ["기술전", "신무기·기계화·공업 생산력."], "fac": ["공장의 전쟁", "산업력이 승패."], "blk": ["블록화", "이념·경제 블록 충돌."], "mic": ["군산복합체", "전시경제의 상설화."]}}, "naval": [{"y": "1871", "n": "독일 통일", "who": "독일 제국 성립", "what": "유럽 대륙의 산업 강국으로 급부상.", "why": "석탄·철강·화학을 앞세운 경제 성장이 시작됩니다.", "inst": "경제 성장 → 군사력 확대의 출발.", "link": "https://en.wikipedia.org/wiki/German_Empire"}, {"y": "1898", "n": "독일 해군법", "who": "제1차 해군법(해군 확장 계획)", "what": "영국 해군에 도전하는 대양 함대 건설을 시작.", "why": "영국은 \"독일이 커지면 해상로가 위험하다\"고 느낍니다.", "inst": "안보 딜레마의 시작.", "link": "https://en.wikipedia.org/wiki/German_Naval_Laws"}, {"y": "1906", "n": "드레드노트 취역", "who": "영국 전함 HMS Dreadnought", "what": "새 전함 한 척이 기존 전함을 구식으로 만듭니다.", "why": "독일도 같은 급 전함 건조로 맞서 군비경쟁이 가속됩니다.", "inst": "기술전·산업력 경쟁.", "link": "https://en.wikipedia.org/wiki/HMS_Dreadnought_(1906)"}, {"y": "1914", "n": "제1차 세계대전", "who": "7월~8월 개전", "what": "오판과 동맹의 연쇄가 전면전으로.", "why": "군비경쟁 → 오판·충돌 → 전쟁. 총력전과 산업력 싸움의 시대가 열립니다.", "inst": "다음 단계: 산업 사회의 전쟁.", "link": "https://en.wikipedia.org/wiki/World_War_I"}]};
+function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+function info(w,t,h){var b=w.querySelector('.info');if(b)b.innerHTML='<h4>'+t+'</h4><p>'+h+'</p>'}
+function chipOn(w,sel,el){$$(sel,w).forEach(function(c){c.classList.toggle('on',c===el)})}
+function layers(w,m){$$('[data-layer]',w).forEach(function(e){var L=' '+e.getAttribute('data-layer')+' ';e.style.display=L.indexOf(' '+m+' ')>-1?'':'none'})}
+function sel(w,k){$$('.sel',w).forEach(function(e){e.classList.remove('sel')});if(k)$$('[data-k="'+k+'"]',w).forEach(function(e){e.classList.add('sel')})}
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+
+function mapW(w,key){
+  var d=D[key],map=w.querySelector('.wmap');
+  function mode(m,el){
+    map.setAttribute('data-mode',m);layers(w,m);
+    chipOn(w,'.chip[data-mode]',el||w.querySelector('.chip[data-mode="'+m+'"]'));
+    var i=d.modes[m];info(w,i[0],i[1]);sel(w,null);var sv=map.querySelector('svg');if(sv){var v0=sv.getAttribute('data-vb0');if(v0)sv.setAttribute('viewBox',i[2]||v0)}
+  }
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-mode]');if(c){mode(c.getAttribute('data-mode'),c);return}
+    var k=e.target.closest('[data-k]');if(k){var kk=k.getAttribute('data-k'),i=d.info[kk];if(i){info(w,i[0],i[1]);sel(w,kk)}}
+  });
+  mode(d.start)
+}
+
+function rail(w){
+  var R=D.rail,timer=null,yrs=R.years;
+  function prev(y){var i=yrs.indexOf(y);return i>0?yrs[i-1]:0}
+  function setYear(y){
+    var p=prev(y);
+    $$('.chip[data-y]',w).forEach(function(c){c.classList.toggle('on',+c.getAttribute('data-y')===y)});
+    $$('.rl',w).forEach(function(l){var yy=+l.getAttribute('data-year');l.classList.toggle('on',yy<=y);l.classList.toggle('new',yy<=y&&yy>p)});
+    $$('.rlh',w).forEach(function(l){l.classList.toggle('off',+l.getAttribute('data-year')>y)});
+    $$('.bx[data-b]',w).forEach(function(b){b.classList.toggle('on',+b.getAttribute('data-b')<=y)});
+    w.querySelector('.big-n').textContent='약 '+fmt(R.miles[y])+'마일';
+    var nw=R.lines.filter(function(l){return l.y<=y&&l.y>p}).map(function(l){return l.n});
+    info(w,y+'년의 영국 철도',nw.length?('이 시기에 새로 열린 노선: <b>'+nw.join(' · ')+'</b>. 지도의 선을 눌러 자세히 보세요.'):'지도의 선을 눌러 보세요.');
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null}var pc=w.querySelector('.chip.play');if(pc)pc.textContent='▶ 재생'}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-y]');if(c){stop();setYear(+c.getAttribute('data-y'));return}
+    var pl=e.target.closest('.chip.play');
+    if(pl){if(timer){stop();return}var i=0;pl.textContent='⏸ 멈춤';setYear(yrs[0]);timer=setInterval(function(){i++;if(i>=yrs.length){stop();return}setYear(yrs[i])},1500);return}
+    var k=e.target.closest('[data-k]');if(k){var i2=R.info[k.getAttribute('data-k')];if(i2){stop();info(w,i2[0],i2[1])}}
+  });
+  setYear(yrs[yrs.length-1])
+}
+
+function rocket(w){
+  var d=D.rocket;
+  w.addEventListener('click',function(e){
+    var k=e.target.closest('[data-k]');if(k){var kk=k.getAttribute('data-k'),i=d[kk];if(i){info(w,i[0],i[1]);sel(w,kk)}}
+  });
+  info(w,d.start[0],d.start[1])
+}
+
+function inv(w){
+  var items=D[w.getAttribute('data-src')||'inv'];
+  function set(i){
+    chipOn(w,'.chip[data-i]',w.querySelector('.chip[data-i="'+i+'"]'));
+    var t=items[i];
+    w.querySelector('.info').innerHTML='<div class="invh"><span>'+t.y+'</span>'+t.n+'</div><p>'+t.who+'</p><div class="trio"><div><h5>무엇을</h5><p>'+t.what+'</p></div><div><h5>왜 중요한가</h5><p>'+t.why+'</p></div><div><h5>제도와의 연결</h5><p>'+t.inst+'</p></div></div>'+(t.link?'<a class="lk" href="'+t.link+'" target="_blank" rel="noopener">🔗 더 보기</a>':'')
+  }
+  w.addEventListener('click',function(e){var c=e.target.closest('.chip[data-i]');if(c)set(+c.getAttribute('data-i'))});
+  set(w.getAttribute("data-first")==="0"?0:items.length-1)
+}
+
+function chart(w){
+  var d=D.chart;
+  function set(y){
+    chipOn(w,'.chip[data-yr]',w.querySelector('.chip[data-yr="'+y+'"]'));
+    ['uk','fr','ru'].forEach(function(c){var b=w.querySelector('.bx[data-c="'+c+'"]'),v=d[y][c];b.querySelector('.fill').style.setProperty('--h',(v/22*100)+'%');b.querySelector('.vl').textContent=v+'%'})
+    w.querySelector('.cnote').innerHTML=d.note[y]
+  }
+  w.addEventListener('click',function(e){var c=e.target.closest('.chip[data-yr]');if(c)set(c.getAttribute('data-yr'))});
+  set('1860')
+}
+
+
+function tween(el,to,dec,pre){
+  var from=parseFloat(el.getAttribute('data-v')||'0'),t0=null,dur=900;
+  if(el._raf)cancelAnimationFrame(el._raf);
+  function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur),e=1-Math.pow(1-p,3),v=from+(to-from)*e;el.textContent=pre+v.toFixed(dec);if(p<1)el._raf=requestAnimationFrame(f);else el.setAttribute('data-v',to)}
+  el._raf=requestAnimationFrame(f)
+}
+function tlap(w){
+  var T=D.tlap,timer=null,sts=$$('.st[data-r]',w),n=T.years.length;
+  function set(i){
+    chipOn(w,'.chip[data-y]',w.querySelector('.chip[data-y="'+i+'"]'));
+    sts.forEach(function(s){var k=T.regs.indexOf(s.getAttribute('data-r'));s.classList.toggle('on',k<=i);s.classList.toggle('new',k===i);s.classList.toggle('ghost',k>i)});
+    w.querySelector('.hud-y').textContent=T.years[i];
+    w.querySelector('.hud-n').textContent=T.names[i];
+    tween(w.querySelector('.v-mult'),parseFloat(T.mult[i].replace('×','')),1,'×');
+    w.querySelector('.v-sq').textContent='약 '+T.area[i]+'백만 mi²';
+    w.querySelector('.v-pop').textContent=T.pop[i];
+    info(w,T.txt[i][0],T.txt[i][1]);
+    w.setAttribute('data-i',i)
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null}var pc=w.querySelector('.chip.play');if(pc)pc.textContent='▶ 타임랩스 재생'}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-y]');if(c){stop();set(+c.getAttribute('data-y'));return}
+    var pl=e.target.closest('.chip.play');
+    if(pl){if(timer){stop();return}var i=0;pl.textContent='⏸ 멈춤';set(0);timer=setInterval(function(){i++;if(i>=n){stop();return}set(i)},2600)}
+  });
+  set(0)
+}
+function cols(w){
+  var C=D.cols[w.getAttribute('data-src')],timer=null,n=C.labels.length;
+  var mx=C.ser.map(function(s){return Math.max.apply(null,s.v)}),gm=Math.max.apply(null,mx);
+  var h='';
+  C.labels.forEach(function(l,i){
+    h+='<div class="cg" data-i="'+i+'"><div class="cgb">'+C.ser.map(function(s,j){var m=C.norm?mx[j]:gm;var hh=Math.round(s.v[i]/m*84);return '<div class="cb" style="--c:'+s.c+'" data-h="'+hh+'"><i></i><em>'+s.v[i]+'</em></div>'}).join('')+'</div><span>'+l+'</span></div>'
+  });
+  w.querySelector('.cbars').innerHTML=h;
+  w.querySelector('.cleg').innerHTML=C.ser.map(function(s){return '<span><i style="background:'+s.c+'"></i>'+s.n+'</span>'}).join('')+(C.unit?'<small>단위: '+C.unit+'</small>':'');
+  w.querySelector('.ctit').textContent=C.title;
+  w.querySelector('.cfoot').textContent=C.foot||'';
+  w.querySelector('.chips').innerHTML=C.labels.map(function(l,i){return '<button type="button" class="chip" data-s="'+i+'">'+l+'</button>'}).join('')+'<button type="button" class="chip play">▶ 재생</button>';
+  function set(i){
+    chipOn(w,'.chip[data-s]',w.querySelector('.chip[data-s="'+i+'"]'));
+    $$('.cg',w).forEach(function(g){var k=+g.getAttribute('data-i'),on=k<=i;g.classList.toggle('on',on);g.classList.toggle('cur',k===i);$$('.cb',g).forEach(function(b){b.style.setProperty('--h',on?b.getAttribute('data-h'):0)})});
+    info(w,C.notes[i][0],C.notes[i][1])
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null}var pc=w.querySelector('.chip.play');if(pc)pc.textContent='▶ 재생'}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-s]');if(c){stop();set(+c.getAttribute('data-s'));return}
+    var pl=e.target.closest('.chip.play');
+    if(pl){if(timer){stop();return}var i=0;pl.textContent='⏸ 멈춤';set(0);timer=setInterval(function(){i++;if(i>=n){stop();return}set(i)},1800)}
+  });
+  set(n-1)
+}
+function line(w){
+  var C=D.lines[w.getAttribute('data-src')],timer=null,n=C.xs.length,NS='http://www.w3.org/2000/svg';
+  var W=800,H=360,L=56,R=24,T=24,B=36,x0=C.xs[0],x1=C.xs[n-1];
+  function X(x){return L+(x-x0)/(x1-x0)*(W-L-R)}
+  function Y(v){return T+(1-v/C.ymax)*(H-T-B)}
+  var s='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet" class="lsvg">';
+  for(var g=0;g<=4;g++){var gv=C.ymax*g/4;s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(gv)+'" y2="'+Y(gv)+'" class="gl2"/><text x="'+(L-8)+'" y="'+(Y(gv)+5)+'" text-anchor="end" class="ax">'+fmt(Math.round(gv))+(C.fmt||'')+'</text>'}
+  C.xs.forEach(function(x,i){if(n<=9||i%2===0)s+='<text x="'+X(x)+'" y="'+(H-12)+'" text-anchor="middle" class="ax">'+x+'</text>'});
+  var d='',cum=[0],tot=0,i;
+  C.xs.forEach(function(x,i){d+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(C.v[i]).toFixed(1)+' '});
+  for(i=1;i<n;i++){var dx=X(C.xs[i])-X(C.xs[i-1]),dy=Y(C.v[i])-Y(C.v[i-1]);tot+=Math.sqrt(dx*dx+dy*dy);cum.push(tot)}
+  s+='<path d="'+d+'" class="lpath" pathLength="1" id="lp"/>';
+  C.xs.forEach(function(x,i){s+='<circle cx="'+X(x).toFixed(1)+'" cy="'+Y(C.v[i]).toFixed(1)+'" r="5.5" class="ldot" data-i="'+i+'"/>'});
+  s+='<text class="lval" x="0" y="0"></text></svg>';
+  w.querySelector('.lbody').innerHTML=s;
+  w.querySelector('.ctit').textContent=C.title;
+  w.querySelector('.cfoot').textContent=C.foot||'';
+  w.querySelector('.cleg').innerHTML='';
+  w.querySelector('.chips').innerHTML=C.chips.map(function(l,i){return '<button type="button" class="chip" data-s="'+i+'">'+l+'</button>'}).join('')+'<button type="button" class="chip play">▶ 재생</button>';
+  var path=w.querySelector('.lpath'),val=w.querySelector('.lval');
+  function set(i){
+    chipOn(w,'.chip[data-s]',w.querySelector('.chip[data-s="'+i+'"]'));
+    path.style.strokeDashoffset=1-(cum[i]/tot);
+    $$('.ldot',w).forEach(function(c){var k=+c.getAttribute('data-i');c.classList.toggle('on',k<=i);c.classList.toggle('cur',k===i)});
+    var px=X(C.xs[i]),py=Y(C.v[i]);val.setAttribute('x',Math.min(px,W-90));val.setAttribute('y',py-14);val.textContent=fmt(C.v[i])+(C.fmt||'');
+    info(w,C.notes[i][0],C.notes[i][1])
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null}var pc=w.querySelector('.chip.play');if(pc)pc.textContent='▶ 재생'}
+  w.addEventListener('click',function(e){
+    var c=e.target.closest('.chip[data-s]');if(c){stop();set(+c.getAttribute('data-s'));return}
+    var dt=e.target.closest('.ldot');if(dt){stop();set(+dt.getAttribute('data-i'));return}
+    var pl=e.target.closest('.chip.play');
+    if(pl){if(timer){stop();return}var i=0;pl.textContent='⏸ 멈춤';set(0);timer=setInterval(function(){i++;if(i>=n){stop();return}set(i)},1500)}
+  });
+  set(n-1)
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-book]');if(!b)return;
+  var sl=b.closest('.slide'),box=sl&&sl.querySelector('.lbx');if(!box)return;
+  var a=b.getAttribute('data-book');
+  if(a==='open')box.classList.add('open');
+  else if(a==='close'||(a==='bg'&&e.target===b))box.classList.remove('open')
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')$$('.lbx.open').forEach(function(x){x.classList.remove('open')})});
+$$('[data-wg]').forEach(function(w){
+  var k=w.getAttribute('data-wg');
+  if(D[k]&&D[k].modes)mapW(w,k);else if(k==='rail')rail(w);else if(k==='rocket')rocket(w);else if(k==='inv'||k==='tl')inv(w);else if(k==='chart')chart(w);else if(k==='tlap')tlap(w);else if(k==='cols')cols(w);else if(k==='line')line(w)
+})
+})();
+</script>
+<script>
+(function(){
+  var LS='ip2_', N=33;
+  var TITLES=["표지 · 경제와 전쟁의 순환", "오늘의 약속 · 세 문장", "오늘 강의 순서", "핵심 질문", "강의 목표 3가지", "Chapter 1 · 도입", "오늘의 화두", "미·중 기술 패권 경쟁 (클릭)", "Chapter 2 · 순환 이론", "현실주의적 순환 (클릭)", "교수 한마디 사냥감", "독일 vs 영국 군비경쟁 (클릭)", "Chapter 3 · 3가지 사회", "재생산 방식과 전쟁 양상", "농업 사회의 경제 (클릭)", "농업 사회의 전쟁", "상업 사회의 경제 (클릭)", "상업 사회의 전쟁", "산업 사회의 경제 (클릭)", "세 사회의 비교표", "연결 개념", "Chapter 4 · 선순환과 패권 유지", "선순환·악순환 (클릭)", "유지 vs 쇠퇴 지표", "Chapter 5 · 산업 사회의 전쟁", "산업 사회의 전쟁 5가지 (클릭)", "산업 사회 전쟁 5가지 특징", "오늘의 한 줄 2/3", "토론과 활동", "학생 체크리스트", "핵심 3가지", "다음 시간 예고", "마무리 · 오늘의 한 줄"];
+  var $=function(i){return document.getElementById(i)};
+  var slides=[].slice.call(document.querySelectorAll('#stage > section.slide')),fill=$('fill'),cnt=$('cnt'),grid=$('grid'),gl=$('gl'),prog=$('prog'),cap=$('cap');
+  var cur=1;
+  function store(v){try{localStorage.setItem(LS+'pos',v)}catch(e){}}
+  function load(){try{return parseInt(localStorage.getItem(LS+'pos'),10)}catch(e){return NaN}}
+  function go(n,noPush){
+    cur=Math.max(1,Math.min(N,n));
+    slides.forEach(function(s,i){var on=i+1===cur;s.classList.toggle('active',on);s.setAttribute('aria-hidden',on?'false':'true')});
+    fill.style.width=(cur/N*100)+'%';
+    cnt.textContent=cur+' / '+N;
+    prog.setAttribute('aria-valuenow',cur);
+    prog.setAttribute('aria-valuetext',cur+'번, '+TITLES[cur-1]);
+    cap.textContent=cur+'. '+TITLES[cur-1];
+    if(!noPush){try{history.replaceState(null,'','#'+cur)}catch(e){}}
+    store(cur);
+    [].forEach.call(gl.children,function(b,i){b.classList.toggle('cur',i+1===cur)});
+  }
+  TITLES.forEach(function(t,i){
+    var b=document.createElement('button');b.type='button';
+    b.innerHTML='<span class="gt"><b>'+(i+1)+'</b>'+t+'</span>';
+    b.onclick=function(){closeGrid();go(i+1)};
+    gl.appendChild(b);
+  });
+  function openGrid(){grid.classList.add('on');var c=gl.querySelector('.cur');if(c){c.scrollIntoView({block:'center'});c.focus()}}
+  function closeGrid(){grid.classList.remove('on')}
+  var hush=$('hush'),hs=$('hs'),ht=null;
+  function hushOff(){hush.classList.remove('on');clearInterval(ht);ht=null}
+  var actx=null;
+  function shh(){
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+      if(!actx)actx=new AC();
+      if(actx.state==='suspended')actx.resume();
+      var dur=1.5,sr=actx.sampleRate,buf=actx.createBuffer(1,Math.floor(sr*dur),sr),d=buf.getChannelData(0);
+      for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+      var src=actx.createBufferSource();src.buffer=buf;
+      var hp=actx.createBiquadFilter();hp.type='highpass';hp.frequency.value=2500;
+      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=5500;bp.Q.value=0.7;
+      var g=actx.createGain(),t=actx.currentTime;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(0.9,t+0.3);
+      g.gain.setValueAtTime(0.9,t+0.85);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      src.connect(hp);hp.connect(bp);bp.connect(g);g.connect(actx.destination);
+      src.start(t);
+    }catch(e){}
+  }
+  function hushOn(){
+    shh();
+    var n=7;hs.textContent=n;hush.classList.add('on');clearInterval(ht);
+    ht=setInterval(function(){n--;if(n<=0){hs.textContent='끝';clearInterval(ht);ht=setTimeout(hushOff,900)}else{hs.textContent=n}},1000);
+  }
+  $('bh').onclick=function(){hush.classList.contains('on')?hushOff():hushOn()};
+  hush.onclick=hushOff;
+  function fs(){var d=document;if(d.fullscreenElement){d.exitFullscreen()}else if(d.documentElement.requestFullscreen){d.documentElement.requestFullscreen()}}
+  function pdf(){
+    var pr=$('print');
+    if(!pr.children.length){slides.forEach(function(s){var w=document.createElement('div');w.className='pslide';var c=s.cloneNode(true);c.classList.add('active');c.removeAttribute('aria-hidden');w.appendChild(c);pr.appendChild(w)})}
+    window.print();
+  }
+  $('hp').onclick=$('bpv').onclick=function(){go(cur-1)};
+  $('hn').onclick=$('bnx').onclick=function(){go(cur+1)};
+  $('bg').onclick=openGrid;$('gc').onclick=closeGrid;$('bf').onclick=fs;$('bp').onclick=pdf;
+  prog.onclick=function(e){var r=prog.getBoundingClientRect();go(Math.ceil((e.clientX-r.left)/r.width*N))};
+  prog.onkeydown=function(e){if(e.key==='ArrowRight'){e.preventDefault();go(cur+1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1)}};
+  document.addEventListener('keydown',function(e){
+    var k=e.key,gridOn=grid.classList.contains('on');
+    if(e.ctrlKey||e.metaKey||e.altKey)return;
+    if(k==='Escape'){closeGrid();hushOff();return}
+    if(k==='s'||k==='S'){hush.classList.contains('on')?hushOff():hushOn();return}
+    if(hush.classList.contains('on'))return;
+    if(k==='g'||k==='G'){gridOn?closeGrid():openGrid();return}
+    if(gridOn)return;
+    var tag=(document.activeElement||{}).tagName;
+    if((k===' '||k==='Enter')&&(tag==='BUTTON'||tag==='A'||document.activeElement===prog))return;
+    if(k==='ArrowRight'||k==='PageDown'||k===' '){e.preventDefault();go(cur+1)}
+    else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();go(cur-1)}
+    else if(k==='Home')go(1);
+    else if(k==='End')go(N);
+    else if(k==='f'||k==='F')fs();
+    else if(k==='p'||k==='P')pdf();
+  });
+  var sx=null;
+  document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50&&!grid.classList.contains('on'))go(cur+(d<0?1:-1));sx=null});
+  var h=parseInt(location.hash.slice(1),10);
+  go(h>=1&&h<=N?h:(load()>=1?load():1),!(h>=1&&h<=N));
+})();
+</script>
+<style>
+#stage,#tmenu{--amber:#f6c744;--panel2:#212630;--mute:#8E95A1;--coral:#FF7B66}
+#tmenu{top:60px;bottom:auto;font-family:inherit}
+/* ═════ 강의 도구 5종 ═════ */
+#stage{overflow:hidden}
+.tbtn{white-space:nowrap;border:.12cqi solid #3a4048;background:#1b1e23;color:#eee;border-radius:.8cqi;padding:.6cqi 1.1cqi;font:800 1.4cqi/1 inherit;font-family:inherit;cursor:pointer}
+.tbtn:hover{border-color:var(--amber);color:var(--amber)}
+.tbtn.on{background:var(--amber);color:#111;border-color:var(--amber)}
+.tpanel{position:absolute;z-index:72;background:rgba(16,18,22,.97);border:.12cqi solid #343a43;border-radius:1.2cqi;padding:1.6cqi 1.8cqi;color:#eee;box-shadow:0 1cqi 3cqi rgba(0,0,0,.55);display:none;font-size:1.45cqi;line-height:1.5}
+.tpanel.open{display:block}
+.tpanel h4{font-size:1.7cqi;margin-bottom:1cqi;color:var(--amber)}
+.tpanel .rw{display:flex;flex-wrap:wrap;gap:.6cqi;margin:.7cqi 0;align-items:center}
+.tpanel input{font:700 1.5cqi inherit;font-family:inherit;background:#0c0d10;color:#fff;border:.12cqi solid #3a4048;border-radius:.6cqi;padding:.55cqi .8cqi}
+.tpanel small{color:var(--mute);display:block;font-size:1.2cqi}
+/* 수업 시계 */
+.clk{position:absolute;right:2.2cqi;bottom:1.8cqi;z-index:41;display:none;align-items:center;gap:.8cqi;background:rgba(16,18,22,.78);border:.12cqi solid #343a43;border-radius:99cqi;padding:.5cqi 1.4cqi;color:#eee;cursor:pointer;font-family:inherit}
+.clk.on{display:flex}
+.clk .rem{font-size:2cqi;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.clk small{font-size:1.2cqi;color:var(--mute);font-weight:700}
+.clk.warn{border-color:var(--amber)}.clk.warn .rem{color:var(--amber)}
+.clk.danger{border-color:var(--coral);background:rgba(60,14,14,.85)}.clk.danger .rem{color:var(--coral)}
+.clk.over{animation:clkb .8s ease-in-out infinite alternate;border-color:var(--coral)}.clk.over .rem{color:var(--coral)}
+@keyframes clkb{to{background:rgba(120,20,20,.95)}}
+#clkp{right:2.2cqi;bottom:6.4cqi;width:30cqi}
+.toast{position:absolute;left:50%;top:3.2cqi;transform:translateX(-50%) translateY(-1cqi);z-index:95;background:var(--amber);color:#111;font-weight:900;font-size:2.4cqi;padding:1cqi 3cqi;border-radius:99cqi;box-shadow:0 1cqi 3cqi rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:all .3s;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%)}
+/* 펜 · 형광펜 · 레이저 */
+canvas.pen{position:absolute;inset:0;width:100%;height:100%;z-index:60;pointer-events:none;touch-action:none}
+canvas.pen.on{pointer-events:auto;cursor:crosshair}
+.laser{position:absolute;z-index:61;width:2.2cqi;height:2.2cqi;margin:-1.1cqi 0 0 -1.1cqi;border-radius:50%;background:radial-gradient(circle,#fff 0,#ff3b30 35%,rgba(255,59,48,0) 72%);box-shadow:0 0 2cqi 1cqi rgba(255,59,48,.55);pointer-events:none;display:none}
+.pbar{position:absolute;left:50%;bottom:1.6cqi;transform:translateX(-50%);z-index:80;display:none;align-items:center;gap:.7cqi;background:rgba(16,18,22,.95);border:.12cqi solid #343a43;border-radius:99cqi;padding:.7cqi 1.4cqi;color:#eee}
+.pbar.on{display:flex}
+.pbar .sw{width:2.6cqi;height:2.6cqi;border-radius:50%;border:.25cqi solid transparent;cursor:pointer;padding:0}
+.pbar .sw.on{border-color:#fff;box-shadow:0 0 0 .2cqi #000 inset}
+.pbar .sep{width:.12cqi;height:2.6cqi;background:#3a4048}
+/* 손들기 투표 */
+.poll{display:flex;flex-direction:column;gap:1.1cqi;width:100%}
+.poll .polt{display:flex;align-items:center;justify-content:space-between;font-size:1.6cqi;color:var(--mute);font-weight:800}
+.poll .polt b{color:var(--amber);font-size:2cqi}
+.polrow{display:grid;grid-template-columns:16cqi 1fr 15cqi;gap:1.2cqi;align-items:center}
+.polrow .plab{font-size:2.4cqi;font-weight:900;line-height:1.15}
+.polrow .pbr{position:relative;height:4.6cqi;background:var(--panel2);border-radius:1cqi;overflow:hidden;cursor:pointer}
+.polrow .pbr i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--pcol,var(--amber));transition:width .45s cubic-bezier(.3,.8,.3,1)}
+.polrow .pbr em{position:absolute;left:1.2cqi;top:50%;transform:translateY(-50%);display:flex;align-items:center;font-style:normal;font-weight:900;font-size:2.2cqi;color:#111;background:rgba(255,255,255,.92);padding:.3cqi 1.1cqi;border-radius:99cqi;line-height:1}
+.polrow .pbr em span{font-size:1.5cqi;margin-left:.8cqi;opacity:.7}
+.polrow:nth-child(2){--pcol:#f6c744}.polrow:nth-child(3){--pcol:#4aa3ff}.polrow:nth-child(4){--pcol:#34d6a0}.polrow:nth-child(5){--pcol:#ff7a6b}.polrow:nth-child(6){--pcol:#b79cff}
+.polrow .pcb{display:flex;gap:.5cqi}
+.polrow .pcb button{flex:1}
+#polov,#qrov,#hlp{position:absolute;inset:0;z-index:70;background:rgba(8,9,11,.9);display:none;align-items:center;justify-content:center}
+#polov.open,#qrov.open,#hlp.open{display:flex}
+.tbx{width:78cqi;max-height:88%;overflow:auto;background:#14161a;border:.12cqi solid #343a43;border-radius:1.6cqi;padding:2.4cqi 2.8cqi;color:#eee;display:flex;flex-direction:column;gap:1.4cqi}
+.tbx h3{font-size:2.6cqi}
+.tbx .tlhint{font-size:1.35cqi;color:var(--mute)}
+/* QR */
+.qrbox svg{display:block;width:100%;height:100%;background:#fff;border-radius:1.2cqi}
+.qrbox{width:24cqi;height:24cqi}
+.qrcard{width:46cqi;align-items:center;text-align:center}
+.qrcard .qrbox{width:30cqi;height:30cqi}
+.qrurl{font-size:1.5cqi;font-weight:800;color:var(--amber);word-break:break-all}
+.qrcard input{width:100%;text-align:center}
+/* 화면 가리기 · 확대 · 도움말 */
+.tlblk{position:absolute;inset:0;z-index:85;background:#000;display:none;cursor:pointer}
+.tlblk.on{display:block}
+.zbadge{position:absolute;left:50%;bottom:1.6cqi;transform:translateX(-50%);z-index:62;background:rgba(16,18,22,.9);color:var(--amber);border:.12cqi solid var(--amber);border-radius:99cqi;padding:.5cqi 1.6cqi;font-size:1.5cqi;font-weight:900;display:none}
+.zbadge.on{display:block}
+.hlp .tbx{width:70cqi}
+.hlp table{width:100%;border-collapse:collapse;font-size:1.6cqi}
+.hlp td{padding:.55cqi .6cqi;border-bottom:.1cqi solid #2a2f38;vertical-align:top}
+.hlp td:first-child{white-space:nowrap;color:var(--amber);font-weight:900;width:14cqi}
+#tmenu{position:fixed;right:14px;bottom:calc(var(--nav-h) + 8px);z-index:300;display:none;background:rgba(10,11,13,.97);border:1px solid #2A2F38;border-radius:12px;padding:8px;box-shadow:0 10px 40px rgba(0,0,0,.6);min-width:240px}
+#tmenu.open{display:block}
+#tmenu button{display:flex;width:100%;justify-content:space-between;gap:16px;background:none;border:0;color:#EEE;font:600 14px/1 inherit;font-family:inherit;padding:10px 12px;border-radius:8px;cursor:pointer}
+#tmenu button:hover{background:#1b1e23;color:var(--amber)}
+#tmenu kbd{color:#8E95A1;font:700 12px inherit;font-family:inherit}
+@media print{.clk,#clkp,.toast,canvas.pen,.laser,.pbar,#polov,#qrov,#hlp,.tlblk,.zbadge,#tmenu,#toolBtn,.polrow .pcb,.poll .polt button{display:none!important}}
+
+</style>
+<script>/* qrcode-generator 1.4.4 · (c) 2009 Kazuhiko Arase · MIT License · QR Code is a registered trademark of DENSO WAVE INCORPORATED */
+var qrcode=(function(){var P=function(x,w){var g=236,l=17,n=x,s=O[w],t=null,r=0,h=null,i=[],v={},_=function(a,f){r=n*4+17,t=(function(e){for(var u=new Array(e),o=0;o<e;o+=1){u[o]=new Array(e);for(var d=0;d<e;d+=1)u[o][d]=null}return u})(r),B(0,0),B(r-7,0),B(0,r-7),E(),T(),m(a,f),n>=7&&N(a),h==null&&(h=nr(n,s,i)),U(h,f)},B=function(a,f){for(var e=-1;e<=7;e+=1)if(!(a+e<=-1||r<=a+e))for(var u=-1;u<=7;u+=1)f+u<=-1||r<=f+u||(0<=e&&e<=6&&(u==0||u==6)||0<=u&&u<=6&&(e==0||e==6)||2<=e&&e<=4&&2<=u&&u<=4?t[a+e][f+u]=!0:t[a+e][f+u]=!1)},y=function(){for(var a=0,f=0,e=0;e<8;e+=1){_(!0,e);var u=k.getLostPoint(v);(e==0||a>u)&&(a=u,f=e)}return f},T=function(){for(var a=8;a<r-8;a+=1)t[a][6]==null&&(t[a][6]=a%2==0);for(var f=8;f<r-8;f+=1)t[6][f]==null&&(t[6][f]=f%2==0)},E=function(){for(var a=k.getPatternPosition(n),f=0;f<a.length;f+=1)for(var e=0;e<a.length;e+=1){var u=a[f],o=a[e];if(t[u][o]==null)for(var d=-2;d<=2;d+=1)for(var c=-2;c<=2;c+=1)d==-2||d==2||c==-2||c==2||d==0&&c==0?t[u+d][o+c]=!0:t[u+d][o+c]=!1}},N=function(a){for(var f=k.getBCHTypeNumber(n),e=0;e<18;e+=1){var u=!a&&(f>>e&1)==1;t[Math.floor(e/3)][e%3+r-8-3]=u}for(var e=0;e<18;e+=1){var u=!a&&(f>>e&1)==1;t[e%3+r-8-3][Math.floor(e/3)]=u}},m=function(a,f){for(var e=s<<3|f,u=k.getBCHTypeInfo(e),o=0;o<15;o+=1){var d=!a&&(u>>o&1)==1;o<6?t[o][8]=d:o<8?t[o+1][8]=d:t[r-15+o][8]=d}for(var o=0;o<15;o+=1){var d=!a&&(u>>o&1)==1;o<8?t[8][r-o-1]=d:o<9?t[8][15-o-1+1]=d:t[8][15-o-1]=d}t[r-8][8]=!a},U=function(a,f){for(var e=-1,u=r-1,o=7,d=0,c=k.getMaskFunction(f),p=r-1;p>0;p-=2)for(p==6&&(p-=1);;){for(var b=0;b<2;b+=1)if(t[u][p-b]==null){var C=!1;d<a.length&&(C=(a[d]>>>o&1)==1);var A=c(u,p-b);A&&(C=!C),t[u][p-b]=C,o-=1,o==-1&&(d+=1,o=7)}if(u+=e,u<0||r<=u){u-=e,e=-e;break}}},H=function(a,f){for(var e=0,u=0,o=0,d=new Array(f.length),c=new Array(f.length),p=0;p<f.length;p+=1){var b=f[p].dataCount,C=f[p].totalCount-b;u=Math.max(u,b),o=Math.max(o,C),d[p]=new Array(b);for(var A=0;A<d[p].length;A+=1)d[p][A]=255&a.getBuffer()[A+e];e+=b;var R=k.getErrorCorrectPolynomial(C),I=K(d[p],R.getLength()-1),S=I.mod(R);c[p]=new Array(R.getLength()-1);for(var A=0;A<c[p].length;A+=1){var X=A+S.getLength()-c[p].length;c[p][A]=X>=0?S.getAt(X):0}}for(var Z=0,A=0;A<f.length;A+=1)Z+=f[A].totalCount;for(var J=new Array(Z),Q=0,A=0;A<u;A+=1)for(var p=0;p<f.length;p+=1)A<d[p].length&&(J[Q]=d[p][A],Q+=1);for(var A=0;A<o;A+=1)for(var p=0;p<f.length;p+=1)A<c[p].length&&(J[Q]=c[p][A],Q+=1);return J},nr=function(a,f,e){for(var u=Y.getRSBlocks(a,f),o=G(),d=0;d<e.length;d+=1){var c=e[d];o.put(c.getMode(),4),o.put(c.getLength(),k.getLengthInBits(c.getMode(),a)),c.write(o)}for(var p=0,d=0;d<u.length;d+=1)p+=u[d].dataCount;if(o.getLengthInBits()>p*8)throw"code length overflow. ("+o.getLengthInBits()+">"+p*8+")";for(o.getLengthInBits()+4<=p*8&&o.put(0,4);o.getLengthInBits()%8!=0;)o.putBit(!1);for(;!(o.getLengthInBits()>=p*8||(o.put(g,8),o.getLengthInBits()>=p*8));)o.put(l,8);return H(o,u)};v.addData=function(a,f){f=f||"Byte";var e=null;switch(f){case"Numeric":e=$(a);break;case"Alphanumeric":e=W(a);break;case"Byte":e=V(a);break;case"Kanji":e=q(a);break;default:throw"mode:"+f}i.push(e),h=null},v.isDark=function(a,f){if(a<0||r<=a||f<0||r<=f)throw a+","+f;return t[a][f]},v.getModuleCount=function(){return r},v.make=function(){if(n<1){for(var a=1;a<40;a++){for(var f=Y.getRSBlocks(a,s),e=G(),u=0;u<i.length;u++){var o=i[u];e.put(o.getMode(),4),e.put(o.getLength(),k.getLengthInBits(o.getMode(),a)),o.write(e)}for(var d=0,u=0;u<f.length;u++)d+=f[u].dataCount;if(e.getLengthInBits()<=d*8)break}n=a}_(!1,y())},v.createTableTag=function(a,f){a=a||2,f=typeof f>"u"?a*4:f;var e="";e+='<table style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: "+f+"px;",e+='">',e+="<tbody>";for(var u=0;u<v.getModuleCount();u+=1){e+="<tr>";for(var o=0;o<v.getModuleCount();o+=1)e+='<td style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: 0px;",e+=" width: "+a+"px;",e+=" height: "+a+"px;",e+=" background-color: ",e+=v.isDark(u,o)?"#000000":"#ffffff",e+=";",e+='"/>';e+="</tr>"}return e+="</tbody>",e+="</table>",e},v.createSvgTag=function(a,f,e,u){var o={};typeof arguments[0]=="object"&&(o=arguments[0],a=o.cellSize,f=o.margin,e=o.alt,u=o.title),a=a||2,f=typeof f>"u"?a*4:f,e=typeof e=="string"?{text:e}:e||{},e.text=e.text||null,e.id=e.text?e.id||"qrcode-description":null,u=typeof u=="string"?{text:u}:u||{},u.text=u.text||null,u.id=u.text?u.id||"qrcode-title":null;var d=v.getModuleCount()*a+f*2,c,p,b,C,A="",R;for(R="l"+a+",0 0,"+a+" -"+a+",0 0,-"+a+"z ",A+='<svg version="1.1" xmlns="http://www.w3.org/2000/svg"',A+=o.scalable?"":' width="'+d+'px" height="'+d+'px"',A+=' viewBox="0 0 '+d+" "+d+'" ',A+=' preserveAspectRatio="xMinYMin meet"',A+=u.text||e.text?' role="img" aria-labelledby="'+F([u.id,e.id].join(" ").trim())+'"':"",A+=">",A+=u.text?'<title id="'+F(u.id)+'">'+F(u.text)+"</title>":"",A+=e.text?'<description id="'+F(e.id)+'">'+F(e.text)+"</description>":"",A+='<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>',A+='<path d="',b=0;b<v.getModuleCount();b+=1)for(C=b*a+f,c=0;c<v.getModuleCount();c+=1)v.isDark(b,c)&&(p=c*a+f,A+="M"+p+","+C+R);return A+='" stroke="transparent" fill="black"/>',A+="</svg>",A},v.createDataURL=function(a,f){a=a||2,f=typeof f>"u"?a*4:f;var e=v.getModuleCount()*a+f*2,u=f,o=e-f;return er(e,e,function(d,c){if(u<=d&&d<o&&u<=c&&c<o){var p=Math.floor((d-u)/a),b=Math.floor((c-u)/a);return v.isDark(b,p)?0:1}else return 1})},v.createImgTag=function(a,f,e){a=a||2,f=typeof f>"u"?a*4:f;var u=v.getModuleCount()*a+f*2,o="";return o+="<img",o+=' src="',o+=v.createDataURL(a,f),o+='"',o+=' width="',o+=u,o+='"',o+=' height="',o+=u,o+='"',e&&(o+=' alt="',o+=F(e),o+='"'),o+="/>",o};var F=function(a){for(var f="",e=0;e<a.length;e+=1){var u=a.charAt(e);switch(u){case"<":f+="&lt;";break;case">":f+="&gt;";break;case"&":f+="&amp;";break;case'"':f+="&quot;";break;default:f+=u;break}}return f},ar=function(a){var f=1;a=typeof a>"u"?f*2:a;var e=v.getModuleCount()*f+a*2,u=a,o=e-a,d,c,p,b,C,A={"\u2588\u2588":"\u2588","\u2588 ":"\u2580"," \u2588":"\u2584","  ":" "},R={"\u2588\u2588":"\u2580","\u2588 ":"\u2580"," \u2588":" ","  ":" "},I="";for(d=0;d<e;d+=2){for(p=Math.floor((d-u)/f),b=Math.floor((d+1-u)/f),c=0;c<e;c+=1)C="\u2588",u<=c&&c<o&&u<=d&&d<o&&v.isDark(p,Math.floor((c-u)/f))&&(C=" "),u<=c&&c<o&&u<=d+1&&d+1<o&&v.isDark(b,Math.floor((c-u)/f))?C+=" ":C+="\u2588",I+=a<1&&d+1>=o?R[C]:A[C];I+=`
+`}return e%2&&a>0?I.substring(0,I.length-e-1)+Array(e+1).join("\u2580"):I.substring(0,I.length-1)};return v.createASCII=function(a,f){if(a=a||1,a<2)return ar(f);a-=1,f=typeof f>"u"?a*2:f;var e=v.getModuleCount()*a+f*2,u=f,o=e-f,d,c,p,b,C=Array(a+1).join("\u2588\u2588"),A=Array(a+1).join("  "),R="",I="";for(d=0;d<e;d+=1){for(p=Math.floor((d-u)/a),I="",c=0;c<e;c+=1)b=1,u<=c&&c<o&&u<=d&&d<o&&v.isDark(p,Math.floor((c-u)/a))&&(b=0),I+=b?C:A;for(p=0;p<a;p+=1)R+=I+`
+`}return R.substring(0,R.length-1)},v.renderTo2dContext=function(a,f){f=f||2;for(var e=v.getModuleCount(),u=0;u<e;u++)for(var o=0;o<e;o++)a.fillStyle=v.isDark(u,o)?"black":"white",a.fillRect(u*f,o*f,f,f)},v};P.stringToBytesFuncs={default:function(x){for(var w=[],g=0;g<x.length;g+=1){var l=x.charCodeAt(g);w.push(l&255)}return w}},P.stringToBytes=P.stringToBytesFuncs.default,P.createStringToBytes=function(x,w){var g=(function(){for(var n=rr(x),s=function(){var T=n.read();if(T==-1)throw"eof";return T},t=0,r={};;){var h=n.read();if(h==-1)break;var i=s(),v=s(),_=s(),B=String.fromCharCode(h<<8|i),y=v<<8|_;r[B]=y,t+=1}if(t!=w)throw t+" != "+w;return r})(),l=63;return function(n){for(var s=[],t=0;t<n.length;t+=1){var r=n.charCodeAt(t);if(r<128)s.push(r);else{var h=g[n.charAt(t)];typeof h=="number"?(h&255)==h?s.push(h):(s.push(h>>>8),s.push(h&255)):s.push(l)}}return s}};var D={MODE_NUMBER:1,MODE_ALPHA_NUM:2,MODE_8BIT_BYTE:4,MODE_KANJI:8},O={L:1,M:0,Q:3,H:2},L={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7},k=(function(){var x=[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],w=1335,g=7973,l=21522,n={},s=function(t){for(var r=0;t!=0;)r+=1,t>>>=1;return r};return n.getBCHTypeInfo=function(t){for(var r=t<<10;s(r)-s(w)>=0;)r^=w<<s(r)-s(w);return(t<<10|r)^l},n.getBCHTypeNumber=function(t){for(var r=t<<12;s(r)-s(g)>=0;)r^=g<<s(r)-s(g);return t<<12|r},n.getPatternPosition=function(t){return x[t-1]},n.getMaskFunction=function(t){switch(t){case L.PATTERN000:return function(r,h){return(r+h)%2==0};case L.PATTERN001:return function(r,h){return r%2==0};case L.PATTERN010:return function(r,h){return h%3==0};case L.PATTERN011:return function(r,h){return(r+h)%3==0};case L.PATTERN100:return function(r,h){return(Math.floor(r/2)+Math.floor(h/3))%2==0};case L.PATTERN101:return function(r,h){return r*h%2+r*h%3==0};case L.PATTERN110:return function(r,h){return(r*h%2+r*h%3)%2==0};case L.PATTERN111:return function(r,h){return(r*h%3+(r+h)%2)%2==0};default:throw"bad maskPattern:"+t}},n.getErrorCorrectPolynomial=function(t){for(var r=K([1],0),h=0;h<t;h+=1)r=r.multiply(K([1,M.gexp(h)],0));return r},n.getLengthInBits=function(t,r){if(1<=r&&r<10)switch(t){case D.MODE_NUMBER:return 10;case D.MODE_ALPHA_NUM:return 9;case D.MODE_8BIT_BYTE:return 8;case D.MODE_KANJI:return 8;default:throw"mode:"+t}else if(r<27)switch(t){case D.MODE_NUMBER:return 12;case D.MODE_ALPHA_NUM:return 11;case D.MODE_8BIT_BYTE:return 16;case D.MODE_KANJI:return 10;default:throw"mode:"+t}else if(r<41)switch(t){case D.MODE_NUMBER:return 14;case D.MODE_ALPHA_NUM:return 13;case D.MODE_8BIT_BYTE:return 16;case D.MODE_KANJI:return 12;default:throw"mode:"+t}else throw"type:"+r},n.getLostPoint=function(t){for(var r=t.getModuleCount(),h=0,i=0;i<r;i+=1)for(var v=0;v<r;v+=1){for(var _=0,B=t.isDark(i,v),y=-1;y<=1;y+=1)if(!(i+y<0||r<=i+y))for(var T=-1;T<=1;T+=1)v+T<0||r<=v+T||y==0&&T==0||B==t.isDark(i+y,v+T)&&(_+=1);_>5&&(h+=3+_-5)}for(var i=0;i<r-1;i+=1)for(var v=0;v<r-1;v+=1){var E=0;t.isDark(i,v)&&(E+=1),t.isDark(i+1,v)&&(E+=1),t.isDark(i,v+1)&&(E+=1),t.isDark(i+1,v+1)&&(E+=1),(E==0||E==4)&&(h+=3)}for(var i=0;i<r;i+=1)for(var v=0;v<r-6;v+=1)t.isDark(i,v)&&!t.isDark(i,v+1)&&t.isDark(i,v+2)&&t.isDark(i,v+3)&&t.isDark(i,v+4)&&!t.isDark(i,v+5)&&t.isDark(i,v+6)&&(h+=40);for(var v=0;v<r;v+=1)for(var i=0;i<r-6;i+=1)t.isDark(i,v)&&!t.isDark(i+1,v)&&t.isDark(i+2,v)&&t.isDark(i+3,v)&&t.isDark(i+4,v)&&!t.isDark(i+5,v)&&t.isDark(i+6,v)&&(h+=40);for(var N=0,v=0;v<r;v+=1)for(var i=0;i<r;i+=1)t.isDark(i,v)&&(N+=1);var m=Math.abs(100*N/r/r-50)/5;return h+=m*10,h},n})(),M=(function(){for(var x=new Array(256),w=new Array(256),g=0;g<8;g+=1)x[g]=1<<g;for(var g=8;g<256;g+=1)x[g]=x[g-4]^x[g-5]^x[g-6]^x[g-8];for(var g=0;g<255;g+=1)w[x[g]]=g;var l={};return l.glog=function(n){if(n<1)throw"glog("+n+")";return w[n]},l.gexp=function(n){for(;n<0;)n+=255;for(;n>=256;)n-=255;return x[n]},l})();function K(x,w){if(typeof x.length>"u")throw x.length+"/"+w;var g=(function(){for(var n=0;n<x.length&&x[n]==0;)n+=1;for(var s=new Array(x.length-n+w),t=0;t<x.length-n;t+=1)s[t]=x[t+n];return s})(),l={};return l.getAt=function(n){return g[n]},l.getLength=function(){return g.length},l.multiply=function(n){for(var s=new Array(l.getLength()+n.getLength()-1),t=0;t<l.getLength();t+=1)for(var r=0;r<n.getLength();r+=1)s[t+r]^=M.gexp(M.glog(l.getAt(t))+M.glog(n.getAt(r)));return K(s,0)},l.mod=function(n){if(l.getLength()-n.getLength()<0)return l;for(var s=M.glog(l.getAt(0))-M.glog(n.getAt(0)),t=new Array(l.getLength()),r=0;r<l.getLength();r+=1)t[r]=l.getAt(r);for(var r=0;r<n.getLength();r+=1)t[r]^=M.gexp(M.glog(n.getAt(r))+s);return K(t,0).mod(n)},l}var Y=(function(){var x=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12,7,37,13],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],w=function(n,s){var t={};return t.totalCount=n,t.dataCount=s,t},g={},l=function(n,s){switch(s){case O.L:return x[(n-1)*4+0];case O.M:return x[(n-1)*4+1];case O.Q:return x[(n-1)*4+2];case O.H:return x[(n-1)*4+3];default:return}};return g.getRSBlocks=function(n,s){var t=l(n,s);if(typeof t>"u")throw"bad rs block @ typeNumber:"+n+"/errorCorrectionLevel:"+s;for(var r=t.length/3,h=[],i=0;i<r;i+=1)for(var v=t[i*3+0],_=t[i*3+1],B=t[i*3+2],y=0;y<v;y+=1)h.push(w(_,B));return h},g})(),G=function(){var x=[],w=0,g={};return g.getBuffer=function(){return x},g.getAt=function(l){var n=Math.floor(l/8);return(x[n]>>>7-l%8&1)==1},g.put=function(l,n){for(var s=0;s<n;s+=1)g.putBit((l>>>n-s-1&1)==1)},g.getLengthInBits=function(){return w},g.putBit=function(l){var n=Math.floor(w/8);x.length<=n&&x.push(0),l&&(x[n]|=128>>>w%8),w+=1},g},$=function(x){var w=D.MODE_NUMBER,g=x,l={};l.getMode=function(){return w},l.getLength=function(t){return g.length},l.write=function(t){for(var r=g,h=0;h+2<r.length;)t.put(n(r.substring(h,h+3)),10),h+=3;h<r.length&&(r.length-h==1?t.put(n(r.substring(h,h+1)),4):r.length-h==2&&t.put(n(r.substring(h,h+2)),7))};var n=function(t){for(var r=0,h=0;h<t.length;h+=1)r=r*10+s(t.charAt(h));return r},s=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-48;throw"illegal char :"+t};return l},W=function(x){var w=D.MODE_ALPHA_NUM,g=x,l={};l.getMode=function(){return w},l.getLength=function(s){return g.length},l.write=function(s){for(var t=g,r=0;r+1<t.length;)s.put(n(t.charAt(r))*45+n(t.charAt(r+1)),11),r+=2;r<t.length&&s.put(n(t.charAt(r)),6)};var n=function(s){if("0"<=s&&s<="9")return s.charCodeAt(0)-48;if("A"<=s&&s<="Z")return s.charCodeAt(0)-65+10;switch(s){case" ":return 36;case"$":return 37;case"%":return 38;case"*":return 39;case"+":return 40;case"-":return 41;case".":return 42;case"/":return 43;case":":return 44;default:throw"illegal char :"+s}};return l},V=function(x){var w=D.MODE_8BIT_BYTE,g=x,l=P.stringToBytes(x),n={};return n.getMode=function(){return w},n.getLength=function(s){return l.length},n.write=function(s){for(var t=0;t<l.length;t+=1)s.put(l[t],8)},n},q=function(x){var w=D.MODE_KANJI,g=x,l=P.stringToBytesFuncs.SJIS;if(!l)throw"sjis not supported.";(function(t,r){var h=l(t);if(h.length!=2||(h[0]<<8|h[1])!=r)throw"sjis not supported."})("\u53CB",38726);var n=l(x),s={};return s.getMode=function(){return w},s.getLength=function(t){return~~(n.length/2)},s.write=function(t){for(var r=n,h=0;h+1<r.length;){var i=(255&r[h])<<8|255&r[h+1];if(33088<=i&&i<=40956)i-=33088;else if(57408<=i&&i<=60351)i-=49472;else throw"illegal char at "+(h+1)+"/"+i;i=(i>>>8&255)*192+(i&255),t.put(i,13),h+=2}if(h<r.length)throw"illegal char at "+(h+1)},s},j=function(){var x=[],w={};return w.writeByte=function(g){x.push(g&255)},w.writeShort=function(g){w.writeByte(g),w.writeByte(g>>>8)},w.writeBytes=function(g,l,n){l=l||0,n=n||g.length;for(var s=0;s<n;s+=1)w.writeByte(g[s+l])},w.writeString=function(g){for(var l=0;l<g.length;l+=1)w.writeByte(g.charCodeAt(l))},w.toByteArray=function(){return x},w.toString=function(){var g="";g+="[";for(var l=0;l<x.length;l+=1)l>0&&(g+=","),g+=x[l];return g+="]",g},w},z=function(){var x=0,w=0,g=0,l="",n={},s=function(r){l+=String.fromCharCode(t(r&63))},t=function(r){if(!(r<0)){if(r<26)return 65+r;if(r<52)return 97+(r-26);if(r<62)return 48+(r-52);if(r==62)return 43;if(r==63)return 47}throw"n:"+r};return n.writeByte=function(r){for(x=x<<8|r&255,w+=8,g+=1;w>=6;)s(x>>>w-6),w-=6},n.flush=function(){if(w>0&&(s(x<<6-w),x=0,w=0),g%3!=0)for(var r=3-g%3,h=0;h<r;h+=1)l+="="},n.toString=function(){return l},n},rr=function(x){var w=x,g=0,l=0,n=0,s={};s.read=function(){for(;n<8;){if(g>=w.length){if(n==0)return-1;throw"unexpected end of file./"+n}var r=w.charAt(g);if(g+=1,r=="=")return n=0,-1;if(r.match(/^\s$/))continue;l=l<<6|t(r.charCodeAt(0)),n+=6}var h=l>>>n-8&255;return n-=8,h};var t=function(r){if(65<=r&&r<=90)return r-65;if(97<=r&&r<=122)return r-97+26;if(48<=r&&r<=57)return r-48+52;if(r==43)return 62;if(r==47)return 63;throw"c:"+r};return s},tr=function(x,w){var g=x,l=w,n=new Array(x*w),s={};s.setPixel=function(i,v,_){n[v*g+i]=_},s.write=function(i){i.writeString("GIF87a"),i.writeShort(g),i.writeShort(l),i.writeByte(128),i.writeByte(0),i.writeByte(0),i.writeByte(0),i.writeByte(0),i.writeByte(0),i.writeByte(255),i.writeByte(255),i.writeByte(255),i.writeString(","),i.writeShort(0),i.writeShort(0),i.writeShort(g),i.writeShort(l),i.writeByte(0);var v=2,_=r(v);i.writeByte(v);for(var B=0;_.length-B>255;)i.writeByte(255),i.writeBytes(_,B,255),B+=255;i.writeByte(_.length-B),i.writeBytes(_,B,_.length-B),i.writeByte(0),i.writeString(";")};var t=function(i){var v=i,_=0,B=0,y={};return y.write=function(T,E){if(T>>>E)throw"length over";for(;_+E>=8;)v.writeByte(255&(T<<_|B)),E-=8-_,T>>>=8-_,B=0,_=0;B=T<<_|B,_=_+E},y.flush=function(){_>0&&v.writeByte(B)},y},r=function(i){for(var v=1<<i,_=(1<<i)+1,B=i+1,y=h(),T=0;T<v;T+=1)y.add(String.fromCharCode(T));y.add(String.fromCharCode(v)),y.add(String.fromCharCode(_));var E=j(),N=t(E);N.write(v,B);var m=0,U=String.fromCharCode(n[m]);for(m+=1;m<n.length;){var H=String.fromCharCode(n[m]);m+=1,y.contains(U+H)?U=U+H:(N.write(y.indexOf(U),B),y.size()<4095&&(y.size()==1<<B&&(B+=1),y.add(U+H)),U=H)}return N.write(y.indexOf(U),B),N.write(_,B),N.flush(),E.toByteArray()},h=function(){var i={},v=0,_={};return _.add=function(B){if(_.contains(B))throw"dup key:"+B;i[B]=v,v+=1},_.size=function(){return v},_.indexOf=function(B){return i[B]},_.contains=function(B){return typeof i[B]<"u"},_};return s},er=function(x,w,g){for(var l=tr(x,w),n=0;n<w;n+=1)for(var s=0;s<x;s+=1)l.setPixel(s,n,g(s,n));var t=j();l.write(t);for(var r=z(),h=t.toByteArray(),i=0;i<h.length;i+=1)r.writeByte(h[i]);return r.flush(),"data:image/gif;base64,"+r};return P})();(function(){qrcode.stringToBytesFuncs["UTF-8"]=function(P){function D(O){for(var L=[],k=0;k<O.length;k++){var M=O.charCodeAt(k);M<128?L.push(M):M<2048?L.push(192|M>>6,128|M&63):M<55296||M>=57344?L.push(224|M>>12,128|M>>6&63,128|M&63):(k++,M=65536+((M&1023)<<10|O.charCodeAt(k)&1023),L.push(240|M>>18,128|M>>12&63,128|M>>6&63,128|M&63))}return L}return D(P)}})(),(function(P){typeof define=="function"&&define.amd?define([],P):typeof exports=="object"&&(module.exports=P())})(function(){return qrcode});
+</script>
+<script>
+(function(){
+'use strict';
+var stage = document.getElementById('stage'), slides = [].slice.call(stage.querySelectorAll(':scope > section.slide')), idx = 0, shhCtx = null;
+function $(s, r){ return (r || document).querySelector(s); }
+function $$(s, r){ return [].slice.call((r || document).querySelectorAll(s)); }
+function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+var LSP = 'tl_' + (location.pathname.split('/').pop() || 'x') + '_';
+function lsGet(k){ try { return localStorage.getItem(LSP + k); } catch(e){ return null; } }
+function lsSet(k, v){ try { localStorage.setItem(LSP + k, v); } catch(e){} }
+var gridOverlay = { classList: { contains: function(){ var g = document.getElementById('grid'); return !!(g && g.classList.contains('on')); } } };
+if (!document.getElementById('toolBtn')){ var tb = document.createElement('button'); tb.type = 'button'; tb.className = 'btn hide-s'; tb.id = 'toolBtn'; tb.textContent = '🛠 도구'; var bh = document.getElementById('bh'); if (bh && bh.parentNode) bh.parentNode.insertBefore(tb, bh.nextSibling); else (document.querySelector('.bar') || document.body).appendChild(tb); }
+
+/* ═════════ 강의 도구 5종: 수업 시계 · 펜 · 손들기 투표 · QR · 화면 가리기/확대 ═════════ */
+(function(){
+function mk(tag, cls, html, parent){ var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; (parent || stage).appendChild(e); return e; }
+function inField(t){ return t && t.closest && t.closest('input,textarea,select'); }
+function actx(){ var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null; shhCtx = shhCtx || new AC(); if (shhCtx.state === 'suspended') shhCtx.resume(); return shhCtx; }
+var toastEl = mk('div', 'toast'), toastT = null;
+function toast(msg){ toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(function(){ toastEl.classList.remove('show'); }, 2600); }
+
+/* ── 1. 수업 시계 + 종료 벨 ── */
+function bell(n){
+  try { var ctx = actx(); if (!ctx) return; n = n || 3;
+    for (var i = 0; i < n; i++){ var t0 = ctx.currentTime + .05 + i * 1.1;
+      [[880,.28],[1318,.12],[1760,.06]].forEach(function(p){ var o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'sine'; o.frequency.value = p[0]; g.gain.setValueAtTime(0, t0); g.gain.linearRampToValueAtTime(p[1], t0 + .01); g.gain.exponentialRampToValueAtTime(.0008, t0 + 1.0);
+        o.connect(g); g.connect(ctx.destination); o.start(t0); o.stop(t0 + 1.05); }); }
+  } catch(e){}
+}
+var clk = mk('button', 'clk', '<span>⏱</span><b class="rem">--:--</b><small></small>');
+clk.type = 'button'; clk.setAttribute('aria-label', '수업 시계 설정');
+var clkp = mk('div', 'tpanel', '<h4>⏱ 수업 시계 · 종료 벨</h4><div>지금부터</div><div class="rw" id="clkPre"></div><div>또는 종료 시각</div><div class="rw"><input type="time" id="clkT" value="12:00"><button type="button" class="tbtn" id="clkGo">시작</button></div><div class="rw"><button type="button" class="tbtn" id="clkBell">🔔 벨 소리 듣기</button><button type="button" class="tbtn" id="clkOff">끄기</button></div><small>5분 전 · 1분 전 알림, 종료 시각에 벨이 울립니다. 처음 한 번 “벨 소리 듣기”로 음량을 맞춰 두세요.</small>');
+clkp.id = 'clkp';
+[10,15,30,45,50,90].forEach(function(m){ var b = mk('button', 'tbtn', m + '분', $('#clkPre', clkp)); b.type = 'button'; b.addEventListener('click', function(){ clkSet(Date.now() + m * 60000); }); });
+var endAt = 0, clkIv = null, f5 = false, f1 = false, fEnd = false;
+function pad(n){ return n < 10 ? '0' + n : '' + n; }
+function clkSet(t){ endAt = t; f5 = f1 = fEnd = false; lsSet('clk', String(t)); clk.classList.add('on'); clkp.classList.remove('open'); clearInterval(clkIv); clkIv = setInterval(clkTick, 1000); clkTick(); var d = new Date(t); toast('⏱ ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ' 종료로 설정했습니다'); }
+function clkOff(){ endAt = 0; lsSet('clk', ''); clearInterval(clkIv); clk.classList.remove('on', 'warn', 'danger', 'over'); clkp.classList.remove('open'); }
+function clkTick(){
+  var r = Math.round((endAt - Date.now()) / 1000), a = Math.abs(r), h = Math.floor(a / 3600), m = Math.floor(a % 3600 / 60), s = a % 60;
+  $('.rem', clk).textContent = (r < 0 ? '+' : '') + (h ? h + ':' + pad(m) : m) + ':' + pad(s);
+  var d = new Date(); $('small', clk).textContent = pad(d.getHours()) + ':' + pad(d.getMinutes());
+  clk.classList.toggle('warn', r <= 300 && r > 60); clk.classList.toggle('danger', r <= 60 && r > 0); clk.classList.toggle('over', r <= 0);
+  if (r <= 300 && !f5){ f5 = true; if (r > 60){ toast('⏱ 종료 5분 전입니다'); bell(1); } }
+  if (r <= 60 && !f1){ f1 = true; if (r > 0){ toast('⏱ 종료 1분 전입니다'); bell(1); } }
+  if (r <= 0 && !fEnd){ fEnd = true; toast('🔔 수업 종료 시각입니다'); bell(3); }
+}
+clk.addEventListener('click', function(e){ e.stopPropagation(); this.blur(); toggleClk(); });
+function toggleClk(){ closeOthers('clk'); clkp.classList.toggle('open'); }
+$('#clkGo', clkp).addEventListener('click', function(){ var v = $('#clkT', clkp).value.split(':'); if (v.length < 2) return; var d = new Date(); d.setHours(+v[0], +v[1], 0, 0); if (d.getTime() < Date.now()) d.setDate(d.getDate() + 1); clkSet(d.getTime()); });
+$('#clkBell', clkp).addEventListener('click', function(){ bell(1); });
+$('#clkOff', clkp).addEventListener('click', clkOff);
+clkp.addEventListener('keydown', function(e){ e.stopPropagation(); });
+(function(){ var v = parseInt(lsGet('clk'), 10); if (v && v > Date.now() - 600000){ endAt = v; clk.classList.add('on'); fEnd = v < Date.now(); f5 = f1 = v - Date.now() < 300000; clkIv = setInterval(clkTick, 1000); clkTick(); } })();
+
+/* ── 2. 펜 · 형광펜 · 레이저 ── */
+var cv = mk('canvas', 'pen'), cx = cv.getContext('2d'), laser = mk('div', 'laser');
+var pen = { on: false, mode: 'pen', color: '#ff3b30' }, strokes = {}, cur = null;
+var pbar = mk('div', 'pbar', '<button type="button" class="tbtn" data-m="pen">✏️ 펜 <small>D</small></button><button type="button" class="tbtn" data-m="hl">🖍 형광펜 <small>H</small></button><button type="button" class="tbtn" data-m="laser">🔴 레이저 <small>L</small></button><span class="sep"></span><span id="pcols"></span><span class="sep"></span><button type="button" class="tbtn" data-a="clear">🧹 지우기 <small>X</small></button><button type="button" class="tbtn" data-a="off">✕ 끝내기</button>');
+['#ff3b30','#f6c744','#4aa3ff','#34d6a0','#ffffff'].forEach(function(c){ var b = mk('button', 'sw' + (c === pen.color ? ' on' : ''), '', $('#pcols', pbar)); b.type = 'button'; b.style.background = c; b.dataset.c = c; b.setAttribute('aria-label', '색 ' + c); });
+$('#pcols', pbar).style.cssText = 'display:flex;gap:.6cqi';
+function fit(){ var r = stage.getBoundingClientRect(), d = window.devicePixelRatio || 1; cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d); redraw(); }
+function path(st, W, H){ cx.beginPath(); st.p.forEach(function(q, i){ if (i) cx.lineTo(q[0] * W, q[1] * H); else cx.moveTo(q[0] * W, q[1] * H); }); if (st.p.length === 1) cx.lineTo(st.p[0][0] * W + .1, st.p[0][1] * H); }
+function redraw(){
+  var W = cv.width, H = cv.height; cx.clearRect(0, 0, W, H); cx.lineCap = cx.lineJoin = 'round';
+  (strokes[idx] || []).forEach(function(st){
+    cx.globalAlpha = st.m === 'hl' ? .38 : 1; cx.strokeStyle = st.c; cx.lineWidth = W * (st.m === 'hl' ? .022 : .0042); path(st, W, H); cx.stroke();
+  });
+  cx.globalAlpha = 1;
+}
+function penMode(m){
+  if (pen.on && pen.mode === m){ penOff(); return; }
+  if (zoomLvl > 1) zoomSet(1);
+  pen.on = true; pen.mode = m; cv.classList.add('on'); pbar.classList.add('on'); laser.style.display = 'none';
+  $$('[data-m]', pbar).forEach(function(b){ b.classList.toggle('on', b.dataset.m === m); });
+  toast({ pen: '✏️ 펜 · 드래그해서 그리기', hl: '🖍 형광펜', laser: '🔴 레이저 포인터' }[m] + '   (Esc로 끝내기)');
+}
+function penOff(){ pen.on = false; cv.classList.remove('on'); pbar.classList.remove('on'); laser.style.display = 'none'; cur = null; }
+function penClear(){ strokes[idx] = []; redraw(); }
+pbar.addEventListener('click', function(e){
+  var b = e.target.closest('button'); if (!b) return; b.blur();
+  if (b.dataset.m){ if (!(pen.on && pen.mode === b.dataset.m)) penMode(b.dataset.m); }
+  else if (b.dataset.a === 'clear') penClear(); else if (b.dataset.a === 'off') penOff();
+  else if (b.dataset.c){ pen.color = b.dataset.c; $$('.sw', pbar).forEach(function(x){ x.classList.toggle('on', x === b); }); if (pen.mode === 'laser') penMode('pen'); }
+});
+function pt(e){ var r = stage.getBoundingClientRect(); return [(e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height]; }
+cv.addEventListener('pointerdown', function(e){
+  if (!pen.on || pen.mode === 'laser') return; e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch(_){}
+  cur = { m: pen.mode, c: pen.color, p: [pt(e)] }; (strokes[idx] = strokes[idx] || []).push(cur); redraw();
+});
+cv.addEventListener('pointermove', function(e){
+  if (!pen.on) return;
+  if (pen.mode === 'laser'){ var p = pt(e); laser.style.display = 'block'; laser.style.left = (p[0] * 100) + '%'; laser.style.top = (p[1] * 100) + '%'; return; }
+  if (cur){ cur.p.push(pt(e)); redraw(); }
+});
+cv.addEventListener('pointerup', function(){ cur = null; });
+cv.addEventListener('pointerleave', function(){ if (pen.mode === 'laser') laser.style.display = 'none'; });
+window.addEventListener('resize', fit);
+
+/* ── 3. 손들기 집계 투표 ── */
+var polls = {};
+function pollGet(id, labels){
+  var p = polls[id];
+  if (!p || p.labels.join('|') !== labels.join('|')){
+    var saved = null; try { saved = JSON.parse(lsGet('poll_' + id) || 'null'); } catch(e){}
+    p = polls[id] = { id: id, labels: labels, counts: (saved && saved.length === labels.length) ? saved : labels.map(function(){ return 0; }), boxes: [] };
+  }
+  return p;
+}
+function pollBuild(box, id, labels){
+  var p = pollGet(id, labels); box.innerHTML = '';
+  var top = mk('div', 'polt', '<span>숫자키 1~' + labels.length + ' = +1 · Shift+숫자 = +5 · Alt+숫자 = −1</span><span>합계 <b class="tot">0</b>명 <button type="button" class="tbtn rst" style="margin-left:1cqi">초기화</button></span>', box);
+  labels.forEach(function(l, i){
+    var r = mk('div', 'polrow', '<span class="plab">' + (i + 1) + '. ' + l + '</span><div class="pbr" data-i="' + i + '"><i></i><em></em></div><span class="pcb"><button type="button" class="tbtn" data-d="-1">−1</button><button type="button" class="tbtn" data-d="1">+1</button><button type="button" class="tbtn" data-d="5">+5</button></span>', box);
+  });
+  box._p = p; p.boxes = p.boxes.filter(function(b){ return b !== box && document.contains(b); }); p.boxes.push(box);
+  var rst = $('.rst', box), rt = null;
+  rst.addEventListener('click', function(){ if (rst.dataset.arm){ p.counts = p.counts.map(function(){ return 0; }); rst.textContent = '초기화'; delete rst.dataset.arm; pollSave(p); } else { rst.dataset.arm = 1; rst.textContent = '정말?'; clearTimeout(rt); rt = setTimeout(function(){ rst.textContent = '초기화'; delete rst.dataset.arm; }, 2500); } });
+  box.addEventListener('click', function(e){
+    var b = e.target.closest('[data-d]'), pb = e.target.closest('.pbr');
+    if (b){ b.blur(); pollAdd(p, $$('.polrow', box).indexOf(b.closest('.polrow')), +b.dataset.d); }
+    else if (pb) pollAdd(p, +pb.dataset.i, e.shiftKey ? 5 : 1);
+  });
+  pollPaint(p);
+}
+function pollSave(p){ lsSet('poll_' + p.id, JSON.stringify(p.counts)); pollPaint(p); }
+function pollAdd(p, i, d){ if (i < 0 || i >= p.counts.length) return; p.counts[i] = Math.max(0, p.counts[i] + d); pollSave(p); }
+function pollPaint(p){
+  var tot = p.counts.reduce(function(a, b){ return a + b; }, 0), mx = Math.max.apply(null, p.counts.concat([1]));
+  p.boxes.forEach(function(box){
+    $('.tot', box).textContent = tot;
+    $$('.pbr', box).forEach(function(pb, i){
+      $('i', pb).style.width = (p.counts[i] / Math.max(mx, 1) * 100) + '%';
+      $('em', pb).innerHTML = p.counts[i] + '<span>' + (tot ? Math.round(p.counts[i] / tot * 100) : 0) + '%</span>';
+    });
+  });
+}
+$$('.poll[data-poll]').forEach(function(b){ pollBuild(b, b.dataset.poll, b.dataset.labels.split('|')); });
+var polov = mk('div', ''), PRESETS = [['예|아니오', '예 · 아니오'], ['A|B|C|D', 'A·B·C·D'], ['1점|2점|3점|4점|5점', '1~5점']], preIdx = 0;
+polov.id = 'polov'; polov.innerHTML = '<div class="tbx"><h3>🙋 손들기 집계</h3><div class="rw" id="polPre" style="display:flex;gap:.6cqi"></div><div class="poll" id="polBox"></div><div class="tlhint">손 든 사람 수를 세어 숫자키(1~5)나 막대를 누르세요. Shift = +5 · Alt = −1 · V 또는 Esc로 닫기</div></div>';
+function polPick(i){ preIdx = i; $$('#polPre .tbtn', polov).forEach(function(b, k){ b.classList.toggle('on', k === i); }); pollBuild($('#polBox', polov), 'ov' + i, PRESETS[i][0].split('|')); }
+PRESETS.forEach(function(pr, i){ var b = mk('button', 'tbtn', pr[1], $('#polPre', polov)); b.type = 'button'; b.addEventListener('click', function(){ polPick(i); b.blur(); }); });
+polPick(0);
+polov.addEventListener('click', function(e){ if (e.target === polov) togglePol(); });
+function togglePol(){ closeOthers('pol'); polov.classList.toggle('open'); }
+function pollTarget(){ if (polov.classList.contains('open')) return $('#polBox', polov)._p; var b = $('.poll', slides[idx]); return b && b._p; }
+
+/* ── 4. QR 코드 ── */
+function qrSvg(url){
+  var q = qrcode(0, 'M'); q.addData(url); q.make(); var n = q.getModuleCount(), d = '';
+  for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (q.isDark(r, c)) d += 'M' + (c + 4) + ' ' + (r + 4) + 'h1v1h-1z';
+  var m = n + 8;
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + m + ' ' + m + '" shape-rendering="crispEdges" role="img" aria-label="QR 코드"><path d="' + d + '" fill="#000"/></svg>';
+}
+function homeUrl(){ var a = $('#nav a[href], .bar a[href]'); var u = new URL(a ? a.getAttribute('href') : location.href, location.href); u.search = ''; u.hash = ''; return u.href; }
+function qrFill(box, url){ try { box.innerHTML = qrSvg(url); } catch(e){ box.textContent = 'QR 생성 실패: 주소가 너무 깁니다'; } }
+$$('.qrbox[data-qr]').forEach(function(b){ var u = b.dataset.qr === 'home' ? homeUrl() : b.dataset.qr; qrFill(b, u); var t = b.parentNode.querySelector('.qrurl'); if (t) t.textContent = u; });
+var qrov = mk('div', ''); qrov.id = 'qrov';
+qrov.innerHTML = '<div class="tbx qrcard"><h3>📱 휴대폰으로 찍어 보세요</h3><div class="qrbox" id="qrBig"></div><input type="text" id="qrIn" aria-label="QR 주소"><div class="rw" style="display:flex;gap:.6cqi"><button type="button" class="tbtn" id="qrHome">강의 홈</button><button type="button" class="tbtn" id="qrThis">이 슬라이드</button></div><div class="tlhint">주소를 고쳐 Enter를 누르면 QR이 바뀝니다 · Q 또는 Esc로 닫기</div></div>';
+var qrIn = $('#qrIn', qrov);
+function qrSet(u){ qrIn.value = u; qrFill($('#qrBig', qrov), u); }
+$('#qrHome', qrov).addEventListener('click', function(){ qrSet(homeUrl()); this.blur(); });
+$('#qrThis', qrov).addEventListener('click', function(){ var u = new URL(location.href); u.search = ''; u.hash = '#' + (idx + 1); qrSet(u.href); this.blur(); });
+qrIn.addEventListener('keydown', function(e){ e.stopPropagation(); if (e.key === 'Enter') qrSet(qrIn.value.trim() || homeUrl()); if (e.key === 'Escape') toggleQr(); });
+qrov.addEventListener('click', function(e){ if (e.target === qrov) toggleQr(); });
+function toggleQr(){ closeOthers('qr'); if (!qrov.classList.contains('open')) qrSet(homeUrl()); qrov.classList.toggle('open'); }
+
+/* ── 5. 화면 가리기 · 확대 ── */
+var tlblk = mk('div', 'tlblk'); tlblk.addEventListener('click', function(){ tlblk.classList.remove('on'); });
+function toggleBlk(){ tlblk.classList.toggle('on'); }
+var zb = mk('div', 'zbadge'), zoomLvl = 1, zorg = [50, 50], ZL = [1, 1.5, 2, 3];
+function zoomSet(l){
+  zoomLvl = l; var s = slides[idx];
+  if (l > 1 && pen.on) penOff();
+  s.style.transformOrigin = zorg[0] + '% ' + zorg[1] + '%'; s.style.transform = l > 1 ? 'scale(' + l + ')' : '';
+  zb.classList.toggle('on', l > 1); zb.textContent = '🔍 ×' + l + ' · 마우스를 따라 이동 · Z로 해제';
+}
+function zoomStep(d){ var i = ZL.indexOf(zoomLvl); i = clamp(i + d, 0, ZL.length - 1); zoomSet(ZL[i]); }
+stage.addEventListener('pointermove', function(e){ if (zoomLvl > 1){ var r = stage.getBoundingClientRect(); zorg = [clamp((e.clientX - r.left) / r.width * 100, 0, 100), clamp((e.clientY - r.top) / r.height * 100, 0, 100)]; slides[idx].style.transformOrigin = zorg[0] + '% ' + zorg[1] + '%'; } });
+
+/* ── 도움말 · 도구 메뉴 ── */
+var hlp = mk('div', ''); hlp.id = 'hlp'; hlp.className = 'hlp';
+hlp.innerHTML = '<div class="tbx"><h3>🛠 강의 도구 · 단축키</h3><table>' +
+ '<tr><td>C</td><td>수업 시계 · 종료 시각에 벨이 울립니다 (5분 전·1분 전 알림)</td></tr>' +
+ '<tr><td>D / H / L</td><td>펜 / 형광펜 / 레이저 포인터 · X 지우기 · Esc 끝내기</td></tr>' +
+ '<tr><td>V</td><td>손들기 집계 · 숫자키 1~5 = +1, Shift = +5, Alt = −1</td></tr>' +
+ '<tr><td>Q</td><td>QR 코드 · 강의 홈 주소를 화면에 크게</td></tr>' +
+ '<tr><td>B</td><td>화면 가리기(검은 화면) · 한 번 더 누르면 복귀</td></tr>' +
+ '<tr><td>Z, + −</td><td>확대 (마우스를 따라 이동) · 글씨가 작을 때</td></tr>' +
+ '<tr><td>S · G · F · P</td><td>쉿 7초 · 전체보기 · 전체화면 · PDF</td></tr>' +
+ '<tr><td>?</td><td>이 도움말 · Esc로 닫기</td></tr></table></div>';
+hlp.addEventListener('click', function(){ hlp.classList.remove('open'); });
+function toggleHlp(){ closeOthers('hlp'); hlp.classList.toggle('open'); }
+var tmenu = document.createElement('div'); tmenu.id = 'tmenu'; document.body.appendChild(tmenu);
+var TM = [['⏱ 수업 시계 · 종료 벨', 'C', toggleClk], ['✏️ 펜', 'D', function(){ penMode('pen'); }], ['🖍 형광펜', 'H', function(){ penMode('hl'); }], ['🔴 레이저 포인터', 'L', function(){ penMode('laser'); }], ['🙋 손들기 집계', 'V', togglePol], ['📱 QR 코드', 'Q', toggleQr], ['⬛ 화면 가리기', 'B', toggleBlk], ['🔍 확대', 'Z', function(){ zoomSet(zoomLvl > 1 ? 1 : 2); }], ['❓ 도움말', '?', toggleHlp]];
+TM.forEach(function(t){ var b = document.createElement('button'); b.type = 'button'; b.innerHTML = '<span>' + t[0] + '</span><kbd>' + t[1] + '</kbd>'; b.addEventListener('click', function(){ tmenu.classList.remove('open'); t[2](); }); tmenu.appendChild(b); });
+var toolBtn = $('#toolBtn'); if (toolBtn) toolBtn.addEventListener('click', function(e){ e.stopPropagation(); tmenu.classList.toggle('open'); });
+document.addEventListener('click', function(e){ if (!e.target.closest('#tmenu,#toolBtn')) tmenu.classList.remove('open'); });
+
+function closeOthers(k){
+  if (k !== 'clk') clkp.classList.remove('open');
+  if (k !== 'pol') polov.classList.remove('open');
+  if (k !== 'qr') qrov.classList.remove('open');
+  if (k !== 'hlp') hlp.classList.remove('open');
+}
+
+/* ── 슬라이드가 바뀔 때 ── */
+function curIdx(){ for (var i = 0; i < slides.length; i++) if (slides[i].classList.contains('active')) return i; return 0; }
+function slideChanged(){ var n = curIdx(); if (n === idx) return; var b = idx; slides[b].style.transform = ''; slides[b].style.transformOrigin = ''; idx = n; zoomLvl = 1; zb.classList.remove('on'); cur = null; redraw(); closeOthers(''); }
+idx = curIdx();
+var mo = new MutationObserver(slideChanged); slides.forEach(function(s){ mo.observe(s, { attributes: true, attributeFilter: ['class'] }); });
+fit();
+
+/* ── 키보드 (캡처 단계: 한글 입력 상태에서도 e.code로 동작) ── */
+document.addEventListener('keydown', function(e){
+  if (gridOverlay.classList.contains('open')) return;
+  var hs = document.getElementById('hush'); if (hs && hs.classList.contains('on')) return;
+  var code = e.code, field = inField(e.target);
+  if (code === 'Escape'){
+    var did = true;
+    if (tlblk.classList.contains('on')) tlblk.classList.remove('on');
+    else if (hlp.classList.contains('open')) hlp.classList.remove('open');
+    else if (qrov.classList.contains('open')) qrov.classList.remove('open');
+    else if (polov.classList.contains('open')) polov.classList.remove('open');
+    else if (clkp.classList.contains('open')) clkp.classList.remove('open');
+    else if (tmenu.classList.contains('open')) tmenu.classList.remove('open');
+    else if (pen.on) penOff();
+    else if (zoomLvl > 1) zoomSet(1);
+    else did = false;
+    if (did){ e.preventDefault(); e.stopPropagation(); }
+    return;
+  }
+  if (field || e.ctrlKey || e.metaKey) return;
+  if (tlblk.classList.contains('on') && code !== 'KeyB' && code !== 'Period'){ tlblk.classList.remove('on'); e.preventDefault(); e.stopPropagation(); return; }
+  var m = /^(?:Digit|Numpad)([0-9])$/.exec(code), used = true;
+  if (m && +m[1] >= 1){ var p = pollTarget(); if (p && +m[1] <= p.counts.length) pollAdd(p, +m[1] - 1, e.altKey ? -1 : (e.shiftKey ? 5 : 1)); else used = false; }
+  else if (e.altKey) return;
+  else if (code === 'KeyC') toggleClk();
+  else if (code === 'KeyD') penMode('pen');
+  else if (code === 'KeyH') penMode('hl');
+  else if (code === 'KeyL') penMode('laser');
+  else if (code === 'KeyX' && pen.on) penClear();
+  else if (code === 'KeyV') togglePol();
+  else if (code === 'KeyQ') toggleQr();
+  else if (code === 'KeyB' || code === 'Period') toggleBlk();
+  else if (code === 'KeyZ') zoomSet(zoomLvl > 1 ? 1 : 2);
+  else if (code === 'Equal' || code === 'NumpadAdd') zoomStep(1);
+  else if (code === 'Minus' || code === 'NumpadSubtract') zoomStep(-1);
+  else if (e.key === '?' || (code === 'Slash' && e.shiftKey)) toggleHlp();
+  else used = false;
+  if (used){ e.preventDefault(); e.stopPropagation(); }
+}, true);
+})();
+
+})();
+</script>
+</body>
+</html>
