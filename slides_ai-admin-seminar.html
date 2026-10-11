@@ -2,9 +2,17 @@
 <html lang="ko"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>AI 행정세미나 · 실습 슬라이드</title>
+<title>AI 활용 행정세미나 | 가천대학교</title>
 <meta name="description" content="가천대 행정학과 AI 활용 행정세미나 150분 실습 · 공고·업무추진비·민원·조례·정책홍보 · 강사 나병인">
 <meta name="theme-color" content="#0B1220">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 활용 행정세미나 | 가천대학교">
+<meta property="og:description" content="화면을 따라 클릭하며 배우는 150분 실습 · 공고·업무추진비·민원·조례·정책홍보 · 강사 나병인">
+<meta property="og:image" content="https://0927iwillman.vercel.app/admin-seminar-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%9B%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -254,24 +262,293 @@ table.tbl .coral{font-weight:800}
 #ladder svg{flex:1;width:100%;min-height:0;display:block}
 #ladder .lnote{text-align:center;font-size:14px;color:#8A8076;margin-top:6px}
 @media print{#ladder{display:none!important}}
+
+/* ═════ 실습 화면 모형 · 단계 진행 ═════ */
+:root{--amber:#F6C744;--panel2:#1A2442;--ok:#34D6A0;--red:#E5322D}
+.mslide .slide-content{justify-content:flex-start;gap:1cqi;padding-top:.6cqi}
+.m-head{display:flex;flex-direction:column;gap:.8cqi;padding-right:21cqi}
+.mslide h2{font-size:2.9cqi;line-height:1.2}
+.trail{display:flex;align-items:center;gap:.45cqi;flex-wrap:wrap}
+.trail span{font-size:1.2cqi;font-weight:800;color:var(--mute);border:.12cqi solid var(--line);border-radius:99cqi;padding:.28cqi .95cqi;white-space:nowrap}
+.trail span.on{background:var(--lime);color:var(--bg);border-color:var(--lime)}
+.trail span.dn{color:var(--sub);border-color:#3A4466}
+.trail i{font-style:normal;color:var(--mute);font-size:1.1cqi}
+.m-grid{display:grid;grid-template-columns:60cqi 1fr;grid-template-rows:minmax(0,1fr);gap:2cqi;height:36.4cqi;min-height:0}
+.m-win{position:relative;background:#fff;color:#202124;border-radius:1.2cqi;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;
+  font-size:1.2cqi;line-height:1.45;border:.15cqi solid #3A4466;min-height:0;height:100%}
+.m-win *{min-width:0}
+.m-tabs{display:flex;gap:.4cqi;background:#DEE1E6;padding:.7cqi .8cqi 0;flex:0 0 auto}
+.m-tab{position:relative;background:#C9CCD1;border-radius:.8cqi .8cqi 0 0;padding:.45cqi 1.2cqi;font-size:1.1cqi;color:#444;white-space:nowrap}
+.m-tab.on{background:#fff;color:#202124;font-weight:700}
+.m-addr{display:flex;align-items:center;gap:.8cqi;background:#fff;padding:.55cqi 1cqi;border-bottom:.1cqi solid #DADCE0;flex:0 0 auto}
+.m-nav{color:#5F6368;font-size:1.3cqi;letter-spacing:.4cqi}
+.m-url{position:relative;flex:1;background:#F1F3F4;border-radius:99cqi;padding:.35cqi 1.2cqi;font-size:1.1cqi;color:#5F6368;white-space:nowrap;overflow:visible}
+.m-gem{position:relative;background:linear-gradient(90deg,#4285F4,#9B72CB);color:#fff;font-weight:800;border-radius:99cqi;padding:.35cqi 1.1cqi;font-size:1.1cqi;white-space:nowrap}
+.m-body{flex:1;display:flex;min-height:0;position:relative}
+.m-page{flex:1;min-width:0;padding:1.1cqi 1.5cqi;overflow:hidden;position:relative;display:flex;flex-direction:column;gap:.7cqi}
+.m-side{position:relative;width:42%;flex:0 0 auto;border-left:.12cqi solid #DADCE0;background:#F8F9FC;display:flex;flex-direction:column;padding:.9cqi;gap:.7cqi;min-height:0}
+/* 슬라이드 모형(작은 슬라이드) */
+.mini-sl{background:#0B1220;color:#F6F3EC;border-radius:.9cqi;padding:1.3cqi 1.5cqi;display:flex;flex-direction:column;gap:.8cqi;flex:1}
+.mini-sl b{color:#D4FF3D;font-size:1.1cqi}
+.mini-sl h4{font-size:1.9cqi;line-height:1.3}
+.mini-sl .mbtn{position:relative;align-self:flex-start;border:.15cqi solid #D4FF3D;color:#D4FF3D;border-radius:99cqi;padding:.45cqi 1.4cqi;font-weight:800;font-size:1.25cqi}
+.mini-sl .mbtn.f{background:#D4FF3D;color:#0B1220}
+/* PDF 모형 */
+.pdfp{background:#fff;border:.1cqi solid #DADCE0;box-shadow:0 .2cqi .8cqi rgba(0,0,0,.18);padding:1.1cqi 1.4cqi;display:flex;flex-direction:column;gap:.45cqi;flex:1;position:relative;overflow:hidden}
+.pdfp h5{font-size:1.5cqi;font-weight:900;text-align:center;border-bottom:.15cqi solid #202124;padding-bottom:.4cqi;margin-bottom:.2cqi}
+.pdfp p{font-size:1.1cqi;color:#333}
+.pdfp .bar{height:.7cqi;background:#E3E5E8;border-radius:.3cqi}
+.pdfp .bar.s{width:70%}.pdfp .bar.m{width:85%}
+.pdfp mark{background:#FFE14D;color:#202124;padding:0 .3cqi;border-radius:.2cqi}
+.pdfp mark.hot{background:#FF9A3D}
+.findbar{position:absolute;right:1cqi;top:1cqi;z-index:5;background:#fff;border:.1cqi solid #C4C7C5;border-radius:.8cqi;padding:.45cqi .9cqi;box-shadow:0 .3cqi 1cqi rgba(0,0,0,.25);font-size:1.1cqi;display:flex;gap:.8cqi;align-items:center;color:#202124}
+.findbar .fi{position:relative;border:.1cqi solid #1A73E8;border-radius:.4cqi;padding:.15cqi .8cqi;min-width:9cqi}
+/* Gemini 패널 */
+.g-head{font-weight:900;color:#1F1F1F;display:flex;align-items:center;justify-content:space-between;font-size:1.3cqi}
+.g-head span{color:#80868B;font-weight:500}
+.g-chips{display:flex;gap:.45cqi;flex-wrap:wrap;align-items:center;font-size:1cqi;color:#5F6368}
+.g-chip{position:relative;background:#E8F0FE;color:#1A56C4;border-radius:99cqi;padding:.25cqi .9cqi;font-size:1cqi;font-weight:700;white-space:nowrap}
+.g-chip.add{background:#fff;border:.1cqi dashed #1A73E8}
+.g-chat{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:.55cqi;justify-content:flex-start}
+.g-hello{margin:auto;text-align:center;color:#5F6368;font-size:1.15cqi}
+.g-hello b{display:block;font-size:1.6cqi;color:#1F1F1F;margin-bottom:.3cqi}
+.g-u{align-self:flex-end;background:#D3E3FD;border-radius:1cqi 1cqi .2cqi 1cqi;padding:.5cqi .9cqi;max-width:92%;font-size:1cqi;color:#1F1F1F}
+.g-a{position:relative;background:#fff;border:.1cqi solid #E0E3E8;border-radius:1cqi;padding:.6cqi .9cqi;font-size:1cqi;color:#1F1F1F;display:flex;flex-direction:column;gap:.2cqi}
+.g-a em{font-style:normal;background:#FFF3B0;border-radius:.3cqi;padding:0 .2cqi}
+.g-in{position:relative;display:flex;align-items:center;gap:.6cqi;background:#fff;border:.15cqi solid #C4C7C5;border-radius:99cqi;padding:.5cqi .5cqi .5cqi 1cqi;font-size:1cqi;color:#80868B;flex:0 0 auto}
+.g-in .tx{flex:1;color:#1F1F1F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-send{position:relative;margin-left:auto;background:#1A73E8;color:#fff;border-radius:50%;width:2.2cqi;height:2.2cqi;display:grid;place-items:center;font-size:1.1cqi;flex:0 0 auto}
+.m-pop{position:absolute;z-index:7;left:.9cqi;right:.9cqi;top:7.4cqi;background:#fff;border:.1cqi solid #C4C7C5;border-radius:.9cqi;box-shadow:0 .5cqi 1.6cqi rgba(0,0,0,.3);padding:.4cqi;font-size:1.05cqi;color:#202124}
+.m-pop div{position:relative;padding:.45cqi .8cqi;border-radius:.5cqi}
+.m-pop div.sel{background:#E8F0FE}
+/* NotebookLM 모형 */
+.nlm{display:flex;flex:1;min-height:0;background:#F0F4F9;gap:.6cqi;padding:.6cqi}
+.nlm-top{display:flex;align-items:center;gap:1cqi;background:#fff;padding:.5cqi 1.2cqi;border-bottom:.1cqi solid #DADCE0;font-weight:800;font-size:1.2cqi;flex:0 0 auto}
+.nlm-top span{font-weight:500;color:#5F6368}
+.nlm .col{background:#fff;border-radius:1cqi;padding:.8cqi;display:flex;flex-direction:column;gap:.5cqi;min-height:0;position:relative;overflow:hidden}
+.nlm .c1{flex:0 0 27%}.nlm .c2{flex:1}.nlm .c3{flex:0 0 22%}
+.nlm h6{font-size:1.1cqi;font-weight:900;color:#1F1F1F;display:flex;justify-content:space-between}
+.nlm .add{position:relative;border:.1cqi solid #C4C7C5;border-radius:99cqi;text-align:center;padding:.3cqi;font-size:1cqi;font-weight:700;color:#1A56C4}
+.nlm .src{position:relative;display:flex;gap:.5cqi;align-items:center;font-size:.95cqi;padding:.25cqi .3cqi;border-radius:.5cqi}
+.nlm .src.sel{background:#E8F0FE}
+.nlm .tile{border-radius:.8cqi;background:#E8EAF6;padding:.7cqi;font-size:.95cqi;font-weight:700;color:#3C4C9E}
+.nlm .cit{display:inline-grid;place-items:center;position:relative;width:1.5cqi;height:1.5cqi;border-radius:50%;background:#D3E3FD;color:#1A56C4;font-size:.85cqi;font-weight:900;margin-left:.2cqi;vertical-align:middle}
+.nlm .hlrow{background:#FFF3B0;border-radius:.4cqi;padding:.35cqi .5cqi;position:relative;font-size:.95cqi}
+.nlm .gray{height:.6cqi;background:#E3E5E8;border-radius:.3cqi}
+.nlm .gray.s{width:65%}
+.nlm-dlg{position:absolute;z-index:6;left:12%;right:12%;top:12%;background:#fff;border-radius:1.3cqi;box-shadow:0 1cqi 3cqi rgba(0,0,0,.4);padding:1.3cqi 1.5cqi;display:flex;flex-direction:column;gap:.8cqi;border:.1cqi solid #DADCE0}
+.nlm-dlg h5{font-size:1.4cqi}
+.nlm-dlg .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:.7cqi}
+.nlm-dlg .tiles div{position:relative;border:.1cqi solid #C4C7C5;border-radius:.9cqi;padding:.9cqi .5cqi;text-align:center;font-size:1.05cqi;font-weight:700}
+.nlm-home{flex:1;padding:1.4cqi 1.8cqi;background:#fff;display:flex;flex-direction:column;gap:1cqi}
+.nlm-home h5{font-size:1.5cqi}
+.nlm-home .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1cqi}
+.nlm-home .cards div{position:relative;border:.1cqi solid #DADCE0;border-radius:1.1cqi;height:8.5cqi;display:grid;place-items:center;font-size:1.1cqi;font-weight:700;background:#F8F9FC;text-align:center}
+.nlm-home .cards div.new{background:#E8F0FE;color:#1A56C4;border-style:dashed;border-color:#1A73E8}
+/* OS 파일 선택 창 */
+.m-os{position:absolute;z-index:8;left:9%;right:9%;top:6%;bottom:6%;background:#F3F3F3;color:#202124;border-radius:.9cqi;box-shadow:0 1cqi 3cqi rgba(0,0,0,.5);border:.1cqi solid #999;display:flex;flex-direction:column;font-size:1.05cqi}
+.m-os .tt{background:#fff;padding:.5cqi 1cqi;font-weight:700;border-bottom:.1cqi solid #ccc;border-radius:.9cqi .9cqi 0 0}
+.m-os .fl{position:relative;flex:1;background:#fff;margin:.6cqi;padding:.4cqi;display:flex;flex-direction:column;gap:.1cqi;border:.1cqi solid #ccc}
+.m-os .fl div{padding:.3cqi .7cqi}
+.m-os .fl div.pick{background:#CCE4FF}
+.m-os .ft{display:flex;justify-content:flex-end;gap:.6cqi;padding:.2cqi .8cqi .7cqi}
+.m-os .ft span{position:relative;border:.1cqi solid #aaa;background:#fff;border-radius:.4cqi;padding:.3cqi 1.4cqi}
+.m-os .ft span.go{background:#1A73E8;color:#fff;border-color:#1A73E8}
+/* Gemini 앱(전체 화면) */
+.gapp{display:flex;flex:1;min-height:0;background:#fff}
+.gapp .sb{flex:0 0 19%;background:#F0F4F9;padding:.9cqi .7cqi;display:flex;flex-direction:column;gap:.35cqi;font-size:1.05cqi;color:#444}
+.gapp .sb div{position:relative;padding:.4cqi .7cqi;border-radius:99cqi}
+.gapp .sb div.on{background:#D3E3FD;color:#0B3B8C;font-weight:800}
+.gapp .mn{flex:1;min-width:0;padding:.8cqi 1.4cqi;display:flex;flex-direction:column;gap:.55cqi;min-height:0}
+.gapp .mn .g-in{font-size:1.05cqi}
+.imgbox{position:relative;align-self:flex-start;flex:0 0 auto;width:11cqi;height:11cqi;border-radius:1.1cqi;background:linear-gradient(145deg,#FFE9B8,#FFB68A 55%,#8EC5FF);display:grid;place-items:center;font-size:3.6cqi;box-shadow:0 .3cqi 1cqi rgba(0,0,0,.25)}
+.imgbox small{position:absolute;left:0;right:0;bottom:.4cqi;text-align:center;font-size:.9cqi;color:#5a4636;font-weight:700}
+.imgtools{display:flex;gap:.5cqi;font-size:1cqi;align-items:center;flex:0 0 auto}
+.imgtools span{position:relative;border:.1cqi solid #C4C7C5;border-radius:99cqi;padding:.25cqi .8cqi;background:#fff}
+.prog{height:.9cqi;border-radius:99cqi;background:#E3E5E8;overflow:hidden;position:relative}
+.prog i{position:absolute;left:0;top:0;bottom:0;width:100%;background:linear-gradient(90deg,#4285F4,#9B72CB);animation:progm 2.4s ease-in-out infinite}
+@keyframes progm{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+/* 표 모형 */
+.m-tbl{width:100%;border-collapse:collapse;font-size:1.15cqi;color:#202124}
+.m-tbl th{position:relative;background:#E8F0FE;color:#1A3A8C;padding:.55cqi .8cqi;text-align:left;border:.1cqi solid #C4C7C5}
+.m-tbl td{position:relative;padding:.55cqi .8cqi;border:.1cqi solid #DADCE0}
+.m-tbl td.q{background:#FFF3B0}
+/* 옵시디언 */
+.obs{display:flex;flex:1;min-height:0;background:#1E1E1E;color:#DADADA;font-size:1.1cqi}
+.obs .rib{flex:0 0 3.4cqi;background:#161616;display:flex;flex-direction:column;align-items:center;gap:.7cqi;padding-top:.9cqi}
+.obs .rib span{position:relative;width:2.3cqi;height:2.3cqi;display:grid;place-items:center;border-radius:.5cqi;font-size:1.3cqi}
+.obs .fx{flex:0 0 19%;background:#232323;padding:.8cqi;display:flex;flex-direction:column;gap:.35cqi;border-right:.1cqi solid #333;font-size:1cqi}
+.obs .fx div{position:relative;padding:.25cqi .5cqi;border-radius:.4cqi;color:#A8A8A8}
+.obs .fx div.on{background:#3B3568;color:#fff}
+.obs .ed{flex:1;min-width:0;padding:1cqi 1.5cqi;display:flex;flex-direction:column;gap:.5cqi;overflow:hidden}
+.obs .ttl{position:relative;font-size:1.8cqi;font-weight:900;color:#fff;border-bottom:.1cqi solid #333;padding-bottom:.4cqi}
+.obs .prop{background:#2A2A2A;border-radius:.6cqi;padding:.5cqi .8cqi;color:#B9B9B9;font-size:.98cqi}
+.obs .prop b{color:#C9B8FF}
+.obs .md h6{font-size:1.2cqi;color:#fff;margin-top:.3cqi}
+.obs .md p{color:#B9B9B9;font-size:1cqi}
+.obs .lnk{color:#A99BFF;text-decoration:underline;position:relative}
+.obs .mine{position:relative;background:#2F2B4D;border-left:.3cqi solid #A99BFF;padding:.3cqi .7cqi;color:#fff;font-size:1cqi}
+/* 마커 · 커서 · 안내 */
+.tg{position:absolute;z-index:9;top:-1cqi;right:-1cqi;width:2.4cqi;height:2.4cqi;border-radius:50%;background:var(--red);color:#fff;font:900 1.35cqi/1 'Noto Sans KR',sans-serif;
+  display:none;place-items:center;border:.2cqi solid #fff;box-shadow:0 .2cqi .8cqi rgba(0,0,0,.45);pointer-events:none}
+.tg.l{right:auto;left:-1cqi}.tg.b{top:auto;bottom:-1cqi}.tg.m{top:50%;right:.4cqi;margin-top:-1.2cqi}
+.mslide:not(.stepping) .tg{display:grid;background:var(--red)}
+.stepping .tg.cur{display:grid;animation:tgp 1s ease-in-out infinite}
+.stepping .tg.done{display:grid;background:#1E8E3E}
+.stepping .tg.nxt{display:grid;background:rgba(229,50,45,.28);border-style:dashed;border-color:#E5322D;color:#E5322D}
+@keyframes tgp{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+.stepping .hit{outline:.3cqi solid var(--red);outline-offset:.25cqi;border-radius:.5cqi}
+.m-cur{position:absolute;z-index:12;left:0;top:0;width:2.6cqi;height:2.6cqi;pointer-events:none;display:none;filter:drop-shadow(0 .2cqi .3cqi rgba(0,0,0,.55));
+  transition:left .65s cubic-bezier(.3,.8,.3,1),top .65s cubic-bezier(.3,.8,.3,1)}
+.stepping .m-cur.on{display:block}
+.m-cur::after{content:'';position:absolute;left:-.8cqi;top:-.8cqi;width:2.4cqi;height:2.4cqi;border-radius:50%;border:.25cqi solid var(--red);opacity:0}
+.m-cur.click::after{animation:rip .7s .5s ease-out}
+@keyframes rip{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(1.6)}}
+.stepping [data-s]:not(.rv){visibility:hidden;opacity:0}
+.stepping [data-s]{transition:opacity .25s}
+.stepping .ds:not(.rv){display:none}
+.stepping .m-side[data-s]:not(.rv){display:none}
+.stepping .gone,.mslide:not(.stepping) [data-x]{display:none!important}
+.m-ins{background:var(--card);border:.12cqi solid var(--line);border-radius:1.4cqi;padding:1.2cqi 1.3cqi;display:flex;flex-direction:column;gap:.7cqi;min-height:0;overflow:hidden}
+.m-ins h3{font-size:1.4cqi;color:var(--lime);font-weight:900;display:flex;justify-content:space-between;align-items:center}
+.m-ins h3 .m-cnt{font-size:1.2cqi;color:var(--bg);background:var(--lime);border-radius:99cqi;padding:.1cqi .8cqi}
+.m-ins ol{list-style:none;display:flex;flex-direction:column;gap:.45cqi;counter-reset:st}
+.m-ins li{counter-increment:st;display:flex;gap:.7cqi;font-size:1.38cqi;line-height:1.3;color:var(--mute);padding:.45cqi .55cqi;border-radius:.8cqi;border:.12cqi solid transparent;transition:background .2s}
+.m-ins li::before{content:counter(st);flex:0 0 auto;width:2cqi;height:2cqi;border-radius:50%;background:#3A4466;color:#fff;display:grid;place-items:center;font-size:1.1cqi;font-weight:900;margin-top:.1cqi}
+.m-ins li b{color:var(--text)}
+.m-ins li small{display:block;font-size:1.05cqi;color:var(--mute);margin-top:.15cqi;font-weight:500}
+.m-ins li.cur{background:#1F2B52;border-color:var(--lime);color:var(--text)}
+.m-ins li.cur::before{background:var(--red)}
+.m-ins li.cur small{color:var(--sub)}
+.m-ins li.done{color:var(--sub)}
+.m-ins li.done::before{content:'✓';background:#1E8E3E}
+.mslide:not(.stepping) .m-ins li{color:var(--text)}
+.m-ok{margin-top:auto;font-size:1.2cqi;font-weight:800;color:#0B1220;background:var(--ok);border-radius:.8cqi;padding:.5cqi .9cqi;line-height:1.35}
+.m-cap{font-size:1cqi;color:var(--mute);line-height:1.35}
+.stepkey{position:absolute;right:3cqi;bottom:1.2cqi;font-size:1.1cqi;color:var(--mute)}
+/* 화면 지도 */
+.route{display:flex;align-items:stretch;gap:1.2cqi;margin-top:1.4cqi}
+.rcard{position:relative;flex:1;background:var(--card);border:.15cqi solid var(--line);border-radius:1.4cqi;padding:1.6cqi 1.3cqi;display:flex;flex-direction:column;gap:.7cqi;color:var(--mute);transition:.25s}
+.rcard:not(:last-child)::after{content:'▶';position:absolute;right:-1.15cqi;top:50%;transform:translateY(-50%);color:var(--lime);font-size:1.3cqi;z-index:2}
+.rcard .rn{font-size:2.6cqi;font-weight:900;line-height:1;color:#3A4466}
+.rcard .rt{font-size:1.9cqi;font-weight:900;color:var(--sub)}
+.rcard .rd{font-size:1.45cqi;line-height:1.45}
+.rcard .rw{font-size:1.2cqi;font-weight:800;color:var(--lime);margin-top:auto}
+.rcard.cur{border-color:var(--lime);background:#1F2B52;transform:translateY(-.8cqi);color:var(--text)}
+.rcard.cur .rn{color:var(--lime)}.rcard.cur .rt{color:var(--text)}
+.rcard.done{border-color:#1E8E3E}.rcard.done .rn{color:#34D6A0}
+.mslide:not(.stepping) .rcard{color:var(--text)}
+.mslide:not(.stepping) .rcard .rn{color:var(--lime)}
+.flow{display:flex;align-items:center;gap:1cqi;flex-wrap:wrap;font-size:1.6cqi;font-weight:800}
+.flow span{background:var(--card);border:.15cqi solid var(--line);border-radius:99cqi;padding:.55cqi 1.5cqi;white-space:nowrap}
+.flow span b{color:var(--lime);margin-right:.5cqi}
+.flow i{font-style:normal;color:var(--lime)}
+.dlrow{display:flex;gap:1.2cqi;flex-wrap:wrap}
+.dlrow .doc-btn{font-size:1.7cqi}
+.dlrow .doc-btn::after{content:'⬇'}
+.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2cqi}
+.legend .card{flex-direction:row;align-items:center;gap:1.4cqi;border-top-width:.12cqi;border-left:.45cqi solid var(--lime)}
+.legend .sym{flex:0 0 auto;width:3.4cqi;height:3.4cqi;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1.9cqi;background:var(--red);color:#fff}
+@media print{.m-cur{display:none!important}}
+.m-body,.gapp,.nlm,.obs,.nlm-home{overflow:hidden}
+.mslide:not(.stepping) .m-ins li.cur{background:none;border-color:transparent;color:var(--text)}
+.mslide:not(.stepping) .m-ins li.cur::before{background:#1E8E3E;content:'✓'}
+.imgtools span{white-space:nowrap}
+
+.mslide.rt .slide-content{justify-content:center;gap:2cqi}.rt h2{font-size:3.6cqi}.rt .rcard{min-height:25cqi;padding:2cqi 1.6cqi}.rt .rcard .rn{font-size:3.4cqi}.rt .rcard .rt{font-size:2.3cqi}.rt .rcard .rd{font-size:1.65cqi}.rt .rcard .rw{font-size:1.4cqi}.rt .m-head{padding-right:0}.rt .muted{font-size:1.5cqi}
+.ps .slide-content{gap:1.4cqi}.ps .flow{font-size:1.35cqi}.ps .flow span{padding:.4cqi 1.2cqi}
+.obs .prop,.obs .md{position:relative}
+#stage .poll{max-width:84cqi;gap:.8cqi}#stage .polrow .pbr{height:4cqi}
+
+/* ═════ 강의 도구 5종 ═════ */
+#stage{overflow:hidden}
+.tbtn{white-space:nowrap;border:.12cqi solid #3a4048;background:#1b1e23;color:#eee;border-radius:.8cqi;padding:.6cqi 1.1cqi;font:800 1.4cqi/1 inherit;font-family:inherit;cursor:pointer}
+.tbtn:hover{border-color:var(--amber);color:var(--amber)}
+.tbtn.on{background:var(--amber);color:#111;border-color:var(--amber)}
+.tpanel{position:absolute;z-index:72;background:rgba(16,18,22,.97);border:.12cqi solid #343a43;border-radius:1.2cqi;padding:1.6cqi 1.8cqi;color:#eee;box-shadow:0 1cqi 3cqi rgba(0,0,0,.55);display:none;font-size:1.45cqi;line-height:1.5}
+.tpanel.open{display:block}
+.tpanel h4{font-size:1.7cqi;margin-bottom:1cqi;color:var(--amber)}
+.tpanel .rw{display:flex;flex-wrap:wrap;gap:.6cqi;margin:.7cqi 0;align-items:center}
+.tpanel input{font:700 1.5cqi inherit;font-family:inherit;background:#0c0d10;color:#fff;border:.12cqi solid #3a4048;border-radius:.6cqi;padding:.55cqi .8cqi}
+.tpanel small{color:var(--mute);display:block;font-size:1.2cqi}
+/* 수업 시계 */
+.clk{position:absolute;right:2.2cqi;bottom:1.8cqi;z-index:41;display:none;align-items:center;gap:.8cqi;background:rgba(16,18,22,.78);border:.12cqi solid #343a43;border-radius:99cqi;padding:.5cqi 1.4cqi;color:#eee;cursor:pointer;font-family:inherit}
+.clk.on{display:flex}
+.clk .rem{font-size:2cqi;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.clk small{font-size:1.2cqi;color:var(--mute);font-weight:700}
+.clk.warn{border-color:var(--amber)}.clk.warn .rem{color:var(--amber)}
+.clk.danger{border-color:var(--coral);background:rgba(60,14,14,.85)}.clk.danger .rem{color:var(--coral)}
+.clk.over{animation:clkb .8s ease-in-out infinite alternate;border-color:var(--coral)}.clk.over .rem{color:var(--coral)}
+@keyframes clkb{to{background:rgba(120,20,20,.95)}}
+#clkp{right:2.2cqi;bottom:6.4cqi;width:30cqi}
+.toast{position:absolute;left:50%;top:3.2cqi;transform:translateX(-50%) translateY(-1cqi);z-index:95;background:var(--amber);color:#111;font-weight:900;font-size:2.4cqi;padding:1cqi 3cqi;border-radius:99cqi;box-shadow:0 1cqi 3cqi rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:all .3s;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%)}
+/* 펜 · 형광펜 · 레이저 */
+canvas.pen{position:absolute;inset:0;width:100%;height:100%;z-index:60;pointer-events:none;touch-action:none}
+canvas.pen.on{pointer-events:auto;cursor:crosshair}
+.laser{position:absolute;z-index:61;width:2.2cqi;height:2.2cqi;margin:-1.1cqi 0 0 -1.1cqi;border-radius:50%;background:radial-gradient(circle,#fff 0,#ff3b30 35%,rgba(255,59,48,0) 72%);box-shadow:0 0 2cqi 1cqi rgba(255,59,48,.55);pointer-events:none;display:none}
+.pbar{position:absolute;left:50%;bottom:1.6cqi;transform:translateX(-50%);z-index:80;display:none;align-items:center;gap:.7cqi;background:rgba(16,18,22,.95);border:.12cqi solid #343a43;border-radius:99cqi;padding:.7cqi 1.4cqi;color:#eee}
+.pbar.on{display:flex}
+.pbar .sw{width:2.6cqi;height:2.6cqi;border-radius:50%;border:.25cqi solid transparent;cursor:pointer;padding:0}
+.pbar .sw.on{border-color:#fff;box-shadow:0 0 0 .2cqi #000 inset}
+.pbar .sep{width:.12cqi;height:2.6cqi;background:#3a4048}
+/* 손들기 투표 */
+.poll{display:flex;flex-direction:column;gap:1.1cqi;width:100%}
+.poll .polt{display:flex;align-items:center;justify-content:space-between;font-size:1.6cqi;color:var(--mute);font-weight:800}
+.poll .polt b{color:var(--amber);font-size:2cqi}
+.polrow{display:grid;grid-template-columns:16cqi 1fr 15cqi;gap:1.2cqi;align-items:center}
+.polrow .plab{font-size:2.4cqi;font-weight:900;line-height:1.15}
+.polrow .pbr{position:relative;height:4.6cqi;background:var(--panel2);border-radius:1cqi;overflow:hidden;cursor:pointer}
+.polrow .pbr i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--pcol,var(--amber));transition:width .45s cubic-bezier(.3,.8,.3,1)}
+.polrow .pbr em{position:absolute;left:1.2cqi;top:50%;transform:translateY(-50%);display:flex;align-items:center;font-style:normal;font-weight:900;font-size:2.2cqi;color:#111;background:rgba(255,255,255,.92);padding:.3cqi 1.1cqi;border-radius:99cqi;line-height:1}
+.polrow .pbr em span{font-size:1.5cqi;margin-left:.8cqi;opacity:.7}
+.polrow:nth-child(2){--pcol:#f6c744}.polrow:nth-child(3){--pcol:#4aa3ff}.polrow:nth-child(4){--pcol:#34d6a0}.polrow:nth-child(5){--pcol:#ff7a6b}.polrow:nth-child(6){--pcol:#b79cff}
+.polrow .pcb{display:flex;gap:.5cqi}
+.polrow .pcb button{flex:1}
+#polov,#qrov,#hlp{position:absolute;inset:0;z-index:70;background:rgba(8,9,11,.9);display:none;align-items:center;justify-content:center}
+#polov.open,#qrov.open,#hlp.open{display:flex}
+.tbx{width:78cqi;max-height:88%;overflow:auto;background:#14161a;border:.12cqi solid #343a43;border-radius:1.6cqi;padding:2.4cqi 2.8cqi;color:#eee;display:flex;flex-direction:column;gap:1.4cqi}
+.tbx h3{font-size:2.6cqi}
+.tbx .tlhint{font-size:1.35cqi;color:var(--mute)}
+/* QR */
+.qrbox svg{display:block;width:100%;height:100%;background:#fff;border-radius:1.2cqi}
+.qrbox{width:24cqi;height:24cqi}
+.qrcard{width:46cqi;align-items:center;text-align:center}
+.qrcard .qrbox{width:30cqi;height:30cqi}
+.qrurl{font-size:1.5cqi;font-weight:800;color:var(--amber);word-break:break-all}
+.qrcard input{width:100%;text-align:center}
+/* 화면 가리기 · 확대 · 도움말 */
+.tlblk{position:absolute;inset:0;z-index:85;background:#000;display:none;cursor:pointer}
+.tlblk.on{display:block}
+.zbadge{position:absolute;left:50%;bottom:1.6cqi;transform:translateX(-50%);z-index:62;background:rgba(16,18,22,.9);color:var(--amber);border:.12cqi solid var(--amber);border-radius:99cqi;padding:.5cqi 1.6cqi;font-size:1.5cqi;font-weight:900;display:none}
+.zbadge.on{display:block}
+.hlp .tbx{width:70cqi}
+.hlp table{width:100%;border-collapse:collapse;font-size:1.6cqi}
+.hlp td{padding:.55cqi .6cqi;border-bottom:.1cqi solid #2a2f38;vertical-align:top}
+.hlp td:first-child{white-space:nowrap;color:var(--amber);font-weight:900;width:14cqi}
+#tmenu{position:fixed;right:14px;bottom:calc(var(--nav-h) + 8px);z-index:300;display:none;background:rgba(10,11,13,.97);border:1px solid #2A2F38;border-radius:12px;padding:8px;box-shadow:0 10px 40px rgba(0,0,0,.6);min-width:240px}
+#tmenu.open{display:block}
+#tmenu button{display:flex;width:100%;justify-content:space-between;gap:16px;background:none;border:0;color:#EEE;font:600 14px/1 inherit;font-family:inherit;padding:10px 12px;border-radius:8px;cursor:pointer}
+#tmenu button:hover{background:#1b1e23;color:var(--amber)}
+#tmenu kbd{color:#8E95A1;font:700 12px inherit;font-family:inherit}
+@media print{.clk,#clkp,.toast,canvas.pen,.laser,.pbar,#polov,#qrov,#hlp,.tlblk,.zbadge,#tmenu,#toolBtn,.polrow .pcb,.poll .polt button{display:none!important}}
+
 </style>
 </head>
 <body>
 
 <main id="stage">
 
-<!-- ===== 1. 표지 ===== -->
-<section class="slide title-slide" aria-label="1. 표지" aria-hidden="true">
+<section class="slide title-slide" aria-label="표지" aria-hidden="true">
   <div class="slide-content">
     <div class="kicker">가천대학교 행정학과 · AI 활용 행정세미나 · 150분 실습</div>
     <h1>AI로 일하는 <span class="lime">주무관 되기</span></h1>
-    <p class="lede">공고 · 예산 · 민원 · 조례 · 정책홍보를 AI로 검토하다</p>
+    <p class="lede">공고 · 예산 · 민원 · 조례 · 정책홍보를 AI로 검토하다 — 화면을 따라 클릭하며 직접 해 봅니다</p>
     <div class="meta-row"><span>읽기</span><span>분석</span><span>검증</span><span>홍보</span><span>쌓기</span></div>
     <p class="promise">150분 뒤, 여러분은 행정문서 5종을 AI로 검토하고 그 근거를 직접 확인할 수 있습니다</p>
   </div>
 </section>
-<!-- ===== 2. 오늘의 순서 ===== -->
-<section class="slide" aria-label="2. 오늘의 순서" aria-hidden="true">
+<section class="slide" aria-label="오늘의 순서" aria-hidden="true">
   <div class="slide-content">
     <div class="kicker">150분 · 여섯 단계</div>
     <h2>오늘의 순서</h2>
@@ -280,8 +557,7 @@ table.tbl .coral{font-weight:800}
     <p class="muted">도입 20분 · 휴식 10분 포함</p>
   </div>
 </section>
-<!-- ===== 3. 오늘 만들 7가지 ===== -->
-<section class="slide" aria-label="3. 오늘 만들 7가지" aria-hidden="true">
+<section class="slide" aria-label="오늘 만들 7가지" aria-hidden="true">
   <div class="slide-content">
     <div class="kicker">학습 목표</div>
     <h2>오늘 여러분이 만들 7가지</h2>
@@ -289,8 +565,7 @@ table.tbl .coral{font-weight:800}
 <div class="card-grid c3"><div class="card "><div class="n">5</div><div class="t">조례 영향표</div><div class="d">누가 이익·부담을 지나</div></div><div class="card "><div class="n">6</div><div class="t">홍보 이미지</div><div class="d">카드뉴스 표지 한 장</div></div><div class="card "><div class="n">7</div><div class="t">숏폼 장면표</div><div class="d">30초 영상 또는 기획안</div></div></div>
   </div>
 </section>
-<!-- ===== 4. 핵심 원칙 ===== -->
-<section class="slide" aria-label="4. 핵심 원칙" aria-hidden="true">
+<section class="slide" aria-label="핵심 원칙" aria-hidden="true">
   <div class="slide-content">
     <div class="kicker">오늘의 한 문장</div>
     <h2>초안은 AI, 책임은 행정가</h2>
@@ -298,41 +573,103 @@ table.tbl .coral{font-weight:800}
     <div class="key">AI의 답은 "초안", 행정의 답은 "근거"</div>
   </div>
 </section>
-<!-- ===== 5. 크롬 실습 준비 ===== -->
-<section class="slide" data-part="1" aria-label="5. 크롬 실습 준비" aria-hidden="true">
-  <div class="part-tag"><b>1</b>행정문서 읽기</div>
+<section class="slide" aria-label="손들기 시작 질문" aria-hidden="true">
   <div class="slide-content">
-    <div class="kicker">Gemini in Chrome · 준비 5분</div>
-    <h2>크롬 실습 준비</h2>
-<ul class="bullets"><li>자료 ① <a class="link-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" target="_blank" rel="noopener">📄 공고문 열기</a> 을 크롬 탭에서 열기</li><li>주소창 오른쪽 위 ‘Gemini에게 물어보기’ 선택</li><li>질문창에서 현재 탭(공고문)이 공유됐는지 확인</li><li>PDF를 읽지 못하면 본문을 복사해 질문창에 붙여넣기</li></ul>
+    <div class="kicker">시작 전 손들기 · 7초 생각하기</div>
+    <h2>AI에게 행정문서를 맡겨 본 적 있나요?</h2>
+    <div class="poll" data-poll="adm_start" data-labels="처음이다|가끔 써 봤다|업무에 쓰고 있다"></div>
+    <p class="muted">강사: 손 든 수를 세어 숫자키 1~3 · Shift는 +5 · V 키로 전체 화면 집계</p>
   </div>
 </section>
-<!-- ===== 6. 실습 1-1 공고 요약 ===== -->
-<section class="slide" data-part="1" aria-label="6. 실습 1-1 공고 요약" aria-hidden="true">
+<section class="slide mslide" data-steps="3" aria-label="화면 읽는 법" aria-hidden="true">
+  <div class="slide-content">
+<div class="m-head"><h2>이 슬라이드, 이렇게 읽습니다</h2><div class="trail"><span class="on">사용법 연습</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab on">연습 화면</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url">🔒 example.go.kr</span></div><div class="m-body"><div class="m-page" style="gap:1.4cqi"><h5 style="font-size:1.6cqi">빨간 숫자를 따라 눌러 보세요</h5><div style="display:flex;gap:2cqi;align-items:center"><span style="position:relative;border:.15cqi solid #1A73E8;color:#1A73E8;border-radius:99cqi;padding:.5cqi 1.6cqi;font-weight:800">버튼 A<span class="tg " data-t="1">1</span></span><span style="position:relative;border:.15cqi solid #1A73E8;color:#1A73E8;border-radius:99cqi;padding:.5cqi 1.6cqi;font-weight:800">버튼 B<span class="tg " data-t="2">2</span></span></div><div style="position:relative;border:.15cqi solid #C4C7C5;border-radius:.6cqi;padding:.6cqi 1cqi;color:#80868B">입력 칸 (여기에 붙여넣기)<span class="tg " data-t="3">3</span></div><div data-s="3" style="color:#1E8E3E;font-weight:800">✔ 3단계까지 끝! 이렇게 한 장씩 따라가면 됩니다</div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 3</span></h3><ol><li data-t="1"><div><b>지금 누를 곳</b>은 빨간 숫자 + 빨간 테두리<small>마우스 화살표가 그곳으로 이동합니다</small></div></li><li data-t="2"><div><b>다음에 누를 곳</b>은 반투명 숫자로 미리 표시<small>"다음은 어디로?"가 항상 보입니다</small></div></li><li data-t="3"><div><b>→ 키 · 화면 클릭</b>으로 한 단계씩<small>← 키는 한 단계 뒤로 · 끝나면 자동으로 다음 장</small></div></li></ol><div class="m-ok" data-s="3">✔ 초록 ✓ = 끝낸 단계 · 오른쪽 목록과 화면의 숫자는 같은 번호</div><div class="m-cap">※ 단순화한 모형 · 실제 화면과 조금 다를 수 있어요</div></aside></div>
+  </div>
+</section>
+<section class="slide" aria-label="안전 · 준비 체크" aria-hidden="true">
+  <div class="slide-content">
+    <div class="kicker">시작 전 3분 점검</div>
+    <h2>실습 준비 체크리스트</h2>
+<ul class="bullets"><li><span>크롬을 최신 상태로 열고, <b>구글 계정에 로그인</b></span></li><li><span>주소창 오른쪽 위에 <b>✦ Gemini</b> 버튼이 보이나요? (보이면 OK)</span></li><li><span><a class="link-btn" href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM</a> 과 <a class="link-btn" href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a> 에 접속되는지 확인</span></li><li class=warn><span>학교·기관 계정은 막혀 있을 수 있어요 → 개인 계정으로, 안 되면 옆 사람과 <b>짝 실습</b></span></li><li class=warn><span>오늘 자료는 모두 가상 문서 · 실제 민원·개인정보는 올리지 않기</span></li></ul>
+  </div>
+</section>
+<section class="slide" aria-label="자료 접속 QR" aria-hidden="true">
+  <div class="slide-content">
+    <div class="kicker">스마트폰으로 접속</div>
+    <h2>강의 안내 · 자료는 여기서</h2>
+    <div style="display:flex;gap:5cqi;align-items:center;justify-content:center">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1.2cqi"><div class="qrbox" data-qr="home" style="width:24cqi;height:24cqi"></div><div class="qrurl"></div></div>
+      <div style="display:flex;flex-direction:column;gap:1.4cqi;max-width:42cqi"><p class="lede">QR을 찍으면 강의 안내 페이지로 이동합니다.<br>실습 PDF 5종도 이 페이지 · 슬라이드의 <b class="lime">📄 열기</b> 버튼에서 받을 수 있어요.</p><p class="muted">강사: Q 키로 전체 화면 QR (주소를 바꿔 다른 자료도 공유 가능)</p></div>
+    </div>
+  </div>
+</section>
+<section class="slide mslide rt" data-part="1" data-steps="5" aria-label="실습 1 화면 지도" aria-hidden="true">
   <div class="part-tag"><b>1</b>행정문서 읽기</div>
   <div class="slide-content">
-    <div class="kicker">실습 1 · 공고문 읽기</div>
-    <h2>민원인에게 설명하듯 요약</h2>
+<div class="m-head"><h2>실습 1 지도: 공고문을 AI와 함께 읽는 길</h2></div><div class="route"><div class="rcard" data-t="1"><div class="rn">1</div><div class="rt">문서 열기</div><div class="rd">슬라이드의 <b>공고문 열기</b> → 새 탭에 PDF</div><div class="rw">📍 크롬 탭</div></div><div class="rcard" data-t="2"><div class="rn">2</div><div class="rt">Gemini 켜기</div><div class="rd">주소창 옆 <b>✦ Gemini</b> → 오른쪽 패널</div><div class="rw">📍 크롬 오른쪽 위</div></div><div class="rcard" data-t="3"><div class="rn">3</div><div class="rt">질문 보내기</div><div class="rd">슬라이드에서 <b>복사</b> → 입력창 <b>Ctrl+V</b> → ▶</div><div class="rw">📍 Gemini 입력창</div></div><div class="rcard" data-t="4"><div class="rn">4</div><div class="rt">답 읽기·자격 판단</div><div class="rd">표의 <b>판단 · 근거 조항</b> 칸 읽기</div><div class="rw">📍 Gemini 답변</div></div><div class="rcard" data-t="5"><div class="rn">5</div><div class="rt">원문 대조</div><div class="rd">PDF에서 <b>Ctrl+F</b>로 근거 찾기</div><div class="rw">📍 PDF 탭</div></div></div><p class="muted" style="margin-top:1.6cqi">→ 키로 한 칸씩 · 이후 장마다 "어디를 클릭하는지" 화면으로 보여 드립니다 · 총 30분 (준비 5 · 요약 4 · 자격 판단 8 · 두 문서 비교 8 · 점검 5)</p>
+  </div>
+</section>
+<section class="slide mslide" data-part="1" data-steps="3" aria-label="실습 1-1 문서 열기" aria-hidden="true">
+  <div class="part-tag"><b>1</b>행정문서 읽기</div>
+  <div class="slide-content">
+<div class="m-head"><h2>① 공고문 PDF를 새 탭에서 연다</h2><div class="trail"><span class="on">① 문서 열기</span><i>▶</i><span class="">② Gemini 켜기</span><i>▶</i><span class="">③ 질문 보내기</span><i>▶</i><span class="">④ 답 읽기</span><i>▶</i><span class="">⑤ 원문 대조</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab on" data-off="2">🎓 슬라이드</span><span class="m-tab" data-s="2" data-on="2">📄 01-notice-youth-rent.pdf<span class="tg " data-t="2">2</span></span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url"><span data-x="2">🔒 0927iwillman.vercel.app/slides_ai-admin-seminar.html</span><span class="ds" data-s="2">🔒 0927iwillman.vercel.app/01-notice-youth-rent.pdf</span></span></div><div class="m-body"><div class="m-page"><div class="mini-sl" data-x="2"><b>실습 1 · 공고문 읽기</b><h4>민원인에게 설명하듯 요약</h4><span class="mbtn f">📄 공고문 열기 ↗<span class="tg " data-t="1">1</span></span><span style="color:#B9C0D0;font-size:1.1cqi">버튼을 누르면 새 탭에서 PDF가 열립니다</span></div><div class="ds" data-s="2" style="flex:1;flex-direction:column;display:flex"><div class="pdfp"><h5>한빛시 청년 월세 지원 사업 공고</h5><p><b>1. 지원 대상</b> 만 19세~39세 청년 …</p><div class="bar m"></div><p><b>2. 소득 기준</b> 청년가구 월소득 150만 원 이하 · 원가구 500만 원 이하</p><div class="bar s"></div><p><b>3. 지원 내용</b> 실제 월세 범위에서 <u>월 최대 20만 원</u></p><p><b>4. 신청 기간</b> 10월 30일(금) 18시까지</p><p><b>5. 신청 방법</b> 온라인 + 행정복지센터 방문</p><div class="bar m"></div><span class="tg m" data-t="3">3</span></div></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 3</span></h3><ol><li data-t="1"><div>슬라이드의 <b>[📄 공고문 열기]</b> 버튼 클릭<small>→ 새 탭에서 PDF가 열립니다</small></div></li><li data-t="2"><div>새로 생긴 <b>탭 「01-notice…pdf」</b> 확인<small>→ 지금 이 탭이 Gemini가 읽을 문서</small></div></li><li data-t="3"><div><b>본문 글자가 보이는지</b> 스크롤해 확인<small>안 보이면 Ctrl+A → Ctrl+C로 본문을 복사해 두기</small></div></li></ol><div class="m-ok" data-s="3">✔ PDF 본문이 보이면 준비 끝</div><div class="m-cap">※ 단순화한 모형 · 실제 화면과 조금 다를 수 있어요</div></aside></div>
+  </div>
+</section>
+<section class="slide mslide" data-part="1" data-steps="4" aria-label="실습 1-2 Gemini 켜기" aria-hidden="true">
+  <div class="part-tag"><b>1</b>행정문서 읽기</div>
+  <div class="slide-content">
+<div class="m-head"><h2>② 주소창 옆 Gemini를 켠다</h2><div class="trail"><span class="dn">① 문서 열기</span><i>▶</i><span class="on">② Gemini 켜기</span><i>▶</i><span class="">③ 질문 보내기</span><i>▶</i><span class="">④ 답 읽기</span><i>▶</i><span class="">⑤ 원문 대조</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab on">📄 01-notice-youth-rent.pdf</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url">🔒 0927iwillman.vercel.app/01-notice-youth-rent.pdf</span><span class="m-gem">✦ Gemini<span class="tg " data-t="1">1</span></span></div><div class="m-body"><div class="m-page"><div class="pdfp"><h5>한빛시 청년 월세 지원 사업 공고</h5><p><b>1. 지원 대상</b> 만 19세~39세 청년 …</p><div class="bar m"></div><p><b>2. 소득 기준</b> 청년가구 월소득 150만 원 이하 · 원가구 500만 원 이하</p><div class="bar s"></div><p><b>3. 지원 내용</b> 실제 월세 범위에서 <u>월 최대 20만 원</u></p><p><b>4. 신청 기간</b> 10월 30일(금) 18시까지</p><p><b>5. 신청 방법</b> 온라인 + 행정복지센터 방문</p><div class="bar m"></div></div></div><div class="m-side"  data-s="2" style="display:flex"><span class="tg l" data-t="2">2</span><div class="g-head">✦ Gemini <span>✕</span></div><div class="g-chips">공유 중인 탭 <span class="g-chip">📄 01-notice-youth-rent.pdf<span class="tg " data-t="3">3</span></span></div><div class="g-chat"><div class="g-hello"><b>무엇을 도와드릴까요?</b>현재 탭의 내용을 바탕으로 물어볼 수 있어요</div></div><div class="g-in"><span class="tx">Gemini에게 물어보기</span><span class="g-send">↑</span><span class="tg m" data-t="4">4</span></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 4</span></h3><ol><li data-t="1"><div>주소창 오른쪽 위 <b>[✦ Gemini]</b> 버튼 클릭<small>→ 오른쪽에 패널이 열림</small></div></li><li data-t="2"><div><b>오른쪽 패널</b>이 열렸는지 확인<small>안 열리면 창을 넓히거나 버튼을 다시 클릭</small></div></li><li data-t="3"><div>맨 위 <b>「공유 중인 탭」 칩</b>에 공고문 이름이 있나 확인<small>현재 보는 탭이 자동으로 공유됩니다</small></div></li><li data-t="4"><div>아래 <b>입력창</b>을 클릭<small>→ 다음 장에서 질문을 붙여넣습니다</small></div></li></ol><div class="m-ok" data-s="4">✔ 칩에 「01-notice…pdf」가 보이면 성공</div><div class="m-cap">※ 단순화한 모형 · 버튼 모양·위치는 크롬 버전·계정에 따라 달라요. ✦ 모양을 찾으세요.</div></aside></div>
+  </div>
+</section>
+<section class="slide ps" data-part="1" aria-label="실습 1-3 요약 질문 복사" aria-hidden="true">
+  <div class="part-tag"><b>1</b>행정문서 읽기</div>
+  <div class="slide-content">
+<div class="kicker">실습 1 · ③ 질문 만들기 (복사)</div>
+    <h2>① 이 질문을 복사한다</h2>
 <div class="prompt-card "><div class="label">자료 ① · 청년 월세 공고</div><blockquote id="pt-1">현재 공유한 한빛시 청년 월세 지원 공고를 민원인에게 설명하듯 쉬운 말로 다섯 줄로 요약해줘. 지원 금액, 신청 기간, 신청 방법은 원문 표현 그대로 적어줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-1" aria-label="자료 ① · 청년 월세 공고 질문 복사">복사</button></div>
-    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="4" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">4:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" target="_blank" rel="noopener">📄 공고문 열기</a></div>
+    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="4" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">4:00</span> 질문 붙여넣기·전송 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" target="_blank" rel="noopener">📄 공고문 열기</a></div>
+    <div class="flow"><span><b>1</b>위 <b style="color:inherit">복사</b> 버튼 클릭</span><i>▶</i><span><b>2</b>Gemini 패널의 입력창 클릭 → <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기 또는 Enter</span></div>
   </div>
 </section>
-<!-- ===== 7. 실습 1-2 자격 판단 ===== -->
-<section class="slide" data-part="1" aria-label="7. 실습 1-2 자격 판단" aria-hidden="true">
+<section class="slide mslide" data-part="1" data-steps="3" aria-label="실습 1-4 붙여넣고 보내기" aria-hidden="true">
   <div class="part-tag"><b>1</b>행정문서 읽기</div>
   <div class="slide-content">
-    <div class="kicker">실습 1 · 자격 판단</div>
-    <h2>민원인 3명, 신청할 수 있을까?</h2>
+<div class="m-head"><h2>③ 입력창에 붙여넣고 보낸다</h2><div class="trail"><span class="dn">① 문서 열기</span><i>▶</i><span class="dn">② Gemini 켜기</span><i>▶</i><span class="on">③ 질문 보내기</span><i>▶</i><span class="">④ 답 읽기</span><i>▶</i><span class="">⑤ 원문 대조</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab on">📄 01-notice-youth-rent.pdf</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url">🔒 0927iwillman.vercel.app/01-notice-youth-rent.pdf</span><span class="m-gem">✦ Gemini</span></div><div class="m-body"><div class="m-page"><div class="pdfp"><h5>한빛시 청년 월세 지원 사업 공고</h5><p><b>1. 지원 대상</b> 만 19세~39세 청년 …</p><div class="bar m"></div><p><b>2. 소득 기준</b> 청년가구 월소득 150만 원 이하 · 원가구 500만 원 이하</p><div class="bar s"></div><p><b>3. 지원 내용</b> 실제 월세 범위에서 <u>월 최대 20만 원</u></p><p><b>4. 신청 기간</b> 10월 30일(금) 18시까지</p><p><b>5. 신청 방법</b> 온라인 + 행정복지센터 방문</p><div class="bar m"></div></div></div><div class="m-side"><div class="g-head">✦ Gemini <span>✕</span></div><div class="g-chips">공유 중인 탭 <span class="g-chip">📄 01-notice-youth-rent.pdf</span></div><div class="g-chat"><div class="g-u ds" data-s="2">현재 공유한 한빛시 청년 월세 지원 공고를 민원인에게 설명하듯 쉬운 말로 다섯 줄로 요약해줘 …</div><div class="g-a ds" data-s="3"><span class="tg l" data-t="3">3</span><span>1. 한빛시가 청년의 월세 부담을 덜어 드리는 사업입니다.</span><span>2. <em>실제 월세 범위에서 월 최대 20만 원</em></span><span>3. <em>10월 30일(금) 18시까지</em></span><span>4. <em>온라인 + 행정복지센터 방문</em></span><span>5. 소득이 일정 기준 이하인 청년이 대상입니다.</span><span style="color:#80868B;font-size:.9cqi">(예시 답변 · 실제 AI 답은 매번 달라요)</span></div></div><div class="g-in"><span class="tx" data-x="1">Gemini에게 물어보기</span><span class="tx ds" data-s="1" data-x="2">현재 공유한 한빛시 청년 월세 지원 공고를 …(붙여넣음)</span><span class="tx ds" data-s="2" style="color:#80868B">Gemini에게 물어보기</span><span class="g-send">↑<span class="tg " data-t="2">2</span></span><span class="tg l" data-t="1">1</span></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 3</span></h3><ol><li data-t="1"><div><b>입력창을 클릭</b>하고 <b>Ctrl+V</b> (맥은 ⌘V)<small>→ 복사해 둔 질문이 들어갑니다</small></div></li><li data-t="2"><div>오른쪽 끝 <b>[↑ 보내기]</b> 클릭 (또는 Enter)<small>→ 질문이 위쪽 대화로 올라갑니다</small></div></li><li data-t="3"><div>잠시 기다리면 <b>답변</b>이 나타남<small>→ 금액·기간·방법 줄을 눈여겨봅니다</small></div></li></ol><div class="m-ok" data-s="3">✔ 5줄 답변이 나오면 성공 — 단, 아직 "초안"</div><div class="m-cap">※ 모형 · 답변 내용은 예시입니다</div></aside></div>
+  </div>
+</section>
+<section class="slide mslide" data-part="1" data-steps="4" aria-label="실습 1-5 원문 대조" aria-hidden="true">
+  <div class="part-tag"><b>1</b>행정문서 읽기</div>
+  <div class="slide-content">
+<div class="m-head"><h2>⑤ PDF에서 Ctrl+F로 근거를 찾는다</h2><div class="trail"><span class="dn">① 문서 열기</span><i>▶</i><span class="dn">② Gemini 켜기</span><i>▶</i><span class="dn">③ 질문 보내기</span><i>▶</i><span class="dn">④ 답 읽기</span><i>▶</i><span class="on">⑤ 원문 대조</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab on">📄 01-notice-youth-rent.pdf</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url">🔒 0927iwillman.vercel.app/01-notice-youth-rent.pdf</span><span class="m-gem">✦ Gemini</span></div><div class="m-body"><div class="m-page"><div class="findbar ds" data-s="1" style="display:flex"><span class="tg l" data-t="1">1</span>찾기 <span class="fi"><span class="tg " data-t="2">2</span><span data-x="2" style="color:#9AA0A6">&nbsp;</span><span class="ds" data-s="2">30일</span></span><span>1 / 1</span> ✕</div><div class="pdfp"><h5>한빛시 청년 월세 지원 사업 공고</h5><p><b>1. 지원 대상</b> 만 19세~39세 청년 …</p><div class="bar m"></div><p><b>2. 소득 기준</b> 청년가구 월소득 150만 원 이하 · 원가구 500만 원 이하</p><div class="bar s"></div><p><b>3. 지원 내용</b> 실제 월세 범위에서 <u>월 최대 20만 원</u></p><p><b>4. 신청 기간</b> <span class="hl-pending">10월 <span class="ds" data-s="2"><mark class="hot">30일</mark></span><span data-x="2">30일</span>(금) 18시까지</span></p><p><b>5. 신청 방법</b> 온라인 + 행정복지센터 방문</p><div class="bar m"></div></div></div><div class="m-side"><div class="g-head">✦ Gemini <span>✕</span></div><div class="g-chat"><div class="g-a"><span>3. 신청 기간: <em>10월 30일(금) 18시까지</em><span class="tg m" data-t="3">3</span></span><span>2. 지원 금액: 실제 월세 범위에서 월 최대 20만 원</span></div></div><div class="g-in"><span class="tx">다른 부분도 근거를 알려줘</span><span class="g-send">↑</span><span class="tg m" data-t="4">4</span></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 4</span></h3><ol><li data-t="1"><div>PDF 본문을 한 번 클릭 후 <b>Ctrl+F</b> (맥 ⌘F)<small>→ 오른쪽 위에 찾기 창</small></div></li><li data-t="2"><div>AI 답에 나온 낱말(예 <b>30일</b>) 입력<small>→ 원문에서 노란색으로 강조됩니다</small></div></li><li data-t="3"><div>강조된 <b>원문 줄 ↔ AI 답변</b>이 같은 글자인지 비교<small>숫자·날짜·조항 번호는 반드시 일치 확인</small></div></li><li data-t="4"><div>다르거나 못 찾겠으면 <b>입력창에 다시 질문</b><small>"원문의 어느 부분이야? 그대로 인용해줘"</small></div></li></ol><div class="m-ok" data-s="4">✔ 숫자·날짜는 원문과 글자까지 같아야 합니다</div><div class="m-cap">※ 단순화한 모형 · 실제 화면과 조금 다를 수 있어요</div></aside></div>
+  </div>
+</section>
+<section class="slide ps" data-part="1" aria-label="실습 1-6 자격 판단 질문" aria-hidden="true">
+  <div class="part-tag"><b>1</b>행정문서 읽기</div>
+  <div class="slide-content">
+<div class="kicker">실습 1 · ④ 같은 방법으로 한 번 더</div>
+    <h2>② 민원인 3명, 신청할 수 있을까?</h2>
 <div class="prompt-card long"><div class="label">자료 ① · 민원인 3명 사례 포함</div><blockquote id="pt-2">공유한 공고를 기준으로 아래 민원인 세 명의 신청 가능 여부를 판단해줘.
 A: 24세 대학생, 부모와 따로 원룸 거주, 보증금 500만 원·월세 45만 원, 본인 소득 없음, 부모 월소득 420만 원
 B: 31세 미혼 직장인, 보증금 1,000만 원·월세 55만 원, 월급 230만 원
 C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득 120만 원
 사람마다 ① 가능·불가·확인 필요 ② 근거 조항 ③ 추가로 받을 서류를 표로 정리해줘. 공고에 없는 내용은 추측하지 말고 ‘확인 필요’로 적어줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-2" aria-label="자료 ① · 민원인 3명 사례 포함 질문 복사">복사</button></div>
-    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" target="_blank" rel="noopener">📄 공고문 열기</a></div>
+    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 붙여넣기·전송·원문 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" target="_blank" rel="noopener">📄 공고문 열기</a></div>
+    <div class="flow"><span><b>1</b>위 <b style="color:inherit">복사</b> 버튼 클릭</span><i>▶</i><span><b>2</b>Gemini 패널의 입력창 클릭 → <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기 또는 Enter</span></div>
   </div>
 </section>
-<!-- ===== 8. 자격 판단 정답 ===== -->
-<section class="slide" data-part="1" aria-label="8. 자격 판단 정답" aria-hidden="true">
+<section class="slide mslide" data-part="1" data-steps="3" aria-label="실습 1-7 표 읽는 법" aria-hidden="true">
+  <div class="part-tag"><b>1</b>행정문서 읽기</div>
+  <div class="slide-content">
+<div class="m-head"><h2>④ AI가 만든 표, 어디부터 볼까?</h2><div class="trail"><span class="dn">① 문서 열기</span><i>▶</i><span class="dn">② Gemini 켜기</span><i>▶</i><span class="dn">③ 질문 보내기</span><i>▶</i><span class="on">④ 답 읽기</span><i>▶</i><span class="">⑤ 원문 대조</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab on">📄 01-notice-youth-rent.pdf</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url">🔒 0927iwillman.vercel.app/01-notice-youth-rent.pdf</span><span class="m-gem">✦ Gemini</span></div><div class="m-body"><div class="m-page" style="padding:1.4cqi 1.8cqi"><div class="g-head" style="margin-bottom:.4cqi">✦ Gemini 답변 예시 <span>(AI가 틀릴 수도 있는 초안)</span></div><table class="m-tbl"><thead><tr><th>민원인</th><th>판단<span class="tg " data-t="1">1</span></th><th>근거 조항<span class="tg " data-t="2">2</span></th><th>추가 서류<span class="tg " data-t="3">3</span></th></tr></thead><tbody><tr><td>A</td><td>가능</td><td>청년가구·원가구 소득 기준 충족</td><td>임대차계약서, 소득 증빙</td></tr><tr><td>B</td><td>불가</td><td>청년가구 월소득 150만 원 초과</td><td>—</td></tr><tr><td>C</td><td>제외</td><td>직계존속 소유 주택 임차</td><td class="q">확인 필요 (등기 확인)</td></tr></tbody></table><p style="margin-top:.8cqi;color:#5F6368;font-size:1cqi">※ 모형 · 노란 칸 = 공고에 없어서 AI가 "확인 필요"로 남긴 부분</p></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 3</span></h3><ol><li data-t="1"><div><b>「판단」 열</b> — 가능 · 불가 · 확인 필요 중 무엇인지<small>사람마다 근거와 같은 방향인지 봅니다</small></div></li><li data-t="2"><div><b>「근거 조항」 열</b> — 조항을 PDF에서 <b>Ctrl+F</b>로 찾아 확인<small>예: 「3-2」「직계존속」</small></div></li><li data-t="3"><div><b>노란 칸·빈칸</b> — AI가 추측하지 않은 곳<small>→ 담당 부서에 확인할 사람이 행정가</small></div></li></ol><div class="m-ok" data-s="3">✔ 판단 → 근거 → 빈칸 순서로 읽으면 됩니다</div><div class="m-cap">※ 단순화한 모형 · 실제 화면과 조금 다를 수 있어요</div></aside></div>
+  </div>
+</section>
+<section class="slide" data-part="1" aria-label="자격 판단 정답" aria-hidden="true">
   <div class="part-tag"><b>1</b>행정문서 읽기</div>
   <div class="slide-content">
     <div class="kicker">원문 대조</div>
@@ -341,19 +678,25 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     <p class="muted">체크 포인트: 공고 2-라 단서 조항(만 30세 이상·기혼자 예외)을 AI가 제대로 적용했는지 확인</p>
   </div>
 </section>
-<!-- ===== 9. 실습 2 두 탭 비교 ===== -->
-<section class="slide" data-part="1" aria-label="9. 실습 2 두 탭 비교" aria-hidden="true">
+<section class="slide mslide" data-part="1" data-steps="4" aria-label="실습 1-8 두 번째 문서 추가" aria-hidden="true">
   <div class="part-tag"><b>1</b>행정문서 읽기</div>
   <div class="slide-content">
-    <div class="kicker">실습 2 · Gemini in Chrome · 두 탭</div>
-    <h2>보도자료와 공고문, 같은 말일까?</h2>
+<div class="m-head"><h2>⑥ 두 번째 문서를 Gemini에 추가한다</h2><div class="trail"><span class="dn">① 두 문서 열기</span><i>▶</i><span class="on">② 탭 추가</span><i>▶</i><span class="">③ 질문</span><i>▶</i><span class="">④ 불일치 확인</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab">📰 02-press-release.pdf<span class="tg " data-t="1">1</span></span><span class="m-tab on">📄 01-notice-youth-rent.pdf</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url">🔒 0927iwillman.vercel.app/01-notice-youth-rent.pdf</span><span class="m-gem">✦ Gemini</span></div><div class="m-body"><div class="m-page"><div class="pdfp"><h5>한빛시 청년 월세 지원 사업 공고</h5><p><b>1. 지원 대상</b> 만 19세~39세 청년 …</p><div class="bar m"></div><p><b>2. 소득 기준</b> 청년가구 월소득 150만 원 이하 · 원가구 500만 원 이하</p><div class="bar s"></div><p><b>3. 지원 내용</b> 실제 월세 범위에서 <u>월 최대 20만 원</u></p><p><b>4. 신청 기간</b> 10월 30일(금) 18시까지</p><p><b>5. 신청 방법</b> 온라인 + 행정복지센터 방문</p><div class="bar m"></div></div></div><div class="m-side"><div class="g-head">✦ Gemini <span>✕</span></div><div class="g-chips">공유 중인 탭 <span class="g-chip">📄 01-notice…pdf</span><span class="g-chip ds" data-s="3">📰 02-press-release.pdf</span><span class="g-chip add">＋ 탭 추가<span class="tg " data-t="2">2</span></span></div><div class="m-pop ds" data-s="2" data-x="3"><div>🎓 AI 행정세미나 슬라이드</div><div class="sel">📰 02-press-release.pdf<span class="tg " data-t="3">3</span></div><div style="color:#80868B">📄 01-notice…pdf (공유 중)</div></div><div class="g-chat"><div class="g-hello"><b>두 문서를 함께 볼 수 있어요</b>최대 10개 탭까지 공유</div></div><div class="g-in"><span class="tx">Gemini에게 물어보기</span><span class="g-send">↑</span><span class="tg m" data-t="4">4</span></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 4</span></h3><ol><li data-t="1"><div>슬라이드의 <b>[📰 보도자료 열기]</b>로 새 탭을 열어 두기<small>→ 탭이 2개 이상이 되어야 합니다</small></div></li><li data-t="2"><div>공고문 탭에서 패널의 <b>[＋ 탭 추가]</b> 클릭<small>→ 열려 있는 탭 목록이 나옵니다</small></div></li><li data-t="3"><div>목록에서 <b>「02-press-release.pdf」</b> 클릭<small>→ 칩이 2개로 늘어납니다</small></div></li><li data-t="4"><div>칩 2개(공고문·보도자료) 확인 후 <b>입력창 클릭</b><small>→ 다음 장의 질문을 붙여넣기</small></div></li></ol><div class="m-ok" data-s="4">✔ 칩에 두 문서가 모두 보이면 성공</div><div class="m-cap">※ 모형 · ＋ 대신 입력창에 @ 로도 선택 가능</div></aside></div>
+  </div>
+</section>
+<section class="slide" data-part="1" aria-label="실습 1-9 불일치 질문" aria-hidden="true">
+  <div class="part-tag"><b>1</b>행정문서 읽기</div>
+  <div class="slide-content">
+    <div class="kicker">실습 1 · ⑦ 두 문서 비교</div>
+    <h2>③ 보도자료와 공고문, 같은 말일까?</h2>
     <div class="btn-row"><a class="doc-btn" href="https://0927iwillman.vercel.app/02-press-release.pdf" target="_blank" rel="noopener">📰 보도자료 열기</a><a class="doc-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" target="_blank" rel="noopener">📄 공고문 열기</a><button type="button" class="compare-btn" data-compare="https://0927iwillman.vercel.app/02-press-release.pdf|https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" data-titles="📰 보도자료|📄 공고문">🪟 두 문서 나란히 보기</button></div>
 <div class="prompt-card "><div class="label">두 문서 · 불일치 찾기</div><blockquote id="pt-3">공유한 두 문서(보도자료와 공고문)를 비교해서 서로 다르게 적힌 내용을 모두 찾아 표로 정리해줘. 항목, 보도자료 표현, 공고문 표현, 민원인이 오해할 수 있는 점을 적고, 어느 문서를 따라야 하는지 이유와 함께 알려줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-3" aria-label="두 문서 · 불일치 찾기 질문 복사">복사</button></div>
     <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 두 탭 공유·질문 <span class="state">정지</span></button></div>
+    <div class="flow"><span><b>1</b><b style="color:inherit">복사</b> 버튼</span><i>▶</i><span><b>2</b>Gemini 입력창 <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기</span></div>
   </div>
 </section>
-<!-- ===== 10. 불일치 정답 ===== -->
-<section class="slide" data-part="1" aria-label="10. 불일치 정답" aria-hidden="true">
+<section class="slide" data-part="1" aria-label="불일치 정답" aria-hidden="true">
   <div class="part-tag"><b>1</b>행정문서 읽기</div>
   <div class="slide-content">
     <div class="kicker">결과 점검</div>
@@ -367,27 +710,53 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
         <div class="btn-row"><div class="vault" style="align-self:center">📥 옵시디언에 저장 · <code>실습1_청년월세_자격판단.md</code></div><button type="button" class="compare-btn" data-compare="https://0927iwillman.vercel.app/02-press-release.pdf|https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" data-titles="📰 보도자료|📄 공고문">🪟 두 문서 나란히 보기</button></div>
   </div>
 </section>
-<!-- ===== 11. NotebookLM 준비 ===== -->
-<section class="slide" data-part="2" aria-label="11. NotebookLM 준비" aria-hidden="true">
+<section class="slide mslide rt" data-part="2" data-steps="5" aria-label="실습 2 화면 지도" aria-hidden="true">
   <div class="part-tag"><b>2</b>행정자료 분석</div>
   <div class="slide-content">
-    <div class="kicker">NotebookLM · 준비 5분</div>
-    <h2>행정자료 실습 준비</h2>
-<ul class="bullets"><li><a class="link-btn" href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM 열기</a> → 새 노트북 만들기</li><li>소스 추가: <a class="doc-btn" href="https://0927iwillman.vercel.app/03-expense-records.pdf" target="_blank" rel="noopener">🧾 업무추진비 열기</a> <a class="doc-btn" href="https://0927iwillman.vercel.app/04-complaints-30.pdf" target="_blank" rel="noopener">📮 민원 30건 열기</a> <a class="doc-btn" href="https://0927iwillman.vercel.app/05-ordinance-amendment.pdf" target="_blank" rel="noopener">📜 조례 대비표 열기</a></li><li>자료 ① 공고문도 함께 추가 (민원 답변의 근거)</li><li class=warn>실제 업무 자료는 외부 AI에 올리지 않기 · 기관이 허용한 도구만</li></ul>
+<div class="m-head"><h2>실습 2 지도: 행정자료를 NotebookLM에 올려 분석하는 길</h2></div><div class="route"><div class="rcard" data-t="1"><div class="rn">1</div><div class="rt">새 노트북</div><div class="rd"><b>notebooklm.google.com</b> → <b>＋ 새 노트북</b></div><div class="rw">📍 새 크롬 탭</div></div><div class="rcard" data-t="2"><div class="rn">2</div><div class="rt">자료 올리기</div><div class="rd">PDF 4개 내려받기 → <b>파일 업로드</b></div><div class="rw">📍 소스 추가 창</div></div><div class="rcard" data-t="3"><div class="rn">3</div><div class="rt">질문하기</div><div class="rd">가운데 <b>채팅 입력창</b>에 붙여넣고 Enter</div><div class="rw">📍 채팅 칸</div></div><div class="rcard" data-t="4"><div class="rn">4</div><div class="rt">인용 확인</div><div class="rd">답변 끝 <b>숫자</b> 클릭 → 왼쪽 원문 표시</div><div class="rw">📍 소스 칸</div></div><div class="rcard" data-t="5"><div class="rn">5</div><div class="rt">소스 고르기</div><div class="rd">질문마다 <b>체크박스</b>로 근거 자료 선택</div><div class="rw">📍 소스 목록</div></div></div><p class="muted" style="margin-top:1.6cqi">업무추진비 · 민원 30건 · 조례 · 공고문 = 가상 자료 4종 · 총 40분 (준비 8 · 업무추진비 8 · 민원 12 · 조례 8 · 점검 4)</p>
   </div>
 </section>
-<!-- ===== 12. 실습 3 업무추진비 ===== -->
-<section class="slide" data-part="2" aria-label="12. 실습 3 업무추진비" aria-hidden="true">
+<section class="slide mslide" data-part="2" data-steps="3" aria-label="실습 2-1 새 노트북" aria-hidden="true">
   <div class="part-tag"><b>2</b>행정자료 분석</div>
   <div class="slide-content">
-    <div class="kicker">실습 3 · 감사 관점</div>
-    <h2>업무추진비, 어디가 수상할까?</h2>
+<div class="m-head"><h2>① NotebookLM에서 새 노트북을 만든다</h2><div class="trail"><span class="on">① 새 노트북</span><i>▶</i><span class="">② 자료 올리기</span><i>▶</i><span class="">③ 질문</span><i>▶</i><span class="">④ 인용 확인</span><i>▶</i><span class="">⑤ 소스 고르기</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab on">NotebookLM</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url" data-x="1">🔒 새 탭 — 주소를 입력하세요</span><span class="m-url ds" data-s="1" style="position:relative">🔒 notebooklm.google.com<span class="tg " data-t="1">1</span></span></div><div class="m-body" style="position:relative"><div class="nlm-home"><h5>노트북</h5><div class="cards"><div class="new">＋ 새 노트북<span class="tg " data-t="2">2</span></div><div>최근 노트북 1</div><div>최근 노트북 2</div><div>최근 노트북 3</div></div></div><div class="nlm-dlg ds" data-s="3"><span class="tg l" data-t="3">3</span><h5>소스 추가</h5><div class="tiles"><div>📄<br>파일 업로드</div><div>🌐<br>웹사이트</div><div>📁<br>Google 드라이브</div><div>📋<br>복사한 텍스트</div></div><div style="color:#5F6368;font-size:1cqi">PDF · 텍스트 · 웹 주소 등을 소스로 올릴 수 있어요</div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 3</span></h3><ol><li data-t="1"><div>새 탭 주소창에 <b>notebooklm.google.com</b> 입력 → Enter<small>구글 계정으로 로그인된 상태여야 합니다</small></div></li><li data-t="2"><div>화면의 <b>[＋ 새 노트북]</b> 카드 클릭<small>→ 빈 노트북이 만들어집니다</small></div></li><li data-t="3"><div><b>「소스 추가」 창</b>이 자동으로 열림<small>→ 다음 장에서 PDF를 올립니다</small></div></li></ol><div class="m-ok" data-s="3">✔ 소스 추가 창이 보이면 다음으로</div><div class="m-cap">※ 단순화한 모형 · 실제 화면과 조금 다를 수 있어요</div></aside></div>
+  </div>
+</section>
+<section class="slide" data-part="2" aria-label="실습 2-2 자료 내려받기" aria-hidden="true">
+  <div class="part-tag"><b>2</b>행정자료 분석</div>
+  <div class="slide-content">
+    <div class="kicker">NotebookLM에 올릴 가상 자료 · 준비</div>
+    <h2>PDF 4개를 내 컴퓨터에 내려받는다</h2>
+    <div class="dlrow"><a class="doc-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" download>📄 공고문</a><a class="doc-btn" href="https://0927iwillman.vercel.app/03-expense-records.pdf" download>🧾 업무추진비</a><a class="doc-btn" href="https://0927iwillman.vercel.app/04-complaints-30.pdf" download>📮 민원 30건</a><a class="doc-btn" href="https://0927iwillman.vercel.app/05-ordinance-amendment.pdf" download>📜 조례 대비표</a></div>
+<ul class="bullets"><li><span>위 버튼 4개를 <b>차례로 클릭</b> → 브라우저 오른쪽 위에 다운로드 표시가 생김</span></li><li><span>파일은 보통 <b>「다운로드」 폴더</b>에 저장 (크롬 오른쪽 위 ⬇ 아이콘 → 폴더 열기)</span></li><li class=warn><span>다운로드가 막힌 컴퓨터는 <b>열기</b> 버튼으로 PDF를 열어 <b>Ctrl+A → Ctrl+C</b> 후 NotebookLM의 「복사한 텍스트」로 붙여넣기</span></li></ul>
+  </div>
+</section>
+<section class="slide mslide" data-part="2" data-steps="4" aria-label="실습 2-3 파일 올리기" aria-hidden="true">
+  <div class="part-tag"><b>2</b>행정자료 분석</div>
+  <div class="slide-content">
+<div class="m-head"><h2>② 파일 업로드로 PDF를 올린다</h2><div class="trail"><span class="dn">① 새 노트북</span><i>▶</i><span class="on">② 자료 올리기</span><i>▶</i><span class="">③ 질문</span><i>▶</i><span class="">④ 인용 확인</span><i>▶</i><span class="">⑤ 소스 고르기</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab on">NotebookLM — 제목 없는 노트북</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url">🔒 notebooklm.google.com/notebook/…</span></div><div class="m-body" style="position:relative"><div class="nlm"><div class="col c1"><h6>소스</h6><div class="add">＋ 소스 추가</div><div class="src ds" data-s="4">☑ 📄 01-notice-youth-rent.pdf</div><div class="src ds" data-s="4">☑ 🧾 03-expense-records.pdf</div><div class="src ds" data-s="4">☑ 📮 04-complaints-30.pdf</div><div class="src ds" data-s="4">☑ 📜 05-ordinance-amendment.pdf</div><div class="g-hello" data-x="4" style="color:#80868B;font-size:1cqi;margin-top:1.5cqi">저장된 소스가 없습니다</div><span class="tg m" data-t="4">4</span></div><div class="col c2"><h6>채팅</h6><div class="g-hello"><b>소스를 추가해 시작하세요</b></div></div><div class="col c3"><h6>Studio</h6><div class="tile">오디오 개요</div><div class="tile">마인드맵</div></div><div class="nlm-dlg" data-x="2"><h5>소스 추가</h5><div class="tiles"><div>📄<br>파일 업로드<span class="tg " data-t="1">1</span></div><div>🌐<br>웹사이트</div><div>📁<br>Google 드라이브</div><div>📋<br>복사한 텍스트</div></div></div><div class="m-os ds" data-s="2" data-x="4"><div class="tt">열기</div><div class="fl"><span class="tg l" data-t="2">2</span><div>📄 01-notice-youth-rent.pdf</div><div class="pick">📄 03-expense-records.pdf</div><div class="pick">📄 04-complaints-30.pdf</div><div class="pick">📄 05-ordinance-amendment.pdf</div><div>📄 (다른 파일)</div></div><div class="ft"><span>취소</span><span class="go">열기<span class="tg " data-t="3">3</span></span></div></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 4</span></h3><ol><li data-t="1"><div>소스 추가 창에서 <b>[📄 파일 업로드]</b> 클릭<small>→ 내 컴퓨터 파일 선택 창이 뜸</small></div></li><li data-t="2"><div>파일 창에서 PDF를 <b>Ctrl(맥 ⌘) 누른 채</b> 여러 개 클릭<small>다운로드 폴더의 4개 파일을 모두 선택</small></div></li><li data-t="3"><div>오른쪽 아래 <b>[열기]</b> 클릭<small>→ 업로드가 시작됩니다</small></div></li><li data-t="4"><div>왼쪽 <b>「소스」 목록</b>에 4개가 ☑ 로 보이면 완료<small>처리에 잠깐 걸릴 수 있어요</small></div></li></ol><div class="m-ok" data-s="4">✔ 소스 4개가 체크되어 있으면 성공</div><div class="m-cap">※ 모형 · 파일 선택 창은 윈도우/맥에 따라 모양이 달라요</div></aside></div>
+  </div>
+</section>
+<section class="slide ps" data-part="2" aria-label="실습 2-4 업무추진비 질문" aria-hidden="true">
+  <div class="part-tag"><b>2</b>행정자료 분석</div>
+  <div class="slide-content">
+<div class="kicker">실습 2 · ③ 감사 관점 질문</div>
+    <h2>③ 업무추진비, 어디가 수상할까?</h2>
 <div class="prompt-card "><div class="label">자료 ③ · 3분기 집행내역 20건</div><blockquote id="pt-4">이 업무추진비 집행내역 20건을 자료 위쪽의 집행 기준 6가지에 비추어 점검해줘. 기준에 어긋날 수 있는 건을 번호, 관련 기준, 이유로 표로 정리하고, ‘위반 확정’이 아니라 ‘소명 필요’로 표시해줘. 1인당 금액은 직접 계산해서 보여줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-4" aria-label="자료 ③ · 3분기 집행내역 20건 질문 복사">복사</button></div>
-    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/03-expense-records.pdf" target="_blank" rel="noopener">🧾 업무추진비 열기</a></div>
+    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 질문·인용 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/03-expense-records.pdf" target="_blank" rel="noopener">🧾 업무추진비 열기</a></div>
+    <div class="flow"><span><b>1</b>위 <b style="color:inherit">복사</b> 버튼 클릭</span><i>▶</i><span><b>2</b>NotebookLM 채팅 입력창 클릭 → <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기 또는 Enter</span></div>
   </div>
 </section>
-<!-- ===== 13. 업무추진비 점검 ===== -->
-<section class="slide" data-part="2" aria-label="13. 업무추진비 점검" aria-hidden="true">
+<section class="slide mslide" data-part="2" data-steps="4" aria-label="실습 2-5 질문하고 인용 확인" aria-hidden="true">
+  <div class="part-tag"><b>2</b>행정자료 분석</div>
+  <div class="slide-content">
+<div class="m-head"><h2>③④ 질문하고, 숫자(인용)를 눌러 원문을 본다</h2><div class="trail"><span class="dn">① 새 노트북</span><i>▶</i><span class="dn">② 자료 올리기</span><i>▶</i><span class="on">③ 질문</span><i>▶</i><span class="">④ 인용 확인</span><i>▶</i><span class="">⑤ 소스 고르기</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="nlm-top">NotebookLM <span>/ 행정 실습</span></div><div class="m-body" style="position:relative"><div class="nlm"><div class="col c1"><h6>소스</h6><div class="add">＋ 소스 추가</div><div class="src" data-x="3">☑ 📄 01-notice…pdf</div><div class="src" data-x="3">☑ 🧾 03-expense-records.pdf</div><div class="src" data-x="3">☑ 📮 04-complaints-30.pdf</div><div class="src" data-x="3">☑ 📜 05-ordinance…pdf</div><div class="ds" data-s="3" style="display:flex;flex-direction:column;gap:.5cqi"><div style="font-size:.95cqi;font-weight:800">🧾 03-expense-records.pdf</div><div class="gray"></div><div class="gray s"></div><div class="hlrow"><span class="tg m" data-t="4">4</span>원문의 해당 부분이 노란색으로 표시됩니다</div><div class="gray"></div><div class="gray s"></div></div></div><div class="col c2"><h6>채팅</h6><div class="g-chat"><div class="g-u ds" data-s="1">이 업무추진비 집행내역 20건을 집행 기준 6가지에 비추어 점검해줘 …</div><div class="g-a ds" data-s="1" style="font-size:.95cqi"><span><b>소명 필요 건</b></span><span>• 13번 — 제한 업종 · 1인 한도 <span class="cit">1</span></span><span>• 10·11번 — 분할 결제 의심, 합계 93만 원 <span class="cit">2<span class="tg " data-t="2">2</span></span></span><span>• 20번 — 공휴일 사용 <span class="cit">3</span></span><span style="color:#80868B">(예시 · ‘위반 확정’이 아니라 ‘소명 필요’)</span></div></div><div class="g-in"><span class="tx" data-x="1">입력을 시작하세요…</span><span class="tx ds" data-s="1" data-x="2" style="color:#1F1F1F">…(붙여넣음) Enter</span><span class="tx ds" data-s="2" style="color:#80868B">입력을 시작하세요…</span><span class="tg m" data-t="1">1</span><span class="g-send">↑</span></div></div><div class="col c3"><h6>Studio</h6><div class="tile">오디오 개요</div><div class="tile">마인드맵</div></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 4</span></h3><ol><li data-t="1"><div>가운데 <b>채팅 입력창</b>에 붙여넣고 <b>Enter</b><small>→ 답변이 나타납니다</small></div></li><li data-t="2"><div>답변 문장 끝의 <b>작은 숫자 [2]</b>를 클릭<small>→ 어느 원문에서 가져왔는지 연결됩니다</small></div></li><li data-t="3"><div><b>왼쪽 소스 칸</b>이 원문으로 바뀌고 해당 부분이 노란색으로 표시</div></li><li data-t="4"><div>노란 부분을 읽고 <b>정말 "소명 필요"가 맞는지</b> 사람이 판단<small>달력(추석 연휴)도 직접 확인</small></div></li></ol><div class="m-ok" data-s="4">✔ 숫자를 눌러 원문까지 가 봐야 "검증"입니다</div><div class="m-cap">※ 단순화한 모형 · 실제 화면과 조금 다를 수 있어요</div></aside></div>
+  </div>
+</section>
+<section class="slide" data-part="2" aria-label="업무추진비 점검" aria-hidden="true">
   <div class="part-tag"><b>2</b>행정자료 분석</div>
   <div class="slide-content">
     <div class="kicker">원문 대조 · 사람이 다시 확인</div>
@@ -403,29 +772,35 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     </tbody></table>
   </div>
 </section>
-<!-- ===== 14. 실습 4 민원 유형화 ===== -->
-<section class="slide" data-part="2" aria-label="14. 실습 4 민원 유형화" aria-hidden="true">
+<section class="slide ps" data-part="2" aria-label="실습 2-6 민원 유형화 질문" aria-hidden="true">
   <div class="part-tag"><b>2</b>행정자료 분석</div>
   <div class="slide-content">
-    <div class="kicker">실습 4 · 민원 데이터</div>
-    <h2>민원 30건, 무엇이 반복되나?</h2>
+<div class="kicker">실습 2 · ④ 민원 데이터 분석</div>
+    <h2>④ 민원 30건, 무엇이 반복되나?</h2>
 <div class="prompt-card "><div class="label">자료 ④ · 2주간 민원 30건</div><blockquote id="pt-5">이 민원 30건을 유형별로 분류해 표로 만들어줘. 유형별 건수와 해당 번호를 적고, 가장 많은 유형 세 가지에 대해 원인과 행정 서비스 개선 아이디어를 하나씩 제안해줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-5" aria-label="자료 ④ · 2주간 민원 30건 질문 복사">복사</button></div>
-    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="6" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">6:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/04-complaints-30.pdf" target="_blank" rel="noopener">📮 민원 30건 열기</a></div>
+    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="6" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">6:00</span> 질문·원문 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/04-complaints-30.pdf" target="_blank" rel="noopener">📮 민원 30건 열기</a></div>
+    <div class="flow"><span><b>1</b>위 <b style="color:inherit">복사</b> 버튼 클릭</span><i>▶</i><span><b>2</b>NotebookLM 채팅 입력창 클릭 → <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기 또는 Enter</span></div>
     <p class="muted">힌트: 가장 많은 유형은 무엇일까요? → 반복 문의는 FAQ·안내문 개선의 신호</p>
   </div>
 </section>
-<!-- ===== 15. 실습 4 답변 초안 ===== -->
-<section class="slide" data-part="2" aria-label="15. 실습 4 답변 초안" aria-hidden="true">
+<section class="slide mslide" data-part="2" data-steps="4" aria-label="실습 2-7 소스 고르기" aria-hidden="true">
   <div class="part-tag"><b>2</b>행정자료 분석</div>
   <div class="slide-content">
-    <div class="kicker">실습 4 · 민원 답변</div>
-    <h2>공공언어로 답변 초안 쓰기</h2>
-<div class="prompt-card "><div class="label">자료 ④ + 자료 ① 공고문</div><blockquote id="pt-6">민원 13번(소득 기준이 본인 기준인지 부모 기준인지)과 18번(결혼한 30대도 신청 가능한지)에 대해 공고문을 근거로 답변 초안을 써줘. 쉽고 정중한 공공언어로 쓰고, 근거가 된 공고 조항을 밝히고, 공고에서 확인할 수 없는 부분은 담당 부서 확인이 필요하다고 적어줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-6" aria-label="자료 ④ + 자료 ① 공고문 질문 복사">복사</button></div>
-    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="6" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">6:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/04-complaints-30.pdf" target="_blank" rel="noopener">📮 민원 30건 열기</a><a class="doc-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" target="_blank" rel="noopener">📄 공고문 열기</a></div>
+<div class="m-head"><h2>⑤ 질문마다 근거 자료를 골라 체크한다</h2><div class="trail"><span class="dn">① 새 노트북</span><i>▶</i><span class="dn">② 자료 올리기</span><i>▶</i><span class="dn">③ 질문</span><i>▶</i><span class="dn">④ 인용 확인</span><i>▶</i><span class="on">⑤ 소스 고르기</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="nlm-top">NotebookLM <span>/ 행정 실습</span></div><div class="m-body" style="position:relative"><div class="nlm"><div class="col c1"><h6>소스 <span style="font-weight:500;color:#5F6368">체크한 것만 사용</span></h6><div class="add">＋ 소스 추가</div><div class="src sel"><span data-x="1">☑</span><span class="ds" data-s="1">☐</span> 🧾 03-expense-records.pdf<span class="tg " data-t="1">1</span></div><div class="src sel"><span data-x="1">☑</span><span class="ds" data-s="1">☐</span> 📜 05-ordinance…pdf<span class="tg m" data-t="1">1</span></div><div class="src">☑ 📮 04-complaints-30.pdf<span class="tg " data-t="2">2</span></div><div class="src">☑ 📄 01-notice-youth-rent.pdf</div></div><div class="col c2"><h6>채팅</h6><div class="g-chat"><div class="g-u ds" data-s="3">민원 13번과 18번에 대해 공고문을 근거로 답변 초안을 써줘 …</div><div class="g-a ds" data-s="3" style="font-size:.95cqi"><span>13번: 소득 기준은 청년가구와 원가구를 나누어 적용합니다 <span class="cit">1<span class="tg " data-t="4">4</span></span></span><span>18번: 공고 2-라 단서에 따라 …확인이 필요합니다 <span class="cit">2</span></span><span style="color:#80868B">(예시)</span></div></div><div class="g-in"><span class="tx">입력을 시작하세요… (프롬프트 붙여넣기)</span><span class="g-send">↑<span class="tg " data-t="3">3</span></span></div></div><div class="col c3"><h6>Studio</h6><div class="tile">오디오 개요</div></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 4</span></h3><ol><li data-t="1"><div>왼쪽 소스 목록에서 <b>업무추진비 · 조례</b>의 ☑ 를 클릭해 해제<small>→ 관련 없는 자료가 답에 섞이지 않게</small></div></li><li data-t="2"><div><b>민원 30건 · 공고문</b>만 ☑ 로 남긴다<small>답변 근거는 공고문, 사례는 민원 30건</small></div></li><li data-t="3"><div>채팅 입력창에 <b>다음 슬라이드의 질문</b>을 붙여넣고 Enter</div></li><li data-t="4"><div>답변 끝 <b>[숫자]</b>를 눌러 <b>공고문</b>을 가리키는지 확인<small>다른 문서를 가리키면 근거가 틀린 것</small></div></li></ol><div class="m-ok" data-s="4">✔ 근거를 직접 골라야 답변이 믿을 수 있습니다</div><div class="m-cap">※ 단순화한 모형 · 실제 화면과 조금 다를 수 있어요</div></aside></div>
   </div>
 </section>
-<!-- ===== 16. 나쁜 답변 좋은 답변 ===== -->
-<section class="slide" data-part="2" aria-label="16. 나쁜 답변 좋은 답변" aria-hidden="true">
+<section class="slide ps" data-part="2" aria-label="실습 2-8 답변 초안 질문" aria-hidden="true">
+  <div class="part-tag"><b>2</b>행정자료 분석</div>
+  <div class="slide-content">
+<div class="kicker">실습 2 · ⑤ 민원 답변 초안</div>
+    <h2>⑤ 공공언어로 답변 초안 쓰기</h2>
+<div class="prompt-card "><div class="label">자료 ④ + 자료 ① 공고문</div><blockquote id="pt-6">민원 13번(소득 기준이 본인 기준인지 부모 기준인지)과 18번(결혼한 30대도 신청 가능한지)에 대해 공고문을 근거로 답변 초안을 써줘. 쉽고 정중한 공공언어로 쓰고, 근거가 된 공고 조항을 밝히고, 공고에서 확인할 수 없는 부분은 담당 부서 확인이 필요하다고 적어줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-6" aria-label="자료 ④ + 자료 ① 공고문 질문 복사">복사</button></div>
+    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="6" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">6:00</span> 소스 고르기·질문 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/04-complaints-30.pdf" target="_blank" rel="noopener">📮 민원 30건 열기</a><a class="doc-btn" href="https://0927iwillman.vercel.app/01-notice-youth-rent.pdf" target="_blank" rel="noopener">📄 공고문 열기</a></div>
+    <div class="flow"><span><b>1</b>위 <b style="color:inherit">복사</b> 버튼 클릭</span><i>▶</i><span><b>2</b>NotebookLM 채팅 입력창 클릭 → <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기 또는 Enter</span></div>
+  </div>
+</section>
+<section class="slide" data-part="2" aria-label="나쁜 답변 좋은 답변" aria-hidden="true">
   <div class="part-tag"><b>2</b>행정자료 분석</div>
   <div class="slide-content">
     <div class="kicker">그대로 보내면 안 되는 이유</div>
@@ -434,18 +809,18 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     <div class="vault">📥 옵시디언에 저장 · <code>실습4_민원분석_답변초안.md</code></div>
   </div>
 </section>
-<!-- ===== 17. 실습 5 조례 개정안 ===== -->
-<section class="slide" data-part="2" aria-label="17. 실습 5 조례 개정안" aria-hidden="true">
+<section class="slide ps" data-part="2" aria-label="실습 2-9 조례 질문" aria-hidden="true">
   <div class="part-tag"><b>2</b>행정자료 분석</div>
   <div class="slide-content">
-    <div class="kicker">실습 5 · 입법 영향</div>
-    <h2>조례가 바뀌면 누가 달라질까?</h2>
+<div class="kicker">실습 2 · ⑥ 입법 영향</div>
+    <h2>⑥ 조례가 바뀌면 누가 달라질까?</h2>
 <div class="prompt-card "><div class="label">자료 ⑤ · 청년 기본 조례 신구조문대비표</div><blockquote id="pt-7">이 신구조문대비표에서 바뀌는 내용을 조항별로 정리해줘. 조항마다 ① 무엇이 바뀌나 ② 누가 이익을 보고 누가 부담하나 ③ 예산 영향 ④ 의회 심사에서 물어볼 질문 하나를 표로 만들어줘. 원문에 없는 수치는 만들지 말아줘.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-7" aria-label="자료 ⑤ · 청년 기본 조례 신구조문대비표 질문 복사">복사</button></div>
-    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 직접 질문·원문 확인 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/05-ordinance-amendment.pdf" target="_blank" rel="noopener">📜 조례 대비표 열기</a></div>
+    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 소스 고르기(조례 ☑)·질문 <span class="state">정지</span></button><a class="doc-btn" href="https://0927iwillman.vercel.app/05-ordinance-amendment.pdf" target="_blank" rel="noopener">📜 조례 대비표 열기</a></div>
+    <div class="flow"><span><b>1</b>위 <b style="color:inherit">복사</b> 버튼 클릭</span><i>▶</i><span><b>2</b>NotebookLM 채팅 입력창 클릭 → <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기 또는 Enter</span></div>
+    <p class="muted">먼저 소스 목록에서 <b>조례 대비표만 ☑</b> 로 바꾸세요 (앞 장 방법)</p>
   </div>
 </section>
-<!-- ===== 18. 조례 영향 점검 ===== -->
-<section class="slide" data-part="2" aria-label="18. 조례 영향 점검" aria-hidden="true">
+<section class="slide" data-part="2" aria-label="조례 영향 점검" aria-hidden="true">
   <div class="part-tag"><b>2</b>행정자료 분석</div>
   <div class="slide-content">
     <div class="kicker">결과 점검</div>
@@ -459,35 +834,39 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     <div class="card problem"><div class="t">🔍 날카로운 질문</div><div class="d">현행 조례의 청년은 34세 이하인데, 10월 공고는 39세까지 모집했다. 제9조는 2027년부터 시행된다. 이 공고의 법적 근거는 충분한가?</div></div>
   </div>
 </section>
-<!-- ===== 19. 휴식 ===== -->
-<section class="slide dark" aria-label="19. 휴식" aria-hidden="true">
+<section class="slide dark" aria-label="휴식" aria-hidden="true">
   <div class="slide-content">
     <div class="kicker">잠깐 쉬기</div>
     <button type="button" class="break-big" data-minutes="10" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋" aria-label="휴식 타이머 10분"><span class="time">10:00</span></button>
     <p class="lede">10분 뒤 정책 홍보 이미지·영상 실습</p>
   </div>
 </section>
-<!-- ===== 20. 이미지 실습 준비 ===== -->
-<section class="slide" data-part="3" aria-label="20. 이미지 실습 준비" aria-hidden="true">
+<section class="slide" data-part="3" aria-label="이미지 실습 준비" aria-hidden="true">
   <div class="part-tag"><b>3</b>정책 이미지</div>
   <div class="slide-content">
     <div class="kicker">정책 이미지 · 15분</div>
     <h2>공공 홍보물 체크리스트</h2>
-<ul class="bullets"><li>쉬운 말: 대상 · 금액 · 기간, 핵심 3가지만</li><li class=warn>금액·날짜는 이미지 속 글자에 맡기지 말고 직접 입력</li><li>색 대비 · 이미지 설명(대체텍스트) 한 문장</li><li class=warn>실존 인물 · 다른 기관 로고 · 저작물 사용 금지</li></ul>
+<ul class="bullets"><li><span>쉬운 말: 대상 · 금액 · 기간, 핵심 3가지만</span></li><li class=warn><span>금액·날짜는 이미지 속 글자에 맡기지 말고 직접 입력</span></li><li><span>색 대비 · 이미지 설명(대체텍스트) 한 문장</span></li><li class=warn><span>실존 인물 · 다른 기관 로고 · 저작물 사용 금지</span></li></ul>
   </div>
 </section>
-<!-- ===== 21. 실습 6 카드뉴스 이미지 ===== -->
-<section class="slide" data-part="3" aria-label="21. 실습 6 카드뉴스 이미지" aria-hidden="true">
+<section class="slide mslide" data-part="3" data-steps="5" aria-label="실습 3-1 Gemini 이미지" aria-hidden="true">
   <div class="part-tag"><b>3</b>정책 이미지</div>
   <div class="slide-content">
-    <div class="kicker">실습 6 · 이미지 생성 AI</div>
-    <h2>카드뉴스 표지 이미지</h2>
-<div class="prompt-card "><div class="label">청년 월세 지원 홍보</div><blockquote id="pt-8">대학생과 사회초년생이 공감할 수 있는 한빛시 청년 월세 지원 홍보 카드뉴스 표지 이미지를 만들어줘. 작은 원룸 창가에서 월세 고지서를 보며 한숨 쉬던 청년이 미소 짓는 장면, 따뜻하고 밝은 일러스트 스타일, 정사각형 비율. 이미지 안에 글자·숫자·로고는 넣지 마.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-8" aria-label="청년 월세 지원 홍보 질문 복사">복사</button></div>
-    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 생성·수정 요청 <span class="state">정지</span></button></div>
+<div class="m-head"><h2>Gemini에서 이미지를 만들고 저장한다</h2><div class="trail"><span class="dn">① Gemini 열기</span><i>▶</i><span class="on">② 이미지 만들기</span><i>▶</i><span class="">③ 요청 보내기</span><i>▶</i><span class="">④ 확인·수정</span><i>▶</i><span class="">⑤ 저장</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab on">Gemini</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url"><span>🔒 gemini.google.com<span class="tg " data-t="1">1</span></span></span></div><div class="m-body"><div class="gapp"><div class="sb"><div>＋ 새 채팅</div><div class="on">🖼 이미지<span class="tg " data-t="2">2</span></div><div>💬 최근 대화</div><div style="color:#80868B;font-size:.95cqi">· 청년 월세 …</div></div><div class="mn"><div class="g-hello" style="margin:0;text-align:left"><b>무엇을 만들어 볼까요?</b></div><div class="g-u ds" data-s="3">대학생과 사회초년생이 공감할 수 있는 한빛시 청년 월세 지원 홍보 카드뉴스 표지 이미지를 만들어줘 …</div><div class="prog ds" data-s="3" data-x="4"><i></i></div><div class="imgbox ds" data-s="4">🏠☀️🙂<small>예시 자리 · 실제 결과는 매번 달라요</small><span class="tg " data-t="4">4</span></div><div class="imgtools ds" data-s="4"><span>⬇ 원본 크기 다운로드<span class="tg " data-t="5">5</span></span><span>👍</span><span>↻ 다시</span></div><div style="flex:1"></div><div class="g-in"><span class="tx" data-x="3">이미지를 설명해 주세요 (Ctrl+V)</span><span class="tx ds" data-s="3" style="color:#80868B">고칠 점을 말로 입력: "더 밝게, 글자는 없애줘"</span><span class="g-send">↑<span class="tg " data-t="3">3</span></span></div></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 5</span></h3><ol><li data-t="1"><div>새 탭 주소창에 <b>gemini.google.com</b> 입력 → Enter<small>크롬 옆 패널이 아니라 전체 화면 Gemini</small></div></li><li data-t="2"><div>왼쪽 메뉴 <b>「이미지」</b> 클릭<small>없으면 입력창 아래 도구에서 「이미지 만들기」</small></div></li><li data-t="3"><div>입력창에 <b>Ctrl+V</b> → <b>[↑ 보내기]</b><small>→ 잠시 뒤 이미지가 나타납니다</small></div></li><li data-t="4"><div>이미지를 <b>크게 보고 점검</b> (글자 깨짐 · 사람 얼굴)<small>다음 장 체크리스트로 확인</small></div></li><li data-t="5"><div>고치려면 <b>입력창에 말로</b> 요청 · 저장은 <b>⬇ 원본 크기 다운로드</b><small>파일은 다음 영상 실습에서 사용</small></div></li></ol><div class="m-ok" data-s="5">✔ 이미지가 내 컴퓨터에 저장되면 끝</div><div class="m-cap">※ 모형 · 메뉴 이름과 위치는 계정·업데이트에 따라 달라요</div></aside></div>
   </div>
 </section>
-<!-- ===== 22. 이미지 점검 ===== -->
-<section class="slide" data-part="3" aria-label="22. 이미지 점검" aria-hidden="true">
+<section class="slide ps" data-part="3" aria-label="실습 3-2 카드뉴스 질문" aria-hidden="true">
+  <div class="part-tag"><b>3</b>정책 이미지</div>
+  <div class="slide-content">
+<div class="kicker">실습 3 · 이미지 생성 AI</div>
+    <h2>카드뉴스 표지 이미지 — 요청문 복사</h2>
+<div class="prompt-card "><div class="label">청년 월세 지원 홍보</div><blockquote id="pt-8">대학생과 사회초년생이 공감할 수 있는 한빛시 청년 월세 지원 홍보 카드뉴스 표지 이미지를 만들어줘. 작은 원룸 창가에서 월세 고지서를 보며 한숨 쉬던 청년이 미소 짓는 장면, 따뜻하고 밝은 일러스트 스타일, 정사각형 비율. 이미지 안에 글자·숫자·로고는 넣지 마.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-8" aria-label="청년 월세 지원 홍보 질문 복사">복사</button></div>
+    <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 생성·수정 요청 <span class="state">정지</span></button></div>
+    <div class="flow"><span><b>1</b>위 <b style="color:inherit">복사</b> 버튼 클릭</span><i>▶</i><span><b>2</b>Gemini 이미지 입력창 클릭 → <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기 또는 Enter</span></div>
+  </div>
+</section>
+<section class="slide" data-part="3" aria-label="이미지 점검" aria-hidden="true">
   <div class="part-tag"><b>3</b>정책 이미지</div>
   <div class="slide-content">
     <div class="kicker">결과 점검</div>
@@ -496,8 +875,7 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     <div class="vault">📥 옵시디언에 저장 · <code>실습6_홍보이미지.md</code></div>
   </div>
 </section>
-<!-- ===== 23. 숏폼 장면표 ===== -->
-<section class="slide" data-part="4" aria-label="23. 숏폼 장면표" aria-hidden="true">
+<section class="slide" data-part="4" aria-label="숏폼 장면표" aria-hidden="true">
   <div class="part-tag"><b>4</b>정책 숏폼</div>
   <div class="slide-content">
     <div class="kicker">정책 숏폼 · 15분</div>
@@ -510,29 +888,34 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     </tbody></table>
   </div>
 </section>
-<!-- ===== 24. 실습 7 숏폼 영상 ===== -->
-<section class="slide" data-part="4" aria-label="24. 실습 7 숏폼 영상" aria-hidden="true">
+<section class="slide mslide" data-part="4" data-steps="4" aria-label="실습 4-1 숏폼 영상" aria-hidden="true">
   <div class="part-tag"><b>4</b>정책 숏폼</div>
   <div class="slide-content">
-    <div class="kicker">실습 7 · 영상 생성 AI</div>
-    <h2>30초 정책 홍보 영상</h2>
+<div class="m-head"><h2>이미지를 첫 장면으로 영상 만들기</h2><div class="trail"><span class="dn">① 이미지 첨부</span><i>▶</i><span class="on">② 영상 요청</span><i>▶</i><span class="">③ 재생·점검</span><i>▶</i><span class="">④ 저장</span></div></div>
+<div class="m-grid"><div class="m-win"><div class="m-tabs"><span class="m-tab">🎓 슬라이드</span><span class="m-tab on">Gemini</span></div><div class="m-addr"><span class="m-nav">‹ › ⟳</span><span class="m-url">🔒 gemini.google.com</span></div><div class="m-body"><div class="gapp"><div class="sb"><div>＋ 새 채팅</div><div>🖼 이미지</div><div class="on">🎬 동영상</div><div style="color:#80868B;font-size:.95cqi">(계정에 따라 없을 수 있음)</div></div><div class="mn"><div class="g-hello" style="margin:0;text-align:left"><b>동영상을 만들어 볼까요?</b></div><div class="g-u ds" data-s="3">앞에서 만든 카드뉴스 이미지를 첫 장면으로 사용해 30초 정책 홍보 영상을 만들어줘 …</div><div class="prog ds" data-s="3" data-x="4"><i></i></div><div class="imgbox ds" data-s="4" style="width:19cqi;height:10.7cqi;font-size:3.4cqi">▶<small>예시 자리 · 생성 영상이 재생됩니다<span class="tg " data-t="4">4</span></small></div><div style="flex:1"></div><div class="g-in"><div style="position:relative;display:inline-block;font-size:1.3cqi;margin-right:.4cqi">＋<span class="tg l" data-t="1">1</span></div><span class="g-chip ds" data-s="1">🖼 card-news.png ✕</span><span class="g-chip ds" data-s="2">🎬 동영상<span class="tg " data-t="2">2</span></span><span class="tx">프롬프트 붙여넣기 (Ctrl+V)</span><span class="g-send">↑<span class="tg " data-t="3">3</span></span></div></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 4</span></h3><ol><li data-t="1"><div>입력창 왼쪽 <b>[＋]</b> → 저장해 둔 <b>카드뉴스 이미지 첨부</b><small>파일 이름 칩이 입력창에 생깁니다</small></div></li><li data-t="2"><div><b>도구/메뉴에서 「동영상」</b> 선택<small>계정에 없으면 → 장면표를 완성해 제출</small></div></li><li data-t="3"><div>다음 장의 <b>요청문을 붙여넣고 [↑]</b> 클릭<small>→ 생성되는 동안 진행 막대</small></div></li><li data-t="4"><div>완성되면 <b>▶ 재생</b>하며 장면 순서·자막 위치 점검<small>자막은 편집 앱에서 장면표대로 직접</small></div></li></ol><div class="m-ok" data-s="4">✔ 영상이 재생되거나, 장면표가 완성되면 성공</div><div class="m-cap">※ 모형 · 영상 생성은 계정·요금제에 따라 지원되지 않을 수 있어요</div></aside></div>
+  </div>
+</section>
+<section class="slide ps" data-part="4" aria-label="실습 4-2 영상 요청문" aria-hidden="true">
+  <div class="part-tag"><b>4</b>정책 숏폼</div>
+  <div class="slide-content">
+<div class="kicker">실습 4 · 영상 생성 AI</div>
+    <h2>30초 정책 홍보 영상 — 요청문 복사</h2>
 <div class="prompt-card "><div class="label">카드뉴스 이미지 → 숏폼</div><blockquote id="pt-9">앞에서 만든 카드뉴스 이미지를 첫 장면으로 사용해 30초 정책 홍보 영상을 만들어줘. 장면 순서: 월세 고지서를 보는 청년 → 안도하는 표정 → 휴대폰으로 신청하는 손 → 밝은 거리. 카메라는 천천히 움직이고 밝은 분위기, 16:9 비율. 자막·글자·로고는 넣지 마.</blockquote><button type="button" class="copy-btn" data-copy-target="pt-9" aria-label="카드뉴스 이미지 → 숏폼 질문 복사">복사</button></div>
     <div class="btn-row"><button type="button" class="timer-chip" data-minutes="8" title="클릭: 시작·일시정지 · 더블클릭 또는 R: 리셋">⏱ <span class="time">8:00</span> 생성·재생 <span class="state">정지</span></button></div>
+    <div class="flow"><span><b>1</b>위 <b style="color:inherit">복사</b> 버튼 클릭</span><i>▶</i><span><b>2</b>Gemini 입력창 클릭 → <b style="color:inherit">Ctrl+V</b></span><i>▶</i><span><b>3</b>▶ 보내기 또는 Enter</span></div>
     <p class="muted">자막은 영상 편집 앱에서 장면표대로 직접 넣습니다 · 영상 생성이 안 되는 계정은 장면표 완성으로 대체</p>
   </div>
 </section>
-<!-- ===== 25. 영상 점검 ===== -->
-<section class="slide" data-part="4" aria-label="25. 영상 점검" aria-hidden="true">
+<section class="slide" data-part="4" aria-label="영상 점검" aria-hidden="true">
   <div class="part-tag"><b>4</b>정책 숏폼</div>
   <div class="slide-content">
     <div class="kicker">재생·수정</div>
     <h2>숏폼 결과 확인</h2>
-<ul class="bullets"><li>장면 순서와 분위기가 장면표와 맞는지</li><li class=warn>얼굴 왜곡 · 이상한 글자 · 실존 인물 닮음 확인</li><li>자막의 금액·날짜를 공고문과 한 번 더 대조</li><li>한 부분만 바꿔 다시 생성하거나 저장</li></ul>
+<ul class="bullets"><li><span>장면 순서와 분위기가 장면표와 맞는지</span></li><li class=warn><span>얼굴 왜곡 · 이상한 글자 · 실존 인물 닮음 확인</span></li><li><span>자막의 금액·날짜를 공고문과 한 번 더 대조</span></li><li><span>한 부분만 바꿔 다시 생성하거나 저장</span></li></ul>
     <div class="vault">📥 옵시디언에 저장 · <code>실습7_정책숏폼_장면표.md</code></div>
   </div>
 </section>
-<!-- ===== 26. 토론 질문 ===== -->
-<section class="slide dark" data-part="5" aria-label="26. 토론 질문" aria-hidden="true">
+<section class="slide dark" data-part="5" aria-label="토론 질문" aria-hidden="true">
   <div class="part-tag"><b>5</b>토론·윤리</div>
   <div class="slide-content">
     <div class="kicker">토론 · 7초 생각하기</div>
@@ -540,8 +923,16 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     <p class="wait">질문 후 7초 · 먼저 손 드는 사람에게 마이크</p>
   </div>
 </section>
-<!-- ===== 27. 세 가지 관점 ===== -->
-<section class="slide" data-part="5" aria-label="27. 세 가지 관점" aria-hidden="true">
+<section class="slide dark" data-part="5" aria-label="손들기 책임 질문" aria-hidden="true">
+  <div class="part-tag"><b>5</b>토론·윤리</div>
+  <div class="slide-content">
+    <div class="kicker">토론 전 손들기 · 가장 큰 책임은?</div>
+    <h2>AI 답변이 틀렸다면, 가장 큰 책임은?</h2>
+    <div class="poll" data-poll="adm_resp" data-labels="담당 주무관|결재권자·기관|AI 도구 공급자"></div>
+    <p class="muted">손 든 수를 세어 1~3 키 · 결과를 보고 모둠 토론으로 이어갑니다</p>
+  </div>
+</section>
+<section class="slide" data-part="5" aria-label="세 가지 관점" aria-hidden="true">
   <div class="part-tag"><b>5</b>토론·윤리</div>
   <div class="slide-content">
     <div class="kicker">토론 · 관점 나누기</div>
@@ -550,18 +941,16 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     <p class="muted">모둠별 3분 토론 → 한 모둠씩 한 문장으로 발표</p>
   </div>
 </section>
-<!-- ===== 28. 공공부문 AI 사용 원칙 ===== -->
-<section class="slide" data-part="5" aria-label="28. 공공부문 AI 사용 원칙" aria-hidden="true">
+<section class="slide" data-part="5" aria-label="공공부문 AI 사용 원칙" aria-hidden="true">
   <div class="part-tag"><b>5</b>토론·윤리</div>
   <div class="slide-content">
     <div class="kicker">오늘의 결론</div>
     <h2>공공부문 AI 사용 5원칙</h2>
-<ul class="bullets"><li>개인정보 · 내부 자료는 올리지 않는다 (가명·가상 자료만)</li><li>AI 결과는 원문과 대조한 뒤 쓴다</li><li>재량 판단 · 결재는 사람이 한다</li><li>AI를 썼다면 어디에 썼는지 기록한다</li><li>민원인에게 보내는 글은 사람이 마지막으로 읽는다</li></ul>
+<ul class="bullets"><li><span>개인정보 · 내부 자료는 올리지 않는다 (가명·가상 자료만)</span></li><li><span>AI 결과는 원문과 대조한 뒤 쓴다</span></li><li><span>재량 판단 · 결재는 사람이 한다</span></li><li><span>AI를 썼다면 어디에 썼는지 기록한다</span></li><li><span>민원인에게 보내는 글은 사람이 마지막으로 읽는다</span></li></ul>
     <div class="key">초안은 AI, 책임은 행정가</div>
   </div>
 </section>
-<!-- ===== 29. 읽기와 쌓기 ===== -->
-<section class="slide" data-part="6" aria-label="29. 읽기와 쌓기" aria-hidden="true">
+<section class="slide" data-part="6" aria-label="읽기와 쌓기" aria-hidden="true">
   <div class="part-tag"><b>6</b>옵시디언 연결</div>
   <div class="slide-content">
     <div class="kicker">다음 수업과 연결</div>
@@ -570,8 +959,7 @@ C: 27세 프리랜서, 어머니 소유 오피스텔 월세 40만 원, 월소득
     <p class="lede">오늘 실습 7개 = 다음 시간 옵시디언의 첫 노트 7개</p>
   </div>
 </section>
-<!-- ===== 30. 옵시디언 노트 템플릿 ===== -->
-<section class="slide" data-part="6" aria-label="30. 옵시디언 노트 템플릿" aria-hidden="true">
+<section class="slide" data-part="6" aria-label="옵시디언 노트 템플릿" aria-hidden="true">
   <div class="part-tag"><b>6</b>옵시디언 연결</div>
   <div class="slide-content">
     <div class="kicker">복사해서 옵시디언에 붙여넣기</div>
@@ -594,8 +982,14 @@ tags: [AI행정세미나]
     <p class="muted">‘AI 결과’보다 ‘내가 대조한 것’과 ‘내 판단’이 더 길어야 좋은 노트</p>
   </div>
 </section>
-<!-- ===== 31. 지식 그래프와 다음 시간 ===== -->
-<section class="slide" data-part="6" aria-label="31. 지식 그래프와 다음 시간" aria-hidden="true">
+<section class="slide mslide" data-part="6" data-steps="4" aria-label="실습 5 옵시디언 새 노트" aria-hidden="true">
+  <div class="part-tag"><b>6</b>옵시디언 연결</div>
+  <div class="slide-content">
+<div class="m-head"><h2>첫 노트를 만들고 [[링크]]로 잇는다</h2><div class="trail"><span class="on">① 새 노트</span><i>▶</i><span class="">② 템플릿</span><i>▶</i><span class="">③ 내 판단</span><i>▶</i><span class="">④ [[링크]]</span></div></div>
+<div class="m-grid"><div class="m-win" style="border-color:#4B3F8F"><div class="m-tabs" style="background:#2A2A2A"><span class="m-tab on" style="background:#1E1E1E;color:#DDD">Obsidian — AI행정세미나 볼트</span></div><div class="obs"><div class="rib"><span>📁</span><span>📝<span class="tg " data-t="1">1</span></span><span>🕸</span></div><div class="fx"><div style="color:#8f8f8f;font-weight:800">AI행정세미나</div><div class="on ds" data-s="1">실습1_청년월세_자격판단</div><div>실습4_민원분석_답변초안</div></div><div class="ed"><div class="ttl"><span data-x="2">제목 없음</span><span class="ds" data-s="2">실습1_청년월세_자격판단</span><span class="tg m" data-t="2">2</span></div><div class="prop ds" data-s="3"><span class="tg l" data-t="3">3</span><b>실습:</b> 청년월세 자격판단 · <b>날짜:</b> 2026- · <b>도구:</b> Gemini · <b>tags:</b> [AI행정세미나]</div><div class="md ds" data-s="3"><h6>사용한 프롬프트</h6><h6>내가 원문과 대조한 것</h6><p>- 맞은 것: 민원인 A 가능 · B 불가</p><p>- 틀리거나 빠진 것: C의 직계존속 소유 조항을 놓침</p><h6>행정가로서 내 판단</h6><div class="mine ds" data-s="4">AI 표는 초안. 근거 조항 3-2는 내가 PDF에서 확인했다. 연결: <span class="lnk">[[청년월세지원]]</span> <span class="lnk">[[민원응대]]<span class="tg m" data-t="4">4</span></span></div></div></div></div><svg class="m-cur" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div><aside class="m-ins"><h3>클릭 순서 <span class="m-cnt">0 / 4</span></h3><ol><li data-t="1"><div>왼쪽 리본의 <b>[📝 새 노트]</b> 클릭 (또는 Ctrl+N)<small>→ 「제목 없음」 노트가 열립니다</small></div></li><li data-t="2"><div>맨 위 <b>제목 칸</b>에 <b>실습1_청년월세_자격판단</b> 입력<small>파일 이름이 됩니다</small></div></li><li data-t="3"><div>앞 장에서 복사한 <b>템플릿을 본문에 붙여넣기</b> (Ctrl+V)<small>맨 위 속성(날짜·도구·tags)이 채워집니다</small></div></li><li data-t="4"><div><b>「내 판단」 아래에 내 말로</b> 쓰고, <b>[[청년월세지원]]</b> 처럼 대괄호 두 겹으로 연결<small>→ 링크를 쓰면 노트가 서로 이어집니다</small></div></li></ol><div class="m-ok" data-s="4">✔ 다음 시간: 이 노트들이 그래프로 연결됩니다</div><div class="m-cap">※ 모형 · 옵시디언 화면은 테마·설정에 따라 달라요</div></aside></div>
+  </div>
+</section>
+<section class="slide" data-part="6" aria-label="지식 그래프와 다음 시간" aria-hidden="true">
   <div class="part-tag"><b>6</b>옵시디언 연결</div>
   <div class="slide-content">
     <div class="kicker">옵시디언 그래프 뷰 미리보기</div>
@@ -627,8 +1021,16 @@ tags: [AI행정세미나]
 <div class="card-grid c2"><div class="card "><div class="n">다음 시간</div><div class="t">나의 행정 지식위키 시작</div><div class="d">오늘 노트 7개를 개념 노트로 쪼개고 [[링크]]로 연결</div></div><div class="card "><div class="n">기말</div><div class="t">지식위키 + 1페이지 정책분석</div><div class="d">노트 20개 이상 · AI 활용 과정과 검증 기록 포함</div></div></div>
   </div>
 </section>
-<!-- ===== 32. Contributions ===== -->
-<section class="slide" aria-label="32. Contributions" aria-hidden="true">
+<section class="slide" data-part="6" aria-label="손들기 마무리 질문" aria-hidden="true">
+  <div class="part-tag"><b>6</b>옵시디언 연결</div>
+  <div class="slide-content">
+    <div class="kicker">마무리 손들기</div>
+    <h2>오늘 가장 쓸모 있었던 실습은?</h2>
+    <div class="poll" data-poll="adm_end" data-labels="공고 자격 판단|보도자료 대조|업무추진비 점검|민원·조례 분석|이미지·영상"></div>
+    <p class="muted">1~5 키로 집계 · 의견은 다음 시간 수업 설계에 반영합니다</p>
+  </div>
+</section>
+<section class="slide" aria-label="Contributions" aria-hidden="true">
   <div class="slide-content">
     <div class="kicker">Contributions</div>
     <h2>오늘 여러분이 만든 것</h2>
@@ -636,8 +1038,7 @@ tags: [AI행정세미나]
     <div class="key">초안은 AI, 책임은 행정가</div>
   </div>
 </section>
-<!-- ===== 33. 마침 ===== -->
-<section class="slide title-slide" aria-label="33. 마침" aria-hidden="true">
+<section class="slide title-slide" aria-label="마침" aria-hidden="true">
   <div class="slide-content">
     <div class="kicker">AI 활용 행정세미나</div>
     <h1>AI로 읽고,<span class="lime">옵시디언에 쌓는다</span></h1>
@@ -650,13 +1051,15 @@ tags: [AI행정세미나]
 
 <div id="progress" aria-hidden="true"></div>
 <nav id="nav" aria-label="슬라이드 이동">
+  <a href="admin-seminar.html" title="강의 안내로">← 강의 안내</a>
   <button type="button" id="navPrev" aria-label="이전 슬라이드">◀</button>
-  <span id="counter" aria-live="polite">1 / 33</span>
+  <span id="counter" aria-live="polite">1 / 53</span>
   <button type="button" id="navNext" aria-label="다음 슬라이드">▶</button>
   <span class="grow"></span>
-  <span class="hint hide-sm">← → 이동 · G 전체보기 · S 쉿 · L 사다리 · P PDF</span>
-  <button type="button" id="ladderBtn" title="사다리타기 (L 키)" aria-label="사다리타기 열기">🪜 사다리</button>
+  <span class="hint hide-sm">← → 한 단계씩 · G 전체보기 · S 쉿 · T 사다리 · ? 도구</span>
+  <button type="button" id="ladderBtn" title="사다리타기 (T 키)" aria-label="사다리타기 열기">🪜 사다리</button>
   <button type="button" id="shhBtn" title="쉿! 집중 화면 (S 키)" aria-label="쉿 집중 화면 켜기">🤫 쉿</button>
+  <button type="button" id="toolBtn" aria-label="강의 도구" title="강의 도구 (? 도움말)">🛠 도구</button>
   <button type="button" id="gridBtn" aria-haspopup="dialog" aria-controls="gridOverlay">▦ 전체 보기</button>
   <button type="button" id="printBtn" class="hide-sm">⎙ PDF 저장</button>
 </nav>
@@ -666,6 +1069,11 @@ tags: [AI행정세미나]
   <div class="grid-list" id="gridList"></div>
 </div>
 
+<script>/* qrcode-generator 1.4.4 · (c) 2009 Kazuhiko Arase · MIT License · QR Code is a registered trademark of DENSO WAVE INCORPORATED */
+var qrcode=(function(){var P=function(x,w){var g=236,l=17,n=x,s=O[w],t=null,r=0,h=null,i=[],v={},_=function(a,f){r=n*4+17,t=(function(e){for(var u=new Array(e),o=0;o<e;o+=1){u[o]=new Array(e);for(var d=0;d<e;d+=1)u[o][d]=null}return u})(r),B(0,0),B(r-7,0),B(0,r-7),E(),T(),m(a,f),n>=7&&N(a),h==null&&(h=nr(n,s,i)),U(h,f)},B=function(a,f){for(var e=-1;e<=7;e+=1)if(!(a+e<=-1||r<=a+e))for(var u=-1;u<=7;u+=1)f+u<=-1||r<=f+u||(0<=e&&e<=6&&(u==0||u==6)||0<=u&&u<=6&&(e==0||e==6)||2<=e&&e<=4&&2<=u&&u<=4?t[a+e][f+u]=!0:t[a+e][f+u]=!1)},y=function(){for(var a=0,f=0,e=0;e<8;e+=1){_(!0,e);var u=k.getLostPoint(v);(e==0||a>u)&&(a=u,f=e)}return f},T=function(){for(var a=8;a<r-8;a+=1)t[a][6]==null&&(t[a][6]=a%2==0);for(var f=8;f<r-8;f+=1)t[6][f]==null&&(t[6][f]=f%2==0)},E=function(){for(var a=k.getPatternPosition(n),f=0;f<a.length;f+=1)for(var e=0;e<a.length;e+=1){var u=a[f],o=a[e];if(t[u][o]==null)for(var d=-2;d<=2;d+=1)for(var c=-2;c<=2;c+=1)d==-2||d==2||c==-2||c==2||d==0&&c==0?t[u+d][o+c]=!0:t[u+d][o+c]=!1}},N=function(a){for(var f=k.getBCHTypeNumber(n),e=0;e<18;e+=1){var u=!a&&(f>>e&1)==1;t[Math.floor(e/3)][e%3+r-8-3]=u}for(var e=0;e<18;e+=1){var u=!a&&(f>>e&1)==1;t[e%3+r-8-3][Math.floor(e/3)]=u}},m=function(a,f){for(var e=s<<3|f,u=k.getBCHTypeInfo(e),o=0;o<15;o+=1){var d=!a&&(u>>o&1)==1;o<6?t[o][8]=d:o<8?t[o+1][8]=d:t[r-15+o][8]=d}for(var o=0;o<15;o+=1){var d=!a&&(u>>o&1)==1;o<8?t[8][r-o-1]=d:o<9?t[8][15-o-1+1]=d:t[8][15-o-1]=d}t[r-8][8]=!a},U=function(a,f){for(var e=-1,u=r-1,o=7,d=0,c=k.getMaskFunction(f),p=r-1;p>0;p-=2)for(p==6&&(p-=1);;){for(var b=0;b<2;b+=1)if(t[u][p-b]==null){var C=!1;d<a.length&&(C=(a[d]>>>o&1)==1);var A=c(u,p-b);A&&(C=!C),t[u][p-b]=C,o-=1,o==-1&&(d+=1,o=7)}if(u+=e,u<0||r<=u){u-=e,e=-e;break}}},H=function(a,f){for(var e=0,u=0,o=0,d=new Array(f.length),c=new Array(f.length),p=0;p<f.length;p+=1){var b=f[p].dataCount,C=f[p].totalCount-b;u=Math.max(u,b),o=Math.max(o,C),d[p]=new Array(b);for(var A=0;A<d[p].length;A+=1)d[p][A]=255&a.getBuffer()[A+e];e+=b;var R=k.getErrorCorrectPolynomial(C),I=K(d[p],R.getLength()-1),S=I.mod(R);c[p]=new Array(R.getLength()-1);for(var A=0;A<c[p].length;A+=1){var X=A+S.getLength()-c[p].length;c[p][A]=X>=0?S.getAt(X):0}}for(var Z=0,A=0;A<f.length;A+=1)Z+=f[A].totalCount;for(var J=new Array(Z),Q=0,A=0;A<u;A+=1)for(var p=0;p<f.length;p+=1)A<d[p].length&&(J[Q]=d[p][A],Q+=1);for(var A=0;A<o;A+=1)for(var p=0;p<f.length;p+=1)A<c[p].length&&(J[Q]=c[p][A],Q+=1);return J},nr=function(a,f,e){for(var u=Y.getRSBlocks(a,f),o=G(),d=0;d<e.length;d+=1){var c=e[d];o.put(c.getMode(),4),o.put(c.getLength(),k.getLengthInBits(c.getMode(),a)),c.write(o)}for(var p=0,d=0;d<u.length;d+=1)p+=u[d].dataCount;if(o.getLengthInBits()>p*8)throw"code length overflow. ("+o.getLengthInBits()+">"+p*8+")";for(o.getLengthInBits()+4<=p*8&&o.put(0,4);o.getLengthInBits()%8!=0;)o.putBit(!1);for(;!(o.getLengthInBits()>=p*8||(o.put(g,8),o.getLengthInBits()>=p*8));)o.put(l,8);return H(o,u)};v.addData=function(a,f){f=f||"Byte";var e=null;switch(f){case"Numeric":e=$(a);break;case"Alphanumeric":e=W(a);break;case"Byte":e=V(a);break;case"Kanji":e=q(a);break;default:throw"mode:"+f}i.push(e),h=null},v.isDark=function(a,f){if(a<0||r<=a||f<0||r<=f)throw a+","+f;return t[a][f]},v.getModuleCount=function(){return r},v.make=function(){if(n<1){for(var a=1;a<40;a++){for(var f=Y.getRSBlocks(a,s),e=G(),u=0;u<i.length;u++){var o=i[u];e.put(o.getMode(),4),e.put(o.getLength(),k.getLengthInBits(o.getMode(),a)),o.write(e)}for(var d=0,u=0;u<f.length;u++)d+=f[u].dataCount;if(e.getLengthInBits()<=d*8)break}n=a}_(!1,y())},v.createTableTag=function(a,f){a=a||2,f=typeof f>"u"?a*4:f;var e="";e+='<table style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: "+f+"px;",e+='">',e+="<tbody>";for(var u=0;u<v.getModuleCount();u+=1){e+="<tr>";for(var o=0;o<v.getModuleCount();o+=1)e+='<td style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: 0px;",e+=" width: "+a+"px;",e+=" height: "+a+"px;",e+=" background-color: ",e+=v.isDark(u,o)?"#000000":"#ffffff",e+=";",e+='"/>';e+="</tr>"}return e+="</tbody>",e+="</table>",e},v.createSvgTag=function(a,f,e,u){var o={};typeof arguments[0]=="object"&&(o=arguments[0],a=o.cellSize,f=o.margin,e=o.alt,u=o.title),a=a||2,f=typeof f>"u"?a*4:f,e=typeof e=="string"?{text:e}:e||{},e.text=e.text||null,e.id=e.text?e.id||"qrcode-description":null,u=typeof u=="string"?{text:u}:u||{},u.text=u.text||null,u.id=u.text?u.id||"qrcode-title":null;var d=v.getModuleCount()*a+f*2,c,p,b,C,A="",R;for(R="l"+a+",0 0,"+a+" -"+a+",0 0,-"+a+"z ",A+='<svg version="1.1" xmlns="http://www.w3.org/2000/svg"',A+=o.scalable?"":' width="'+d+'px" height="'+d+'px"',A+=' viewBox="0 0 '+d+" "+d+'" ',A+=' preserveAspectRatio="xMinYMin meet"',A+=u.text||e.text?' role="img" aria-labelledby="'+F([u.id,e.id].join(" ").trim())+'"':"",A+=">",A+=u.text?'<title id="'+F(u.id)+'">'+F(u.text)+"</title>":"",A+=e.text?'<description id="'+F(e.id)+'">'+F(e.text)+"</description>":"",A+='<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>',A+='<path d="',b=0;b<v.getModuleCount();b+=1)for(C=b*a+f,c=0;c<v.getModuleCount();c+=1)v.isDark(b,c)&&(p=c*a+f,A+="M"+p+","+C+R);return A+='" stroke="transparent" fill="black"/>',A+="</svg>",A},v.createDataURL=function(a,f){a=a||2,f=typeof f>"u"?a*4:f;var e=v.getModuleCount()*a+f*2,u=f,o=e-f;return er(e,e,function(d,c){if(u<=d&&d<o&&u<=c&&c<o){var p=Math.floor((d-u)/a),b=Math.floor((c-u)/a);return v.isDark(b,p)?0:1}else return 1})},v.createImgTag=function(a,f,e){a=a||2,f=typeof f>"u"?a*4:f;var u=v.getModuleCount()*a+f*2,o="";return o+="<img",o+=' src="',o+=v.createDataURL(a,f),o+='"',o+=' width="',o+=u,o+='"',o+=' height="',o+=u,o+='"',e&&(o+=' alt="',o+=F(e),o+='"'),o+="/>",o};var F=function(a){for(var f="",e=0;e<a.length;e+=1){var u=a.charAt(e);switch(u){case"<":f+="&lt;";break;case">":f+="&gt;";break;case"&":f+="&amp;";break;case'"':f+="&quot;";break;default:f+=u;break}}return f},ar=function(a){var f=1;a=typeof a>"u"?f*2:a;var e=v.getModuleCount()*f+a*2,u=a,o=e-a,d,c,p,b,C,A={"\u2588\u2588":"\u2588","\u2588 ":"\u2580"," \u2588":"\u2584","  ":" "},R={"\u2588\u2588":"\u2580","\u2588 ":"\u2580"," \u2588":" ","  ":" "},I="";for(d=0;d<e;d+=2){for(p=Math.floor((d-u)/f),b=Math.floor((d+1-u)/f),c=0;c<e;c+=1)C="\u2588",u<=c&&c<o&&u<=d&&d<o&&v.isDark(p,Math.floor((c-u)/f))&&(C=" "),u<=c&&c<o&&u<=d+1&&d+1<o&&v.isDark(b,Math.floor((c-u)/f))?C+=" ":C+="\u2588",I+=a<1&&d+1>=o?R[C]:A[C];I+=`
+`}return e%2&&a>0?I.substring(0,I.length-e-1)+Array(e+1).join("\u2580"):I.substring(0,I.length-1)};return v.createASCII=function(a,f){if(a=a||1,a<2)return ar(f);a-=1,f=typeof f>"u"?a*2:f;var e=v.getModuleCount()*a+f*2,u=f,o=e-f,d,c,p,b,C=Array(a+1).join("\u2588\u2588"),A=Array(a+1).join("  "),R="",I="";for(d=0;d<e;d+=1){for(p=Math.floor((d-u)/a),I="",c=0;c<e;c+=1)b=1,u<=c&&c<o&&u<=d&&d<o&&v.isDark(p,Math.floor((c-u)/a))&&(b=0),I+=b?C:A;for(p=0;p<a;p+=1)R+=I+`
+`}return R.substring(0,R.length-1)},v.renderTo2dContext=function(a,f){f=f||2;for(var e=v.getModuleCount(),u=0;u<e;u++)for(var o=0;o<e;o++)a.fillStyle=v.isDark(u,o)?"black":"white",a.fillRect(u*f,o*f,f,f)},v};P.stringToBytesFuncs={default:function(x){for(var w=[],g=0;g<x.length;g+=1){var l=x.charCodeAt(g);w.push(l&255)}return w}},P.stringToBytes=P.stringToBytesFuncs.default,P.createStringToBytes=function(x,w){var g=(function(){for(var n=rr(x),s=function(){var T=n.read();if(T==-1)throw"eof";return T},t=0,r={};;){var h=n.read();if(h==-1)break;var i=s(),v=s(),_=s(),B=String.fromCharCode(h<<8|i),y=v<<8|_;r[B]=y,t+=1}if(t!=w)throw t+" != "+w;return r})(),l=63;return function(n){for(var s=[],t=0;t<n.length;t+=1){var r=n.charCodeAt(t);if(r<128)s.push(r);else{var h=g[n.charAt(t)];typeof h=="number"?(h&255)==h?s.push(h):(s.push(h>>>8),s.push(h&255)):s.push(l)}}return s}};var D={MODE_NUMBER:1,MODE_ALPHA_NUM:2,MODE_8BIT_BYTE:4,MODE_KANJI:8},O={L:1,M:0,Q:3,H:2},L={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7},k=(function(){var x=[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],w=1335,g=7973,l=21522,n={},s=function(t){for(var r=0;t!=0;)r+=1,t>>>=1;return r};return n.getBCHTypeInfo=function(t){for(var r=t<<10;s(r)-s(w)>=0;)r^=w<<s(r)-s(w);return(t<<10|r)^l},n.getBCHTypeNumber=function(t){for(var r=t<<12;s(r)-s(g)>=0;)r^=g<<s(r)-s(g);return t<<12|r},n.getPatternPosition=function(t){return x[t-1]},n.getMaskFunction=function(t){switch(t){case L.PATTERN000:return function(r,h){return(r+h)%2==0};case L.PATTERN001:return function(r,h){return r%2==0};case L.PATTERN010:return function(r,h){return h%3==0};case L.PATTERN011:return function(r,h){return(r+h)%3==0};case L.PATTERN100:return function(r,h){return(Math.floor(r/2)+Math.floor(h/3))%2==0};case L.PATTERN101:return function(r,h){return r*h%2+r*h%3==0};case L.PATTERN110:return function(r,h){return(r*h%2+r*h%3)%2==0};case L.PATTERN111:return function(r,h){return(r*h%3+(r+h)%2)%2==0};default:throw"bad maskPattern:"+t}},n.getErrorCorrectPolynomial=function(t){for(var r=K([1],0),h=0;h<t;h+=1)r=r.multiply(K([1,M.gexp(h)],0));return r},n.getLengthInBits=function(t,r){if(1<=r&&r<10)switch(t){case D.MODE_NUMBER:return 10;case D.MODE_ALPHA_NUM:return 9;case D.MODE_8BIT_BYTE:return 8;case D.MODE_KANJI:return 8;default:throw"mode:"+t}else if(r<27)switch(t){case D.MODE_NUMBER:return 12;case D.MODE_ALPHA_NUM:return 11;case D.MODE_8BIT_BYTE:return 16;case D.MODE_KANJI:return 10;default:throw"mode:"+t}else if(r<41)switch(t){case D.MODE_NUMBER:return 14;case D.MODE_ALPHA_NUM:return 13;case D.MODE_8BIT_BYTE:return 16;case D.MODE_KANJI:return 12;default:throw"mode:"+t}else throw"type:"+r},n.getLostPoint=function(t){for(var r=t.getModuleCount(),h=0,i=0;i<r;i+=1)for(var v=0;v<r;v+=1){for(var _=0,B=t.isDark(i,v),y=-1;y<=1;y+=1)if(!(i+y<0||r<=i+y))for(var T=-1;T<=1;T+=1)v+T<0||r<=v+T||y==0&&T==0||B==t.isDark(i+y,v+T)&&(_+=1);_>5&&(h+=3+_-5)}for(var i=0;i<r-1;i+=1)for(var v=0;v<r-1;v+=1){var E=0;t.isDark(i,v)&&(E+=1),t.isDark(i+1,v)&&(E+=1),t.isDark(i,v+1)&&(E+=1),t.isDark(i+1,v+1)&&(E+=1),(E==0||E==4)&&(h+=3)}for(var i=0;i<r;i+=1)for(var v=0;v<r-6;v+=1)t.isDark(i,v)&&!t.isDark(i,v+1)&&t.isDark(i,v+2)&&t.isDark(i,v+3)&&t.isDark(i,v+4)&&!t.isDark(i,v+5)&&t.isDark(i,v+6)&&(h+=40);for(var v=0;v<r;v+=1)for(var i=0;i<r-6;i+=1)t.isDark(i,v)&&!t.isDark(i+1,v)&&t.isDark(i+2,v)&&t.isDark(i+3,v)&&t.isDark(i+4,v)&&!t.isDark(i+5,v)&&t.isDark(i+6,v)&&(h+=40);for(var N=0,v=0;v<r;v+=1)for(var i=0;i<r;i+=1)t.isDark(i,v)&&(N+=1);var m=Math.abs(100*N/r/r-50)/5;return h+=m*10,h},n})(),M=(function(){for(var x=new Array(256),w=new Array(256),g=0;g<8;g+=1)x[g]=1<<g;for(var g=8;g<256;g+=1)x[g]=x[g-4]^x[g-5]^x[g-6]^x[g-8];for(var g=0;g<255;g+=1)w[x[g]]=g;var l={};return l.glog=function(n){if(n<1)throw"glog("+n+")";return w[n]},l.gexp=function(n){for(;n<0;)n+=255;for(;n>=256;)n-=255;return x[n]},l})();function K(x,w){if(typeof x.length>"u")throw x.length+"/"+w;var g=(function(){for(var n=0;n<x.length&&x[n]==0;)n+=1;for(var s=new Array(x.length-n+w),t=0;t<x.length-n;t+=1)s[t]=x[t+n];return s})(),l={};return l.getAt=function(n){return g[n]},l.getLength=function(){return g.length},l.multiply=function(n){for(var s=new Array(l.getLength()+n.getLength()-1),t=0;t<l.getLength();t+=1)for(var r=0;r<n.getLength();r+=1)s[t+r]^=M.gexp(M.glog(l.getAt(t))+M.glog(n.getAt(r)));return K(s,0)},l.mod=function(n){if(l.getLength()-n.getLength()<0)return l;for(var s=M.glog(l.getAt(0))-M.glog(n.getAt(0)),t=new Array(l.getLength()),r=0;r<l.getLength();r+=1)t[r]=l.getAt(r);for(var r=0;r<n.getLength();r+=1)t[r]^=M.gexp(M.glog(n.getAt(r))+s);return K(t,0).mod(n)},l}var Y=(function(){var x=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12,7,37,13],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],w=function(n,s){var t={};return t.totalCount=n,t.dataCount=s,t},g={},l=function(n,s){switch(s){case O.L:return x[(n-1)*4+0];case O.M:return x[(n-1)*4+1];case O.Q:return x[(n-1)*4+2];case O.H:return x[(n-1)*4+3];default:return}};return g.getRSBlocks=function(n,s){var t=l(n,s);if(typeof t>"u")throw"bad rs block @ typeNumber:"+n+"/errorCorrectionLevel:"+s;for(var r=t.length/3,h=[],i=0;i<r;i+=1)for(var v=t[i*3+0],_=t[i*3+1],B=t[i*3+2],y=0;y<v;y+=1)h.push(w(_,B));return h},g})(),G=function(){var x=[],w=0,g={};return g.getBuffer=function(){return x},g.getAt=function(l){var n=Math.floor(l/8);return(x[n]>>>7-l%8&1)==1},g.put=function(l,n){for(var s=0;s<n;s+=1)g.putBit((l>>>n-s-1&1)==1)},g.getLengthInBits=function(){return w},g.putBit=function(l){var n=Math.floor(w/8);x.length<=n&&x.push(0),l&&(x[n]|=128>>>w%8),w+=1},g},$=function(x){var w=D.MODE_NUMBER,g=x,l={};l.getMode=function(){return w},l.getLength=function(t){return g.length},l.write=function(t){for(var r=g,h=0;h+2<r.length;)t.put(n(r.substring(h,h+3)),10),h+=3;h<r.length&&(r.length-h==1?t.put(n(r.substring(h,h+1)),4):r.length-h==2&&t.put(n(r.substring(h,h+2)),7))};var n=function(t){for(var r=0,h=0;h<t.length;h+=1)r=r*10+s(t.charAt(h));return r},s=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-48;throw"illegal char :"+t};return l},W=function(x){var w=D.MODE_ALPHA_NUM,g=x,l={};l.getMode=function(){return w},l.getLength=function(s){return g.length},l.write=function(s){for(var t=g,r=0;r+1<t.length;)s.put(n(t.charAt(r))*45+n(t.charAt(r+1)),11),r+=2;r<t.length&&s.put(n(t.charAt(r)),6)};var n=function(s){if("0"<=s&&s<="9")return s.charCodeAt(0)-48;if("A"<=s&&s<="Z")return s.charCodeAt(0)-65+10;switch(s){case" ":return 36;case"$":return 37;case"%":return 38;case"*":return 39;case"+":return 40;case"-":return 41;case".":return 42;case"/":return 43;case":":return 44;default:throw"illegal char :"+s}};return l},V=function(x){var w=D.MODE_8BIT_BYTE,g=x,l=P.stringToBytes(x),n={};return n.getMode=function(){return w},n.getLength=function(s){return l.length},n.write=function(s){for(var t=0;t<l.length;t+=1)s.put(l[t],8)},n},q=function(x){var w=D.MODE_KANJI,g=x,l=P.stringToBytesFuncs.SJIS;if(!l)throw"sjis not supported.";(function(t,r){var h=l(t);if(h.length!=2||(h[0]<<8|h[1])!=r)throw"sjis not supported."})("\u53CB",38726);var n=l(x),s={};return s.getMode=function(){return w},s.getLength=function(t){return~~(n.length/2)},s.write=function(t){for(var r=n,h=0;h+1<r.length;){var i=(255&r[h])<<8|255&r[h+1];if(33088<=i&&i<=40956)i-=33088;else if(57408<=i&&i<=60351)i-=49472;else throw"illegal char at "+(h+1)+"/"+i;i=(i>>>8&255)*192+(i&255),t.put(i,13),h+=2}if(h<r.length)throw"illegal char at "+(h+1)},s},j=function(){var x=[],w={};return w.writeByte=function(g){x.push(g&255)},w.writeShort=function(g){w.writeByte(g),w.writeByte(g>>>8)},w.writeBytes=function(g,l,n){l=l||0,n=n||g.length;for(var s=0;s<n;s+=1)w.writeByte(g[s+l])},w.writeString=function(g){for(var l=0;l<g.length;l+=1)w.writeByte(g.charCodeAt(l))},w.toByteArray=function(){return x},w.toString=function(){var g="";g+="[";for(var l=0;l<x.length;l+=1)l>0&&(g+=","),g+=x[l];return g+="]",g},w},z=function(){var x=0,w=0,g=0,l="",n={},s=function(r){l+=String.fromCharCode(t(r&63))},t=function(r){if(!(r<0)){if(r<26)return 65+r;if(r<52)return 97+(r-26);if(r<62)return 48+(r-52);if(r==62)return 43;if(r==63)return 47}throw"n:"+r};return n.writeByte=function(r){for(x=x<<8|r&255,w+=8,g+=1;w>=6;)s(x>>>w-6),w-=6},n.flush=function(){if(w>0&&(s(x<<6-w),x=0,w=0),g%3!=0)for(var r=3-g%3,h=0;h<r;h+=1)l+="="},n.toString=function(){return l},n},rr=function(x){var w=x,g=0,l=0,n=0,s={};s.read=function(){for(;n<8;){if(g>=w.length){if(n==0)return-1;throw"unexpected end of file./"+n}var r=w.charAt(g);if(g+=1,r=="=")return n=0,-1;if(r.match(/^\s$/))continue;l=l<<6|t(r.charCodeAt(0)),n+=6}var h=l>>>n-8&255;return n-=8,h};var t=function(r){if(65<=r&&r<=90)return r-65;if(97<=r&&r<=122)return r-97+26;if(48<=r&&r<=57)return r-48+52;if(r==43)return 62;if(r==47)return 63;throw"c:"+r};return s},tr=function(x,w){var g=x,l=w,n=new Array(x*w),s={};s.setPixel=function(i,v,_){n[v*g+i]=_},s.write=function(i){i.writeString("GIF87a"),i.writeShort(g),i.writeShort(l),i.writeByte(128),i.writeByte(0),i.writeByte(0),i.writeByte(0),i.writeByte(0),i.writeByte(0),i.writeByte(255),i.writeByte(255),i.writeByte(255),i.writeString(","),i.writeShort(0),i.writeShort(0),i.writeShort(g),i.writeShort(l),i.writeByte(0);var v=2,_=r(v);i.writeByte(v);for(var B=0;_.length-B>255;)i.writeByte(255),i.writeBytes(_,B,255),B+=255;i.writeByte(_.length-B),i.writeBytes(_,B,_.length-B),i.writeByte(0),i.writeString(";")};var t=function(i){var v=i,_=0,B=0,y={};return y.write=function(T,E){if(T>>>E)throw"length over";for(;_+E>=8;)v.writeByte(255&(T<<_|B)),E-=8-_,T>>>=8-_,B=0,_=0;B=T<<_|B,_=_+E},y.flush=function(){_>0&&v.writeByte(B)},y},r=function(i){for(var v=1<<i,_=(1<<i)+1,B=i+1,y=h(),T=0;T<v;T+=1)y.add(String.fromCharCode(T));y.add(String.fromCharCode(v)),y.add(String.fromCharCode(_));var E=j(),N=t(E);N.write(v,B);var m=0,U=String.fromCharCode(n[m]);for(m+=1;m<n.length;){var H=String.fromCharCode(n[m]);m+=1,y.contains(U+H)?U=U+H:(N.write(y.indexOf(U),B),y.size()<4095&&(y.size()==1<<B&&(B+=1),y.add(U+H)),U=H)}return N.write(y.indexOf(U),B),N.write(_,B),N.flush(),E.toByteArray()},h=function(){var i={},v=0,_={};return _.add=function(B){if(_.contains(B))throw"dup key:"+B;i[B]=v,v+=1},_.size=function(){return v},_.indexOf=function(B){return i[B]},_.contains=function(B){return typeof i[B]<"u"},_};return s},er=function(x,w,g){for(var l=tr(x,w),n=0;n<w;n+=1)for(var s=0;s<x;s+=1)l.setPixel(s,n,g(s,n));var t=j();l.write(t);for(var r=z(),h=t.toByteArray(),i=0;i<h.length;i+=1)r.writeByte(h[i]);return r.flush(),"data:image/gif;base64,"+r};return P})();(function(){qrcode.stringToBytesFuncs["UTF-8"]=function(P){function D(O){for(var L=[],k=0;k<O.length;k++){var M=O.charCodeAt(k);M<128?L.push(M):M<2048?L.push(192|M>>6,128|M&63):M<55296||M>=57344?L.push(224|M>>12,128|M>>6&63,128|M&63):(k++,M=65536+((M&1023)<<10|O.charCodeAt(k)&1023),L.push(240|M>>18,128|M>>12&63,128|M>>6&63,128|M&63))}return L}return D(P)}})(),(function(P){typeof define=="function"&&define.amd?define([],P):typeof exports=="object"&&(module.exports=P())})(function(){return qrcode});
+</script>
 <script>
 (function(){
   /* ▼ 내 강의 고유 접두사로 변경 (예: 'ai0927_') */
@@ -739,8 +1147,8 @@ tags: [AI행정세미나]
     /* 버튼에 포커스가 있을 때 스페이스·엔터는 버튼 동작에 양보 */
     var onButton = t && t.closest && t.closest('button, a');
     if ((e.key === ' ' || e.key === 'Enter') && onButton) return;
-    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(idx + 1); }
-    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(idx - 1); }
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
     else if (e.key === 'g' || e.key === 'G' || e.key === 'ㅎ') { openGrid(); }
     else if (e.key === 'p' || e.key === 'P' || e.key === 'ㅔ') { e.preventDefault(); window.print(); }
     else if (e.key === 'Home') { show(0); }
@@ -749,12 +1157,12 @@ tags: [AI행정세미나]
 
   /* 무대 클릭: 오른쪽 절반 다음 · 왼쪽 절반 이전 (버튼·링크·프롬프트 카드 제외) */
   stage.addEventListener('click', function(e){
-    if (e.target.closest('button, a, .prompt-card')) return;
+    if (e.target.closest('button, a, .prompt-card, .poll, .qrbox, .qrurl')) return;
     var rect = stage.getBoundingClientRect();
-    if (e.clientX - rect.left > rect.width / 2) show(idx + 1); else show(idx - 1);
+    if (e.clientX - rect.left > rect.width / 2) go(1); else go(-1);
   });
-  navPrev.addEventListener('click', function(){ show(idx - 1); });
-  navNext.addEventListener('click', function(){ show(idx + 1); });
+  navPrev.addEventListener('click', function(){ go(-1); });
+  navNext.addEventListener('click', function(){ go(1); });
   document.getElementById('gridBtn').addEventListener('click', openGrid);
   document.getElementById('gridClose').addEventListener('click', closeGrid);
   document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
@@ -848,6 +1256,62 @@ tags: [AI행정세미나]
     done();
   }
 
+
+  function $(s, r){ return (r || document).querySelector(s); }
+  function $$(s, r){ return [].slice.call((r || document).querySelectorAll(s)); }
+  function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+  var shhCtx = null;
+  function tlGet(k){ return lsGet(LS + 't_' + k); }
+  function tlSet(k, v){ lsSet(LS + 't_' + k, v); }
+
+  /* ═════ 실습 화면 단계 진행: → 한 번에 한 단계씩 (data-steps) ═════ */
+  var stepArr = slides.filter(function(s){ return +s.dataset.steps > 0; });
+  function nSteps(s){ return +s.dataset.steps || 0; }
+  function applyState(s, c, live){
+    s._st = c;
+    var n = nSteps(s), q = function(sel){ return Array.prototype.slice.call(s.querySelectorAll(sel)); };
+    q('[data-s]').forEach(function(e){ e.classList.toggle('rv', +e.dataset.s <= c); });
+    q('[data-x]').forEach(function(e){ e.classList.toggle('gone', c >= +e.dataset.x); });
+    q('[data-on]').forEach(function(e){ if (c >= +e.dataset.on) e.classList.add('on'); else e.classList.remove('on'); });
+    q('[data-off]').forEach(function(e){ if (c >= +e.dataset.off) e.classList.remove('on'); else e.classList.add('on'); });
+    q('[data-t]').forEach(function(e){
+      var k = +e.dataset.t;
+      e.classList.toggle('cur', k === c); e.classList.toggle('done', k < c); e.classList.toggle('nxt', k === c + 1);
+      if (e.classList.contains('tg') && e.parentNode) e.parentNode.classList.toggle('hit', k === c);
+    });
+    q('.m-cnt').forEach(function(e){ e.textContent = c + ' / ' + n; });
+    var cu = s.querySelector('.m-cur');
+    if (cu && live) {
+      var t = c > 0 ? s.querySelector('.tg[data-t="' + c + '"]') : null;
+      if (t && t.parentNode) {
+        var win = cu.parentNode, wr = win.getBoundingClientRect(), pr = t.parentNode.getBoundingClientRect();
+        cu.style.left = (pr.left + pr.width * .5 - wr.left) + 'px';
+        cu.style.top = (pr.top + pr.height * .55 - wr.top) + 'px';
+        cu.classList.add('on'); cu.classList.remove('click'); void cu.offsetWidth; cu.classList.add('click');
+      } else cu.classList.remove('on');
+    }
+  }
+  stepArr.forEach(function(s){ applyState(s, nSteps(s), false); });   /* 기본(전체보기·인쇄)은 완성 화면 */
+  function enterSlide(st){
+    slides.forEach(function(s){ s.classList.remove('stepping'); });
+    var s = slides[idx];
+    if (nSteps(s) > 0) { s.classList.add('stepping'); applyState(s, st === 'end' ? nSteps(s) : (typeof st === 'number' ? st : 0), true); }
+  }
+  var _show0 = show;
+  show = function(i, st){ _show0(i); enterSlide(st); };
+  function go(d){
+    var s = slides[idx], n = nSteps(s), c = s._st || 0;
+    if (n > 0 && s.classList.contains('stepping')) {
+      if (d > 0 && c < n) { applyState(s, c + 1, true); return; }
+      if (d < 0 && c > 0) { applyState(s, c - 1, true); return; }
+    }
+    var t = idx + d; if (t < 0 || t >= total) return;
+    show(t, d < 0 ? 'end' : 0);
+  }
+  window.addEventListener('resize', function(){ var s = slides[idx]; if (s && s.classList.contains('stepping')) applyState(s, s._st || 0, true); });
+  window.addEventListener('beforeprint', function(){ var s = slides[idx]; if (s) s.classList.remove('stepping'); });
+  window.addEventListener('afterprint', function(){ enterSlide(slides[idx] && slides[idx]._st); });
+
   /* 전체보기 축소판: 타이머·복사 핸들러를 붙인 뒤 마지막에 생성 · 복제본은 inert로 포커스 제외 */
   slides.forEach(function(s, n){
     var mini = document.createElement('div');
@@ -875,6 +1339,260 @@ tags: [AI행정세미나]
     gridList.appendChild(mini);
     minis.push(mini);
   });
+
+
+/* ═════════ 강의 도구 5종: 수업 시계 · 펜 · 손들기 투표 · QR · 화면 가리기/확대 ═════════ */
+(function(){
+function mk(tag, cls, html, parent){ var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; (parent || stage).appendChild(e); return e; }
+function inField(t){ return t && t.closest && t.closest('input,textarea,select'); }
+function actx(){ var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null; shhCtx = shhCtx || new AC(); if (shhCtx.state === 'suspended') shhCtx.resume(); return shhCtx; }
+var toastEl = mk('div', 'toast'), toastT = null;
+function toast(msg){ toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(function(){ toastEl.classList.remove('show'); }, 2600); }
+
+/* ── 1. 수업 시계 + 종료 벨 ── */
+function bell(n){
+  try { var ctx = actx(); if (!ctx) return; n = n || 3;
+    for (var i = 0; i < n; i++){ var t0 = ctx.currentTime + .05 + i * 1.1;
+      [[880,.28],[1318,.12],[1760,.06]].forEach(function(p){ var o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'sine'; o.frequency.value = p[0]; g.gain.setValueAtTime(0, t0); g.gain.linearRampToValueAtTime(p[1], t0 + .01); g.gain.exponentialRampToValueAtTime(.0008, t0 + 1.0);
+        o.connect(g); g.connect(ctx.destination); o.start(t0); o.stop(t0 + 1.05); }); }
+  } catch(e){}
+}
+var clk = mk('button', 'clk', '<span>⏱</span><b class="rem">--:--</b><small></small>');
+clk.type = 'button'; clk.setAttribute('aria-label', '수업 시계 설정');
+var clkp = mk('div', 'tpanel', '<h4>⏱ 수업 시계 · 종료 벨</h4><div>지금부터</div><div class="rw" id="clkPre"></div><div>또는 종료 시각</div><div class="rw"><input type="time" id="clkT" value="12:00"><button type="button" class="tbtn" id="clkGo">시작</button></div><div class="rw"><button type="button" class="tbtn" id="clkBell">🔔 벨 소리 듣기</button><button type="button" class="tbtn" id="clkOff">끄기</button></div><small>5분 전 · 1분 전 알림, 종료 시각에 벨이 울립니다. 처음 한 번 “벨 소리 듣기”로 음량을 맞춰 두세요.</small>');
+clkp.id = 'clkp';
+[10,15,30,45,50,90].forEach(function(m){ var b = mk('button', 'tbtn', m + '분', $('#clkPre', clkp)); b.type = 'button'; b.addEventListener('click', function(){ clkSet(Date.now() + m * 60000); }); });
+var endAt = 0, clkIv = null, f5 = false, f1 = false, fEnd = false;
+function pad(n){ return n < 10 ? '0' + n : '' + n; }
+function clkSet(t){ endAt = t; f5 = f1 = fEnd = false; tlSet('clk', String(t)); clk.classList.add('on'); clkp.classList.remove('open'); clearInterval(clkIv); clkIv = setInterval(clkTick, 1000); clkTick(); var d = new Date(t); toast('⏱ ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ' 종료로 설정했습니다'); }
+function clkOff(){ endAt = 0; tlSet('clk', ''); clearInterval(clkIv); clk.classList.remove('on', 'warn', 'danger', 'over'); clkp.classList.remove('open'); }
+function clkTick(){
+  var r = Math.round((endAt - Date.now()) / 1000), a = Math.abs(r), h = Math.floor(a / 3600), m = Math.floor(a % 3600 / 60), s = a % 60;
+  $('.rem', clk).textContent = (r < 0 ? '+' : '') + (h ? h + ':' + pad(m) : m) + ':' + pad(s);
+  var d = new Date(); $('small', clk).textContent = pad(d.getHours()) + ':' + pad(d.getMinutes());
+  clk.classList.toggle('warn', r <= 300 && r > 60); clk.classList.toggle('danger', r <= 60 && r > 0); clk.classList.toggle('over', r <= 0);
+  if (r <= 300 && !f5){ f5 = true; if (r > 60){ toast('⏱ 종료 5분 전입니다'); bell(1); } }
+  if (r <= 60 && !f1){ f1 = true; if (r > 0){ toast('⏱ 종료 1분 전입니다'); bell(1); } }
+  if (r <= 0 && !fEnd){ fEnd = true; toast('🔔 수업 종료 시각입니다'); bell(3); }
+}
+clk.addEventListener('click', function(e){ e.stopPropagation(); this.blur(); toggleClk(); });
+function toggleClk(){ closeOthers('clk'); clkp.classList.toggle('open'); }
+$('#clkGo', clkp).addEventListener('click', function(){ var v = $('#clkT', clkp).value.split(':'); if (v.length < 2) return; var d = new Date(); d.setHours(+v[0], +v[1], 0, 0); if (d.getTime() < Date.now()) d.setDate(d.getDate() + 1); clkSet(d.getTime()); });
+$('#clkBell', clkp).addEventListener('click', function(){ bell(1); });
+$('#clkOff', clkp).addEventListener('click', clkOff);
+clkp.addEventListener('keydown', function(e){ e.stopPropagation(); });
+(function(){ var v = parseInt(tlGet('clk'), 10); if (v && v > Date.now() - 600000){ endAt = v; clk.classList.add('on'); fEnd = v < Date.now(); f5 = f1 = v - Date.now() < 300000; clkIv = setInterval(clkTick, 1000); clkTick(); } })();
+
+/* ── 2. 펜 · 형광펜 · 레이저 ── */
+var cv = mk('canvas', 'pen'), cx = cv.getContext('2d'), laser = mk('div', 'laser');
+var pen = { on: false, mode: 'pen', color: '#ff3b30' }, strokes = {}, cur = null;
+var pbar = mk('div', 'pbar', '<button type="button" class="tbtn" data-m="pen">✏️ 펜 <small>D</small></button><button type="button" class="tbtn" data-m="hl">🖍 형광펜 <small>H</small></button><button type="button" class="tbtn" data-m="laser">🔴 레이저 <small>L</small></button><span class="sep"></span><span id="pcols"></span><span class="sep"></span><button type="button" class="tbtn" data-a="clear">🧹 지우기 <small>X</small></button><button type="button" class="tbtn" data-a="off">✕ 끝내기</button>');
+['#ff3b30','#f6c744','#4aa3ff','#34d6a0','#ffffff'].forEach(function(c){ var b = mk('button', 'sw' + (c === pen.color ? ' on' : ''), '', $('#pcols', pbar)); b.type = 'button'; b.style.background = c; b.dataset.c = c; b.setAttribute('aria-label', '색 ' + c); });
+$('#pcols', pbar).style.cssText = 'display:flex;gap:.6cqi';
+function fit(){ var r = stage.getBoundingClientRect(), d = window.devicePixelRatio || 1; cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d); redraw(); }
+function path(st, W, H){ cx.beginPath(); st.p.forEach(function(q, i){ if (i) cx.lineTo(q[0] * W, q[1] * H); else cx.moveTo(q[0] * W, q[1] * H); }); if (st.p.length === 1) cx.lineTo(st.p[0][0] * W + .1, st.p[0][1] * H); }
+function redraw(){
+  var W = cv.width, H = cv.height; cx.clearRect(0, 0, W, H); cx.lineCap = cx.lineJoin = 'round';
+  (strokes[idx] || []).forEach(function(st){
+    cx.globalAlpha = st.m === 'hl' ? .38 : 1; cx.strokeStyle = st.c; cx.lineWidth = W * (st.m === 'hl' ? .022 : .0042); path(st, W, H); cx.stroke();
+  });
+  cx.globalAlpha = 1;
+}
+function penMode(m){
+  if (pen.on && pen.mode === m){ penOff(); return; }
+  if (zoomLvl > 1) zoomSet(1);
+  pen.on = true; pen.mode = m; cv.classList.add('on'); pbar.classList.add('on'); laser.style.display = 'none';
+  $$('[data-m]', pbar).forEach(function(b){ b.classList.toggle('on', b.dataset.m === m); });
+  toast({ pen: '✏️ 펜 · 드래그해서 그리기', hl: '🖍 형광펜', laser: '🔴 레이저 포인터' }[m] + '   (Esc로 끝내기)');
+}
+function penOff(){ pen.on = false; cv.classList.remove('on'); pbar.classList.remove('on'); laser.style.display = 'none'; cur = null; }
+function penClear(){ strokes[idx] = []; redraw(); }
+pbar.addEventListener('click', function(e){
+  var b = e.target.closest('button'); if (!b) return; b.blur();
+  if (b.dataset.m){ if (!(pen.on && pen.mode === b.dataset.m)) penMode(b.dataset.m); }
+  else if (b.dataset.a === 'clear') penClear(); else if (b.dataset.a === 'off') penOff();
+  else if (b.dataset.c){ pen.color = b.dataset.c; $$('.sw', pbar).forEach(function(x){ x.classList.toggle('on', x === b); }); if (pen.mode === 'laser') penMode('pen'); }
+});
+function pt(e){ var r = stage.getBoundingClientRect(); return [(e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height]; }
+cv.addEventListener('pointerdown', function(e){
+  if (!pen.on || pen.mode === 'laser') return; e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch(_){}
+  cur = { m: pen.mode, c: pen.color, p: [pt(e)] }; (strokes[idx] = strokes[idx] || []).push(cur); redraw();
+});
+cv.addEventListener('pointermove', function(e){
+  if (!pen.on) return;
+  if (pen.mode === 'laser'){ var p = pt(e); laser.style.display = 'block'; laser.style.left = (p[0] * 100) + '%'; laser.style.top = (p[1] * 100) + '%'; return; }
+  if (cur){ cur.p.push(pt(e)); redraw(); }
+});
+cv.addEventListener('pointerup', function(){ cur = null; });
+cv.addEventListener('pointerleave', function(){ if (pen.mode === 'laser') laser.style.display = 'none'; });
+window.addEventListener('resize', fit);
+
+/* ── 3. 손들기 집계 투표 ── */
+var polls = {};
+function pollGet(id, labels){
+  var p = polls[id];
+  if (!p || p.labels.join('|') !== labels.join('|')){
+    var saved = null; try { saved = JSON.parse(tlGet('poll_' + id) || 'null'); } catch(e){}
+    p = polls[id] = { id: id, labels: labels, counts: (saved && saved.length === labels.length) ? saved : labels.map(function(){ return 0; }), boxes: [] };
+  }
+  return p;
+}
+function pollBuild(box, id, labels){
+  var p = pollGet(id, labels); box.innerHTML = '';
+  var top = mk('div', 'polt', '<span>숫자키 1~' + labels.length + ' = +1 · Shift+숫자 = +5 · Alt+숫자 = −1</span><span>합계 <b class="tot">0</b>명 <button type="button" class="tbtn rst" style="margin-left:1cqi">초기화</button></span>', box);
+  labels.forEach(function(l, i){
+    var r = mk('div', 'polrow', '<span class="plab">' + (i + 1) + '. ' + l + '</span><div class="pbr" data-i="' + i + '"><i></i><em></em></div><span class="pcb"><button type="button" class="tbtn" data-d="-1">−1</button><button type="button" class="tbtn" data-d="1">+1</button><button type="button" class="tbtn" data-d="5">+5</button></span>', box);
+  });
+  box._p = p; p.boxes = p.boxes.filter(function(b){ return b !== box && document.contains(b); }); p.boxes.push(box);
+  var rst = $('.rst', box), rt = null;
+  rst.addEventListener('click', function(){ if (rst.dataset.arm){ p.counts = p.counts.map(function(){ return 0; }); rst.textContent = '초기화'; delete rst.dataset.arm; pollSave(p); } else { rst.dataset.arm = 1; rst.textContent = '정말?'; clearTimeout(rt); rt = setTimeout(function(){ rst.textContent = '초기화'; delete rst.dataset.arm; }, 2500); } });
+  box.addEventListener('click', function(e){
+    var b = e.target.closest('[data-d]'), pb = e.target.closest('.pbr');
+    if (b){ b.blur(); pollAdd(p, $$('.polrow', box).indexOf(b.closest('.polrow')), +b.dataset.d); }
+    else if (pb) pollAdd(p, +pb.dataset.i, e.shiftKey ? 5 : 1);
+  });
+  pollPaint(p);
+}
+function pollSave(p){ tlSet('poll_' + p.id, JSON.stringify(p.counts)); pollPaint(p); }
+function pollAdd(p, i, d){ if (i < 0 || i >= p.counts.length) return; p.counts[i] = Math.max(0, p.counts[i] + d); pollSave(p); }
+function pollPaint(p){
+  var tot = p.counts.reduce(function(a, b){ return a + b; }, 0), mx = Math.max.apply(null, p.counts.concat([1]));
+  p.boxes.forEach(function(box){
+    $('.tot', box).textContent = tot;
+    $$('.pbr', box).forEach(function(pb, i){
+      $('i', pb).style.width = (p.counts[i] / Math.max(mx, 1) * 100) + '%';
+      $('em', pb).innerHTML = p.counts[i] + '<span>' + (tot ? Math.round(p.counts[i] / tot * 100) : 0) + '%</span>';
+    });
+  });
+}
+$$('.poll[data-poll]').forEach(function(b){ pollBuild(b, b.dataset.poll, b.dataset.labels.split('|')); });
+var polov = mk('div', ''), PRESETS = [['예|아니오', '예 · 아니오'], ['A|B|C|D', 'A·B·C·D'], ['1점|2점|3점|4점|5점', '1~5점']], preIdx = 0;
+polov.id = 'polov'; polov.innerHTML = '<div class="tbx"><h3>🙋 손들기 집계</h3><div class="rw" id="polPre" style="display:flex;gap:.6cqi"></div><div class="poll" id="polBox"></div><div class="tlhint">손 든 사람 수를 세어 숫자키(1~5)나 막대를 누르세요. Shift = +5 · Alt = −1 · V 또는 Esc로 닫기</div></div>';
+function polPick(i){ preIdx = i; $$('#polPre .tbtn', polov).forEach(function(b, k){ b.classList.toggle('on', k === i); }); pollBuild($('#polBox', polov), 'ov' + i, PRESETS[i][0].split('|')); }
+PRESETS.forEach(function(pr, i){ var b = mk('button', 'tbtn', pr[1], $('#polPre', polov)); b.type = 'button'; b.addEventListener('click', function(){ polPick(i); b.blur(); }); });
+polPick(0);
+polov.addEventListener('click', function(e){ if (e.target === polov) togglePol(); });
+function togglePol(){ closeOthers('pol'); polov.classList.toggle('open'); }
+function pollTarget(){ if (polov.classList.contains('open')) return $('#polBox', polov)._p; var b = $('.poll', slides[idx]); return b && b._p; }
+
+/* ── 4. QR 코드 ── */
+function qrSvg(url){
+  var q = qrcode(0, 'M'); q.addData(url); q.make(); var n = q.getModuleCount(), d = '';
+  for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (q.isDark(r, c)) d += 'M' + (c + 4) + ' ' + (r + 4) + 'h1v1h-1z';
+  var m = n + 8;
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + m + ' ' + m + '" shape-rendering="crispEdges" role="img" aria-label="QR 코드"><path d="' + d + '" fill="#000"/></svg>';
+}
+function homeUrl(){ var a = $('#nav a[href]'); var u = new URL(a ? a.getAttribute('href') : location.href, location.href); u.search = ''; u.hash = ''; return u.href; }
+function qrFill(box, url){ try { box.innerHTML = qrSvg(url); } catch(e){ box.textContent = 'QR 생성 실패: 주소가 너무 깁니다'; } }
+$$('.qrbox[data-qr]').forEach(function(b){ var u = b.dataset.qr === 'home' ? homeUrl() : b.dataset.qr; qrFill(b, u); var t = b.parentNode.querySelector('.qrurl'); if (t) t.textContent = u; });
+var qrov = mk('div', ''); qrov.id = 'qrov';
+qrov.innerHTML = '<div class="tbx qrcard"><h3>📱 휴대폰으로 찍어 보세요</h3><div class="qrbox" id="qrBig"></div><input type="text" id="qrIn" aria-label="QR 주소"><div class="rw" style="display:flex;gap:.6cqi"><button type="button" class="tbtn" id="qrHome">강의 홈</button><button type="button" class="tbtn" id="qrThis">이 슬라이드</button></div><div class="tlhint">주소를 고쳐 Enter를 누르면 QR이 바뀝니다 · Q 또는 Esc로 닫기</div></div>';
+var qrIn = $('#qrIn', qrov);
+function qrSet(u){ qrIn.value = u; qrFill($('#qrBig', qrov), u); }
+$('#qrHome', qrov).addEventListener('click', function(){ qrSet(homeUrl()); this.blur(); });
+$('#qrThis', qrov).addEventListener('click', function(){ var u = new URL(location.href); u.search = '?slide=' + (idx + 1); u.hash = ''; qrSet(u.href); this.blur(); });
+qrIn.addEventListener('keydown', function(e){ e.stopPropagation(); if (e.key === 'Enter') qrSet(qrIn.value.trim() || homeUrl()); if (e.key === 'Escape') toggleQr(); });
+qrov.addEventListener('click', function(e){ if (e.target === qrov) toggleQr(); });
+function toggleQr(){ closeOthers('qr'); if (!qrov.classList.contains('open')) qrSet(homeUrl()); qrov.classList.toggle('open'); }
+
+/* ── 5. 화면 가리기 · 확대 ── */
+var tlblk = mk('div', 'tlblk'); tlblk.addEventListener('click', function(){ tlblk.classList.remove('on'); });
+function toggleBlk(){ tlblk.classList.toggle('on'); }
+var zb = mk('div', 'zbadge'), zoomLvl = 1, zorg = [50, 50], ZL = [1, 1.5, 2, 3];
+function zoomSet(l){
+  zoomLvl = l; var s = slides[idx];
+  if (l > 1 && pen.on) penOff();
+  s.style.transformOrigin = zorg[0] + '% ' + zorg[1] + '%'; s.style.transform = l > 1 ? 'scale(' + l + ')' : '';
+  zb.classList.toggle('on', l > 1); zb.textContent = '🔍 ×' + l + ' · 마우스를 따라 이동 · Z로 해제';
+}
+function zoomStep(d){ var i = ZL.indexOf(zoomLvl); i = clamp(i + d, 0, ZL.length - 1); zoomSet(ZL[i]); }
+stage.addEventListener('pointermove', function(e){ if (zoomLvl > 1){ var r = stage.getBoundingClientRect(); zorg = [clamp((e.clientX - r.left) / r.width * 100, 0, 100), clamp((e.clientY - r.top) / r.height * 100, 0, 100)]; slides[idx].style.transformOrigin = zorg[0] + '% ' + zorg[1] + '%'; } });
+
+/* ── 도움말 · 도구 메뉴 ── */
+var hlp = mk('div', ''); hlp.id = 'hlp'; hlp.className = 'hlp';
+hlp.innerHTML = '<div class="tbx"><h3>🛠 강의 도구 · 단축키</h3><table>' +
+ '<tr><td>C</td><td>수업 시계 · 종료 시각에 벨이 울립니다 (5분 전·1분 전 알림)</td></tr>' +
+ '<tr><td>D / H / L</td><td>펜 / 형광펜 / 레이저 포인터 · X 지우기 · Esc 끝내기</td></tr>' +
+ '<tr><td>V</td><td>손들기 집계 · 숫자키 1~5 = +1, Shift = +5, Alt = −1</td></tr>' +
+ '<tr><td>Q</td><td>QR 코드 · 강의 홈 주소를 화면에 크게</td></tr>' +
+ '<tr><td>B</td><td>화면 가리기(검은 화면) · 한 번 더 누르면 복귀</td></tr>' +
+ '<tr><td>Z, + −</td><td>확대 (마우스를 따라 이동) · 글씨가 작을 때</td></tr>' +
+ '<tr><td>S · G · N · W · F</td><td>쉿 7초 · 전체보기 · 메모 · 설계표 · 전체화면</td></tr>' +
+ '<tr><td>?</td><td>이 도움말 · Esc로 닫기</td></tr></table></div>';
+hlp.addEventListener('click', function(){ hlp.classList.remove('open'); });
+function toggleHlp(){ closeOthers('hlp'); hlp.classList.toggle('open'); }
+var tmenu = document.createElement('div'); tmenu.id = 'tmenu'; document.body.appendChild(tmenu);
+var TM = [['⏱ 수업 시계 · 종료 벨', 'C', toggleClk], ['✏️ 펜', 'D', function(){ penMode('pen'); }], ['🖍 형광펜', 'H', function(){ penMode('hl'); }], ['🔴 레이저 포인터', 'L', function(){ penMode('laser'); }], ['🙋 손들기 집계', 'V', togglePol], ['📱 QR 코드', 'Q', toggleQr], ['⬛ 화면 가리기', 'B', toggleBlk], ['🔍 확대', 'Z', function(){ zoomSet(zoomLvl > 1 ? 1 : 2); }], ['❓ 도움말', '?', toggleHlp]];
+TM.forEach(function(t){ var b = document.createElement('button'); b.type = 'button'; b.innerHTML = '<span>' + t[0] + '</span><kbd>' + t[1] + '</kbd>'; b.addEventListener('click', function(){ tmenu.classList.remove('open'); t[2](); }); tmenu.appendChild(b); });
+var toolBtn = $('#toolBtn'); if (toolBtn) toolBtn.addEventListener('click', function(e){ e.stopPropagation(); tmenu.classList.toggle('open'); });
+document.addEventListener('click', function(e){ if (!e.target.closest('#tmenu,#toolBtn')) tmenu.classList.remove('open'); });
+
+function closeOthers(k){
+  if (k !== 'clk') clkp.classList.remove('open');
+  if (k !== 'pol') polov.classList.remove('open');
+  if (k !== 'qr') qrov.classList.remove('open');
+  if (k !== 'hlp') hlp.classList.remove('open');
+}
+
+
+/* 도구 화면 위의 클릭·터치가 강의안 자체의 클릭 이동(스테이지 클릭 핸들러)으로 새지 않게 */
+[clk, clkp, cv, pbar, polov, qrov, hlp, tlblk, zb].forEach(function(el){
+  el.addEventListener('click', function(e){ e.stopPropagation(); });
+  el.addEventListener('touchstart', function(e){ e.stopPropagation(); }, { passive: true });
+  el.addEventListener('touchend', function(e){ e.stopPropagation(); }, { passive: true });
+});
+/* ── 슬라이드가 바뀔 때 ── */
+var _show = show;
+show = function(i, st){
+  var before = idx; _show(i, st);
+  if (idx !== before){
+    slides[before].style.transform = ''; slides[before].style.transformOrigin = '';
+    zoomLvl = 1; zb.classList.remove('on'); cur = null; redraw(); closeOthers('');
+  }
+};
+fit();
+
+/* ── 키보드 (캡처 단계: 한글 입력 상태에서도 e.code로 동작) ── */
+document.addEventListener('keydown', function(e){
+  if (gridOverlay.classList.contains('open')) return;
+  var code = e.code, field = inField(e.target);
+  if (code === 'Escape'){
+    var did = true;
+    if (tlblk.classList.contains('on')) tlblk.classList.remove('on');
+    else if (hlp.classList.contains('open')) hlp.classList.remove('open');
+    else if (qrov.classList.contains('open')) qrov.classList.remove('open');
+    else if (polov.classList.contains('open')) polov.classList.remove('open');
+    else if (clkp.classList.contains('open')) clkp.classList.remove('open');
+    else if (tmenu.classList.contains('open')) tmenu.classList.remove('open');
+    else if (pen.on) penOff();
+    else if (zoomLvl > 1) zoomSet(1);
+    else did = false;
+    if (did){ e.preventDefault(); e.stopPropagation(); }
+    return;
+  }
+  if (field || e.ctrlKey || e.metaKey) return;
+  if (tlblk.classList.contains('on') && code !== 'KeyB' && code !== 'Period'){ tlblk.classList.remove('on'); e.preventDefault(); e.stopPropagation(); return; }
+  var m = /^(?:Digit|Numpad)([0-9])$/.exec(code), used = true;
+  if (m && +m[1] >= 1){ var p = pollTarget(); if (p && +m[1] <= p.counts.length) pollAdd(p, +m[1] - 1, e.altKey ? -1 : (e.shiftKey ? 5 : 1)); else used = false; }
+  else if (e.altKey) return;
+  else if (code === 'KeyC') toggleClk();
+  else if (code === 'KeyD') penMode('pen');
+  else if (code === 'KeyH') penMode('hl');
+  else if (code === 'KeyL') penMode('laser');
+  else if (code === 'KeyX' && pen.on) penClear();
+  else if (code === 'KeyV') togglePol();
+  else if (code === 'KeyQ') toggleQr();
+  else if (code === 'KeyB' || code === 'Period') toggleBlk();
+  else if (code === 'KeyZ') zoomSet(zoomLvl > 1 ? 1 : 2);
+  else if (code === 'Equal' || code === 'NumpadAdd') zoomStep(1);
+  else if (code === 'Minus' || code === 'NumpadSubtract') zoomStep(-1);
+  else if (e.key === '?' || (code === 'Slash' && e.shiftKey)) toggleHlp();
+  else used = false;
+  if (used){ e.preventDefault(); e.stopPropagation(); }
+}, true);
+})();
+
   show(idx);
 })();
 </script>
@@ -1124,7 +1842,7 @@ tags: [AI행정세미나]
       return;
     }
     if (inInput) return;
-    if ((e.key === 'l' || e.key === 'L' || e.key === 'ㅣ') && !e.ctrlKey && !e.metaKey && !e.altKey) { e.preventDefault(); e.stopPropagation(); open(); }
+    if (e.code === 'KeyT' && !e.ctrlKey && !e.metaKey && !e.altKey) { e.preventDefault(); e.stopPropagation(); open(); }
   }, true);
   reset();
 })();
