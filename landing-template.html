@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TITLE_PLAIN}} · {{COURSE}}</title>
+<meta name="description" content="{{KICKER}} · {{SUBTITLE}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ORG}}">
+<meta property="og:title" content="{{COURSE}} | {{ORG}}">
+<meta property="og:description" content="{{OG_DESC}}">
+<meta property="og:image" content="{{DOMAIN}}/{{OG_IMAGE}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="{{DOMAIN}}/{{PAGE}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{COURSE}} | {{ORG}}">
+<meta name="twitter:image" content="{{DOMAIN}}/{{OG_IMAGE}}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--bg:#0E1013;--panel:#181C23;--panel2:#212630;--line:#2D3440;--text:#F4F0E6;--mute:#9AA3B2;--amber:#F6C744;--mint:#52D9AB;--coral:#FF7B66}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Pretendard Variable',Pretendard,'Noto Sans KR',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.hero{min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(900px 500px at 85% 20%,rgba(246,199,68,.14),transparent 60%)}
+.hero .wrap{width:100%;padding-top:56px;padding-bottom:56px}
+.kick{display:flex;align-items:center;gap:12px;color:var(--amber);font-weight:800;letter-spacing:.1em;font-size:14px}
+.kick:before{content:"";width:34px;height:3px;background:var(--amber)}
+h1{font-size:clamp(40px,9vw,92px);line-height:1.12;font-weight:900;letter-spacing:-.03em;margin:18px 0 14px}
+h1 em{font-style:normal;color:var(--amber)}
+.sub{font-size:clamp(17px,2.6vw,26px);color:#C9CFDA;max-width:640px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 34px}
+.chips span{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:8px 18px;font-weight:700;font-size:15px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 30px;border-radius:14px;font-weight:800;font-size:18px;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--amber);color:#111}
+.btn.s{background:var(--panel);color:var(--text);border:1px solid var(--line)}
+.line{position:absolute;left:50%;top:0;bottom:0;width:0;border-left:2px dashed rgba(246,199,68,.12);display:none}
+section.blk{padding:84px 0;border-top:1px solid var(--line)}
+.lab{color:var(--amber);font-weight:800;letter-spacing:.1em;font-size:13px;margin-bottom:10px}
+h2{font-size:clamp(26px,4.6vw,44px);line-height:1.25;font-weight:900;letter-spacing:-.02em;margin-bottom:34px}
+h2 .am{color:var(--amber)}
+.promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.pc{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 22px}
+.pc b{display:block;font-size:28px;color:var(--amber);margin-bottom:6px;font-weight:900}
+.pc span{color:#C9CFDA}
+.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.part{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px 24px}
+.pn{display:inline-block;background:var(--amber);color:#111;font-weight:900;padding:3px 14px;border-radius:99px;font-size:14px}
+.part h3{font-size:26px;margin:12px 0 14px;font-weight:900}
+.part ul{list-style:none;display:grid;gap:10px}
+.part li{display:flex;gap:12px;align-items:flex-start}
+.part li b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--panel2);color:var(--amber);display:grid;place-items:center;font-size:14px}
+.part li span{color:#DDE1E9}
+.quote{text-align:center;padding:96px 20px;background:linear-gradient(180deg,transparent,rgba(246,199,68,.07),transparent)}
+.quote p{font-size:clamp(28px,6vw,60px);font-weight:900;letter-spacing:-.02em;line-height:1.3}
+.quote p em{font-style:normal;color:var(--amber)}
+.quote small{display:block;margin-top:14px;color:var(--mute);font-size:16px}
+.me{display:grid;grid-template-columns:200px 1fr;gap:34px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px}
+.me img{width:100%;border-radius:14px;background:#fff;display:block}
+.me h3{font-size:32px;font-weight:900;margin-bottom:6px}
+.me p{color:#C9CFDA;font-size:18px}
+footer{padding:40px 20px 60px;text-align:center;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+footer a{color:var(--amber)}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:6px}
+.how div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:15px;color:#C9CFDA}
+.how kbd{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-family:inherit;font-weight:800;color:var(--text)}
+@media(max-width:640px){.me{grid-template-columns:1fr;text-align:center}.me img{max-width:180px;margin:0 auto}}
+
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.info div{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.info b{display:block;color:var(--amber);font-size:13px;letter-spacing:.1em;margin-bottom:4px}
+.info span{font-size:19px;font-weight:700}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="kick">{{KICKER}}</div>
+<h1>{{TITLE_HTML}}</h1>
+<p class="sub">{{SUBTITLE}}</p>
+<div class="chips">{{CHIPS}}</div>
+<div class="btns"><a class="btn p" href="{{SLIDES_URL}}">▶ 슬라이드 시작하기</a><a class="btn s" href="#parts">강의 구성 보기</a></div>
+</div></header>
+{{INFO_SECTION}}
+<section class="blk"><div class="wrap">
+<div class="lab">{{PROMISE_LABEL}}</div>
+<h2>{{PROMISE_TITLE}}</h2>
+<div class="promise">{{PROMISES}}</div>
+</div></section>
+
+<section class="blk" id="parts"><div class="wrap">
+<div class="lab">{{PARTS_LABEL}}</div>
+<h2>{{PARTS_TITLE}}</h2>
+<div class="parts">{{PARTS}}</div>
+</div></section>
+
+<div class="quote"><p>{{QUOTE}}</p><small>{{QUOTE_SUB}}</small></div>
+
+<section class="blk"><div class="wrap">
+<div class="lab">강사</div>
+<div class="me"><img src="{{CARICATURE}}" alt="{{INSTRUCTOR_NAME}} 캐리커처"><div><h3>{{INSTRUCTOR_NAME}}</h3><p>{{INSTRUCTOR_DESC}}</p></div></div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+<div class="lab">슬라이드 사용법</div>
+<h2>키보드로 <span class="am">넘깁니다</span></h2>
+<div class="how">
+<div><kbd>→</kbd> <kbd>←</kbd> 다음 · 이전</div>
+<div><kbd>G</kbd> 전체 보기</div>
+<div><kbd>N</kbd> 강사 메모</div>
+<div><kbd>S</kbd> 쉿~~~ 7초 침묵</div>
+<div><kbd>F</kbd> 전체 화면</div>
+<div><kbd>P</kbd> PDF 저장</div>
+</div>
+<div class="btns" style="margin-top:34px"><a class="btn p" href="{{SLIDES_URL}}">▶ 슬라이드 시작하기</a></div>
+</div></section>
+<footer>{{FOOTER}}</footer>
+</body></html>
