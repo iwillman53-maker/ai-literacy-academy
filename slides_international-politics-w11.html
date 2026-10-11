@@ -336,7 +336,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);overflow:hidden;
 </head>
 <body>
 <div class="bar top">
-  <a class="btn" href="../index.html">← 강의 안내</a>
+  <a class="btn" href="international-politics.html">← 강의 안내</a>
   <div class="ttl">일본, 잃어버린 30년<small>글로벌시대의 국제정치 · 11강</small></div>
   <span class="sp"></span>
   <button type="button" class="btn" id="bh" title="쉿, 조용히 생각하는 시간 (S)">🤫 쉿</button>
@@ -975,13 +975,6 @@ function closeOthers(k){
   if (k !== 'hlp') hlp.classList.remove('open');
 }
 
-
-/* 도구 화면 위의 클릭·터치가 강의안 자체의 클릭 이동(스테이지 클릭 핸들러)으로 새지 않게 */
-[clk, clkp, cv, pbar, polov, qrov, hlp, tlblk, zb].forEach(function(el){
-  el.addEventListener('click', function(e){ e.stopPropagation(); });
-  el.addEventListener('touchstart', function(e){ e.stopPropagation(); }, { passive: true });
-  el.addEventListener('touchend', function(e){ e.stopPropagation(); }, { passive: true });
-});
 /* ── 슬라이드가 바뀔 때 ── */
 function curIdx(){ for (var i = 0; i < slides.length; i++) if (slides[i].classList.contains('active')) return i; return 0; }
 function slideChanged(){ var n = curIdx(); if (n === idx) return; var b = idx; slides[b].style.transform = ''; slides[b].style.transformOrigin = ''; idx = n; zoomLvl = 1; zb.classList.remove('on'); cur = null; redraw(); closeOthers(''); }
