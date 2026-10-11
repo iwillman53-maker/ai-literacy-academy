@@ -164,6 +164,64 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 }
 
 @media print{.slide{display:block!important;position:static;page-break-after:always}#nav,#idx,#toast{display:none}html,body{overflow:visible}}
+/* ───── 7단계 움직이는 설명 ───── */
+.lad .st{cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .15s,box-shadow .15s}
+.lad .st:hover{transform:translateX(3px) scale(1.02);box-shadow:0 10px 24px rgba(15,42,107,.3)}
+.lad .st::after{content:'▶ 눌러보기';position:absolute;right:.7em;top:.45em;font-size:.62em;font-weight:900;background:rgba(255,255,255,.22);border-radius:99px;padding:.15em .6em}
+.demohint{display:flex;gap:.6em;align-items:center;flex-wrap:wrap;justify-content:center;font-weight:800;font-size:.85em;color:#1E40AF;margin:.1em 0}
+.btn.demoall{background:#1E40AF;color:#fff;border:0;border-radius:99px;padding:.45em 1.1em;font:inherit;font-weight:900;cursor:pointer}
+.btn.demo-btn{margin-top:.5em;background:#EEF2FF;color:#1E40AF;border:2px solid #C7D2FE;border-radius:99px;padding:.3em .9em;font:inherit;font-weight:900;font-size:.85em;cursor:pointer}
+#demo{display:none;position:fixed;inset:0;z-index:55;background:#071232;color:#fff;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#demo.on{display:block}
+#demo .dp{max-width:1040px;margin:0 auto;padding:max(10px,env(safe-area-inset-top)) 14px calc(14px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:.55em;min-height:100%}
+#demo .dh{display:flex;align-items:center;gap:.7em;flex-wrap:wrap}
+#demo .dh h3{margin:0;font-size:1.25em;font-weight:900;flex:1;min-width:10em}
+#demo .dots{display:flex;gap:.35em}
+#demo .dots button{width:2.1em;height:2.1em;border-radius:50%;border:2px solid rgba(255,255,255,.45);background:transparent;color:#fff;font-weight:900;cursor:pointer;font-family:inherit}
+#demo .dots button.cur{background:var(--c,#fff);border-color:#fff;transform:scale(1.15)}
+#demo .x{background:rgba(255,255,255,.15);border:0;color:#fff;width:2.4em;height:2.4em;border-radius:50%;font-size:1em;cursor:pointer;font-weight:900}
+#demo .scw{container-type:inline-size;width:100%;max-width:min(1040px,calc((100vh - 15em)*36/22));margin:0 auto}
+#demo .sc{position:relative;width:100%;aspect-ratio:36/22;font-size:calc(100cqi/36);background:#F6F9FF;border-radius:1.2em;overflow:hidden;color:#0B2150;border:.25em solid var(--c,#fff);box-shadow:0 1em 3em rgba(0,0,0,.45);font-weight:700;line-height:1.25}
+#demo .sc .o{position:absolute}
+#demo .sc .a{opacity:0;transform:translateY(.8em) scale(.96);transition:opacity .45s,transform .45s}
+#demo .sc .a.on{opacity:1;transform:none}
+#demo .sc .bx{background:#fff;border:.14em solid var(--c,#1E40AF);border-radius:.9em;box-shadow:0 .3em .9em rgba(15,42,107,.12);padding:.35em .8em;display:flex;align-items:center;gap:.5em;font-size:1em}
+#demo .sc .bx.fl{flex-direction:column;align-items:flex-start;justify-content:center;gap:.05em}
+#demo .sc .ty.typing::after{content:'▌';animation:dcar .6s steps(1) infinite;color:var(--c)}
+@keyframes dcar{50%{opacity:0}}
+#demo .sc .t1{font-size:.95em;font-weight:900;color:#1a0dab}
+#demo .sc .u{font-size:.62em;color:#188038;font-weight:700}
+#demo .sc .sn{font-size:.62em;color:#64748b;font-weight:600}
+#demo .sc .hl{border:.3em solid #F59E0B;border-radius:1em;box-shadow:0 0 1.2em rgba(245,158,11,.7)}
+#demo .sc .big{font-size:1.1em;font-weight:900}
+#demo .sc .sm{font-size:.7em;color:#475569;font-weight:700}
+#demo .sc .dok{color:#10B981;font-weight:900;font-size:1.2em}
+#demo .sc .sp{width:1.1em;height:1.1em;border:.2em solid #cbd5e1;border-top-color:var(--c,#1E40AF);border-radius:50%;animation:dsp .8s linear infinite}
+@keyframes dsp{to{transform:rotate(360deg)}}
+#demo .sc .bar{background:#E2E8F0;border-radius:99em;overflow:hidden;height:1.1em}
+#demo .sc .bar i{display:block;height:100%;width:0;background:var(--c,#1E40AF);border-radius:99em;transition:width var(--d,1.2s) ease-out}
+#demo .sc .on .bar i, #demo .sc .bar.on i{width:var(--w,100%)}
+#demo .sc svg.o{overflow:visible}
+#demo .sc .ln{fill:none;stroke:var(--c,#1E40AF);stroke-width:.14;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .9s ease}
+#demo .sc .on .ln,#demo .sc .ln.on{stroke-dashoffset:0}
+#demo .sc .wv{display:flex;gap:.18em;align-items:center;height:1.6em}
+#demo .sc .wv b{display:block;width:.28em;background:var(--c);border-radius:99em;animation:dwv .7s ease-in-out infinite alternate}
+#demo .sc .wv b:nth-child(2n){animation-delay:.15s}#demo .sc .wv b:nth-child(3n){animation-delay:.3s}
+@keyframes dwv{from{height:.3em}to{height:1.5em}}
+#demo .sc .spinbig{animation:dspn 3s linear infinite}
+@keyframes dspn{to{transform:rotate(360deg)}}
+#demo .sc .pulse.on{animation:dpl .9s ease-in-out infinite alternate}
+@keyframes dpl{to{transform:scale(1.07);box-shadow:0 0 1.4em rgba(185,28,28,.55)}}
+#demo .sc .pop.on{animation:dpop .5s ease}
+@keyframes dpop{0%{transform:scale(.5)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+#demo .say{background:rgba(255,255,255,.1);border-left:.4em solid var(--c,#fff);border-radius:.8em;padding:.55em .9em;font-size:1.02em;line-height:1.45;font-weight:800}
+#demo .say small{display:block;font-weight:600;opacity:.85;font-size:.82em;margin-top:.25em}
+#demo .role{display:inline-block;background:var(--c);color:#fff;border-radius:99px;padding:.1em .8em;font-size:.82em;font-weight:900;margin-right:.4em}
+#demo .dctl{display:flex;gap:.5em;flex-wrap:wrap;justify-content:center}
+#demo .dctl button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:99px;padding:.55em 1.1em;font:inherit;font-weight:800;cursor:pointer;min-height:44px}
+#demo .dctl button.pri{background:#FDE68A;color:#0B2150}
+#demo .dnote{font-size:.72em;opacity:.7;text-align:center}
+@media print{#demo,.demohint,.btn.demo-btn,.lad .st::after{display:none!important}}
 </style>
 </head>
 <body>
@@ -212,6 +270,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
   <h2>AI는 이렇게 발달해 왔습니다 · 7단계</h2>
   <p class="sub">검색 → 생성 → 바이브코딩 → 에이전트 → 오케스트레이션 → 메타에이전트 → 재귀적 에이전트</p>
   <div class="lad"><div class="st" style="background:#0EA5C8;min-height:8.5em;--i:0"><span class="n">1단계</span><span class="em">🔍</span><span class="nm">검색</span><span class="ds">찾아서 보여준다</span><span class="tg">실습</span></div><div class="st" style="background:#14B8A6;min-height:10.0em;--i:1"><span class="n">2단계</span><span class="em">✍️</span><span class="nm">생성</span><span class="ds">글·그림을 만들어준다</span><span class="tg">실습</span></div><div class="st" style="background:#10B981;min-height:11.5em;--i:2"><span class="n">3단계</span><span class="em">🎧</span><span class="nm">바이브코딩</span><span class="ds">말로 설명하면 앱을 만든다</span><span class="tg">맛보기</span></div><div class="st me" style="background:#1E40AF;min-height:13.0em;--i:3"><span class="n">4단계</span><span class="em">🤖</span><span class="nm">에이전트</span><span class="ds">목표를 주면 일을 한다</span><span class="tg">시연</span></div><div class="st" style="background:#0B2150;min-height:14.5em;--i:4"><span class="n">5단계</span><span class="em">🎼</span><span class="nm">오케스트레이션</span><span class="ds">여러 AI를 팀처럼 지휘한다</span><span class="tg">트렌드</span></div><div class="st" style="background:#B45309;min-height:16.0em;--i:5"><span class="n">6단계</span><span class="em">🏗️</span><span class="nm">메타에이전트</span><span class="ds">AI가 AI 일꾼을 만든다</span><span class="tg">트렌드</span></div><div class="st" style="background:#B91C1C;min-height:17.5em;--i:6"><span class="n">7단계</span><span class="em">♾️</span><span class="nm">재귀적 에이전트</span><span class="ds">스스로 점검·개선하며 반복한다</span><span class="tg">트렌드</span></div></div>
+  <div class="demohint"><span>👆 단계를 누르면 움직이는 그림으로 설명합니다</span><button type="button" class="btn demoall" id="demoAll">▶ 7단계 한 번에 보기</button></div>
   <div class="qbox"><small>🌟 오늘 기억할 한 문장</small><b>AI는 <em>답하는 도구</em>에서 <em>일하는 팀</em>으로 — 사람은 <em>질문자</em>에서 <em>지휘자</em>로</b></div>
   <div class="note">🎬 <b>깜짝 공개</b> — 지금 보시는 이 슬라이드도 3단계(바이브코딩)로, 말로 설명해서 만들었습니다. (노란 테두리 4단계가 오늘의 주인공입니다)</div>
   <div class="foot">오프닝 · AI 트렌드 1/3</div>
@@ -851,6 +910,7 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
 </div>
 <div id="hush"><div><svg class="shh big" width="220" height="220" viewBox="0 0 120 120" aria-label="쉿 캐릭터"><ellipse cx="60" cy="112" rx="30" ry="5" fill="rgba(0,0,0,.25)"/><circle cx="60" cy="60" r="48" fill="#FDE68A" stroke="#F59E0B" stroke-width="4"/><ellipse cx="28" cy="70" rx="9" ry="6" fill="#FCA5A5" opacity=".8"/><ellipse cx="92" cy="70" rx="9" ry="6" fill="#FCA5A5" opacity=".8"/><path d="M36 50 Q43 43 50 50" stroke="#0B2150" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M70 50 Q77 43 84 50" stroke="#0B2150" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M50 78 Q60 84 70 78" stroke="#0B2150" stroke-width="3.5" fill="none" stroke-linecap="round"/><rect x="55" y="58" width="12" height="36" rx="6" fill="#FFEDD5" stroke="#F59E0B" stroke-width="3" transform="rotate(-6 61 76)"/><text x="104" y="24" font-size="18" font-weight="900" fill="#BAE6FD" font-family="sans-serif">쉿</text></svg><h2>쉿~ 잠깐! 앞을 봐 주세요</h2><p>폰은 잠시 내려놓고 · 화면을 터치하면 돌아갑니다 🔊</p></div></div>
 <div id="idx"><div class="sheet" id="sheet"></div></div>
+<div id="demo" role="dialog" aria-label="AI 7단계 움직이는 설명"><div class="dp"><div class="dh"><h3 id="dtitle"></h3><div class="dots" id="ddots"></div><button type="button" class="x" id="dx" aria-label="닫기">✕</button></div><div class="scw"><div class="sc" id="dscene"></div></div><div class="say" id="dsay"></div><div class="dctl"><button type="button" id="dprev">◀ 이전 단계</button><button type="button" id="dre">↻ 다시 보기</button><button type="button" class="pri" id="dauto">▶ 7단계 자동 재생</button><button type="button" id="dnext">다음 단계 ▶</button></div><div class="dnote">← → 단계 이동 · R 다시 · 1~7 바로가기 · Esc 닫기 · 5~7단계는 흐름을 이해하기 위한 가상 예시입니다</div></div></div>
 <div id="toast"></div>
 <div id="think"><div><svg class="shh" viewBox="0 0 120 120" width="150" height="150" aria-label="쉿 캐릭터"><ellipse cx="60" cy="112" rx="30" ry="5" fill="rgba(0,0,0,.25)"/><circle cx="60" cy="60" r="48" fill="#FDE68A" stroke="#F59E0B" stroke-width="4"/><ellipse cx="28" cy="70" rx="9" ry="6" fill="#FCA5A5" opacity=".8"/><ellipse cx="92" cy="70" rx="9" ry="6" fill="#FCA5A5" opacity=".8"/><path d="M36 50 Q43 43 50 50" stroke="#0B2150" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M70 50 Q77 43 84 50" stroke="#0B2150" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M50 78 Q60 84 70 78" stroke="#0B2150" stroke-width="3.5" fill="none" stroke-linecap="round"/><rect x="55" y="58" width="12" height="36" rx="6" fill="#FFEDD5" stroke="#F59E0B" stroke-width="3" transform="rotate(-6 61 76)"/><text x="104" y="24" font-size="18" font-weight="900" fill="#BAE6FD" font-family="sans-serif">쉿</text></svg><b id="tn">7</b><span>생각하는 시간 — 7초 기다립니다</span></div></div>
 
@@ -1077,6 +1137,106 @@ textarea.fill{width:100%;min-height:3.6em;font:inherit;font-size:.9em;border:2px
   document.addEventListener('click',function(){setTimeout(fit,30)});
   setTimeout(fit,80);
 })();
+</script>
+<script>
+(function(){
+var demo=document.getElementById('demo'); if(!demo)return;
+var $=function(s,r){return (r||document).querySelector(s)};
+var rows=function(i,title,url,delay,top){return '<div class="o bx fl a" data-at="'+delay+'" style="left:2em;top:'+top+'em;width:32em;height:2.7em;--c:#0EA5C8"><span class="t1">'+title+'</span><span class="u">'+url+'</span></div>'};
+var S=[
+{n:'검색',em:'🔍',c:'#0EA5C8',len:6800,role:'질문자',
+ say:'검색 = 도서관 사서처럼 <b>“어디에 있는지”를 찾아 줍니다.</b> 읽고 고르는 건 내 몫입니다.',
+ ex:'예) “교통사고 처리 절차” 검색 → 링크 목록이 나오면, 필요한 것만 직접 읽는다',
+ html:'<div class="o bx a" data-at="100" style="left:2em;top:1em;width:32em;height:3em;--c:#0EA5C8"><span style="font-size:1.2em">🔍</span><span class="ty" data-at="300" data-text="교통사고 처리 절차" data-dur="1300"></span></div>'
+  +rows(0,'교통사고처리 특례법 | 국가법령정보센터','law.go.kr › 법령',2000,5)
+  +rows(1,'교통사고 발생 시 대처 방법 | 경찰청','police.go.kr › 안내',2350,8)
+  +rows(2,'사고 처리 절차 총정리 | 블로그','blog.example › 후기',2700,11)
+  +rows(3,'보험사 접수 안내 | ○○손해보험','insurance.example › 사고접수',3050,14)
+  +'<div class="o hl a" data-at="4500" style="left:1.6em;top:10.6em;width:32.8em;height:3.5em"></div>'
+  +'<div class="o bx a pop" data-at="4800" style="left:2em;top:18.2em;width:32em;height:2.8em;--c:#F59E0B;background:#FFFBEB;justify-content:center"><span style="font-size:1.2em">👤</span><span>링크는 AI가 찾아 주고, <b>읽고 · 고르고 · 판단</b>하는 건 사람</span></div>'},
+{n:'생성',em:'✍️',c:'#14B8A6',len:8600,role:'질문자',
+ say:'생성 = 물어보면 <b>“새로 써 주는” 비서.</b> 글·요약·그림 초안이 바로 나옵니다.',
+ ex:'예) “112 신고 대응 요령을 쉬운 말로 3줄 요약” → 초안은 AI가, 사실 확인은 사람이',
+ html:'<div class="o bx a" data-at="100" style="right:1.5em;top:.8em;width:24em;--c:#14B8A6;background:#E6FFFA"><span style="font-size:1.1em">🧑</span><span class="ty" data-at="300" data-text="112 신고 대응 요령을 쉬운 말로 3줄 요약해줘" data-dur="1500"></span></div>'
+  +'<div class="o bx fl a" data-at="2100" style="left:1.5em;top:4.6em;width:19.5em;height:11em;--c:#14B8A6;justify-content:flex-start;gap:.5em;padding-top:.7em"><span class="sm">✍️ AI 초안 (예시)</span><span class="ty" data-at="2400" data-text="① 침착하게 위치부터 확인합니다" data-dur="1000"></span><span class="ty" data-at="3500" data-text="② 위험 여부와 인원을 묻습니다" data-dur="1000"></span><span class="ty" data-at="4600" data-text="③ 안내하고 출동을 요청합니다" data-dur="1000"></span></div>'
+  +'<div class="o bx fl a pop" data-at="5800" style="right:1.5em;top:4.6em;width:12.5em;height:11em;--c:#14B8A6;align-items:center;justify-content:center;gap:.5em"><span class="sm">🖼 그림도 척!</span><span style="font-size:1.6em">📍 ➜ ⚠️</span><span style="font-size:1.6em">➜ 🚓</span><span class="sm">인포그래픽 초안</span></div>'
+  +'<div class="o bx a pop" data-at="6800" style="left:1.5em;top:17.5em;width:33em;height:2.8em;--c:#F59E0B;background:#FFFBEB;justify-content:center"><span>초안은 <b>AI가</b> · 확인과 책임은 <b>사람이</b></span></div>'},
+{n:'바이브코딩',em:'🎧',c:'#10B981',len:8200,role:'지시자',
+ say:'바이브코딩 = <b>말로 “이런 거 만들어 줘”</b>라고 하면 앱이 나옵니다. 코딩 지식은 필요 없습니다.',
+ ex:'예) 근무 교대표 계산기, 점검표 웹페이지를 말로 설명해서 만든다',
+ html:'<div class="o bx fl a" data-at="100" style="left:1.5em;top:1em;width:15em;height:6.5em;--c:#10B981;justify-content:center"><span class="wv" style="--c:#10B981"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span><span class="ty" data-at="300" data-text="근무 교대표 계산기 만들어줘" data-dur="1500"></span></div>'
+  +'<div class="o a" data-at="100" style="left:calc(1.5em/2.6);top:calc(8.2em/2.6);font-size:2.6em">🧑‍💼</div>'
+  +'<div class="o bx fl a" data-at="2200" style="left:1.5em;top:12.2em;width:15em;height:6em;--c:#64748B;background:#0F172A;color:#86EFAC;font-family:monospace;gap:.1em"><span class="sm" style="color:#94a3b8">⚙ AI가 코드를 씁니다…</span><span class="ty" data-at="2400" data-text="&lt;form&gt; 시작일, 조 선택…" data-dur="700"></span><span class="ty" data-at="3100" data-text="function 교대(조){…}" data-dur="700"></span></div>'
+  +'<div class="o a" data-at="3300" style="left:calc(16.8em/2);top:calc(8.5em/2);font-size:2em">➜</div>'
+  +'<div class="o bx fl a pop" data-at="3600" style="right:1.5em;top:1em;width:16em;height:17em;--c:#10B981;justify-content:flex-start;gap:.6em;padding:0"><div style="background:#10B981;color:#fff;width:100%;padding:.4em .8em;border-radius:.7em .7em 0 0;font-weight:900">📅 근무 교대표</div><div style="padding:.2em .9em;display:flex;flex-direction:column;gap:.5em;width:100%"><div class="bx a" data-at="3900" style="font-size:.9em;--c:#94a3b8">시작일 · 2026-10-12</div><div class="bx a" data-at="4200" style="font-size:.9em;--c:#94a3b8">조 · A조</div><div class="bx a pulse" data-at="4500" style="font-size:.95em;background:#10B981;color:#fff;justify-content:center;--c:#10B981">계산하기</div><div class="bx a pop" data-at="5200" style="font-size:.9em;background:#ECFDF5;--c:#10B981">✅ 다음 근무 · 야간 22:00</div></div></div>'
+  +'<div class="o bx a pop" data-at="6000" style="left:1.5em;top:19.2em;width:33em;height:2.1em;--c:#F59E0B;background:#FFFBEB;justify-content:center"><span>코딩 <b>0줄</b> · 말로 설명하면 끝 ✨</span></div>'},
+{n:'에이전트',em:'🤖',c:'#1E40AF',len:10200,role:'지시자',
+ say:'에이전트 = 목표만 주면 <b>계획 → 도구 사용 → 실행 → 보고</b>까지 스스로 하는 “일하는 AI”.',
+ ex:'예) “이번 달 민원 현황 정리해서 팀장님께 보내줘” — 마지막 확인은 사람이',
+ html:'<div class="o bx a pop" data-at="200" style="left:1.5em;top:.8em;width:33em;height:2.9em;--c:#1E40AF;background:#EEF2FF;font-weight:900"><span style="font-size:1.2em">🎯</span><span>목표 : 이번 달 민원 현황을 정리해 팀장님께 보고</span></div>'
+  +[['🗺','계획 세우기'],['🔧','도구로 자료 찾기 (검색 · 파일)'],['📝','보고서 쓰기'],['📨','팀장님께 보고 보내기']].map(function(r,i){var at=1000+i*1700,top=4.6+i*3.5;return '<div class="o bx a" data-at="'+at+'" style="left:5em;top:'+top+'em;width:29.5em;height:2.8em;--c:#1E40AF"><span style="font-size:1.2em">'+r[0]+'</span><span>'+r[1]+'</span><span class="o sp a" data-at="'+(at+250)+'" data-off="'+(at+1500)+'" style="right:1em;top:.85em"></span><span class="o dok a pop" data-at="'+(at+1500)+'" style="right:1em;top:.35em">✔</span></div><div class="o a" data-at="'+(at+100)+'" data-off="'+(at+1650)+'" style="left:calc(1.5em/2.2);top:calc('+(top-.1)+'em/2.2);font-size:2.2em">🤖</div>'}).join('')
+  +'<div class="o bx a pop" data-at="8100" style="left:5em;top:18.7em;width:29.5em;height:2.6em;--c:#F59E0B;background:#FFFBEB;justify-content:center"><span style="font-size:1.2em">🧑‍✈️</span><span>사람이 <b>최종 확인</b>하고 승인 ✅</span></div>'},
+{n:'오케스트레이션',em:'🎼',c:'#0B2150',len:9000,role:'지휘자',
+ say:'오케스트레이션 = 오케스트라 지휘자처럼 <b>여러 AI에게 역할을 나눠 맡기고</b> 결과를 합칩니다.',
+ ex:'가상 예) 자료 수집 AI → 작성 AI → 검토 AI → 보고서 초안 (5~7단계는 이해를 돕는 가상 예시)',
+ html:'<div class="o bx fl a pop" data-at="200" style="left:12.5em;top:.8em;width:11em;height:4em;--c:#0B2150;background:#0B2150;color:#fff;align-items:center;justify-content:center"><span style="font-size:1.4em">🎼</span><b>지휘 AI</b></div>'
+  +'<svg class="o a" data-at="900" viewBox="0 0 36 22" style="left:0;top:0;width:36em;height:22em"><path class="ln" pathLength="100" d="M18 5 L7 9.2"/><path class="ln" pathLength="100" d="M18 5 L18 9.2"/><path class="ln" pathLength="100" d="M18 5 L29 9.2"/></svg>'
+  +[['🔎','조사 AI','자료 수집',2,1500,'①'],['✍️','작성 AI','초안 쓰기',13,3500,'②'],['🧐','검토 AI','오류 점검',24,5500,'③']].map(function(w){return '<div class="o bx fl a" data-at="'+(w[4]-500)+'" style="left:'+w[3]+'em;top:9.2em;width:10em;height:6.5em;--c:#0B2150;align-items:center;gap:.25em"><span class="o" style="left:.5em;top:.2em;font-weight:900;color:#0B2150">'+w[5]+'</span><span style="font-size:1.5em">'+w[0]+'</span><b>'+w[1]+'</b><span class="sm">'+w[2]+'</span><span class="bar a" data-at="'+w[4]+'" style="width:8em;--c:#0B2150;--d:1.6s"><i style="--w:100%"></i></span></div>'}).join('')
+  +'<div class="o bx a pop" data-at="7300" style="left:5em;top:17.8em;width:26em;height:3em;--c:#0B2150;background:#EEF2FF;justify-content:center"><span style="font-size:1.4em">📄</span><span>지휘 AI가 합쳐서 <b>보고서 초안 완성</b></span></div>'},
+{n:'메타에이전트',em:'🏗️',c:'#B45309',len:8200,role:'설계자·책임자',
+ say:'메타에이전트 = “일꾼 AI”가 필요하면 <b>AI가 스스로 만들어 배치</b>합니다. 채용까지 AI가 하는 셈입니다.',
+ ex:'가상 예) 외국인 민원이 늘면 통역·법령·답변 일꾼 AI를 새로 만들어 투입한다',
+ html:'<div class="o bx a" data-at="200" style="left:1.5em;top:1em;width:11em;height:4.6em;--c:#B45309;background:#FFF7ED;justify-content:center;text-align:center;line-height:1.2">📥 새 업무<br>외국인 민원 응대</div>'
+  +'<div class="o a" data-at="900" style="left:calc(12.8em/1.8);top:calc(1.6em/1.8);font-size:1.8em">➜</div>'
+  +'<div class="o bx fl a pop" data-at="1200" style="left:16em;top:.8em;width:12em;height:4.8em;--c:#B45309;background:#B45309;color:#fff;align-items:center;justify-content:center"><span style="font-size:1.4em">🏗️</span><b>설계 AI (메타)</b></div>'
+  +'<div class="o a" data-at="1800" style="left:29.5em;top:1.2em;font-size:1em;font-weight:900;color:#B45309">“일꾼이 없네?<br>만들자!”</div>'
+  +'<svg class="o a" data-at="2300" viewBox="0 0 36 22" style="left:0;top:0;width:36em;height:22em"><path class="ln" pathLength="100" d="M22 5.6 L7 9.4"/><path class="ln" pathLength="100" d="M22 5.6 L18 9.4"/><path class="ln" pathLength="100" d="M22 5.6 L29 9.4"/></svg>'
+  +[['🌐','통역 일꾼',2,2700],['📚','법령 일꾼',13,3800],['📝','답변 일꾼',24,4900]].map(function(w){return '<div class="o bx fl a pop" data-at="'+w[3]+'" style="left:'+w[2]+'em;top:9.4em;width:10em;height:5.6em;--c:#B45309;align-items:center;justify-content:center"><span style="font-size:1.6em">'+w[0]+'</span><b>'+w[1]+'</b><span class="o a pop" data-at="'+(w[3]+300)+'" style="right:calc(-.4em/1.3);top:calc(-.9em/1.3);font-size:1.3em">✨</span><span class="o a pop" data-at="'+(w[3]+300)+'" style="left:calc(-.3em/.65);top:calc(-.7em/.65);font-size:.65em;background:#EF4444;color:#fff;border-radius:99em;padding:.1em .6em;font-weight:900">NEW</span></div>'}).join('')
+  +'<div class="o bx a pop" data-at="6200" style="left:4em;top:17.2em;width:28em;height:3em;--c:#B45309;background:#FFF7ED;justify-content:center"><span style="font-size:1.3em">🚀</span><span>일꾼 3명 <b>채용 · 배치 완료</b> — 근무 시작!</span></div>'},
+{n:'재귀적 에이전트',em:'♾️',c:'#B91C1C',len:9800,role:'설계자·책임자',
+ say:'재귀적 에이전트 = 결과를 <b>스스로 점검하고 고쳐서 다시 해 보는 반복.</b> 그래서 “멈추는 버튼”이 중요합니다.',
+ ex:'가상 예) 1회 60점 → 점검·수정 → 78점 → 점검·수정 → 93점. 멈춤과 책임은 사람 손에',
+ html:'<div class="o a" data-at="100" style="left:2.5em;top:2.2em;width:11em;height:11em;display:grid;place-items:center"><div class="spinbig" style="grid-area:1/1;font-size:7em;line-height:1;color:#B91C1C">↻</div><div style="grid-area:1/1;font-size:2.4em;line-height:1">♾️</div></div>'
+  +'<div class="o a" data-at="500" style="left:1.5em;top:14em;width:13em;text-align:center"><span class="sm">실행 → 점검 → 고침 → 다시</span></div>'
+  +[['1회','초안',60,1000,'🔍 점검: 근거가 부족해요'],['2회','1차 수정',78,3000,'🔧 수정: 사례를 추가했어요'],['3회','2차 수정',93,5000,'✅ 점검: 기준을 통과했어요']].map(function(r,i){var top=1+i*4.7;return '<div class="o bx fl a" data-at="'+r[3]+'" style="left:16em;top:'+top+'em;width:18.5em;height:3.4em;--c:#B91C1C;gap:.15em"><span><b>'+r[0]+' · '+r[1]+'</b> <b class="num" data-at="'+(r[3]+300)+'" data-num="0:'+r[2]+'" data-dur="1100" style="color:#B91C1C;font-size:1.1em">0</b>점</span><span class="bar a" data-at="'+(r[3]+300)+'" style="width:16.5em;--c:#B91C1C;--d:1.1s"><i style="--w:'+r[2]+'%"></i></span></div><div class="o a" data-at="'+(r[3]+1500)+'" style="left:16.2em;top:'+(top+3.5)+'em;width:18em"><span class="sm" style="color:#B91C1C">'+r[4]+'</span></div>'}).join('')
+  +'<div class="o bx a pulse" data-at="7000" style="left:2em;top:17em;width:12em;height:3.4em;--c:#B91C1C;background:#B91C1C;color:#fff;justify-content:center;font-size:1em;font-weight:900"><span style="font-size:1.3em">⏹</span> 정지 버튼</div>'
+  +'<div class="o bx a pop" data-at="7400" style="left:15em;top:17em;width:19.5em;height:3.4em;--c:#F59E0B;background:#FFFBEB;justify-content:center"><span>멈추는 버튼은 <b>사람 손에</b> 🖐</span></div>'}
+];
+var cur=0,timers=[],loopT=null,auto=false;
+var dots=$('#ddots'),sc=$('#dscene'),title=$('#dtitle'),say=$('#dsay');
+S.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.textContent=i+1;b.setAttribute('aria-label',(i+1)+'단계 '+s.n);b.style.setProperty('--c',s.c);b.addEventListener('click',function(){auto=false;upd();open(i)});dots.appendChild(b)});
+function clear(){timers.forEach(clearTimeout);timers=[];clearTimeout(loopT)}
+function T(f,ms){timers.push(setTimeout(f,ms))}
+function typeText(el){var txt=el.dataset.text.replace(/&lt;/g,'<').replace(/&gt;/g,'>'),dur=+el.dataset.dur||1000,n=txt.length,t0=Date.now();el.classList.add('typing');
+ (function step(){if(!demo.classList.contains('on')||el._stop)return;var k=Math.min(n,Math.ceil((Date.now()-t0)/dur*n));el.textContent=txt.slice(0,k);if(k<n)timers.push(setTimeout(step,40));else el.classList.remove('typing')})()}
+function countNum(el){var p=el.dataset.num.split(':'),a=+p[0],b=+p[1],dur=+el.dataset.dur||1000,t0=Date.now();
+ (function step(){var r=Math.min(1,(Date.now()-t0)/dur);el.textContent=Math.round(a+(b-a)*r);if(r<1)timers.push(setTimeout(step,40))})()}
+function reset(){[].forEach.call(sc.querySelectorAll('.on'),function(e){e.classList.remove('on')});[].forEach.call(sc.querySelectorAll('[data-text]'),function(e){e.textContent='';e.classList.remove('typing')});[].forEach.call(sc.querySelectorAll('[data-num]'),function(e){e.textContent=e.dataset.num.split(':')[0]})}
+function play(){clear();reset();var s=S[cur];[].forEach.call(sc.querySelectorAll('[data-at]'),function(el){T(function(){el.classList.add('on');if(el.dataset.text)typeText(el);if(el.dataset.num)countNum(el)},+el.dataset.at);if(el.dataset.off)T(function(){el.classList.remove('on')},+el.dataset.off)});
+ loopT=setTimeout(function(){if(auto){if(cur<S.length-1)open(cur+1);else{auto=false;upd();play()}}else play()},s.len+(auto?1800:3200));
+}
+function upd(){$('#dauto').textContent=auto?'⏸ 자동 재생 멈춤':'▶ 7단계 자동 재생'}
+function open(i){cur=Math.max(0,Math.min(S.length-1,i));var s=S[cur];demo.classList.add('on');demo.style.setProperty('--c',s.c);
+ title.innerHTML=s.em+' '+(cur+1)+'단계 · '+s.n;sc.style.setProperty('--c',s.c);$('#dscene').parentNode.style.setProperty('--c',s.c);
+ sc.innerHTML=s.html;say.innerHTML='<span class="role">사람의 역할 · '+s.role+'</span>'+s.say+'<small>'+s.ex+'</small>';
+ [].forEach.call(dots.children,function(b,k){b.classList.toggle('cur',k===cur)});
+ demo.scrollTop=0;play()}
+function close(){demo.classList.remove('on');clear();auto=false;upd()}
+window.__openDemo=open;
+$('#dprev').addEventListener('click',function(){auto=false;upd();open(cur-1)});
+$('#dnext').addEventListener('click',function(){auto=false;upd();open(cur+1)});
+$('#dre').addEventListener('click',function(){play()});
+$('#dauto').addEventListener('click',function(){auto=!auto;upd();if(auto)open(cur>=S.length-1?0:cur);else play()});
+$('#dx').addEventListener('click',close);
+demo.addEventListener('click',function(e){if(e.target===demo)close()});
+document.addEventListener('keydown',function(e){if(!demo.classList.contains('on'))return;var k=e.key,used=true;
+ if(k==='Escape')close();else if(k==='ArrowRight'||k==='PageDown'){auto=false;upd();open(cur+1)}else if(k==='ArrowLeft'||k==='PageUp'){auto=false;upd();open(cur-1)}else if(k==='r'||k==='R'||k==='ㄱ'||k===' ')play();else if(/^[1-7]$/.test(k)){auto=false;upd();open(+k-1)}else used=false;
+ if(used){e.preventDefault();e.stopImmediatePropagation()}},true);
+[].forEach.call(document.querySelectorAll('.lad .st'),function(el,i){el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',(i+1)+'단계 움직이는 설명 열기');el.addEventListener('click',function(){open(i)});el.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();open(i)}})});
+[].forEach.call(document.querySelectorAll('.card .dt'),function(dt){var h=dt.querySelector('h3');if(!h)return;var sl=dt.closest('.slide');if(!sl||!/1~4단계|5~7단계/.test(sl.dataset.title||''))return;var m=/^\s*([1-7])\s*[단.]/.exec(h.textContent);if(!m)return;var b=document.createElement('button');b.type='button';b.className='btn demo-btn';b.textContent='▶ 움직이는 그림으로 보기';b.addEventListener('click',function(){open(+m[1]-1)});dt.appendChild(b)});
+var all=document.getElementById('demoAll');if(all)all.addEventListener('click',function(){auto=true;upd();open(0)});
+})();
+
 </script>
 <div id="tlstage"></div>
 <style>
