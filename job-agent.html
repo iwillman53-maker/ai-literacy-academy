@@ -69,6 +69,16 @@ button.card{font:inherit;color:inherit;text-align:left;cursor:pointer;display:bl
 .stardetail .stabs button{width:46px;height:46px;border-radius:12px;border:0;background:#262d38;color:var(--fg);font-size:24px;font-weight:800;cursor:pointer;font-family:inherit}
 .stardetail .stabs button.on{background:var(--amber);color:#111}
 .stardetail b.t{display:block;font-size:20px;margin-bottom:2px}
+.archcard{transition:border-color .15s,transform .1s;display:flex!important;align-items:center;gap:18px;padding:18px 24px!important}
+.archcard:hover{border-color:var(--amber);transform:translateY(-2px)}
+.archcard .ic{font-size:48px;flex:none}
+.archcard h3{margin:0 0 2px;font-size:30px}
+.archcard p{margin:0;font-size:22px}
+.archcard .no{display:inline-block;width:30px;height:30px;border-radius:50%;background:var(--amber);color:#111;font-size:20px;font-weight:800;text-align:center;line-height:30px;margin-right:8px;vertical-align:3px}
+#archdetail ul{margin:6px 0 8px;padding-left:30px;font-size:24px;line-height:1.5;color:#D7DCE3}
+#archdetail li{margin:3px 0}
+#archdetail .ex.am{background:rgba(246,199,68,.10);border:1px solid rgba(246,199,68,.5)}
+#archdetail .q{font-size:25px;margin:0 0 6px}
 .extabs{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
 .extabs button{background:#262d38;color:var(--fg);border:0;border-radius:12px;padding:9px 16px;font-size:23px;cursor:pointer;font-family:inherit}
 .extabs button.on{background:var(--amber);color:#111;font-weight:800}
@@ -204,18 +214,18 @@ button.card{font:inherit;color:inherit;text-align:left;cursor:pointer;display:bl
 
 <!-- 7 구조 -->
 <section class="slide">
- <div class="kicker">에이전트의 구조 ✍ 판서</div>
+ <div class="kicker">에이전트의 구조 ✍ 판서 <span class="mute">· 카드를 눌러 설명 보기 (숫자키 1~6)</span></div>
  <h2>에이전트 = <span class="hl">지침</span> + <span class="hl">내 파일</span> + 명령</h2>
- <div class="flow">
-  <div class="card"><div class="ic">📜</div><h3>지침</h3><p>역할과 규칙</p></div>
-  <div class="arrow">+</div>
-  <div class="card" style="border-color:var(--amber)"><div class="ic">📁</div><h3>내 파일</h3><p>이력서·경험</p></div>
-  <div class="arrow">＋</div>
-  <div class="card"><div class="ic">⌨️</div><h3>명령</h3><p>공고 붙여넣기</p></div>
-  <div class="arrow">→</div>
-  <div class="card"><div class="ic">✅</div><h3>결과</h3><p>분석·초안·면접</p></div>
+ <div class="cols" style="grid-template-columns:repeat(3,1fr);gap:16px">
+  <button class="card archcard"><span class="ic">🎤</span><div><h3><span class="no">1</span>도입</h3><p>어떻게 시작하나</p></div></button>
+  <button class="card archcard"><span class="ic">📜</span><div><h3><span class="no">2</span>지침</h3><p>무엇을 넣나</p></div></button>
+  <button class="card archcard" style="border-color:var(--amber)"><span class="ic">📁</span><div><h3><span class="no">3</span>내 파일</h3><p>어떻게 만드나</p></div></button>
+  <button class="card archcard"><span class="ic">⌨️</span><div><h3><span class="no">4</span>명령</h3><p>공고 붙여넣기</p></div></button>
+  <button class="card archcard"><span class="ic">✅</span><div><h3><span class="no">5</span>결과</h3><p>분석·초안·면접</p></div></button>
+  <button class="card archcard"><span class="ic">🎬</span><div><h3><span class="no">6</span>마무리</h3><p>전환 멘트</p></div></button>
  </div>
- <div class="cue">칠판에 손으로 그리며 설명 — 화면은 확인용</div>
+ <div class="stardetail" id="archdetail" style="width:1136px"></div>
+ <div class="cue">칠판에 공식을 크게 쓰고, 카드를 눌러 한 칸씩 설명 · Esc로 닫기</div>
 </section>
 
 <!-- 8 오늘의 지도 -->
@@ -3025,7 +3035,7 @@ function go(i){
  cur=Math.max(0,Math.min(slides.length-1,i));
  slides.forEach(function(s,k){s.classList.toggle('on',k===cur)});
  $('#pg').textContent=(cur+1)+' / '+slides.length;
- try{history.replaceState(null,'','#'+(cur+1))}catch(e){}closeStar();
+ try{history.replaceState(null,'','#'+(cur+1))}catch(e){}closeStar();closeArch();
  redrawPen();
 }
 $('#prev').onclick=function(){go(cur-1)};$('#next').onclick=function(){go(cur+1)};
@@ -3302,6 +3312,48 @@ function openStar(k,force){
 $$('.starcard').forEach(function(b,i){b.onclick=function(){openStar(i)}});
 if($('#stardetail'))$('#stardetail').onclick=function(e){var k=e.target.dataset?e.target.dataset.k:null;if(k!=null&&k!==''){openStar(+k,true)}else closeStar()};
 
+/* ---------- 구조 카드 (슬라이드 7) ---------- */
+var ARCH=[
+ {h:'① 도입 · 시선 집중 (Hook)',q:'농담 대신 문제를 던지며 시작합니다. 질문 뒤에는 쉿~~~ 7초.',
+  pts:[],
+  boxes:[['오프닝 멘트','"여러분, 인턴이나 신입 채용공고 떴을 때 챗GPT에 그냥 \'나 자소서 써줘\' 하고 엔터 치면 어떤 글이 나오던가요? 누구나 쓸 수 있는 교과서 같은 답변만 나오죠. 왜 그럴까요? 내 에이전트에게 뼈대와 재료를 안 줬기 때문입니다."'],['핵심 질문','"나만의 전담 취업 코치를 책상 옆에 두려면 딱 세 가지만 장착해 주면 됩니다."']],
+  tip:'질문 후 S 키로 7초 침묵 → 칠판에 공식 판서 → 카드 2번으로.'},
+ {h:'② 지침 · 역할과 규칙',q:'에이전트의 페르소나와 작업 원칙을 정하는 단계. 명확한 역할과 룰을 줍니다.',
+  pts:['<b>역할</b> — "너는 10년 차 IT 대기업 인사팀장이야"','<b>방법</b> — "STAR 기법으로 피드백해 줘"','<b>금지</b> — "근거 없는 미사여구는 빼 줘", "내 파일에 없는 경험은 지어내지 마"','<b>출력 형식</b> — 항목별로, 짧게, 고친 이유 한 줄'],
+  boxes:[['지침 예시 (슬라이드 12에서 복사)','너는 10년 차 인사팀장 출신 취업 코치다. 내 파일에 있는 경험만 근거로 쓴다. STAR 순서로 피드백하고, 지어낸 경험과 근거 없는 미사여구는 쓰지 않는다. 내가 설명하기 어려운 문장은 표시해 준다.']],
+  tip:'역할 + 방법 + 금지, 세 가지가 들어 있으면 충분합니다.'},
+ {h:'③ 내 파일 · 어떻게 만드나',q:'범용 AI와 내 에이전트를 가르는 핵심. 옵시디언 노트를 만들어 프로젝트에 올립니다.',
+  pts:['<b>01_이력서</b> — 학력·활동·자격·수상 (사실만, 포트폴리오·기존 자소서도 함께)','<b>02_경험사례_STAR</b> — 경험 5개를 S·T·A·R로 (가장 중요)','<b>03_희망기업_직무</b> — 지원할 곳과 직무기술서(JD)','<b>04_지원현황</b> — 지원한 곳·결과·피드백','<b>올리기</b> — 프로젝트 "+" → 파일 추가 (원본은 옵시디언, 고치면 다시 올리기)'],
+  boxes:[],
+  tip:'개인정보(주민번호·연락처)는 지우고 올립니다. 막히면 슬라이드 21 인터뷰.'},
+ {h:'④ 명령 · 공고 붙여넣기',q:'실행을 거는 트리거. 채용공고(직무기술서)를 통째로 붙이고, 할 일을 한 줄로 요청합니다.',
+  pts:['<b>분석</b> — "이 공고를 요구 역량 5가지로 정리해 줘"','<b>초안</b> — "내 파일 경험 중 맞는 것을 골라 자소서 초안을 써 줘"','<b>면접</b> — "이 공고 기준 예상 질문을 하나씩 물어봐 줘"'],
+  boxes:[],
+  tip:'공고는 요약하지 말고 통째로. 회사명과 직무명이 들어가야 정확합니다.'},
+ {h:'⑤ 결과 · 분석·초안·면접',q:'지침 + 내 파일 + 명령이 결합된 최종 산출물. 일반 글이 아니라 내 경험과 공고가 맞물린 결과입니다.',
+  pts:['<b>직무 분석표</b> — 요구 역량 ↔ 내 경험 매칭','<b>자소서 맞춤 초안</b> — 내 경험을 근거로 한 문장들','<b>예상 압박 면접 질문</b> — 꼬리 질문까지'],
+  boxes:[['울타리','에이전트는 코치입니다. 초안은 AI가, 내 말은 내가 — 면접장에서 설명 못 할 문장은 고치거나 지웁니다.']],
+  tip:'결과를 그대로 제출하지 않고, 내가 설명할 수 있는지 확인합니다.'},
+ {h:'⑥ 마무리 · 전환 멘트',q:'세 줄로 정리하고 다음 실습으로 넘어갑니다.',
+  pts:['지침으로 시야를 좁히고','내 파일로 팩트를 채우고','채용 공고라는 명령으로 실행한다'],
+  boxes:[['클로징 멘트','"지침으로 시야를 좁혀주고, 내 파일로 팩트를 채운 뒤, 채용 공고라는 명령을 던지는 것. 이것이 취업준비 에이전트의 전부입니다. 그럼 다음 장에서 이 지침을 어떻게 구체적으로 세팅하는지 직접 실습해 보겠습니다."']],
+  tip:'다음: 오늘의 지도 → 1단계 역할 → 프로젝트·지침 실습.'}
+];
+function archIsOpen(){var p=$('#archdetail');return !!p&&p.classList.contains('show')}
+function closeArch(){var p=$('#archdetail');if(p)p.classList.remove('show')}
+function openArch(k,force){
+ var p=$('#archdetail'),d=ARCH[k];
+ if(!force&&p.classList.contains('show')&&p.dataset.k==String(k)){closeArch();return}
+ p.dataset.k=String(k);
+ var h='<div class="stabs">'+ARCH.map(function(x,i){return '<button data-k="'+i+'"'+(i===k?' class="on"':'')+'>'+(i+1)+'</button>'}).join('')+'</div><span class="x">✕ 닫기</span><h3>'+d.h+'</h3><p class="q">'+d.q+'</p>';
+ if(d.pts.length)h+='<ul>'+d.pts.map(function(s){return '<li>'+s+'</li>'}).join('')+'</ul>';
+ d.boxes.forEach(function(b){h+='<div class="ex am"><b class="t">'+b[0]+'</b>'+b[1]+'</div>'});
+ h+='<p class="q" style="margin:8px 0 0;color:var(--amber);font-size:23px">💡 '+d.tip+'</p>';
+ p.innerHTML=h;p.classList.add('show');
+}
+$$('.archcard').forEach(function(b,i){b.onclick=function(){openArch(i)}});
+if($('#archdetail'))$('#archdetail').onclick=function(e){var k=e.target.dataset?e.target.dataset.k:null;if(k!=null&&k!==''){openArch(+k,true)}else closeArch()};
+
 var EX=[
  {n:'축제 부스',s:'2학년 가을 학과 축제, 6명이 부스를 맡았는데 개장 이틀 전까지 메뉴와 역할이 비어 있었습니다.',t:'저는 운영 담당으로 이틀 안에 역할표와 재고 계획을 만들어야 했습니다.',a:'시간대별 인원표를 만들고, 전년도 후기를 찾아 메뉴를 3개로 줄였으며, 재고 시트를 30분마다 확인했습니다.',r:'매출이 전년보다 약 20% 늘고 재고 손실이 없었습니다. 이 인원표는 학과 행사 자료로 남았습니다.',u:'계획력·협업 → "협업해서 성과를 낸 경험은?"'},
  {n:'팀 갈등',s:'4인 팀 과제 중간발표 일주일 전, 팀원 한 명과 연락이 끊겨 작업이 밀렸습니다.',t:'팀장으로서 발표 품질을 지키면서 팀 관계도 유지해야 했습니다.',a:'먼저 1:1로 사정을 들었고, 그 친구가 부담 없이 맡을 분량으로 작업을 쪼갠 뒤 공유 문서에 진행률을 표시했습니다.',r:'발표를 일정대로 마쳤고, 역할 분담이 명확하다는 교수님 평가를 받았습니다. 그 팀원도 끝까지 참여했습니다.',u:'갈등 해결·책임감 → "갈등을 해결한 경험은?"'},
@@ -3318,6 +3370,7 @@ function setEx(i){
 if($('#extabs')){setEx(0);$('#extabs').addEventListener('click',function(ev){var k=ev.target.dataset.k;if(k!=null)setEx(+k)})}
 function slideKeyNum(n){
  var sl=$('.slide.on');if(!sl)return false;
+ if(sl.querySelector('.archcard')&&n<=6){openArch(n-1);return true}
  if(sl.querySelector('.starcard')&&n<=4){openStar(n-1);return true}
  if(sl.querySelector('#exbody')&&n<=5){setEx(n-1);return true}
  return false;
@@ -3332,10 +3385,10 @@ window.addEventListener('keydown',function(e){
  if(isOpen('blank')){closeOv('blank');eat();return}
  if(c==='Escape'){
   if(anyOpen())closeAll();else if($('#toolmenu').classList.contains('show'))$('#toolmenu').classList.remove('show');
-  else if(starIsOpen())closeStar();else if(penMode)setPen(null);else if(zoom>1)setZoom(1);
+  else if(archIsOpen())closeArch();else if(starIsOpen())closeStar();else if(penMode)setPen(null);else if(zoom>1)setZoom(1);
   return;
  }
- var dm=/^(Digit|Numpad)([1-5])$/.exec(c);
+ var dm=/^(Digit|Numpad)([1-6])$/.exec(c);
  if(dm){var d=e.altKey?-1:(e.shiftKey?5:1);if(voteKey(+dm[2],d)||(!e.altKey&&!e.shiftKey&&slideKeyNum(+dm[2])))eat();return}
  if(e.altKey)return;
  switch(c){
